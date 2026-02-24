@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rimland Pattern</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #080810;
+            font-family: 'Georgia', serif;
+        }
+        #map-container {
+            width: 900px;
+            height: 500px;
+            margin: 20px auto;
+            background: #0a0b10;
+        }
+        .land {
+            fill: #151820;
+            stroke: #252a35;
+            stroke-width: 0.4;
+        }
+        .graticule {
+            fill: none;
+            stroke: #12151c;
+            stroke-width: 0.2;
+        }
+        .marker-glow {
+            opacity: 0.3;
+        }
+        .marker-ring {
+            fill: none;
+            stroke-width: 1;
+            opacity: 0.4;
+        }
+        .marker-core {
+            stroke: rgba(255,255,255,0.8);
+            stroke-width: 1;
+        }
+        .marker-center {
+            fill: #fff;
+            opacity: 0.7;
+        }
+        .connection {
+            fill: none;
+            stroke-width: 1.5;
+            stroke-dasharray: 6, 4;
+            opacity: 0.35;
+        }
+        .city-label {
+            font-size: 14px;
+            fill: #fff;
+            font-weight: 500;
+        }
+        .date-label {
+            font-size: 11px;
+            fill: #777;
+        }
+        .pct-label {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .title {
+            font-size: 26px;
+            fill: #fff;
+            letter-spacing: 4px;
+        }
+        .subtitle {
+            font-size: 13px;
+            fill: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="map-container"></div>
+    <script>
+        const currencies = [
+            { city: "Lisbon", coords: [-9.14, 38.72], start: 1450, end: 1530, peak: 1500, share: 35 },
+            { city: "Seville", coords: [-5.99, 37.39], start: 1530, end: 1640, peak: 1580, share: 65 },
+            { city: "Amsterdam", coords: [4.90, 52.37], start: 1640, end: 1720, peak: 1670, share: 60 },
+            { city: "London", coords: [-0.12, 51.51], start: 1720, end: 1944, peak: 1870, share: 62 },
+            { city: "New York", coords: [-74.00, 40.71], start: 1944, end: 2025, peak: 2000, share: 85 }
+        ];
+
+        const colorScale = d3.scaleSequential()
+            .domain([1450, 2025])
+            .interpolator(d3.interpolateRgbBasis([
+                "#dc2626", "#9333ea", "#2563eb"
+            ]));
+
+        // SMALLER sizes
+        const sizeScale = d3.scaleLinear()
+            .domain([35, 85])
+            .range([6, 14]);
+
+        const width = 900, height = 500;
+
+        const svg = d3.select("#map-container")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        const projection = d3.geoNaturalEarth1()
+            .center([-20, 42])
+            .scale(320)
+            .translate([width / 2, height / 2]);
+
+        const path = d3.geoPath().projection(projection);
+
+        // Graticule
+        svg.append("path")
+            .datum(d3.geoGraticule().step([20, 20]))
+            .attr("class", "graticule")
+            .attr("d", path);
+
+        // Load map
+        d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(world => {
+            svg.append("g")
+                .selectAll("path")
+                .data(topojson.feature(world, world.objects.countries).features)
+                .enter()
+                .append("path")
+                .attr("class", "land")
+                .attr("d", path);
+
+            // Gradient for line
+            const defs = svg.append("defs");
+            const grad = defs.append("linearGradient")
+                .attr("id", "lineGrad")
+                .attr("gradientUnits", "userSpaceOnUse")
+                .attr("x1", projection(currencies[0].coords)[0])
+                .attr("y1", projection(currencies[0].coords)[1])
+                .attr("x2", projection(currencies[4].coords)[0])
+                .attr("y2", projection(currencies[4].coords)[1]);
+
+            grad.selectAll("stop")
+                .data([
+                    {o: "0%", c: "#dc2626"}, {o: "50%", c: "#9333ea"}, {o: "100%", c: "#2563eb"}
+                ])
+                .enter().append("stop")
+                .attr("offset", d => d.o)
+                .attr("stop-color", d => d.c);
+
+            // Connection line
+            const line = d3.line()
+                .x(d => projection(d)[0])
+                .y(d => projection(d)[1])
+                .curve(d3.curveCatmullRom.alpha(0.5));
+
+            svg.append("path")
+                .attr("class", "connection")
+                .attr("d", line(currencies.map(c => c.coords)))
+                .attr("stroke", "url(#lineGrad)");
+
+            // Label offsets to avoid overlap
+            const offsets = {
+                "Lisbon": { x: -40, y: 5, anchor: "end" },
+                "Seville": { x: 25, y: 5, anchor: "start" },
+                "Amsterdam": { x: 0, y: -28, anchor: "middle" },
+                "London": { x: -25, y: -22, anchor: "end" },
+                "New York": { x: 0, y: 32, anchor: "middle" }
+            };
+
+            // Markers
+            const markers = svg.selectAll(".marker")
+                .data(currencies)
+                .enter()
+                .append("g")
+                .attr("transform", d => `translate(${projection(d.coords)[0]}, ${projection(d.coords)[1]})`);
+
+            // Glow
+            markers.append("circle")
+                .attr("class", "marker-glow")
+                .attr("r", d => sizeScale(d.share) * 2.5)
+                .attr("fill", d => colorScale(d.peak))
+                .style("filter", "blur(6px)");
+
+            // Ring
+            markers.append("circle")
+                .attr("class", "marker-ring")
+                .attr("r", d => sizeScale(d.share) * 1.5)
+                .attr("stroke", d => colorScale(d.peak));
+
+            // Core
+            markers.append("circle")
+                .attr("class", "marker-core")
+                .attr("r", d => sizeScale(d.share))
+                .attr("fill", d => colorScale(d.peak));
+
+            // Center dot
+            markers.append("circle")
+                .attr("class", "marker-center")
+                .attr("r", d => sizeScale(d.share) * 0.35);
+
+            // Labels
+            markers.each(function(d) {
+                const g = d3.select(this);
+                const o = offsets[d.city];
+                const dateStr = d.end === 2025 ? `${d.start}—` : `${d.start}—${d.end}`;
+
+                g.append("text")
+                    .attr("class", "city-label")
+                    .attr("x", o.x)
+                    .attr("y", o.y)
+                    .attr("text-anchor", o.anchor)
+                    .text(d.city);
+
+                g.append("text")
+                    .attr("class", "date-label")
+                    .attr("x", o.x)
+                    .attr("y", o.y + 14)
+                    .attr("text-anchor", o.anchor)
+                    .text(dateStr);
+
+                g.append("text")
+                    .attr("class", "pct-label")
+                    .attr("x", o.x)
+                    .attr("y", o.y + 28)
+                    .attr("text-anchor", o.anchor)
+                    .attr("fill", colorScale(d.peak))
+                    .text(d.share + "%");
+            });
+
+            // Title
+            svg.append("text")
+                .attr("class", "title")
+                .attr("x", width / 2)
+                .attr("y", 35)
+                .attr("text-anchor", "middle")
+                .text("THE RIMLAND PATTERN");
+
+            svg.append("text")
+                .attr("class", "subtitle")
+                .attr("x", width / 2)
+                .attr("y", 54)
+                .attr("text-anchor", "middle")
+                .text("Reserve currency migration, 1450–2025");
+
+            // Legend
+            const leg = svg.append("g").attr("transform", `translate(${width - 170}, ${height - 50})`);
+
+            leg.append("text")
+                .attr("font-size", 11)
+                .attr("fill", "#555")
+                .attr("letter-spacing", 1)
+                .text("ERA");
+
+            const bar = leg.append("defs").append("linearGradient").attr("id", "legGrad");
+            bar.selectAll("stop")
+                .data([{o:"0%",c:"#dc2626"},{o:"50%",c:"#9333ea"},{o:"100%",c:"#2563eb"}])
+                .enter().append("stop").attr("offset",d=>d.o).attr("stop-color",d=>d.c);
+
+            leg.append("rect")
+                .attr("y", 8)
+                .attr("width", 110)
+                .attr("height", 8)
+                .attr("rx", 2)
+                .attr("fill", "url(#legGrad)");
+
+            leg.append("text").attr("y", 28).attr("font-size", 10).attr("fill", "#555").text("1450");
+            leg.append("text").attr("x", 110).attr("y", 28).attr("text-anchor", "end").attr("font-size", 10).attr("fill", "#555").text("2025");
+        });
+    </script>
+</body>
+</html>
