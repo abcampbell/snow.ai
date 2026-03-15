@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macro Risk Dashboard — 2025-12-31</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<style>
+  :root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-dim: #8b949e; --accent: #3b82f6;
+    --good: #22c55e; --bad: #ef4444; --warn: #f59e0b; --purple: #a855f7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace; background: var(--bg); color: var(--text); }
+  .header { padding: 24px 32px; border-bottom: 1px solid var(--border); }
+  .header h1 { font-size: 20px; font-weight: 600; color: var(--accent); }
+  .header .sub { color: var(--text-dim); font-size: 12px; margin-top: 4px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px 32px; }
+  .grid-full { grid-column: 1 / -1; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+  .card h2 { font-size: 13px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .stat-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .stat { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; min-width: 110px; flex: 1; }
+  .stat .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; }
+  .stat .value { font-size: 22px; font-weight: 700; color: #fff; margin-top: 2px; }
+  .stat .delta { font-size: 11px; margin-top: 2px; }
+  .chart-container { position: relative; height: 350px; }
+  .chart-sm { position: relative; height: 280px; }
+  .insight { background: #1c2128; border-left: 3px solid var(--accent); padding: 12px 16px; margin-top: 12px; font-size: 12px; line-height: 1.6; border-radius: 0 4px 4px 0; }
+  .insight strong { color: #fff; }
+  .insight.green { border-left-color: var(--good); }
+  .insight.amber { border-left-color: var(--warn); }
+  .section-title { font-size: 15px; color: #fff; font-weight: 600; margin: 32px 32px 0; padding-top: 16px; border-top: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  th { text-align: left; padding: 8px; color: var(--text-dim); font-weight: 500; border-bottom: 1px solid var(--border); font-size: 10px; text-transform: uppercase; }
+  td { padding: 5px 8px; border-bottom: 1px solid #1c2128; white-space: nowrap; }
+  tr:hover { background: #1c2128; }
+  .ticker { font-weight: 600; color: var(--accent); text-transform: uppercase; }
+  .corner-mark { position: fixed; bottom: 1rem; right: 1.5rem; font-size: 10px; color: var(--text-dim); z-index: 10; }
+  .corner-mark a { color: var(--text-dim); text-decoration: none; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Macro Hedge Fund Risk Dashboard</h1>
+  <div class="sub">132 Positions | EWMA Covariance | Black-Litterman | Snapshot: 2025-12-31 | Source: macro_risk</div>
+</div>
+
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Portfolio Summary (since inception Oct 2024)</h2>
+    <div class="stat-row" id="stats"></div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Cumulative Returns: Portfolio vs SPY vs GLD</h2>
+    <div class="chart-container"><canvas id="cumChart"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>Drawdowns: Portfolio vs SPY</h2>
+    <div class="chart-sm"><canvas id="ddChart"></canvas></div>
+    <div class="insight green">Portfolio max DD: <strong>-5.4%</strong> vs SPY max DD: <strong>-18.8%</strong>. Portfolio drawdowns are shallow and short-lived.</div>
+  </div>
+
+  <div class="card">
+    <h2>Rolling Correlations (60d)</h2>
+    <div class="chart-sm"><canvas id="corrChart"></canvas></div>
+    <div class="insight">SPY correlation ~0.30 (low equity beta). TLT correlation near zero — portfolio is duration-neutral.</div>
+  </div>
+</div>
+
+<div class="section-title">Portfolio Weights — Top 40 Positions</div>
+<div class="grid">
+  <div class="card grid-full">
+    <div class="chart-container" style="height:500px"><canvas id="weightsChart"></canvas></div>
+  </div>
+</div>
+
+<div class="section-title">Risk Contributions — Top 30</div>
+<div class="grid">
+  <div class="card grid-full">
+    <div class="chart-container" style="height:450px"><canvas id="rcChart"></canvas></div>
+    <div class="insight amber">
+      <strong>SPY short</strong> dominates risk (199% variance contribution via short hedge).
+      <strong>SLV</strong> and <strong>GLD</strong> are the largest long risk contributors — precious metals thesis is the core exposure.
+    </div>
+  </div>
+</div>
+
+<div style="padding: 24px 32px; color: var(--text-dim); font-size: 11px; border-top: 1px solid var(--border); margin-top: 16px;">
+  Source: macro_risk (Streamlit) | EWMA cov, Black-Litterman optimization, governance layer | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
+</div>
+<div class="corner-mark"><a href="https://snow.ai">snow.ai</a></div>
+
+<script>
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#30363d';
+Chart.defaults.font.family = "'SF Mono', 'Cascadia Code', 'Consolas', monospace";
+Chart.defaults.font.size = 10;
+
+const D = {"summary": {"total_return": 0.4104, "ann_return": 0.2097, "ann_vol": 0.0977, "sharpe": 2.1471, "max_dd": -0.0539, "spy_max_dd": -0.1876, "gld_max_dd": -0.1013, "corr_spy": 0.2956, "corr_tlt": -0.0226}, "cum": {"dates": ["2025-10-08", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-22", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-05", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-26", "2025-12-29", "2025-12-30", "2025-12-31"], "port": [1.27, 1.2696, 1.2743, 1.2924, 1.2885, 1.3011, 1.3109, 1.2911, 1.3032, 1.2648, 1.2663, 1.2687, 1.2691, 1.2565, 1.2585, 1.2648, 1.2789, 1.2757, 1.2723, 1.2584, 1.267, 1.2687, 1.2669, 1.2876, 1.2919, 1.3083, 1.2983, 1.2886, 1.2846, 1.2861, 1.2939, 1.2827, 1.2809, 1.2966, 1.2965, 1.3104, 1.3104, 1.3319, 1.3375, 1.3382, 1.3379, 1.3337, 1.3403, 1.3383, 1.353, 1.3605, 1.3721, 1.3602, 1.3718, 1.3681, 1.3804, 1.3785, 1.3924, 1.4052, 1.422, 1.4212, 1.4516, 1.4205, 1.433, 1.4104], "spy": [1.3161, 1.3123, 1.2769, 1.2964, 1.2949, 1.3006, 1.2918, 1.2991, 1.3126, 1.3126, 1.3058, 1.3135, 1.3242, 1.3399, 1.3434, 1.3441, 1.3293, 1.3336, 1.3361, 1.3203, 1.3249, 1.3107, 1.312, 1.3324, 1.3355, 1.3362, 1.314, 1.3138, 1.3016, 1.2907, 1.2956, 1.2759, 1.2886, 1.3076, 1.3199, 1.329, 1.329, 1.3362, 1.3301, 1.3326, 1.3372, 1.3382, 1.3407, 1.3367, 1.3356, 1.3444, 1.3475, 1.333, 1.331, 1.3274, 1.3128, 1.3227, 1.3347, 1.343, 1.3491, 1.3539, 1.3538, 1.3489, 1.3473, 1.3373], "gld": [1.7215, 1.6898, 1.7068, 1.7483, 1.7608, 1.7913, 1.8332, 1.7987, 1.8642, 1.7444, 1.7446, 1.7515, 1.7457, 1.6971, 1.6849, 1.6785, 1.7115, 1.7022, 1.7053, 1.6754, 1.6948, 1.6927, 1.7031, 1.7497, 1.7565, 1.7848, 1.7704, 1.7385, 1.7185, 1.731, 1.7338, 1.7333, 1.7306, 1.7581, 1.7575, 1.7716, 1.7716, 1.7936, 1.8022, 1.7906, 1.789, 1.7901, 1.7869, 1.7822, 1.7914, 1.799, 1.8184, 1.8285, 1.8302, 1.8306, 1.8463, 1.843, 1.8451, 1.8877, 1.9127, 1.9048, 1.927, 1.8432, 1.8445, 1.8326]}, "dd": {"dates": ["2025-10-08", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-22", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-05", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-26", "2025-12-29", "2025-12-30", "2025-12-31"], "port": [0.0, -0.0003, 0.0, 0.0, -0.003, 0.0, 0.0, -0.0151, -0.0059, -0.0352, -0.034, -0.0322, -0.0319, -0.0415, -0.04, -0.0352, -0.0244, -0.0268, -0.0294, -0.0401, -0.0335, -0.0322, -0.0336, -0.0178, -0.0145, -0.002, -0.0096, -0.017, -0.0201, -0.0189, -0.013, -0.0215, -0.0229, -0.0109, -0.011, -0.0004, -0.0004, 0.0, 0.0, 0.0, -0.0002, -0.0034, 0.0, -0.0015, 0.0, 0.0, 0.0, -0.0087, -0.0002, -0.0029, 0.0, -0.0014, 0.0, 0.0, 0.0, -0.0005, 0.0, -0.0214, -0.0128, -0.0284], "spy": [0.0, -0.0029, -0.0298, -0.015, -0.0162, -0.0118, -0.0185, -0.013, -0.0027, -0.0027, -0.0079, -0.002, 0.0, 0.0, 0.0, 0.0, -0.011, -0.0078, -0.0059, -0.0177, -0.0143, -0.0248, -0.0239, -0.0087, -0.0064, -0.0058, -0.0223, -0.0225, -0.0316, -0.0397, -0.036, -0.0507, -0.0413, -0.0271, -0.018, -0.0112, -0.0112, -0.0058, -0.0104, -0.0085, -0.0051, -0.0044, -0.0025, -0.0055, -0.0063, 0.0, 0.0, -0.0108, -0.0122, -0.0149, -0.0258, -0.0184, -0.0095, -0.0034, 0.0, 0.0, -0.0001, -0.0037, -0.0049, -0.0123]}, "corr": {"dates": ["2025-10-08", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-22", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-05", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-26", "2025-12-29", "2025-12-30", "2025-12-31"], "spy": [0.3445, 0.3448, 0.3374, 0.3412, 0.3412, 0.3411, 0.3372, 0.3265, 0.329, 0.2994, 0.2996, 0.2997, 0.2996, 0.3038, 0.3021, 0.3039, 0.2966, 0.2953, 0.2952, 0.3006, 0.2997, 0.2984, 0.2984, 0.3069, 0.3063, 0.3034, 0.313, 0.3113, 0.3125, 0.312, 0.3116, 0.3177, 0.3165, 0.3222, 0.3216, 0.3234, 0.3256, 0.3246, 0.3231, 0.3219, 0.3222, 0.322, 0.322, 0.3061, 0.3034, 0.3041, 0.3037, 0.3083, 0.3065, 0.3047, 0.2965, 0.2948, 0.3001, 0.3023, 0.3022, 0.3012, 0.2936, 0.2907, 0.2913, 0.2956], "tlt": [0.0412, 0.0426, 0.0463, 0.0424, 0.041, 0.0382, 0.042, 0.043, 0.0474, 0.0341, 0.0324, 0.0329, 0.0328, 0.0116, 0.004, 0.0072, -0.0034, -0.0086, -0.0123, -0.0141, -0.0207, -0.0213, -0.0205, -0.0226, -0.0213, -0.0195, 0.0108, 0.0166, 0.0207, 0.0207, 0.0158, 0.0127, 0.0165, 0.0216, 0.0211, 0.0252, 0.0295, 0.021, 0.0185, 0.0071, 0.0007, 0.003, 0.0014, -0.0139, -0.0179, -0.0171, -0.0175, -0.0083, -0.008, -0.0138, -0.0121, -0.0142, -0.0193, -0.0211, -0.0189, -0.0218, -0.0277, -0.0338, -0.0347, -0.0226]}, "weights": [{"s": "slv", "w": 0.203959}, {"s": "hygh", "w": -0.195523}, {"s": "gld", "w": 0.090754}, {"s": "iei", "w": 0.035259}, {"s": "3968", "w": -0.032589}, {"s": "uup", "w": 0.027709}, {"s": "ttwo", "w": 0.024613}, {"s": "mstr", "w": -0.023333}, {"s": "spy", "w": 0.022413}, {"s": "hy9h", "w": 0.021413}, {"s": "tip", "w": 0.021126}, {"s": "tsm", "w": 0.011699}, {"s": "ppta", "w": 0.01047}, {"s": "bx", "w": -0.010388}, {"s": "1810", "w": 0.009706}, {"s": "coin", "w": 0.008676}, {"s": "tsla", "w": 0.008649}, {"s": "pall", "w": 0.008477}, {"s": "gs", "w": 0.008458}, {"s": "glw", "w": 0.008404}, {"s": "mu", "w": 0.008241}, {"s": "cvna", "w": -0.008117}, {"s": "unl", "w": 0.00779}, {"s": "ewz", "w": 0.007016}, {"s": "bby", "w": -0.00644}, {"s": "ba", "w": -0.006256}, {"s": "cat", "w": 0.005509}, {"s": "le", "w": -0.005453}, {"s": "kmi", "w": 0.005283}, {"s": "teck", "w": 0.005033}, {"s": "pry", "w": 0.004862}, {"s": "csco", "w": 0.004655}, {"s": "dlr", "w": -0.004463}, {"s": "dash", "w": -0.004345}, {"s": "xle", "w": 0.004297}, {"s": "trp", "w": 0.004237}, {"s": "uuuu", "w": 0.004187}, {"s": "umi", "w": 0.004042}, {"s": "lyc", "w": 0.003602}, {"s": "lite", "w": 0.003545}], "rc": {"spy": 1.99, "slv": -0.7326, "gld": -0.1969, "hygh": 0.0559, "mstr": 0.0452, "teck": -0.0414, "ppta": -0.0329, "pall": -0.0189, "mu": -0.0162, "tsm": -0.0134, "bby": 0.008, "bx": 0.0079, "cvna": 0.0078, "cmcl": -0.0075, "hl": -0.0073, "le": 0.0073, "glw": -0.0073, "alb": -0.0072, "iei": 0.0065, "lite": -0.0064, "tlt": -0.0056, "ceg": -0.0055, "cohr": -0.0054, "cat": -0.0054, "ba": 0.0049, "sppp": -0.0038, "burl": 0.0033, "scco": -0.0033, "smr": -0.003, "fcx": -0.003}};
+
+const S = D.summary;
+
+// Stats
+document.getElementById('stats').innerHTML = `
+  <div class="stat"><div class="label">Total Return</div><div class="value" style="color:var(--good)">${(S.total_return*100).toFixed(1)}%</div><div class="delta" style="color:var(--good)">since Oct 2024</div></div>
+  <div class="stat"><div class="label">Ann. Return</div><div class="value" style="color:var(--good)">${(S.ann_return*100).toFixed(1)}%</div></div>
+  <div class="stat"><div class="label">Ann. Vol</div><div class="value">${(S.ann_vol*100).toFixed(1)}%</div></div>
+  <div class="stat"><div class="label">Sharpe</div><div class="value" style="color:var(--good)">${S.sharpe.toFixed(2)}</div></div>
+  <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${(S.max_dd*100).toFixed(1)}%</div><div class="delta" style="color:var(--text-dim)">SPY: ${(S.spy_max_dd*100).toFixed(1)}%</div></div>
+  <div class="stat"><div class="label">Corr SPY</div><div class="value">${S.corr_spy.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">low beta</div></div>
+  <div class="stat"><div class="label">Corr TLT</div><div class="value">${S.corr_tlt.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">duration neutral</div></div>
+  <div class="stat"><div class="label">Positions</div><div class="value">132</div></div>`;
+
+function ts(dates, vals) { return dates.map((d,i) => ({x: new Date(d), y: vals[i]})); }
+
+// Cumulative returns
+new Chart(document.getElementById('cumChart'), {
+  type:'line',
+  data:{datasets:[
+    {label:'Portfolio',data:ts(D.cum.dates, D.cum.port.map(v=>(v-1)*100)),borderColor:'#3b82f6',borderWidth:2,pointRadius:0,tension:0.1},
+    {label:'SPY',data:ts(D.cum.dates, D.cum.spy.map(v=>(v-1)*100)),borderColor:'#8b949e',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[4,3]},
+    {label:'GLD',data:ts(D.cum.dates, D.cum.gld.map(v=>(v-1)*100)),borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[4,3]}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{type:'time',time:{unit:'week'},grid:{color:'rgba(48,54,61,0.5)'}},y:{title:{display:true,text:'Return (%)'},grid:{color:'rgba(48,54,61,0.5)'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:20}},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`}}}
+  }
+});
+
+// Drawdowns
+new Chart(document.getElementById('ddChart'), {
+  type:'line',
+  data:{datasets:[
+    {label:'Portfolio',data:ts(D.dd.dates, D.dd.port.map(v=>v*100)),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.1)',borderWidth:2,pointRadius:0,fill:true,tension:0.1},
+    {label:'SPY',data:ts(D.dd.dates, D.dd.spy.map(v=>v*100)),borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,0.05)',borderWidth:1.5,pointRadius:0,fill:true,tension:0.1}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{type:'time',time:{unit:'week'},grid:{color:'rgba(48,54,61,0.5)'}},y:{title:{display:true,text:'Drawdown (%)'},grid:{color:'rgba(48,54,61,0.5)'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true}}}
+  }
+});
+
+// Rolling correlations
+new Chart(document.getElementById('corrChart'), {
+  type:'line',
+  data:{datasets:[
+    {label:'vs SPY',data:ts(D.corr.dates, D.corr.spy),borderColor:'#8b949e',borderWidth:2,pointRadius:0,tension:0.1},
+    {label:'vs TLT',data:ts(D.corr.dates, D.corr.tlt),borderColor:'#a855f7',borderWidth:2,pointRadius:0,tension:0.1}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{type:'time',time:{unit:'week'},grid:{color:'rgba(48,54,61,0.5)'}},y:{title:{display:true,text:'Correlation'},grid:{color:'rgba(48,54,61,0.5)'},min:-0.2,max:0.5}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true}}}
+  },
+  plugins:[{id:'zl',beforeDraw(c){const{ctx,chartArea:a,scales:s}=c;const y=s.y.getPixelForValue(0);ctx.save();ctx.strokeStyle='rgba(139,148,158,0.3)';ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(a.left,y);ctx.lineTo(a.right,y);ctx.stroke();ctx.restore()}}]
+});
+
+// Weights bar chart
+const W = D.weights;
+new Chart(document.getElementById('weightsChart'), {
+  type:'bar',
+  data:{
+    labels: W.map(w=>w.s.toUpperCase()),
+    datasets:[{data:W.map(w=>w.w*100),backgroundColor:W.map(w=>w.w>0?'rgba(34,197,94,0.7)':'rgba(239,68,68,0.7)'),borderRadius:3}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',
+    scales:{x:{title:{display:true,text:'Weight (%)'},grid:{color:'rgba(48,54,61,0.5)'}},y:{grid:{display:false},ticks:{font:{size:9}}}},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.x.toFixed(2)}%`}}}
+  }
+});
+
+// Risk contributions
+const RC = Object.entries(D.rc).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,20);
+new Chart(document.getElementById('rcChart'), {
+  type:'bar',
+  data:{
+    labels: RC.map(r=>r[0].toUpperCase()),
+    datasets:[{data:RC.map(r=>r[1]*100),backgroundColor:RC.map(r=>r[1]>0?'rgba(239,68,68,0.7)':'rgba(34,197,94,0.7)'),borderRadius:3}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',
+    scales:{x:{title:{display:true,text:'Risk Contribution (% of variance)'},grid:{color:'rgba(48,54,61,0.5)'}},y:{grid:{display:false},ticks:{font:{size:9}}}},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.x.toFixed(1)}%`}}}
+  }
+});
+</script>
+</body>
+</html>
