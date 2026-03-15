@@ -376,6 +376,88 @@ new Chart(document.getElementById('rvPnl'),{type:'line',
 
 });
 
+// ============================================================
+// FUNDAMENTALS (loaded from fundamentals.json)
+// ============================================================
+fetch('fundamentals.json').then(r=>r.json()).then(F=>{
+const fundDiv=document.createElement('div');
+const miners=F.filter(f=>!f.error && f.mktcap_mn).sort((a,b)=>(b.mktcap_mn||0)-(a.mktcap_mn||0));
+
+function fmt(v,suffix='',mult=1,dec=0){if(v==null||isNaN(v))return'—';return(v*mult).toFixed(dec)+suffix}
+function clr(v,good,bad){if(v==null)return'var(--text-dim)';return v>=good?'var(--good)':v<=bad?'var(--bad)':'var(--text)'}
+
+fundDiv.innerHTML=`
+<div class="section-title">Fundamentals & Valuation</div>
+<div class="grid">
+  <div class="card grid-full" style="overflow-x:auto">
+    <h2>Silver Miner Fundamentals Screen</h2>
+    <table>
+      <thead><tr>
+        <th>Ticker</th><th>Name</th><th>%Ag</th><th>MCap ($M)</th>
+        <th>Rev Growth</th><th>EBITDA Margin</th><th>ROIC</th>
+        <th>P/S</th><th>P/E</th>
+      </tr></thead>
+      <tbody>
+        ${miners.map(m=>{
+          return`<tr>
+            <td style="color:var(--accent);font-weight:600">${m.ticker}</td>
+            <td>${m.name}</td>
+            <td>${m.pct_silver}%</td>
+            <td style="text-align:right">${fmt(m.mktcap_mn,'',1,0)}</td>
+            <td style="color:${clr(m.rev_growth,0.2,-0.1)};font-weight:600;text-align:right">${fmt(m.rev_growth,'%',100,0)}</td>
+            <td style="color:${clr(m.ebitda_margin,0.3,0)};font-weight:600;text-align:right">${m.ebitda_margin!=null&&m.ebitda_margin>-2?fmt(m.ebitda_margin,'%',100,0):'—'}</td>
+            <td style="color:${clr(m.roic,0.1,-0.1)};font-weight:600;text-align:right">${fmt(m.roic,'%',100,0)}</td>
+            <td style="color:${clr(m.ps!=null?-m.ps:null,-8,-20)};text-align:right">${m.ps!=null&&m.ps<50?fmt(m.ps,'x',1,1):'—'}</td>
+            <td style="text-align:right">${m.pe!=null&&m.pe<100?fmt(m.pe,'x',1,0):'—'}</td>
+          </tr>`}).join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Revenue Growth vs EBITDA Margin</h2>
+    <div class="chart-container"><canvas id="growthMargin"></canvas></div>
+    <div class="insight green"><strong>Top-right = best:</strong> fast-growing AND profitable. AG and EXK stand out with >100% revenue growth. HL and PAAS have lower growth but strong margins (~50%).</div>
+  </div>
+
+  <div class="card">
+    <h2>P/S vs ROIC</h2>
+    <div class="chart-container"><canvas id="psRoic"></canvas></div>
+    <div class="insight blue"><strong>Bottom-right = best value:</strong> high returns, low valuation. PAAS (15% ROIC, 6.5x P/S) and HL (15% ROIC, 9.2x P/S) are the quality names. EXK is cheap (6.3x P/S) but ROIC is negative — turnaround bet.</div>
+  </div>
+</div>`;
+document.getElementById('content').appendChild(fundDiv);
+
+// Growth vs Margin scatter
+const gm=miners.filter(m=>m.rev_growth!=null&&m.ebitda_margin!=null&&m.ebitda_margin>-2);
+new Chart(document.getElementById('growthMargin'),{type:'bubble',
+  data:{datasets:[{
+    data:gm.map(m=>({x:(m.rev_growth||0)*100,y:(m.ebitda_margin||0)*100,r:Math.max(4,Math.sqrt((m.mktcap_mn||100)/100)*3)})),
+    backgroundColor:gm.map(m=>(m.roic||0)>0?'rgba(34,197,94,0.6)':'rgba(239,68,68,0.5)'),
+    borderColor:gm.map(m=>(m.roic||0)>0?'#22c55e':'#ef4444'),borderWidth:1
+  }]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const m=gm[ctx.dataIndex];return`${m.ticker}: RevG=${(m.rev_growth*100).toFixed(0)}%, EBITDA=${(m.ebitda_margin*100).toFixed(0)}%, MCap=$${m.mktcap_mn}M`}}}},
+    scales:{x:{title:{display:true,text:'Revenue Growth (%)'},grid:{color:'#1c2128'}},
+      y:{title:{display:true,text:'EBITDA Margin (%)'},grid:{color:'#1c2128'}}}}
+});
+
+// P/S vs ROIC scatter
+const pr=miners.filter(m=>m.ps!=null&&m.ps<50&&m.roic!=null);
+new Chart(document.getElementById('psRoic'),{type:'bubble',
+  data:{datasets:[{
+    data:pr.map(m=>({x:(m.roic||0)*100,y:m.ps,r:Math.max(4,Math.sqrt((m.mktcap_mn||100)/100)*3)})),
+    backgroundColor:pr.map(m=>m.ps<10?'rgba(34,197,94,0.6)':'rgba(245,158,11,0.5)'),
+    borderColor:pr.map(m=>m.ps<10?'#22c55e':'#f59e0b'),borderWidth:1
+  }]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const m=pr[ctx.dataIndex];return`${m.ticker}: ROIC=${(m.roic*100).toFixed(0)}%, P/S=${m.ps.toFixed(1)}x`}}}},
+    scales:{x:{title:{display:true,text:'ROIC (%)'},grid:{color:'#1c2128'}},
+      y:{title:{display:true,text:'Price/Sales (x)'},grid:{color:'#1c2128'}}}}
+});
+
+});
+
 }).catch(e=>{document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--bad)">Error: ${e.message}</div>`});
 </script>
 </body>
