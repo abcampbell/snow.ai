@@ -201,15 +201,28 @@ new Chart(document.getElementById('sigVsMiners'),{type:'bar',
     plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:15}}}}
 });
 
-// Cum PnL
+// Cum PnL — composite signal PnL vs miner basket buy-and-hold vs SLV buy-and-hold
+// Normalize miner basket and SLV to start at 1.0 on same date as composite
+const minerBDates=Object.keys(D.miner_basket).sort().filter(d=>d>=pnlDates[0]);
+const slvBDates=Object.keys(D.slv_price).sort().filter(d=>d>=pnlDates[0]);
+const minerStart=D.miner_basket[minerBDates[0]]||1;
+const slvStart=D.slv_price[slvBDates[0]]||1;
+const allPnlDates=[...new Set([...pnlDates,...minerBDates,...slvBDates])].sort();
+
 new Chart(document.getElementById('cumPnl'),{type:'line',
-  data:{datasets:[{label:'Composite vs Miners',data:pnlDates.map(d=>({x:d.slice(0,10),y:comp.cum_pnl_vs_miners[d]})),
-    borderColor:'#fff',borderWidth:2,pointRadius:0,tension:0.1,
-    fill:{target:'origin',above:'rgba(34,197,94,0.08)',below:'rgba(239,68,68,0.08)'}}]},
-  options:{responsive:true,maintainAspectRatio:false,
+  data:{labels:allPnlDates.map(d=>d.slice(0,10)),datasets:[
+    {label:'Signal PnL',data:allPnlDates.map(d=>comp.cum_pnl_vs_miners[d]||null),
+      borderColor:'#fff',borderWidth:2.5,pointRadius:0,tension:0.1,spanGaps:true},
+    {label:'Miner Basket (B&H)',data:allPnlDates.map(d=>D.miner_basket[d]?D.miner_basket[d]/minerStart:null),
+      borderColor:'#c0c0c0',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[4,3],spanGaps:true},
+    {label:'SLV (B&H)',data:allPnlDates.map(d=>D.slv_price[d]?D.slv_price[d]/slvStart:null),
+      borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[6,4],spanGaps:true},
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
-      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
-    plugins:{legend:{display:false}}}
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative (1.0 = start)'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}},
+      tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(2)}`}}}}
 });
 
 // Drawdown
