@@ -227,6 +227,94 @@ new Chart(document.getElementById('zScores'),{type:'line',data:{labels:azd,datas
     [0,1,-1].forEach(v=>{const y=s.y.getPixelForValue(v);ctx.beginPath();ctx.moveTo(a.left,y);ctx.lineTo(a.right,y);ctx.stroke()});ctx.restore()}}]
 });
 
+// ============================================================
+// COST ANALYSIS (loaded from separate file)
+// ============================================================
+fetch('costs.json').then(r=>r.json()).then(C=>{
+const costDiv=document.createElement('div');
+costDiv.innerHTML=`
+<div class="section-title">Transaction Costs & Lag Analysis</div>
+<div class="grid">
+  <div class="card">
+    <h2>Reporting Lag Sensitivity</h2>
+    <table>
+      <thead><tr><th>Lag</th><th>Sharpe</th><th>Ann. Return</th><th>Decay</th></tr></thead>
+      <tbody>
+        ${Object.entries(C.lag_sensitivity).map(([lag,v])=>{
+          const base=C.lag_sensitivity['1']?.sharpe||v.sharpe;
+          const decay=base-v.sharpe;
+          return`<tr><td>${lag} day${lag>1?'s':''}</td><td style="font-weight:700;color:${v.sharpe>0.5?'var(--good)':'var(--bad)'}">${v.sharpe.toFixed(3)}</td><td>${v.ann_ret}%</td><td style="color:var(--bad)">${decay>0?'-':''}${decay.toFixed(3)}</td></tr>`}).join('')}
+      </tbody>
+    </table>
+    <div class="insight"><strong>Signal decays with lag</strong> but remains strong at 2 days (0.847 vs 0.862). By 5 days, Sharpe drops 33%. This is a medium-frequency signal — needs daily or T+1 execution.</div>
+  </div>
+
+  <div class="card">
+    <h2>Trading Frequency Optimization (${C.tc_bps}bps/trade)</h2>
+    <table>
+      <thead><tr><th>Z Thresh</th><th>Gross</th><th>Net</th><th>Decay</th><th>TC/yr</th><th>Trades/yr</th><th>Max DD</th></tr></thead>
+      <tbody>
+        ${C.cost_grid.map(r=>{
+          const best=r.z_threshold===C.best_threshold;
+          return`<tr style="${best?'background:#1c2128;':''}"><td>${r.z_threshold.toFixed(2)}${best?' *':''}</td><td>${r.sharpe_gross.toFixed(3)}</td><td style="font-weight:700;color:var(--good)">${r.sharpe_net.toFixed(3)}</td><td style="color:var(--bad)">-${r.decay.toFixed(3)}</td><td>${r.ann_tc_pct}%</td><td>${r.trades_per_yr}</td><td>${r.max_dd_net}%</td></tr>`}).join('')}
+      </tbody>
+    </table>
+    <div class="insight green"><strong>Best net Sharpe: z_threshold=${C.best_threshold}</strong> (only rebalance when z changes by >${C.best_threshold}). This cuts trades from 249/yr to ${C.cost_grid.find(r=>r.z_threshold===C.best_threshold)?.trades_per_yr}/yr while improving net Sharpe from 0.760 to 0.828.</div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Alpha Loss from Transaction Costs</h2>
+    <div class="chart-container" style="height:380px"><canvas id="costChart"></canvas></div>
+    <div class="insight blue"><strong>White = gross (no costs). Green = net at optimal threshold (z>0.5, ~26 trades/yr). Red = net with no threshold (trade every day). Gold dashed = buy and hold.</strong> The gap between white and green is the cost of doing business — roughly 0.07 Sharpe or 0.8%/yr at the optimal threshold.</div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Sharpe Decay: Gross vs Net by Threshold</h2>
+    <div class="chart-container" style="height:280px"><canvas id="decayChart"></canvas></div>
+  </div>
+</div>`;
+document.getElementById('content').appendChild(costDiv);
+
+// Cost chart: gross vs net vs buy-and-hold
+const cs=C.cum_series;
+const grossDates=Object.keys(cs['gross_0.0']||{}).sort();
+const netDates=Object.keys(cs['net_0.0']||{}).sort();
+const bestKey='net_'+C.best_threshold;
+const bestDates=Object.keys(cs[bestKey]||{}).sort();
+const bhDates=Object.keys(cs['gold_bh']||{}).sort();
+const allCostDates=[...new Set([...grossDates,...netDates,...bestDates,...bhDates])].sort();
+
+new Chart(document.getElementById('costChart'),{
+  type:'line',
+  data:{labels:allCostDates.map(d=>d.slice(0,10)),datasets:[
+    {label:'Gross (no costs)',data:allCostDates.map(d=>cs['gross_0.0']?.[d]||null),borderColor:'#fff',borderWidth:2.5,pointRadius:0,tension:0.1,spanGaps:true},
+    {label:'Net (optimal z>'+C.best_threshold+')',data:allCostDates.map(d=>cs[bestKey]?.[d]||null),borderColor:'#22c55e',borderWidth:2,pointRadius:0,tension:0.1,spanGaps:true},
+    {label:'Net (trade daily)',data:allCostDates.map(d=>cs['net_0.0']?.[d]||null),borderColor:'#ef4444',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[4,3],spanGaps:true},
+    {label:'Gold Buy & Hold',data:allCostDates.map(d=>cs['gold_bh']?.[d]||null),borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[6,4],spanGaps:true},
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL (1.0=start)'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}}}}
+});
+
+// Decay bar chart
+new Chart(document.getElementById('decayChart'),{
+  type:'bar',
+  data:{
+    labels:C.cost_grid.map(r=>'z>'+r.z_threshold.toFixed(2)),
+    datasets:[
+      {label:'Gross Sharpe',data:C.cost_grid.map(r=>r.sharpe_gross),backgroundColor:'rgba(255,255,255,0.3)',borderRadius:3},
+      {label:'Net Sharpe',data:C.cost_grid.map(r=>r.sharpe_net),backgroundColor:'rgba(34,197,94,0.6)',borderRadius:3},
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Sharpe Ratio'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}}}}
+});
+
+});
+
 }).catch(e=>{document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--bad)">Error: ${e.message}</div>`});
 </script>
 </body>
