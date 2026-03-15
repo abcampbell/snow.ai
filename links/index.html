@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>snow.ai — dashboards</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'JetBrains Mono', monospace; background: #050507; color: #c0c0d0; min-height: 100vh; padding: 3rem 2rem; }
+  h1 { font-size: 1.4rem; font-weight: 300; letter-spacing: 0.2em; color: #e8e8f0; margin-bottom: 0.5rem; }
+  .sub { font-size: 0.65rem; color: #4a4a5a; letter-spacing: 0.15em; margin-bottom: 3rem; }
+  .list { max-width: 640px; }
+  a { text-decoration: none; display: block; padding: 1rem 1.2rem; margin-bottom: 0.75rem; border: 1px solid #1a1a24; border-radius: 6px; transition: border-color 0.3s, background 0.3s; }
+  a:hover { border-color: #4060ff; background: rgba(64,96,255,0.04); }
+  .name { font-size: 0.85rem; font-weight: 400; color: #e8e8f0; }
+  .desc { font-size: 0.65rem; color: #4a4a5a; margin-top: 0.3rem; letter-spacing: 0.05em; }
+  .date { font-size: 0.6rem; color: #2a2a3a; float: right; margin-top: 2px; }
+</style>
+</head>
+<body>
+  <h1>snow.ai</h1>
+  <div class="sub">dashboards</div>
+  <div class="list">
+    <a href="/bank.system.20260315/">
+      <span class="date">2026-03-15</span>
+      <div class="name">Bank Vulnerability System</div>
+      <div class="desc">20-year backtest (Safe 10 vs Danger 10) + live screen: quadrant map, IV/RV, NDFI, rankings</div>
+    </a>
+    <a href="/ubi_20260225/">
+      <span class="date">2026-02-25</span>
+      <div class="name">UBI Automation Dashboard</div>
+      <div class="desc">Universal basic income modeling: tax burden, unemployment data 1920–2026, fiscal impact</div>
+    </a>
+    <a href="/rimland/">
+      <span class="date">2026-01-01</span>
+      <div class="name">Rimland Reserve Currency Map</div>
+      <div class="desc">Historical currency reserve patterns 1450–2025, D3 interactive map</div>
+    </a>
+  </div>
+</body>
+</html>
