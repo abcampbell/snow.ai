@@ -223,6 +223,64 @@ new Chart(document.getElementById('peDist'),{type:'bar',
     scales:{x:{grid:{display:false},title:{display:true,text:'Forward P/E Range'}},y:{grid:{color:'#1c2128'},title:{display:true,text:'Count'}}}}
 });
 
+// ============================================================
+// GOLD SIGNAL vs MINERS (from signal_vs_miners.json)
+// ============================================================
+fetch('signal_vs_miners.json').then(r=>r.json()).then(S=>{
+const sigDiv=document.createElement('div');
+const targets=Object.entries(S.targets).sort((a,b)=>(b[1].sharpe||0)-(a[1].sharpe||0));
+
+const tClr={'GLD':'#f59e0b','GDX':'#3b82f6','GDXJ':'#a855f7','NEM':'#22c55e','GOLD':'#ef4444','KGC':'#6366f1','HMY':'#ec4899','AEM':'#14b8a6','WPM':'#c0c0c0','BTG':'#f97316','EGO':'#8b5cf6','GFI':'#06b6d4','AU':'#facc15'};
+
+sigDiv.innerHTML=`
+<div class="section-title">Gold Signal System → Miners Backtest</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Composite Gold Signal Sharpe by Target</h2>
+    <table>
+      <thead><tr><th>Target</th><th>Sharpe</th><th>Ann Ret</th><th>Ann Vol</th><th>Max DD</th><th>Days</th></tr></thead>
+      <tbody>
+        ${targets.map(([t,v])=>{
+          const color=v.sharpe>0.5?'var(--good)':v.sharpe>0.3?'var(--warn)':'var(--text-dim)';
+          return`<tr>
+            <td style="color:${tClr[t]||'var(--accent)'};font-weight:600">${t}</td>
+            <td style="color:${color};font-weight:700">${v.sharpe.toFixed(3)}</td>
+            <td>${(v.ann_ret*100).toFixed(1)}%</td>
+            <td>${(v.ann_vol*100).toFixed(0)}%</td>
+            <td style="color:var(--bad)">${(v.max_dd*100).toFixed(0)}%</td>
+            <td>${v.n_days}</td>
+          </tr>`}).join('')}
+      </tbody>
+    </table>
+    <div class="insight green"><strong>GLD remains the best target</strong> (Sharpe 0.72). Signal transfers to miners but with degraded risk-adjusted returns — GDX 0.32 (half of GLD). Barrick (GOLD, 0.55) and Newmont (NEM, 0.42) are the best individual miner targets. WPM (streaming) has zero signal — different return drivers.</div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Cumulative PnL: Signal Applied to GLD vs GDX vs Top Miners</h2>
+    <div class="chart-container" style="height:400px"><canvas id="sigPnl"></canvas></div>
+    <div class="insight blue"><strong>Higher absolute returns from miners</strong> (GOLD 12.4%/yr) but at much higher vol (22% vs GLD's 8%). Miner drawdowns are severe — signal occasionally wrong during extreme miner moves.</div>
+  </div>
+</div>`;
+document.getElementById('content').appendChild(sigDiv);
+
+// Chart: top targets cumulative PnL
+const showTargets=['GLD','GDX','GDXJ','GOLD','NEM','KGC'];
+const datasets=showTargets.filter(t=>S.targets[t]?.cum_pnl).map(t=>{
+  const pnl=S.targets[t].cum_pnl;
+  const dates=Object.keys(pnl).sort();
+  return{label:t+' ('+S.targets[t].sharpe.toFixed(2)+')',data:dates.map(d=>({x:d,y:pnl[d]})),
+    borderColor:tClr[t]||'#8b949e',borderWidth:t==='GLD'?3:2,pointRadius:0,tension:0.1,
+    borderDash:t==='GLD'?[]:[4,3]};
+});
+const allDts=[...new Set(datasets.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
+new Chart(document.getElementById('sigPnl'),{type:'line',data:{labels:allDts,datasets},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:10}}}}
+});
+});
+
 }).catch(e=>{document.getElementById('content').innerHTML='<div style="text-align:center;padding:60px;color:var(--bad)">Error: '+e.message+'</div>'});
 </script>
 </body>
