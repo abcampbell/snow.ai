@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Miners Screen — GDX + GDXJ — 2026-03-15</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#f59e0b;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'SF Mono','Cascadia Code','Consolas',monospace;background:var(--bg);color:var(--text)}
+  .header{padding:24px 32px;border-bottom:1px solid var(--border)}
+  .header h1{font-size:20px;font-weight:600;color:var(--accent)}
+  .header .sub{color:var(--text-dim);font-size:12px;margin-top:4px}
+  .header .concept{color:var(--text);font-size:13px;margin-top:8px;line-height:1.5;max-width:900px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px 32px}
+  .grid-full{grid-column:1/-1}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px}
+  .card h2{font-size:13px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+  .stat-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+  .stat{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px 16px;min-width:100px;flex:1}
+  .stat .label{font-size:10px;color:var(--text-dim);text-transform:uppercase}
+  .stat .value{font-size:22px;font-weight:700;color:#fff;margin-top:2px}
+  .stat .delta{font-size:11px;margin-top:2px}
+  .chart-container{position:relative;height:380px}
+  .insight{background:#1c2128;border-left:3px solid var(--accent);padding:12px 16px;margin-top:12px;font-size:12px;line-height:1.6;border-radius:0 4px 4px 0}
+  .insight strong{color:#fff}
+  .insight.green{border-left-color:var(--good)}.insight.blue{border-left-color:var(--blue)}.insight.red{border-left-color:var(--bad)}
+  .section-title{font-size:15px;color:#fff;font-weight:600;margin:32px 32px 0;padding-top:16px;border-top:1px solid var(--border)}
+  table{width:100%;border-collapse:collapse;font-size:11px}
+  th{text-align:left;padding:6px 6px;color:var(--text-dim);font-weight:500;border-bottom:1px solid var(--border);font-size:9px;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+  th:hover{color:var(--accent)}
+  td{padding:4px 6px;border-bottom:1px solid #1c2128;white-space:nowrap}
+  tr:hover{background:#1c2128}
+  .controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+  .btn{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:5px 10px;border-radius:4px;cursor:pointer;font-size:10px;font-family:inherit}
+  .btn.active{background:var(--accent);color:#000;border-color:var(--accent)}
+  .btn:hover{border-color:var(--accent)}
+  .corner-mark{position:fixed;bottom:1rem;right:1.5rem;font-size:10px;color:var(--text-dim);z-index:10}
+  .corner-mark a{color:var(--text-dim);text-decoration:none}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Gold Miners Fundamentals Screen</h1>
+  <div class="sub">GDX + GDXJ | 30 Miners | 2026-03-15 | Prices on Rose</div>
+  <div class="concept">
+    <strong>Universe:</strong> GDX (senior gold miners) + GDXJ (junior gold miners). Full fundamentals from yfinance.
+    All prices pushed to Rose as <code>gold.miner.{ticker}.px.close.adj.usd.d.yahoo</code>.
+  </div>
+</div>
+<div id="content"><div class="loading" style="text-align:center;padding:60px;color:var(--text-dim)">Loading...</div></div>
+<div class="corner-mark"><a href="https://snow.ai/links/">snow.ai</a></div>
+
+<script>
+Chart.defaults.color='#8b949e';Chart.defaults.borderColor='#30363d';
+Chart.defaults.font.family="'SF Mono','Cascadia Code','Consolas',monospace";Chart.defaults.font.size=10;
+
+function fmt(v,s='',m=1,d=0){if(v==null||isNaN(v))return'—';return(v*m).toFixed(d)+s}
+function clr(v,g,b){if(v==null)return'var(--text-dim)';return v>=g?'var(--good)':v<=b?'var(--bad)':'var(--text)'}
+function clrInv(v,g,b){if(v==null)return'var(--text-dim)';return v<=g?'var(--good)':v>=b?'var(--bad)':'var(--text)'}
+
+fetch('fundamentals.json').then(r=>r.json()).then(F=>{
+const el=document.getElementById('content');
+const all=F.filter(f=>f.mktcap_mn&&f.mktcap_mn>0).sort((a,b)=>(b.mktcap_mn||0)-(a.mktcap_mn||0));
+let filtered=all;
+
+// Sector stats
+const med=(arr)=>{const s=[...arr].sort((a,b)=>a-b);return s[Math.floor(s.length/2)]};
+const vals=(k)=>all.map(m=>m[k]).filter(v=>v!=null&&!isNaN(v)&&Math.abs(v)<1000);
+const totalMcap=all.reduce((s,m)=>s+(m.mktcap_mn||0),0);
+
+el.innerHTML=`
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Sector Summary</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Miners</div><div class="value">${all.length}</div></div>
+      <div class="stat"><div class="label">Total MCap</div><div class="value">$${(totalMcap/1000).toFixed(0)}B</div></div>
+      <div class="stat"><div class="label">Med Fwd P/E</div><div class="value">${med(vals('forward_pe')).toFixed(1)}x</div></div>
+      <div class="stat"><div class="label">Med EBITDA%</div><div class="value" style="color:var(--good)">${(med(vals('ebitda_margin'))*100).toFixed(0)}%</div></div>
+      <div class="stat"><div class="label">Med ROIC</div><div class="value" style="color:var(--good)">${(med(vals('roic'))*100).toFixed(0)}%</div></div>
+      <div class="stat"><div class="label">Med FCF Yld</div><div class="value">${med(vals('fcf_yield')).toFixed(1)}%</div></div>
+    </div>
+  </div>
+
+  <div class="card grid-full" style="overflow-x:auto">
+    <h2>Full Fundamentals Screen</h2>
+    <div class="controls" id="filters">
+      <button class="btn active" onclick="show('all',this)">All ${all.length}</button>
+      <button class="btn" onclick="show('gdx',this)">GDX Only</button>
+      <button class="btn" onclick="show('gdxj',this)">GDXJ Only</button>
+      <button class="btn" onclick="show('both',this)">Both ETFs</button>
+      <button class="btn" onclick="show('value',this)">Value (Fwd PE < 12)</button>
+      <button class="btn" onclick="show('quality',this)">Quality (ROIC > 15%)</button>
+      <button class="btn" onclick="show('fcf',this)">FCF Yield > 5%</button>
+    </div>
+    <table id="mainTable">
+      <thead><tr>
+        <th onclick="srt('ticker')">Ticker</th><th onclick="srt('name')">Name</th><th onclick="srt('etf')">ETF</th>
+        <th onclick="srt('mktcap_mn')">MCap</th><th onclick="srt('rev_growth')">RevG</th>
+        <th onclick="srt('ebitda_margin')">EBITDA%</th><th onclick="srt('roic')">ROIC</th>
+        <th onclick="srt('ps')">P/S</th><th onclick="srt('forward_pe')">Fwd PE</th>
+        <th onclick="srt('net_debt_mn')">Net Debt</th><th onclick="srt('debt_ebitda')">D/EB</th>
+        <th onclick="srt('interest_coverage')">Int Cov</th><th onclick="srt('current_ratio')">CurrR</th>
+        <th onclick="srt('fcf_yield')">FCF Yld</th><th onclick="srt('beta')">Beta</th>
+      </tr></thead>
+      <tbody id="tbl"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Revenue Growth vs EBITDA Margin</h2>
+    <div class="chart-container"><canvas id="growthMargin"></canvas></div>
+    <div class="insight green"><strong>Top-right = growth + profitability.</strong> Bubble size = market cap. Green = ROIC > 10%, red = negative ROIC.</div>
+  </div>
+
+  <div class="card">
+    <h2>Forward P/E vs ROIC</h2>
+    <div class="chart-container"><canvas id="peRoic"></canvas></div>
+    <div class="insight blue"><strong>Bottom-right = best value.</strong> High returns at low multiples. Green bubbles = FCF yield > 5%.</div>
+  </div>
+
+  <div class="card">
+    <h2>FCF Yield vs Net Debt / EBITDA</h2>
+    <div class="chart-container"><canvas id="fcfDebt"></canvas></div>
+    <div class="insight"><strong>Top-left = best:</strong> high FCF yield + net cash (negative D/EBITDA). Bottom-right = leveraged with no FCF.</div>
+  </div>
+
+  <div class="card">
+    <h2>Forward P/E Distribution</h2>
+    <div class="chart-container"><canvas id="peDist"></canvas></div>
+  </div>
+</div>
+
+<div style="padding:24px 32px;color:var(--text-dim);font-size:11px;border-top:1px solid var(--border);margin-top:16px">
+  Data: yfinance | Prices: Rose (gold.miner.{ticker}.px.close.adj.usd.d.yahoo) | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
+</div>`;
+
+// Table rendering
+function renderTable(data){
+  document.getElementById('tbl').innerHTML=data.map(m=>{
+    const mc=m.mktcap_mn>1000?(m.mktcap_mn/1000).toFixed(1)+'B':m.mktcap_mn+'M';
+    const etfC=m.etf==='gdx'?'var(--accent)':m.etf==='gdxj'?'var(--blue)':'var(--purple)';
+    const nd=m.net_debt_mn!=null?(m.net_debt_mn>0?'+':'')+Math.round(m.net_debt_mn)+'M':'—';
+    return`<tr>
+      <td style="color:var(--accent);font-weight:600">${m.ticker}</td>
+      <td style="font-size:10px">${(m.name||'').slice(0,22)}</td>
+      <td style="color:${etfC};font-size:10px">${(m.etf||'').toUpperCase()}</td>
+      <td style="text-align:right">${mc}</td>
+      <td style="color:${clr(m.rev_growth,0.2,-0.05)};text-align:right;font-weight:600">${fmt(m.rev_growth,'%',100,0)}</td>
+      <td style="color:${clr(m.ebitda_margin,0.4,0.1)};text-align:right">${fmt(m.ebitda_margin,'%',100,0)}</td>
+      <td style="color:${clr(m.roic,0.15,-0.05)};text-align:right;font-weight:600">${fmt(m.roic,'%',100,0)}</td>
+      <td style="text-align:right">${m.ps!=null&&m.ps<100?m.ps.toFixed(1)+'x':'—'}</td>
+      <td style="color:${clrInv(m.forward_pe,10,20)};text-align:right;font-weight:600">${m.forward_pe!=null&&m.forward_pe<100?m.forward_pe.toFixed(1)+'x':'—'}</td>
+      <td style="color:${clr(m.net_debt_mn!=null?-m.net_debt_mn:null,0,-500)};text-align:right">${nd}</td>
+      <td style="text-align:right">${m.debt_ebitda!=null?m.debt_ebitda.toFixed(1)+'x':'—'}</td>
+      <td style="color:${clr(m.interest_coverage,5,0)};text-align:right">${m.interest_coverage!=null&&Math.abs(m.interest_coverage)<500?m.interest_coverage.toFixed(0)+'x':'—'}</td>
+      <td style="color:${clr(m.current_ratio,2,1)};text-align:right">${m.current_ratio!=null?m.current_ratio.toFixed(1)+'x':'—'}</td>
+      <td style="color:${clr(m.fcf_yield,5,0)};text-align:right;font-weight:600">${m.fcf_yield!=null&&Math.abs(m.fcf_yield)<50?m.fcf_yield.toFixed(1)+'%':'—'}</td>
+      <td style="text-align:right">${m.beta!=null?m.beta.toFixed(2):'—'}</td>
+    </tr>`}).join('');
+}
+
+function setActive(el){document.querySelectorAll('#filters .btn').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+window.show=function(f,el){
+  if(f==='all')filtered=all;
+  else if(f==='gdx')filtered=all.filter(m=>m.etf==='gdx');
+  else if(f==='gdxj')filtered=all.filter(m=>m.etf==='gdxj');
+  else if(f==='both')filtered=all.filter(m=>m.etf==='both');
+  else if(f==='value')filtered=all.filter(m=>m.forward_pe&&m.forward_pe<12);
+  else if(f==='quality')filtered=all.filter(m=>m.roic&&m.roic>0.15);
+  else if(f==='fcf')filtered=all.filter(m=>m.fcf_yield&&m.fcf_yield>5&&m.fcf_yield<50);
+  renderTable(filtered);setActive(el);
+};
+
+let sd={};
+window.srt=function(k){sd[k]=!sd[k];filtered.sort((a,b)=>{
+  const va=a[k]===null||a[k]===undefined?-Infinity:a[k],vb=b[k]===null||b[k]===undefined?-Infinity:b[k];
+  return sd[k]?(va>vb?1:-1):(va<vb?1:-1)});renderTable(filtered)};
+
+renderTable(filtered);
+
+// Charts
+const gm=all.filter(m=>m.rev_growth!=null&&m.ebitda_margin!=null&&m.ebitda_margin>-1&&Math.abs(m.rev_growth)<5);
+new Chart(document.getElementById('growthMargin'),{type:'bubble',
+  data:{datasets:[{data:gm.map(m=>({x:(m.rev_growth||0)*100,y:(m.ebitda_margin||0)*100,r:Math.max(3,Math.sqrt((m.mktcap_mn||100)/500)*3)})),
+    backgroundColor:gm.map(m=>(m.roic||0)>0.1?'rgba(34,197,94,0.5)':'rgba(239,68,68,0.4)'),
+    borderColor:gm.map(m=>(m.roic||0)>0.1?'#22c55e':'#ef4444'),borderWidth:1}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const m=gm[ctx.dataIndex];return m.ticker+': RevG='+(m.rev_growth*100).toFixed(0)+'% EBITDA='+(m.ebitda_margin*100).toFixed(0)+'%'}}}},
+    scales:{x:{title:{display:true,text:'Revenue Growth (%)'},grid:{color:'#1c2128'}},y:{title:{display:true,text:'EBITDA Margin (%)'},grid:{color:'#1c2128'}}}}
+});
+
+const pr=all.filter(m=>m.forward_pe&&m.forward_pe>0&&m.forward_pe<50&&m.roic!=null);
+new Chart(document.getElementById('peRoic'),{type:'bubble',
+  data:{datasets:[{data:pr.map(m=>({x:(m.roic||0)*100,y:m.forward_pe,r:Math.max(3,Math.sqrt((m.mktcap_mn||100)/500)*3)})),
+    backgroundColor:pr.map(m=>(m.fcf_yield||0)>5?'rgba(34,197,94,0.5)':'rgba(59,130,246,0.4)'),
+    borderColor:pr.map(m=>(m.fcf_yield||0)>5?'#22c55e':'#3b82f6'),borderWidth:1}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const m=pr[ctx.dataIndex];return m.ticker+': ROIC='+(m.roic*100).toFixed(0)+'% FwdPE='+m.forward_pe.toFixed(1)+'x'}}}},
+    scales:{x:{title:{display:true,text:'ROIC (%)'},grid:{color:'#1c2128'}},y:{title:{display:true,text:'Forward P/E (x)'},grid:{color:'#1c2128'}}}}
+});
+
+const fd=all.filter(m=>m.fcf_yield!=null&&Math.abs(m.fcf_yield)<50&&m.debt_ebitda!=null);
+new Chart(document.getElementById('fcfDebt'),{type:'bubble',
+  data:{datasets:[{data:fd.map(m=>({x:m.debt_ebitda||0,y:m.fcf_yield,r:Math.max(3,Math.sqrt((m.mktcap_mn||100)/500)*3)})),
+    backgroundColor:fd.map(m=>m.fcf_yield>5?'rgba(34,197,94,0.5)':'rgba(245,158,11,0.4)'),
+    borderColor:fd.map(m=>m.fcf_yield>5?'#22c55e':'#f59e0b'),borderWidth:1}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const m=fd[ctx.dataIndex];return m.ticker+': FCFy='+m.fcf_yield.toFixed(1)+'% D/EB='+m.debt_ebitda.toFixed(1)+'x'}}}},
+    scales:{x:{title:{display:true,text:'Debt / EBITDA (x)'},grid:{color:'#1c2128'}},y:{title:{display:true,text:'FCF Yield (%)'},grid:{color:'#1c2128'}}}}
+});
+
+const peVals=all.map(m=>m.forward_pe).filter(v=>v&&v>0&&v<50);
+const buckets=Array(10).fill(0);
+peVals.forEach(v=>{const i=Math.min(Math.floor(v/5),9);buckets[i]++});
+new Chart(document.getElementById('peDist'),{type:'bar',
+  data:{labels:['0-5','5-10','10-15','15-20','20-25','25-30','30-35','35-40','40-45','45-50'],
+    datasets:[{data:buckets,backgroundColor:buckets.map((_,i)=>i<2?'#22c55e':i<4?'#3b82f6':'#f59e0b'),borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{grid:{display:false},title:{display:true,text:'Forward P/E Range'}},y:{grid:{color:'#1c2128'},title:{display:true,text:'Count'}}}}
+});
+
+}).catch(e=>{document.getElementById('content').innerHTML='<div style="text-align:center;padding:60px;color:var(--bad)">Error: '+e.message+'</div>'});
+</script>
+</body>
+</html>
