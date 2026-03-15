@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bank Vulnerability Backtest — 2005–2026</title>
+<title>Bank Vulnerability System — 2005–2026</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <style>
@@ -31,6 +31,7 @@
   .stat .delta.bad { color: var(--bad); }
   .stat .delta.good { color: var(--good); }
   .stat .delta.warn { color: var(--warn); }
+  .stat .delta.purple { color: var(--purple); }
   .chart-container { position: relative; height: 400px; }
   .chart-sm { position: relative; height: 300px; }
   .insight { background: #1c2128; border-left: 3px solid var(--accent); padding: 12px 16px; margin-top: 12px; font-size: 12px; line-height: 1.6; border-radius: 0 4px 4px 0; }
@@ -41,14 +42,21 @@
   .insight.purple { border-left-color: var(--purple); }
   .section-title { font-size: 15px; color: #fff; font-weight: 600; margin: 32px 32px 0; padding-top: 16px; border-top: 1px solid var(--border); }
   table { width: 100%; border-collapse: collapse; font-size: 11px; }
-  th { text-align: left; padding: 8px; color: var(--text-dim); font-weight: 500; border-bottom: 1px solid var(--border); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  th { text-align: left; padding: 8px; color: var(--text-dim); font-weight: 500; border-bottom: 1px solid var(--border); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; white-space: nowrap; }
+  th:hover { color: var(--accent); }
   td { padding: 5px 8px; border-bottom: 1px solid #1c2128; white-space: nowrap; }
   tr:hover { background: #1c2128; }
+  .rank { font-weight: 700; color: #fff; }
+  .ticker { font-weight: 600; color: var(--accent); }
+  .score-cell { font-weight: 600; text-align: center; border-radius: 4px; padding: 3px 8px; display: inline-block; min-width: 50px; }
+  .controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .btn { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 11px; font-family: inherit; }
+  .btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn:hover { border-color: var(--accent); }
   .era-gfc { background: rgba(239,68,68,0.08); }
   .era-covid { background: rgba(245,158,11,0.08); }
   .era-svb { background: rgba(168,85,247,0.08); }
   .era-rates { background: rgba(59,130,246,0.08); }
-  .ticker { font-weight: 600; color: var(--accent); }
   .corner-mark { position: fixed; bottom: 1rem; right: 1.5rem; font-size: 10px; color: var(--text-dim); z-index: 10; }
   .corner-mark a { color: var(--text-dim); text-decoration: none; }
   .corner-mark a:hover { color: var(--accent); }
@@ -57,100 +65,58 @@
 </head>
 <body>
 
+<!-- ============================================================ -->
+<!-- HEADER -->
+<!-- ============================================================ -->
 <div class="header">
-  <h1>Bank Vulnerability Backtest</h1>
-  <div class="sub">66 US Banks | 2005–2026 | 84 Quarters | FDIC + BBG Implied Vol + Price Momentum</div>
+  <h1>Bank Vulnerability System</h1>
+  <div class="sub">FDIC + BBG Implied Vol + OFR NDFI | 66 US Banks | 2026-03-15 | 3 Pillars: Fundamentals + Price + Vol Signals</div>
   <div class="concept">
-    <strong>Test:</strong> At each quarter-end, score banks on hidden vulnerability (weak fundamentals, strong price = complacency, low implied vol = cheap protection).
-    Equal-weight the 10 safest and 10 most dangerous. Rebalance quarterly.
-    <strong>Result:</strong> Safe portfolio returned 531% vs Danger's 185%. Model works for rate crises (SVB +9.1% L/S spread) but inverts during credit crises (GFC -2.4%).
+    <strong>Concept:</strong> Rank banks by hidden risk — weak fundamentals the market isn't pricing,
+    strong price suggesting complacency, vol signals showing options aren't pricing the stress.
+    <strong>Backtest:</strong> 20-year test (2005–2026) shows Safe 10 returned 531% vs Danger 10's 185%.
+    Model works for rate/duration crises but inverts during credit crises (GFC).
   </div>
 </div>
 
+<!-- ============================================================ -->
+<!-- SECTION 1: BACKTEST -->
+<!-- ============================================================ -->
+<div class="section-title">20-Year Backtest: Safe 10 vs Danger 10</div>
 <div class="grid">
-  <!-- Summary stats -->
   <div class="card grid-full">
-    <h2>Summary — 20 Year Backtest</h2>
+    <h2>Summary — 84 Quarters, 2005–2026</h2>
     <div class="stat-row">
-      <div class="stat">
-        <div class="label">Safe 10 Total Return</div>
-        <div class="value" style="color:var(--good)">+531%</div>
-        <div class="delta good">100 → 631</div>
-      </div>
-      <div class="stat">
-        <div class="label">Danger 10 Total Return</div>
-        <div class="value" style="color:var(--bad)">+185%</div>
-        <div class="delta bad">100 → 285</div>
-      </div>
-      <div class="stat">
-        <div class="label">L/S Spread</div>
-        <div class="value" style="color:var(--blue)">2.2x</div>
-        <div class="delta" style="color:var(--blue)">Safe outperformed 2.2x</div>
-      </div>
-      <div class="stat">
-        <div class="label">Quarters</div>
-        <div class="value">84</div>
-        <div class="delta">2005-Q1 to 2025-Q4</div>
-      </div>
-      <div class="stat">
-        <div class="label">12M Annualized Spread</div>
-        <div class="value" style="color:var(--good)">+1.9%</div>
-        <div class="delta good">Q1: 11.0% vs Q5: 9.1%</div>
-      </div>
+      <div class="stat"><div class="label">Safe 10 Total Return</div><div class="value" style="color:var(--good)">+531%</div><div class="delta good">100 → 631</div></div>
+      <div class="stat"><div class="label">Danger 10 Total Return</div><div class="value" style="color:var(--bad)">+185%</div><div class="delta bad">100 → 285</div></div>
+      <div class="stat"><div class="label">L/S Spread</div><div class="value" style="color:var(--blue)">2.2x</div><div class="delta" style="color:var(--blue)">Safe outperformed 2.2x</div></div>
+      <div class="stat"><div class="label">12M Ann. Spread</div><div class="value" style="color:var(--good)">+1.9%</div><div class="delta good">Q1: 11.0% vs Q5: 9.1%</div></div>
+      <div class="stat"><div class="label">Quarters</div><div class="value">84</div><div class="delta">2005-Q1 to 2025-Q4</div></div>
     </div>
   </div>
 
-  <!-- Main NAV chart -->
   <div class="card grid-full">
     <h2>Portfolio NAV: Safe 10 vs Danger 10 (rebased to 100)</h2>
     <div class="chart-container"><canvas id="navChart"></canvas></div>
     <div class="insight green">
       <strong>Key events:</strong> GFC 2008 — both crash but Safe recovers faster.
       COVID 2020 — sharp drawdown, rapid recovery. SVB 2023 — Safe pulls away decisively.
-      The spread compounds over time through crisis protection, not calm-market alpha.
+      The spread compounds through crisis protection, not calm-market alpha.
     </div>
   </div>
 
-  <!-- L/S Spread chart -->
   <div class="card">
     <h2>Long/Short Spread (Safe / Danger)</h2>
     <div class="chart-sm"><canvas id="spreadChart"></canvas></div>
-    <div class="insight blue">
-      Rising = model working. The GFC (2007-2009) saw the spread collapse from 100 to 56 as "safe" banks were actually the most exposed to subprime. Post-GFC recovery took until 2012. Since then, steady gains.
-    </div>
+    <div class="insight blue">Rising = model working. GFC (2007-2009) collapsed the spread from 100 to 56. Post-GFC recovery took until 2012. Since then, steady gains.</div>
   </div>
 
-  <!-- Era analysis -->
   <div class="card">
     <h2>Model Performance by Market Regime</h2>
     <div class="chart-sm"><canvas id="eraChart"></canvas></div>
-    <div class="insight amber">
-      The model was built for <strong>duration/rate risk</strong> (HTM exposure, capital ratios, vol signals).
-      It excels at SVB-type crises but inverts during <strong>credit crises</strong> where off-balance-sheet exposure matters more than reported fundamentals.
-    </div>
+    <div class="insight amber">Built for <strong>duration/rate risk</strong>. Excels at SVB-type crises (+9.1%) but inverts during <strong>credit crises</strong> (GFC -2.4%) where off-balance-sheet exposure matters more.</div>
   </div>
 
-  <!-- Quarterly spread table -->
-  <div class="card grid-full">
-    <h2>Quarter-by-Quarter: 6M Forward L/S Spread (Q1 Safe − Q5 Danger)</h2>
-    <div style="max-height: 500px; overflow-y: auto;">
-      <table id="quarterTable">
-        <thead>
-          <tr>
-            <th>Quarter</th>
-            <th>Era</th>
-            <th>Q5 (Danger) 6M</th>
-            <th>Q1 (Safe) 6M</th>
-            <th>L/S Spread</th>
-            <th>Banks</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Quintile returns table -->
   <div class="card">
     <h2>Annualized Returns by Quintile</h2>
     <table>
@@ -163,65 +129,121 @@
     </table>
   </div>
 
-  <!-- Current holdings -->
   <div class="card">
     <h2>Current Holdings (2025-Q4 Rebalance)</h2>
     <table>
       <thead><tr><th>#</th><th>Safe 10</th><th>Danger 10</th></tr></thead>
       <tbody id="holdingsBody"></tbody>
     </table>
-    <div class="insight purple" style="margin-top:12px">
-      Next rebalance: <strong>2026-03-31</strong> (16 days). Holdings will update with fresh FDIC call report data, current prices, and implied vol.
+    <div class="insight purple" style="margin-top:12px">Next rebalance: <strong>2026-03-31</strong>. Holdings update with fresh FDIC data, prices, and implied vol.</div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Quarter-by-Quarter: 6M Forward L/S Spread</h2>
+    <div style="max-height: 400px; overflow-y: auto;">
+      <table id="quarterTable">
+        <thead><tr><th>Quarter</th><th>Era</th><th>Q5 6M</th><th>Q1 6M</th><th>Spread</th><th>N</th></tr></thead>
+        <tbody></tbody>
+      </table>
     </div>
   </div>
 </div>
 
-<div class="corner-mark">
-  <a href="https://snow.ai">snow.ai</a> · <a href="https://campbellramble.substack.com">campbell ramble</a>
+<!-- ============================================================ -->
+<!-- SECTION 2: LIVE VULNERABILITY SCREEN -->
+<!-- ============================================================ -->
+<div class="section-title">Live Vulnerability Screen — March 2026</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Summary</h2>
+    <div class="stat-row" id="stats-row"></div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Vulnerability Map: Weak Fundamentals vs Price Strength</h2>
+    <div class="chart-container" style="height:420px"><canvas id="quadrantChart"></canvas></div>
+    <div class="insight"><strong>Top-right = danger zone.</strong> Weak fundamentals AND strong prices. Bubble border: <span style="color:#a855f7">purple = high Vol Signals (>70)</span>.</div>
+  </div>
+
+  <div class="card">
+    <h2>Vol Disconnect: IV/RV Ratio (lower = options underpricing)</h2>
+    <div class="chart-container"><canvas id="ivrvChart"></canvas></div>
+    <div class="insight purple"><strong>CMA</strong> (IV/RV=0.63) and <strong>WBS</strong> (0.78) — implied vol far below realized moves. Options sellers asleep.</div>
+  </div>
+
+  <div class="card">
+    <h2>RV Term Structure: 10d vs 250d Realized Vol</h2>
+    <div class="chart-container"><canvas id="rvChart"></canvas></div>
+    <div class="insight amber">Above diagonal = <strong>rising short-term vol</strong>. <strong>CMA</strong> (1.32x) and <strong>CADE</strong> (1.31x): 10d RV elevated vs 250d norm.</div>
+  </div>
+
+  <div class="card">
+    <h2>Vulnerability Score Distribution</h2>
+    <div class="chart-sm"><canvas id="distChart"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>Most vs Least Vulnerable: What Differs?</h2>
+    <div class="chart-sm"><canvas id="compareChart"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>Private Credit / NDFI Exposure (Large Banks)</h2>
+    <div class="chart-container"><canvas id="ndfiChart"></canvas></div>
+    <div class="insight blue"><strong>FCNCA</strong> 15.8% private credit. <strong>PNC</strong> (11.5% NDFI) #9 vulnerability.</div>
+  </div>
+
+  <div class="card">
+    <h2>Securities Exposure vs Price Complacency</h2>
+    <div class="chart-container"><canvas id="exposureVsPriceChart"></canvas></div>
+    <div class="insight">Top-right = massive securities books + near highs = SVB pattern. <strong>BOH</strong>: 2.67x MktCap in HTM+AFS, only 8.5% from high.</div>
+  </div>
 </div>
 
+<div class="section-title">Full Vulnerability Rankings</div>
+<div class="grid">
+  <div class="card grid-full" style="overflow-x: auto;">
+    <div class="controls" id="table-controls">
+      <button class="btn active" onclick="showAll(this)">All 66</button>
+      <button class="btn" onclick="showTop(15,this)">Most Vulnerable 15</button>
+      <button class="btn" onclick="showBottom(15,this)">Least Vulnerable 15</button>
+      <button class="btn" onclick="showNDFI(this)">NDFI Banks</button>
+      <button class="btn" onclick="showBig(this)">Big Banks (>$100B)</button>
+      <button class="btn" onclick="showVolAlert(this)">Vol Alerts</button>
+    </div>
+    <table>
+      <thead><tr>
+        <th onclick="sortTable('rank')">Rk</th><th onclick="sortTable('ticker')">Ticker</th><th onclick="sortTable('name')">Name</th>
+        <th onclick="sortTable('vuln')">Vuln</th><th onclick="sortTable('wf')">Fund</th><th onclick="sortTable('ps')">Price</th>
+        <th onclick="sortTable('vs')">Vol</th><th onclick="sortTable('iv')">IVol</th><th onclick="sortTable('rv10')">RV10d</th>
+        <th onclick="sortTable('rvr')">RVr</th><th onclick="sortTable('ivrv')">IV/RV</th><th onclick="sortTable('pb')">P/B</th>
+        <th onclick="sortTable('dd')">DD</th><th onclick="sortTable('dh')">vsHi</th><th onclick="sortTable('htm')">HTM</th>
+        <th onclick="sortTable('afs')">AFS</th><th onclick="sortTable('tcr')">TCR</th><th onclick="sortTable('ndfi')">NDFI</th>
+        <th onclick="sortTable('mktcap')">MCap</th>
+      </tr></thead>
+      <tbody id="tbl"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-title">Key Conclusions</div>
+<div class="grid">
+  <div class="card grid-full">
+    <div class="insight"><strong>1. BOH #1 (79.4%) — triple threat.</strong> Weak fundamentals (65: 2.67x MktCap in securities, thin TCE), strong price (82: near 1Y high, 1.93x book), AND high vol signals (91). The quintessential hidden risk bank.</div>
+    <div class="insight purple" style="margin-top:8px"><strong>2. CMA #2 (79.1%) — vol disconnect poster child.</strong> Vol Signals 99. IV only 28.4% while 10d RV is 45% — IV/RV of 0.63. Options massively underpricing actual moves.</div>
+    <div class="insight amber" style="margin-top:8px"><strong>3. CADE #3 (70.3%) — vol stress buildup.</strong> RV Ratio 1.31x (10d vol elevated vs 250d), Vol Signals 97.</div>
+    <div class="insight blue" style="margin-top:8px"><strong>4. The large bank split.</strong> WFC #10, TFC #11, BAC #13 all highly vulnerable with meaningful vol signals. JPM dropped to #48 — its IV/RV is 2.27x (options already cautious).</div>
+    <div class="insight green" style="margin-top:8px"><strong>5. Least vulnerable have high IV/RV.</strong> PB (3.31), EGBN (3.56), TOWN (3.42) — options charging 3x+ realized moves. Already priced for trouble.</div>
+  </div>
+</div>
+
+<div style="padding: 24px 32px; color: var(--text-dim); font-size: 11px; border-top: 1px solid var(--border); margin-top: 16px;">
+  Data: BBG 3M ATM Implied Vol via Rose + Yahoo Finance + FDIC BankFind API Q4 2025 + OFR NDFI Reports | snow.ai · <a href="https://campbellramble.substack.com" style="color:var(--text-dim)">campbell ramble</a>
+</div>
+
+<div class="corner-mark"><a href="https://snow.ai">snow.ai</a></div>
+
 <script>
-// ============================================================
-// DATA
-// ============================================================
-const navData = {"safe_top10": {"2005-03-31": 100.0, "2005-04-29": 98.74, "2005-05-31": 101.87, "2005-06-29": 103.89, "2005-07-29": 108.52, "2005-08-29": 104.26, "2005-09-28": 102.62, "2005-10-27": 109.43, "2005-11-28": 117.17, "2005-12-28": 115.32, "2006-01-30": 115.57, "2006-03-01": 116.83, "2006-03-30": 120.43, "2006-05-01": 118.53, "2006-05-31": 117.02, "2006-06-29": 117.52, "2006-07-31": 119.3, "2006-08-29": 118.87, "2006-09-28": 119.84, "2006-10-27": 119.59, "2006-11-28": 120.05, "2006-12-28": 124.27, "2007-01-31": 123.11, "2007-03-02": 121.97, "2007-04-02": 120.73, "2007-05-02": 118.4, "2007-06-01": 118.47, "2007-07-02": 113.35, "2007-08-01": 102.4, "2007-08-30": 110.14, "2007-10-01": 110.03, "2007-10-30": 102.59, "2007-11-29": 95.23, "2007-12-31": 89.38, "2008-01-31": 90.94, "2008-03-03": 78.89, "2008-04-02": 82.83, "2008-05-01": 84.06, "2008-06-02": 74.66, "2008-07-01": 59.3, "2008-07-31": 63.15, "2008-08-29": 64.54, "2008-09-30": 65.14, "2008-10-29": 64.12, "2008-11-28": 61.86, "2008-12-30": 56.47, "2009-01-30": 35.86, "2009-03-03": 27.42, "2009-04-01": 34.43, "2009-05-01": 44.28, "2009-06-02": 50.33, "2009-07-01": 49.67, "2009-07-31": 54.77, "2009-08-31": 59.44, "2009-09-30": 59.36, "2009-10-29": 62.76, "2009-11-30": 59.86, "2009-12-30": 62.79, "2010-02-01": 74.13, "2010-03-03": 76.89, "2010-04-01": 85.26, "2010-05-03": 96.8, "2010-06-02": 85.62, "2010-07-01": 80.66, "2010-08-02": 87.85, "2010-08-31": 77.58, "2010-09-30": 84.02, "2010-10-29": 80.4, "2010-11-30": 78.64, "2010-12-30": 96.37, "2011-01-31": 94.44, "2011-03-02": 94.61, "2011-03-31": 95.42, "2011-05-02": 95.25, "2011-06-01": 89.29, "2011-06-30": 89.95, "2011-08-01": 86.95, "2011-08-30": 76.5, "2011-09-29": 68.1, "2011-10-28": 88.32, "2011-11-29": 77.57, "2011-12-29": 87.16, "2012-01-31": 92.23, "2012-03-01": 97.32, "2012-03-30": 104.67, "2012-05-01": 102.26, "2012-05-31": 94.91, "2012-06-29": 100.05, "2012-07-31": 98.22, "2012-08-29": 101.74, "2012-09-28": 104.07, "2012-10-31": 102.95, "2012-11-30": 101.56, "2013-01-02": 107.76, "2013-02-01": 109.22, "2013-03-05": 111.1, "2013-04-04": 112.04, "2013-05-03": 112.61, "2013-06-04": 117.7, "2013-07-03": 126.58, "2013-08-02": 134.83, "2013-09-03": 125.2, "2013-10-02": 129.15, "2013-10-31": 134.81, "2013-12-02": 144.37, "2014-01-02": 148.8, "2014-02-03": 138.78, "2014-03-05": 152.78, "2014-04-03": 154.74, "2014-05-05": 141.43, "2014-06-04": 142.69, "2014-07-03": 152.53, "2014-08-04": 144.23, "2014-09-03": 149.98, "2014-10-02": 145.78, "2014-10-31": 156.41, "2014-12-02": 149.75, "2015-01-02": 155.0, "2015-02-03": 145.63, "2015-03-05": 150.32, "2015-04-06": 156.6, "2015-05-05": 156.5, "2015-06-04": 165.27, "2015-07-06": 171.09, "2015-08-04": 170.06, "2015-09-02": 159.29, "2015-10-02": 160.24, "2015-11-02": 176.35, "2015-12-02": 183.46, "2016-01-04": 164.88, "2016-02-03": 149.92, "2016-03-04": 164.33, "2016-04-05": 159.57, "2016-05-04": 171.06, "2016-06-03": 179.82, "2016-07-05": 159.34, "2016-08-03": 172.68, "2016-09-01": 183.83, "2016-10-03": 174.44, "2016-11-01": 180.54, "2016-12-01": 224.14, "2017-01-03": 233.5, "2017-02-02": 224.95, "2017-03-06": 244.98, "2017-04-04": 234.44, "2017-05-04": 236.42, "2017-06-05": 224.79, "2017-07-05": 244.27, "2017-08-03": 235.67, "2017-09-01": 226.42, "2017-10-03": 249.75, "2017-11-01": 242.65, "2017-12-01": 254.97, "2018-01-03": 251.41, "2018-02-02": 260.69, "2018-03-06": 265.05, "2018-04-05": 256.41, "2018-05-04": 255.01, "2018-06-05": 269.5, "2018-07-05": 261.38, "2018-08-03": 259.55, "2018-09-04": 263.89, "2018-10-03": 252.54, "2018-11-01": 233.21, "2018-12-03": 246.97, "2019-01-04": 221.88, "2019-02-05": 248.99, "2019-03-07": 248.36, "2019-04-05": 241.14, "2019-05-07": 252.89, "2019-06-06": 240.08, "2019-07-08": 242.9, "2019-08-06": 232.81, "2019-09-05": 230.39, "2019-10-04": 237.3, "2019-11-04": 257.94, "2019-12-04": 259.06, "2020-01-06": 268.63, "2020-02-05": 262.54, "2020-03-06": 208.66, "2020-04-06": 160.07, "2020-05-06": 181.01, "2020-06-05": 229.18, "2020-07-07": 181.53, "2020-08-05": 198.71, "2020-09-03": 202.33, "2020-10-05": 196.91, "2020-11-03": 227.59, "2020-12-03": 265.11, "2021-01-05": 283.97, "2021-02-04": 320.74, "2021-03-08": 389.65, "2021-04-07": 376.01, "2021-05-06": 397.57, "2021-06-07": 399.97, "2021-07-07": 354.82, "2021-08-05": 355.58, "2021-09-03": 361.94, "2021-10-05": 389.12, "2021-11-03": 407.58, "2021-12-03": 382.69, "2022-01-04": 412.42, "2022-02-03": 400.77, "2022-03-07": 385.65, "2022-04-05": 387.77, "2022-05-05": 384.87, "2022-06-06": 396.25, "2022-07-07": 375.2, "2022-08-05": 413.65, "2022-09-06": 396.55, "2022-10-05": 418.13, "2022-11-03": 445.62, "2022-12-05": 443.33, "2023-01-05": 434.84, "2023-02-06": 482.46, "2023-03-08": 443.13, "2023-04-06": 361.4, "2023-05-08": 300.56, "2023-06-07": 365.26, "2023-07-10": 349.47, "2023-08-08": 425.28, "2023-09-07": 377.89, "2023-10-06": 370.74, "2023-11-06": 403.82, "2023-12-06": 450.54, "2024-01-08": 495.33, "2024-02-07": 463.19, "2024-03-08": 488.74, "2024-04-09": 502.36, "2024-05-08": 496.05, "2024-06-07": 456.77, "2024-07-10": 484.45, "2024-08-08": 522.4, "2024-09-09": 540.44, "2024-10-08": 535.81, "2024-11-06": 646.98, "2024-12-06": 637.5, "2025-01-08": 575.75, "2025-02-10": 622.5, "2025-03-12": 548.91, "2025-04-10": 486.11, "2025-05-12": 574.31, "2025-06-11": 562.94, "2025-07-14": 612.09, "2025-08-12": 591.8, "2025-09-11": 630.03, "2025-10-10": 581.67, "2025-11-10": 577.69, "2025-12-10": 643.09, "2026-01-12": 647.31, "2026-02-11": 714.75, "2026-03-13": 630.54}, "danger_top10": {"2005-03-31": 100.0, "2005-04-29": 96.82, "2005-05-31": 99.52, "2005-06-29": 103.24, "2005-07-29": 107.62, "2005-08-29": 105.48, "2005-09-28": 103.41, "2005-10-27": 105.32, "2005-11-28": 111.28, "2005-12-28": 111.09, "2006-01-30": 108.8, "2006-03-01": 112.33, "2006-03-30": 112.62, "2006-05-01": 111.63, "2006-05-31": 109.96, "2006-06-29": 111.34, "2006-07-31": 115.34, "2006-08-29": 116.41, "2006-09-28": 117.84, "2006-10-27": 119.56, "2006-11-28": 121.61, "2006-12-28": 126.3, "2007-01-31": 121.47, "2007-03-02": 117.82, "2007-04-02": 118.03, "2007-05-02": 118.44, "2007-06-01": 119.13, "2007-07-02": 113.74, "2007-08-01": 105.19, "2007-08-30": 107.97, "2007-10-01": 109.19, "2007-10-30": 102.86, "2007-11-29": 99.64, "2007-12-31": 95.62, "2008-01-31": 97.72, "2008-03-03": 91.63, "2008-04-02": 102.83, "2008-05-01": 105.4, "2008-06-02": 97.67, "2008-07-01": 86.31, "2008-07-31": 90.49, "2008-08-29": 94.46, "2008-09-30": 100.43, "2008-10-29": 87.09, "2008-11-28": 86.73, "2008-12-30": 84.2, "2009-01-30": 61.48, "2009-03-03": 48.74, "2009-04-01": 58.53, "2009-05-01": 62.19, "2009-06-02": 61.26, "2009-07-01": 58.69, "2009-07-31": 67.19, "2009-08-31": 68.92, "2009-09-30": 70.85, "2009-10-29": 73.53, "2009-11-30": 71.61, "2009-12-30": 77.22, "2010-02-01": 81.15, "2010-03-03": 82.09, "2010-04-01": 88.02, "2010-05-03": 94.95, "2010-06-02": 87.84, "2010-07-01": 83.4, "2010-08-02": 87.04, "2010-08-31": 76.65, "2010-09-30": 81.09, "2010-10-29": 81.11, "2010-11-30": 82.76, "2010-12-30": 90.31, "2011-01-31": 90.37, "2011-03-02": 91.32, "2011-03-31": 92.26, "2011-05-02": 94.19, "2011-06-01": 89.33, "2011-06-30": 90.93, "2011-08-01": 87.24, "2011-08-30": 78.05, "2011-09-29": 74.33, "2011-10-28": 87.69, "2011-11-29": 81.42, "2011-12-29": 90.93, "2012-01-31": 90.78, "2012-03-01": 93.07, "2012-03-30": 97.8, "2012-05-01": 98.26, "2012-05-31": 93.6, "2012-06-29": 97.54, "2012-07-31": 95.85, "2012-08-29": 98.75, "2012-09-28": 103.1, "2012-10-31": 99.29, "2012-11-30": 96.48, "2013-01-02": 100.53, "2013-02-01": 104.49, "2013-03-05": 106.27, "2013-04-04": 107.12, "2013-05-03": 108.1, "2013-06-04": 113.42, "2013-07-03": 122.02, "2013-08-02": 130.43, "2013-09-03": 122.54, "2013-10-02": 128.46, "2013-10-31": 133.09, "2013-12-02": 139.23, "2014-01-02": 140.82, "2014-02-03": 130.6, "2014-03-05": 140.09, "2014-04-03": 144.84, "2014-05-05": 130.94, "2014-06-04": 132.5, "2014-07-03": 140.06, "2014-08-04": 130.99, "2014-09-03": 136.1, "2014-10-02": 132.49, "2014-10-31": 139.15, "2014-12-02": 139.4, "2015-01-02": 144.94, "2015-02-03": 139.73, "2015-03-05": 146.22, "2015-04-06": 147.23, "2015-05-05": 146.8, "2015-06-04": 152.31, "2015-07-06": 155.63, "2015-08-04": 156.99, "2015-09-02": 141.77, "2015-10-02": 141.34, "2015-11-02": 151.3, "2015-12-02": 156.89, "2016-01-04": 145.63, "2016-02-03": 126.97, "2016-03-04": 137.73, "2016-04-05": 136.73, "2016-05-04": 144.1, "2016-06-03": 151.03, "2016-07-05": 134.47, "2016-08-03": 144.56, "2016-09-01": 153.88, "2016-10-03": 149.62, "2016-11-01": 152.96, "2016-12-01": 186.82, "2017-01-03": 193.04, "2017-02-02": 186.06, "2017-03-06": 192.48, "2017-04-04": 183.35, "2017-05-04": 188.39, "2017-06-05": 178.73, "2017-07-05": 193.11, "2017-08-03": 189.19, "2017-09-01": 184.61, "2017-10-03": 197.72, "2017-11-01": 197.35, "2017-12-01": 203.35, "2018-01-03": 201.28, "2018-02-02": 207.15, "2018-03-06": 207.21, "2018-04-05": 204.96, "2018-05-04": 207.29, "2018-06-05": 210.66, "2018-07-05": 201.32, "2018-08-03": 206.95, "2018-09-04": 211.25, "2018-10-03": 200.8, "2018-11-01": 183.36, "2018-12-03": 185.39, "2019-01-04": 162.75, "2019-02-05": 175.35, "2019-03-07": 174.68, "2019-04-05": 171.11, "2019-05-07": 176.5, "2019-06-06": 167.38, "2019-07-08": 172.95, "2019-08-06": 169.2, "2019-09-05": 170.43, "2019-10-04": 176.97, "2019-11-04": 187.71, "2019-12-04": 187.77, "2020-01-06": 191.25, "2020-02-05": 189.15, "2020-03-06": 151.26, "2020-04-06": 125.35, "2020-05-06": 128.89, "2020-06-05": 163.69, "2020-07-07": 127.17, "2020-08-05": 137.72, "2020-09-03": 143.29, "2020-10-05": 134.55, "2020-11-03": 150.13, "2020-12-03": 167.07, "2021-01-05": 171.82, "2021-02-04": 188.95, "2021-03-08": 220.18, "2021-04-07": 219.56, "2021-05-06": 235.29, "2021-06-07": 232.13, "2021-07-07": 211.04, "2021-08-05": 217.99, "2021-09-03": 218.51, "2021-10-05": 234.85, "2021-11-03": 246.45, "2021-12-03": 229.47, "2022-01-04": 246.09, "2022-02-03": 243.17, "2022-03-07": 223.8, "2022-04-05": 231.89, "2022-05-05": 217.6, "2022-06-06": 222.46, "2022-07-07": 213.22, "2022-08-05": 231.08, "2022-09-06": 219.71, "2022-10-05": 226.81, "2022-11-03": 237.28, "2022-12-05": 232.74, "2023-01-05": 223.29, "2023-02-06": 230.12, "2023-03-08": 217.2, "2023-04-06": 172.06, "2023-05-08": 155.13, "2023-06-07": 178.49, "2023-07-10": 167.47, "2023-08-08": 186.42, "2023-09-07": 165.26, "2023-10-06": 165.99, "2023-11-06": 168.57, "2023-12-06": 183.93, "2024-01-08": 203.55, "2024-02-07": 190.06, "2024-03-08": 203.75, "2024-04-09": 213.19, "2024-05-08": 216.98, "2024-06-07": 211.5, "2024-07-10": 219.44, "2024-08-08": 218.12, "2024-09-09": 232.64, "2024-10-08": 233.76, "2024-11-06": 280.15, "2024-12-06": 282.55, "2025-01-08": 259.95, "2025-02-10": 272.36, "2025-03-12": 239.87, "2025-04-10": 212.64, "2025-05-12": 254.09, "2025-06-11": 254.51, "2025-07-14": 279.04, "2025-08-12": 277.46, "2025-09-11": 291.24, "2025-10-10": 273.9, "2025-11-10": 279.0, "2025-12-10": 303.61, "2026-01-12": 309.04, "2026-02-11": 323.39, "2026-03-13": 285.41}, "long_safe_short_danger": {"2005-03-31": 100.0, "2005-04-29": 101.98, "2005-05-31": 102.36, "2005-06-29": 100.63, "2005-07-29": 100.84, "2005-08-29": 98.84, "2005-09-28": 99.24, "2005-10-27": 103.9, "2005-11-28": 105.29, "2005-12-28": 103.81, "2006-01-30": 106.23, "2006-03-01": 104.01, "2006-03-30": 106.94, "2006-05-01": 106.18, "2006-05-31": 106.42, "2006-06-29": 105.55, "2006-07-31": 103.43, "2006-08-29": 102.11, "2006-09-28": 101.69, "2006-10-27": 100.03, "2006-11-28": 98.72, "2006-12-28": 98.4, "2007-01-31": 101.36, "2007-03-02": 103.52, "2007-04-02": 102.29, "2007-05-02": 99.97, "2007-06-01": 99.44, "2007-07-02": 99.65, "2007-08-01": 97.35, "2007-08-30": 102.01, "2007-10-01": 100.78, "2007-10-30": 99.74, "2007-11-29": 95.58, "2007-12-31": 93.48, "2008-01-31": 93.06, "2008-03-03": 86.1, "2008-04-02": 80.55, "2008-05-01": 79.75, "2008-06-02": 76.44, "2008-07-01": 68.7, "2008-07-31": 69.79, "2008-08-29": 68.33, "2008-09-30": 64.86, "2008-10-29": 73.63, "2008-11-28": 71.32, "2008-12-30": 67.07, "2009-01-30": 58.32, "2009-03-03": 56.24, "2009-04-01": 58.83, "2009-05-01": 71.21, "2009-06-02": 82.15, "2009-07-01": 84.63, "2009-07-31": 81.52, "2009-08-31": 86.23, "2009-09-30": 83.78, "2009-10-29": 85.36, "2009-11-30": 83.59, "2009-12-30": 81.32, "2010-02-01": 91.34, "2010-03-03": 93.67, "2010-04-01": 96.85, "2010-05-03": 101.95, "2010-06-02": 97.47, "2010-07-01": 96.71, "2010-08-02": 100.94, "2010-08-31": 101.21, "2010-09-30": 103.61, "2010-10-29": 99.12, "2010-11-30": 95.03, "2010-12-30": 106.71, "2011-01-31": 104.51, "2011-03-02": 103.6, "2011-03-31": 103.42, "2011-05-02": 101.12, "2011-06-01": 99.95, "2011-06-30": 98.92, "2011-08-01": 99.67, "2011-08-30": 98.02, "2011-09-29": 91.61, "2011-10-28": 100.71, "2011-11-29": 95.27, "2011-12-29": 95.85, "2012-01-31": 101.6, "2012-03-01": 104.57, "2012-03-30": 107.02, "2012-05-01": 104.07, "2012-05-31": 101.4, "2012-06-29": 102.57, "2012-07-31": 102.47, "2012-08-29": 103.02, "2012-09-28": 100.94, "2012-10-31": 103.68, "2012-11-30": 105.26, "2013-01-02": 107.19, "2013-02-01": 104.52, "2013-03-05": 104.54, "2013-04-04": 104.6, "2013-05-03": 104.17, "2013-06-04": 103.78, "2013-07-03": 103.74, "2013-08-02": 103.37, "2013-09-03": 102.17, "2013-10-02": 100.54, "2013-10-31": 101.29, "2013-12-02": 103.69, "2014-01-02": 105.67, "2014-02-03": 106.27, "2014-03-05": 109.06, "2014-04-03": 106.84, "2014-05-05": 108.01, "2014-06-04": 107.69, "2014-07-03": 108.9, "2014-08-04": 110.1, "2014-09-03": 110.2, "2014-10-02": 110.03, "2014-10-31": 112.4, "2014-12-02": 107.42, "2015-01-02": 106.94, "2015-02-03": 104.22, "2015-03-05": 102.8, "2015-04-06": 106.36, "2015-05-05": 106.61, "2015-06-04": 108.51, "2015-07-06": 109.93, "2015-08-04": 108.32, "2015-09-02": 112.36, "2015-10-02": 113.37, "2015-11-02": 116.55, "2015-12-02": 116.93, "2016-01-04": 113.22, "2016-02-03": 118.08, "2016-03-04": 119.31, "2016-04-05": 116.7, "2016-05-04": 118.71, "2016-06-03": 119.06, "2016-07-05": 118.5, "2016-08-03": 119.45, "2016-09-01": 119.46, "2016-10-03": 116.59, "2016-11-01": 118.03, "2016-12-01": 119.98, "2017-01-03": 120.96, "2017-02-02": 120.9, "2017-03-06": 127.27, "2017-04-04": 127.86, "2017-05-04": 125.5, "2017-06-05": 125.77, "2017-07-05": 126.49, "2017-08-03": 124.57, "2017-09-01": 122.65, "2017-10-03": 126.31, "2017-11-01": 122.95, "2017-12-01": 125.38, "2018-01-03": 124.91, "2018-02-02": 125.85, "2018-03-06": 127.91, "2018-04-05": 125.11, "2018-05-04": 123.02, "2018-06-05": 127.93, "2018-07-05": 129.83, "2018-08-03": 125.42, "2018-09-04": 124.92, "2018-10-03": 125.76, "2018-11-01": 127.18, "2018-12-03": 133.21, "2019-01-04": 136.33, "2019-02-05": 141.99, "2019-03-07": 142.19, "2019-04-05": 140.92, "2019-05-07": 143.28, "2019-06-06": 143.44, "2019-07-08": 140.44, "2019-08-06": 137.59, "2019-09-05": 135.18, "2019-10-04": 134.09, "2019-11-04": 137.42, "2019-12-04": 137.97, "2020-01-06": 140.46, "2020-02-05": 138.8, "2020-03-06": 137.95, "2020-04-06": 127.7, "2020-05-06": 140.44, "2020-06-05": 140.01, "2020-07-07": 142.75, "2020-08-05": 144.29, "2020-09-03": 141.2, "2020-10-05": 146.34, "2020-11-03": 151.59, "2020-12-03": 158.69, "2021-01-05": 165.27, "2021-02-04": 169.75, "2021-03-08": 176.97, "2021-04-07": 171.25, "2021-05-06": 168.97, "2021-06-07": 172.3, "2021-07-07": 168.13, "2021-08-05": 163.12, "2021-09-03": 165.64, "2021-10-05": 165.69, "2021-11-03": 165.38, "2021-12-03": 166.77, "2022-01-04": 167.59, "2022-02-03": 164.81, "2022-03-07": 172.32, "2022-04-05": 167.22, "2022-05-05": 176.87, "2022-06-06": 178.12, "2022-07-07": 175.97, "2022-08-05": 179.01, "2022-09-06": 180.49, "2022-10-05": 184.35, "2022-11-03": 187.8, "2022-12-05": 190.48, "2023-01-05": 194.75, "2023-02-06": 209.66, "2023-03-08": 204.02, "2023-04-06": 210.04, "2023-05-08": 193.75, "2023-06-07": 204.65, "2023-07-10": 208.68, "2023-08-08": 228.13, "2023-09-07": 228.66, "2023-10-06": 223.36, "2023-11-06": 239.57, "2023-12-06": 244.96, "2024-01-08": 243.34, "2024-02-07": 243.7, "2024-03-08": 239.87, "2024-04-09": 235.63, "2024-05-08": 228.62, "2024-06-07": 215.97, "2024-07-10": 220.77, "2024-08-08": 239.51, "2024-09-09": 232.31, "2024-10-08": 229.21, "2024-11-06": 230.94, "2024-12-06": 225.63, "2025-01-08": 221.48, "2025-02-10": 228.56, "2025-03-12": 228.84, "2025-04-10": 228.61, "2025-05-12": 226.03, "2025-06-11": 221.19, "2025-07-14": 219.35, "2025-08-12": 213.29, "2025-09-11": 216.32, "2025-10-10": 212.37, "2025-11-10": 207.06, "2025-12-10": 211.82, "2026-01-12": 209.46, "2026-02-11": 221.02, "2026-03-13": 220.92}};
-
-const quarterData = {"2005-03-31":{"q5_6m":0.041,"q1_6m":0.001,"spread":0.04,"n":58},"2005-06-30":{"q5_6m":0.077,"q1_6m":0.028,"spread":0.048,"n":58},"2005-09-30":{"q5_6m":0.08,"q1_6m":0.166,"spread":-0.086,"n":59},"2005-12-31":{"q5_6m":0.041,"q1_6m":0.046,"spread":-0.005,"n":59},"2006-03-31":{"q5_6m":0.04,"q1_6m":-0.001,"spread":0.04,"n":59},"2006-06-30":{"q5_6m":0.084,"q1_6m":0.07,"spread":0.014,"n":59},"2006-09-30":{"q5_6m":-0.008,"q1_6m":0.005,"spread":-0.012,"n":60},"2006-12-31":{"q5_6m":-0.072,"q1_6m":-0.052,"spread":-0.02,"n":60},"2007-03-31":{"q5_6m":-0.029,"q1_6m":-0.032,"spread":0.002,"n":60},"2007-06-30":{"q5_6m":-0.113,"q1_6m":-0.141,"spread":0.028,"n":60},"2007-09-30":{"q5_6m":-0.094,"q1_6m":-0.239,"spread":0.145,"n":60},"2007-12-31":{"q5_6m":-0.069,"q1_6m":-0.307,"spread":0.238,"n":60},"2008-03-31":{"q5_6m":0.142,"q1_6m":-0.014,"spread":0.156,"n":60},"2008-06-30":{"q5_6m":0.032,"q1_6m":-0.026,"spread":0.058,"n":60},"2008-09-30":{"q5_6m":-0.349,"q1_6m":-0.489,"spread":0.14,"n":60},"2008-12-31":{"q5_6m":-0.291,"q1_6m":-0.277,"spread":-0.014,"n":60},"2009-03-31":{"q5_6m":0.172,"q1_6m":0.728,"spread":-0.556,"n":60},"2009-06-30":{"q5_6m":0.263,"q1_6m":0.218,"spread":0.046,"n":60},"2009-09-30":{"q5_6m":0.191,"q1_6m":0.28,"spread":-0.089,"n":60},"2009-12-31":{"q5_6m":0.07,"q1_6m":0.258,"spread":-0.189,"n":60},"2010-03-31":{"q5_6m":-0.087,"q1_6m":-0.082,"spread":-0.005,"n":60},"2010-06-30":{"q5_6m":0.106,"q1_6m":0.181,"spread":-0.075,"n":61},"2010-09-30":{"q5_6m":0.07,"q1_6m":0.148,"spread":-0.079,"n":61},"2010-12-31":{"q5_6m":0.002,"q1_6m":-0.083,"spread":0.085,"n":61},"2011-03-31":{"q5_6m":-0.193,"q1_6m":-0.216,"spread":0.023,"n":61},"2011-06-30":{"q5_6m":-0.09,"q1_6m":0.001,"spread":-0.09,"n":62},"2011-09-30":{"q5_6m":0.397,"q1_6m":0.621,"spread":-0.223,"n":62},"2011-12-31":{"q5_6m":0.123,"q1_6m":0.125,"spread":-0.002,"n":62},"2012-03-31":{"q5_6m":0.087,"q1_6m":0.028,"spread":0.06,"n":62},"2012-06-30":{"q5_6m":0.013,"q1_6m":0.008,"spread":0.005,"n":62},"2012-09-30":{"q5_6m":0.085,"q1_6m":0.141,"spread":-0.056,"n":62},"2012-12-31":{"q5_6m":0.219,"q1_6m":0.186,"spread":0.032,"n":62},"2013-03-31":{"q5_6m":0.189,"q1_6m":0.141,"spread":0.048,"n":62},"2013-06-30":{"q5_6m":0.222,"q1_6m":0.242,"spread":-0.02,"n":62},"2013-09-30":{"q5_6m":0.133,"q1_6m":0.175,"spread":-0.042,"n":62},"2013-12-31":{"q5_6m":-0.004,"q1_6m":-0.01,"spread":0.007,"n":62},"2014-03-31":{"q5_6m":-0.043,"q1_6m":-0.046,"spread":0.002,"n":62},"2014-06-30":{"q5_6m":0.01,"q1_6m":0.045,"spread":-0.034,"n":62},"2014-09-30":{"q5_6m":0.083,"q1_6m":0.054,"spread":0.029,"n":63},"2014-12-31":{"q5_6m":0.084,"q1_6m":0.128,"spread":-0.044,"n":64},"2015-03-31":{"q5_6m":0.005,"q1_6m":0.076,"spread":-0.071,"n":64},"2015-06-30":{"q5_6m":-0.005,"q1_6m":0.018,"spread":-0.023,"n":64},"2015-09-30":{"q5_6m":-0.022,"q1_6m":-0.038,"spread":0.015,"n":64},"2015-12-31":{"q5_6m":-0.085,"q1_6m":-0.076,"spread":-0.009,"n":64},"2016-03-31":{"q5_6m":0.093,"q1_6m":0.129,"spread":-0.037,"n":64},"2016-06-30":{"q5_6m":0.435,"q1_6m":0.431,"spread":0.003,"n":64},"2016-09-30":{"q5_6m":0.189,"q1_6m":0.271,"spread":-0.081,"n":64},"2016-12-31":{"q5_6m":-0.017,"q1_6m":0.012,"spread":-0.028,"n":65},"2017-03-31":{"q5_6m":0.04,"q1_6m":0.024,"spread":0.016,"n":65},"2017-06-30":{"q5_6m":0.084,"q1_6m":0.093,"spread":-0.008,"n":65},"2017-09-30":{"q5_6m":0.029,"q1_6m":0.015,"spread":0.014,"n":65},"2017-12-31":{"q5_6m":0.018,"q1_6m":0.004,"spread":0.014,"n":65},"2018-03-31":{"q5_6m":0.009,"q1_6m":-0.001,"spread":0.011,"n":65},"2018-06-30":{"q5_6m":-0.218,"q1_6m":-0.221,"spread":0.004,"n":65},"2018-09-30":{"q5_6m":-0.133,"q1_6m":-0.122,"spread":-0.011,"n":65},"2018-12-31":{"q5_6m":0.118,"q1_6m":0.206,"spread":-0.088,"n":65},"2019-03-31":{"q5_6m":0.066,"q1_6m":0.099,"spread":-0.033,"n":65},"2019-06-30":{"q5_6m":0.154,"q1_6m":0.09,"spread":0.064,"n":65},"2019-09-30":{"q5_6m":-0.344,"q1_6m":-0.339,"spread":-0.005,"n":65},"2019-12-31":{"q5_6m":-0.361,"q1_6m":-0.366,"spread":0.005,"n":65},"2020-03-31":{"q5_6m":0.036,"q1_6m":0.027,"spread":0.009,"n":65},"2020-06-30":{"q5_6m":0.321,"q1_6m":0.357,"spread":-0.035,"n":65},"2020-09-30":{"q5_6m":0.631,"q1_6m":0.892,"spread":-0.261,"n":65},"2020-12-31":{"q5_6m":0.218,"q1_6m":0.284,"spread":-0.066,"n":65},"2021-03-31":{"q5_6m":0.006,"q1_6m":0.013,"spread":-0.007,"n":65},"2021-06-30":{"q5_6m":0.089,"q1_6m":0.043,"spread":0.046,"n":65},"2021-09-30":{"q5_6m":0.057,"q1_6m":0.055,"spread":0.002,"n":65},"2021-12-31":{"q5_6m":-0.166,"q1_6m":-0.039,"spread":-0.127,"n":65},"2022-03-31":{"q5_6m":-0.051,"q1_6m":-0.064,"spread":0.013,"n":65},"2022-06-30":{"q5_6m":0.066,"q1_6m":0.164,"spread":-0.098,"n":65},"2022-09-30":{"q5_6m":-0.109,"q1_6m":-0.064,"spread":-0.045,"n":65},"2022-12-31":{"q5_6m":-0.299,"q1_6m":-0.153,"spread":-0.145,"n":65},"2023-03-31":{"q5_6m":-0.053,"q1_6m":-0.096,"spread":0.043,"n":65},"2023-06-30":{"q5_6m":0.237,"q1_6m":0.462,"spread":-0.225,"n":65},"2023-09-30":{"q5_6m":0.317,"q1_6m":0.263,"spread":0.054,"n":65},"2023-12-31":{"q5_6m":0.008,"q1_6m":-0.04,"spread":0.048,"n":65},"2024-03-31":{"q5_6m":0.126,"q1_6m":0.059,"spread":0.067,"n":65},"2024-06-30":{"q5_6m":0.226,"q1_6m":0.217,"spread":0.008,"n":65},"2024-09-30":{"q5_6m":0.026,"q1_6m":-0.012,"spread":0.039,"n":65},"2024-12-31":{"q5_6m":-0.008,"q1_6m":-0.044,"spread":0.036,"n":65},"2025-03-31":{"q5_6m":0.181,"q1_6m":0.108,"spread":0.074,"n":65},"2025-06-30":{"q5_6m":0.118,"q1_6m":0.145,"spread":-0.027,"n":65}};
-
-const holdings = {"safe":["FFIN","EWBC","FCNCA","COLB","ABCB","TOWN","ASB","BANC","RNST","FRME"],"danger":["JPM","BAC","C","KEY","HBAN","CFG","RF","FITB","CMA","ZION"]};
-
-// ============================================================
-// HELPERS
-// ============================================================
-function eraLabel(qend) {
-  const y = parseInt(qend.slice(0,4)), m = parseInt(qend.slice(5,7));
-  if ((y === 2007 && m >= 6) || y === 2008 || (y === 2009 && m <= 3)) return 'GFC';
-  if (y === 2020 && m <= 6) return 'COVID';
-  if (y === 2023 && m <= 6) return 'SVB';
-  if (y >= 2022 && y <= 2023) return 'RATES';
-  return '';
-}
-
-function eraClass(era) {
-  if (era === 'GFC') return 'era-gfc';
-  if (era === 'COVID') return 'era-covid';
-  if (era === 'SVB') return 'era-svb';
-  if (era === 'RATES') return 'era-rates';
-  return '';
-}
-
-function pct(v) {
-  if (v === null || v === undefined) return '—';
-  const s = (v * 100).toFixed(1) + '%';
-  return v >= 0 ? '+' + s : s;
-}
-
-function pctColor(v) {
-  if (v > 0.02) return 'var(--good)';
-  if (v < -0.02) return 'var(--bad)';
-  return 'var(--text)';
-}
-
 // ============================================================
 // CHART DEFAULTS
 // ============================================================
@@ -231,253 +253,190 @@ Chart.defaults.font.family = "'SF Mono', 'Cascadia Code', 'Consolas', monospace"
 Chart.defaults.font.size = 10;
 
 // ============================================================
-// NAV CHART
+// BACKTEST DATA
+// ============================================================
+const navData = {"safe_top10": {"2005-03-31": 100.0, "2005-04-29": 98.74, "2005-05-31": 101.87, "2005-06-29": 103.89, "2005-07-29": 108.52, "2005-08-29": 104.26, "2005-09-28": 102.62, "2005-10-27": 109.43, "2005-11-28": 117.17, "2005-12-28": 115.32, "2006-01-30": 115.57, "2006-03-01": 116.83, "2006-03-30": 120.43, "2006-05-01": 118.53, "2006-05-31": 117.02, "2006-06-29": 117.52, "2006-07-31": 119.3, "2006-08-29": 118.87, "2006-09-28": 119.84, "2006-10-27": 119.59, "2006-11-28": 120.05, "2006-12-28": 124.27, "2007-01-31": 123.11, "2007-03-02": 121.97, "2007-04-02": 120.73, "2007-05-02": 118.4, "2007-06-01": 118.47, "2007-07-02": 113.35, "2007-08-01": 102.4, "2007-08-30": 110.14, "2007-10-01": 110.03, "2007-10-30": 102.59, "2007-11-29": 95.23, "2007-12-31": 89.38, "2008-01-31": 90.94, "2008-03-03": 78.89, "2008-04-02": 82.83, "2008-05-01": 84.06, "2008-06-02": 74.66, "2008-07-01": 59.3, "2008-07-31": 63.15, "2008-08-29": 64.54, "2008-09-30": 65.14, "2008-10-29": 64.12, "2008-11-28": 61.86, "2008-12-30": 56.47, "2009-01-30": 35.86, "2009-03-03": 27.42, "2009-04-01": 34.43, "2009-05-01": 44.28, "2009-06-02": 50.33, "2009-07-01": 49.67, "2009-07-31": 54.77, "2009-08-31": 59.44, "2009-09-30": 59.36, "2009-10-29": 62.76, "2009-11-30": 59.86, "2009-12-30": 62.79, "2010-02-01": 74.13, "2010-03-03": 76.89, "2010-04-01": 85.26, "2010-05-03": 96.8, "2010-06-02": 85.62, "2010-07-01": 80.66, "2010-08-02": 87.85, "2010-08-31": 77.58, "2010-09-30": 84.02, "2010-10-29": 80.4, "2010-11-30": 78.64, "2010-12-30": 96.37, "2011-01-31": 94.44, "2011-03-02": 94.61, "2011-03-31": 95.42, "2011-05-02": 95.25, "2011-06-01": 89.29, "2011-06-30": 89.95, "2011-08-01": 86.95, "2011-08-30": 76.5, "2011-09-29": 68.1, "2011-10-28": 88.32, "2011-11-29": 77.57, "2011-12-29": 87.16, "2012-01-31": 92.23, "2012-03-01": 97.32, "2012-03-30": 104.67, "2012-05-01": 102.26, "2012-05-31": 94.91, "2012-06-29": 100.05, "2012-07-31": 98.22, "2012-08-29": 101.74, "2012-09-28": 104.07, "2012-10-31": 102.95, "2012-11-30": 101.56, "2013-01-02": 107.76, "2013-02-01": 109.22, "2013-03-05": 111.1, "2013-04-04": 112.04, "2013-05-03": 112.61, "2013-06-04": 117.7, "2013-07-03": 126.58, "2013-08-02": 134.83, "2013-09-03": 125.2, "2013-10-02": 129.15, "2013-10-31": 134.81, "2013-12-02": 144.37, "2014-01-02": 148.8, "2014-02-03": 138.78, "2014-03-05": 152.78, "2014-04-03": 154.74, "2014-05-05": 141.43, "2014-06-04": 142.69, "2014-07-03": 152.53, "2014-08-04": 144.23, "2014-09-03": 149.98, "2014-10-02": 145.78, "2014-10-31": 156.41, "2014-12-02": 149.75, "2015-01-02": 155.0, "2015-02-03": 145.63, "2015-03-05": 150.32, "2015-04-06": 156.6, "2015-05-05": 156.5, "2015-06-04": 165.27, "2015-07-06": 171.09, "2015-08-04": 170.06, "2015-09-02": 159.29, "2015-10-02": 160.24, "2015-11-02": 176.35, "2015-12-02": 183.46, "2016-01-04": 164.88, "2016-02-03": 149.92, "2016-03-04": 164.33, "2016-04-05": 159.57, "2016-05-04": 171.06, "2016-06-03": 179.82, "2016-07-05": 159.34, "2016-08-03": 172.68, "2016-09-01": 183.83, "2016-10-03": 174.44, "2016-11-01": 180.54, "2016-12-01": 224.14, "2017-01-03": 233.5, "2017-02-02": 224.95, "2017-03-06": 244.98, "2017-04-04": 234.44, "2017-05-04": 236.42, "2017-06-05": 224.79, "2017-07-05": 244.27, "2017-08-03": 235.67, "2017-09-01": 226.42, "2017-10-03": 249.75, "2017-11-01": 242.65, "2017-12-01": 254.97, "2018-01-03": 251.41, "2018-02-02": 260.69, "2018-03-06": 265.05, "2018-04-05": 256.41, "2018-05-04": 255.01, "2018-06-05": 269.5, "2018-07-05": 261.38, "2018-08-03": 259.55, "2018-09-04": 263.89, "2018-10-03": 252.54, "2018-11-01": 233.21, "2018-12-03": 246.97, "2019-01-04": 221.88, "2019-02-05": 248.99, "2019-03-07": 248.36, "2019-04-05": 241.14, "2019-05-07": 252.89, "2019-06-06": 240.08, "2019-07-08": 242.9, "2019-08-06": 232.81, "2019-09-05": 230.39, "2019-10-04": 237.3, "2019-11-04": 257.94, "2019-12-04": 259.06, "2020-01-06": 268.63, "2020-02-05": 262.54, "2020-03-06": 208.66, "2020-04-06": 160.07, "2020-05-06": 181.01, "2020-06-05": 229.18, "2020-07-07": 181.53, "2020-08-05": 198.71, "2020-09-03": 202.33, "2020-10-05": 196.91, "2020-11-03": 227.59, "2020-12-03": 265.11, "2021-01-05": 283.97, "2021-02-04": 320.74, "2021-03-08": 389.65, "2021-04-07": 376.01, "2021-05-06": 397.57, "2021-06-07": 399.97, "2021-07-07": 354.82, "2021-08-05": 355.58, "2021-09-03": 361.94, "2021-10-05": 389.12, "2021-11-03": 407.58, "2021-12-03": 382.69, "2022-01-04": 412.42, "2022-02-03": 400.77, "2022-03-07": 385.65, "2022-04-05": 387.77, "2022-05-05": 384.87, "2022-06-06": 396.25, "2022-07-07": 375.2, "2022-08-05": 413.65, "2022-09-06": 396.55, "2022-10-05": 418.13, "2022-11-03": 445.62, "2022-12-05": 443.33, "2023-01-05": 434.84, "2023-02-06": 482.46, "2023-03-08": 443.13, "2023-04-06": 361.4, "2023-05-08": 300.56, "2023-06-07": 365.26, "2023-07-10": 349.47, "2023-08-08": 425.28, "2023-09-07": 377.89, "2023-10-06": 370.74, "2023-11-06": 403.82, "2023-12-06": 450.54, "2024-01-08": 495.33, "2024-02-07": 463.19, "2024-03-08": 488.74, "2024-04-09": 502.36, "2024-05-08": 496.05, "2024-06-07": 456.77, "2024-07-10": 484.45, "2024-08-08": 522.4, "2024-09-09": 540.44, "2024-10-08": 535.81, "2024-11-06": 646.98, "2024-12-06": 637.5, "2025-01-08": 575.75, "2025-02-10": 622.5, "2025-03-12": 548.91, "2025-04-10": 486.11, "2025-05-12": 574.31, "2025-06-11": 562.94, "2025-07-14": 612.09, "2025-08-12": 591.8, "2025-09-11": 630.03, "2025-10-10": 581.67, "2025-11-10": 577.69, "2025-12-10": 643.09, "2026-01-12": 647.31, "2026-02-11": 714.75, "2026-03-13": 630.54}, "danger_top10": {"2005-03-31": 100.0, "2005-04-29": 96.82, "2005-05-31": 99.52, "2005-06-29": 103.24, "2005-07-29": 107.62, "2005-08-29": 105.48, "2005-09-28": 103.41, "2005-10-27": 105.32, "2005-11-28": 111.28, "2005-12-28": 111.09, "2006-01-30": 108.8, "2006-03-01": 112.33, "2006-03-30": 112.62, "2006-05-01": 111.63, "2006-05-31": 109.96, "2006-06-29": 111.34, "2006-07-31": 115.34, "2006-08-29": 116.41, "2006-09-28": 117.84, "2006-10-27": 119.56, "2006-11-28": 121.61, "2006-12-28": 126.3, "2007-01-31": 121.47, "2007-03-02": 117.82, "2007-04-02": 118.03, "2007-05-02": 118.44, "2007-06-01": 119.13, "2007-07-02": 113.74, "2007-08-01": 105.19, "2007-08-30": 107.97, "2007-10-01": 109.19, "2007-10-30": 102.86, "2007-11-29": 99.64, "2007-12-31": 95.62, "2008-01-31": 97.72, "2008-03-03": 91.63, "2008-04-02": 102.83, "2008-05-01": 105.4, "2008-06-02": 97.67, "2008-07-01": 86.31, "2008-07-31": 90.49, "2008-08-29": 94.46, "2008-09-30": 100.43, "2008-10-29": 87.09, "2008-11-28": 86.73, "2008-12-30": 84.2, "2009-01-30": 61.48, "2009-03-03": 48.74, "2009-04-01": 58.53, "2009-05-01": 62.19, "2009-06-02": 61.26, "2009-07-01": 58.69, "2009-07-31": 67.19, "2009-08-31": 68.92, "2009-09-30": 70.85, "2009-10-29": 73.53, "2009-11-30": 71.61, "2009-12-30": 77.22, "2010-02-01": 81.15, "2010-03-03": 82.09, "2010-04-01": 88.02, "2010-05-03": 94.95, "2010-06-02": 87.84, "2010-07-01": 83.4, "2010-08-02": 87.04, "2010-08-31": 76.65, "2010-09-30": 81.09, "2010-10-29": 81.11, "2010-11-30": 82.76, "2010-12-30": 90.31, "2011-01-31": 90.37, "2011-03-02": 91.32, "2011-03-31": 92.26, "2011-05-02": 94.19, "2011-06-01": 89.33, "2011-06-30": 90.93, "2011-08-01": 87.24, "2011-08-30": 78.05, "2011-09-29": 74.33, "2011-10-28": 87.69, "2011-11-29": 81.42, "2011-12-29": 90.93, "2012-01-31": 90.78, "2012-03-01": 93.07, "2012-03-30": 97.8, "2012-05-01": 98.26, "2012-05-31": 93.6, "2012-06-29": 97.54, "2012-07-31": 95.85, "2012-08-29": 98.75, "2012-09-28": 103.1, "2012-10-31": 99.29, "2012-11-30": 96.48, "2013-01-02": 100.53, "2013-02-01": 104.49, "2013-03-05": 106.27, "2013-04-04": 107.12, "2013-05-03": 108.1, "2013-06-04": 113.42, "2013-07-03": 122.02, "2013-08-02": 130.43, "2013-09-03": 122.54, "2013-10-02": 128.46, "2013-10-31": 133.09, "2013-12-02": 139.23, "2014-01-02": 140.82, "2014-02-03": 130.6, "2014-03-05": 140.09, "2014-04-03": 144.84, "2014-05-05": 130.94, "2014-06-04": 132.5, "2014-07-03": 140.06, "2014-08-04": 130.99, "2014-09-03": 136.1, "2014-10-02": 132.49, "2014-10-31": 139.15, "2014-12-02": 139.4, "2015-01-02": 144.94, "2015-02-03": 139.73, "2015-03-05": 146.22, "2015-04-06": 147.23, "2015-05-05": 146.8, "2015-06-04": 152.31, "2015-07-06": 155.63, "2015-08-04": 156.99, "2015-09-02": 141.77, "2015-10-02": 141.34, "2015-11-02": 151.3, "2015-12-02": 156.89, "2016-01-04": 145.63, "2016-02-03": 126.97, "2016-03-04": 137.73, "2016-04-05": 136.73, "2016-05-04": 144.1, "2016-06-03": 151.03, "2016-07-05": 134.47, "2016-08-03": 144.56, "2016-09-01": 153.88, "2016-10-03": 149.62, "2016-11-01": 152.96, "2016-12-01": 186.82, "2017-01-03": 193.04, "2017-02-02": 186.06, "2017-03-06": 192.48, "2017-04-04": 183.35, "2017-05-04": 188.39, "2017-06-05": 178.73, "2017-07-05": 193.11, "2017-08-03": 189.19, "2017-09-01": 184.61, "2017-10-03": 197.72, "2017-11-01": 197.35, "2017-12-01": 203.35, "2018-01-03": 201.28, "2018-02-02": 207.15, "2018-03-06": 207.21, "2018-04-05": 204.96, "2018-05-04": 207.29, "2018-06-05": 210.66, "2018-07-05": 201.32, "2018-08-03": 206.95, "2018-09-04": 211.25, "2018-10-03": 200.8, "2018-11-01": 183.36, "2018-12-03": 185.39, "2019-01-04": 162.75, "2019-02-05": 175.35, "2019-03-07": 174.68, "2019-04-05": 171.11, "2019-05-07": 176.5, "2019-06-06": 167.38, "2019-07-08": 172.95, "2019-08-06": 169.2, "2019-09-05": 170.43, "2019-10-04": 176.97, "2019-11-04": 187.71, "2019-12-04": 187.77, "2020-01-06": 191.25, "2020-02-05": 189.15, "2020-03-06": 151.26, "2020-04-06": 125.35, "2020-05-06": 128.89, "2020-06-05": 163.69, "2020-07-07": 127.17, "2020-08-05": 137.72, "2020-09-03": 143.29, "2020-10-05": 134.55, "2020-11-03": 150.13, "2020-12-03": 167.07, "2021-01-05": 171.82, "2021-02-04": 188.95, "2021-03-08": 220.18, "2021-04-07": 219.56, "2021-05-06": 235.29, "2021-06-07": 232.13, "2021-07-07": 211.04, "2021-08-05": 217.99, "2021-09-03": 218.51, "2021-10-05": 234.85, "2021-11-03": 246.45, "2021-12-03": 229.47, "2022-01-04": 246.09, "2022-02-03": 243.17, "2022-03-07": 223.8, "2022-04-05": 231.89, "2022-05-05": 217.6, "2022-06-06": 222.46, "2022-07-07": 213.22, "2022-08-05": 231.08, "2022-09-06": 219.71, "2022-10-05": 226.81, "2022-11-03": 237.28, "2022-12-05": 232.74, "2023-01-05": 223.29, "2023-02-06": 230.12, "2023-03-08": 217.2, "2023-04-06": 172.06, "2023-05-08": 155.13, "2023-06-07": 178.49, "2023-07-10": 167.47, "2023-08-08": 186.42, "2023-09-07": 165.26, "2023-10-06": 165.99, "2023-11-06": 168.57, "2023-12-06": 183.93, "2024-01-08": 203.55, "2024-02-07": 190.06, "2024-03-08": 203.75, "2024-04-09": 213.19, "2024-05-08": 216.98, "2024-06-07": 211.5, "2024-07-10": 219.44, "2024-08-08": 218.12, "2024-09-09": 232.64, "2024-10-08": 233.76, "2024-11-06": 280.15, "2024-12-06": 282.55, "2025-01-08": 259.95, "2025-02-10": 272.36, "2025-03-12": 239.87, "2025-04-10": 212.64, "2025-05-12": 254.09, "2025-06-11": 254.51, "2025-07-14": 279.04, "2025-08-12": 277.46, "2025-09-11": 291.24, "2025-10-10": 273.9, "2025-11-10": 279.0, "2025-12-10": 303.61, "2026-01-12": 309.04, "2026-02-11": 323.39, "2026-03-13": 285.41}, "long_safe_short_danger": {"2005-03-31": 100.0, "2005-04-29": 101.98, "2005-05-31": 102.36, "2005-06-29": 100.63, "2005-07-29": 100.84, "2005-08-29": 98.84, "2005-09-28": 99.24, "2005-10-27": 103.9, "2005-11-28": 105.29, "2005-12-28": 103.81, "2006-01-30": 106.23, "2006-03-01": 104.01, "2006-03-30": 106.94, "2006-05-01": 106.18, "2006-05-31": 106.42, "2006-06-29": 105.55, "2006-07-31": 103.43, "2006-08-29": 102.11, "2006-09-28": 101.69, "2006-10-27": 100.03, "2006-11-28": 98.72, "2006-12-28": 98.4, "2007-01-31": 101.36, "2007-03-02": 103.52, "2007-04-02": 102.29, "2007-05-02": 99.97, "2007-06-01": 99.44, "2007-07-02": 99.65, "2007-08-01": 97.35, "2007-08-30": 102.01, "2007-10-01": 100.78, "2007-10-30": 99.74, "2007-11-29": 95.58, "2007-12-31": 93.48, "2008-01-31": 93.06, "2008-03-03": 86.1, "2008-04-02": 80.55, "2008-05-01": 79.75, "2008-06-02": 76.44, "2008-07-01": 68.7, "2008-07-31": 69.79, "2008-08-29": 68.33, "2008-09-30": 64.86, "2008-10-29": 73.63, "2008-11-28": 71.32, "2008-12-30": 67.07, "2009-01-30": 58.32, "2009-03-03": 56.24, "2009-04-01": 58.83, "2009-05-01": 71.21, "2009-06-02": 82.15, "2009-07-01": 84.63, "2009-07-31": 81.52, "2009-08-31": 86.23, "2009-09-30": 83.78, "2009-10-29": 85.36, "2009-11-30": 83.59, "2009-12-30": 81.32, "2010-02-01": 91.34, "2010-03-03": 93.67, "2010-04-01": 96.85, "2010-05-03": 101.95, "2010-06-02": 97.47, "2010-07-01": 96.71, "2010-08-02": 100.94, "2010-08-31": 101.21, "2010-09-30": 103.61, "2010-10-29": 99.12, "2010-11-30": 95.03, "2010-12-30": 106.71, "2011-01-31": 104.51, "2011-03-02": 103.6, "2011-03-31": 103.42, "2011-05-02": 101.12, "2011-06-01": 99.95, "2011-06-30": 98.92, "2011-08-01": 99.67, "2011-08-30": 98.02, "2011-09-29": 91.61, "2011-10-28": 100.71, "2011-11-29": 95.27, "2011-12-29": 95.85, "2012-01-31": 101.6, "2012-03-01": 104.57, "2012-03-30": 107.02, "2012-05-01": 104.07, "2012-05-31": 101.4, "2012-06-29": 102.57, "2012-07-31": 102.47, "2012-08-29": 103.02, "2012-09-28": 100.94, "2012-10-31": 103.68, "2012-11-30": 105.26, "2013-01-02": 107.19, "2013-02-01": 104.52, "2013-03-05": 104.54, "2013-04-04": 104.6, "2013-05-03": 104.17, "2013-06-04": 103.78, "2013-07-03": 103.74, "2013-08-02": 103.37, "2013-09-03": 102.17, "2013-10-02": 100.54, "2013-10-31": 101.29, "2013-12-02": 103.69, "2014-01-02": 105.67, "2014-02-03": 106.27, "2014-03-05": 109.06, "2014-04-03": 106.84, "2014-05-05": 108.01, "2014-06-04": 107.69, "2014-07-03": 108.9, "2014-08-04": 110.1, "2014-09-03": 110.2, "2014-10-02": 110.03, "2014-10-31": 112.4, "2014-12-02": 107.42, "2015-01-02": 106.94, "2015-02-03": 104.22, "2015-03-05": 102.8, "2015-04-06": 106.36, "2015-05-05": 106.61, "2015-06-04": 108.51, "2015-07-06": 109.93, "2015-08-04": 108.32, "2015-09-02": 112.36, "2015-10-02": 113.37, "2015-11-02": 116.55, "2015-12-02": 116.93, "2016-01-04": 113.22, "2016-02-03": 118.08, "2016-03-04": 119.31, "2016-04-05": 116.7, "2016-05-04": 118.71, "2016-06-03": 119.06, "2016-07-05": 118.5, "2016-08-03": 119.45, "2016-09-01": 119.46, "2016-10-03": 116.59, "2016-11-01": 118.03, "2016-12-01": 119.98, "2017-01-03": 120.96, "2017-02-02": 120.9, "2017-03-06": 127.27, "2017-04-04": 127.86, "2017-05-04": 125.5, "2017-06-05": 125.77, "2017-07-05": 126.49, "2017-08-03": 124.57, "2017-09-01": 122.65, "2017-10-03": 126.31, "2017-11-01": 122.95, "2017-12-01": 125.38, "2018-01-03": 124.91, "2018-02-02": 125.85, "2018-03-06": 127.91, "2018-04-05": 125.11, "2018-05-04": 123.02, "2018-06-05": 127.93, "2018-07-05": 129.83, "2018-08-03": 125.42, "2018-09-04": 124.92, "2018-10-03": 125.76, "2018-11-01": 127.18, "2018-12-03": 133.21, "2019-01-04": 136.33, "2019-02-05": 141.99, "2019-03-07": 142.19, "2019-04-05": 140.92, "2019-05-07": 143.28, "2019-06-06": 143.44, "2019-07-08": 140.44, "2019-08-06": 137.59, "2019-09-05": 135.18, "2019-10-04": 134.09, "2019-11-04": 137.42, "2019-12-04": 137.97, "2020-01-06": 140.46, "2020-02-05": 138.8, "2020-03-06": 137.95, "2020-04-06": 127.7, "2020-05-06": 140.44, "2020-06-05": 140.01, "2020-07-07": 142.75, "2020-08-05": 144.29, "2020-09-03": 141.2, "2020-10-05": 146.34, "2020-11-03": 151.59, "2020-12-03": 158.69, "2021-01-05": 165.27, "2021-02-04": 169.75, "2021-03-08": 176.97, "2021-04-07": 171.25, "2021-05-06": 168.97, "2021-06-07": 172.3, "2021-07-07": 168.13, "2021-08-05": 163.12, "2021-09-03": 165.64, "2021-10-05": 165.69, "2021-11-03": 165.38, "2021-12-03": 166.77, "2022-01-04": 167.59, "2022-02-03": 164.81, "2022-03-07": 172.32, "2022-04-05": 167.22, "2022-05-05": 176.87, "2022-06-06": 178.12, "2022-07-07": 175.97, "2022-08-05": 179.01, "2022-09-06": 180.49, "2022-10-05": 184.35, "2022-11-03": 187.8, "2022-12-05": 190.48, "2023-01-05": 194.75, "2023-02-06": 209.66, "2023-03-08": 204.02, "2023-04-06": 210.04, "2023-05-08": 193.75, "2023-06-07": 204.65, "2023-07-10": 208.68, "2023-08-08": 228.13, "2023-09-07": 228.66, "2023-10-06": 223.36, "2023-11-06": 239.57, "2023-12-06": 244.96, "2024-01-08": 243.34, "2024-02-07": 243.7, "2024-03-08": 239.87, "2024-04-09": 235.63, "2024-05-08": 228.62, "2024-06-07": 215.97, "2024-07-10": 220.77, "2024-08-08": 239.51, "2024-09-09": 232.31, "2024-10-08": 229.21, "2024-11-06": 230.94, "2024-12-06": 225.63, "2025-01-08": 221.48, "2025-02-10": 228.56, "2025-03-12": 228.84, "2025-04-10": 228.61, "2025-05-12": 226.03, "2025-06-11": 221.19, "2025-07-14": 219.35, "2025-08-12": 213.29, "2025-09-11": 216.32, "2025-10-10": 212.37, "2025-11-10": 207.06, "2025-12-10": 211.82, "2026-01-12": 209.46, "2026-02-11": 221.02, "2026-03-13": 220.92}};
+const quarterData = {"2005-03-31": {"q5_6m": 0.041, "q1_6m": 0.001, "spread": 0.04, "n": 58}, "2005-06-30": {"q5_6m": 0.076, "q1_6m": 0.028, "spread": 0.048, "n": 58}, "2005-09-30": {"q5_6m": 0.08, "q1_6m": 0.166, "spread": -0.086, "n": 59}, "2005-12-31": {"q5_6m": 0.041, "q1_6m": 0.046, "spread": -0.005, "n": 59}, "2006-03-31": {"q5_6m": 0.04, "q1_6m": -0.001, "spread": 0.04, "n": 59}, "2006-06-30": {"q5_6m": 0.084, "q1_6m": 0.07, "spread": 0.014, "n": 59}, "2006-09-30": {"q5_6m": -0.008, "q1_6m": 0.005, "spread": -0.012, "n": 60}, "2006-12-31": {"q5_6m": -0.072, "q1_6m": -0.052, "spread": -0.019, "n": 60}, "2007-03-31": {"q5_6m": -0.029, "q1_6m": -0.032, "spread": 0.002, "n": 60}, "2007-06-30": {"q5_6m": -0.113, "q1_6m": -0.141, "spread": 0.028, "n": 60}, "2007-09-30": {"q5_6m": -0.094, "q1_6m": -0.239, "spread": 0.145, "n": 60}, "2007-12-31": {"q5_6m": -0.069, "q1_6m": -0.307, "spread": 0.238, "n": 60}, "2008-03-31": {"q5_6m": 0.142, "q1_6m": -0.014, "spread": 0.156, "n": 60}, "2008-06-30": {"q5_6m": 0.032, "q1_6m": -0.026, "spread": 0.058, "n": 60}, "2008-09-30": {"q5_6m": -0.349, "q1_6m": -0.489, "spread": 0.14, "n": 60}, "2008-12-31": {"q5_6m": -0.291, "q1_6m": -0.277, "spread": -0.014, "n": 60}, "2009-03-31": {"q5_6m": 0.172, "q1_6m": 0.728, "spread": -0.556, "n": 60}, "2009-06-30": {"q5_6m": 0.263, "q1_6m": 0.218, "spread": 0.046, "n": 60}, "2009-09-30": {"q5_6m": 0.191, "q1_6m": 0.28, "spread": -0.089, "n": 60}, "2009-12-31": {"q5_6m": 0.07, "q1_6m": 0.258, "spread": -0.189, "n": 60}, "2010-03-31": {"q5_6m": -0.087, "q1_6m": -0.082, "spread": -0.005, "n": 60}, "2010-06-30": {"q5_6m": 0.106, "q1_6m": 0.181, "spread": -0.075, "n": 61}, "2010-09-30": {"q5_6m": 0.07, "q1_6m": 0.148, "spread": -0.079, "n": 61}, "2010-12-31": {"q5_6m": 0.002, "q1_6m": -0.083, "spread": 0.085, "n": 61}, "2011-03-31": {"q5_6m": -0.193, "q1_6m": -0.216, "spread": 0.023, "n": 61}, "2011-06-30": {"q5_6m": -0.09, "q1_6m": 0.001, "spread": -0.09, "n": 62}, "2011-09-30": {"q5_6m": 0.397, "q1_6m": 0.621, "spread": -0.223, "n": 62}, "2011-12-31": {"q5_6m": 0.123, "q1_6m": 0.125, "spread": -0.002, "n": 62}, "2012-03-31": {"q5_6m": 0.087, "q1_6m": 0.028, "spread": 0.06, "n": 62}, "2012-06-30": {"q5_6m": 0.013, "q1_6m": 0.008, "spread": 0.005, "n": 62}, "2012-09-30": {"q5_6m": 0.085, "q1_6m": 0.141, "spread": -0.056, "n": 62}, "2012-12-31": {"q5_6m": 0.219, "q1_6m": 0.186, "spread": 0.032, "n": 62}, "2013-03-31": {"q5_6m": 0.189, "q1_6m": 0.141, "spread": 0.048, "n": 62}, "2013-06-30": {"q5_6m": 0.222, "q1_6m": 0.242, "spread": -0.02, "n": 62}, "2013-09-30": {"q5_6m": 0.133, "q1_6m": 0.175, "spread": -0.042, "n": 62}, "2013-12-31": {"q5_6m": -0.004, "q1_6m": -0.01, "spread": 0.007, "n": 62}, "2014-03-31": {"q5_6m": -0.043, "q1_6m": -0.046, "spread": 0.002, "n": 62}, "2014-06-30": {"q5_6m": 0.01, "q1_6m": 0.045, "spread": -0.034, "n": 62}, "2014-09-30": {"q5_6m": 0.083, "q1_6m": 0.054, "spread": 0.029, "n": 63}, "2014-12-31": {"q5_6m": 0.084, "q1_6m": 0.128, "spread": -0.044, "n": 64}, "2015-03-31": {"q5_6m": 0.005, "q1_6m": 0.076, "spread": -0.071, "n": 64}, "2015-06-30": {"q5_6m": -0.005, "q1_6m": 0.018, "spread": -0.023, "n": 64}, "2015-09-30": {"q5_6m": -0.022, "q1_6m": -0.038, "spread": 0.015, "n": 64}, "2015-12-31": {"q5_6m": -0.085, "q1_6m": -0.076, "spread": -0.009, "n": 64}, "2016-03-31": {"q5_6m": 0.093, "q1_6m": 0.129, "spread": -0.037, "n": 64}, "2016-06-30": {"q5_6m": 0.435, "q1_6m": 0.431, "spread": 0.003, "n": 64}, "2016-09-30": {"q5_6m": 0.189, "q1_6m": 0.271, "spread": -0.081, "n": 64}, "2016-12-31": {"q5_6m": -0.017, "q1_6m": 0.012, "spread": -0.028, "n": 65}, "2017-03-31": {"q5_6m": 0.04, "q1_6m": 0.024, "spread": 0.016, "n": 65}, "2017-06-30": {"q5_6m": 0.084, "q1_6m": 0.093, "spread": -0.008, "n": 65}, "2017-09-30": {"q5_6m": 0.029, "q1_6m": 0.015, "spread": 0.014, "n": 65}, "2017-12-31": {"q5_6m": 0.018, "q1_6m": 0.004, "spread": 0.014, "n": 65}, "2018-03-31": {"q5_6m": 0.009, "q1_6m": -0.001, "spread": 0.011, "n": 65}, "2018-06-30": {"q5_6m": -0.218, "q1_6m": -0.221, "spread": 0.004, "n": 65}, "2018-09-30": {"q5_6m": -0.133, "q1_6m": -0.122, "spread": -0.011, "n": 65}, "2018-12-31": {"q5_6m": 0.118, "q1_6m": 0.206, "spread": -0.088, "n": 65}, "2019-03-31": {"q5_6m": 0.066, "q1_6m": 0.099, "spread": -0.033, "n": 65}, "2019-06-30": {"q5_6m": 0.154, "q1_6m": 0.09, "spread": 0.064, "n": 65}, "2019-09-30": {"q5_6m": -0.344, "q1_6m": -0.339, "spread": -0.005, "n": 65}, "2019-12-31": {"q5_6m": -0.361, "q1_6m": -0.366, "spread": 0.005, "n": 65}, "2020-03-31": {"q5_6m": 0.036, "q1_6m": 0.027, "spread": 0.009, "n": 65}, "2020-06-30": {"q5_6m": 0.321, "q1_6m": 0.357, "spread": -0.035, "n": 65}, "2020-09-30": {"q5_6m": 0.631, "q1_6m": 0.892, "spread": -0.261, "n": 65}, "2020-12-31": {"q5_6m": 0.218, "q1_6m": 0.284, "spread": -0.066, "n": 65}, "2021-03-31": {"q5_6m": 0.006, "q1_6m": 0.013, "spread": -0.007, "n": 65}, "2021-06-30": {"q5_6m": 0.089, "q1_6m": 0.043, "spread": 0.046, "n": 65}, "2021-09-30": {"q5_6m": 0.057, "q1_6m": 0.055, "spread": 0.002, "n": 65}, "2021-12-31": {"q5_6m": -0.166, "q1_6m": -0.039, "spread": -0.127, "n": 65}, "2022-03-31": {"q5_6m": -0.051, "q1_6m": -0.064, "spread": 0.013, "n": 65}, "2022-06-30": {"q5_6m": 0.066, "q1_6m": 0.164, "spread": -0.098, "n": 65}, "2022-09-30": {"q5_6m": -0.109, "q1_6m": -0.064, "spread": -0.045, "n": 65}, "2022-12-31": {"q5_6m": -0.299, "q1_6m": -0.153, "spread": -0.145, "n": 65}, "2023-03-31": {"q5_6m": -0.053, "q1_6m": -0.096, "spread": 0.043, "n": 65}, "2023-06-30": {"q5_6m": 0.237, "q1_6m": 0.462, "spread": -0.225, "n": 65}, "2023-09-30": {"q5_6m": 0.317, "q1_6m": 0.263, "spread": 0.054, "n": 65}, "2023-12-31": {"q5_6m": 0.008, "q1_6m": -0.04, "spread": 0.048, "n": 65}, "2024-03-31": {"q5_6m": 0.126, "q1_6m": 0.059, "spread": 0.067, "n": 65}, "2024-06-30": {"q5_6m": 0.226, "q1_6m": 0.217, "spread": 0.008, "n": 65}, "2024-09-30": {"q5_6m": 0.026, "q1_6m": -0.012, "spread": 0.039, "n": 65}, "2024-12-31": {"q5_6m": -0.008, "q1_6m": -0.044, "spread": 0.036, "n": 65}, "2025-03-31": {"q5_6m": 0.181, "q1_6m": 0.108, "spread": 0.074, "n": 65}, "2025-06-30": {"q5_6m": 0.118, "q1_6m": 0.145, "spread": -0.027, "n": 65}};
+const holdings = {"safe":["FFIN","EWBC","FCNCA","COLB","ABCB","TOWN","ASB","BANC","RNST","FRME"],"danger":["JPM","BAC","C","KEY","HBAN","CFG","RF","FITB","CMA","ZION"]};
+
+// ============================================================
+// LIVE SCREEN DATA
+// ============================================================
+const B = [
+{rank:1,ticker:"BOH",name:"Bank of Hawaii Corporation",price:73.09,pb:1.93,vuln:80.0,wf:65,ps:83,vs:92,dd:-0.193,dh:-0.085,dl:0.324,iv:0.313,rv10:0.234,rv250:0.268,rvr:0.87,ivrv:1.33,htm:1.46,afs:1.21,tce:0.060,tcr:14.9,ndfi:null,pc:null,mktcap:2.91,assets:24.18},
+{rank:2,ticker:"CADE",name:"Cadence Bank",price:42.11,pb:1.29,vuln:71.0,wf:49,ps:65,vs:98,dd:-0.251,dh:-0.099,dl:0.708,iv:0.448,rv10:0.428,rv250:0.327,rvr:1.31,ivrv:1.05,htm:0.00,afs:1.16,tce:0.087,tcr:13.3,ndfi:null,pc:null,mktcap:7.85,assets:47.02},
+{rank:3,ticker:"WBS",name:"Webster Financial Corporatio",price:67.25,pb:1.18,vuln:70.0,wf:62,ps:73,vs:75,dd:-0.309,dh:-0.091,dl:0.753,iv:0.182,rv10:0.234,rv250:0.355,rvr:0.66,ivrv:0.78,htm:0.73,afs:0.92,tce:0.074,tcr:13.4,ndfi:null,pc:null,mktcap:10.84,assets:84.07},
+{rank:4,ticker:"UMBF",name:"UMB Financial Corporation",price:110.38,pb:1.13,vuln:69.9,wf:73,ps:58,vs:80,dd:-0.240,dh:-0.186,dl:0.366,iv:0.303,rv10:0.230,rv250:0.322,rvr:0.71,ivrv:1.32,htm:0.68,afs:1.63,tce:0.072,tcr:12.2,ndfi:null,pc:null,mktcap:8.40,assets:73.09},
+{rank:5,ticker:"BOKF",name:"BOK Financial Corporation",price:124.94,pb:1.28,vuln:66.9,wf:53,ps:85,vs:63,dd:-0.217,dh:-0.093,dl:0.501,iv:0.269,rv10:0.175,rv250:0.267,rvr:0.66,ivrv:1.53,htm:0.23,afs:1.79,tce:0.089,tcr:14.0,ndfi:null,pc:null,mktcap:7.58,assets:52.24},
+{rank:6,ticker:"CFG",name:"Citizens Financial Group, In",price:55.64,pb:0.99,vuln:66.8,wf:67,ps:48,vs:85,dd:-0.285,dh:-0.191,dl:0.769,iv:0.347,rv10:0.259,rv250:0.327,rvr:0.79,ivrv:1.34,htm:0.33,afs:1.49,tce:0.073,tcr:14.1,ndfi:8.3,pc:6.1,mktcap:23.90,assets:226.35},
+{rank:7,ticker:"FCNCA",name:"First Citizens BancShares, I",price:1768.04,pb:1.03,vuln:66.0,wf:75,ps:27,vs:95,dd:-0.295,dh:-0.207,dl:0.205,iv:0.380,rv10:0.311,rv250:0.336,rvr:0.92,ivrv:1.22,htm:0.44,afs:1.47,tce:0.089,tcr:13.6,ndfi:16.4,pc:15.8,mktcap:21.69,assets:229.70},
+{rank:8,ticker:"PNC",name:"The PNC Financial Services G",price:201.13,pb:1.43,vuln:64.0,wf:74,ps:63,vs:55,dd:-0.254,dh:-0.175,dl:0.436,iv:0.322,rv10:0.173,rv250:0.256,rvr:0.68,ivrv:1.86,htm:0.86,afs:0.84,tce:0.082,tcr:13.3,ndfi:11.5,pc:9.5,mktcap:81.32,assets:573.57},
+{rank:9,ticker:"WFC",name:"Wells Fargo & Company",price:74.10,pb:1.39,vuln:63.6,wf:69,ps:44,vs:77,dd:-0.245,dh:-0.238,dl:0.296,iv:0.381,rv10:0.234,rv250:0.293,rvr:0.80,ivrv:1.63,htm:0.89,afs:0.89,tce:0.063,tcr:14.3,ndfi:10.0,pc:5.7,mktcap:232.61,assets:2148.63},
+{rank:10,ticker:"TFC",name:"Truist Financial Corporation",price:43.83,pb:0.92,vuln:63.3,wf:69,ps:36,vs:85,dd:-0.269,dh:-0.212,dl:0.369,iv:0.352,rv10:0.236,rv250:0.285,rvr:0.83,ivrv:1.49,htm:0.86,afs:1.18,tce:0.072,tcr:13.3,ndfi:7.0,pc:4.8,mktcap:54.75,assets:547.54},
+{rank:11,ticker:"BAC",name:"Bank of America Corporation",price:46.72,pb:1.22,vuln:62.5,wf:64,ps:53,vs:70,dd:-0.270,dh:-0.184,dl:0.445,iv:0.334,rv10:0.202,rv250:0.268,rvr:0.75,ivrv:1.65,htm:1.53,afs:1.08,tce:0.062,tcr:13.5,ndfi:5.7,pc:2.0,mktcap:341.17,assets:3411.74},
+{rank:12,ticker:"RF",name:"Regions Financial Corporatio",price:25.00,pb:1.23,vuln:62.4,wf:63,ps:52,vs:72,dd:-0.248,dh:-0.199,dl:0.469,iv:0.371,rv10:0.225,rv250:0.299,rvr:0.75,ivrv:1.65,htm:0.26,afs:1.26,tce:0.071,tcr:13.3,ndfi:7.5,pc:2.8,mktcap:21.92,assets:158.81},
+{rank:13,ticker:"MTB",name:"M&T Bank Corporation",price:196.26,pb:1.13,vuln:62.1,wf:44,ps:60,vs:83,dd:-0.214,dh:-0.173,dl:0.341,iv:0.332,rv10:0.215,rv250:0.263,rvr:0.82,ivrv:1.55,htm:0.41,afs:0.77,tce:0.087,tcr:13.9,ndfi:5.7,pc:2.5,mktcap:30.16,assets:213.51},
+{rank:14,ticker:"C",name:"Citigroup Inc.",price:105.69,pb:0.96,vuln:60.1,wf:48,ps:45,vs:87,dd:-0.313,dh:-0.156,dl:0.953,iv:0.394,rv10:0.271,rv250:0.326,rvr:0.83,ivrv:1.45,htm:1.01,afs:1.18,tce:0.064,tcr:15.2,ndfi:4.4,pc:1.5,mktcap:184.89,assets:2657.20},
+{rank:15,ticker:"CBSH",name:"Commerce Bancshares, Inc.",price:47.65,pb:1.73,vuln:59.8,wf:41,ps:50,vs:89,dd:-0.245,dh:-0.235,dl:0.008,iv:0.260,rv10:0.195,rv250:0.243,rvr:0.80,ivrv:1.33,htm:null,afs:1.30,tce:0.111,tcr:16.1,ndfi:null,pc:null,mktcap:7.02,assets:32.92},
+{rank:16,ticker:"WAL",name:"Western Alliance Bancorporat",price:67.97,pb:1.00,vuln:59.2,wf:65,ps:16,vs:97,dd:-0.344,dh:-0.298,dl:0.214,iv:0.504,rv10:0.477,rv250:0.442,rvr:1.08,ivrv:1.06,htm:0.21,afs:2.51,tce:0.058,tcr:13.7,ndfi:null,pc:null,mktcap:7.48,assets:92.77},
+{rank:17,ticker:"KEY",name:"KeyCorp",price:18.90,pb:1.17,vuln:58.8,wf:69,ps:55,vs:52,dd:-0.257,dh:-0.183,dl:0.553,iv:0.360,rv10:0.200,rv250:0.306,rvr:0.65,ivrv:1.80,htm:0.42,afs:1.92,tce:0.083,tcr:14.7,ndfi:10.0,pc:7.1,mktcap:20.59,assets:184.38},
+{rank:18,ticker:"FHN",name:"First Horizon Corporation",price:21.74,pb:1.24,vuln:58.2,wf:50,ps:49,vs:76,dd:-0.271,dh:-0.175,dl:0.472,iv:0.383,rv10:0.244,rv250:0.319,rvr:0.77,ivrv:1.57,htm:0.11,afs:0.76,tce:0.084,tcr:13.0,ndfi:null,pc:null,mktcap:10.70,assets:83.88},
+{rank:19,ticker:"WTFC",name:"Wintrust Financial Corporati",price:130.21,pb:1.28,vuln:58.2,wf:44,ps:55,vs:75,dd:-0.281,dh:-0.201,dl:0.485,iv:0.307,rv10:0.225,rv250:0.322,rvr:0.70,ivrv:1.36,htm:0.02,afs:0.04,tce:0.085,tcr:12.5,ndfi:null,pc:null,mktcap:8.76,assets:71.14},
+{rank:20,ticker:"RNST",name:"Renasant Corporation",price:35.66,pb:0.87,vuln:58.0,wf:48,ps:42,vs:85,dd:-0.287,dh:-0.153,dl:0.347,iv:0.344,rv10:0.256,rv250:0.324,rvr:0.79,ivrv:1.34,htm:0.30,afs:0.76,tce:0.090,tcr:13.2,ndfi:null,pc:null,mktcap:3.39,assets:26.75},
+{rank:21,ticker:"USB",name:"U.S. Bancorp",price:51.00,pb:1.36,vuln:57.6,wf:63,ps:71,vs:39,dd:-0.232,dh:-0.167,dl:0.496,iv:0.322,rv10:0.162,rv250:0.267,rvr:0.61,ivrv:1.98,htm:0.96,afs:1.14,tce:0.061,tcr:15.1,ndfi:7.3,pc:4.0,mktcap:79.24,assets:692.35},
+{rank:22,ticker:"HWC",name:"Hancock Whitney Corporation",price:61.91,pb:1.14,vuln:56.6,wf:47,ps:65,vs:58,dd:-0.230,dh:-0.173,dl:0.453,iv:0.321,rv10:0.201,rv250:0.310,rvr:0.65,ivrv:1.60,htm:0.42,afs:1.18,tce:0.101,tcr:14.4,ndfi:null,pc:null,mktcap:5.06,assets:35.47},
+{rank:23,ticker:"BANC",name:"Banc of California, Inc.",price:16.78,pb:0.86,vuln:56.2,wf:53,ps:35,vs:81,dd:-0.262,dh:-0.224,dl:0.484,iv:0.383,rv10:0.265,rv250:0.339,rvr:0.78,ivrv:1.45,htm:0.89,afs:0.94,tce:0.080,tcr:15.6,ndfi:null,pc:null,mktcap:2.61,assets:33.54},
+{rank:24,ticker:"SFBS",name:"ServisFirst Bancshares, Inc.",price:73.13,pb:2.16,vuln:55.2,wf:39,ps:41,vs:86,dd:-0.255,dh:-0.186,dl:0.115,iv:0.395,rv10:0.286,rv250:0.354,rvr:0.81,ivrv:1.38,htm:0.17,afs:0.27,tce:0.104,tcr:12.9,ndfi:null,pc:null,mktcap:4.00,assets:17.73},
+{rank:25,ticker:"TCBI",name:"Texas Capital Bancshares, In",price:92.52,pb:1.23,vuln:53.2,wf:39,ps:57,vs:64,dd:-0.270,dh:-0.151,dl:0.558,iv:0.383,rv10:0.229,rv250:0.329,rvr:0.70,ivrv:1.67,htm:0.17,afs:0.94,tce:0.106,tcr:14.2,ndfi:null,pc:null,mktcap:4.22,assets:31.54},
+{rank:26,ticker:"FITB",name:"Fifth Third Bancorp",price:43.40,pb:1.44,vuln:53.0,wf:38,ps:51,vs:70,dd:-0.243,dh:-0.217,dl:0.382,iv:0.383,rv10:0.225,rv250:0.295,rvr:0.76,ivrv:1.71,htm:0.29,afs:0.91,tce:0.064,tcr:14.3,ndfi:4.4,pc:1.1,mktcap:39.14,assets:214.38},
+{rank:27,ticker:"VLY",name:"Valley National Bancorp",price:11.76,pb:0.88,vuln:52.2,wf:50,ps:57,vs:49,dd:-0.227,dh:-0.144,dl:0.638,iv:0.409,rv10:0.212,rv250:0.319,rvr:0.66,ivrv:1.93,htm:0.53,afs:0.64,tce:0.088,tcr:13.5,ndfi:null,pc:null,mktcap:6.56,assets:64.13},
+{rank:28,ticker:"ABCB",name:"Ameris Bancorp",price:75.18,pb:1.25,vuln:51.3,wf:28,ps:68,vs:58,dd:-0.255,dh:-0.145,dl:0.571,iv:0.347,rv10:0.196,rv250:0.292,rvr:0.67,ivrv:1.77,htm:0.04,afs:0.43,tce:0.114,tcr:14.7,ndfi:null,pc:null,mktcap:5.14,assets:27.52},
+{rank:29,ticker:"ONB",name:"Old National Bancorp",price:21.51,pb:1.01,vuln:50.6,wf:66,ps:38,vs:47,dd:-0.257,dh:-0.173,dl:0.311,iv:0.384,rv10:0.208,rv250:0.335,rvr:0.62,ivrv:1.84,htm:0.34,afs:1.35,tce:0.074,tcr:12.0,ndfi:null,pc:null,mktcap:8.41,assets:53.55},
+{rank:30,ticker:"EWBC",name:"East West Bancorp, Inc.",price:104.49,pb:1.62,vuln:50.4,wf:36,ps:54,vs:61,dd:-0.291,dh:-0.156,dl:0.571,iv:0.430,rv10:0.240,rv250:0.343,rvr:0.70,ivrv:1.79,htm:0.20,afs:0.92,tce:0.105,tcr:15.1,ndfi:null,pc:null,mktcap:14.38,assets:80.43},
+{rank:31,ticker:"FULT",name:"Fulton Financial Corporation",price:19.65,pb:1.07,vuln:49.9,wf:51,ps:45,vs:54,dd:-0.268,dh:-0.145,dl:0.412,iv:0.480,rv10:0.229,rv250:0.308,rvr:0.74,ivrv:2.09,htm:0.40,afs:0.96,tce:0.085,tcr:14.3,ndfi:null,pc:null,mktcap:3.54,assets:32.12},
+{rank:32,ticker:"BANF",name:"BancFirst Corporation",price:106.06,pb:1.92,vuln:49.7,wf:21,ps:55,vs:73,dd:-0.217,dh:-0.229,dl:0.106,iv:0.308,rv10:0.211,rv250:0.290,rvr:0.73,ivrv:1.46,htm:0.00,afs:0.23,tce:0.113,tcr:18.5,ndfi:null,pc:null,mktcap:3.56,assets:14.84},
+{rank:33,ticker:"TRMK",name:"Trustmark Corporation",price:40.85,pb:1.14,vuln:49.5,wf:51,ps:72,vs:26,dd:-0.196,dh:-0.096,dl:0.406,iv:0.358,rv10:0.156,rv250:0.264,rvr:0.59,ivrv:2.30,htm:0.49,afs:0.77,tce:0.090,tcr:13.5,ndfi:null,pc:null,mktcap:2.45,assets:18.93},
+{rank:34,ticker:"BANR",name:"Banner Corporation",price:59.06,pb:1.03,vuln:48.8,wf:48,ps:56,vs:42,dd:-0.195,dh:-0.134,dl:0.129,iv:0.375,rv10:0.183,rv250:0.280,rvr:0.65,ivrv:2.05,htm:0.48,afs:1.00,tce:0.098,tcr:14.1,ndfi:null,pc:null,mktcap:2.01,assets:16.35},
+{rank:35,ticker:"CFR",name:"Cullen/Frost Bankers, Inc.",price:132.13,pb:1.89,vuln:47.8,wf:54,ps:72,vs:17,dd:-0.265,dh:-0.107,dl:0.358,iv:0.299,rv10:0.136,rv250:0.276,rvr:0.49,ivrv:2.21,htm:0.41,afs:1.91,tce:0.083,tcr:15.3,ndfi:null,pc:null,mktcap:8.35,assets:53.04},
+{rank:36,ticker:"GBCI",name:"Glacier Bancorp, Inc.",price:43.48,pb:1.34,vuln:47.7,wf:48,ps:43,vs:52,dd:-0.254,dh:-0.195,dl:0.213,iv:0.375,rv10:0.218,rv250:0.346,rvr:0.63,ivrv:1.73,htm:0.55,afs:0.71,tce:0.090,tcr:13.9,ndfi:null,pc:null,mktcap:5.65,assets:31.98},
+{rank:37,ticker:"CVBF",name:"CVB Financial Corp.",price:18.79,pb:1.11,vuln:47.1,wf:45,ps:52,vs:44,dd:-0.196,dh:-0.125,dl:0.210,iv:0.506,rv10:0.206,rv250:0.282,rvr:0.73,ivrv:2.45,htm:0.89,afs:1.05,tce:0.103,tcr:16.4,ndfi:null,pc:null,mktcap:2.55,assets:15.63},
+{rank:38,ticker:"IBOC",name:"International Bancshares Cor",price:67.48,pb:1.29,vuln:46.9,wf:19,ps:75,vs:47,dd:-0.158,dh:-0.096,dl:0.272,iv:0.338,rv10:0.176,rv250:0.270,rvr:0.65,ivrv:1.92,htm:0.00,afs:0.43,tce:0.182,tcr:22.1,ndfi:null,pc:null,mktcap:4.20,assets:16.58},
+{rank:39,ticker:"FIBK",name:"First Interstate BancSystem,",price:33.13,pb:0.97,vuln:46.5,wf:53,ps:51,vs:36,dd:-0.275,dh:-0.147,dl:0.534,iv:0.368,rv10:0.191,rv250:0.341,rvr:0.56,ivrv:1.93,htm:0.70,afs:1.58,tce:0.089,tcr:15.3,ndfi:null,pc:null,mktcap:3.35,assets:26.64},
+{rank:40,ticker:"CBU",name:"Community Financial System, ",price:57.42,pb:1.51,vuln:46.4,wf:65,ps:61,vs:13,dd:-0.234,dh:-0.149,dl:0.189,iv:0.347,rv10:0.136,rv250:0.272,rvr:0.50,ivrv:2.54,htm:0.48,afs:0.95,tce:0.065,tcr:12.8,ndfi:null,pc:null,mktcap:3.03,assets:17.30},
+{rank:41,ticker:"HOMB",name:"Home Bancshares, Inc. (Conwa",price:26.31,pb:1.20,vuln:46.0,wf:27,ps:56,vs:55,dd:-0.193,dh:-0.141,dl:0.118,iv:0.385,rv10:0.189,rv250:0.258,rvr:0.73,ivrv:2.04,htm:0.24,afs:0.56,tce:0.134,tcr:16.1,ndfi:null,pc:null,mktcap:5.17,assets:22.88},
+{rank:42,ticker:"ZION",name:"Zions Bancorporation, Nation",price:53.10,pb:1.10,vuln:45.9,wf:67,ps:35,vs:36,dd:-0.272,dh:-0.192,dl:0.396,iv:0.428,rv10:0.214,rv250:0.363,rvr:0.59,ivrv:2.00,htm:1.13,afs:1.17,tce:0.069,tcr:13.8,ndfi:null,pc:null,mktcap:7.85,assets:88.99},
+{rank:43,ticker:"ASB",name:"Associated Banc-Corp",price:24.48,pb:0.84,vuln:45.7,wf:71,ps:38,vs:29,dd:-0.249,dh:-0.163,dl:0.386,iv:0.444,rv10:0.193,rv250:0.319,rvr:0.61,ivrv:2.30,htm:0.89,afs:1.33,tce:0.081,tcr:12.4,ndfi:null,pc:null,mktcap:4.06,assets:45.20},
+{rank:44,ticker:"HTH",name:"Hilltop Holdings Inc.",price:34.75,pb:0.95,vuln:45.7,wf:32,ps:51,vs:55,dd:-0.137,dh:-0.136,dl:0.299,iv:0.447,rv10:0.193,rv250:0.236,rvr:0.82,ivrv:2.32,htm:0.34,afs:0.67,tce:0.121,tcr:15.6,ndfi:null,pc:null,mktcap:2.13,assets:15.84},
+{rank:45,ticker:"SSB",name:"SouthState Bank Corporation",price:90.43,pb:0.99,vuln:45.2,wf:46,ps:45,vs:45,dd:-0.244,dh:-0.166,dl:0.193,iv:0.348,rv10:0.182,rv250:0.295,rvr:0.62,ivrv:1.91,htm:0.23,afs:0.69,tce:0.086,tcr:13.7,ndfi:null,pc:null,mktcap:9.09,assets:67.20},
+{rank:46,ticker:"BKU",name:"BankUnited, Inc.",price:42.79,pb:1.04,vuln:45.2,wf:62,ps:39,vs:34,dd:-0.283,dh:-0.179,dl:0.568,iv:0.497,rv10:0.221,rv250:0.344,rvr:0.64,ivrv:2.25,htm:null,afs:2.88,tce:0.085,tcr:13.6,ndfi:null,pc:null,mktcap:3.22,assets:35.04},
+{rank:47,ticker:"JPM",name:"JPMorgan Chase & Co.",price:283.44,pb:2.23,vuln:44.2,wf:36,ps:72,vs:25,dd:-0.244,dh:-0.156,dl:0.422,iv:0.322,rv10:0.142,rv250:0.252,rvr:0.56,ivrv:2.27,htm:0.35,afs:0.66,tce:0.064,tcr:16.2,ndfi:5.3,pc:1.8,mktcap:764.45,assets:4424.90},
+{rank:48,ticker:"UBSI",name:"United Bankshares, Inc.",price:39.18,pb:0.99,vuln:44.1,wf:27,ps:69,vs:36,dd:-0.183,dh:-0.139,dl:0.336,iv:0.296,rv10:0.152,rv250:0.261,rvr:0.58,ivrv:1.95,htm:0.00,afs:0.56,tce:0.110,tcr:15.0,ndfi:null,pc:null,mktcap:5.46,assets:33.66},
+{rank:49,ticker:"WAFD",name:"WaFd, Inc.",price:31.04,pb:0.87,vuln:44.1,wf:52,ps:56,vs:24,dd:-0.195,dh:-0.088,dl:0.354,iv:0.423,rv10:0.171,rv250:0.288,rvr:0.59,ivrv:2.47,htm:0.32,afs:1.75,tce:0.087,tcr:14.6,ndfi:null,pc:null,mktcap:2.37,assets:26.70},
+{rank:50,ticker:"FNB",name:"F.N.B. Corporation",price:15.84,pb:0.84,vuln:44.0,wf:49,ps:37,vs:45,dd:-0.266,dh:-0.167,dl:0.501,iv:0.447,rv10:0.212,rv250:0.308,rvr:0.69,ivrv:2.11,htm:0.73,afs:0.66,tce:0.089,tcr:13.7,ndfi:null,pc:null,mktcap:5.66,assets:50.23},
+{rank:51,ticker:"COLB",name:"Columbia Banking System, Inc",price:26.23,pb:0.99,vuln:44.0,wf:54,ps:44,vs:34,dd:-0.250,dh:-0.188,dl:0.412,iv:0.370,rv10:0.194,rv250:0.357,rvr:0.54,ivrv:1.91,htm:0.00,afs:1.43,tce:0.087,tcr:13.3,ndfi:null,pc:null,mktcap:7.75,assets:66.83},
+{rank:52,ticker:"INDB",name:"Independent Bank Corp.",price:74.74,pb:1.03,vuln:41.2,wf:34,ps:62,vs:27,dd:-0.229,dh:-0.141,dl:0.470,iv:0.371,rv10:0.174,rv250:0.313,rvr:0.56,ivrv:2.13,htm:0.35,afs:0.54,tce:0.099,tcr:15.5,ndfi:null,pc:null,mktcap:3.71,assets:24.91},
+{rank:53,ticker:"CATY",name:"Cathay General Bancorp",price:47.38,pb:1.09,vuln:40.9,wf:34,ps:69,vs:20,dd:-0.208,dh:-0.132,dl:0.353,iv:0.323,rv10:0.150,rv250:0.303,rvr:0.50,ivrv:2.15,htm:null,afs:0.51,tce:0.107,tcr:14.8,ndfi:null,pc:null,mktcap:3.22,assets:24.23},
+{rank:54,ticker:"SFNC",name:"Simmons First National Corpo",price:18.61,pb:0.79,vuln:39.2,wf:53,ps:29,vs:35,dd:-0.240,dh:-0.151,dl:0.131,iv:0.581,rv10:0.202,rv250:0.290,rvr:0.69,ivrv:2.88,htm:0.00,afs:1.21,tce:0.087,tcr:11.8,ndfi:null,pc:null,mktcap:2.70,assets:24.54},
+{rank:55,ticker:"HBAN",name:"Huntington Bancshares Incorp",price:15.21,pb:1.10,vuln:39.2,wf:55,ps:41,vs:21,dd:-0.254,dh:-0.218,dl:0.312,iv:0.365,rv10:0.166,rv250:0.315,rvr:0.53,ivrv:2.20,htm:0.49,afs:0.85,tce:0.068,tcr:14.0,ndfi:6.8,pc:2.8,mktcap:30.87,assets:225.11},
+{rank:56,ticker:"OZK",name:"Bank OZK",price:43.40,pb:0.83,vuln:38.6,wf:32,ps:26,vs:58,dd:-0.292,dh:-0.176,dl:0.263,iv:0.383,rv10:0.208,rv250:0.302,rvr:0.69,ivrv:1.84,htm:null,afs:0.54,tce:0.128,tcr:14.8,ndfi:null,pc:null,mktcap:4.86,assets:40.79},
+{rank:57,ticker:"HOPE",name:"Hope Bancorp, Inc.",price:10.80,pb:0.61,vuln:35.6,wf:48,ps:48,vs:11,dd:-0.224,dh:-0.146,dl:0.291,iv:0.351,rv10:0.143,rv250:0.308,rvr:0.46,ivrv:2.45,htm:0.17,afs:1.32,tce:0.098,tcr:13.9,ndfi:null,pc:null,mktcap:1.38,assets:18.53},
+{rank:58,ticker:"FFBC",name:"First Financial Bancorp.",price:26.92,pb:0.96,vuln:35.3,wf:58,ps:45,vs:3,dd:-0.222,dh:-0.134,dl:0.326,iv:2.893,rv10:0.140,rv250:0.288,rvr:0.48,ivrv:20.74,htm:0.02,afs:1.41,tce:0.078,tcr:13.2,ndfi:null,pc:null,mktcap:2.82,assets:21.13},
+{rank:59,ticker:"FHB",name:"First Hawaiian, Inc.",price:23.95,pb:1.06,vuln:35.2,wf:56,ps:42,vs:8,dd:-0.239,dh:-0.147,dl:0.229,iv:0.646,rv10:0.147,rv250:0.276,rvr:0.53,ivrv:4.39,htm:1.19,afs:0.70,tce:0.077,tcr:14.3,ndfi:null,pc:null,mktcap:2.96,assets:23.96},
+{rank:60,ticker:"FRME",name:"First Merchants Corporation",price:36.43,pb:0.85,vuln:35.0,wf:52,ps:36,vs:17,dd:-0.238,dh:-0.149,dl:0.142,iv:0.425,rv10:0.154,rv250:0.279,rvr:0.55,ivrv:2.77,htm:0.85,afs:0.61,tce:0.094,tcr:13.1,ndfi:null,pc:null,mktcap:2.31,assets:19.03},
+{rank:61,ticker:"TOWN",name:"TowneBank",price:32.99,pb:1.06,vuln:34.1,wf:40,ps:52,vs:11,dd:-0.184,dh:-0.129,dl:0.148,iv:0.456,rv10:0.133,rv250:0.249,rvr:0.54,ivrv:3.42,htm:0.05,afs:0.89,tce:0.091,tcr:14.1,ndfi:null,pc:null,mktcap:3.04,assets:19.69},
+{rank:62,ticker:"AUB",name:"Atlantic Union Bankshares Co",price:34.30,pb:0.97,vuln:32.4,wf:47,ps:31,vs:20,dd:-0.380,dh:-0.179,dl:0.567,iv:0.591,rv10:0.206,rv250:0.352,rvr:0.58,ivrv:2.87,htm:0.18,afs:0.86,tce:0.083,tcr:14.0,ndfi:null,pc:null,mktcap:4.89,assets:37.59},
+{rank:63,ticker:"PNFP",name:"Pinnacle Financial Partners,",price:82.89,pb:0.93,vuln:30.8,wf:48,ps:13,vs:31,dd:-0.322,dh:-0.305,dl:0.029,iv:0.393,rv10:0.201,rv250:0.367,rvr:0.55,ivrv:1.95,htm:0.21,afs:0.53,tce:0.086,tcr:12.1,ndfi:null,pc:null,mktcap:12.46,assets:52.59},
+{rank:64,ticker:"FFIN",name:"First Financial Bankshares, ",price:29.56,pb:2.19,vuln:30.8,wf:38,ps:45,vs:9,dd:-0.212,dh:-0.223,dl:0.042,iv:0.404,rv10:0.140,rv250:0.280,rvr:0.50,ivrv:2.89,htm:null,afs:1.29,tce:0.124,tcr:19.4,ndfi:null,pc:null,mktcap:4.23,assets:15.45},
+{rank:65,ticker:"EGBN",name:"Eagle Bancorp, Inc.",price:24.26,pb:0.65,vuln:28.1,wf:52,ps:30,vs:2,dd:-0.386,dh:-0.171,dl:0.615,iv:0.561,rv10:0.158,rv250:0.496,rvr:0.32,ivrv:3.56,htm:1.10,afs:1.33,tce:0.110,tcr:14.7,ndfi:null,pc:null,mktcap:0.74,assets:11.13},
+{rank:66,ticker:"PB",name:"Prosperity Bancshares, Inc.",price:64.28,pb:0.79,vuln:27.3,wf:36,ps:42,vs:5,dd:-0.207,dh:-0.160,dl:0.081,iv:0.362,rv10:0.109,rv250:0.257,rvr:0.42,ivrv:3.31,htm:1.57,afs:0.05,tce:0.116,tcr:17.8,ndfi:null,pc:null,mktcap:6.53,assets:38.46},
+];
+
+// ============================================================
+// BACKTEST CHARTS
 // ============================================================
 function toTimeSeries(obj) {
   return Object.entries(obj).map(([d, v]) => ({ x: new Date(d), y: v })).sort((a,b) => a.x - b.x);
 }
 
-const navCtx = document.getElementById('navChart').getContext('2d');
+const gfcStart = new Date('2007-06-01'), gfcEnd = new Date('2009-03-31');
+const svbStart = new Date('2023-01-01'), svbEnd = new Date('2023-06-30');
+const covidStart = new Date('2020-01-01'), covidEnd = new Date('2020-06-30');
 
-// GFC and SVB annotation zones
-const gfcStart = new Date('2007-06-01');
-const gfcEnd = new Date('2009-03-31');
-const svbStart = new Date('2023-01-01');
-const svbEnd = new Date('2023-06-30');
-const covidStart = new Date('2020-01-01');
-const covidEnd = new Date('2020-06-30');
-
-new Chart(navCtx, {
-  type: 'line',
-  data: {
-    datasets: [
-      {
-        label: 'Safe 10',
-        data: toTimeSeries(navData.safe_top10),
-        borderColor: '#22c55e',
-        backgroundColor: 'rgba(34,197,94,0.05)',
-        borderWidth: 2,
-        pointRadius: 0,
-        fill: false,
-        tension: 0.1,
-      },
-      {
-        label: 'Danger 10',
-        data: toTimeSeries(navData.danger_top10),
-        borderColor: '#ef4444',
-        backgroundColor: 'rgba(239,68,68,0.05)',
-        borderWidth: 2,
-        pointRadius: 0,
-        fill: false,
-        tension: 0.1,
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    interaction: { mode: 'index', intersect: false },
-    scales: {
-      x: {
-        type: 'time',
-        time: { unit: 'year', displayFormats: { year: 'yyyy' } },
-        grid: { color: 'rgba(48,54,61,0.5)' }
-      },
-      y: {
-        title: { display: true, text: 'NAV (100 = March 2005)' },
-        grid: { color: 'rgba(48,54,61,0.5)' }
-      }
-    },
-    plugins: {
-      legend: { position: 'top', labels: { usePointStyle: true, padding: 20 } },
-      tooltip: {
-        callbacks: {
-          label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}`
-        }
-      }
-    }
-  },
-  plugins: [{
-    id: 'eraZones',
-    beforeDraw(chart) {
-      const { ctx, chartArea, scales } = chart;
-      const zones = [
-        { start: gfcStart, end: gfcEnd, color: 'rgba(239,68,68,0.06)', label: 'GFC' },
-        { start: covidStart, end: covidEnd, color: 'rgba(245,158,11,0.06)', label: 'COVID' },
-        { start: svbStart, end: svbEnd, color: 'rgba(168,85,247,0.06)', label: 'SVB' },
-      ];
-      zones.forEach(z => {
-        const x1 = Math.max(scales.x.getPixelForValue(z.start), chartArea.left);
-        const x2 = Math.min(scales.x.getPixelForValue(z.end), chartArea.right);
-        if (x2 > x1) {
-          ctx.fillStyle = z.color;
-          ctx.fillRect(x1, chartArea.top, x2 - x1, chartArea.bottom - chartArea.top);
-          ctx.fillStyle = '#8b949e';
-          ctx.font = '10px monospace';
-          ctx.fillText(z.label, x1 + 4, chartArea.top + 14);
-        }
-      });
-    }
-  }]
-});
-
-// ============================================================
-// SPREAD CHART
-// ============================================================
-const spreadCtx = document.getElementById('spreadChart').getContext('2d');
-new Chart(spreadCtx, {
-  type: 'line',
-  data: {
-    datasets: [{
-      label: 'L/S Spread (Safe/Danger)',
-      data: toTimeSeries(navData.long_safe_short_danger),
-      borderColor: '#3b82f6',
-      backgroundColor: 'rgba(59,130,246,0.08)',
-      borderWidth: 2,
-      pointRadius: 0,
-      fill: true,
-      tension: 0.1,
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      x: {
-        type: 'time',
-        time: { unit: 'year', displayFormats: { year: 'yyyy' } },
-        grid: { color: 'rgba(48,54,61,0.5)' }
-      },
-      y: {
-        title: { display: true, text: 'Spread Index (100 = start)' },
-        grid: { color: 'rgba(48,54,61,0.5)' }
-      }
-    },
-    plugins: {
-      legend: { display: false },
-      tooltip: { callbacks: { label: (ctx) => `Spread: ${ctx.parsed.y.toFixed(1)}` } }
-    }
-  },
-  plugins: [{
-    id: 'spreadZones',
-    beforeDraw(chart) {
-      const { ctx, chartArea, scales } = chart;
-      // Baseline at 100
-      const y100 = scales.y.getPixelForValue(100);
-      if (y100 >= chartArea.top && y100 <= chartArea.bottom) {
-        ctx.save();
-        ctx.strokeStyle = 'rgba(139,148,158,0.3)';
-        ctx.setLineDash([4, 4]);
-        ctx.beginPath();
-        ctx.moveTo(chartArea.left, y100);
-        ctx.lineTo(chartArea.right, y100);
-        ctx.stroke();
-        ctx.restore();
-      }
-      // GFC zone
-      const x1 = Math.max(scales.x.getPixelForValue(gfcStart), chartArea.left);
-      const x2 = Math.min(scales.x.getPixelForValue(gfcEnd), chartArea.right);
+const eraZonesPlugin = {
+  id: 'eraZones',
+  beforeDraw(chart) {
+    const { ctx, chartArea, scales } = chart;
+    [{start:gfcStart,end:gfcEnd,color:'rgba(239,68,68,0.06)',label:'GFC'},
+     {start:covidStart,end:covidEnd,color:'rgba(245,158,11,0.06)',label:'COVID'},
+     {start:svbStart,end:svbEnd,color:'rgba(168,85,247,0.06)',label:'SVB'}].forEach(z => {
+      const x1 = Math.max(scales.x.getPixelForValue(z.start), chartArea.left);
+      const x2 = Math.min(scales.x.getPixelForValue(z.end), chartArea.right);
       if (x2 > x1) {
-        ctx.fillStyle = 'rgba(239,68,68,0.06)';
+        ctx.fillStyle = z.color;
         ctx.fillRect(x1, chartArea.top, x2 - x1, chartArea.bottom - chartArea.top);
-        ctx.fillStyle = '#8b949e';
-        ctx.font = '10px monospace';
-        ctx.fillText('GFC', x1 + 4, chartArea.top + 14);
+        ctx.fillStyle = '#8b949e'; ctx.font = '10px monospace';
+        ctx.fillText(z.label, x1 + 4, chartArea.top + 14);
       }
-    }
-  }]
-});
+    });
+  }
+};
 
-// ============================================================
-// ERA BAR CHART
-// ============================================================
-const eraCtx = document.getElementById('eraChart').getContext('2d');
-const eras = [
-  { label: 'GFC\n2007-09', spread: -2.4, color: '#ef4444' },
-  { label: 'COVID\n2020', spread: 1.3, color: '#f59e0b' },
-  { label: 'SVB\n2023', spread: 9.1, color: '#a855f7' },
-  { label: 'Rate Cycle\n2022-23', spread: 2.9, color: '#3b82f6' },
-  { label: 'Calm\nMarkets', spread: 1.6, color: '#22c55e' },
-];
-new Chart(eraCtx, {
-  type: 'bar',
-  data: {
-    labels: eras.map(e => e.label),
-    datasets: [{
-      label: 'Avg 6M L/S Spread (%)',
-      data: eras.map(e => e.spread),
-      backgroundColor: eras.map(e => e.color + '88'),
-      borderColor: eras.map(e => e.color),
-      borderWidth: 1,
-    }]
+new Chart(document.getElementById('navChart'), {
+  type: 'line',
+  data: { datasets: [
+    { label:'Safe 10', data:toTimeSeries(navData.safe_top10), borderColor:'#22c55e', borderWidth:2, pointRadius:0, fill:false, tension:0.1 },
+    { label:'Danger 10', data:toTimeSeries(navData.danger_top10), borderColor:'#ef4444', borderWidth:2, pointRadius:0, fill:false, tension:0.1 }
+  ]},
+  options: { responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
+    scales: { x:{type:'time',time:{unit:'year',displayFormats:{year:'yyyy'}},grid:{color:'rgba(48,54,61,0.5)'}}, y:{title:{display:true,text:'NAV (100 = March 2005)'},grid:{color:'rgba(48,54,61,0.5)'}} },
+    plugins: { legend:{position:'top',labels:{usePointStyle:true,padding:20}}, tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}`}} }
   },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    indexAxis: 'y',
-    scales: {
-      x: {
-        title: { display: true, text: 'Avg 6M L/S Spread (%)' },
-        grid: { color: 'rgba(48,54,61,0.5)' }
-      },
-      y: { grid: { display: false } }
-    },
-    plugins: {
-      legend: { display: false },
-      tooltip: { callbacks: { label: (ctx) => `${ctx.parsed.x > 0 ? '+' : ''}${ctx.parsed.x.toFixed(1)}%` } }
-    }
-  },
-  plugins: [{
-    id: 'zeroLine',
-    beforeDraw(chart) {
-      const { ctx, chartArea, scales } = chart;
-      const x0 = scales.x.getPixelForValue(0);
-      ctx.save();
-      ctx.strokeStyle = 'rgba(139,148,158,0.4)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(x0, chartArea.top);
-      ctx.lineTo(x0, chartArea.bottom);
-      ctx.stroke();
-      ctx.restore();
-    }
-  }]
+  plugins: [eraZonesPlugin]
 });
 
-// ============================================================
-// QUARTER TABLE
-// ============================================================
-const tbody = document.querySelector('#quarterTable tbody');
-Object.keys(quarterData).sort().forEach(q => {
-  const d = quarterData[q];
-  const era = eraLabel(q);
-  const spreadVal = -(d.spread); // flip: we want Q1-Q5 (safe minus danger)
-  const tr = document.createElement('tr');
-  tr.className = eraClass(era);
-  tr.innerHTML = `
-    <td>${q}</td>
-    <td style="font-weight:600;color:${era === 'GFC' ? 'var(--bad)' : era === 'SVB' ? 'var(--purple)' : era === 'COVID' ? 'var(--warn)' : era === 'RATES' ? 'var(--blue)' : 'var(--text-dim)'}">${era || '—'}</td>
-    <td style="color:${pctColor(d.q5_6m)}">${pct(d.q5_6m)}</td>
-    <td style="color:${pctColor(d.q1_6m)}">${pct(d.q1_6m)}</td>
-    <td style="color:${pctColor(spreadVal)};font-weight:700">${pct(spreadVal)}</td>
-    <td>${d.n}</td>
-  `;
-  tbody.appendChild(tr);
+new Chart(document.getElementById('spreadChart'), {
+  type:'line',
+  data:{datasets:[{label:'L/S Spread',data:toTimeSeries(navData.long_safe_short_danger),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.08)',borderWidth:2,pointRadius:0,fill:true,tension:0.1}]},
+  options:{responsive:true,maintainAspectRatio:false,scales:{x:{type:'time',time:{unit:'year',displayFormats:{year:'yyyy'}},grid:{color:'rgba(48,54,61,0.5)'}},y:{title:{display:true,text:'Spread Index (100=start)'},grid:{color:'rgba(48,54,61,0.5)'}}},plugins:{legend:{display:false}}},
+  plugins:[{id:'bl',beforeDraw(c){const{ctx,chartArea:a,scales:s}=c;const y=s.y.getPixelForValue(100);if(y>=a.top&&y<=a.bottom){ctx.save();ctx.strokeStyle='rgba(139,148,158,0.3)';ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(a.left,y);ctx.lineTo(a.right,y);ctx.stroke();ctx.restore()}}}]
 });
 
+const eras=[{label:'GFC 2007-09',spread:-2.4,color:'#ef4444'},{label:'COVID 2020',spread:1.3,color:'#f59e0b'},{label:'SVB 2023',spread:9.1,color:'#a855f7'},{label:'Rate Cycle',spread:2.9,color:'#3b82f6'},{label:'Calm',spread:1.6,color:'#22c55e'}];
+new Chart(document.getElementById('eraChart'),{type:'bar',data:{labels:eras.map(e=>e.label),datasets:[{data:eras.map(e=>e.spread),backgroundColor:eras.map(e=>e.color+'88'),borderColor:eras.map(e=>e.color),borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',scales:{x:{title:{display:true,text:'Avg 6M L/S Spread (%)'},grid:{color:'rgba(48,54,61,0.5)'}},y:{grid:{display:false}}},plugins:{legend:{display:false}}},plugins:[{id:'zl',beforeDraw(c){const{ctx,chartArea:a,scales:s}=c;const x=s.x.getPixelForValue(0);ctx.save();ctx.strokeStyle='rgba(139,148,158,0.4)';ctx.beginPath();ctx.moveTo(x,a.top);ctx.lineTo(x,a.bottom);ctx.stroke();ctx.restore()}}]});
+
+// Holdings table
+const hBody=document.getElementById('holdingsBody');
+for(let i=0;i<10;i++){const tr=document.createElement('tr');tr.innerHTML=`<td>${i+1}</td><td class="ticker" style="color:var(--good)">${holdings.safe[i]}</td><td class="ticker" style="color:var(--bad)">${holdings.danger[i]}</td>`;hBody.appendChild(tr)}
+
+// Quarter table
+function eraLabel(q){const y=parseInt(q.slice(0,4)),m=parseInt(q.slice(5,7));if((y===2007&&m>=6)||y===2008||(y===2009&&m<=3))return'GFC';if(y===2020&&m<=6)return'COVID';if(y===2023&&m<=6)return'SVB';if(y>=2022&&y<=2023)return'RATES';return''}
+function eraClass(e){return e==='GFC'?'era-gfc':e==='COVID'?'era-covid':e==='SVB'?'era-svb':e==='RATES'?'era-rates':''}
+function pct(v){if(v==null)return'—';const s=(v*100).toFixed(1)+'%';return v>=0?'+'+s:s}
+function pctColor(v){return v>0.02?'var(--good)':v<-0.02?'var(--bad)':'var(--text)'}
+const qtb=document.querySelector('#quarterTable tbody');
+Object.keys(quarterData).sort().forEach(q=>{const d=quarterData[q],era=eraLabel(q),sp=-(d.spread);const tr=document.createElement('tr');tr.className=eraClass(era);tr.innerHTML=`<td>${q}</td><td style="font-weight:600;color:${era==='GFC'?'var(--bad)':era==='SVB'?'var(--purple)':era==='COVID'?'var(--warn)':era==='RATES'?'var(--blue)':'var(--text-dim)'}">${era||'—'}</td><td style="color:${pctColor(d.q5_6m)}">${pct(d.q5_6m)}</td><td style="color:${pctColor(d.q1_6m)}">${pct(d.q1_6m)}</td><td style="color:${pctColor(sp)};font-weight:700">${pct(sp)}</td><td>${d.n}</td>`;qtb.appendChild(tr)});
+
 // ============================================================
-// HOLDINGS TABLE
+// LIVE SCREEN CHARTS
 // ============================================================
-const hBody = document.getElementById('holdingsBody');
-for (let i = 0; i < 10; i++) {
-  const tr = document.createElement('tr');
-  tr.innerHTML = `
-    <td>${i + 1}</td>
-    <td class="ticker" style="color:var(--good)">${holdings.safe[i]}</td>
-    <td class="ticker" style="color:var(--bad)">${holdings.danger[i]}</td>
-  `;
-  hBody.appendChild(tr);
-}
+const vs=B.map(b=>b.vuln);const med=[...vs].sort((a,b)=>a-b)[33];const top10avg=vs.slice(0,10).reduce((a,b)=>a+b,0)/10;const ivrvBelow1=B.filter(b=>b.ivrv<1.0).length;const rvAbove1=B.filter(b=>b.rvr>1.0).length;
+document.getElementById('stats-row').innerHTML=`
+  <div class="stat"><div class="label">Most Vulnerable</div><div class="value">${B[0].ticker}</div><div class="delta bad">${B[0].vuln.toFixed(1)}% score</div></div>
+  <div class="stat"><div class="label">Median Vuln</div><div class="value">${med.toFixed(1)}%</div></div>
+  <div class="stat"><div class="label">Top 10 Avg</div><div class="value">${top10avg.toFixed(1)}%</div><div class="delta bad">danger zone</div></div>
+  <div class="stat"><div class="label">IV/RV < 1.0</div><div class="value">${ivrvBelow1}</div><div class="delta purple">options cheap</div></div>
+  <div class="stat"><div class="label">RV Rising (>1x)</div><div class="value">${rvAbove1}</div><div class="delta warn">stress building</div></div>`;
+
+new Chart(document.getElementById('quadrantChart'),{type:'bubble',data:{datasets:[{data:B.map(b=>({x:b.wf,y:b.ps,r:Math.max(3,Math.sqrt(b.mktcap||1)*1.8)})),backgroundColor:B.map(b=>b.vuln>60?'rgba(239,68,68,0.7)':b.vuln>50?'rgba(245,158,11,0.6)':'rgba(34,197,94,0.5)'),borderColor:B.map(b=>b.vs>70?'#a855f7':b.vuln>60?'#ef4444':b.vuln>50?'#f59e0b':'#22c55e'),borderWidth:2}]},options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const b=B[ctx.dataIndex];return`${b.ticker}: Vuln=${b.vuln}, Fund=${b.wf}, Price=${b.ps}, Vol=${b.vs}, IV/RV=${b.ivrv}`}}}},scales:{x:{title:{display:true,text:'Weak Fundamentals Score →'},grid:{color:'#1c2128'},min:0,max:100},y:{title:{display:true,text:'Price Strength Score →'},grid:{color:'#1c2128'},min:0,max:100}},responsive:true,maintainAspectRatio:false}});
+
+const ivrvSorted=[...B].filter(b=>b.ivrv<5).sort((a,b)=>a.ivrv-b.ivrv).slice(0,30);
+new Chart(document.getElementById('ivrvChart'),{type:'bar',data:{labels:ivrvSorted.map(b=>b.ticker),datasets:[{data:ivrvSorted.map(b=>b.ivrv),backgroundColor:ivrvSorted.map(b=>b.ivrv<1?'#ef4444':b.ivrv<1.5?'#f59e0b':'#22c55e'),borderRadius:3}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:9}}},y:{grid:{color:'#1c2128'},title:{display:true,text:'IV/RV Ratio'}}},responsive:true,maintainAspectRatio:false}});
+
+new Chart(document.getElementById('rvChart'),{type:'bubble',data:{datasets:[{data:B.map(b=>({x:b.rv250*100,y:b.rv10*100,r:Math.max(3,Math.sqrt(b.mktcap||1)*1.5)})),backgroundColor:B.map(b=>b.rvr>1.1?'rgba(239,68,68,0.7)':b.rvr>0.8?'rgba(245,158,11,0.5)':'rgba(34,197,94,0.4)'),borderColor:B.map(b=>b.rvr>1.1?'#ef4444':b.rvr>0.8?'#f59e0b':'#22c55e'),borderWidth:1}]},options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const b=B[ctx.dataIndex];return`${b.ticker}: RV10d=${(b.rv10*100).toFixed(0)}% RV250d=${(b.rv250*100).toFixed(0)}% ratio=${b.rvr}`}}}},scales:{x:{title:{display:true,text:'250d Realized Vol %'},grid:{color:'#1c2128'}},y:{title:{display:true,text:'10d Realized Vol %'},grid:{color:'#1c2128'}}},responsive:true,maintainAspectRatio:false}});
+
+const buckets=[0,0,0,0,0,0,0,0,0,0];B.forEach(b=>{const i=Math.min(Math.floor(b.vuln/10),9);buckets[i]++});
+new Chart(document.getElementById('distChart'),{type:'bar',data:{labels:['0-10','10-20','20-30','30-40','40-50','50-60','60-70','70-80','80-90','90-100'],datasets:[{data:buckets,backgroundColor:buckets.map((_,i)=>i>=6?'#ef4444':i>=5?'#f59e0b':i>=4?'#6b7280':'#22c55e'),borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:'#1c2128'}}},responsive:true,maintainAspectRatio:false}});
+
+const t10=B.slice(0,10),b10=B.slice(-10);const avg=(arr,k)=>{const v=arr.filter(b=>b[k]!==null).map(b=>b[k]);return v.length?v.reduce((a,b)=>a+b,0)/v.length:0};
+new Chart(document.getElementById('compareChart'),{type:'bar',data:{labels:['P/B','TCE%','AFS/MC','IV/RV','RV Ratio','Vol Sig'],datasets:[{label:'Most Vuln 10',data:[avg(t10,'pb'),avg(t10,'tce')*100,avg(t10,'afs'),avg(t10,'ivrv'),avg(t10,'rvr'),avg(t10,'vs')],backgroundColor:'#ef4444',borderRadius:4},{label:'Least Vuln 10',data:[avg(b10,'pb'),avg(b10,'tce')*100,avg(b10,'afs'),avg(b10,'ivrv'),avg(b10,'rvr'),avg(b10,'vs')],backgroundColor:'#22c55e',borderRadius:4}]},options:{plugins:{legend:{labels:{font:{size:10}}}},scales:{x:{grid:{display:false}},y:{grid:{color:'#1c2128'}}},responsive:true,maintainAspectRatio:false}});
+
+const ndfi=B.filter(b=>b.ndfi!==null).sort((a,b)=>b.ndfi-a.ndfi);
+new Chart(document.getElementById('ndfiChart'),{type:'bar',data:{labels:ndfi.map(b=>b.ticker),datasets:[{label:'Private Credit/PE %',data:ndfi.map(b=>b.pc||0),backgroundColor:'#ef4444',borderRadius:2},{label:'Other NDFI %',data:ndfi.map(b=>(b.ndfi||0)-(b.pc||0)),backgroundColor:'#f59e0b',borderRadius:2}]},options:{plugins:{legend:{labels:{font:{size:10}}}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:'#1c2128'},ticks:{callback:v=>v+'%'},title:{display:true,text:'% of Total Assets'}}},responsive:true,maintainAspectRatio:false}});
+
+const ep=B.filter(b=>b.afs!==null&&b.dh!==null);
+new Chart(document.getElementById('exposureVsPriceChart'),{type:'bubble',data:{datasets:[{data:ep.map(b=>({x:(b.htm||0)+b.afs,y:b.dh*-100,r:Math.max(3,Math.sqrt(b.mktcap||1)*1.5)})),backgroundColor:ep.map(b=>b.vuln>60?'rgba(239,68,68,0.6)':b.vuln>50?'rgba(245,158,11,0.5)':'rgba(34,197,94,0.4)'),borderColor:ep.map(b=>b.vuln>60?'#ef4444':b.vuln>50?'#f59e0b':'#22c55e'),borderWidth:1}]},options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const b=ep[ctx.dataIndex];return`${b.ticker}: HTM+AFS=${((b.htm||0)+b.afs).toFixed(2)}x, ${(b.dh*-100).toFixed(1)}% from high`}}}},scales:{x:{title:{display:true,text:'HTM + AFS as Multiple of Market Cap →'},grid:{color:'#1c2128'},ticks:{callback:v=>v.toFixed(1)+'x'}},y:{title:{display:true,text:'Distance from 1Y High (%)'},grid:{color:'#1c2128'},ticks:{callback:v=>v+'%'},reverse:true}},responsive:true,maintainAspectRatio:false}});
+
+// Rankings table
+function renderTable(data){document.getElementById('tbl').innerHTML=data.map(b=>{const vc=b.vuln>=60?'#ef4444':b.vuln>=50?'#f59e0b':'#22c55e';const vbg=b.vuln>=60?'rgba(239,68,68,0.15)':b.vuln>=50?'rgba(245,158,11,0.1)':'rgba(34,197,94,0.1)';const vsc=b.vs>=70?'color:#a855f7':'';const ivC=b.ivrv<1?'color:#ef4444':b.ivrv<1.5?'color:#f59e0b':'';const rC=b.rvr>1?'color:#ef4444':'';return`<tr><td class="rank">${b.rank}</td><td class="ticker">${b.ticker}</td><td>${b.name}</td><td><span class="score-cell" style="color:${vc};background:${vbg}">${b.vuln.toFixed(1)}</span></td><td>${b.wf}</td><td>${b.ps}</td><td style="${vsc};font-weight:600">${b.vs}</td><td>${(b.iv*100).toFixed(0)}%</td><td>${(b.rv10*100).toFixed(0)}%</td><td style="${rC};font-weight:600">${b.rvr.toFixed(2)}</td><td style="${ivC};font-weight:600">${b.ivrv.toFixed(2)}</td><td>${b.pb.toFixed(2)}</td><td>${(b.dd*100).toFixed(1)}%</td><td>${b.dh!==null?(b.dh*100).toFixed(1)+'%':'—'}</td><td>${b.htm!==null?b.htm.toFixed(2):'—'}</td><td>${b.afs!==null?b.afs.toFixed(2):'—'}</td><td>${b.tcr!==null?b.tcr.toFixed(1)+'%':'—'}</td><td>${b.ndfi!==null?b.ndfi.toFixed(1)+'%':'—'}</td><td>$${(b.mktcap||0).toFixed(1)}</td></tr>`}).join('')}
+function setActive(el){document.querySelectorAll('#table-controls .btn').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+function showAll(el){renderTable(B);setActive(el)}
+function showTop(n,el){renderTable(B.slice(0,n));setActive(el)}
+function showBottom(n,el){renderTable(B.slice(-n));setActive(el)}
+function showNDFI(el){renderTable(B.filter(b=>b.ndfi!==null));setActive(el)}
+function showBig(el){renderTable(B.filter(b=>(b.assets||0)>100));setActive(el)}
+function showVolAlert(el){renderTable(B.filter(b=>b.ivrv<1.5||b.rvr>1.0).sort((a,b)=>a.ivrv-b.ivrv));setActive(el)}
+let sd={};function sortTable(key){sd[key]=!sd[key];const s=[...B].sort((a,b)=>{const va=a[key]===null?-Infinity:a[key],vb=b[key]===null?-Infinity:b[key];return sd[key]?(va>vb?1:-1):(va<vb?1:-1)});renderTable(s)}
+renderTable(B);
 </script>
 </body>
 </html>
