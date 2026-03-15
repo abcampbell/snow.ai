@@ -393,9 +393,10 @@ fundDiv.innerHTML=`
     <h2>Silver Miner Fundamentals Screen</h2>
     <table>
       <thead><tr>
-        <th>Ticker</th><th>Name</th><th>%Ag</th><th>MCap ($M)</th>
-        <th>Rev Growth</th><th>EBITDA Margin</th><th>ROIC</th>
+        <th>Ticker</th><th>Name</th><th>%Ag</th><th>MCap</th>
+        <th>RevG</th><th>EBITDA%</th><th>ROIC</th>
         <th>P/S</th><th>P/E</th>
+        <th>Net Debt</th><th>D/EBITDA</th><th>Int Cov</th><th>Curr R</th><th>FCF</th><th>FCF Yld</th>
       </tr></thead>
       <tbody>
         ${miners.map(m=>{
@@ -409,9 +410,16 @@ fundDiv.innerHTML=`
             <td style="color:${clr(m.roic,0.1,-0.1)};font-weight:600;text-align:right">${fmt(m.roic,'%',100,0)}</td>
             <td style="color:${clr(m.ps!=null?-m.ps:null,-8,-20)};text-align:right">${m.ps!=null&&m.ps<50?fmt(m.ps,'x',1,1):'—'}</td>
             <td style="text-align:right">${m.pe!=null&&m.pe<100?fmt(m.pe,'x',1,0):'—'}</td>
+            <td style="color:${clr(m.net_debt_mn!=null?-m.net_debt_mn:null,0,-50)};text-align:right;font-weight:600">${m.net_debt_mn!=null?(m.net_debt_mn>0?'+':'')+m.net_debt_mn+'M':'—'}</td>
+            <td style="color:${clr(m.debt_ebitda!=null?-m.debt_ebitda:null,-1,-3)};text-align:right">${m.debt_ebitda!=null?m.debt_ebitda.toFixed(1)+'x':'—'}</td>
+            <td style="color:${clr(m.interest_coverage,5,-1)};text-align:right">${m.interest_coverage!=null&&m.interest_coverage>-200?m.interest_coverage.toFixed(1)+'x':'—'}</td>
+            <td style="color:${clr(m.current_ratio,2,1)};text-align:right">${m.current_ratio!=null?m.current_ratio.toFixed(1)+'x':'—'}</td>
+            <td style="color:${clr(m.fcf_mn,0,-10)};text-align:right">${m.fcf_mn!=null?'$'+m.fcf_mn+'M':'—'}</td>
+            <td style="color:${clr(m.fcf_yield,3,0)};text-align:right;font-weight:600">${m.fcf_yield!=null?m.fcf_yield+'%':'—'}</td>
           </tr>`}).join('')}
       </tbody>
     </table>
+    <div class="insight green"><strong>Balance sheet quality:</strong> AG, HL, PAAS, FNLPF all have net cash positions and strong interest coverage. EXK and USAS carry net debt with negative FCF — leveraged bets on silver price. USAS current ratio of 0.9x is a yellow flag.</div>
   </div>
 
   <div class="card">
