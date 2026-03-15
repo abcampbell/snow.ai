@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver Miner Signal System — 2026-03-15</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#c0c0c0;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7;--warn:#f59e0b}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'SF Mono','Cascadia Code','Consolas',monospace;background:var(--bg);color:var(--text)}
+  .header{padding:24px 32px;border-bottom:1px solid var(--border)}
+  .header h1{font-size:20px;font-weight:600;color:var(--accent)}
+  .header .sub{color:var(--text-dim);font-size:12px;margin-top:4px}
+  .header .concept{color:var(--text);font-size:13px;margin-top:8px;line-height:1.5;max-width:900px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px 32px}
+  .grid-full{grid-column:1/-1}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px}
+  .card h2{font-size:13px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+  .stat-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+  .stat{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px 16px;min-width:100px;flex:1}
+  .stat .label{font-size:10px;color:var(--text-dim);text-transform:uppercase}
+  .stat .value{font-size:22px;font-weight:700;color:#fff;margin-top:2px}
+  .stat .delta{font-size:11px;margin-top:2px}
+  .chart-container{position:relative;height:350px}
+  .insight{background:#1c2128;border-left:3px solid var(--accent);padding:12px 16px;margin-top:12px;font-size:12px;line-height:1.6;border-radius:0 4px 4px 0}
+  .insight strong{color:#fff}
+  .insight.green{border-left-color:var(--good)}.insight.blue{border-left-color:var(--blue)}.insight.red{border-left-color:var(--bad)}.insight.warn{border-left-color:var(--warn)}
+  .section-title{font-size:15px;color:#fff;font-weight:600;margin:32px 32px 0;padding-top:16px;border-top:1px solid var(--border)}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{text-align:left;padding:8px;color:var(--text-dim);font-weight:500;border-bottom:1px solid var(--border);font-size:10px;text-transform:uppercase}
+  td{padding:6px 8px;border-bottom:1px solid #1c2128}
+  tr:hover{background:#1c2128}
+  .loading{text-align:center;padding:60px;color:var(--text-dim)}
+  .corner-mark{position:fixed;bottom:1rem;right:1.5rem;font-size:10px;color:var(--text-dim);z-index:10}
+  .corner-mark a{color:var(--text-dim);text-decoration:none}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Silver Miner Signal System</h1>
+  <div class="sub">4 Signals | Miner Basket (HL, EXK, AG, PAAS, FNLPF) | 2008–2026</div>
+  <div class="concept">
+    <strong>Target:</strong> Equal-weight basket of 5 liquid silver miners.
+    <strong>Signals:</strong> Silver momentum, silver/oil ratio (margin proxy), India physical premium, LBMA backwardation.
+    IV got zero optimizer weight — dropped. Silver/oil inverted = margin compression precedes rallies (mean-reversion).
+  </div>
+</div>
+<div id="content"><div class="loading">Loading data...</div></div>
+<div class="corner-mark"><a href="https://snow.ai/links/">snow.ai</a></div>
+
+<script>
+Chart.defaults.color='#8b949e';Chart.defaults.borderColor='#30363d';
+Chart.defaults.font.family="'SF Mono','Cascadia Code','Consolas',monospace";Chart.defaults.font.size=10;
+
+const CLR={silver_momentum:'#c0c0c0',silver_oil_ratio:'#f59e0b',india_silver_premium:'#a855f7',silver_lbma_backwardation:'#3b82f6',silver_implied_vol:'#ef4444'};
+const LBL={silver_momentum:'Silver Momentum',silver_oil_ratio:'Silver/Oil (inv)',india_silver_premium:'India Premium',silver_lbma_backwardation:'LBMA Backwardation',silver_implied_vol:'IV (dropped)'};
+
+fetch('data.json').then(r=>r.json()).then(D=>{
+const el=document.getElementById('content');
+const W=D.weights;
+const cfg=W.signal_configs;
+const bt=W.composite_backtest_vs_miners;
+const btSlv=W.composite_backtest_vs_slv;
+const comp=D.composite;
+const sigs=D.signals;
+const sigOrder=W.signals_used.filter(s=>W.weights[s]>0);
+
+const compZDates=Object.keys(comp.z_score).sort();
+const lastZ=comp.z_score[compZDates[compZDates.length-1]];
+const lastDate=compZDates[compZDates.length-1].slice(0,10);
+
+// Drawdown
+const pnlDates=Object.keys(comp.cum_pnl_vs_miners).sort();
+const pnlVals=pnlDates.map(d=>comp.cum_pnl_vs_miners[d]);
+let peak=pnlVals[0];const ddData={};
+pnlDates.forEach((d,i)=>{if(pnlVals[i]>peak)peak=pnlVals[i];ddData[d]=((pnlVals[i]-peak)/peak)*100});
+
+el.innerHTML=`
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Composite System — Silver Miners</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Miner Sharpe</div><div class="value" style="color:var(--good)">${bt.sharpe.toFixed(2)}</div></div>
+      <div class="stat"><div class="label">SLV Sharpe</div><div class="value">${btSlv.sharpe.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">same signal, diff target</div></div>
+      <div class="stat"><div class="label">Ann. Return</div><div class="value" style="color:var(--good)">${(bt.ann_ret*100).toFixed(1)}%</div></div>
+      <div class="stat"><div class="label">Ann. Vol</div><div class="value">${(bt.ann_vol*100).toFixed(1)}%</div></div>
+      <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${(bt.max_dd*100).toFixed(1)}%</div></div>
+      <div class="stat"><div class="label">Current Z</div><div class="value" style="color:${lastZ>0?'var(--good)':'var(--bad)'}">${lastZ>0?'+':''}${lastZ.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">${lastZ>0.5?'LONG':lastZ<-0.5?'SHORT':'NEUTRAL'} · ${lastDate}</div></div>
+    </div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Composite Signal vs Miner Basket</h2>
+    <div class="chart-container" style="height:420px"><canvas id="sigVsMiners"></canvas></div>
+    <div class="insight green"><strong>Bars:</strong> composite z-score. <strong>Silver line:</strong> miner basket (right axis). Green bars before miner rallies = signal leading price.</div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Composite Cumulative PnL (vs Miner Basket Returns)</h2>
+    <div class="chart-container"><canvas id="cumPnl"></canvas></div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Drawdown</h2>
+    <div class="chart-container" style="height:220px"><canvas id="ddChart"></canvas></div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Silver / Oil Ratio (Miner Margin Proxy)</h2>
+    <div class="chart-container"><canvas id="silverOil"></canvas></div>
+    <div class="insight warn"><strong>Rising = expanding miner margins.</strong> Signal is inverted: margin compression (falling ratio) precedes miner rallies — a mean-reversion/oversold effect. Miners rally hardest after margins get squeezed.</div>
+  </div>
+</div>
+
+<div class="section-title">Individual Signals</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Signal Configs &amp; Weights</h2>
+    <table>
+      <thead><tr><th>Signal</th><th>Config</th><th>Dir</th><th>Miner Sharpe</th><th>SLV Sharpe</th><th>Weight</th></tr></thead>
+      <tbody>
+        ${W.signals_used.map(s=>{const c=cfg[s];const wt=W.weights[s];return`<tr style="${wt===0?'opacity:0.4':''}">
+          <td style="color:${CLR[s]||'var(--text)'};font-weight:600">${LBL[s]||s}</td>
+          <td style="font-size:11px">${c.config}</td>
+          <td>${c.direction==='inverted'?'INV':'NRM'}</td>
+          <td style="font-weight:700">${c.sharpe.toFixed(3)}</td>
+          <td>${c.slv_sharpe.toFixed(3)}</td>
+          <td style="font-weight:700">${(wt*100).toFixed(1)}%${wt===0?' (dropped)':''}</td>
+        </tr>`}).join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Individual Signal PnL + Composite (white)</h2>
+    <div class="chart-container"><canvas id="indivPnl"></canvas></div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Individual Z-Scores + Composite (white)</h2>
+    <div class="chart-container" style="height:400px"><canvas id="zScores"></canvas></div>
+    <div class="insight blue">Signal convergence = high conviction. Note how LBMA backwardation (blue) often leads turns while momentum (silver) confirms them.</div>
+  </div>
+
+  <div class="card">
+    <h2>Miner Basket</h2>
+    <table>
+      <thead><tr><th>#</th><th>Ticker</th><th>Name</th><th>% Silver Rev</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td style="color:var(--accent);font-weight:600">HL</td><td>Hecla Mining</td><td>73%</td></tr>
+        <tr><td>2</td><td style="color:var(--accent);font-weight:600">EXK</td><td>Endeavour Silver</td><td>66%</td></tr>
+        <tr><td>3</td><td style="color:var(--accent);font-weight:600">AG</td><td>First Majestic</td><td>59%</td></tr>
+        <tr><td>4</td><td style="color:var(--accent);font-weight:600">PAAS</td><td>Pan American Silver</td><td>59%</td></tr>
+        <tr><td>5</td><td style="color:var(--accent);font-weight:600">FNLPF</td><td>Fresnillo</td><td>47%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Methodology</h2>
+    <table>
+      <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Target</td><td>Equal-weight 5-name miner basket</td></tr>
+        <tr><td>Signal lag</td><td>1 day</td></tr>
+        <tr><td>Position sizing</td><td>Clipped z ∈ [-2, +2]</td></tr>
+        <tr><td>Composite</td><td>Sharpe-weighted (scipy optimize)</td></tr>
+        <tr><td>Silver/Oil</td><td>SLV price / Rose oil price</td></tr>
+        <tr><td>Period</td><td>2008–2026 (miner data start)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div style="padding:24px 32px;color:var(--text-dim);font-size:11px;border-top:1px solid var(--border);margin-top:16px">
+  Data: Rose + Yahoo Finance | Silver miners: HL, EXK, AG, PAAS, FNLPF | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
+</div>`;
+
+// ============================================================
+// CHARTS
+// ============================================================
+const minerDates=Object.keys(D.miner_basket).sort();
+const compZAll=Object.keys(comp.z_score).sort();
+const allMain=[...new Set([...minerDates,...compZAll])].sort().filter(d=>d>='2008');
+
+// Signal vs Miners
+new Chart(document.getElementById('sigVsMiners'),{type:'bar',
+  data:{labels:allMain.map(d=>d.slice(0,10)),datasets:[
+    {type:'bar',label:'Composite Z',data:allMain.map(d=>comp.z_score[d]||null),
+     backgroundColor:allMain.map(d=>{const v=comp.z_score[d];return!v?'transparent':v>0?'rgba(34,197,94,0.5)':'rgba(239,68,68,0.5)'}),
+     borderRadius:1,yAxisID:'y',order:2},
+    {type:'line',label:'Miner Basket',data:allMain.map(d=>D.miner_basket[d]||null),
+     borderColor:'#c0c0c0',borderWidth:2,pointRadius:0,tension:0.1,yAxisID:'y1',order:1,spanGaps:true}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{position:'left',grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Z-Score'},min:-3,max:3},
+      y1:{position:'right',grid:{display:false},title:{display:true,text:'Basket Index'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:15}}}}
+});
+
+// Cum PnL
+new Chart(document.getElementById('cumPnl'),{type:'line',
+  data:{datasets:[{label:'Composite vs Miners',data:pnlDates.map(d=>({x:d.slice(0,10),y:comp.cum_pnl_vs_miners[d]})),
+    borderColor:'#fff',borderWidth:2,pointRadius:0,tension:0.1,
+    fill:{target:'origin',above:'rgba(34,197,94,0.08)',below:'rgba(239,68,68,0.08)'}}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
+    plugins:{legend:{display:false}}}
+});
+
+// Drawdown
+const ddDates=Object.keys(ddData).sort();
+new Chart(document.getElementById('ddChart'),{type:'line',
+  data:{datasets:[{data:ddDates.map(d=>({x:d.slice(0,10),y:ddData[d]})),
+    borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,0.15)',borderWidth:1.5,pointRadius:0,tension:0.1,fill:true}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Drawdown (%)'},ticks:{callback:v=>v.toFixed(0)+'%'}}},
+    plugins:{legend:{display:false}}}
+});
+
+// Silver/Oil ratio
+const soilDates=Object.keys(D.silver_oil).sort().filter(d=>d>='2008');
+new Chart(document.getElementById('silverOil'),{type:'line',
+  data:{datasets:[{label:'Silver/Oil Ratio',data:soilDates.map(d=>({x:d.slice(0,10),y:D.silver_oil[d]})),
+    borderColor:'#f59e0b',borderWidth:2,pointRadius:0,tension:0.1,fill:false}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'SLV / Oil (higher = better margins)'}}},
+    plugins:{legend:{display:false}}}
+});
+
+// Individual PnL
+const ids=sigOrder.map(s=>{const p=sigs[s].cum_pnl_vs_miners;const dates=Object.keys(p).sort();
+  return{label:LBL[s],data:dates.map(d=>({x:d.slice(0,10),y:p[d]})),borderColor:CLR[s],borderWidth:2,pointRadius:0,tension:0.1,fill:false}});
+ids.push({label:'Composite',data:pnlDates.map(d=>({x:d.slice(0,10),y:comp.cum_pnl_vs_miners[d]})),borderColor:'#fff',borderWidth:3,pointRadius:0,tension:0.1,fill:false});
+const aDates=[...new Set(ids.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
+new Chart(document.getElementById('indivPnl'),{type:'line',data:{labels:aDates,datasets:ids},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL vs Miners'}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}}}}
+});
+
+// Z-scores overlay
+const zds=sigOrder.map(s=>{const z=sigs[s].z_score;const dates=Object.keys(z).sort().filter(d=>d>='2008');
+  return{label:LBL[s],data:dates.map(d=>({x:d.slice(0,10),y:z[d]})),borderColor:CLR[s],borderWidth:1.5,pointRadius:0,tension:0.2,fill:false}});
+zds.push({label:'Composite',data:compZAll.map(d=>({x:d.slice(0,10),y:comp.z_score[d]})),borderColor:'#fff',borderWidth:3,pointRadius:0,tension:0.2,fill:false});
+const azd=[...new Set(zds.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
+new Chart(document.getElementById('zScores'),{type:'line',data:{labels:azd,datasets:zds},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:20,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Z-Score'},min:-3,max:3}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:10}}}},
+  plugins:[{id:'zb',beforeDraw(c){const{ctx,chartArea:a,scales:s}=c;ctx.save();ctx.strokeStyle='rgba(139,148,158,0.2)';ctx.setLineDash([4,4]);
+    [0,1,-1].forEach(v=>{const y=s.y.getPixelForValue(v);ctx.beginPath();ctx.moveTo(a.left,y);ctx.lineTo(a.right,y);ctx.stroke()});ctx.restore()}}]
+});
+
+}).catch(e=>{document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--bad)">Error: ${e.message}</div>`});
+</script>
+</body>
+</html>
