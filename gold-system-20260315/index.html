@@ -520,11 +520,7 @@ dxDiv.innerHTML=`
     <table>
       <thead><tr><th>Config</th><th>Sharpe</th><th>Ann Ret</th></tr></thead>
       <tbody>
-        ${dtop.slice(0,10).map(r=>\`<tr>
-          <td style="font-weight:600">ma(\${r.fast},\${r.slow},ari) z=\${r.z}</td>
-          <td style="color:var(--good);font-weight:700">\${r.sharpe.toFixed(3)}</td>
-          <td>\${r.ann_ret}%</td>
-        </tr>\`).join('')}
+        ${dtop.slice(0,10).map(r=>'<tr><td style="font-weight:600">ma('+r.fast+','+r.slow+',ari) z='+r.z+'</td><td style="color:var(--good);font-weight:700">'+r.sharpe.toFixed(3)+'</td><td>'+r.ann_ret+'%</td></tr>').join('')}
       </tbody>
     </table>
   </div>
