@@ -337,13 +337,13 @@ ryDiv.innerHTML=`
 <div class="section-title">Real Yield Signal: usa.real.yield.2y.ilb → Gold</div>
 <div class="grid">
   <div class="card grid-full">
-    <h2>Optimization: ma(x,y) z-score(z) — Best: ma(${bc.fast},${bc.slow}) z=${bc.z} ${bc.direction}</h2>
+    <h2>Optimization: ma(x,y) z-score(z) — Best: ma(${bc.fast},${bc.slow},ari) z=${bc.z} ${bc.direction}</h2>
     <div class="stat-row">
       <div class="stat"><div class="label">Best Sharpe</div><div class="value" style="color:var(--good)">${bc.sharpe.toFixed(2)}</div></div>
       <div class="stat"><div class="label">Ann Return</div><div class="value">${bc.ann_ret}%</div></div>
       <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${bc.max_dd}%</div></div>
       <div class="stat"><div class="label">Direction</div><div class="value" style="font-size:16px">${bc.direction.toUpperCase()}</div><div class="delta" style="color:var(--text-dim)">falling real yields = long gold</div></div>
-      <div class="stat"><div class="label">Config</div><div class="value" style="font-size:14px">ma(${bc.fast},${bc.slow})</div><div class="delta" style="color:var(--text-dim)">z=${bc.z}</div></div>
+      <div class="stat"><div class="label">Config</div><div class="value" style="font-size:14px">ma(${bc.fast},${bc.slow},ari)</div><div class="delta" style="color:var(--text-dim)">z=${bc.z}</div></div>
     </div>
   </div>
 
@@ -386,13 +386,13 @@ ryDiv.innerHTML=`
   </div>
 
   <div class="card grid-full">
-    <h2>Real Yield Signal vs Gold — ma(${bc.fast},${bc.slow}) z=${bc.z} ${bc.direction}</h2>
+    <h2>Real Yield Signal vs Gold — ma(${bc.fast},${bc.slow},ari) z=${bc.z} ${bc.direction}</h2>
     <div class="chart-container" style="height:420px"><canvas id="rySignal"></canvas></div>
     <div class="insight green"><strong>Logic:</strong> When 2Y real yields are falling relative to trend (negative z, inverted to positive signal), gold rallies. The 2Y TIPS yield captures Fed expectations — falling real yields = easier financial conditions = gold bullish.</div>
   </div>
 
   <div class="card grid-full">
-    <h2>Cumulative PnL: Real Yield Signal — ma(${bc.fast},${bc.slow}) z=${bc.z} ${bc.direction}</h2>
+    <h2>Cumulative PnL: Real Yield Signal — ma(${bc.fast},${bc.slow},ari) z=${bc.z} ${bc.direction}</h2>
     <div class="chart-container"><canvas id="ryCumPnl"></canvas></div>
   </div>
 </div>`;
