@@ -470,6 +470,150 @@ new Chart(document.getElementById('ryCumPnl'),{type:'line',
 });
 });
 
+// ============================================================
+// DOLLAR SIGNAL OPTIMIZATION
+// ============================================================
+fetch('dollar.json').then(r=>r.json()).then(DX=>{
+const dxDiv=document.createElement('div');
+const dbc=DX.best_config;
+const dts=DX.timeseries;
+const dtop=DX.top_20||[];
+const dhm=DX.heatmaps;
+const dfv=DX.fast_vals;
+const dsv=DX.slow_vals;
+
+dxDiv.innerHTML=`
+<div class="section-title">Dollar Signal: DXY → Gold</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Optimization: ma(x,y,ari) z(z) — Best: ma(${dbc.fast},${dbc.slow},ari) z=${dbc.z} ${dbc.direction}</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Best Sharpe</div><div class="value" style="color:var(--good)">${dbc.sharpe.toFixed(2)}</div></div>
+      <div class="stat"><div class="label">Ann Return</div><div class="value">${dbc.ann_ret}%</div></div>
+      <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${dbc.max_dd}%</div></div>
+      <div class="stat"><div class="label">Direction</div><div class="value" style="font-size:16px">${dbc.direction.toUpperCase()}</div><div class="delta" style="color:var(--text-dim)">falling dollar = long gold</div></div>
+      <div class="stat"><div class="label">Config</div><div class="value" style="font-size:14px">ma(${dbc.fast},${dbc.slow},ari)</div><div class="delta" style="color:var(--text-dim)">z=${dbc.z}</div></div>
+    </div>
+    <div class="insight">Dollar is a <strong>trend-following signal</strong> (fast=40d, slow=180d, z=250d) — opposite character to real yields (fast=3d, z=40d). Dollar trends are multi-month, so you need long lookbacks. Real yield shifts are fast, so you need short lookbacks. Good for diversification.</div>
+  </div>
+
+  <div class="card">
+    <h2>Heatmap: z=20</h2>
+    <div class="chart-container" style="height:280px"><canvas id="dxHm20"></canvas></div>
+  </div>
+  <div class="card">
+    <h2>Heatmap: z=40</h2>
+    <div class="chart-container" style="height:280px"><canvas id="dxHm40"></canvas></div>
+  </div>
+  <div class="card">
+    <h2>Heatmap: z=90</h2>
+    <div class="chart-container" style="height:280px"><canvas id="dxHm90"></canvas></div>
+  </div>
+  <div class="card">
+    <h2>Heatmap: z=120</h2>
+    <div class="chart-container" style="height:280px"><canvas id="dxHm120"></canvas></div>
+  </div>
+  <div class="insight grid-full" style="margin:0 32px"><strong>Dollar heatmaps:</strong> Signal strengthens with longer z-windows and slower MAs. The bottom-right corner (fast=20-40, slow=120-250) at z=120+ is where the signal lives — trend-following, not momentum.</div>
+
+  <div class="card">
+    <h2>Top Configs</h2>
+    <table>
+      <thead><tr><th>Config</th><th>Sharpe</th><th>Ann Ret</th></tr></thead>
+      <tbody>
+        ${dtop.slice(0,10).map(r=>\`<tr>
+          <td style="font-weight:600">ma(\${r.fast},\${r.slow},ari) z=\${r.z}</td>
+          <td style="color:var(--good);font-weight:700">\${r.sharpe.toFixed(3)}</td>
+          <td>\${r.ann_ret}%</td>
+        </tr>\`).join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Dollar vs Real Yield: Different Frequencies</h2>
+    <table>
+      <thead><tr><th></th><th>Real Yield</th><th>Dollar</th></tr></thead>
+      <tbody>
+        <tr><td>Fast MA</td><td style="color:var(--good)">3d</td><td style="color:var(--blue)">40d</td></tr>
+        <tr><td>Slow MA</td><td>180d</td><td>180d</td></tr>
+        <tr><td>Z Window</td><td style="color:var(--good)">40d</td><td style="color:var(--blue)">250d</td></tr>
+        <tr><td>Sharpe</td><td style="font-weight:700">0.42</td><td style="font-weight:700">0.27</td></tr>
+        <tr><td>Character</td><td>Momentum</td><td>Trend</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Dollar Signal vs Gold — ma(${dbc.fast},${dbc.slow},ari) z=${dbc.z} ${dbc.direction}</h2>
+    <div class="chart-container" style="height:420px"><canvas id="dxSignal"></canvas></div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Cumulative PnL: Dollar Signal — ma(${dbc.fast},${dbc.slow},ari) z=${dbc.z} ${dbc.direction}</h2>
+    <div class="chart-container"><canvas id="dxCumPnl"></canvas></div>
+  </div>
+</div>`;
+document.getElementById('content').appendChild(dxDiv);
+
+// 4 Dollar heatmaps
+function makeDxHeatmap(canvasId, zVal) {
+  const hmZ = dhm[String(zVal)] || {};
+  const labels = []; const values = []; const colors = [];
+  dfv.forEach(f => { dsv.forEach(sl => {
+    if (f >= sl) return;
+    const key = f + '_' + sl;
+    const val = hmZ[key] || 0;
+    labels.push(f + '/' + sl);
+    values.push(val);
+    const intensity = Math.min(1, Math.max(0, (val + 0.05) / 0.3));
+    colors.push(val > 0 ? 'rgba(34,197,94,' + Math.max(0.15, intensity) + ')' : 'rgba(239,68,68,' + Math.max(0.15, Math.abs(intensity)) + ')');
+  })});
+  new Chart(document.getElementById(canvasId), { type: 'bar',
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderRadius: 2 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      scales: { x: { grid: { display: false }, ticks: { font: { size: 6 }, maxRotation: 90 }, title: { display: true, text: 'fast/slow' } },
+        y: { grid: { color: 'rgba(48,54,61,0.5)' }, title: { display: true, text: 'Sharpe' }, min: -0.15, max: 0.3 } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => 'Sharpe: ' + ctx.parsed.y.toFixed(3) } } } }
+  });
+}
+makeDxHeatmap('dxHm20', 20);
+makeDxHeatmap('dxHm40', 40);
+makeDxHeatmap('dxHm90', 90);
+makeDxHeatmap('dxHm120', 120);
+
+// Dollar signal vs gold
+const dzDates=Object.keys(dts.z_score).sort();
+const dgDates=Object.keys(dts.gld_price).sort();
+const allDxDates=[...new Set([...dzDates,...dgDates])].sort();
+
+new Chart(document.getElementById('dxSignal'),{type:'bar',
+  data:{labels:allDxDates,datasets:[
+    {type:'bar',label:'Dollar Z (inv)',data:allDxDates.map(d=>dts.z_score[d]!=null?-dts.z_score[d]:null),
+     backgroundColor:allDxDates.map(d=>{const v=dts.z_score[d];return v==null?'transparent':v<0?'rgba(34,197,94,0.5)':'rgba(239,68,68,0.5)'}),
+     borderRadius:1,yAxisID:'y',order:2},
+    {type:'line',label:'GLD ($)',data:allDxDates.map(d=>dts.gld_price[d]||null),
+     borderColor:'#f59e0b',borderWidth:2,pointRadius:0,tension:0.1,yAxisID:'y1',order:1,spanGaps:true}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{position:'left',grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Signal (inverted z)'},min:-3,max:3},
+      y1:{position:'right',grid:{display:false},title:{display:true,text:'GLD ($)'},ticks:{callback:v=>'$'+v}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:15}}}}
+});
+
+// Dollar cum PnL
+const dpDates=Object.keys(dts.cum_pnl).sort();
+new Chart(document.getElementById('dxCumPnl'),{type:'line',
+  data:{datasets:[{label:'Dollar Signal PnL',data:dpDates.map(d=>({x:d,y:dts.cum_pnl[d]})),
+    borderColor:'#fff',borderWidth:2,pointRadius:0,tension:0.1,
+    fill:{target:'origin',above:'rgba(34,197,94,0.08)',below:'rgba(239,68,68,0.08)'}}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
+    plugins:{legend:{display:false}}}
+});
+});
+
 }).catch(e=>{document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--bad)">Error: ${e.message}</div>`});
 </script>
 </body>
