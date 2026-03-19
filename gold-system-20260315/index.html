@@ -315,6 +315,144 @@ new Chart(document.getElementById('decayChart'),{
 
 });
 
+// ============================================================
+// REAL YIELD SIGNAL OPTIMIZATION
+// ============================================================
+fetch('real_yield.json').then(r=>r.json()).then(R=>{
+const ryDiv=document.createElement('div');
+const bc=R.best_config;
+const ts=R.timeseries;
+const top=R.top_20||[];
+
+// Build heatmap data for best z-window (250)
+const hm=R.heatmaps;
+const fv=R.fast_vals;
+const sv=R.slow_vals;
+
+// Heatmap grid data for canvas
+const bestZ='250';
+const hmData=hm[bestZ]||{};
+
+ryDiv.innerHTML=`
+<div class="section-title">Real Yield Signal: usa.real.yield.2y.ilb → Gold</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Optimization: ma(x,y) z-score(z) — Best: ma(${bc.fast},${bc.slow}) z=${bc.z} ${bc.direction}</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Best Sharpe</div><div class="value" style="color:var(--good)">${bc.sharpe.toFixed(2)}</div></div>
+      <div class="stat"><div class="label">Ann Return</div><div class="value">${bc.ann_ret}%</div></div>
+      <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${bc.max_dd}%</div></div>
+      <div class="stat"><div class="label">Direction</div><div class="value" style="font-size:16px">${bc.direction.toUpperCase()}</div><div class="delta" style="color:var(--text-dim)">falling real yields = long gold</div></div>
+      <div class="stat"><div class="label">Config</div><div class="value" style="font-size:14px">ma(${bc.fast},${bc.slow})</div><div class="delta" style="color:var(--text-dim)">z=${bc.z}</div></div>
+    </div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Sharpe Heatmap: Fast MA vs Slow MA (z=${bestZ}, inverted)</h2>
+    <div class="chart-container" style="height:300px"><canvas id="ryHeatmap"></canvas></div>
+    <div class="insight"><strong>Reading:</strong> Each cell = Sharpe for that ma(fast,slow) combo with z=${bestZ}. Brighter green = higher Sharpe. The signal works best with very fast front-end (3-5d) and slow back-end (180-250d) — capturing short-term real yield momentum against a long-term trend.</div>
+  </div>
+
+  <div class="card">
+    <h2>Top Configs</h2>
+    <table>
+      <thead><tr><th>Config</th><th>Dir</th><th>Sharpe</th><th>Ann Ret</th></tr></thead>
+      <tbody>
+        ${top.filter(r=>r.direction==='inverted').slice(0,10).map(r=>`<tr>
+          <td style="font-weight:600">ma(${r.fast},${r.slow}) z=${r.z}</td>
+          <td>${r.direction.slice(0,3).toUpperCase()}</td>
+          <td style="color:var(--good);font-weight:700">${r.sharpe.toFixed(3)}</td>
+          <td>${r.ann_ret}%</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Sharpe by Z-Window (best fast/slow per z)</h2>
+    <div class="chart-container"><canvas id="ryZSweep"></canvas></div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Real Yield Signal vs Gold Price</h2>
+    <div class="chart-container" style="height:420px"><canvas id="rySignal"></canvas></div>
+    <div class="insight green"><strong>Logic:</strong> When 2Y real yields are falling relative to trend (negative z, inverted to positive signal), gold rallies. The 2Y TIPS yield captures Fed expectations — falling real yields = easier financial conditions = gold bullish.</div>
+  </div>
+
+  <div class="card grid-full">
+    <h2>Cumulative PnL: Real Yield Signal</h2>
+    <div class="chart-container"><canvas id="ryCumPnl"></canvas></div>
+  </div>
+</div>`;
+document.getElementById('content').appendChild(ryDiv);
+
+// HEATMAP (simulated with bar chart matrix)
+const hmLabels=[];const hmValues=[];const hmColors=[];
+const usedSlow=sv.filter(s=>fv.some(f=>f<s));
+fv.forEach(f=>{usedSlow.forEach(sl=>{
+  if(f>=sl)return;
+  const key=f+'_'+sl;
+  const val=hmData[key]||0;
+  hmLabels.push(f+'/'+sl);
+  hmValues.push(val);
+  const intensity=Math.min(1,Math.max(0,(val+0.1)/0.5));
+  hmColors.push(val>0?'rgba(34,197,94,'+Math.max(0.15,intensity)+')':'rgba(239,68,68,'+Math.max(0.15,Math.abs(intensity))+')');
+})});
+
+new Chart(document.getElementById('ryHeatmap'),{type:'bar',
+  data:{labels:hmLabels,datasets:[{data:hmValues,backgroundColor:hmColors,borderRadius:2}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{display:false},ticks:{font:{size:8},maxRotation:90},title:{display:true,text:'fast/slow MA'}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Sharpe'}}},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'Sharpe: '+ctx.parsed.y.toFixed(3)}}}}
+});
+
+// Z-window sweep: best sharpe per z
+const zSweep=R.z_vals.map(z=>{
+  const hmZ=R.heatmaps[String(z)]||{};
+  const vals=Object.values(hmZ);
+  return vals.length?Math.max(...vals):0;
+});
+new Chart(document.getElementById('ryZSweep'),{type:'bar',
+  data:{labels:R.z_vals.map(z=>'z='+z),datasets:[{data:zSweep,backgroundColor:zSweep.map(v=>v>0.3?'#22c55e':v>0.2?'#3b82f6':'#6b7280'),borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Best Sharpe at this z-window'}}},
+    plugins:{legend:{display:false}}}
+});
+
+// Signal vs gold price
+const zDates=Object.keys(ts.z_score).sort();
+const gldDates=Object.keys(ts.gld_price).sort();
+const allRyDates=[...new Set([...zDates,...gldDates])].sort();
+
+new Chart(document.getElementById('rySignal'),{type:'bar',
+  data:{labels:allRyDates,datasets:[
+    {type:'bar',label:'Real Yield Z (inv)',data:allRyDates.map(d=>ts.z_score[d]!=null?-ts.z_score[d]:null),
+     backgroundColor:allRyDates.map(d=>{const v=ts.z_score[d];return v==null?'transparent':v<0?'rgba(34,197,94,0.5)':'rgba(239,68,68,0.5)'}),
+     borderRadius:1,yAxisID:'y',order:2},
+    {type:'line',label:'GLD ($)',data:allRyDates.map(d=>ts.gld_price[d]||null),
+     borderColor:'#f59e0b',borderWidth:2,pointRadius:0,tension:0.1,yAxisID:'y1',order:1,spanGaps:true}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{position:'left',grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Signal (inverted z)'},min:-3,max:3},
+      y1:{position:'right',grid:{display:false},title:{display:true,text:'GLD ($)'},ticks:{callback:v=>'$'+v}}},
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:15}}}}
+});
+
+// Cum PnL
+const pnlDatesRy=Object.keys(ts.cum_pnl).sort();
+new Chart(document.getElementById('ryCumPnl'),{type:'line',
+  data:{datasets:[{label:'Real Yield Signal PnL',data:pnlDatesRy.map(d=>({x:d,y:ts.cum_pnl[d]})),
+    borderColor:'#fff',borderWidth:2,pointRadius:0,tension:0.1,
+    fill:{target:'origin',above:'rgba(34,197,94,0.08)',below:'rgba(239,68,68,0.08)'}}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
+      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
+    plugins:{legend:{display:false}}}
+});
+});
+
 }).catch(e=>{document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--bad)">Error: ${e.message}</div>`});
 </script>
 </body>
