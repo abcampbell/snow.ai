@@ -386,13 +386,13 @@ ryDiv.innerHTML=`
   </div>
 
   <div class="card grid-full">
-    <h2>Real Yield Signal vs Gold Price</h2>
+    <h2>Real Yield Signal vs Gold — ma(${bc.fast},${bc.slow}) z=${bc.z} ${bc.direction}</h2>
     <div class="chart-container" style="height:420px"><canvas id="rySignal"></canvas></div>
     <div class="insight green"><strong>Logic:</strong> When 2Y real yields are falling relative to trend (negative z, inverted to positive signal), gold rallies. The 2Y TIPS yield captures Fed expectations — falling real yields = easier financial conditions = gold bullish.</div>
   </div>
 
   <div class="card grid-full">
-    <h2>Cumulative PnL: Real Yield Signal</h2>
+    <h2>Cumulative PnL: Real Yield Signal — ma(${bc.fast},${bc.slow}) z=${bc.z} ${bc.direction}</h2>
     <div class="chart-container"><canvas id="ryCumPnl"></canvas></div>
   </div>
 </div>`;
