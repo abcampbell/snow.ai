@@ -40,11 +40,10 @@
 <body>
 <div class="header">
   <h1>Gold Signal System v2</h1>
-  <div class="sub">5 Verified Signals | Equal Weight | Heatmap-Checked | 2005–2026</div>
+  <div class="sub">5 Signals | Optimized Weights | Heatmap-Checked | 2008–2026</div>
   <div class="concept">
-    <strong>Method:</strong> 5 signals with smooth heatmap gradients (not single-pixel spikes).
-    Each grid-searched across MA params and z-windows, verified via greedy build-up + drop-one test.
-    No optimizer weights — equal 1/5. Dollar LT dropped (redundant with Real Yield).
+    <strong>Method:</strong> 5 signals: China Premium, Curve, GLD Flows, Breakevens, IV Momentum.
+    Each grid-searched across MA params and z-windows. Weights from greedy optimization (17–22%).
     <br><strong>Rose notebook:</strong> <a href="https://rose.ai/dashboard/gold.signal.claude.v2.notebook.20260318" style="color:var(--accent)">gold.signal.claude.v2.notebook.20260318</a>
   </div>
 </div>
@@ -109,8 +108,7 @@ el.innerHTML=`
     <table>
       <thead><tr><th>Signal</th><th>Rose Transform</th><th>Z Window</th><th>Dir</th><th>Sharpe</th><th>Weight</th><th>Logic</th></tr></thead>
       <tbody>
-        ${order.map(n=>{const s=sigs[n];return'<tr><td style="color:'+s.color+';font-weight:600">'+s.label+'</td><td style="font-family:monospace;font-size:11px">'+s.rc+'</td><td>'+s.z_window+'d</td><td>'+(s.direction==='inverted'?'INV':'NRM')+'</td><td style="font-weight:700">'+s.sharpe.toFixed(2)+'</td><td>20%</td><td style="font-size:11px;color:var(--text-dim)">'+(n==='Curve'?'Contango headwind':n==='RealYield'?'Fed/inflation momentum':n==='China'?'Physical demand':n==='GLDFlows'?'ETF flow momentum':'Contrarian diversifier')+'</td></tr>'}).join('')}
-        <tr style="opacity:0.4"><td style="color:var(--text-dim)">~~DollarLT~~</td><td style="font-size:11px">dollar:ma(40,180,ari)</td><td>250d</td><td>INV</td><td>0.27</td><td>0%</td><td style="font-size:11px;color:var(--text-dim)">DROPPED — +0.21 corr with RealYield</td></tr>
+        ${order.map(n=>{const s=sigs[n];const logic={'China':'Physical demand premium','Curve':'Contango/backwardation headwind','GLDFlows':'ETF flow momentum','Breakevens':'Inflation expectations momentum','IV':'Implied vol mean-reversion'};return'<tr><td style="color:'+s.color+';font-weight:600">'+s.label+'</td><td style="font-family:monospace;font-size:11px">'+s.rc+'</td><td>'+s.z_window+'d</td><td>'+(s.direction==='inverted'?'INV':'NRM')+'</td><td style="font-weight:700">'+s.sharpe.toFixed(2)+'</td><td>'+(s.weight*100).toFixed(1)+'%</td><td style="font-size:11px;color:var(--text-dim)">'+(logic[n]||'')+'</td></tr>'}).join('')}
       </tbody>
     </table>
   </div>
@@ -123,7 +121,7 @@ el.innerHTML=`
         ${D.buildup.map(b=>'<tr><td>'+b.step+'</td><td style="font-weight:600">'+b.add+'</td><td style="color:var(--good);font-weight:700">'+b.sharpe.toFixed(3)+'</td><td>'+b.max_dd+'%</td></tr>').join('')}
       </tbody>
     </table>
-    <div class="insight green">Each signal passes drop-one test. GLDFlows cuts max DD from -37% to -19%. DollarST adds +0.05 Sharpe.</div>
+    <div class="insight green">Each signal passes drop-one test. IV is the strongest standalone (0.42 Sharpe). China/Curve provide diversification.</div>
   </div>
 
   <div class="card">
@@ -134,7 +132,7 @@ el.innerHTML=`
         ${order.map(n1=>'<tr><td style="font-weight:600;font-size:10px">'+n1.slice(0,8)+'</td>'+order.map(n2=>{const v=D.correlations?.[n1]?.[n2];return'<td style="text-align:center;color:'+(v>0.15?'var(--bad)':v<-0.15?'var(--good)':'var(--text-dim)')+'">'+(v!=null?v.toFixed(2):'—')+'</td>'}).join('')+'</tr>').join('')}
       </tbody>
     </table>
-    <div class="insight blue">China/GLDFlows at -0.52 are natural hedges. DollarST/RealYield at -0.20 add macro diversification.</div>
+    <div class="insight blue">Curve/IV at -0.19 are natural hedges. China is uncorrelated with everything. Curve/Breakevens at +0.64 is the highest pair.</div>
   </div>
 
   <div class="card grid-full">
