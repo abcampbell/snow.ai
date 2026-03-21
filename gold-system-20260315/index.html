@@ -73,9 +73,9 @@ pDates.forEach((d,i)=>{if(pVals[i]>peak)peak=pVals[i];dd[d]=((pVals[i]-peak)/pea
 el.innerHTML=`
 <div class="grid">
   <div class="card grid-full">
-    <h2>Composite System — v2 (Verified)</h2>
+    <h2>Composite System — v2.003</h2>
     <div class="stat-row">
-      <div class="stat"><div class="label">Sharpe</div><div class="value" style="color:var(--good)">${comp.sharpe.toFixed(2)}</div></div>
+      <div class="stat"><div class="label">Sharpe</div><div class="value" style="color:var(--good)">${comp.sharpe.toFixed(3)}</div></div>
       <div class="stat"><div class="label">Ann Return</div><div class="value" style="color:var(--good)">${comp.ann_ret}%</div></div>
       <div class="stat"><div class="label">Ann Vol</div><div class="value">${comp.ann_vol}%</div></div>
       <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${comp.max_dd}%</div></div>
@@ -108,7 +108,7 @@ el.innerHTML=`
     <table>
       <thead><tr><th>Signal</th><th>Rose Transform</th><th>Z Window</th><th>Dir</th><th>Sharpe</th><th>Weight</th><th>Logic</th></tr></thead>
       <tbody>
-        ${order.map(n=>{const s=sigs[n];const logic={'China':'Physical demand premium','Curve':'Contango/backwardation headwind','GLDFlows':'ETF flow momentum','Breakevens':'Inflation expectations momentum','IV':'Implied vol mean-reversion'};return'<tr><td style="color:'+s.color+';font-weight:600">'+s.label+'</td><td style="font-family:monospace;font-size:11px">'+s.rc+'</td><td>'+s.z_window+'d</td><td>'+(s.direction==='inverted'?'INV':'NRM')+'</td><td style="font-weight:700">'+s.sharpe.toFixed(2)+'</td><td>'+(s.weight*100).toFixed(1)+'%</td><td style="font-size:11px;color:var(--text-dim)">'+(logic[n]||'')+'</td></tr>'}).join('')}
+        ${order.map(n=>{const s=sigs[n];const logic={'China':'Physical demand premium','Curve':'Contango/backwardation headwind','GLDFlows':'ETF flow momentum','Breakevens':'Inflation expectations momentum','IV':'Implied vol mean-reversion'};return'<tr><td style="color:'+s.color+';font-weight:600">'+s.label+'</td><td style="font-family:monospace;font-size:11px">'+s.rc+'</td><td>'+s.z_window+'d</td><td>'+(s.direction==='inverted'?'INV':'NRM')+'</td><td style="font-weight:700">'+s.sharpe.toFixed(3)+'</td><td>'+(s.weight*100).toFixed(1)+'%</td><td style="font-size:11px;color:var(--text-dim)">'+(logic[n]||'')+'</td></tr>'}).join('')}
       </tbody>
     </table>
   </div>
