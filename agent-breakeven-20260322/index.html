@@ -368,26 +368,6 @@ function AgentCalculator() {
             <Slider label="Errors per day" value={analystErrorsPerDay} onChange={setAnalystErrorsPerDay} min={0} max={5} step={1} />
             <Slider label="Minutes per error fix" value={analystMinutesPerError} onChange={setAnalystMinutesPerError} min={5} max={60} step={5} unit=" min" />
 
-            {/* Human cost bar chart */}
-            <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-              <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, fontFamily: "'DM Mono', monospace" }}>
-                Loaded Cost: {fmtFull(r.loadedAnalystCost)}/mo
-              </div>
-              {[
-                { label: "Direct cost (salary)", value: analystCostMonthly, color: !r.agentWins ? "rgba(58, 142, 84, 0.6)" : "rgba(201, 164, 74, 0.5)" },
-                { label: "Your time supervising", value: r.analystSupervisorCost, color: !r.agentWins ? "rgba(58, 142, 84, 0.3)" : "rgba(201, 164, 74, 0.25)" },
-              ].map((bar, i) => (
-                <div key={i} style={{ marginBottom: 8 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
-                    <span style={{ fontSize: 10, color: "#6b7078", fontFamily: "'DM Mono', monospace" }}>{bar.label}</span>
-                    <span style={{ fontSize: 10, color: "#8a8f98", fontFamily: "'DM Mono', monospace" }}>{fmtFull(bar.value)}</span>
-                  </div>
-                  <div style={{ height: 16, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden" }}>
-                    <div style={{ height: "100%", width: `${(bar.value / barMax) * 100}%`, background: bar.color, transition: "width 0.3s ease", borderRadius: 3 }} />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* RIGHT: AI Agents */}
@@ -405,34 +385,119 @@ function AgentCalculator() {
             <Slider label="Coordination per pair / day" value={coordMinutesPerPair} onChange={setCoordMinutesPerPair} min={0} max={60} step={5} unit=" min" note={`${r.pairs} pairs routing through you`} />
             <Slider label="Context-switch penalty" value={deepWorkPenalty} onChange={setDeepWorkPenalty} min={0} max={40} step={5} unit="%" note="% of remaining hours lost to fragmentation" />
 
-            {/* Agent cost bar chart */}
-            <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-              <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, fontFamily: "'DM Mono', monospace" }}>
-                Loaded Cost: {fmtFull(r.loadedAgentCost)}/mo
-              </div>
-              {[
-                { label: `Direct cost (${numAgents} x $${agentCostMonthly})`, value: r.agentSticker, color: r.agentWins ? "rgba(58, 142, 84, 0.6)" : "rgba(201, 60, 55, 0.5)" },
-                { label: "Your time supervising", value: r.supervisorCost, color: r.agentWins ? "rgba(58, 142, 84, 0.3)" : "rgba(201, 60, 55, 0.3)" },
-              ].map((bar, i) => (
-                <div key={i} style={{ marginBottom: 8 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
-                    <span style={{ fontSize: 10, color: "#6b7078", fontFamily: "'DM Mono', monospace" }}>{bar.label}</span>
-                    <span style={{ fontSize: 10, color: "#8a8f98", fontFamily: "'DM Mono', monospace" }}>{fmtFull(bar.value)}</span>
-                  </div>
-                  <div style={{ height: 16, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden" }}>
-                    <div style={{ height: "100%", width: `${(bar.value / barMax) * 100}%`, background: bar.color, transition: "width 0.3s ease", borderRadius: 3 }} />
-                  </div>
-                </div>
-              ))}
-              {r.yourPctConsumed > 50 && (
-                <div style={{ fontSize: 10, color: r.yourPctConsumed > 80 ? "#c93c37" : "#c9a44a", marginTop: 6, fontFamily: "'DM Mono', monospace" }}>
-                  {r.totalSupervisorHoursPerDay.toFixed(1)}h/day of your {WORK_HOURS_PER_DAY}h day ({Math.min(r.yourPctConsumed, 999).toFixed(0)}%) consumed
-                </div>
-              )}
-            </div>
           </div>
 
         </div>
+
+        {/* COMPARISON BAR CHART — full width, human vs agents */}
+        {(() => {
+          const humanDirect = analystCostMonthly * 12;
+          const humanIndirect = r.analystSupervisorCost * 12;
+          const humanTotal = r.loadedAnalystCost * 12;
+          const agentDirect = r.agentSticker * 12;
+          const agentIndirect = r.supervisorCost * 12;
+          const agentTotal = r.loadedAgentCost * 12;
+          const chartMax = Math.max(humanDirect, humanIndirect, agentDirect, agentIndirect, humanTotal, agentTotal) * 1.05;
+
+          const bars = [
+            {
+              category: "Direct Cost",
+              sub: "What you pay them",
+              human: { value: humanDirect, label: `$${Math.round(humanDirect/1000)}K`, detail: `$${(analystCostMonthly/1000).toFixed(0)}K/mo salary` },
+              agent: { value: agentDirect, label: `$${(agentDirect/1000).toFixed(1)}K`, detail: `${numAgents} x $${agentCostMonthly}/mo` },
+            },
+            {
+              category: "Indirect Cost",
+              sub: "What they cost you in time",
+              human: { value: humanIndirect, label: `$${Math.round(humanIndirect/1000)}K`, detail: `${(r.analystSupervisorCost / hourlyValue).toFixed(0)}h/mo x $${hourlyValue}/hr` },
+              agent: { value: agentIndirect, label: `$${Math.round(agentIndirect/1000)}K`, detail: `${r.totalSupervisorHoursPerDay.toFixed(1)}h/day x ${WORK_DAYS_PER_MONTH}d x $${hourlyValue}/hr` },
+            },
+            {
+              category: "Total Loaded Cost",
+              sub: "Direct + indirect",
+              human: { value: humanTotal, label: `$${Math.round(humanTotal/1000)}K`, detail: "" },
+              agent: { value: agentTotal, label: `$${Math.round(agentTotal/1000)}K`, detail: "" },
+            },
+          ];
+
+          return (
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "20px", marginBottom: 28 }}>
+              <div style={{ fontSize: 10, color: "#c9a44a", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 20, fontFamily: "'DM Mono', monospace" }}>
+                Annual Cost Comparison
+              </div>
+
+              {bars.map((group, gi) => (
+                <div key={gi} style={{ marginBottom: gi < bars.length - 1 ? 24 : 8 }}>
+                  <div style={{ fontSize: 12, color: "#e8eaed", fontWeight: 500, fontFamily: "'DM Mono', monospace", marginBottom: 2 }}>
+                    {group.category}
+                  </div>
+                  <div style={{ fontSize: 10, color: "#5a5e66", fontFamily: "'DM Mono', monospace", marginBottom: 10 }}>
+                    {group.sub}
+                  </div>
+
+                  {/* Human bar */}
+                  <div style={{ marginBottom: 6 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <span style={{ fontSize: 10, color: "#6b7078", fontFamily: "'DM Mono', monospace", width: 52, flexShrink: 0 }}>Human</span>
+                      <div style={{ flex: 1, height: 22, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden", position: "relative" }}>
+                        <div style={{
+                          height: "100%",
+                          width: `${(group.human.value / chartMax) * 100}%`,
+                          background: !r.agentWins ? "rgba(58, 142, 84, 0.5)" : "rgba(201, 164, 74, 0.4)",
+                          transition: "width 0.3s ease",
+                          borderRadius: 3,
+                          display: "flex", alignItems: "center", paddingLeft: 8,
+                        }}>
+                          <span style={{ fontSize: 11, color: "#e8eaed", fontFamily: "'DM Mono', monospace", fontWeight: 500, whiteSpace: "nowrap" }}>
+                            {group.human.label}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    {group.human.detail && (
+                      <div style={{ fontSize: 9, color: "#5a5e66", fontFamily: "'DM Mono', monospace", marginLeft: 60, marginTop: 2 }}>
+                        {group.human.detail}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Agent bar */}
+                  <div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <span style={{ fontSize: 10, color: "#6b7078", fontFamily: "'DM Mono', monospace", width: 52, flexShrink: 0 }}>Agent{numAgents > 1 ? `s(${numAgents})` : ""}</span>
+                      <div style={{ flex: 1, height: 22, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden", position: "relative" }}>
+                        <div style={{
+                          height: "100%",
+                          width: `${(group.agent.value / chartMax) * 100}%`,
+                          background: r.agentWins ? "rgba(58, 142, 84, 0.5)" : "rgba(201, 60, 55, 0.45)",
+                          transition: "width 0.3s ease",
+                          borderRadius: 3,
+                          display: "flex", alignItems: "center", paddingLeft: 8,
+                          minWidth: group.agent.value > 0 ? 50 : 0,
+                        }}>
+                          <span style={{ fontSize: 11, color: "#e8eaed", fontFamily: "'DM Mono', monospace", fontWeight: 500, whiteSpace: "nowrap" }}>
+                            {group.agent.label}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    {group.agent.detail && (
+                      <div style={{ fontSize: 9, color: "#5a5e66", fontFamily: "'DM Mono', monospace", marginLeft: 60, marginTop: 2 }}>
+                        {group.agent.detail}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+
+              {r.yourPctConsumed > 50 && (
+                <div style={{ fontSize: 10, color: r.yourPctConsumed > 80 ? "#c93c37" : "#c9a44a", marginTop: 12, fontFamily: "'DM Mono', monospace", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 10 }}>
+                  Agents consume {r.totalSupervisorHoursPerDay.toFixed(1)}h of your {WORK_HOURS_PER_DAY}h day ({Math.min(r.yourPctConsumed, 999).toFixed(0)}%)
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {/* Heatmap */}
         <div style={{ marginBottom: 32 }}>
