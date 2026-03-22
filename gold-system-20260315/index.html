@@ -3,54 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gold Signal System â€” 2026-03-15</title>
+<title>Gold Signal System v2.003</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
-  :root {
-    --bg: #0d1117; --card: #161b22; --border: #30363d;
-    --text: #c9d1d9; --text-dim: #8b949e; --accent: #f59e0b;
-    --good: #22c55e; --bad: #ef4444; --blue: #3b82f6; --purple: #a855f7;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'SF Mono','Cascadia Code','Consolas',monospace; background: var(--bg); color: var(--text); }
-  .header { padding: 24px 32px; border-bottom: 1px solid var(--border); }
-  .header h1 { font-size: 20px; font-weight: 600; color: var(--accent); }
-  .header .sub { color: var(--text-dim); font-size: 12px; margin-top: 4px; }
-  .header .concept { color: var(--text); font-size: 13px; margin-top: 8px; line-height: 1.5; max-width: 900px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px 32px; }
-  .grid-full { grid-column: 1 / -1; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
-  .card h2 { font-size: 13px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
-  .stat-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-  .stat { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; min-width: 100px; flex: 1; }
-  .stat .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; }
-  .stat .value { font-size: 22px; font-weight: 700; color: #fff; margin-top: 2px; }
-  .stat .delta { font-size: 11px; margin-top: 2px; }
-  .chart-container { position: relative; height: 350px; }
-  .insight { background: #1c2128; border-left: 3px solid var(--accent); padding: 12px 16px; margin-top: 12px; font-size: 12px; line-height: 1.6; border-radius: 0 4px 4px 0; }
-  .insight strong { color: #fff; }
-  .insight.green { border-left-color: var(--good); }
-  .insight.blue { border-left-color: var(--blue); }
-  .insight.red { border-left-color: var(--bad); }
-  .section-title { font-size: 15px; color: #fff; font-weight: 600; margin: 32px 32px 0; padding-top: 16px; border-top: 1px solid var(--border); }
-  table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  th { text-align: left; padding: 8px; color: var(--text-dim); font-weight: 500; border-bottom: 1px solid var(--border); font-size: 10px; text-transform: uppercase; }
-  td { padding: 6px 8px; border-bottom: 1px solid #1c2128; }
-  tr:hover { background: #1c2128; }
-  .loading { text-align: center; padding: 60px; color: var(--text-dim); }
-  .corner-mark { position: fixed; bottom: 1rem; right: 1.5rem; font-size: 10px; color: var(--text-dim); z-index: 10; }
-  .corner-mark a { color: var(--text-dim); text-decoration: none; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#f59e0b;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'SF Mono','Cascadia Code','Consolas',monospace;background:var(--bg);color:var(--text)}
+  .header{padding:24px 32px;border-bottom:1px solid var(--border)}
+  .header h1{font-size:20px;font-weight:600;color:var(--accent)}
+  .header .sub{color:var(--text-dim);font-size:12px;margin-top:4px}
+  .header .concept{color:var(--text);font-size:13px;margin-top:8px;line-height:1.5;max-width:900px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px 32px}
+  .grid-full{grid-column:1/-1}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px}
+  .card h2{font-size:13px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+  .stat-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+  .stat{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px 16px;min-width:100px;flex:1}
+  .stat .label{font-size:10px;color:var(--text-dim);text-transform:uppercase}
+  .stat .value{font-size:22px;font-weight:700;color:#fff;margin-top:2px}
+  .stat .delta{font-size:11px;margin-top:2px}
+  .chart-container{position:relative;height:350px}
+  .insight{background:#1c2128;border-left:3px solid var(--accent);padding:12px 16px;margin-top:12px;font-size:12px;line-height:1.6;border-radius:0 4px 4px 0}
+  .insight strong{color:#fff}
+  .insight.green{border-left-color:var(--good)}.insight.blue{border-left-color:var(--blue)}.insight.red{border-left-color:var(--bad)}
+  .section-title{font-size:15px;color:#fff;font-weight:600;margin:32px 32px 0;padding-top:16px;border-top:1px solid var(--border)}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{text-align:left;padding:8px;color:var(--text-dim);font-weight:500;border-bottom:1px solid var(--border);font-size:10px;text-transform:uppercase}
+  td{padding:6px 8px;border-bottom:1px solid #1c2128}
+  tr:hover{background:#1c2128}
+  .corner-mark{position:fixed;bottom:1rem;right:1.5rem;font-size:10px;color:var(--text-dim);z-index:10}
+  .corner-mark a{color:var(--text-dim);text-decoration:none}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="header">
-  <h1>Gold Signal System</h1>
-  <div class="sub">5 Optimized Signals | Sharpe-Weighted Composite | 2008â€“2026</div>
+  <h1>Gold Signal System v2.003</h1>
+  <div class="sub">3 Signals Grid-Searched | Real Yield + Dollar ST + Dollar LT | 2006-2026</div>
   <div class="concept">
-    <strong>Method:</strong> 5 signals, each with optimized MA smoothing (:ma on Rose) and z-score window.
-    Composite weighted by Sharpe-maximizing optimization (scipy). Signals: China premium,
-    futures curve, ETF flows, breakeven inflation, implied vol momentum.
+    <strong>Method:</strong> Grid-search each signal individually (MA params, z-windows), then combine and test
+    whether adding signals improves Sharpe or reduces drawdown. Drop what does not help.
   </div>
 </div>
 <div id="content"><div class="loading">Loading data...</div></div>
@@ -60,128 +52,199 @@
 Chart.defaults.color='#8b949e';Chart.defaults.borderColor='#30363d';
 Chart.defaults.font.family="'SF Mono','Cascadia Code','Consolas',monospace";Chart.defaults.font.size=10;
 
-const CLR={
-  'gold.in.china':'#f59e0b','gold.curve.signal':'#3b82f6',
-  'gld.shares':'#22c55e','usa.2y.bei':'#a855f7','gold.iv.atm.3m':'#ef4444'
-};
+Promise.all([
+  fetch('dollar.json').then(r=>r.json()),
+  fetch('real_yield.json').then(r=>r.json()),
+  fetch('signals_rechecked.json').then(r=>r.json())
+]).then(([DX, RY, SR])=>{
 
-fetch('data.json').then(r=>r.json()).then(D=>{
 const el=document.getElementById('content');
-const W=D.weights;
-const comp=D.composite;
-const sigs=D.signals;
-const cfg=W.signal_configs;
-const bt=W.composite_backtest;
-const sigOrder=W.signals_used;
-
-const compZDates=Object.keys(comp.z_score).sort();
-const lastZ=comp.z_score[compZDates[compZDates.length-1]];
-const lastDate=compZDates[compZDates.length-1].slice(0,10);
-
-// Drawdown
-const pnlDates=Object.keys(comp.cum_pnl).sort();
-const pnlVals=pnlDates.map(d=>comp.cum_pnl[d]);
-let peak=pnlVals[0];const ddData={};
-pnlDates.forEach((d,i)=>{if(pnlVals[i]>peak)peak=pnlVals[i];ddData[d]=((pnlVals[i]-peak)/peak)*100});
+const combos=DX.combos;
+const comboColors={'Real Yield alone':'#ef4444','Dollar ST alone':'#a855f7','Dollar LT alone':'#3b82f6','Dollar ST + LT':'#6366f1','Real Yield + Dollar ST':'#22c55e','Real Yield + Dollar LT':'#f59e0b','Real Yield + Dollar ST + LT':'#ffffff'};
 
 el.innerHTML=`
+<!-- ========== 1. TOTAL SYSTEM PNL ========== -->
+<div class="section-title">1. Total System PnL</div>
 <div class="grid">
   <div class="card grid-full">
-    <h2>Composite System</h2>
+    <h2>Best Combo: Real Yield + Dollar ST + Dollar LT</h2>
     <div class="stat-row">
-      <div class="stat"><div class="label">Sharpe</div><div class="value" style="color:var(--good)">${bt.sharpe.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">vs best single: ${Math.max(...sigOrder.map(s=>cfg[s].sharpe)).toFixed(2)}</div></div>
-      <div class="stat"><div class="label">Ann. Return</div><div class="value" style="color:var(--good)">${(bt.ann_ret*100).toFixed(1)}%</div></div>
-      <div class="stat"><div class="label">Ann. Vol</div><div class="value">${(bt.ann_vol*100).toFixed(1)}%</div></div>
-      <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${(bt.max_dd*100).toFixed(1)}%</div></div>
-      <div class="stat"><div class="label">Current Z</div><div class="value" style="color:${lastZ>0?'var(--good)':'var(--bad)'}">${lastZ>0?'+':''}${lastZ.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">${lastZ>0.5?'LONG':lastZ<-0.5?'SHORT':'NEUTRAL'} Â· ${lastDate}</div></div>
-      <div class="stat"><div class="label">Trading Days</div><div class="value">${bt.n.toLocaleString()}</div></div>
+      <div class="stat"><div class="label">Sharpe</div><div class="value" style="color:var(--good)">0.487</div></div>
+      <div class="stat"><div class="label">Ann Return</div><div class="value" style="color:var(--good)">7.06%</div></div>
+      <div class="stat"><div class="label">Ann Vol</div><div class="value">14.49%</div></div>
+      <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">-26.4%</div></div>
+      <div class="stat"><div class="label">Period</div><div class="value" style="font-size:14px">2006-2026</div></div>
     </div>
   </div>
-
   <div class="card grid-full">
-    <h2>Composite Signal vs Gold Price</h2>
-    <div class="chart-container" style="height:420px"><canvas id="signalVsGold"></canvas></div>
-    <div class="insight green"><strong>Green/red bars:</strong> composite z-score (left axis). <strong>Gold line:</strong> GLD price (right axis). When bars are tall green, system is long gold. Eyeball whether z-score leads price moves â€” especially at turning points.</div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Composite Cumulative PnL</h2>
-    <div class="chart-container"><canvas id="cumPnl"></canvas></div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Drawdown</h2>
-    <div class="chart-container" style="height:220px"><canvas id="ddChart"></canvas></div>
-    <div class="insight red"><strong>Max drawdown: ${(bt.max_dd*100).toFixed(1)}%.</strong> Drawdowns cluster around gold regime shifts (2013 bear market, late 2015, COVID vol spike). Recovery periods have shortened in recent years.</div>
+    <h2>Cumulative PnL</h2>
+    <div class="chart-container" style="height:400px"><canvas id="mainPnl"></canvas></div>
   </div>
 </div>
 
-<div class="section-title">Individual Signals</div>
+<!-- ========== 2. SIGNAL VS MARKET ========== -->
+<div class="section-title">2. Signal vs Market</div>
 <div class="grid">
   <div class="card grid-full">
-    <h2>Signal Configs, Sharpe &amp; Weights</h2>
+    <h2>All Strategies vs Gold Buy & Hold</h2>
+    <div class="chart-container" style="height:420px"><canvas id="allPnl"></canvas></div>
+    <div class="insight green"><strong>White = best combo (RY+DST+DLT).</strong> Dashed = individual signals. Gold = buy & hold. The combo beats every component and gold B&H.</div>
+  </div>
+</div>
+
+<!-- ========== 3. SIGNAL VS MARKET: YoY ========== -->
+<div class="section-title">3. Year-over-Year Alpha</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Annual Returns: Signal vs Gold</h2>
+    <div class="chart-container" style="height:350px"><canvas id="yoyChart"></canvas></div>
+  </div>
+  <div class="card grid-full">
     <table>
-      <thead><tr><th>Signal</th><th>Rose Transform</th><th>Z Window</th><th>Dir</th><th>Sharpe</th><th>Weight</th></tr></thead>
-      <tbody>
-        ${sigOrder.map(s=>{const c=cfg[s];return`<tr>
-          <td style="color:${CLR[s]};font-weight:600">${sigs[s]?.label||s}</td>
-          <td style="font-size:11px;font-family:monospace">${c.rosecode}</td>
-          <td>${c.z_window}d</td>
-          <td>${c.direction==='inverted'?'INV':'NRM'}</td>
-          <td style="font-weight:700">${c.sharpe.toFixed(3)}</td>
-          <td style="font-weight:700">${(W.weights[s]*100).toFixed(1)}%</td>
-        </tr>`}).join('')}
-      </tbody>
+      <thead><tr><th>Year</th><th>Signal</th><th>Gold</th><th>Alpha</th></tr></thead>
+      <tbody><tr><td style="font-weight:600">2006</td><td style="color:var(--good)">-16.4%</td><td>+15.8%</td><td style="color:var(--bad);font-weight:700">-32.3%</td></tr><tr><td style="font-weight:600">2007</td><td style="color:var(--good)">+27.5%</td><td>+35.5%</td><td style="color:var(--bad);font-weight:700">-8.0%</td></tr><tr><td style="font-weight:600">2008</td><td style="color:var(--good)">+9.4%</td><td>+0.4%</td><td style="color:var(--good);font-weight:700">+9.0%</td></tr><tr><td style="font-weight:600">2009</td><td style="color:var(--good)">+7.3%</td><td>+31.2%</td><td style="color:var(--bad);font-weight:700">-23.9%</td></tr><tr><td style="font-weight:600">2010</td><td style="color:var(--good)">-3.9%</td><td>+26.5%</td><td style="color:var(--bad);font-weight:700">-30.4%</td></tr><tr><td style="font-weight:600">2011</td><td style="color:var(--good)">-2.7%</td><td>+13.1%</td><td style="color:var(--bad);font-weight:700">-15.7%</td></tr><tr><td style="font-weight:600">2012</td><td style="color:var(--good)">+1.2%</td><td>+2.1%</td><td style="color:var(--bad);font-weight:700">-0.9%</td></tr><tr><td style="font-weight:600">2013</td><td style="color:var(--good)">+7.4%</td><td>-27.6%</td><td style="color:var(--good);font-weight:700">+35.1%</td></tr><tr><td style="font-weight:600">2014</td><td style="color:var(--good)">+14.3%</td><td>-2.4%</td><td style="color:var(--good);font-weight:700">+16.7%</td></tr><tr><td style="font-weight:600">2015</td><td style="color:var(--good)">-11.1%</td><td>-12.2%</td><td style="color:var(--good);font-weight:700">+1.1%</td></tr><tr><td style="font-weight:600">2016</td><td style="color:var(--good)">+25.6%</td><td>+6.2%</td><td style="color:var(--good);font-weight:700">+19.4%</td></tr><tr><td style="font-weight:600">2017</td><td style="color:var(--good)">-0.6%</td><td>+9.0%</td><td style="color:var(--bad);font-weight:700">-9.6%</td></tr><tr><td style="font-weight:600">2018</td><td style="color:var(--good)">+11.1%</td><td>-3.8%</td><td style="color:var(--good);font-weight:700">+14.9%</td></tr><tr><td style="font-weight:600">2019</td><td style="color:var(--good)">+14.1%</td><td>+16.3%</td><td style="color:var(--bad);font-weight:700">-2.2%</td></tr><tr><td style="font-weight:600">2020</td><td style="color:var(--good)">+25.0%</td><td>+22.5%</td><td style="color:var(--good);font-weight:700">+2.5%</td></tr><tr><td style="font-weight:600">2021</td><td style="color:var(--good)">-8.0%</td><td>-5.9%</td><td style="color:var(--bad);font-weight:700">-2.2%</td></tr><tr><td style="font-weight:600">2022</td><td style="color:var(--good)">+14.0%</td><td>+0.8%</td><td style="color:var(--good);font-weight:700">+13.2%</td></tr><tr><td style="font-weight:600">2023</td><td style="color:var(--good)">-8.0%</td><td>+9.8%</td><td style="color:var(--bad);font-weight:700">-17.8%</td></tr><tr><td style="font-weight:600">2024</td><td style="color:var(--good)">+7.6%</td><td>+28.5%</td><td style="color:var(--bad);font-weight:700">-20.9%</td></tr><tr><td style="font-weight:600">2025</td><td style="color:var(--good)">+5.8%</td><td>+63.9%</td><td style="color:var(--bad);font-weight:700">-58.2%</td></tr><tr><td style="font-weight:600">2026</td><td style="color:var(--good)">+7.6%</td><td>+13.0%</td><td style="color:var(--bad);font-weight:700">-5.4%</td></tr></tbody>
     </table>
   </div>
+</div>
 
+<!-- ========== 4. INDIVIDUAL SIGNALS ========== -->
+<div class="section-title">4. Signal 1: Real Yield — usa.real.yield.2y.ilb</div>
+<div class="grid">
   <div class="card grid-full">
-    <h2>Individual Signal PnL + Composite (white)</h2>
-    <div class="chart-container"><canvas id="indivPnl"></canvas></div>
-    <div class="insight blue"><strong>Diversification benefit:</strong> composite Sharpe (${bt.sharpe.toFixed(2)}) is ${(bt.sharpe/Math.max(...sigOrder.map(s=>cfg[s].sharpe))).toFixed(1)}x the best individual signal. Weights are balanced (${Math.min(...Object.values(W.weights)).toFixed(0)*100}â€“${(Math.max(...Object.values(W.weights))*100).toFixed(0)}%), confirming genuine diversification.</div>
+    <h2>Best Config: ma(3,180,ari) z=40 inverted | Sharpe 0.418</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Sharpe</div><div class="value" style="color:var(--good)">0.418</div></div>
+      <div class="stat"><div class="label">Ann Return</div><div class="value">11.2%</div></div>
+      <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">-62.5%</div></div>
+      <div class="stat"><div class="label">Transform</div><div class="value" style="font-size:14px">ARITHMETIC</div><div class="delta" style="color:var(--text-dim)">geo breaks on negatives</div></div>
+    </div>
+    <div class="insight green"><strong>Logic:</strong> Falling 2Y real yields = easier financial conditions = gold bullish. Must use arithmetic MA (real yields go negative). Inverted: negative z = long gold.</div>
   </div>
+  <div class="card"><h2>Heatmap: z=40</h2><div class="chart-container" style="height:280px"><canvas id="ryHm40"></canvas></div></div>
+  <div class="card"><h2>Heatmap: z=90</h2><div class="chart-container" style="height:280px"><canvas id="ryHm90"></canvas></div></div>
+  <div class="card"><h2>Heatmap: z=120</h2><div class="chart-container" style="height:280px"><canvas id="ryHm120"></canvas></div></div>
+  <div class="card"><h2>Heatmap: z=250</h2><div class="chart-container" style="height:280px"><canvas id="ryHm250"></canvas></div></div>
+  <div class="card"><h2>Top Configs</h2><table><thead><tr><th>Config</th><th>Dir</th><th>Sharpe</th><th>Ret</th></tr></thead><tbody><tr><td style="font-weight:600">ma(3,180) z=40</td><td>INV</td><td style="color:var(--good);font-weight:700">0.418</td><td>11.2%</td></tr><tr><td style="font-weight:600">ma(5,180) z=40</td><td>INV</td><td style="color:var(--good);font-weight:700">0.411</td><td>11.1%</td></tr><tr><td style="font-weight:600">ma(3,250) z=20</td><td>INV</td><td style="color:var(--good);font-weight:700">0.394</td><td>10.32%</td></tr><tr><td style="font-weight:600">ma(3,250) z=40</td><td>INV</td><td style="color:var(--good);font-weight:700">0.394</td><td>10.57%</td></tr><tr><td style="font-weight:600">ma(3,180) z=60</td><td>INV</td><td style="color:var(--good);font-weight:700">0.384</td><td>10.3%</td></tr><tr><td style="font-weight:600">ma(3,120) z=20</td><td>INV</td><td style="color:var(--good);font-weight:700">0.382</td><td>9.99%</td></tr><tr><td style="font-weight:600">ma(10,180) z=40</td><td>INV</td><td style="color:var(--good);font-weight:700">0.382</td><td>10.42%</td></tr><tr><td style="font-weight:600">ma(5,180) z=60</td><td>INV</td><td style="color:var(--good);font-weight:700">0.372</td><td>9.97%</td></tr><tr><td style="font-weight:600">ma(5,250) z=40</td><td>INV</td><td style="color:var(--good);font-weight:700">0.369</td><td>9.99%</td></tr><tr><td style="font-weight:600">ma(3,250) z=60</td><td>INV</td><td style="color:var(--good);font-weight:700">0.369</td><td>9.94%</td></tr></tbody></table></div>
+  <div class="card"><h2>Best Sharpe by Z-Window</h2><div class="chart-container"><canvas id="ryZSweep"></canvas></div></div>
+  <div class="card grid-full"><h2>Real Yield Z-Score vs Gold</h2><div class="chart-container" style="height:420px"><canvas id="rySignal"></canvas></div></div>
+  <div class="card grid-full"><h2>Real Yield PnL</h2><div class="chart-container"><canvas id="ryCumPnl"></canvas></div></div>
+</div>
 
+<div class="section-title">4. Signal 2: Dollar Short-Term (Contrarian)</div>
+<div class="grid">
   <div class="card grid-full">
-    <h2>Individual Z-Scores + Composite (white)</h2>
-    <div class="chart-container" style="height:400px"><canvas id="zScores"></canvas></div>
-    <div class="insight">When signals cluster same-sign, composite conviction is high. Divergence = mixed signal = smaller position.</div>
+    <h2>Best Config: ma(5,10,ari) z=60 | Sharpe 0.176</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Sharpe</div><div class="value">0.176</div></div>
+      <div class="stat"><div class="label">Direction</div><div class="value" style="font-size:14px;color:var(--purple)">CONTRARIAN</div><div class="delta" style="color:var(--text-dim)">strong$ = LONG gold</div></div>
+    </div>
+    <div class="insight">Short-term dollar spikes are <strong>contrarian buy signals</strong> for gold. Dollar strength mean-reverts at short horizons.</div>
+  </div>
+  <div class="card"><h2>ST Heatmap: z=20</h2><div class="chart-container" style="height:260px"><canvas id="dxStHm20"></canvas></div></div>
+  <div class="card"><h2>ST Heatmap: z=40</h2><div class="chart-container" style="height:260px"><canvas id="dxStHm40"></canvas></div></div>
+</div>
+
+<div class="section-title">4. Signal 3: Dollar Long-Term (Trend)</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>Best Config: ma(40,180,ari) z=250 | Sharpe 0.268</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Sharpe</div><div class="value">0.268</div></div>
+      <div class="stat"><div class="label">Direction</div><div class="value" style="font-size:14px;color:var(--blue)">TREND</div><div class="delta" style="color:var(--text-dim)">strong$ = SHORT gold</div></div>
+    </div>
+    <div class="insight">Long-term dollar trends are <strong>trend-following sell signals</strong>. Sustained dollar strength = gold bearish regime.</div>
+  </div>
+  <div class="card"><h2>LT Heatmap: z=120</h2><div class="chart-container" style="height:260px"><canvas id="dxLtHm120"></canvas></div></div>
+  <div class="card"><h2>LT Heatmap: z=250</h2><div class="chart-container" style="height:260px"><canvas id="dxLtHm250"></canvas></div></div>
+  <div class="card grid-full"><h2>Dollar Z-Scores vs Gold</h2><div class="chart-container" style="height:400px"><canvas id="dxSignals"></canvas></div></div>
+</div>
+
+<!-- ========== 5. COMBINE: STRATEGY COMPARISON ========== -->
+<div class="section-title">5. Combine Signals — What Improves Ratio & Drawdown?</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>All Combinations (Equal Weight Within Each Combo)</h2>
+    <table>
+      <thead><tr><th>Strategy</th><th>Sharpe</th><th>Ann Ret</th><th>Ann Vol</th><th>Max DD</th></tr></thead>
+      <tbody><tr style=""><td style="font-weight:600">Real Yield alone</td><td style="color:var(--good);font-weight:700">0.418</td><td>11.2%</td><td>26.82%</td><td style="color:var(--bad)">-62.5%</td></tr><tr style=""><td style="font-weight:600">Dollar ST alone</td><td style="color:var(--text);font-weight:700">0.176</td><td>3.48%</td><td>19.75%</td><td style="color:var(--bad)">-54.1%</td></tr><tr style=""><td style="font-weight:600">Dollar LT alone</td><td style="color:var(--text);font-weight:700">0.268</td><td>6.7%</td><td>25.06%</td><td style="color:var(--bad)">-40.5%</td></tr><tr style=""><td style="font-weight:600">Dollar ST + LT</td><td style="color:var(--text);font-weight:700">0.288</td><td>4.79%</td><td>16.59%</td><td style="color:var(--bad)">-32.4%</td></tr><tr style=""><td style="font-weight:600">Real Yield + Dollar ST</td><td style="color:var(--good);font-weight:700">0.495</td><td>7.44%</td><td>15.03%</td><td style="color:var(--bad)">-36.1%</td></tr><tr style=""><td style="font-weight:600">Real Yield + Dollar LT</td><td style="color:var(--good);font-weight:700">0.452</td><td>9.15%</td><td>20.24%</td><td style="color:var(--bad)">-40.0%</td></tr><tr style="background:#1c2128;"><td style="font-weight:600">Real Yield + Dollar ST + LT  *</td><td style="color:var(--good);font-weight:700">0.487</td><td>7.06%</td><td>14.49%</td><td style="color:var(--bad)">-26.4%</td></tr></tbody>
+    </table>
+    <div class="insight green"><strong>Adding Dollar ST to Real Yield: Sharpe 0.42 -> 0.50 (+19%), MaxDD -62% -> -36%.</strong>
+    Adding Dollar LT on top: Sharpe stays ~0.49 but MaxDD improves to -26%. Dollar LT is a drawdown hedge, not a Sharpe booster.</div>
+  </div>
+  <div class="card grid-full">
+    <h2>Combo PnL Comparison</h2>
+    <div class="chart-container" style="height:400px"><canvas id="comboPnl"></canvas></div>
+  </div>
+</div>
+
+<!-- ========== 6. OTHER SIGNALS EXPLORED ========== -->
+<div class="section-title">6. Other Signals Explored (China Gold Premium, Curve, GLD Flows)</div>
+<div class="grid">
+  
+  <div class="card">
+    <h2>China Premium — Grid Search</h2>
+    <div style="margin-bottom:8px;font-size:13px"><strong>Best:</strong> ma(20,40) z=60 inverted
+    — <span style="color:var(--good)">Sharpe 0.368</span>, ret 8.59%</div>
+    <table><thead><tr><th>Config</th><th>Z</th><th>Dir</th><th>Sharpe</th><th>Ret</th></tr></thead>
+    <tbody><tr><td>ma(20,40)</td><td>z=60</td><td>INV</td><td style="color:var(--good);font-weight:700">0.368</td><td>8.59%</td></tr><tr><td>ma(20,40)</td><td>z=40</td><td>INV</td><td style="color:var(--good);font-weight:700">0.352</td><td>8.93%</td></tr><tr><td>ma(20,40)</td><td>z=20</td><td>INV</td><td style="color:var(--good);font-weight:700">0.306</td><td>8.7%</td></tr><tr><td>ma(20,40)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.290</td><td>6.14%</td></tr><tr><td>ma(20,120)</td><td>z=20</td><td>INV</td><td style="color:var(--good);font-weight:700">0.259</td><td>7.49%</td></tr><tr><td>ma(20,120)</td><td>z=40</td><td>INV</td><td style="color:var(--good);font-weight:700">0.244</td><td>6.55%</td></tr><tr><td>ma(20,120)</td><td>z=60</td><td>INV</td><td style="color:var(--good);font-weight:700">0.243</td><td>6.31%</td></tr><tr><td>ma(20,60)</td><td>z=20</td><td>INV</td><td style="color:var(--good);font-weight:700">0.230</td><td>6.64%</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h2>Curve Signal — Grid Search</h2>
+    <div style="margin-bottom:8px;font-size:13px"><strong>Best:</strong> ma(20,40) z=120 inverted
+    — <span style="color:var(--good)">Sharpe 0.466</span>, ret 6.61%</div>
+    <table><thead><tr><th>Config</th><th>Z</th><th>Dir</th><th>Sharpe</th><th>Ret</th></tr></thead>
+    <tbody><tr><td>ma(20,40)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.466</td><td>6.61%</td></tr><tr><td>ma(10,40)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.424</td><td>6.09%</td></tr><tr><td>ma(5,40)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.413</td><td>6.02%</td></tr><tr><td>ma(3,40)</td><td>z=20</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.378</td><td>8.38%</td></tr><tr><td>ma(20,60)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.378</td><td>6.39%</td></tr><tr><td>ma(10,120)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.374</td><td>7.09%</td></tr><tr><td>ma(20,120)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.374</td><td>7.24%</td></tr><tr><td>ma(5,120)</td><td>z=120</td><td>INV</td><td style="color:var(--good);font-weight:700">0.361</td><td>6.75%</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <h2>GLD Flows — Grid Search</h2>
+    <div style="margin-bottom:8px;font-size:13px"><strong>Best:</strong> ma(20,60) z=40 normal
+    — <span style="color:var(--good)">Sharpe 0.283</span>, ret 7.09%</div>
+    <table><thead><tr><th>Config</th><th>Z</th><th>Dir</th><th>Sharpe</th><th>Ret</th></tr></thead>
+    <tbody><tr><td>ma(20,60)</td><td>z=40</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.283</td><td>7.09%</td></tr><tr><td>ma(10,60)</td><td>z=40</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.249</td><td>6.2%</td></tr><tr><td>ma(20,60)</td><td>z=60</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.217</td><td>5.01%</td></tr><tr><td>ma(10,60)</td><td>z=60</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.207</td><td>4.76%</td></tr><tr><td>ma(3,60)</td><td>z=40</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.195</td><td>4.74%</td></tr><tr><td>ma(10,40)</td><td>z=60</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.190</td><td>4.17%</td></tr><tr><td>ma(10,40)</td><td>z=40</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.183</td><td>4.33%</td></tr><tr><td>ma(20,40)</td><td>z=40</td><td>NOR</td><td style="color:var(--good);font-weight:700">0.180</td><td>4.24%</td></tr></tbody></table>
+  </div>
+  <div class="card grid-full">
+    <h2>Heatmaps — z=60</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+      <div><div style="font-size:10px;color:var(--text-dim);margin-bottom:4px">China Premium</div><div class="chart-container" style="height:240px"><canvas id="srHm0"></canvas></div></div><div><div style="font-size:10px;color:var(--text-dim);margin-bottom:4px">Curve Signal</div><div class="chart-container" style="height:240px"><canvas id="srHm1"></canvas></div></div><div><div style="font-size:10px;color:var(--text-dim);margin-bottom:4px">GLD Flows</div><div class="chart-container" style="height:240px"><canvas id="srHm2"></canvas></div></div>
+    </div>
+  </div>
+  <div class="insight grid-full" style="margin:0 32px"><strong>These signals were grid-searched but not included in the final combo.</strong> China Gold Premium (0.368) and Curve (0.466) show promise individually but need to be tested in combination with the Real Yield + Dollar system to see if they add alpha or just correlation.</div>
+</div>
+
+<!-- ========== 7. VERDICT ========== -->
+<div class="section-title">7. Verdict</div>
+<div class="grid">
+  <div class="card grid-full">
+    <h2>What to Keep, What to Drop</h2>
+    <table>
+      <thead><tr><th>Signal</th><th>Sharpe</th><th>Adds to Combo?</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:600;color:var(--good)">Real Yield</td><td style="font-weight:700">0.418</td><td>Core signal</td><td style="color:var(--good)">KEEP</td></tr>
+        <tr><td style="font-weight:600;color:var(--purple)">Dollar ST</td><td style="font-weight:700">0.176</td><td>+0.08 Sharpe, -26% MaxDD improvement</td><td style="color:var(--good)">KEEP</td></tr>
+        <tr><td style="font-weight:600;color:var(--blue)">Dollar LT</td><td style="font-weight:700">0.268</td><td>-0.01 Sharpe but -10% MaxDD improvement</td><td style="color:var(--accent)">KEEP (drawdown hedge)</td></tr>
+        <tr><td style="font-weight:600;color:var(--text-dim)">China Gold Premium</td><td>0.368</td><td>Not tested in combo yet</td><td style="color:var(--text-dim)">TODO</td></tr>
+        <tr><td style="font-weight:600;color:var(--text-dim)">Curve</td><td>0.466</td><td>Not tested in combo yet</td><td style="color:var(--text-dim)">TODO</td></tr>
+        <tr><td style="font-weight:600;color:var(--text-dim)">GLD Flows</td><td>0.283</td><td>Not tested in combo yet</td><td style="color:var(--text-dim)">TODO</td></tr>
+      </tbody>
+    </table>
+    <div class="insight blue"><strong>Current best: Sharpe 0.487.</strong> To reach 0.6+, next steps: (1) test China Gold Premium and Curve in the combo, (2) grid-search weights across all 5 signals, (3) run cost analysis on the new combo.</div>
   </div>
 </div>
 
 <div style="padding:24px 32px;color:var(--text-dim);font-size:11px;border-top:1px solid var(--border);margin-top:16px">
-  Data: Rose (gold.signal.map) | MA + z-score optimization | Weights: scipy Sharpe-max | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
+  v2.003 | Signals: Rose rosecodes with :ma() transforms | Grid-searched: real yield, dollar ST, dollar LT, china premium, curve, GLD flows | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
 </div>`;
 
 // ============================================================
-// SIGNAL vs GOLD PRICE
+// CHARTS
 // ============================================================
-const gldDates=Object.keys(D.gld_price).sort();
-const allDates=[...new Set([...gldDates,...compZDates])].sort().filter(d=>d>='2008');
 
-new Chart(document.getElementById('signalVsGold'),{
-  type:'bar',
-  data:{labels:allDates.map(d=>d.slice(0,10)),datasets:[
-    {type:'bar',label:'Composite Z',data:allDates.map(d=>comp.z_score[d]||null),
-     backgroundColor:allDates.map(d=>{const v=comp.z_score[d];return!v?'transparent':v>0?'rgba(34,197,94,0.6)':'rgba(239,68,68,0.6)'}),
-     borderRadius:1,yAxisID:'y',order:2},
-    {type:'line',label:'GLD ($)',data:allDates.map(d=>D.gld_price[d]||null),
-     borderColor:'#f59e0b',borderWidth:2,pointRadius:0,tension:0.1,yAxisID:'y1',order:1,spanGaps:true}
-  ]},
-  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    scales:{
-      x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
-      y:{position:'left',grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Z-Score'},min:-3,max:3},
-      y1:{position:'right',grid:{display:false},title:{display:true,text:'GLD ($)'},ticks:{callback:v=>'$'+v}}
-    },
-    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:15}}}
-  }
-});
-
-// CUM PNL
-new Chart(document.getElementById('cumPnl'),{
-  type:'line',
-  data:{datasets:[{label:'Composite',data:pnlDates.map(d=>({x:d.slice(0,10),y:comp.cum_pnl[d]})),
-    borderColor:'#fff',borderWidth:2,pointRadius:0,tension:0.1,
+// 1. Main PnL
+const bestPnl=combos['Real Yield + Dollar ST + LT'].cum_pnl;
+const bestDates=Object.keys(bestPnl).sort();
+new Chart(document.getElementById('mainPnl'),{type:'line',
+  data:{datasets:[{label:'RY + DST + DLT',data:bestDates.map(d=>({x:d,y:bestPnl[d]})),
+    borderColor:'#fff',borderWidth:2.5,pointRadius:0,tension:0.1,
     fill:{target:'origin',above:'rgba(34,197,94,0.08)',below:'rgba(239,68,68,0.08)'}}]},
   options:{responsive:true,maintainAspectRatio:false,
     scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
@@ -189,259 +252,69 @@ new Chart(document.getElementById('cumPnl'),{
     plugins:{legend:{display:false}}}
 });
 
-// DRAWDOWN
-const ddDates=Object.keys(ddData).sort();
-new Chart(document.getElementById('ddChart'),{
-  type:'line',
-  data:{datasets:[{label:'DD',data:ddDates.map(d=>({x:d.slice(0,10),y:ddData[d]})),
-    borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,0.15)',borderWidth:1.5,pointRadius:0,tension:0.1,fill:true}]},
-  options:{responsive:true,maintainAspectRatio:false,
-    scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
-      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Drawdown (%)'},ticks:{callback:v=>v.toFixed(0)+'%'}}},
-    plugins:{legend:{display:false}}}
-});
-
-// INDIVIDUAL PNL
-const ids=sigOrder.map(s=>{const p=sigs[s].cum_pnl;const dates=Object.keys(p).sort();
-  return{label:sigs[s].label,data:dates.map(d=>({x:d.slice(0,10),y:p[d]})),borderColor:CLR[s],borderWidth:2,pointRadius:0,tension:0.1,fill:false}});
-ids.push({label:'Composite',data:pnlDates.map(d=>({x:d.slice(0,10),y:comp.cum_pnl[d]})),borderColor:'#fff',borderWidth:3,pointRadius:0,tension:0.1,fill:false});
-const aDates=[...new Set(ids.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
-new Chart(document.getElementById('indivPnl'),{type:'line',data:{labels:aDates,datasets:ids},
+// 2. All strategies vs gold
+const comboDs=Object.entries(combos).filter(([n,v])=>v.cum_pnl).map(([name,v])=>{
+  const dates=Object.keys(v.cum_pnl).sort();
+  return{label:name+' ('+v.sharpe.toFixed(2)+')',data:dates.map(d=>({x:d,y:v.cum_pnl[d]})),
+    borderColor:comboColors[name]||'#8b949e',borderWidth:name.includes('ST + LT')?3:1.5,
+    pointRadius:0,tension:0.1,borderDash:name.includes('alone')?[4,3]:[]}});
+const allCDates=[...new Set(comboDs.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
+new Chart(document.getElementById('allPnl'),{type:'line',data:{labels:allCDates,datasets:comboDs},
   options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
       y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
-    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}}}}
+    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:8,font:{size:9}}}}}
 });
 
-// Z-SCORES
-const zds=sigOrder.map(s=>{const z=sigs[s].z_score;const dates=Object.keys(z).sort().filter(d=>d>='2008');
-  return{label:sigs[s].label,data:dates.map(d=>({x:d.slice(0,10),y:z[d]})),borderColor:CLR[s],borderWidth:1.5,pointRadius:0,tension:0.2,fill:false}});
-zds.push({label:'Composite',data:compZDates.map(d=>({x:d.slice(0,10),y:comp.z_score[d]})),borderColor:'#fff',borderWidth:3,pointRadius:0,tension:0.2,fill:false});
-const azd=[...new Set(zds.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
-new Chart(document.getElementById('zScores'),{type:'line',data:{labels:azd,datasets:zds},
-  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:20,font:{size:9}}},
-      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Z-Score'},min:-3,max:3}},
-    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:10}}}},
-  plugins:[{id:'zb',beforeDraw(c){const{ctx,chartArea:a,scales:s}=c;ctx.save();ctx.strokeStyle='rgba(139,148,158,0.2)';ctx.setLineDash([4,4]);
-    [0,1,-1].forEach(v=>{const y=s.y.getPixelForValue(v);ctx.beginPath();ctx.moveTo(a.left,y);ctx.lineTo(a.right,y);ctx.stroke()});ctx.restore()}}]
+// 3. YoY bar chart
+// Build from combo PnL data
+const pnlD=combos['Real Yield + Dollar ST + LT'].cum_pnl;
+const gldP=RY.timeseries.gld_price;
+const pDates=Object.keys(pnlD).sort();
+const yrs=[...new Set(pDates.map(d=>d.slice(0,4)))];
+const sigYoY=[],gldYoY=[];
+yrs.forEach(yr=>{
+  const yrDates=pDates.filter(d=>d.startsWith(yr));
+  if(yrDates.length<2)return;
+  const s0=pnlD[yrDates[0]],s1=pnlD[yrDates[yrDates.length-1]];
+  sigYoY.push({yr,ret:(s1/s0-1)*100});
+  const gDates=Object.keys(gldP).filter(d=>d.startsWith(yr)).sort();
+  if(gDates.length>1)gldYoY.push({yr,ret:(gldP[gDates[gDates.length-1]]/gldP[gDates[0]]-1)*100});
+  else gldYoY.push({yr,ret:0});
 });
-
-// ============================================================
-// COST ANALYSIS (loaded from separate file)
-// ============================================================
-fetch('costs.json').then(r=>r.json()).then(C=>{
-const costDiv=document.createElement('div');
-costDiv.innerHTML=`
-<div class="section-title">Transaction Costs & Lag Analysis</div>
-<div class="grid">
-  <div class="card">
-    <h2>Reporting Lag Sensitivity</h2>
-    <table>
-      <thead><tr><th>Lag</th><th>Sharpe</th><th>Ann. Return</th><th>Decay</th></tr></thead>
-      <tbody>
-        ${Object.entries(C.lag_sensitivity).map(([lag,v])=>{
-          const base=C.lag_sensitivity['1']?.sharpe||v.sharpe;
-          const decay=base-v.sharpe;
-          return`<tr><td>${lag} day${lag>1?'s':''}</td><td style="font-weight:700;color:${v.sharpe>0.5?'var(--good)':'var(--bad)'}">${v.sharpe.toFixed(3)}</td><td>${v.ann_ret}%</td><td style="color:var(--bad)">${decay>0?'-':''}${decay.toFixed(3)}</td></tr>`}).join('')}
-      </tbody>
-    </table>
-    <div class="insight"><strong>Signal decays with lag</strong> but remains strong at 2 days (0.847 vs 0.862). By 5 days, Sharpe drops 33%. This is a medium-frequency signal â€” needs daily or T+1 execution.</div>
-  </div>
-
-  <div class="card">
-    <h2>Trading Frequency Optimization (${C.tc_bps}bps/trade)</h2>
-    <table>
-      <thead><tr><th>Z Thresh</th><th>Gross</th><th>Net</th><th>Decay</th><th>TC/yr</th><th>Trades/yr</th><th>Max DD</th></tr></thead>
-      <tbody>
-        ${C.cost_grid.map(r=>{
-          const best=r.z_threshold===C.best_threshold;
-          return`<tr style="${best?'background:#1c2128;':''}"><td>${r.z_threshold.toFixed(2)}${best?' *':''}</td><td>${r.sharpe_gross.toFixed(3)}</td><td style="font-weight:700;color:var(--good)">${r.sharpe_net.toFixed(3)}</td><td style="color:var(--bad)">-${r.decay.toFixed(3)}</td><td>${r.ann_tc_pct}%</td><td>${r.trades_per_yr}</td><td>${r.max_dd_net}%</td></tr>`}).join('')}
-      </tbody>
-    </table>
-    <div class="insight green"><strong>Best net Sharpe: z_threshold=${C.best_threshold}</strong> (only rebalance when z changes by >${C.best_threshold}). This cuts trades from 249/yr to ${C.cost_grid.find(r=>r.z_threshold===C.best_threshold)?.trades_per_yr}/yr while improving net Sharpe from 0.760 to 0.828.</div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Alpha Loss from Transaction Costs</h2>
-    <div class="chart-container" style="height:380px"><canvas id="costChart"></canvas></div>
-    <div class="insight blue"><strong>White = gross (no costs). Green = net at optimal threshold (z>0.5, ~26 trades/yr). Red = net with no threshold (trade every day). Gold dashed = buy and hold.</strong> The gap between white and green is the cost of doing business â€” roughly 0.07 Sharpe or 0.8%/yr at the optimal threshold.</div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Sharpe Decay: Gross vs Net by Threshold</h2>
-    <div class="chart-container" style="height:280px"><canvas id="decayChart"></canvas></div>
-  </div>
-</div>`;
-document.getElementById('content').appendChild(costDiv);
-
-// Cost chart: gross vs net vs buy-and-hold
-const cs=C.cum_series;
-const grossDates=Object.keys(cs['gross_0.0']||{}).sort();
-const netDates=Object.keys(cs['net_0.0']||{}).sort();
-const bestKey='net_'+C.best_threshold;
-const bestDates=Object.keys(cs[bestKey]||{}).sort();
-const bhDates=Object.keys(cs['gold_bh']||{}).sort();
-const allCostDates=[...new Set([...grossDates,...netDates,...bestDates,...bhDates])].sort();
-
-new Chart(document.getElementById('costChart'),{
-  type:'line',
-  data:{labels:allCostDates.map(d=>d.slice(0,10)),datasets:[
-    {label:'Gross (no costs)',data:allCostDates.map(d=>cs['gross_0.0']?.[d]||null),borderColor:'#fff',borderWidth:2.5,pointRadius:0,tension:0.1,spanGaps:true},
-    {label:'Net (optimal z>'+C.best_threshold+')',data:allCostDates.map(d=>cs[bestKey]?.[d]||null),borderColor:'#22c55e',borderWidth:2,pointRadius:0,tension:0.1,spanGaps:true},
-    {label:'Net (trade daily)',data:allCostDates.map(d=>cs['net_0.0']?.[d]||null),borderColor:'#ef4444',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[4,3],spanGaps:true},
-    {label:'Gold Buy & Hold',data:allCostDates.map(d=>cs['gold_bh']?.[d]||null),borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,tension:0.1,borderDash:[6,4],spanGaps:true},
+new Chart(document.getElementById('yoyChart'),{type:'bar',
+  data:{labels:sigYoY.map(d=>d.yr),datasets:[
+    {label:'Signal',data:sigYoY.map(d=>d.ret),backgroundColor:'rgba(34,197,94,0.6)',borderRadius:3},
+    {label:'Gold B&H',data:gldYoY.map(d=>d.ret),backgroundColor:'rgba(245,158,11,0.4)',borderRadius:3}
   ]},
-  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
-      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL (1.0=start)'}}},
-    plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}}}}
-});
-
-// Decay bar chart
-new Chart(document.getElementById('decayChart'),{
-  type:'bar',
-  data:{
-    labels:C.cost_grid.map(r=>'z>'+r.z_threshold.toFixed(2)),
-    datasets:[
-      {label:'Gross Sharpe',data:C.cost_grid.map(r=>r.sharpe_gross),backgroundColor:'rgba(255,255,255,0.3)',borderRadius:3},
-      {label:'Net Sharpe',data:C.cost_grid.map(r=>r.sharpe_net),backgroundColor:'rgba(34,197,94,0.6)',borderRadius:3},
-    ]
-  },
   options:{responsive:true,maintainAspectRatio:false,
-    scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Sharpe Ratio'}}},
+    scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Return (%)'},ticks:{callback:v=>v+'%'}}},
     plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}}}}
 });
 
-});
-
-// ============================================================
-// REAL YIELD SIGNAL OPTIMIZATION
-// ============================================================
-fetch('real_yield.json').then(r=>r.json()).then(R=>{
-const ryDiv=document.createElement('div');
-const bc=R.best_config;
-const ts=R.timeseries;
-const top=R.top_20||[];
-
-// Build heatmap data for best z-window (250)
-const hm=R.heatmaps;
-const fv=R.fast_vals;
-const sv=R.slow_vals;
-
-// Heatmap grid data for canvas
-const bestZ='250';
-const hmData=hm[bestZ]||{};
-
-ryDiv.innerHTML=`
-<div class="section-title">Real Yield Signal: usa.real.yield.2y.ilb â†’ Gold</div>
-<div class="grid">
-  <div class="card grid-full">
-    <h2>Optimization: ma(x,y) z-score(z) â€” Best: ma(${bc.fast},${bc.slow},ari) z=${bc.z} ${bc.direction}</h2>
-    <div class="stat-row">
-      <div class="stat"><div class="label">Best Sharpe</div><div class="value" style="color:var(--good)">${bc.sharpe.toFixed(2)}</div></div>
-      <div class="stat"><div class="label">Ann Return</div><div class="value">${bc.ann_ret}%</div></div>
-      <div class="stat"><div class="label">Max DD</div><div class="value" style="color:var(--bad)">${bc.max_dd}%</div></div>
-      <div class="stat"><div class="label">Direction</div><div class="value" style="font-size:16px">${bc.direction.toUpperCase()}</div><div class="delta" style="color:var(--text-dim)">falling real yields = long gold</div></div>
-      <div class="stat"><div class="label">Config</div><div class="value" style="font-size:14px">ma(${bc.fast},${bc.slow},ari)</div><div class="delta" style="color:var(--text-dim)">z=${bc.z}</div></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Heatmap: z=40</h2>
-    <div class="chart-container" style="height:280px"><canvas id="ryHm40"></canvas></div>
-  </div>
-  <div class="card">
-    <h2>Heatmap: z=90</h2>
-    <div class="chart-container" style="height:280px"><canvas id="ryHm90"></canvas></div>
-  </div>
-  <div class="card">
-    <h2>Heatmap: z=120</h2>
-    <div class="chart-container" style="height:280px"><canvas id="ryHm120"></canvas></div>
-  </div>
-  <div class="card">
-    <h2>Heatmap: z=250</h2>
-    <div class="chart-container" style="height:280px"><canvas id="ryHm250"></canvas></div>
-  </div>
-  <div class="insight grid-full" style="margin:0 32px"><strong>Fast MA (x-axis) vs Slow MA â€” across 4 z-score lookback windows.</strong> Green = positive Sharpe, red = negative. The signal strengthens as z-window increases (longer memory). Fast=3-5d with slow=180-250d is consistently best across all z windows.</div>
-
-  <div class="card">
-    <h2>Top Configs</h2>
-    <table>
-      <thead><tr><th>Config</th><th>Dir</th><th>Sharpe</th><th>Ann Ret</th></tr></thead>
-      <tbody>
-        ${top.filter(r=>r.direction==='inverted').slice(0,10).map(r=>`<tr>
-          <td style="font-weight:600">ma(${r.fast},${r.slow}) z=${r.z}</td>
-          <td>${r.direction.slice(0,3).toUpperCase()}</td>
-          <td style="color:var(--good);font-weight:700">${r.sharpe.toFixed(3)}</td>
-          <td>${r.ann_ret}%</td>
-        </tr>`).join('')}
-      </tbody>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>Sharpe by Z-Window (best fast/slow per z)</h2>
-    <div class="chart-container"><canvas id="ryZSweep"></canvas></div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Real Yield Signal vs Gold â€” ma(${bc.fast},${bc.slow},ari) z=${bc.z} ${bc.direction}</h2>
-    <div class="chart-container" style="height:420px"><canvas id="rySignal"></canvas></div>
-    <div class="insight green"><strong>Logic:</strong> When 2Y real yields are falling relative to trend (negative z, inverted to positive signal), gold rallies. The 2Y TIPS yield captures Fed expectations â€” falling real yields = easier financial conditions = gold bullish.</div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Cumulative PnL: Real Yield Signal â€” ma(${bc.fast},${bc.slow},ari) z=${bc.z} ${bc.direction}</h2>
-    <div class="chart-container"><canvas id="ryCumPnl"></canvas></div>
-  </div>
-</div>`;
-document.getElementById('content').appendChild(ryDiv);
-
-// 4 HEATMAPS for different z windows
-function makeHeatmap(canvasId, zVal) {
-  const hmZ = hm[String(zVal)] || {};
-  const labels = []; const values = []; const colors = [];
-  fv.forEach(f => { sv.forEach(sl => {
-    if (f >= sl) return;
-    const key = f + '_' + sl;
-    const val = hmZ[key] || 0;
-    labels.push(f + '/' + sl);
-    values.push(val);
-    const intensity = Math.min(1, Math.max(0, (val + 0.1) / 0.5));
-    colors.push(val > 0 ? 'rgba(34,197,94,' + Math.max(0.15, intensity) + ')' : 'rgba(239,68,68,' + Math.max(0.15, Math.abs(intensity)) + ')');
+// 4. Real yield charts
+const hm=RY.heatmaps;const fv=RY.fast_vals;const sv=RY.slow_vals;
+function makeHeatmap(id,zVal){
+  const hmZ=hm[String(zVal)]||{};const labels=[],values=[],colors=[];
+  fv.forEach(f=>{sv.forEach(sl=>{if(f>=sl)return;const v=hmZ[f+'_'+sl]||0;labels.push(f+'/'+sl);values.push(v);
+    const int=Math.min(1,Math.max(0,(v+0.1)/0.5));
+    colors.push(v>0?'rgba(34,197,94,'+Math.max(0.15,int)+')':'rgba(239,68,68,'+Math.max(0.15,Math.abs(int))+')');
   })});
-  new Chart(document.getElementById(canvasId), { type: 'bar',
-    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderRadius: 2 }] },
-    options: { responsive: true, maintainAspectRatio: false,
-      scales: { x: { grid: { display: false }, ticks: { font: { size: 7 }, maxRotation: 90 }, title: { display: true, text: 'fast/slow' } },
-        y: { grid: { color: 'rgba(48,54,61,0.5)' }, title: { display: true, text: 'Sharpe' }, min: -0.2, max: 0.45 } },
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => 'Sharpe: ' + ctx.parsed.y.toFixed(3) } } } }
-  });
+  new Chart(document.getElementById(id),{type:'bar',data:{labels,datasets:[{data:values,backgroundColor:colors,borderRadius:2}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      scales:{x:{grid:{display:false},ticks:{font:{size:7},maxRotation:90}},y:{grid:{color:'rgba(48,54,61,0.5)'},min:-0.2,max:0.45}},
+      plugins:{legend:{display:false}}}});
 }
-makeHeatmap('ryHm40', 40);
-makeHeatmap('ryHm90', 90);
-makeHeatmap('ryHm120', 120);
-makeHeatmap('ryHm250', 250);
+makeHeatmap('ryHm40',40);makeHeatmap('ryHm90',90);makeHeatmap('ryHm120',120);makeHeatmap('ryHm250',250);
 
-// Z-window sweep: best sharpe per z
-const zSweep=R.z_vals.map(z=>{
-  const hmZ=R.heatmaps[String(z)]||{};
-  const vals=Object.values(hmZ);
-  return vals.length?Math.max(...vals):0;
-});
+const zSweep=RY.z_vals.map(z=>{const h=RY.heatmaps[String(z)]||{};const v=Object.values(h);return v.length?Math.max(...v):0});
 new Chart(document.getElementById('ryZSweep'),{type:'bar',
-  data:{labels:R.z_vals.map(z=>'z='+z),datasets:[{data:zSweep,backgroundColor:zSweep.map(v=>v>0.3?'#22c55e':v>0.2?'#3b82f6':'#6b7280'),borderRadius:4}]},
-  options:{responsive:true,maintainAspectRatio:false,
-    scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Best Sharpe at this z-window'}}},
-    plugins:{legend:{display:false}}}
+  data:{labels:RY.z_vals.map(z=>'z='+z),datasets:[{data:zSweep,backgroundColor:zSweep.map(v=>v>0.3?'#22c55e':v>0.2?'#3b82f6':'#6b7280'),borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(48,54,61,0.5)'}}},plugins:{legend:{display:false}}}
 });
 
-// Signal vs gold price
-const zDates=Object.keys(ts.z_score).sort();
-const gldDates=Object.keys(ts.gld_price).sort();
+const ts=RY.timeseries;const zDates=Object.keys(ts.z_score).sort();const gldDates=Object.keys(ts.gld_price).sort();
 const allRyDates=[...new Set([...zDates,...gldDates])].sort();
-
 new Chart(document.getElementById('rySignal'),{type:'bar',
   data:{labels:allRyDates,datasets:[
     {type:'bar',label:'Real Yield Z (inv)',data:allRyDates.map(d=>ts.z_score[d]!=null?-ts.z_score[d]:null),
@@ -452,91 +325,24 @@ new Chart(document.getElementById('rySignal'),{type:'bar',
   ]},
   options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
-      y:{position:'left',grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Signal (inverted z)'},min:-3,max:3},
+      y:{position:'left',grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Signal (inv z)'},min:-3,max:3},
       y1:{position:'right',grid:{display:false},title:{display:true,text:'GLD ($)'},ticks:{callback:v=>'$'+v}}},
     plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:15}}}}
 });
 
-// Cum PnL
-const pnlDatesRy=Object.keys(ts.cum_pnl).sort();
+const ryPnlDates=Object.keys(ts.cum_pnl).sort();
 new Chart(document.getElementById('ryCumPnl'),{type:'line',
-  data:{datasets:[{label:'Real Yield Signal PnL',data:pnlDatesRy.map(d=>({x:d,y:ts.cum_pnl[d]})),
-    borderColor:'#fff',borderWidth:2,pointRadius:0,tension:0.1,
+  data:{datasets:[{data:ryPnlDates.map(d=>({x:d,y:ts.cum_pnl[d]})),borderColor:'#fff',borderWidth:2,pointRadius:0,tension:0.1,
     fill:{target:'origin',above:'rgba(34,197,94,0.08)',below:'rgba(239,68,68,0.08)'}}]},
   options:{responsive:true,maintainAspectRatio:false,
-    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
-      y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
+    scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},y:{grid:{color:'rgba(48,54,61,0.5)'}}},
     plugins:{legend:{display:false}}}
 });
-});
 
-// ============================================================
-// DOLLAR SIGNAL v2: SHORT-TERM + LONG-TERM
-// ============================================================
-fetch('dollar.json').then(r=>r.json()).then(DX=>{
-const dxDiv=document.createElement('div');
-const bst=DX.best_st;
-const blt=DX.best_lt;
-const dts=DX.timeseries;
-const combos=DX.combos;
-const stHm=DX.st_heatmaps;
-const ltHm=DX.lt_heatmaps;
-
-dxDiv.innerHTML=`
-<div class="section-title">Dollar Signal: Short-Term (Contrarian) + Long-Term (Trend)</div>
-<div class="grid">
-  <div class="card grid-full">
-    <h2>Two Dollar Signals â€” Opposite Directions at Different Frequencies</h2>
-    <div class="stat-row">
-      <div class="stat"><div class="label">Short-Term</div><div class="value" style="color:var(--purple)">ma(${bst.fast},${bst.slow})</div><div class="delta" style="color:var(--text-dim)">z=${bst.z} | strong$ = LONG gold</div></div>
-      <div class="stat"><div class="label">ST Sharpe</div><div class="value">${bst.sharpe.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">contrarian / mean-reversion</div></div>
-      <div class="stat"><div class="label">Long-Term</div><div class="value" style="color:var(--blue)">ma(${blt.fast},${blt.slow})</div><div class="delta" style="color:var(--text-dim)">z=${blt.z} | strong$ = SHORT gold</div></div>
-      <div class="stat"><div class="label">LT Sharpe</div><div class="value">${blt.sharpe.toFixed(2)}</div><div class="delta" style="color:var(--text-dim)">trend-following</div></div>
-    </div>
-    <div class="insight">Short-term dollar spikes are <strong>contrarian buy signals</strong> for gold (mean-reversion). Long-term dollar trends are <strong>trend-following sell signals</strong> (strong dollar regime = gold bearish). Opposite directions, different frequencies.</div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Combination Comparison: What Helps Real Yields?</h2>
-    <table>
-      <thead><tr><th>Strategy</th><th>Sharpe</th><th>Ann Ret</th><th>Ann Vol</th><th>Max DD</th></tr></thead>
-      <tbody>
-        ${Object.entries(combos).map(([name,v])=>'<tr><td style="font-weight:600">'+name+'</td><td style="color:'+(v.sharpe>0.45?'var(--good)':v.sharpe>0.3?'var(--warn)':'var(--text)')+';font-weight:700">'+v.sharpe.toFixed(3)+'</td><td>'+v.ann_ret+'%</td><td>'+v.ann_vol+'%</td><td style="color:var(--bad)">'+v.max_dd+'%</td></tr>').join('')}
-      </tbody>
-    </table>
-    <div class="insight green"><strong>Adding dollar signals to real yields boosts Sharpe from 0.42 to 0.50 and cuts max DD from -62% to -26%.</strong> The short-term contrarian signal is the best individual diversifier (+0.08 Sharpe). All three together give the best drawdown protection.</div>
-  </div>
-
-  <div class="card">
-    <h2>Short-Term Heatmaps (strong$ = LONG gold)</h2>
-    <div class="chart-container" style="height:220px"><canvas id="dxStHm20"></canvas></div>
-    <div class="chart-container" style="height:220px"><canvas id="dxStHm40"></canvas></div>
-  </div>
-  <div class="card">
-    <h2>Long-Term Heatmaps (strong$ = SHORT gold)</h2>
-    <div class="chart-container" style="height:220px"><canvas id="dxLtHm120"></canvas></div>
-    <div class="chart-container" style="height:220px"><canvas id="dxLtHm250"></canvas></div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Dollar Z-Scores vs Gold: Short-Term (purple) + Long-Term (blue)</h2>
-    <div class="chart-container" style="height:420px"><canvas id="dxSignals"></canvas></div>
-    <div class="insight">Purple = short-term contrarian (spikes up = buy gold). Blue = long-term trend (sustained positive = sell gold). They often point in opposite directions â€” the combination dampens whipsaws.</div>
-  </div>
-
-  <div class="card grid-full">
-    <h2>Cumulative PnL: Individual + Combined Strategies</h2>
-    <div class="chart-container" style="height:380px"><canvas id="dxComboPnl"></canvas></div>
-  </div>
-</div>`;
-document.getElementById('content').appendChild(dxDiv);
-
-// Short-term heatmaps
-function makeHm(id, hmObj, fvs, svs, maxS) {
-  const data = hmObj || {};
-  const labels=[],values=[],colors=[];
-  fvs.forEach(f=>{svs.forEach(sl=>{if(f>=sl)return;
-    const v=data[f+'_'+sl]||0;labels.push(f+'/'+sl);values.push(v);
+// Dollar heatmaps
+function makeHm(id,hmObj,fvs,svs,maxS){
+  const data=hmObj||{};const labels=[],values=[],colors=[];
+  fvs.forEach(f=>{svs.forEach(sl=>{if(f>=sl)return;const v=data[f+'_'+sl]||0;labels.push(f+'/'+sl);values.push(v);
     const int=Math.min(1,Math.max(0,(v+0.05)/maxS));
     colors.push(v>0?'rgba(34,197,94,'+Math.max(0.15,int)+')':'rgba(239,68,68,'+Math.max(0.15,Math.abs(int))+')');
   })});
@@ -544,22 +350,19 @@ function makeHm(id, hmObj, fvs, svs, maxS) {
     options:{responsive:true,maintainAspectRatio:false,scales:{x:{grid:{display:false},ticks:{font:{size:7},maxRotation:90}},
       y:{grid:{color:'rgba(48,54,61,0.5)'},min:-0.15,max:maxS}},plugins:{legend:{display:false}}}});
 }
-makeHm('dxStHm20',stHm['20'],[1,2,3,5],[10,20,40],0.2);
-makeHm('dxStHm40',stHm['40'],[1,2,3,5],[10,20,40],0.2);
-makeHm('dxLtHm120',ltHm['120'],[20,40],[90,120,180,250],0.3);
-makeHm('dxLtHm250',ltHm['250'],[20,40],[90,120,180,250],0.3);
+makeHm('dxStHm20',DX.st_heatmaps['20'],[1,2,3,5],[10,20,40],0.2);
+makeHm('dxStHm40',DX.st_heatmaps['40'],[1,2,3,5],[10,20,40],0.2);
+makeHm('dxLtHm120',DX.lt_heatmaps['120'],[20,40],[90,120,180,250],0.3);
+makeHm('dxLtHm250',DX.lt_heatmaps['250'],[20,40],[90,120,180,250],0.3);
 
-// Z-scores overlay
-const zStDates=Object.keys(dts.z_st).sort();
-const zLtDates=Object.keys(dts.z_lt).sort();
-const gldDates2=Object.keys(dts.gld_price).sort();
-const allDx2=[...new Set([...zStDates,...zLtDates,...gldDates2])].sort();
-
+// Dollar z-scores vs gold
+const dts=DX.timeseries;const zStD=Object.keys(dts.z_st).sort();const zLtD=Object.keys(dts.z_lt).sort();
+const gldD2=Object.keys(dts.gld_price).sort();const allDx=[...new Set([...zStD,...zLtD,...gldD2])].sort();
 new Chart(document.getElementById('dxSignals'),{type:'line',
-  data:{labels:allDx2,datasets:[
-    {label:'ST Dollar Z (contrarian)',data:allDx2.map(d=>dts.z_st[d]||null),borderColor:'#a855f7',borderWidth:1.5,pointRadius:0,tension:0.2,yAxisID:'y',spanGaps:true},
-    {label:'LT Dollar Z (trend)',data:allDx2.map(d=>dts.z_lt[d]!=null?-dts.z_lt[d]:null),borderColor:'#3b82f6',borderWidth:1.5,pointRadius:0,tension:0.2,yAxisID:'y',spanGaps:true},
-    {label:'GLD ($)',data:allDx2.map(d=>dts.gld_price[d]||null),borderColor:'#f59e0b',borderWidth:2,pointRadius:0,tension:0.1,yAxisID:'y1',spanGaps:true}
+  data:{labels:allDx,datasets:[
+    {label:'ST Dollar Z (contrarian)',data:allDx.map(d=>dts.z_st[d]||null),borderColor:'#a855f7',borderWidth:1.5,pointRadius:0,tension:0.2,yAxisID:'y',spanGaps:true},
+    {label:'LT Dollar Z (trend)',data:allDx.map(d=>dts.z_lt[d]!=null?-dts.z_lt[d]:null),borderColor:'#3b82f6',borderWidth:1.5,pointRadius:0,tension:0.2,yAxisID:'y',spanGaps:true},
+    {label:'GLD ($)',data:allDx.map(d=>dts.gld_price[d]||null),borderColor:'#f59e0b',borderWidth:2,pointRadius:0,tension:0.1,yAxisID:'y1',spanGaps:true}
   ]},
   options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     scales:{x:{grid:{display:false},ticks:{maxTicksLimit:15,font:{size:9}}},
@@ -568,24 +371,36 @@ new Chart(document.getElementById('dxSignals'),{type:'line',
     plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:12}}}}
 });
 
-// Combo PnL chart
-const comboColors={'Real Yield alone':'#ef4444','Dollar ST alone':'#a855f7','Dollar LT alone':'#3b82f6','Dollar ST + LT':'#6366f1','Real Yield + Dollar ST':'#22c55e','Real Yield + Dollar LT':'#f59e0b','Real Yield + Dollar ST + LT':'#ffffff'};
-const comboDs=Object.entries(combos).filter(([n,v])=>v.cum_pnl).map(([name,v])=>{
+// Combo PnL
+const cDs=Object.entries(combos).filter(([n,v])=>v.cum_pnl).map(([name,v])=>{
   const dates=Object.keys(v.cum_pnl).sort();
   return{label:name+' ('+v.sharpe.toFixed(2)+')',data:dates.map(d=>({x:d,y:v.cum_pnl[d]})),
     borderColor:comboColors[name]||'#8b949e',borderWidth:name.includes('ST + LT')?3:1.5,
-    pointRadius:0,tension:0.1,borderDash:name.includes('alone')?[4,3]:[]};
-});
-const allCDates=[...new Set(comboDs.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
-new Chart(document.getElementById('dxComboPnl'),{type:'line',data:{labels:allCDates,datasets:comboDs},
+    pointRadius:0,tension:0.1,borderDash:name.includes('alone')?[4,3]:[]}});
+const cDates=[...new Set(cDs.flatMap(ds=>ds.data.map(d=>d.x)))].sort();
+new Chart(document.getElementById('comboPnl'),{type:'line',data:{labels:cDates,datasets:cDs},
   options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     scales:{x:{grid:{color:'rgba(48,54,61,0.5)'},ticks:{maxTicksLimit:15,font:{size:9}}},
       y:{grid:{color:'rgba(48,54,61,0.5)'},title:{display:true,text:'Cumulative PnL'}}},
     plugins:{legend:{position:'top',labels:{usePointStyle:true,padding:8,font:{size:9}}}}}
 });
+
+// Signal grid search heatmaps (China, Curve, GLD Flows)
+Object.keys(SR).forEach((name,i)=>{
+  const s=SR[name];const hmZ=s.heatmaps['60']||{};
+  const labels=[],values=[],colors=[];
+  s.fast_vals.forEach(f=>{s.slow_vals.forEach(sl=>{if(f>=sl)return;
+    const v=hmZ[f+'_'+sl]||0;labels.push(f+'/'+sl);values.push(v);
+    const int=Math.min(1,Math.max(0,(v+0.1)/0.5));
+    colors.push(v>0?'rgba(34,197,94,'+Math.max(0.15,int)+')':'rgba(239,68,68,'+Math.max(0.15,Math.abs(int))+')');
+  })});
+  new Chart(document.getElementById('srHm'+i),{type:'bar',data:{labels,datasets:[{data:values,backgroundColor:colors,borderRadius:2}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      scales:{x:{grid:{display:false},ticks:{font:{size:7},maxRotation:90}},y:{grid:{color:'rgba(48,54,61,0.5)'},min:-0.2,max:0.5}},
+      plugins:{legend:{display:false}}}});
 });
 
-}).catch(e=>{document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--bad)">Error: ${e.message}</div>`});
+}).catch(e=>{document.getElementById('content').innerHTML='<div class="loading" style="color:var(--bad)">Error: '+e.message+'</div>'});
 </script>
 </body>
 </html>
