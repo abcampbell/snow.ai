@@ -285,7 +285,7 @@ function AgentCalculator() {
         rel="stylesheet"
       />
 
-      <div style={{ maxWidth: 720, margin: "0 auto" }}>
+      <div style={{ maxWidth: 960, margin: "0 auto" }}>
         <div
           style={{
             fontSize: 10,
@@ -323,6 +323,11 @@ function AgentCalculator() {
           Your time is the real line item. Here's the math.
         </p>
 
+        {/* Your hourly value — shared across both sides */}
+        <div style={{ marginBottom: 20, background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "16px 20px 4px" }}>
+          <Slider label="Your hourly value" value={hourlyValue} onChange={setHourlyValue} min={50} max={750} step={25} unit="$" alt={`$${Math.round(hourlyValue * 2080 / 1000)}K/yr`} note="Opportunity cost of your time — this is the multiplier on everything below" />
+        </div>
+
         {/* Verdict */}
         <div
           style={{
@@ -331,223 +336,102 @@ function AgentCalculator() {
               : "rgba(201, 60, 55, 0.06)",
             border: `1px solid ${r.agentWins ? "rgba(58,142,84,0.2)" : "rgba(201,60,55,0.2)"}`,
             borderRadius: 8,
-            padding: "16px 20px",
-            marginBottom: 28,
+            padding: "14px 20px",
+            marginBottom: 20,
             textAlign: "center",
           }}
         >
-          <div
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: r.agentWins ? "#4eba6f" : "#c93c37",
-              fontFamily: "'DM Mono', monospace",
-            }}
-          >
+          <div style={{ fontSize: 13, fontWeight: 600, color: r.agentWins ? "#4eba6f" : "#c93c37", fontFamily: "'DM Mono', monospace" }}>
             {r.agentWins
-              ? `${numAgents} agent${numAgents > 1 ? "s" : ""} cost ${fmtFull(r.loadedAgentCost)}/mo loaded — still cheaper than the analyst`
-              : `${numAgents} agent${numAgents > 1 ? "s" : ""} cost ${fmtFull(r.loadedAgentCost)}/mo loaded — the $${(analystCostMonthly/1000).toFixed(0)}K analyst wins`}
+              ? `${numAgents} agent${numAgents > 1 ? "s" : ""}: ${fmtFull(r.loadedAgentCost)}/mo loaded — cheaper than the analyst`
+              : `${numAgents} agent${numAgents > 1 ? "s" : ""}: ${fmtFull(r.loadedAgentCost)}/mo loaded — the $${(analystCostMonthly/1000).toFixed(0)}K analyst wins`}
           </div>
           {r.yourPctConsumed > 100 && (
             <div style={{ fontSize: 11, color: "#c93c37", marginTop: 6, fontFamily: "'DM Mono', monospace" }}>
-              Agents require {r.totalSupervisorHoursPerDay.toFixed(1)}h/day of your time — exceeds your {WORK_HOURS_PER_DAY}h workday
+              Agents require {r.totalSupervisorHoursPerDay.toFixed(1)}h/day — exceeds your {WORK_HOURS_PER_DAY}h workday
             </div>
           )}
         </div>
 
-        {/* Stats Row */}
-        <div style={{ display: "flex", gap: 10, marginBottom: 28, flexWrap: "wrap" }}>
-          <StatBox
-            label="Loaded Agent Cost"
-            value={fmtFull(r.loadedAgentCost)}
-            sub={`${fmt(r.agentSticker)} sticker + ${fmt(r.supervisorCost)} your time`}
-            color={r.agentWins ? "#4eba6f" : "#c93c37"}
-          />
-          <StatBox
-            label="Loaded Analyst Cost"
-            value={fmtFull(r.loadedAnalystCost)}
-            sub={`${fmt(analystCostMonthly)} salary + ${fmt(r.analystSupervisorCost)} your time`}
-            color={!r.agentWins ? "#4eba6f" : "#c9a44a"}
-          />
-          <StatBox
-            label="Your Day Consumed"
-            value={`${Math.min(r.yourPctConsumed, 999).toFixed(0)}%`}
-            sub={`${r.totalSupervisorHoursPerDay.toFixed(1)}h of ${WORK_HOURS_PER_DAY}h managing agents`}
-            warn={r.yourPctConsumed > 80}
-          />
-        </div>
+        {/* Two-column layout: Human left, Agents right */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 28 }}>
 
-        {/* Cost Bar Comparison */}
-        <div style={{ marginBottom: 32 }}>
-          <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, fontFamily: "'DM Mono', monospace" }}>
-            Cost Comparison
-          </div>
-          {[
-            {
-              label: `${numAgents} Agent${numAgents > 1 ? "s" : ""}`,
-              total: r.loadedAgentCost,
-              sticker: r.agentSticker,
-              yourTime: r.supervisorCost,
-              win: r.agentWins,
-            },
-            {
-              label: "Analyst",
-              total: r.loadedAnalystCost,
-              sticker: analystCostMonthly,
-              yourTime: r.analystSupervisorCost,
-              win: !r.agentWins,
-            },
-          ].map((item, i) => (
-            <div key={i} style={{ marginBottom: 12 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                <span style={{ fontSize: 12, color: "#8a8f98", fontFamily: "'DM Mono', monospace" }}>
-                  {item.label}
-                </span>
-                <span
-                  style={{
-                    fontSize: 12,
-                    color: item.win ? "#4eba6f" : "#8a8f98",
-                    fontFamily: "'DM Mono', monospace",
-                    fontWeight: item.win ? 500 : 400,
-                  }}
-                >
-                  {fmtFull(item.total)}/mo
-                </span>
-              </div>
-              <div
-                style={{
-                  height: 24,
-                  background: "rgba(255,255,255,0.03)",
-                  borderRadius: 4,
-                  overflow: "hidden",
-                  display: "flex",
-                  position: "relative",
-                }}
-              >
-                <div
-                  style={{
-                    width: `${(item.sticker / barMax) * 100}%`,
-                    background: item.win
-                      ? "rgba(58, 142, 84, 0.5)"
-                      : "rgba(201, 100, 55, 0.4)",
-                    transition: "width 0.3s ease",
-                  }}
-                />
-                <div
-                  style={{
-                    width: `${(item.yourTime / barMax) * 100}%`,
-                    background: item.win
-                      ? "rgba(58, 142, 84, 0.25)"
-                      : "rgba(201, 60, 55, 0.3)",
-                    transition: "width 0.3s ease",
-                  }}
-                />
-              </div>
-              <div style={{ display: "flex", gap: 16, marginTop: 3 }}>
-                <span style={{ fontSize: 9, color: "#5a5e66", fontFamily: "'DM Mono', monospace" }}>
-                  ■ Sticker: {fmt(item.sticker)}
-                </span>
-                <span style={{ fontSize: 9, color: "#5a5e66", fontFamily: "'DM Mono', monospace" }}>
-                  □ Your time: {fmt(item.yourTime)}
-                </span>
-              </div>
+          {/* LEFT: Human Analyst */}
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "20px 20px 8px" }}>
+            <div style={{ fontSize: 10, color: "#c9a44a", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 16, fontFamily: "'DM Mono', monospace" }}>
+              Human Analyst
             </div>
-          ))}
-        </div>
 
-        {/* Costs — your time, analyst, agent */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.02)",
-            border: "1px solid rgba(255,255,255,0.06)",
-            borderRadius: 8,
-            padding: "20px 20px 8px",
-            marginBottom: 16,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 10,
-              color: "#c9a44a",
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              marginBottom: 16,
-              fontFamily: "'DM Mono', monospace",
-            }}
-          >
-            Costs
-          </div>
-          <Slider label="Your hourly value" value={hourlyValue} onChange={setHourlyValue} min={50} max={750} step={25} unit="$" alt={`$${Math.round(hourlyValue * 2080 / 1000)}K/yr`} note="Opportunity cost of your time" />
-          <Slider label="Analyst cost" value={analystCostMonthly} onChange={setAnalystCostMonthly} min={3000} max={25000} step={500} unit="$" alt={`$${Math.round(analystCostMonthly * 12 / 1000)}K/yr`} note="Fully loaded monthly (salary + benefits + seat)" />
-          <Slider label="Agent cost per month" value={agentCostMonthly} onChange={setAgentCostMonthly} min={20} max={1000} step={20} unit="$" alt={`$${(agentCostMonthly * 12 / 1000).toFixed(1)}K/yr`} />
-          <Slider label="Number of agents" value={numAgents} onChange={setNumAgents} min={1} max={8} step={1} alt={`$${(agentCostMonthly * numAgents * 12 / 1000).toFixed(1)}K/yr total sticker`} />
-        </div>
+            <Slider label="Monthly cost" value={analystCostMonthly} onChange={setAnalystCostMonthly} min={3000} max={25000} step={500} unit="$" alt={`$${Math.round(analystCostMonthly * 12 / 1000)}K/yr`} note="Fully loaded (salary + benefits + seat)" />
+            <Slider label="Check-ins per day" value={analystCheckInsPerDay} onChange={setAnalystCheckInsPerDay} min={1} max={8} step={1} />
+            <Slider label="Minutes per check-in" value={analystMinutesPerCheckIn} onChange={setAnalystMinutesPerCheckIn} min={5} max={30} step={5} unit=" min" />
+            <Slider label="Errors per day" value={analystErrorsPerDay} onChange={setAnalystErrorsPerDay} min={0} max={5} step={1} />
+            <Slider label="Minutes per error fix" value={analystMinutesPerError} onChange={setAnalystMinutesPerError} min={5} max={60} step={5} unit=" min" />
 
-        {/* Agent supervision — the real cost */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.02)",
-            border: "1px solid rgba(255,255,255,0.06)",
-            borderRadius: 8,
-            padding: "20px 20px 8px",
-            marginBottom: 16,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 10,
-              color: "#c9a44a",
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              marginBottom: 16,
-              fontFamily: "'DM Mono', monospace",
-            }}
-          >
-            Agent Supervision
-          </div>
-          <Slider label="Check-ins per hour" value={checkInsPerHour} onChange={setCheckInsPerHour} min={1} max={12} step={1} note={`Every ${Math.round(60 / checkInsPerHour)} minutes you context-switch`} />
-          <Slider label="Minutes per check-in" value={minutesPerCheckIn} onChange={setMinutesPerCheckIn} min={1} max={15} step={1} unit=" min" alt={`${(checkInsPerHour * minutesPerCheckIn).toFixed(0)} min/hr supervising`} />
-          <Slider label="Errors per agent per day" value={errorsPerDay} onChange={setErrorsPerDay} min={0} max={12} step={1} />
-          <Slider label="Minutes to fix each error" value={minutesPerError} onChange={setMinutesPerError} min={5} max={60} step={5} unit=" min" />
-          <Slider label="Coordination time per agent-pair / day" value={coordMinutesPerPair} onChange={setCoordMinutesPerPair} min={0} max={60} step={5} unit=" min" note={`${numAgents} agents = ${(numAgents * (numAgents - 1)) / 2} pairs routing through you`} />
-          <Slider label="Context-switch penalty per agent" value={deepWorkPenalty} onChange={setDeepWorkPenalty} min={0} max={40} step={5} unit="%" note="% of remaining hours lost to fragmentation" />
-        </div>
-
-        {/* Advanced: Analyst supervision baseline */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.02)",
-            border: "1px solid rgba(255,255,255,0.06)",
-            borderRadius: 8,
-            padding: "12px 20px",
-            marginBottom: 28,
-            cursor: "pointer",
-          }}
-          onClick={() => setShowAdvanced(!showAdvanced)}
-        >
-          <div
-            style={{
-              fontSize: 10,
-              color: "#6b7078",
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              fontFamily: "'DM Mono', monospace",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <span>Analyst Supervision Baseline</span>
-            <span style={{ fontSize: 14 }}>{showAdvanced ? "\u2212" : "+"}</span>
-          </div>
-          {showAdvanced && (
-            <div style={{ marginTop: 16 }} onClick={(e) => e.stopPropagation()}>
-              <Slider label="Analyst check-ins per day" value={analystCheckInsPerDay} onChange={setAnalystCheckInsPerDay} min={1} max={8} step={1} />
-              <Slider label="Analyst minutes per check-in" value={analystMinutesPerCheckIn} onChange={setAnalystMinutesPerCheckIn} min={5} max={30} step={5} unit=" min" />
-              <Slider label="Analyst errors per day" value={analystErrorsPerDay} onChange={setAnalystErrorsPerDay} min={0} max={5} step={1} />
-              <Slider label="Analyst minutes per error fix" value={analystMinutesPerError} onChange={setAnalystMinutesPerError} min={5} max={60} step={5} unit=" min" />
+            {/* Human cost bar chart */}
+            <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+              <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, fontFamily: "'DM Mono', monospace" }}>
+                Loaded Cost: {fmtFull(r.loadedAnalystCost)}/mo
+              </div>
+              {[
+                { label: "Direct cost (salary)", value: analystCostMonthly, color: !r.agentWins ? "rgba(58, 142, 84, 0.6)" : "rgba(201, 164, 74, 0.5)" },
+                { label: "Your time supervising", value: r.analystSupervisorCost, color: !r.agentWins ? "rgba(58, 142, 84, 0.3)" : "rgba(201, 164, 74, 0.25)" },
+              ].map((bar, i) => (
+                <div key={i} style={{ marginBottom: 8 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
+                    <span style={{ fontSize: 10, color: "#6b7078", fontFamily: "'DM Mono', monospace" }}>{bar.label}</span>
+                    <span style={{ fontSize: 10, color: "#8a8f98", fontFamily: "'DM Mono', monospace" }}>{fmtFull(bar.value)}</span>
+                  </div>
+                  <div style={{ height: 16, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden" }}>
+                    <div style={{ height: "100%", width: `${(bar.value / barMax) * 100}%`, background: bar.color, transition: "width 0.3s ease", borderRadius: 3 }} />
+                  </div>
+                </div>
+              ))}
             </div>
-          )}
+          </div>
+
+          {/* RIGHT: AI Agents */}
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "20px 20px 8px" }}>
+            <div style={{ fontSize: 10, color: "#c9a44a", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 16, fontFamily: "'DM Mono', monospace" }}>
+              AI Agents
+            </div>
+
+            <Slider label="Cost per agent / month" value={agentCostMonthly} onChange={setAgentCostMonthly} min={20} max={1000} step={20} unit="$" alt={`$${(agentCostMonthly * 12 / 1000).toFixed(1)}K/yr`} />
+            <Slider label="Number of agents" value={numAgents} onChange={setNumAgents} min={1} max={8} step={1} alt={`$${(agentCostMonthly * numAgents * 12 / 1000).toFixed(1)}K/yr sticker`} />
+            <Slider label="Check-ins per hour" value={checkInsPerHour} onChange={setCheckInsPerHour} min={1} max={12} step={1} note={`Every ${Math.round(60 / checkInsPerHour)} min you context-switch`} />
+            <Slider label="Minutes per check-in" value={minutesPerCheckIn} onChange={setMinutesPerCheckIn} min={1} max={15} step={1} unit=" min" alt={`${(checkInsPerHour * minutesPerCheckIn).toFixed(0)} min/hr supervising`} />
+            <Slider label="Errors per agent / day" value={errorsPerDay} onChange={setErrorsPerDay} min={0} max={12} step={1} />
+            <Slider label="Minutes per error fix" value={minutesPerError} onChange={setMinutesPerError} min={5} max={60} step={5} unit=" min" />
+            <Slider label="Coordination per pair / day" value={coordMinutesPerPair} onChange={setCoordMinutesPerPair} min={0} max={60} step={5} unit=" min" note={`${r.pairs} pairs routing through you`} />
+            <Slider label="Context-switch penalty" value={deepWorkPenalty} onChange={setDeepWorkPenalty} min={0} max={40} step={5} unit="%" note="% of remaining hours lost to fragmentation" />
+
+            {/* Agent cost bar chart */}
+            <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+              <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, fontFamily: "'DM Mono', monospace" }}>
+                Loaded Cost: {fmtFull(r.loadedAgentCost)}/mo
+              </div>
+              {[
+                { label: `Direct cost (${numAgents} x $${agentCostMonthly})`, value: r.agentSticker, color: r.agentWins ? "rgba(58, 142, 84, 0.6)" : "rgba(201, 60, 55, 0.5)" },
+                { label: "Your time supervising", value: r.supervisorCost, color: r.agentWins ? "rgba(58, 142, 84, 0.3)" : "rgba(201, 60, 55, 0.3)" },
+              ].map((bar, i) => (
+                <div key={i} style={{ marginBottom: 8 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
+                    <span style={{ fontSize: 10, color: "#6b7078", fontFamily: "'DM Mono', monospace" }}>{bar.label}</span>
+                    <span style={{ fontSize: 10, color: "#8a8f98", fontFamily: "'DM Mono', monospace" }}>{fmtFull(bar.value)}</span>
+                  </div>
+                  <div style={{ height: 16, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden" }}>
+                    <div style={{ height: "100%", width: `${(bar.value / barMax) * 100}%`, background: bar.color, transition: "width 0.3s ease", borderRadius: 3 }} />
+                  </div>
+                </div>
+              ))}
+              {r.yourPctConsumed > 50 && (
+                <div style={{ fontSize: 10, color: r.yourPctConsumed > 80 ? "#c93c37" : "#c9a44a", marginTop: 6, fontFamily: "'DM Mono', monospace" }}>
+                  {r.totalSupervisorHoursPerDay.toFixed(1)}h/day of your {WORK_HOURS_PER_DAY}h day ({Math.min(r.yourPctConsumed, 999).toFixed(0)}%) consumed
+                </div>
+              )}
+            </div>
+          </div>
+
         </div>
 
         {/* Heatmap */}
