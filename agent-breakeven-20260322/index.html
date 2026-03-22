@@ -37,6 +37,7 @@ function compute(params) {
     minutesPerError,
     numAgents,
     coordMinutesPerPair,
+    numAnalysts,
     analystCheckInsPerDay,
     analystMinutesPerCheckIn,
     analystErrorsPerDay,
@@ -48,6 +49,7 @@ function compute(params) {
   const days = WORK_DAYS_PER_MONTH;
   const hours = WORK_HOURS_PER_DAY;
   const N = numAgents;
+  const H = numAnalysts;
 
   const agentCheckInHoursPerDay = checkInsPerHour * hours * (minutesPerCheckIn / 60);
   const agentErrorHoursPerDay = errorsPerDay * (minutesPerError / 60);
@@ -66,14 +68,16 @@ function compute(params) {
   const supervisorCost = V * totalSupervisorHoursPerDay * days;
   const loadedAgentCost = agentSticker + supervisorCost;
 
-  const analystCheckInHoursPerDay =
+  // Analyst side: scale by number of analysts
+  const singleAnalystCheckInHoursPerDay =
     analystCheckInsPerDay * (analystMinutesPerCheckIn / 60);
-  const analystErrorHoursPerDay =
+  const singleAnalystErrorHoursPerDay =
     analystErrorsPerDay * (analystMinutesPerError / 60);
   const analystSupervisorHoursPerDay =
-    analystCheckInHoursPerDay + analystErrorHoursPerDay;
+    H * (singleAnalystCheckInHoursPerDay + singleAnalystErrorHoursPerDay);
   const analystSupervisorCost = V * analystSupervisorHoursPerDay * days;
-  const loadedAnalystCost = analystCostMonthly + analystSupervisorCost;
+  const analystSticker = H * analystCostMonthly;
+  const loadedAnalystCost = analystSticker + analystSupervisorCost;
 
   const yourHoursConsumedByAgents = Math.min(totalSupervisorHoursPerDay, hours);
   const yourPctConsumed = (yourHoursConsumedByAgents / hours) * 100;
@@ -81,13 +85,14 @@ function compute(params) {
   const agentTimePerMonth = totalSupervisorHoursPerDay * days;
   const analystTimePerMonth = analystSupervisorHoursPerDay * days;
   const timeDelta = agentTimePerMonth - analystTimePerMonth;
-  const costDelta = analystCostMonthly - agentSticker;
+  const costDelta = analystSticker - agentSticker;
   const breakEvenV = timeDelta > 0 ? costDelta / timeDelta : Infinity;
 
   return {
     loadedAgentCost,
     loadedAnalystCost,
     agentSticker,
+    analystSticker,
     supervisorCost,
     analystSupervisorCost,
     totalSupervisorHoursPerDay,
@@ -223,6 +228,7 @@ function AgentCalculator() {
   const [hourlyValue, setHourlyValue] = useState(300);
   const [agentCostMonthly, setAgentCostMonthly] = useState(200);
   const [analystCostMonthly, setAnalystCostMonthly] = useState(10000);
+  const [numAnalysts, setNumAnalysts] = useState(1);
   const [checkInsPerHour, setCheckInsPerHour] = useState(6);
   const [minutesPerCheckIn, setMinutesPerCheckIn] = useState(3);
   const [errorsPerDay, setErrorsPerDay] = useState(4);
@@ -237,21 +243,21 @@ function AgentCalculator() {
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   const params = {
-    hourlyValue, agentCostMonthly, analystCostMonthly, checkInsPerHour,
+    hourlyValue, agentCostMonthly, analystCostMonthly, numAnalysts, checkInsPerHour,
     minutesPerCheckIn, errorsPerDay, minutesPerError, numAgents,
     coordMinutesPerPair, analystCheckInsPerDay, analystMinutesPerCheckIn,
     analystErrorsPerDay, analystMinutesPerError, deepWorkPenalty,
   };
 
   const r = useMemo(() => compute(params), [
-    hourlyValue, agentCostMonthly, analystCostMonthly, checkInsPerHour,
+    hourlyValue, agentCostMonthly, analystCostMonthly, numAnalysts, checkInsPerHour,
     minutesPerCheckIn, errorsPerDay, minutesPerError, numAgents,
     coordMinutesPerPair, analystCheckInsPerDay, analystMinutesPerCheckIn,
     analystErrorsPerDay, analystMinutesPerError, deepWorkPenalty,
   ]);
 
   const heatmap = useMemo(() => generateHeatmap(params), [
-    agentCostMonthly, analystCostMonthly, checkInsPerHour, minutesPerCheckIn,
+    agentCostMonthly, analystCostMonthly, numAnalysts, checkInsPerHour, minutesPerCheckIn,
     errorsPerDay, minutesPerError, coordMinutesPerPair, analystCheckInsPerDay,
     analystMinutesPerCheckIn, analystErrorsPerDay, analystMinutesPerError,
     deepWorkPenalty,
@@ -330,7 +336,7 @@ function AgentCalculator() {
 
         {/* Three-column layout: Human sliders | Column chart | Agent sliders */}
         {(() => {
-          const humanDirect = analystCostMonthly * 12;
+          const humanDirect = r.analystSticker * 12;
           const humanIndirect = r.analystSupervisorCost * 12;
           const humanTotal = humanDirect + humanIndirect;
           const agentDirect = r.agentSticker * 12;
@@ -357,11 +363,12 @@ function AgentCalculator() {
                 <div style={{ fontSize: 10, color: "#c9a44a", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 16, fontFamily: "'DM Mono', monospace" }}>
                   Human Analyst
                 </div>
-                <Slider label="Monthly cost" value={analystCostMonthly} onChange={setAnalystCostMonthly} min={3000} max={25000} step={500} unit="$" alt={`$${Math.round(analystCostMonthly * 12 / 1000)}K/yr`} note="Fully loaded (salary + benefits + seat)" />
-                <Slider label="Check-ins per day" value={analystCheckInsPerDay} onChange={setAnalystCheckInsPerDay} min={1} max={8} step={1} />
-                <Slider label="Minutes per check-in" value={analystMinutesPerCheckIn} onChange={setAnalystMinutesPerCheckIn} min={5} max={30} step={5} unit=" min" />
-                <Slider label="Errors per day" value={analystErrorsPerDay} onChange={setAnalystErrorsPerDay} min={0} max={5} step={1} />
-                <Slider label="Minutes per error fix" value={analystMinutesPerError} onChange={setAnalystMinutesPerError} min={5} max={60} step={5} unit=" min" />
+                <Slider label="Cost per head / mo" value={analystCostMonthly} onChange={setAnalystCostMonthly} min={3000} max={25000} step={500} unit="$" alt={`$${Math.round(analystCostMonthly * 12 / 1000)}K/yr`} note="Fully loaded (salary + benefits + seat)" />
+                <Slider label="Number of analysts" value={numAnalysts} onChange={setNumAnalysts} min={1} max={8} step={1} alt={`$${(analystCostMonthly * numAnalysts * 12 / 1000).toFixed(0)}K/yr sticker`} />
+                <Slider label="Check-ins per day" value={analystCheckInsPerDay} onChange={setAnalystCheckInsPerDay} min={1} max={8} step={1} note="Per analyst" />
+                <Slider label="Min per check-in" value={analystMinutesPerCheckIn} onChange={setAnalystMinutesPerCheckIn} min={5} max={30} step={5} unit=" min" />
+                <Slider label="Errors per day" value={analystErrorsPerDay} onChange={setAnalystErrorsPerDay} min={0} max={5} step={1} note="Per analyst" />
+                <Slider label="Min per error fix" value={analystMinutesPerError} onChange={setAnalystMinutesPerError} min={5} max={60} step={5} unit=" min" />
               </div>
 
               {/* CENTER: Stacked column chart */}
@@ -578,6 +585,103 @@ function AgentCalculator() {
             </div>
           )}
         </div>
+
+        {/* Sensitivity line charts */}
+        {(() => {
+          // Sweep a single param, return array of {x, agent, human}
+          function sweep(paramName, values) {
+            return values.map(x => {
+              const p = { ...params, [paramName]: x };
+              const res = compute(p);
+              return { x, agent: res.loadedAgentCost * 12, human: res.loadedAnalystCost * 12 };
+            });
+          }
+
+          const charts = [
+            { title: "Loaded Cost vs Your Hourly Rate", param: "hourlyValue", values: [50,100,150,200,250,300,400,500,600,750], xLabel: "$/hr", current: hourlyValue },
+            { title: "Loaded Cost vs Number of Agents", param: "numAgents", values: [1,2,3,4,5,6,7,8], xLabel: "agents", current: numAgents },
+            { title: "Loaded Cost vs Check-ins per Hour", param: "checkInsPerHour", values: [1,2,3,4,5,6,7,8,9,10,11,12], xLabel: "check-ins/hr", current: checkInsPerHour },
+            { title: "Loaded Cost vs Coordination per Pair", param: "coordMinutesPerPair", values: [0,5,10,15,20,25,30,40,50,60], xLabel: "min/pair/day", current: coordMinutesPerPair },
+          ];
+
+          const W = 460, H = 180, pad = { top: 20, right: 60, bottom: 30, left: 60 };
+          const plotW = W - pad.left - pad.right;
+          const plotH = H - pad.top - pad.bottom;
+
+          return (
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 28 }}>
+              {charts.map((chart, ci) => {
+                const data = sweep(chart.param, chart.values);
+                const allVals = data.flatMap(d => [d.agent, d.human]);
+                const yMax = Math.max(...allVals) * 1.1;
+                const yMin = 0;
+                const xMin = chart.values[0];
+                const xMax = chart.values[chart.values.length - 1];
+
+                const toX = v => pad.left + ((v - xMin) / (xMax - xMin)) * plotW;
+                const toY = v => pad.top + (1 - (v - yMin) / (yMax - yMin)) * plotH;
+
+                const agentPath = data.map((d, i) => `${i === 0 ? "M" : "L"}${toX(d.x).toFixed(1)},${toY(d.agent).toFixed(1)}`).join(" ");
+                const humanPath = data.map((d, i) => `${i === 0 ? "M" : "L"}${toX(d.x).toFixed(1)},${toY(d.human).toFixed(1)}`).join(" ");
+
+                // Find current x position
+                const curX = toX(chart.current);
+
+                // Y-axis ticks
+                const yTicks = [0, yMax * 0.25, yMax * 0.5, yMax * 0.75, yMax].map(v => Math.round(v / 1000));
+
+                return (
+                  <div key={ci} style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "16px" }}>
+                    <div style={{ fontSize: 10, color: "#8a8f98", fontFamily: "'DM Mono', monospace", marginBottom: 8 }}>
+                      {chart.title}
+                    </div>
+                    <svg width={W} height={H} style={{ width: "100%", height: "auto" }} viewBox={`0 0 ${W} ${H}`}>
+                      {/* Grid lines */}
+                      {yTicks.map((v, i) => {
+                        const y = toY(v * 1000);
+                        return (
+                          <g key={i}>
+                            <line x1={pad.left} y1={y} x2={W - pad.right} y2={y} stroke="rgba(255,255,255,0.05)" />
+                            <text x={pad.left - 6} y={y + 3} fill="#5a5e66" fontSize="8" fontFamily="DM Mono, monospace" textAnchor="end">
+                              ${v}K
+                            </text>
+                          </g>
+                        );
+                      })}
+                      {/* X-axis labels */}
+                      {data.filter((_, i) => i % Math.max(1, Math.floor(data.length / 5)) === 0 || i === data.length - 1).map((d, i) => (
+                        <text key={i} x={toX(d.x)} y={H - 4} fill="#5a5e66" fontSize="8" fontFamily="DM Mono, monospace" textAnchor="middle">
+                          {d.x}
+                        </text>
+                      ))}
+                      {/* Current value line */}
+                      <line x1={curX} y1={pad.top} x2={curX} y2={pad.top + plotH} stroke="rgba(201, 164, 74, 0.3)" strokeDasharray="3,3" />
+                      {/* Human line (dashed) */}
+                      <path d={humanPath} fill="none" stroke="#6b7078" strokeWidth="1.5" strokeDasharray="4,3" />
+                      {/* Agent line (solid) */}
+                      <path d={agentPath} fill="none" stroke="#c93c37" strokeWidth="2" />
+                      {/* End labels */}
+                      {(() => {
+                        const lastAgent = data[data.length - 1];
+                        const lastHuman = data[data.length - 1];
+                        return (
+                          <>
+                            <text x={W - pad.right + 4} y={toY(lastAgent.agent) + 3} fill="#c93c37" fontSize="9" fontFamily="DM Mono, monospace">
+                              Agent
+                            </text>
+                            <text x={W - pad.right + 4} y={toY(lastHuman.human) + 3} fill="#6b7078" fontSize="9" fontFamily="DM Mono, monospace">
+                              Human
+                            </text>
+                          </>
+                        );
+                      })()}
+                    </svg>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })()}
 
         {/* The Math */}
         <div
