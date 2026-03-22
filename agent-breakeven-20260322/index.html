@@ -256,7 +256,9 @@ function AgentCalculator() {
     deepWorkPenalty,
   ]);
 
-  const barMax = Math.max(r.loadedAgentCost, r.loadedAnalystCost);
+  // Fixed scale so the agent bar visually GROWS when you crank check-ins
+  // instead of the analyst bar shrinking (which is confusing)
+  const barMax = Math.max(r.loadedAgentCost, r.loadedAnalystCost, analystCostMonthly * 3);
 
   const getCellColor = (cell) => {
     if (cell.pctConsumed > 100) return { bg: "#1a1012", text: "#c93c37", border: "rgba(201,60,55,0.3)" };
