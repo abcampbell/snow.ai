@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Loaded Cost of AI Agents — snow.ai</title>
+<meta name="description" content="Interactive calculator: at what hourly rate and agent count does a $200/month AI agent cost more than a $10K/month analyst?">
+<meta property="og:title" content="The Loaded Cost of AI Agents">
+<meta property="og:description" content="An agent costs $200/month. But you're checking in 6x an hour. Your time is the real line item. Here's the math.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://snow.ai/agent-breakeven-20260322/">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d0e11; }
+  #root { min-height: 100vh; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" data-type="module">
+const { useState, useMemo, useCallback } = React;
+
+const WORK_HOURS_PER_DAY = 8;
+const WORK_DAYS_PER_MONTH = 22;
+
+function compute(params) {
+  const {
+    hourlyValue,
+    agentCostMonthly,
+    analystCostMonthly,
+    checkInsPerHour,
+    minutesPerCheckIn,
+    errorsPerDay,
+    minutesPerError,
+    numAgents,
+    coordMinutesPerPair,
+    analystCheckInsPerDay,
+    analystMinutesPerCheckIn,
+    analystErrorsPerDay,
+    analystMinutesPerError,
+    deepWorkPenalty,
+  } = params;
+
+  const V = hourlyValue;
+  const days = WORK_DAYS_PER_MONTH;
+  const hours = WORK_HOURS_PER_DAY;
+  const N = numAgents;
+
+  const agentCheckInHoursPerDay = checkInsPerHour * hours * (minutesPerCheckIn / 60);
+  const agentErrorHoursPerDay = errorsPerDay * (minutesPerError / 60);
+  const singleAgentDailyHours = agentCheckInHoursPerDay + agentErrorHoursPerDay;
+
+  const remainingHours = Math.max(0, hours - singleAgentDailyHours * N);
+  const deepWorkLostHours = remainingHours * (deepWorkPenalty / 100) * N;
+
+  const pairs = (N * (N - 1)) / 2;
+  const coordHoursPerDay = pairs * (coordMinutesPerPair / 60);
+
+  const totalSupervisorHoursPerDay =
+    N * singleAgentDailyHours + coordHoursPerDay + deepWorkLostHours;
+
+  const agentSticker = N * agentCostMonthly;
+  const supervisorCost = V * totalSupervisorHoursPerDay * days;
+  const loadedAgentCost = agentSticker + supervisorCost;
+
+  const analystCheckInHoursPerDay =
+    analystCheckInsPerDay * (analystMinutesPerCheckIn / 60);
+  const analystErrorHoursPerDay =
+    analystErrorsPerDay * (analystMinutesPerError / 60);
+  const analystSupervisorHoursPerDay =
+    analystCheckInHoursPerDay + analystErrorHoursPerDay;
+  const analystSupervisorCost = V * analystSupervisorHoursPerDay * days;
+  const loadedAnalystCost = analystCostMonthly + analystSupervisorCost;
+
+  const yourHoursConsumedByAgents = Math.min(totalSupervisorHoursPerDay, hours);
+  const yourPctConsumed = (yourHoursConsumedByAgents / hours) * 100;
+
+  const agentTimePerMonth = totalSupervisorHoursPerDay * days;
+  const analystTimePerMonth = analystSupervisorHoursPerDay * days;
+  const timeDelta = agentTimePerMonth - analystTimePerMonth;
+  const costDelta = analystCostMonthly - agentSticker;
+  const breakEvenV = timeDelta > 0 ? costDelta / timeDelta : Infinity;
+
+  return {
+    loadedAgentCost,
+    loadedAnalystCost,
+    agentSticker,
+    supervisorCost,
+    analystSupervisorCost,
+    totalSupervisorHoursPerDay,
+    yourPctConsumed,
+    yourHoursRemaining: hours - yourHoursConsumedByAgents,
+    coordHoursPerDay,
+    deepWorkLostHours,
+    breakEvenV: breakEvenV > 0 ? breakEvenV : null,
+    pairs,
+    agentWins: loadedAgentCost < loadedAnalystCost,
+    singleAgentDailyHours,
+  };
+}
+
+function generateHeatmap(params) {
+  const agentCounts = [1, 2, 3, 4, 5, 6];
+  const hourlyRates = [50, 100, 150, 200, 250, 300, 400, 500];
+  const grid = [];
+  for (const rate of hourlyRates) {
+    const row = [];
+    for (const n of agentCounts) {
+      const r = compute({ ...params, hourlyValue: rate, numAgents: n });
+      row.push({
+        agentWins: r.agentWins,
+        ratio: r.loadedAgentCost / r.loadedAnalystCost,
+        loadedAgent: r.loadedAgentCost,
+        loadedAnalyst: r.loadedAnalystCost,
+        pctConsumed: r.yourPctConsumed,
+      });
+    }
+    grid.push(row);
+  }
+  return { agentCounts, hourlyRates, grid };
+}
+
+const fmt = (n) =>
+  n >= 1000
+    ? "$" + (n / 1000).toFixed(n >= 10000 ? 0 : 1) + "K"
+    : "$" + Math.round(n);
+
+const fmtFull = (n) => "$" + Math.round(n).toLocaleString();
+
+function Slider({ label, value, onChange, min, max, step, unit, note }) {
+  return (
+    <div style={{ marginBottom: 16 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: 4,
+        }}
+      >
+        <span style={{ color: "#8a8f98", fontSize: 12, fontFamily: "'DM Mono', monospace", letterSpacing: "0.03em" }}>
+          {label}
+        </span>
+        <span
+          style={{
+            color: "#e8eaed",
+            fontSize: 13,
+            fontFamily: "'DM Mono', monospace",
+            fontWeight: 500,
+          }}
+        >
+          {unit === "$" ? "$" : ""}
+          {value}
+          {unit === "$" ? "" : unit || ""}
+        </span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        style={{ width: "100%", accentColor: "#c9a44a" }}
+      />
+      {note && (
+        <div style={{ color: "#5a5e66", fontSize: 10, marginTop: 2, fontFamily: "'DM Mono', monospace" }}>
+          {note}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StatBox({ label, value, sub, color, warn }) {
+  return (
+    <div
+      style={{
+        background: warn ? "rgba(201, 60, 55, 0.08)" : "rgba(255,255,255,0.02)",
+        border: `1px solid ${warn ? "rgba(201, 60, 55, 0.3)" : "rgba(255,255,255,0.06)"}`,
+        borderRadius: 6,
+        padding: "14px 16px",
+        flex: 1,
+        minWidth: 140,
+      }}
+    >
+      <div
+        style={{
+          fontSize: 10,
+          color: "#6b7078",
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          marginBottom: 6,
+          fontFamily: "'DM Mono', monospace",
+        }}
+      >
+        {label}
+      </div>
+      <div
+        style={{
+          fontSize: 22,
+          fontWeight: 600,
+          color: color || "#e8eaed",
+          fontFamily: "'DM Mono', monospace",
+          letterSpacing: "-0.02em",
+        }}
+      >
+        {value}
+      </div>
+      {sub && (
+        <div style={{ fontSize: 10, color: "#5a5e66", marginTop: 4, fontFamily: "'DM Mono', monospace" }}>
+          {sub}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function AgentCalculator() {
+  const [hourlyValue, setHourlyValue] = useState(300);
+  const [agentCostMonthly, setAgentCostMonthly] = useState(200);
+  const [analystCostMonthly, setAnalystCostMonthly] = useState(10000);
+  const [checkInsPerHour, setCheckInsPerHour] = useState(6);
+  const [minutesPerCheckIn, setMinutesPerCheckIn] = useState(3);
+  const [errorsPerDay, setErrorsPerDay] = useState(4);
+  const [minutesPerError, setMinutesPerError] = useState(15);
+  const [numAgents, setNumAgents] = useState(3);
+  const [coordMinutesPerPair, setCoordMinutesPerPair] = useState(20);
+  const [analystCheckInsPerDay, setAnalystCheckInsPerDay] = useState(3);
+  const [analystMinutesPerCheckIn, setAnalystMinutesPerCheckIn] = useState(10);
+  const [analystErrorsPerDay, setAnalystErrorsPerDay] = useState(1);
+  const [analystMinutesPerError, setAnalystMinutesPerError] = useState(15);
+  const [deepWorkPenalty, setDeepWorkPenalty] = useState(15);
+  const [showAdvanced, setShowAdvanced] = useState(false);
+
+  const params = {
+    hourlyValue, agentCostMonthly, analystCostMonthly, checkInsPerHour,
+    minutesPerCheckIn, errorsPerDay, minutesPerError, numAgents,
+    coordMinutesPerPair, analystCheckInsPerDay, analystMinutesPerCheckIn,
+    analystErrorsPerDay, analystMinutesPerError, deepWorkPenalty,
+  };
+
+  const r = useMemo(() => compute(params), [
+    hourlyValue, agentCostMonthly, analystCostMonthly, checkInsPerHour,
+    minutesPerCheckIn, errorsPerDay, minutesPerError, numAgents,
+    coordMinutesPerPair, analystCheckInsPerDay, analystMinutesPerCheckIn,
+    analystErrorsPerDay, analystMinutesPerError, deepWorkPenalty,
+  ]);
+
+  const heatmap = useMemo(() => generateHeatmap(params), [
+    agentCostMonthly, analystCostMonthly, checkInsPerHour, minutesPerCheckIn,
+    errorsPerDay, minutesPerError, coordMinutesPerPair, analystCheckInsPerDay,
+    analystMinutesPerCheckIn, analystErrorsPerDay, analystMinutesPerError,
+    deepWorkPenalty,
+  ]);
+
+  const barMax = Math.max(r.loadedAgentCost, r.loadedAnalystCost);
+
+  const getCellColor = (cell) => {
+    if (cell.pctConsumed > 100) return { bg: "#1a1012", text: "#c93c37", border: "rgba(201,60,55,0.3)" };
+    if (cell.ratio < 0.5) return { bg: "rgba(58, 142, 84, 0.15)", text: "#4eba6f", border: "rgba(58,142,84,0.2)" };
+    if (cell.ratio < 0.8) return { bg: "rgba(58, 142, 84, 0.08)", text: "#3a8e54", border: "rgba(58,142,84,0.1)" };
+    if (cell.ratio < 1.0) return { bg: "rgba(201, 164, 74, 0.08)", text: "#c9a44a", border: "rgba(201,164,74,0.15)" };
+    if (cell.ratio < 1.5) return { bg: "rgba(201, 100, 55, 0.08)", text: "#c96a37", border: "rgba(201,100,55,0.15)" };
+    return { bg: "rgba(201, 60, 55, 0.1)", text: "#c93c37", border: "rgba(201,60,55,0.2)" };
+  };
+
+  return (
+    <div
+      style={{
+        background: "#0d0e11",
+        color: "#e8eaed",
+        minHeight: "100vh",
+        padding: "32px 20px",
+        fontFamily: "'DM Sans', system-ui, sans-serif",
+      }}
+    >
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+
+      <div style={{ maxWidth: 720, margin: "0 auto" }}>
+        <div
+          style={{
+            fontSize: 10,
+            color: "#c9a44a",
+            textTransform: "uppercase",
+            letterSpacing: "0.15em",
+            marginBottom: 8,
+            fontFamily: "'DM Mono', monospace",
+          }}
+        >
+          The Campbell Ramble
+        </div>
+        <h1
+          style={{
+            fontSize: 28,
+            fontWeight: 700,
+            color: "#e8eaed",
+            margin: "0 0 6px 0",
+            lineHeight: 1.15,
+            letterSpacing: "-0.02em",
+          }}
+        >
+          The Loaded Cost of AI Agents
+        </h1>
+        <p
+          style={{
+            fontSize: 14,
+            color: "#6b7078",
+            margin: "0 0 32px 0",
+            lineHeight: 1.6,
+            maxWidth: 560,
+          }}
+        >
+          An agent costs $200/month. But you're checking in 6x an hour.{" "}
+          Your time is the real line item. Here's the math.
+        </p>
+
+        {/* Verdict */}
+        <div
+          style={{
+            background: r.agentWins
+              ? "rgba(58, 142, 84, 0.06)"
+              : "rgba(201, 60, 55, 0.06)",
+            border: `1px solid ${r.agentWins ? "rgba(58,142,84,0.2)" : "rgba(201,60,55,0.2)"}`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 28,
+            textAlign: "center",
+          }}
+        >
+          <div
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: r.agentWins ? "#4eba6f" : "#c93c37",
+              fontFamily: "'DM Mono', monospace",
+            }}
+          >
+            {r.agentWins
+              ? `${numAgents} agent${numAgents > 1 ? "s" : ""} cost ${fmtFull(r.loadedAgentCost)}/mo loaded — still cheaper than the analyst`
+              : `${numAgents} agent${numAgents > 1 ? "s" : ""} cost ${fmtFull(r.loadedAgentCost)}/mo loaded — the $${(analystCostMonthly/1000).toFixed(0)}K analyst wins`}
+          </div>
+          {r.yourPctConsumed > 100 && (
+            <div style={{ fontSize: 11, color: "#c93c37", marginTop: 6, fontFamily: "'DM Mono', monospace" }}>
+              Agents require {r.totalSupervisorHoursPerDay.toFixed(1)}h/day of your time — exceeds your {WORK_HOURS_PER_DAY}h workday
+            </div>
+          )}
+        </div>
+
+        {/* Stats Row */}
+        <div style={{ display: "flex", gap: 10, marginBottom: 28, flexWrap: "wrap" }}>
+          <StatBox
+            label="Loaded Agent Cost"
+            value={fmtFull(r.loadedAgentCost)}
+            sub={`${fmt(r.agentSticker)} sticker + ${fmt(r.supervisorCost)} your time`}
+            color={r.agentWins ? "#4eba6f" : "#c93c37"}
+          />
+          <StatBox
+            label="Loaded Analyst Cost"
+            value={fmtFull(r.loadedAnalystCost)}
+            sub={`${fmt(analystCostMonthly)} salary + ${fmt(r.analystSupervisorCost)} your time`}
+            color={!r.agentWins ? "#4eba6f" : "#c9a44a"}
+          />
+          <StatBox
+            label="Your Day Consumed"
+            value={`${Math.min(r.yourPctConsumed, 999).toFixed(0)}%`}
+            sub={`${r.totalSupervisorHoursPerDay.toFixed(1)}h of ${WORK_HOURS_PER_DAY}h managing agents`}
+            warn={r.yourPctConsumed > 80}
+          />
+        </div>
+
+        {/* Cost Bar Comparison */}
+        <div style={{ marginBottom: 32 }}>
+          <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, fontFamily: "'DM Mono', monospace" }}>
+            Cost Comparison
+          </div>
+          {[
+            {
+              label: `${numAgents} Agent${numAgents > 1 ? "s" : ""}`,
+              total: r.loadedAgentCost,
+              sticker: r.agentSticker,
+              yourTime: r.supervisorCost,
+              win: r.agentWins,
+            },
+            {
+              label: "Analyst",
+              total: r.loadedAnalystCost,
+              sticker: analystCostMonthly,
+              yourTime: r.analystSupervisorCost,
+              win: !r.agentWins,
+            },
+          ].map((item, i) => (
+            <div key={i} style={{ marginBottom: 12 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                <span style={{ fontSize: 12, color: "#8a8f98", fontFamily: "'DM Mono', monospace" }}>
+                  {item.label}
+                </span>
+                <span
+                  style={{
+                    fontSize: 12,
+                    color: item.win ? "#4eba6f" : "#8a8f98",
+                    fontFamily: "'DM Mono', monospace",
+                    fontWeight: item.win ? 500 : 400,
+                  }}
+                >
+                  {fmtFull(item.total)}/mo
+                </span>
+              </div>
+              <div
+                style={{
+                  height: 24,
+                  background: "rgba(255,255,255,0.03)",
+                  borderRadius: 4,
+                  overflow: "hidden",
+                  display: "flex",
+                  position: "relative",
+                }}
+              >
+                <div
+                  style={{
+                    width: `${(item.sticker / barMax) * 100}%`,
+                    background: item.win
+                      ? "rgba(58, 142, 84, 0.5)"
+                      : "rgba(201, 100, 55, 0.4)",
+                    transition: "width 0.3s ease",
+                  }}
+                />
+                <div
+                  style={{
+                    width: `${(item.yourTime / barMax) * 100}%`,
+                    background: item.win
+                      ? "rgba(58, 142, 84, 0.25)"
+                      : "rgba(201, 60, 55, 0.3)",
+                    transition: "width 0.3s ease",
+                  }}
+                />
+              </div>
+              <div style={{ display: "flex", gap: 16, marginTop: 3 }}>
+                <span style={{ fontSize: 9, color: "#5a5e66", fontFamily: "'DM Mono', monospace" }}>
+                  ■ Sticker: {fmt(item.sticker)}
+                </span>
+                <span style={{ fontSize: 9, color: "#5a5e66", fontFamily: "'DM Mono', monospace" }}>
+                  □ Your time: {fmt(item.yourTime)}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Agent Parameters */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.06)",
+            borderRadius: 8,
+            padding: "20px 20px 8px",
+            marginBottom: 16,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 10,
+              color: "#c9a44a",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              marginBottom: 16,
+              fontFamily: "'DM Mono', monospace",
+            }}
+          >
+            Your Parameters
+          </div>
+          <Slider label="Your hourly value" value={hourlyValue} onChange={setHourlyValue} min={50} max={750} step={25} unit="$" note="Opportunity cost of your time" />
+          <Slider label="Number of agents" value={numAgents} onChange={setNumAgents} min={1} max={8} step={1} />
+          <Slider label="Check-ins per hour" value={checkInsPerHour} onChange={setCheckInsPerHour} min={1} max={12} step={1} note="How often you context-switch to babysit" />
+          <Slider label="Minutes per check-in" value={minutesPerCheckIn} onChange={setMinutesPerCheckIn} min={1} max={15} step={1} unit=" min" />
+          <Slider label="Errors per agent per day" value={errorsPerDay} onChange={setErrorsPerDay} min={0} max={12} step={1} />
+          <Slider label="Minutes to fix each error" value={minutesPerError} onChange={setMinutesPerError} min={5} max={60} step={5} unit=" min" />
+          <Slider label="Coordination time per agent-pair / day" value={coordMinutesPerPair} onChange={setCoordMinutesPerPair} min={0} max={60} step={5} unit=" min" note={`${numAgents} agents = ${(numAgents * (numAgents - 1)) / 2} pairs routing through you`} />
+          <Slider label="Context-switch penalty per agent" value={deepWorkPenalty} onChange={setDeepWorkPenalty} min={0} max={40} step={5} unit="%" note="% of remaining hours lost to fragmentation" />
+        </div>
+
+        {/* Advanced: Analyst + Agent Costs */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.06)",
+            borderRadius: 8,
+            padding: "12px 20px",
+            marginBottom: 28,
+            cursor: "pointer",
+          }}
+          onClick={() => setShowAdvanced(!showAdvanced)}
+        >
+          <div
+            style={{
+              fontSize: 10,
+              color: "#6b7078",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              fontFamily: "'DM Mono', monospace",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <span>Analyst Baseline & Agent Pricing</span>
+            <span style={{ fontSize: 14 }}>{showAdvanced ? "\u2212" : "+"}</span>
+          </div>
+          {showAdvanced && (
+            <div style={{ marginTop: 16 }} onClick={(e) => e.stopPropagation()}>
+              <Slider label="Agent cost per month" value={agentCostMonthly} onChange={setAgentCostMonthly} min={20} max={1000} step={20} unit="$" />
+              <Slider label="Analyst cost per month" value={analystCostMonthly} onChange={setAnalystCostMonthly} min={3000} max={25000} step={500} unit="$" note="Fully loaded (salary + benefits + seat)" />
+              <Slider label="Analyst check-ins per day" value={analystCheckInsPerDay} onChange={setAnalystCheckInsPerDay} min={1} max={8} step={1} />
+              <Slider label="Analyst minutes per check-in" value={analystMinutesPerCheckIn} onChange={setAnalystMinutesPerCheckIn} min={5} max={30} step={5} unit=" min" />
+              <Slider label="Analyst errors per day" value={analystErrorsPerDay} onChange={setAnalystErrorsPerDay} min={0} max={5} step={1} />
+              <Slider label="Analyst minutes per error fix" value={analystMinutesPerError} onChange={setAnalystMinutesPerError} min={5} max={60} step={5} unit=" min" />
+            </div>
+          )}
+        </div>
+
+        {/* Heatmap */}
+        <div style={{ marginBottom: 32 }}>
+          <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6, fontFamily: "'DM Mono', monospace" }}>
+            Break-Even Surface
+          </div>
+          <div style={{ fontSize: 11, color: "#5a5e66", marginBottom: 12, fontFamily: "'DM Mono', monospace" }}>
+            Your hourly rate vs. agent count. Green = agents win. Red = hire the human.
+          </div>
+          <div style={{ overflowX: "auto" }}>
+            <table
+              style={{
+                borderCollapse: "collapse",
+                width: "100%",
+                fontFamily: "'DM Mono', monospace",
+                fontSize: 11,
+              }}
+            >
+              <thead>
+                <tr>
+                  <th style={{ padding: "8px 10px", textAlign: "left", color: "#5a5e66", fontSize: 9, fontWeight: 400, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                    $/hr
+                  </th>
+                  {heatmap.agentCounts.map((n) => (
+                    <th key={n} style={{ padding: "8px 10px", textAlign: "center", color: "#5a5e66", fontSize: 9, fontWeight: 400, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      {n} agent{n > 1 ? "s" : ""}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {heatmap.hourlyRates.map((rate, ri) => (
+                  <tr key={rate}>
+                    <td
+                      style={{
+                        padding: "6px 10px",
+                        color: "#8a8f98",
+                        borderBottom: "1px solid rgba(255,255,255,0.03)",
+                        fontWeight: rate === hourlyValue ? 600 : 400,
+                        background: rate === hourlyValue ? "rgba(201, 164, 74, 0.06)" : "transparent",
+                      }}
+                    >
+                      ${rate}
+                    </td>
+                    {heatmap.grid[ri].map((cell, ci) => {
+                      const c = getCellColor(cell);
+                      const isCurrentCell = rate === hourlyValue && heatmap.agentCounts[ci] === numAgents;
+                      return (
+                        <td
+                          key={ci}
+                          style={{
+                            padding: "6px 10px",
+                            textAlign: "center",
+                            color: c.text,
+                            background: isCurrentCell ? "rgba(201, 164, 74, 0.12)" : c.bg,
+                            borderBottom: "1px solid rgba(255,255,255,0.03)",
+                            border: isCurrentCell ? "1px solid rgba(201, 164, 74, 0.4)" : undefined,
+                            fontWeight: isCurrentCell ? 600 : 400,
+                          }}
+                        >
+                          {cell.pctConsumed > 100 ? "\u221E" : fmt(cell.loadedAgent)}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {r.breakEvenV && r.breakEvenV > 0 && r.breakEvenV < 1000 && (
+            <div style={{ fontSize: 11, color: "#8a8f98", marginTop: 10, fontFamily: "'DM Mono', monospace" }}>
+              At {numAgents} agent{numAgents > 1 ? "s" : ""}, break-even is ${Math.round(r.breakEvenV)}/hr.{" "}
+              Above that, the analyst wins.
+            </div>
+          )}
+        </div>
+
+        {/* The Math */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.06)",
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 32,
+          }}
+        >
+          <div style={{ fontSize: 10, color: "#6b7078", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 12, fontFamily: "'DM Mono', monospace" }}>
+            The Math
+          </div>
+          <div style={{ fontSize: 12, color: "#8a8f98", lineHeight: 1.8, fontFamily: "'DM Mono', monospace" }}>
+            <div style={{ color: "#5a5e66", marginBottom: 4 }}>// Single agent daily overhead</div>
+            <div>check_ins = {checkInsPerHour}/hr × {WORK_HOURS_PER_DAY}h × {minutesPerCheckIn}min = <span style={{ color: "#e8eaed" }}>{(checkInsPerHour * WORK_HOURS_PER_DAY * minutesPerCheckIn / 60).toFixed(1)}h</span></div>
+            <div>errors = {errorsPerDay} × {minutesPerError}min = <span style={{ color: "#e8eaed" }}>{(errorsPerDay * minutesPerError / 60).toFixed(1)}h</span></div>
+            <div>single_agent = <span style={{ color: "#e8eaed" }}>{r.singleAgentDailyHours.toFixed(1)}h/day</span></div>
+            <div style={{ color: "#5a5e66", marginTop: 8, marginBottom: 4 }}>// Multi-agent scaling</div>
+            <div>N = {numAgents}, pairs = N(N-1)/2 = <span style={{ color: "#e8eaed" }}>{r.pairs}</span></div>
+            <div>coordination = {r.pairs} × {coordMinutesPerPair}min = <span style={{ color: "#e8eaed" }}>{r.coordHoursPerDay.toFixed(1)}h/day</span></div>
+            <div>fragmentation = <span style={{ color: "#e8eaed" }}>{r.deepWorkLostHours.toFixed(1)}h/day</span></div>
+            <div style={{ color: "#5a5e66", marginTop: 8, marginBottom: 4 }}>// Loaded cost</div>
+            <div>your_time = {r.totalSupervisorHoursPerDay.toFixed(1)}h/day × ${hourlyValue}/hr × {WORK_DAYS_PER_MONTH}d = <span style={{ color: "#c9a44a" }}>{fmtFull(r.supervisorCost)}</span></div>
+            <div>sticker = {numAgents} × ${agentCostMonthly} = <span style={{ color: "#e8eaed" }}>{fmtFull(r.agentSticker)}</span></div>
+            <div style={{ color: "#e8eaed", marginTop: 4, fontSize: 13 }}>loaded_agent_cost = <span style={{ color: r.agentWins ? "#4eba6f" : "#c93c37" }}>{fmtFull(r.loadedAgentCost)}/mo</span></div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div
+          style={{
+            fontSize: 10,
+            color: "#3a3d44",
+            textAlign: "center",
+            fontFamily: "'DM Mono', monospace",
+            paddingBottom: 20,
+          }}
+        >
+          The Campbell Ramble — thecampbellramble.com
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AgentCalculator />);
+</script>
+</body>
+</html>
