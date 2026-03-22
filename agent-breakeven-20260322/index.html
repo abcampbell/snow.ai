@@ -130,7 +130,7 @@ const fmt = (n) =>
 
 const fmtFull = (n) => "$" + Math.round(n).toLocaleString();
 
-function Slider({ label, value, onChange, min, max, step, unit, note }) {
+function Slider({ label, value, onChange, min, max, step, unit, note, alt }) {
   return (
     <div style={{ marginBottom: 16 }}>
       <div
@@ -154,6 +154,7 @@ function Slider({ label, value, onChange, min, max, step, unit, note }) {
           {unit === "$" ? "$" : ""}
           {value}
           {unit === "$" ? "" : unit || ""}
+          {alt && <span style={{ color: "#5a5e66", fontWeight: 400, fontSize: 11 }}>{" "}({alt})</span>}
         </span>
       </div>
       <input
@@ -454,7 +455,7 @@ function AgentCalculator() {
           ))}
         </div>
 
-        {/* Agent Parameters */}
+        {/* Costs — your time, analyst, agent */}
         <div
           style={{
             background: "rgba(255,255,255,0.02)",
@@ -474,19 +475,45 @@ function AgentCalculator() {
               fontFamily: "'DM Mono', monospace",
             }}
           >
-            Your Parameters
+            Costs
           </div>
-          <Slider label="Your hourly value" value={hourlyValue} onChange={setHourlyValue} min={50} max={750} step={25} unit="$" note="Opportunity cost of your time" />
-          <Slider label="Number of agents" value={numAgents} onChange={setNumAgents} min={1} max={8} step={1} />
-          <Slider label="Check-ins per hour" value={checkInsPerHour} onChange={setCheckInsPerHour} min={1} max={12} step={1} note="How often you context-switch to babysit" />
-          <Slider label="Minutes per check-in" value={minutesPerCheckIn} onChange={setMinutesPerCheckIn} min={1} max={15} step={1} unit=" min" />
+          <Slider label="Your hourly value" value={hourlyValue} onChange={setHourlyValue} min={50} max={750} step={25} unit="$" alt={`$${Math.round(hourlyValue * 2080 / 1000)}K/yr`} note="Opportunity cost of your time" />
+          <Slider label="Analyst cost" value={analystCostMonthly} onChange={setAnalystCostMonthly} min={3000} max={25000} step={500} unit="$" alt={`$${Math.round(analystCostMonthly * 12 / 1000)}K/yr`} note="Fully loaded monthly (salary + benefits + seat)" />
+          <Slider label="Agent cost per month" value={agentCostMonthly} onChange={setAgentCostMonthly} min={20} max={1000} step={20} unit="$" alt={`$${(agentCostMonthly * 12 / 1000).toFixed(1)}K/yr`} />
+          <Slider label="Number of agents" value={numAgents} onChange={setNumAgents} min={1} max={8} step={1} alt={`$${(agentCostMonthly * numAgents * 12 / 1000).toFixed(1)}K/yr total sticker`} />
+        </div>
+
+        {/* Agent supervision — the real cost */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.06)",
+            borderRadius: 8,
+            padding: "20px 20px 8px",
+            marginBottom: 16,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 10,
+              color: "#c9a44a",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              marginBottom: 16,
+              fontFamily: "'DM Mono', monospace",
+            }}
+          >
+            Agent Supervision
+          </div>
+          <Slider label="Check-ins per hour" value={checkInsPerHour} onChange={setCheckInsPerHour} min={1} max={12} step={1} note={`Every ${Math.round(60 / checkInsPerHour)} minutes you context-switch`} />
+          <Slider label="Minutes per check-in" value={minutesPerCheckIn} onChange={setMinutesPerCheckIn} min={1} max={15} step={1} unit=" min" alt={`${(checkInsPerHour * minutesPerCheckIn).toFixed(0)} min/hr supervising`} />
           <Slider label="Errors per agent per day" value={errorsPerDay} onChange={setErrorsPerDay} min={0} max={12} step={1} />
           <Slider label="Minutes to fix each error" value={minutesPerError} onChange={setMinutesPerError} min={5} max={60} step={5} unit=" min" />
           <Slider label="Coordination time per agent-pair / day" value={coordMinutesPerPair} onChange={setCoordMinutesPerPair} min={0} max={60} step={5} unit=" min" note={`${numAgents} agents = ${(numAgents * (numAgents - 1)) / 2} pairs routing through you`} />
           <Slider label="Context-switch penalty per agent" value={deepWorkPenalty} onChange={setDeepWorkPenalty} min={0} max={40} step={5} unit="%" note="% of remaining hours lost to fragmentation" />
         </div>
 
-        {/* Advanced: Analyst + Agent Costs */}
+        {/* Advanced: Analyst supervision baseline */}
         <div
           style={{
             background: "rgba(255,255,255,0.02)",
@@ -510,13 +537,11 @@ function AgentCalculator() {
               alignItems: "center",
             }}
           >
-            <span>Analyst Baseline & Agent Pricing</span>
+            <span>Analyst Supervision Baseline</span>
             <span style={{ fontSize: 14 }}>{showAdvanced ? "\u2212" : "+"}</span>
           </div>
           {showAdvanced && (
             <div style={{ marginTop: 16 }} onClick={(e) => e.stopPropagation()}>
-              <Slider label="Agent cost per month" value={agentCostMonthly} onChange={setAgentCostMonthly} min={20} max={1000} step={20} unit="$" />
-              <Slider label="Analyst cost per month" value={analystCostMonthly} onChange={setAnalystCostMonthly} min={3000} max={25000} step={500} unit="$" note="Fully loaded (salary + benefits + seat)" />
               <Slider label="Analyst check-ins per day" value={analystCheckInsPerDay} onChange={setAnalystCheckInsPerDay} min={1} max={8} step={1} />
               <Slider label="Analyst minutes per check-in" value={analystMinutesPerCheckIn} onChange={setAnalystMinutesPerCheckIn} min={5} max={30} step={5} unit=" min" />
               <Slider label="Analyst errors per day" value={analystErrorsPerDay} onChange={setAnalystErrorsPerDay} min={0} max={5} step={1} />
