@@ -8,36 +8,57 @@
 <style>
   :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#f59e0b;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'SF Mono','Cascadia Code','Consolas',monospace;background:var(--bg);color:var(--text)}
-  .header{padding:24px 32px;border-bottom:1px solid var(--border)}
-  .header h1{font-size:20px;font-weight:600;color:var(--accent)}
-  .header .sub{color:var(--text-dim);font-size:12px;margin-top:4px}
-  .header .concept{color:var(--text);font-size:13px;margin-top:8px;line-height:1.5;max-width:900px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px 32px}
+  body{font-family:'SF Mono','Cascadia Code','Consolas',monospace;background:var(--bg);color:var(--text);font-size:16px;line-height:1.45}
+  .header{padding:18px 22px 16px;border-bottom:1px solid var(--border)}
+  .header h1{font-size:30px;font-weight:700;color:var(--accent)}
+  .header .sub{color:var(--text-dim);font-size:13px;margin-top:5px}
+  .header .concept{color:var(--text);font-size:14px;margin-top:8px;line-height:1.45;max-width:1100px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 18px}
   .grid-full{grid-column:1/-1}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px}
-  .card h2{font-size:13px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
-  .stat-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
-  .stat{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px 16px;min-width:100px;flex:1}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
+  .card h2{font-size:20px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+  .stat-row{display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+  .stat{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 12px;min-width:108px;flex:1}
   .stat .label{font-size:10px;color:var(--text-dim);text-transform:uppercase}
-  .stat .value{font-size:22px;font-weight:700;color:#fff;margin-top:2px}
+  .stat .value{font-size:24px;font-weight:700;color:#fff;margin-top:2px}
   .stat .delta{font-size:11px;margin-top:2px}
-  .chart-container{position:relative;height:380px}
+  .chart-container{position:relative;height:340px}
   .insight{background:#1c2128;border-left:3px solid var(--accent);padding:12px 16px;margin-top:12px;font-size:12px;line-height:1.6;border-radius:0 4px 4px 0}
   .insight strong{color:#fff}
   .insight.green{border-left-color:var(--good)}.insight.blue{border-left-color:var(--blue)}.insight.red{border-left-color:var(--bad)}
-  .section-title{font-size:15px;color:#fff;font-weight:600;margin:32px 32px 0;padding-top:16px;border-top:1px solid var(--border)}
-  table{width:100%;border-collapse:collapse;font-size:11px}
-  th{text-align:left;padding:6px 6px;color:var(--text-dim);font-weight:500;border-bottom:1px solid var(--border);font-size:9px;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+  .section-title{font-size:15px;color:#fff;font-weight:600;margin:24px 18px 0;padding-top:14px;border-top:1px solid var(--border)}
+  .table-card{padding:14px 16px 10px}
+  .table-wrap{overflow:auto;max-width:100%}
+  table{width:max-content;min-width:100%;border-collapse:collapse;font-size:16px}
+  th{text-align:left;padding:11px 8px;color:var(--text-dim);font-weight:700;border-bottom:1px solid var(--border);font-size:15px;text-transform:uppercase;cursor:pointer;white-space:nowrap}
   th:hover{color:var(--accent)}
-  td{padding:4px 6px;border-bottom:1px solid #1c2128;white-space:nowrap}
+  td{padding:10px 8px;border-bottom:1px solid #1c2128;white-space:nowrap}
   tr:hover{background:#1c2128}
-  .controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-  .btn{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:5px 10px;border-radius:4px;cursor:pointer;font-size:10px;font-family:inherit}
+  .controls{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
+  .controls.secondary{margin-top:-2px}
+  .control-label{font-size:15px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;padding-right:2px}
+  .btn{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:9px 13px;border-radius:6px;cursor:pointer;font-size:15px;font-family:inherit}
   .btn.active{background:var(--accent);color:#000;border-color:var(--accent)}
   .btn:hover{border-color:var(--accent)}
+  .table-note{font-size:15px;color:var(--text-dim);margin:2px 0 10px}
+  .slider-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 12px;width:100%}
+  .slider-row{display:grid;grid-template-columns:78px 1fr 52px 56px;gap:8px;align-items:center}
+  .slider-label{font-size:15px;color:var(--text-dim)}
+  .slider-raw,.slider-norm{text-align:right;font-size:15px}
+  .slider-summary{font-size:15px;color:var(--text-dim);padding-left:4px}
+  th.ticker-col,td.ticker-col{width:72px;max-width:72px}
+  th.name-col,td.name-col{width:164px;max-width:164px;overflow:hidden;text-overflow:ellipsis}
+  #mainTable th:first-child,#mainTable td:first-child{width:72px;max-width:72px}
+  #mainTable th:nth-child(2),#mainTable td:nth-child(2){width:164px;max-width:164px;overflow:hidden;text-overflow:ellipsis}
+  #mainTable th:nth-child(n+4),#mainTable td:nth-child(n+4){text-align:center !important}
+  th.num-col,td.num-col{text-align:center}
+  .pill{display:inline-block;padding:3px 8px;border-radius:999px;border:1px solid var(--border);font-size:13px}
+  .score-heat{font-weight:700;border-radius:4px}
   .corner-mark{position:fixed;bottom:1rem;right:1.5rem;font-size:10px;color:var(--text-dim);z-index:10}
   .corner-mark a{color:var(--text-dim);text-decoration:none}
+  body.screenshot-mode .summary-card{display:none}
+  body.screenshot-mode .grid{padding-top:10px}
+  body.screenshot-mode .header{padding-bottom:10px}
   @media(max-width:900px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -65,6 +86,7 @@ fetch('fundamentals.json').then(r=>r.json()).then(F=>{
 const el=document.getElementById('content');
 const all=F.filter(f=>f.mktcap_mn&&f.mktcap_mn>0).sort((a,b)=>(b.mktcap_mn||0)-(a.mktcap_mn||0));
 let filtered=all;
+const qs=new URLSearchParams(window.location.search);
 
 // Sector stats
 const med=(arr)=>{const s=[...arr].sort((a,b)=>a-b);return s[Math.floor(s.length/2)]};
@@ -73,7 +95,7 @@ const totalMcap=all.reduce((s,m)=>s+(m.mktcap_mn||0),0);
 
 el.innerHTML=`
 <div class="grid">
-  <div class="card grid-full">
+  <div class="card grid-full summary-card">
     <h2>Sector Summary</h2>
     <div class="stat-row">
       <div class="stat"><div class="label">Miners</div><div class="value">${all.length}</div></div>
@@ -85,7 +107,7 @@ el.innerHTML=`
     </div>
   </div>
 
-  <div class="card grid-full" style="overflow-x:auto">
+  <div class="card grid-full table-card">
     <h2>Full Fundamentals Screen</h2>
     <div class="controls" id="filters">
       <button class="btn active" onclick="show('all',this)">All ${all.length}</button>
@@ -96,18 +118,20 @@ el.innerHTML=`
       <button class="btn" onclick="show('quality',this)">Quality (ROIC > 15%)</button>
       <button class="btn" onclick="show('fcf',this)">FCF Yield > 5%</button>
     </div>
-    <table id="mainTable">
-      <thead><tr>
-        <th onclick="srt('ticker')">Ticker</th><th onclick="srt('name')">Name</th><th onclick="srt('etf')">ETF</th>
-        <th onclick="srt('mktcap_mn')">MCap</th><th onclick="srt('rev_growth')">RevG</th>
-        <th onclick="srt('ebitda_margin')">EBITDA%</th><th onclick="srt('roic')">ROIC</th>
-        <th onclick="srt('ps')">P/S</th><th onclick="srt('forward_pe')">Fwd PE</th>
-        <th onclick="srt('net_debt_mn')">Net Debt</th><th onclick="srt('debt_ebitda')">D/EB</th>
-        <th onclick="srt('interest_coverage')">Int Cov</th><th onclick="srt('current_ratio')">CurrR</th>
-        <th onclick="srt('fcf_yield')">FCF Yld</th><th onclick="srt('beta')">Beta</th>
-      </tr></thead>
-      <tbody id="tbl"></tbody>
-    </table>
+    <div class="controls secondary" id="viewControls">
+      <span class="control-label">Table View</span>
+      <button class="btn active" onclick="setMode('raw',this)">Raw Table</button>
+      <button class="btn" onclick="setMode('z',this)">Z-Score Table</button>
+      <button class="btn" onclick="toggleScreenshot(this)">Screenshot Mode</button>
+    </div>
+    <div class="controls secondary" id="scoreControls" style="display:none"></div>
+    <div id="tableNote" class="table-note"></div>
+    <div class="table-wrap">
+      <table id="mainTable">
+        <thead id="mainHead"></thead>
+        <tbody id="tbl"></tbody>
+      </table>
+    </div>
   </div>
 
   <div class="card">
@@ -138,49 +162,103 @@ el.innerHTML=`
   Data: yfinance | Prices: Rose (gold.miner.{ticker}.px.close.adj.usd.d.yahoo) | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
 </div>`;
 
+let tableMode=qs.get('view')==='z'?'z':'raw',scoreFilter=['all','positive','top10'].includes(qs.get('scoreFilter'))?qs.get('scoreFilter'):'all',currentFilter=qs.get('filter')||'all',sortKey='mktcap_mn',sortAsc=false,currentPreset='balanced',zRankMap=new Map();
+const SCORE_FEATURES=[
+  {key:'rev_growth',label:'RevG',dir:1,get:m=>m.rev_growth,ok:v=>v!=null&&Math.abs(v)<3},
+  {key:'ebitda_margin',label:'EBITDA',dir:1,get:m=>m.ebitda_margin,ok:v=>v!=null&&Math.abs(v)<1.5},
+  {key:'roic',label:'ROIC',dir:1,get:m=>m.roic,ok:v=>v!=null&&Math.abs(v)<1.5},
+  {key:'fcf_yield',label:'FCF',dir:1,get:m=>m.fcf_yield,ok:v=>v!=null&&Math.abs(v)<25},
+  {key:'forward_pe',label:'PE',dir:-1,get:m=>m.forward_pe,ok:v=>v!=null&&v>0&&v<60},
+  {key:'ps',label:'P/S',dir:-1,get:m=>m.ps,ok:v=>v!=null&&v>0&&v<40},
+  {key:'net_cash',label:'Net Cash',dir:1,get:m=>m.net_debt_mn!=null?-m.net_debt_mn:null,ok:v=>v!=null&&Math.abs(v)<100000},
+  {key:'debt_ebitda',label:'D/EB',dir:-1,get:m=>m.debt_ebitda,ok:v=>v!=null&&v>-5&&v<12},
+  {key:'interest_coverage',label:'IntCov',dir:1,get:m=>m.interest_coverage,ok:v=>v!=null&&v>-20&&v<300},
+  {key:'current_ratio',label:'Curr',dir:1,get:m=>m.current_ratio,ok:v=>v!=null&&v>0&&v<10},
+];
+const PRESETS={
+  balanced:{rev_growth:.10,ebitda_margin:.10,roic:.14,fcf_yield:.11,forward_pe:.11,ps:.08,net_cash:.10,debt_ebitda:.10,interest_coverage:.08,current_ratio:.08},
+  value:{forward_pe:.28,ps:.20,fcf_yield:.18,net_cash:.18,debt_ebitda:.16},
+  quality:{roic:.28,ebitda_margin:.22,interest_coverage:.16,current_ratio:.16,net_cash:.10,fcf_yield:.08},
+  growth:{rev_growth:.42,ebitda_margin:.22,roic:.20,fcf_yield:.08,net_cash:.08},
+  balance:{net_cash:.30,debt_ebitda:.28,interest_coverage:.18,current_ratio:.16,fcf_yield:.08},
+};
+if(qs.get('preset')&&PRESETS[qs.get('preset')])currentPreset=qs.get('preset');
+const SUBSCORES={
+  value:{forward_pe:.30,ps:.24,fcf_yield:.18,net_cash:.16,debt_ebitda:.12},
+  quality:{roic:.34,ebitda_margin:.24,interest_coverage:.16,current_ratio:.14,net_cash:.12},
+  growth:{rev_growth:.46,ebitda_margin:.24,roic:.20,fcf_yield:.10},
+  balance:{net_cash:.34,debt_ebitda:.30,interest_coverage:.18,current_ratio:.18},
+};
+let customWeights={...PRESETS.balanced};
+function qtl(arr,q){const s=[...arr].sort((a,b)=>a-b);if(!s.length)return null;const p=(s.length-1)*q,lo=Math.floor(p),hi=Math.ceil(p),w=p-lo;return hi===lo?s[lo]:s[lo]*(1-w)+s[hi]*w}
+function avg(arr){return arr.reduce((a,b)=>a+b,0)/arr.length}
+function std(arr,m){const v=arr.reduce((s,x)=>s+((x-m)**2),0)/arr.length;return Math.sqrt(v)||1}
+function clamp(v,lo,hi){return Math.max(lo,Math.min(hi,v))}
+function gclr(v){return v==='gdx'?'var(--accent)':v==='gdxj'?'var(--blue)':'var(--purple)'}
+function glbl(v){return(v||'').toUpperCase()}
+function hmap(z){if(z==null||isNaN(z))return'transparent';const a=Math.min(.16+Math.abs(z)*.08,.48);return z>=0?`rgba(34,197,94,${a})`:`rgba(239,68,68,${a})`}
+function ztxt(z){return z==null||isNaN(z)?'--':`${z>0?'+':''}${z.toFixed(2)}`}
+function zclr(z){if(z==null||isNaN(z))return'var(--text-dim)';return z>=0?'var(--good)':'var(--bad)'}
+function fmtCap(v){if(v==null||isNaN(v))return'--';return v>1000?(v/1000).toFixed(1)+'B':Math.round(v)+'M'}
+function fmtDebt(v){return v!=null?(v>0?'+':'')+Math.round(v)+'M':'--'}
+const STATS=Object.fromEntries(SCORE_FEATURES.map(cfg=>{const vals=all.map(m=>cfg.get(m)).filter(v=>cfg.ok(v));if(vals.length<2)return[cfg.key,null];const lo=qtl(vals,.1),hi=qtl(vals,.9),wins=vals.map(v=>clamp(v,lo,hi)),mean=avg(wins),sd=std(wins,mean);return[cfg.key,{lo,hi,mean,sd}] }));
+function zval(m,key){const cfg=SCORE_FEATURES.find(c=>c.key===key),st=STATS[key];if(!cfg||!st)return null;const raw=cfg.get(m);if(!cfg.ok(raw))return null;return clamp(((clamp(raw,st.lo,st.hi)-st.mean)/st.sd)*cfg.dir,-3.5,3.5)}
+function normWeights(w){const t=Object.values(w).reduce((s,v)=>s+Math.abs(Number(v)||0),0);if(!t)return{};return Object.fromEntries(Object.entries(w).map(([k,v])=>[k,(Number(v)||0)/t]))}
+function weighted(m,w){const nw=normWeights(w);let sum=0,wt=0;Object.entries(nw).forEach(([k,v])=>{const z=zval(m,k);if(z==null||!v)return;sum+=z*v;wt+=Math.abs(v);});return wt?sum/wt:null}
+all.forEach(m=>{m._z=Object.fromEntries(SCORE_FEATURES.map(cfg=>[cfg.key,zval(m,cfg.key)]));m._score={};Object.entries(SUBSCORES).forEach(([k,w])=>m._score[k]=weighted(m,w));});
+function renderRawHead(){document.getElementById('mainHead').innerHTML=`<tr><th class="ticker-col" onclick="srt('ticker')">Ticker</th><th class="name-col" onclick="srt('name')">Name</th><th onclick="srt('etf')">ETF</th><th class="num-col" onclick="srt('mktcap_mn')">Mkt Cap</th><th class="num-col" onclick="srt('rev_growth')">RevG</th><th class="num-col" onclick="srt('ebitda_margin')">EBITDA%</th><th class="num-col" onclick="srt('roic')">ROIC</th><th class="num-col" onclick="srt('ps')">P/S</th><th class="num-col" onclick="srt('forward_pe')">Fwd PE</th><th class="num-col" onclick="srt('net_debt_mn')">Net Debt</th><th class="num-col" onclick="srt('debt_ebitda')">D/EB</th><th class="num-col" onclick="srt('interest_coverage')">Int Cov</th><th class="num-col" onclick="srt('current_ratio')">CurrR</th><th class="num-col" onclick="srt('fcf_yield')">FCF Yld</th><th class="num-col" onclick="srt('beta')">Beta</th></tr>`}
+function renderZHead(){document.getElementById('mainHead').innerHTML=`<tr><th class="ticker-col" onclick="srt('ticker')">Ticker</th><th class="name-col" onclick="srt('name')">Name</th><th onclick="srt('etf')">ETF</th><th class="num-col" onclick="srt('__composite')">Composite Z</th><th class="num-col" onclick="srt('__value')">Value Z</th><th class="num-col" onclick="srt('__quality')">Quality Z</th><th class="num-col" onclick="srt('__growth')">Growth Z</th><th class="num-col" onclick="srt('__balance')">Balance Z</th><th class="num-col" onclick="srt('forward_pe')">PE Z</th><th class="num-col" onclick="srt('ps')">P/S Z</th><th class="num-col" onclick="srt('fcf_yield')">FCF Z</th><th class="num-col" onclick="srt('roic')">ROIC Z</th><th class="num-col" onclick="srt('ebitda_margin')">EBITDA Z</th><th class="num-col" onclick="srt('rev_growth')">RevG Z</th><th class="num-col" onclick="srt('net_cash')">Net Cash Z</th><th class="num-col" onclick="srt('debt_ebitda')">D/EB Z</th><th class="num-col" onclick="srt('interest_coverage')">IntCov Z</th><th class="num-col" onclick="srt('current_ratio')">Curr Z</th></tr>`}
+function renderSliderControls(){const n=normWeights(customWeights);document.getElementById('scoreControls').innerHTML=`<span class="control-label">Presets</span><button class="btn ${currentPreset==='balanced'?'active':''}" onclick="applyPreset('balanced')">Balanced</button><button class="btn ${currentPreset==='value'?'active':''}" onclick="applyPreset('value')">Value</button><button class="btn ${currentPreset==='quality'?'active':''}" onclick="applyPreset('quality')">Quality</button><button class="btn ${currentPreset==='growth'?'active':''}" onclick="applyPreset('growth')">Growth</button><button class="btn ${currentPreset==='balance'?'active':''}" onclick="applyPreset('balance')">Balance Sheet</button><span class="control-label">Filter</span><button class="btn ${scoreFilter==='all'?'active':''}" onclick="setScoreFilter('all')">All Scores</button><button class="btn ${scoreFilter==='positive'?'active':''}" onclick="setScoreFilter('positive')">Composite &gt; 0</button><button class="btn ${scoreFilter==='top10'?'active':''}" onclick="setScoreFilter('top10')">Top 10</button><span class="slider-summary">Raw sliders run from -1 to +1. Effective weights at right normalize to 100% by absolute value.</span><div class="slider-grid">${SCORE_FEATURES.map(cfg=>`<div class="slider-row"><div class="slider-label">${cfg.label}</div><input type="range" min="-1" max="1" step="0.05" value="${customWeights[cfg.key]??0}" data-weight="${cfg.key}" style="width:100%"><div class="slider-raw" style="color:${(customWeights[cfg.key]??0)>=0?'var(--good)':'var(--bad)'}">${(customWeights[cfg.key]??0).toFixed(2)}</div><div class="slider-norm">${((n[cfg.key]??0)*100).toFixed(0)}%</div></div>`).join('')}</div>`;document.querySelectorAll('#scoreControls input[type="range"]').forEach(inp=>inp.addEventListener('input',e=>{currentPreset='custom';customWeights[e.target.dataset.weight]=Number(e.target.value);renderCurrent()}))}
+function composite(m){return weighted(m,customWeights)}
+function sval(m,k){if(tableMode==='raw')return m[k];if(k==='__composite')return composite(m);if(k==='__value')return m._score.value;if(k==='__quality')return m._score.quality;if(k==='__growth')return m._score.growth;if(k==='__balance')return m._score.balance;if(['ticker','name','etf'].includes(k))return m[k];return k==='net_cash'?m._z.net_cash:m._z[k]}
+function cmp(a,b,k,asc){const va=sval(a,k),vb=sval(b,k);if(typeof va==='string'||typeof vb==='string')return asc?String(va||'').localeCompare(String(vb||'')):String(vb||'').localeCompare(String(va||''));const aa=va==null||Number.isNaN(va)?-Infinity:va,bb=vb==null||Number.isNaN(vb)?-Infinity:vb;return asc?(aa>bb?1:-1):(aa<bb?1:-1)}
+function usesZRanking(){return String(sortKey).startsWith('__')}
+function applyZScoreSubset(data){if(scoreFilter==='positive')data=data.filter(m=>{const c=composite(m);return c!=null&&c>0});return data}
+function sortRows(data){if(tableMode==='raw'&&usesZRanking()&&zRankMap.size){return [...data].sort((a,b)=>(zRankMap.get(a.ticker)??1e9)-(zRankMap.get(b.ticker)??1e9))}return [...data].sort((a,b)=>cmp(a,b,sortKey,sortAsc))}
+function captureZRanking(data){zRankMap=new Map(data.map((m,i)=>[m.ticker,i]))}
+function applyUniverse(m){if(currentFilter==='all')return true;if(currentFilter==='gdx')return m.etf==='gdx';if(currentFilter==='gdxj')return m.etf==='gdxj';if(currentFilter==='both')return m.etf==='both';if(currentFilter==='value')return m.forward_pe&&m.forward_pe<12;if(currentFilter==='quality')return m.roic&&m.roic>0.15;if(currentFilter==='fcf')return m.fcf_yield&&m.fcf_yield>5&&m.fcf_yield<50;return true}
+function zcell(z){return`<td class="score-heat num-col" style="background:${hmap(z)};color:${zclr(z)}">${ztxt(z)}</td>`}
+function renderZTable(data){document.getElementById('tbl').innerHTML=data.map(m=>`<tr><td class="ticker-col" style="color:var(--accent);font-weight:700">${m.ticker}</td><td class="name-col">${(m.name||'').slice(0,24)}</td><td><span class="pill" style="color:${gclr(m.etf)}">${glbl(m.etf)}</span></td>${zcell(composite(m))}${zcell(m._score.value)}${zcell(m._score.quality)}${zcell(m._score.growth)}${zcell(m._score.balance)}${zcell(m._z.forward_pe)}${zcell(m._z.ps)}${zcell(m._z.fcf_yield)}${zcell(m._z.roic)}${zcell(m._z.ebitda_margin)}${zcell(m._z.rev_growth)}${zcell(m._z.net_cash)}${zcell(m._z.debt_ebitda)}${zcell(m._z.interest_coverage)}${zcell(m._z.current_ratio)}</tr>`).join('')}
+function renderCurrent(){let data=all.filter(applyUniverse);if(tableMode==='z'){data=applyZScoreSubset(data);data=sortRows(data);if(scoreFilter==='top10')data=data.slice(0,10);captureZRanking(data);renderZHead();document.getElementById('scoreControls').style.display='flex';renderSliderControls();renderZTable(data);document.getElementById('tableNote').textContent=`Signed sliders normalize by absolute weight to 100% | ${data.length} names | green = better, red = worse`;}else{if(usesZRanking())data=applyZScoreSubset(data);data=sortRows(data);if(usesZRanking()&&scoreFilter==='top10')data=data.slice(0,10);renderRawHead();document.getElementById('scoreControls').style.display='none';renderTable(data);document.getElementById('tableNote').textContent=usesZRanking()?`Raw fundamentals in current z-score ranking | ${data.length} names | same order as scored view | Mkt Cap = market capitalization`:`Raw fundamentals | ${data.length} names | Mkt Cap = market capitalization | click headers to sort`;}}
+function syncState(){const next=new URLSearchParams(window.location.search);next.set('view',tableMode);next.set('filter',currentFilter);if(tableMode==='z'){next.set('scoreFilter',scoreFilter);next.set('preset',currentPreset);}else{next.delete('scoreFilter');next.delete('preset');}if(document.body.classList.contains('screenshot-mode'))next.set('screenshot','1');else next.delete('screenshot');history.replaceState(null,'',`${window.location.pathname}?${next.toString()}`)}
+
 // Table rendering
 function renderTable(data){
   document.getElementById('tbl').innerHTML=data.map(m=>{
-    const mc=m.mktcap_mn>1000?(m.mktcap_mn/1000).toFixed(1)+'B':m.mktcap_mn+'M';
-    const etfC=m.etf==='gdx'?'var(--accent)':m.etf==='gdxj'?'var(--blue)':'var(--purple)';
     const nd=m.net_debt_mn!=null?(m.net_debt_mn>0?'+':'')+Math.round(m.net_debt_mn)+'M':'—';
     return`<tr>
-      <td style="color:var(--accent);font-weight:600">${m.ticker}</td>
-      <td style="font-size:10px">${(m.name||'').slice(0,22)}</td>
-      <td style="color:${etfC};font-size:10px">${(m.etf||'').toUpperCase()}</td>
-      <td style="text-align:right">${mc}</td>
-      <td style="color:${clr(m.rev_growth,0.2,-0.05)};text-align:right;font-weight:600">${fmt(m.rev_growth,'%',100,0)}</td>
-      <td style="color:${clr(m.ebitda_margin,0.4,0.1)};text-align:right">${fmt(m.ebitda_margin,'%',100,0)}</td>
-      <td style="color:${clr(m.roic,0.15,-0.05)};text-align:right;font-weight:600">${fmt(m.roic,'%',100,0)}</td>
+      <td class="ticker-col" style="color:var(--accent);font-weight:700">${m.ticker}</td>
+      <td class="name-col">${(m.name||'').slice(0,24)}</td>
+      <td><span class="pill" style="color:${gclr(m.etf)}">${glbl(m.etf)}</span></td>
+      <td class="num-col">${fmtCap(m.mktcap_mn)}</td>
+      <td class="num-col" style="color:${clr(m.rev_growth,0.2,-0.05)};font-weight:700">${fmt(m.rev_growth,'%',100,0)}</td>
+      <td class="num-col" style="color:${clr(m.ebitda_margin,0.4,0.1)};font-weight:700">${fmt(m.ebitda_margin,'%',100,0)}</td>
+      <td class="num-col" style="color:${clr(m.roic,0.15,-0.05)};font-weight:700">${fmt(m.roic,'%',100,0)}</td>
       <td style="text-align:right">${m.ps!=null&&m.ps<100?m.ps.toFixed(1)+'x':'—'}</td>
-      <td style="color:${clrInv(m.forward_pe,10,20)};text-align:right;font-weight:600">${m.forward_pe!=null&&m.forward_pe<100?m.forward_pe.toFixed(1)+'x':'—'}</td>
+      <td style="color:${clrInv(m.forward_pe,10,20)};text-align:right;font-weight:700">${m.forward_pe!=null&&m.forward_pe<100?m.forward_pe.toFixed(1)+'x':'—'}</td>
       <td style="color:${clr(m.net_debt_mn!=null?-m.net_debt_mn:null,0,-500)};text-align:right">${nd}</td>
       <td style="text-align:right">${m.debt_ebitda!=null?m.debt_ebitda.toFixed(1)+'x':'—'}</td>
       <td style="color:${clr(m.interest_coverage,5,0)};text-align:right">${m.interest_coverage!=null&&Math.abs(m.interest_coverage)<500?m.interest_coverage.toFixed(0)+'x':'—'}</td>
       <td style="color:${clr(m.current_ratio,2,1)};text-align:right">${m.current_ratio!=null?m.current_ratio.toFixed(1)+'x':'—'}</td>
-      <td style="color:${clr(m.fcf_yield,5,0)};text-align:right;font-weight:600">${m.fcf_yield!=null&&Math.abs(m.fcf_yield)<50?m.fcf_yield.toFixed(1)+'%':'—'}</td>
+      <td style="color:${clr(m.fcf_yield,5,0)};text-align:right;font-weight:700">${m.fcf_yield!=null&&Math.abs(m.fcf_yield)<50?m.fcf_yield.toFixed(1)+'%':'—'}</td>
       <td style="text-align:right">${m.beta!=null?m.beta.toFixed(2):'—'}</td>
     </tr>`}).join('');
 }
 
-function setActive(el){document.querySelectorAll('#filters .btn').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
-window.show=function(f,el){
-  if(f==='all')filtered=all;
-  else if(f==='gdx')filtered=all.filter(m=>m.etf==='gdx');
-  else if(f==='gdxj')filtered=all.filter(m=>m.etf==='gdxj');
-  else if(f==='both')filtered=all.filter(m=>m.etf==='both');
-  else if(f==='value')filtered=all.filter(m=>m.forward_pe&&m.forward_pe<12);
-  else if(f==='quality')filtered=all.filter(m=>m.roic&&m.roic>0.15);
-  else if(f==='fcf')filtered=all.filter(m=>m.fcf_yield&&m.fcf_yield>5&&m.fcf_yield<50);
-  renderTable(filtered);setActive(el);
-};
-
-let sd={};
-window.srt=function(k){sd[k]=!sd[k];filtered.sort((a,b)=>{
-  const va=a[k]===null||a[k]===undefined?-Infinity:a[k],vb=b[k]===null||b[k]===undefined?-Infinity:b[k];
-  return sd[k]?(va>vb?1:-1):(va<vb?1:-1)});renderTable(filtered)};
-
-renderTable(filtered);
+function setActive(el){document.querySelectorAll('#filters .btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active')}
+window.show=function(f,el){currentFilter=f;setActive(el);renderCurrent();syncState()};
+window.setMode=function(mode,el){tableMode=mode;document.querySelectorAll('#viewControls .btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');if(mode==='z'&&!usesZRanking()){sortKey='__composite';sortAsc=false;}if(mode==='raw'&&!usesZRanking()&&!sortKey){sortKey='mktcap_mn';sortAsc=false;}renderCurrent();syncState()};
+window.setScoreFilter=function(f){scoreFilter=f;renderCurrent();syncState()};
+window.toggleScreenshot=function(el){document.body.classList.toggle('screenshot-mode');el.classList.toggle('active',document.body.classList.contains('screenshot-mode'));syncState()};
+window.applyPreset=function(name){currentPreset=name;customWeights={};SCORE_FEATURES.forEach(cfg=>customWeights[cfg.key]=PRESETS[name][cfg.key]??0);renderCurrent();syncState()};
+window.srt=function(k){if(sortKey===k)sortAsc=!sortAsc;else{sortKey=k;sortAsc=false;}renderCurrent();syncState()};
+applyPreset('balanced');
+if(qs.get('preset')&&PRESETS[qs.get('preset')])applyPreset(qs.get('preset'));
+if(qs.get('screenshot')==='1')document.body.classList.add('screenshot-mode');
+document.querySelectorAll('#viewControls .btn').forEach(b=>b.classList.remove('active'));
+document.querySelector(`#viewControls .btn[onclick*="setMode('${tableMode}'"]`)?.classList.add('active');
+renderCurrent();
+syncState();
 
 // Charts
 const gm=all.filter(m=>m.rev_growth!=null&&m.ebitda_margin!=null&&m.ebitda_margin>-1&&Math.abs(m.rev_growth)<5);
@@ -224,9 +302,9 @@ new Chart(document.getElementById('peDist'),{type:'bar',
 });
 
 // ============================================================
-// GOLD SIGNAL vs MINERS (from signal_vs_miners.json)
+// GOLD SIGNAL vs MINERS (hidden for now)
 // ============================================================
-fetch('signal_vs_miners.json').then(r=>r.json()).then(S=>{
+if(false) fetch('signal_vs_miners.json').then(r=>r.json()).then(S=>{
 const sigDiv=document.createElement('div');
 const targets=Object.entries(S.targets).sort((a,b)=>(b[1].sharpe||0)-(a[1].sharpe||0));
 
