@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>U1288930 — Risk Decomp v001 · 2026-04-26</title>
+<style>
+  :root {
+    --bg: #0c0c0c; --p: #171717; --p2: #1d1d1d; --line: #323232; --soft: #262626;
+    --txt: #e6e6e6; --dim: #ababab; --muted: #7f7f7f;
+    --good: #7fd890; --bad: #ff8d8d; --neutral: #c7c7c7;
+    --blue: #8fc5ff; --teal: #70d6d6; --amber: #ffc266;
+    --before: rgba(255, 141, 141, 0.10);
+    --after:  rgba(127, 216, 144, 0.10);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--txt);
+               font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
+  .shell { padding: 18px 22px; max-width: 1500px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
+  h2 { margin: 0 0 14px; font-size: 13px; color: var(--dim); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+  h3 { margin: 28px 0 10px; font-size: 14px; color: var(--blue); }
+  .top {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px; margin-bottom: 22px;
+  }
+  .card { background: var(--p); border: 1px solid var(--line); padding: 14px; border-radius: 4px; }
+  .card .label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .card .value { font-size: 22px; font-weight: 700; line-height: 1.1; }
+  .card .delta { font-size: 11px; margin-top: 6px; color: var(--dim); }
+  .card .delta.up { color: var(--good); }
+  .card .delta.down { color: var(--bad); }
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  .col { background: var(--p); border: 1px solid var(--line); border-radius: 4px; }
+  .col.before { border-top: 3px solid var(--bad); }
+  .col.after  { border-top: 3px solid var(--good); }
+  .col-head { padding: 10px 14px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .col-head .name { font-weight: 700; }
+  .col-head .meta { color: var(--dim); font-size: 11px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 7px 10px; font-size: 11px; color: var(--dim); text-transform: uppercase;
+       letter-spacing: 0.04em; border-bottom: 1px solid var(--line); background: #111; }
+  td { padding: 6px 10px; border-bottom: 1px solid var(--soft); font-size: 12px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .good { color: var(--good); }
+  .bad  { color: var(--bad); }
+  .muted { color: var(--muted); }
+  .pillbox { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px;
+             border: 1px solid var(--line); background: #141414; }
+  .changed { background: rgba(255, 194, 102, 0.10); }
+  .new     { background: rgba(127, 216, 144, 0.10); color: var(--good); }
+  .summary-line { padding: 12px 14px; background: var(--p2); border-radius: 4px; margin-top: 18px;
+                  font-size: 12px; color: var(--dim); line-height: 1.55; }
+  .summary-line strong { color: var(--txt); }
+  .footer { margin-top: 30px; padding: 12px 0; color: var(--muted); font-size: 11px; border-top: 1px solid var(--soft); }
+  .stamp { display: flex; gap: 16px; padding: 8px 14px; background: #0a0a0a; border: 1px solid var(--line);
+           border-radius: 4px; margin-bottom: 14px; font-size: 11px; color: var(--dim);
+           font-variant-numeric: tabular-nums; }
+  .stamp .k { color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px; }
+  .stamp .v { color: var(--txt); font-weight: 600; }
+  .stamp .v.amber { color: var(--amber); }
+  details { background: var(--p2); border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; margin-top: 14px; }
+  summary { cursor: pointer; font-weight: 600; color: var(--blue); }
+  details[open] summary { margin-bottom: 10px; }
+  details code { background: #111; padding: 2px 6px; border-radius: 3px; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <h1>U1288930 — Risk Decomp Comparison</h1>
+  <h2>Pre-patch (stale JSON, broken units, ag invisible) vs Post-patch (refreshed JSON, fixed units, full ag coverage)</h2>
+
+  <div class="stamp">
+    <div><span class="k">Generated:</span><span class="v">2026-04-26 13:09 ET</span></div>
+    <div><span class="k">Version:</span><span class="v">v001</span></div>
+    <div><span class="k">JSON snapshot:</span><span class="v">2026-04-26 (refreshed via positions())</span></div>
+    <div><span class="k">NLV:</span><span class="v">$112,251</span></div>
+    <div><span class="k">Code:</span><span class="v">options_risk.py @ patched (PRICE_MAGNIFIER + yf-spot)</span></div>
+    <div><span class="k">File:</span><span class="v amber">risk_compare.20260426.v001.html</span></div>
+  </div>
+
+  <div class="top">
+    <div class="card">
+      <div class="label">NLV</div>
+      <div class="value">$112,251</div>
+      <div class="delta">live, 2026-04-26</div>
+    </div>
+    <div class="card">
+      <div class="label">Portfolio Vol (ann)</div>
+      <div class="value">24.3%</div>
+      <div class="delta">+0.9pp vs pre-patch</div>
+    </div>
+    <div class="card">
+      <div class="label">Daily VaR (1σ)</div>
+      <div class="value">$1,719</div>
+      <div class="delta">+$21 vs pre-patch</div>
+    </div>
+    <div class="card">
+      <div class="label">SONIA share of risk</div>
+      <div class="value">67.2%</div>
+      <div class="delta down">−9.4pp vs pre-patch (ags now claim share)</div>
+    </div>
+  </div>
+
+  <h3>Macro theme deltas — side by side</h3>
+  <div class="grid">
+
+    <div class="col before">
+      <div class="col-head">
+        <div class="name">PRE-PATCH</div>
+        <div class="meta">stale JSON · 10 FOPs · grain/sugar/cattle = 0</div>
+      </div>
+      <table>
+        <thead><tr><th>Macro theme</th><th class="num">Delta $</th><th class="num">% NLV</th></tr></thead>
+        <tbody>
+          <tr><td>Long Duration</td><td class="num">$ 250,808</td><td class="num good">+217.6%</td></tr>
+          <tr><td>Long Gold</td><td class="num">$  38,994</td><td class="num good">+ 34.6%</td></tr>
+          <tr><td>Long Tech/Cyber</td><td class="num">$  11,455</td><td class="num good">+ 10.0%</td></tr>
+          <tr><td>Other (incl. JPY-as-USD bug)</td><td class="num">$   8,203</td><td class="num good">+  7.3%</td></tr>
+          <tr><td>Long Gas/Power</td><td class="num">$   7,368</td><td class="num good">+  6.4%</td></tr>
+          <tr><td>Long Metals/Mat</td><td class="num">$   5,414</td><td class="num good">+  5.7%</td></tr>
+          <tr class="changed"><td>Long Grains <em class="muted">(sugar in here)</em></td><td class="num">$  -5,991</td><td class="num bad">−  5.3%</td></tr>
+          <tr class="muted"><td>Long Softs</td><td class="num">—</td><td class="num">N/A</td></tr>
+          <tr class="muted"><td>Long Livestock</td><td class="num">—</td><td class="num">N/A</td></tr>
+          <tr class="muted"><td>Long Crude</td><td class="num">$       0</td><td class="num">  0.0%</td></tr>
+          <tr class="muted"><td>FX</td><td class="num">—</td><td class="num">N/A</td></tr>
+          <tr><td>Short Credit+Eq</td><td class="num">$ -45,094</td><td class="num bad">− 39.9%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col after">
+      <div class="col-head">
+        <div class="name">POST-PATCH</div>
+        <div class="meta">refreshed JSON · 22 FOPs · full coverage</div>
+      </div>
+      <table>
+        <thead><tr><th>Macro theme</th><th class="num">Delta $</th><th class="num">% NLV</th></tr></thead>
+        <tbody>
+          <tr><td>Long Duration</td><td class="num">$ 255,240</td><td class="num good">+227.4%</td></tr>
+          <tr class="new"><td>Long Grains</td><td class="num">$  46,326</td><td class="num good">+ 41.3%</td></tr>
+          <tr class="new"><td>Long Softs</td><td class="num">$  37,025</td><td class="num good">+ 33.0%</td></tr>
+          <tr><td>Long Gold</td><td class="num">$  23,721</td><td class="num good">+ 21.1%</td></tr>
+          <tr><td>Long Tech/Cyber</td><td class="num">$  11,455</td><td class="num good">+ 10.2%</td></tr>
+          <tr><td>Other</td><td class="num">$   8,203</td><td class="num good">+  7.3%</td></tr>
+          <tr><td>Long Gas/Power</td><td class="num">$   7,368</td><td class="num good">+  6.6%</td></tr>
+          <tr class="new"><td>Long Livestock</td><td class="num">$   6,276</td><td class="num good">+  5.6%</td></tr>
+          <tr><td>Long Metals/Mat</td><td class="num">$   5,414</td><td class="num good">+  4.8%</td></tr>
+          <tr class="new"><td>Long Crude</td><td class="num">$   4,592</td><td class="num good">+  4.1%</td></tr>
+          <tr class="new"><td>FX</td><td class="num">$ -16,295</td><td class="num bad">− 14.5%</td></tr>
+          <tr><td>Short Credit+Eq</td><td class="num">$ -48,585</td><td class="num bad">− 43.3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="summary-line">
+    <strong>What changed:</strong> ags were structurally invisible because (a) JSON had only 10 of your 22 FOPs (week-old snapshot), (b) `_compute_greeks` returned δ=0 when underlying spot was missing for SB/LE/ZW (no future in book), (c) cents-vs-dollars on grain/cattle/sugar inflated F by 100×.<br>
+    Patches: refreshed JSON via positions(), added <code>_fetch_yf_spot()</code> for missing FOP underlyings, added <code>PRICE_MAGNIFIER</code> for cents-quoted symbols, split Sugar from Grains and added Livestock/FX/Crude macro themes.
+  </div>
+
+  <h3>Risk by theme — % of total portfolio variance</h3>
+  <div class="grid">
+    <div class="col before">
+      <div class="col-head"><div class="name">PRE-PATCH</div><div class="meta">delta-normal VaR (with bugs)</div></div>
+      <table>
+        <thead><tr><th>Theme</th><th class="num">Delta %</th><th class="num">% Risk</th></tr></thead>
+        <tbody>
+          <tr><td>Duration</td><td class="num good">+217.6%</td><td class="num">76.6%</td></tr>
+          <tr><td>Gold</td><td class="num good">+ 16.7%</td><td class="num">7.5%</td></tr>
+          <tr><td>Other</td><td class="num good">+  5.6%</td><td class="num">2.3%</td></tr>
+          <tr class="muted"><td>Sugar</td><td class="num">  0.0%</td><td class="num">0.0%</td></tr>
+          <tr class="muted"><td>Corn</td><td class="num bad">− 14.1%</td><td class="num">hidden</td></tr>
+          <tr class="muted"><td>Wheat</td><td class="num good">+  8.8%</td><td class="num">hidden</td></tr>
+          <tr class="muted"><td>Crude</td><td class="num">  0.0%</td><td class="num">0.0%</td></tr>
+          <tr><td>Equity Short</td><td class="num bad">− 24.1%</td><td class="num">3.8%</td></tr>
+          <tr><td>Credit Short</td><td class="num bad">− 15.8%</td><td class="num">−1.1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col after">
+      <div class="col-head"><div class="name">POST-PATCH</div><div class="meta">delta-normal VaR (correct)</div></div>
+      <table>
+        <thead><tr><th>Theme</th><th class="num">Delta %</th><th class="num">% Risk</th></tr></thead>
+        <tbody>
+          <tr><td>Duration</td><td class="num good">+217.4%</td><td class="num">67.2%</td></tr>
+          <tr><td>Gold</td><td class="num good">+ 21.3%</td><td class="num">9.9%</td></tr>
+          <tr class="new"><td>Sugar</td><td class="num good">+ 33.0%</td><td class="num">6.3%</td></tr>
+          <tr><td>Equity Short</td><td class="num bad">− 25.4%</td><td class="num">3.9%</td></tr>
+          <tr><td>Other</td><td class="num good">+  5.6%</td><td class="num">2.2%</td></tr>
+          <tr class="new"><td>Corn</td><td class="num good">+ 23.1%</td><td class="num">1.8%</td></tr>
+          <tr><td>Power</td><td class="num good">+  2.3%</td><td class="num">1.7%</td></tr>
+          <tr><td>Lasers</td><td class="num good">+  2.7%</td><td class="num">1.6%</td></tr>
+          <tr><td>Cyber</td><td class="num good">+  5.3%</td><td class="num">1.5%</td></tr>
+          <tr><td>Materials</td><td class="num good">+  2.4%</td><td class="num">1.3%</td></tr>
+          <tr><td>China Long</td><td class="num good">+  5.6%</td><td class="num">1.1%</td></tr>
+          <tr><td>Credit Short</td><td class="num bad">− 17.9%</td><td class="num">−1.0%</td></tr>
+          <tr class="new"><td>Wheat</td><td class="num good">+  6.1%</td><td class="num">1.0%</td></tr>
+          <tr><td>Copper</td><td class="num good">+  1.5%</td><td class="num">0.9%</td></tr>
+          <tr class="new"><td>Crude</td><td class="num good">+  4.1%</td><td class="num">−0.9%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3>Convex bets — full reprice asymmetry (post-patch only; risk_convexity.py)</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead>
+        <tr><th>Underlying</th><th>Theme</th><th class="num">Δ% NLV</th>
+            <th class="num">If +30%</th><th class="num">If −30%</th>
+            <th class="num">Asymmetry</th><th>Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SB</td><td>Sugar</td><td class="num good">+33.0%</td><td class="num good">+$27,504</td><td class="num good">+$5,289</td><td class="num">5.2x</td><td>CONVEX LONG</td></tr>
+        <tr><td>KMI</td><td>Gas/Pipes</td><td class="num good">+ 2.1%</td><td class="num good">+$1,836</td><td class="num good">+$421</td><td class="num">4.4x</td><td>CONVEX LONG</td></tr>
+        <tr><td>ZW</td><td>Wheat</td><td class="num good">+ 6.1%</td><td class="num good">+$3,344</td><td class="num bad">−$760</td><td class="num">4.4x</td><td>CONVEX LONG</td></tr>
+        <tr><td>DOW</td><td>Chemicals</td><td class="num good">+ 0.9%</td><td class="num good">+$463</td><td class="num bad">−$129</td><td class="num">3.6x</td><td>CONVEX LONG</td></tr>
+        <tr><td>GBS</td><td>Duration</td><td class="num good">+10.0%</td><td class="num good">+$11,338</td><td class="num good">+$4,580</td><td class="num">2.5x</td><td>CONVEX LONG</td></tr>
+        <tr><td>ZC</td><td>Corn</td><td class="num good">+21.0%</td><td class="num good">+$23,992</td><td class="num good">+$9,834</td><td class="num">2.4x</td><td>CONVEX LONG</td></tr>
+        <tr><td>LE</td><td>Livestock</td><td class="num good">+ 5.6%</td><td class="num good">+$7,808</td><td class="num good">+$4,042</td><td class="num">1.9x</td><td>asymmetric long</td></tr>
+        <tr><td>GLD</td><td>Gold</td><td class="num good">+17.1%</td><td class="num good">+$7,032</td><td class="num bad">−$4,480</td><td class="num">1.6x</td><td>linear long</td></tr>
+        <tr><td>HYG</td><td>Credit Short</td><td class="num bad">−14.3%</td><td class="num good">+$18,401</td><td class="num good">+$28,039</td><td class="num">0.7x</td><td>convex short</td></tr>
+        <tr><td>BKLN</td><td>Credit Short</td><td class="num bad">− 3.5%</td><td class="num bad">−$116</td><td class="num good">+$2,210</td><td class="num">0.1x</td><td>CONVEX SHORT</td></tr>
+        <tr><td>GBP</td><td>FX</td><td class="num bad">−14.5%</td><td class="num good">+$13,465</td><td class="num good">+$23,243</td><td class="num">0.6x</td><td>cable put hedge</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Scenario P&L (delta + gamma + vega + theta, full B76/BS reprice)</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead><tr><th>Scenario</th><th class="num">Total P&L</th><th class="num">% NLV</th>
+                  <th class="num">Δ$</th><th class="num">Γ$</th><th class="num">V$</th><th class="num">Θ$</th></tr></thead>
+      <tbody>
+        <tr><td>THESIS WORKS — Recession + inflation</td>
+            <td class="num good">+$48,237</td><td class="num good">+43.0%</td>
+            <td class="num">+$30k</td><td class="num">+$13k</td><td class="num">+$8k</td><td class="num">−$2.7k</td></tr>
+        <tr><td>AG SPIKE — Corn +30%, wheat +25%</td>
+            <td class="num good">+$42,036</td><td class="num good">+37.4%</td>
+            <td class="num">+$19k</td><td class="num">+$23k</td><td class="num">+$3k</td><td class="num">−$3k</td></tr>
+        <tr><td>CREDIT BLOWOUT — HYG −10%, SPY −20%</td>
+            <td class="num good">+$29,158</td><td class="num good">+26.0%</td>
+            <td class="num">+$12k</td><td class="num">+$3k</td><td class="num">+$16k</td><td class="num">−$1k</td></tr>
+        <tr><td>GOLD MELT-UP — Gold +25%, silver +40%</td>
+            <td class="num good">+$9,127</td><td class="num good">+8.1%</td>
+            <td class="num">+$6k</td><td class="num">+$1k</td><td class="num">+$5k</td><td class="num">−$3k</td></tr>
+        <tr><td>THESIS WRONG — Risk-on rip</td>
+            <td class="num bad">−$15,650</td><td class="num bad">−13.9%</td>
+            <td class="num">−$11k</td><td class="num">+$2.5k</td><td class="num">−$5k</td><td class="num">−$2k</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary>How risk is calculated (read once, internalize)</summary>
+    <ol style="margin: 6px 0 0; padding-left: 20px; line-height: 1.7; color: var(--dim);">
+      <li><strong>Per-position greeks</strong> — <code>options_risk.PortfolioRisk._compute_greeks</code>. STK/ETF: δ=1, δ$=qty×price. FUT: δ=1, δ$=qty×price×mult (cents→$ for grains/cattle/sugar via PRICE_MAGNIFIER). OPT: solve IV from observed premium via Black-Scholes, then δ$=qty·N(d1)·S·mult. FOP: same with Black-76 on F.</li>
+      <li><strong>Underlying spot</strong> — first STK/FUT in book → <code>prices[sym]</code>. For FOPs whose future isn't in the book (SB, LE, ZW), <code>_fetch_yf_spot()</code> uses LE=F, SB=F, ZW=F, CL=F, GBPUSD=X (and divides yfinance =F prices by 100 since they come back in cents).</li>
+      <li><strong>IV source</strong> — Black-Scholes/Black-76 solver against observed market premium. Fallback 30% flat when premium is zero AND F is known. <em>NOT</em> realized-vol blend. IB's <code>modelGreeks.impliedVol</code> would be available with live data + <code>genericTickList="106"</code>; right now TWS is in delayed-frozen mode so greeks are stripped.</li>
+      <li><strong>Portfolio variance</strong> — <code>portfolio_risk_decomp.py</code>: yfinance 1y daily returns → annualized cov Σ. Weights w_i = (Σ δ$_j) / NLV per underlying. σ²_p = w'Σw. Daily VaR = σ_p·NLV / √252. Marginal risk per asset = w_i·(Σw)_i / σ_p.</li>
+      <li><strong>Vol-aware scenarios</strong> — <code>risk_convexity.py</code>: full reprice with delta + gamma + vega + theta under named thesis scenarios. Asymmetry = max(±30% reprice) / min(±30% reprice). Convex long when up&gt;down, convex short when down&gt;up.</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>Known accuracy gaps (in plain text)</summary>
+    <ul style="margin: 6px 0 0; padding-left: 20px; line-height: 1.7; color: var(--dim);">
+      <li><strong>9984.T currency residue</strong> — Softbank position still shows ~$3k of phantom delta (JPY treated as USD). Tiny in absolute, but it's there.</li>
+      <li><strong>Option premium = 0 fallback</strong> — when JSON has <code>marketPrice=0</code> for an option (illiquid Friday close), we use 30% IV. Overstates ITM, understates deep OTM. Most affected: 4 sugar strikes (SB qty=2/-6/6/2) where IV=0.3 fallback fired.</li>
+      <li><strong>Delta-normal VaR</strong> — gamma/vega contribution to daily VaR is <em>not</em> in the $1,719 number. A vol shock in ags or credit could move +/-10% of NLV that won't show up in the linear VaR — only in the named scenarios.</li>
+      <li><strong>1-year covariance lookback</strong> — captures recent regime, misses 2022-style shifts. Conservative for current vol, optimistic for tail.</li>
+      <li><strong>portfolio_risk_decomp.py uses ETF proxies (CORN, CANE, WEAT)</strong> for futures — these track imperfectly vs the actual front-month. SONIA → TLT proxy is the biggest stretch and probably overstates correlation between SONIA and IEI.</li>
+    </ul>
+  </details>
+
+  <div class="footer">
+    Source: <code>~/grove/quant/options_risk.py</code> (PortfolioRisk, patched 2026-04-26 — PRICE_MAGNIFIER + yf-spot fallback + Sugar/Livestock/FX themes) ·
+    <code>~/grove/quant/portfolio_risk_decomp.py</code> ·
+    <code>~/grove/quant/risk_convexity.py</code> ·
+    JSON: <code>~/ibkr_portfolio.json</code> via <code>~/refresh_ibkr_portfolio.py</code>.
+  </div>
+
+</div>
+</body>
+</html>

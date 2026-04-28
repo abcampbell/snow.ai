@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Beta - Diversification Geometry</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --ink: #143642;
+      --stone: #5f6d76;
+      --sea: #2e6f95;
+      --amber: #c97c1a;
+      --rose: #a23e48;
+      --mint: #4d908e;
+      --line: rgba(20, 54, 66, 0.12);
+      --shadow: 0 22px 60px rgba(20, 54, 66, 0.11);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(46, 111, 149, 0.10), transparent 28%),
+        radial-gradient(circle at left 20%, rgba(162, 62, 72, 0.08), transparent 24%),
+        linear-gradient(180deg, #fbf7f0 0%, var(--paper) 55%, #efe5d7 100%);
+      line-height: 1.55;
+    }
+
+    a { color: var(--sea); }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 36px 20px 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.9fr);
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 26px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(20, 54, 66, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-copy { padding: 34px 34px 30px; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.77rem;
+      background: rgba(201, 124, 26, 0.12);
+      color: var(--amber);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      margin-bottom: 18px;
+      max-width: 12ch;
+    }
+
+    .lede {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--stone);
+      max-width: 58ch;
+    }
+
+    .hero-aside {
+      padding: 28px;
+      display: grid;
+      gap: 14px;
+      background:
+        linear-gradient(160deg, rgba(46, 111, 149, 0.08), rgba(201, 124, 26, 0.07)),
+        rgba(255, 255, 255, 0.82);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 14px 15px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+    }
+
+    .metric .label {
+      display: block;
+      font-size: 0.77rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--stone);
+      margin-bottom: 8px;
+    }
+
+    .metric .value {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .quote {
+      padding: 18px;
+      border-left: 4px solid var(--amber);
+      background: rgba(255, 255, 255, 0.86);
+      border-radius: 16px;
+      color: var(--ink);
+      font-size: 1.02rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .section { padding: 28px; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--stone);
+      max-width: 58ch;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .card {
+      padding: 16px 16px 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--stone);
+      font-size: 0.95rem;
+    }
+
+    .formula {
+      padding: 14px 16px;
+      font-size: 1.1rem;
+      border-radius: 16px;
+      background: rgba(20, 54, 66, 0.06);
+      margin-bottom: 18px;
+      overflow-x: auto;
+    }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .fact .label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--stone);
+    }
+
+    .fact .value {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.42rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .fact p {
+      margin: 0;
+      color: var(--stone);
+      font-size: 0.93rem;
+    }
+
+    .chart-card {
+      padding: 12px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+    }
+
+    .chart-card.wide {
+      grid-column: span 2;
+    }
+
+    .equity-absolute-card .chart-body {
+      min-height: 410px;
+    }
+
+    .equity-absolute-card .chart-head {
+      margin-bottom: 6px;
+    }
+
+    .equity-absolute-card .chart-head p {
+      max-width: 68ch;
+      font-size: 0.9rem;
+    }
+
+    .chart-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .chart-head h3 {
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+
+    .chart-head p {
+      margin: 0;
+      color: var(--stone);
+      font-size: 0.92rem;
+    }
+
+    .chart-body {
+      width: 100%;
+      min-height: 300px;
+    }
+
+    .chart-body.compact {
+      min-height: 270px;
+    }
+
+    .chart-body svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      color: var(--stone);
+      font-size: 0.85rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .threshold-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .threshold-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--stone);
+    }
+
+    .threshold-pill strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .threshold-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .regime-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .regime-cell {
+      min-height: 140px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(20, 54, 66, 0.08);
+    }
+
+    .regime-cell h3 {
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+
+    .regime-cell p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 0.92rem;
+    }
+
+    .growth-up { background: rgba(77, 144, 142, 0.12); }
+    .inflation-up { background: rgba(201, 124, 26, 0.12); }
+    .growth-down { background: rgba(46, 111, 149, 0.11); }
+    .inflation-down { background: rgba(162, 62, 72, 0.10); }
+
+    .axis-text {
+      fill: var(--stone);
+      font-size: 11px;
+      font-family: Arial, sans-serif;
+    }
+
+    .axis-label {
+      fill: var(--stone);
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .grid-line {
+      stroke: rgba(20, 54, 66, 0.10);
+      stroke-width: 1;
+    }
+
+    .domain-line {
+      stroke: rgba(20, 54, 66, 0.26);
+      stroke-width: 1.1;
+    }
+
+    figure {
+      margin: 0;
+      padding: 12px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+    }
+
+    figure img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    figcaption {
+      padding: 12px 8px 4px;
+      color: var(--stone);
+      font-size: 0.95rem;
+    }
+
+    .macro-list, .source-list, .note-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--stone);
+    }
+
+    .macro-list li, .source-list li, .note-list li { margin-bottom: 10px; }
+
+    .footer {
+      margin-top: 18px;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--stone);
+    }
+
+    @media (max-width: 900px) {
+      .hero, .chart-grid, .cards, .metric-grid, .facts, .split, .regime-grid { grid-template-columns: 1fr; }
+      .chart-card.wide { grid-column: span 1; }
+      .section-head, .footer { display: block; }
+      .footer > * + * { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="panel hero-copy">
+        <div class="eyebrow">All Beta / April 19, 2026</div>
+        <h1>The Number Of Stocks Is A Trivia Question.</h1>
+        <p class="lede">
+          This project recreates the core argument for the alpha-beta essay in two stages:
+          first, how diversification inside equities saturates into a single beta floor; second,
+          how macro sleeves diversify that equity beta in the All Weather / risk-parity sense; and third,
+          how live beta products load on those sleeves and what a diversification-first benchmark portfolio looks like.
+        </p>
+      </div>
+      <aside class="panel hero-aside">
+        <div class="metric-grid" id="hero-metrics"></div>
+        <div class="quote" id="hero-quote"></div>
+      </aside>
+    </section>
+
+    <main class="layout">
+      <section class="panel section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Stage 1</div>
+            <h2>Within Equities</h2>
+          </div>
+          <p>
+            The stock-count curve matters only up to the point where single-name risk is mostly gone.
+            After that, you are refining the same trade: equity beta.
+          </p>
+        </div>
+        <div id="equity-cards" hidden></div>
+        <div class="facts" id="equity-facts"></div>
+        <div class="formula" id="equity-formula"></div>
+        <div class="chart-grid">
+          <article class="chart-card wide equity-absolute-card">
+            <div class="chart-head">
+              <div>
+                <h3>Absolute volatility vs stock count</h3>
+                <p>Lower pairwise correlation means faster diversification. We mark the stock count needed to capture 90% of the available benefit, with the historical-average case emphasized.</p>
+              </div>
+            </div>
+            <div class="chart-body" id="equity-absolute-chart"></div>
+            <div class="threshold-strip" id="equity-absolute-summary"></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Diversification benefit captured</h3>
+                <p>How quickly the available single-name benefit gets exhausted.</p>
+              </div>
+            </div>
+            <div class="chart-body" id="equity-benefit-chart"></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Marginal benefit of the next stock</h3>
+                <p>Decision-space view of when the next name stops mattering.</p>
+              </div>
+            </div>
+            <div class="chart-body compact" id="equity-marginal-chart"></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>What remains after diversification works</h3>
+                <p>The idiosyncratic term dies. The systematic term survives.</p>
+              </div>
+            </div>
+            <div class="chart-body compact" id="equity-decomposition-chart"></div>
+            <div class="legend">
+              <span class="legend-item"><span class="swatch" style="background:#a23e48"></span>Systematic equity beta share</span>
+              <span class="legend-item"><span class="swatch" style="background:#4d908e"></span>Idiosyncratic share</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Stage 2</div>
+            <h2>The Real Factor Map</h2>
+          </div>
+          <p>
+            The 12 sleeves are not the answer. They are the observations. PCA on the sleeve covariance tells us how many
+            real macro factors are underneath them, and the factor-ERC view shows how All Weather-style diversification
+            is really a risk budget across those latent drivers.
+          </p>
+        </div>
+        <div id="macro-cards" hidden></div>
+        <div class="facts" id="macro-facts"></div>
+        <div class="chart-grid">
+          <article class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Scree plot of the sleeve covariance</h3>
+                <p>The point of the scree plot is simple: 12 sleeves do not buy you 12 independent bets. The eigenvalues tell you how many factors are actually doing the work.</p>
+              </div>
+            </div>
+            <div class="chart-body compact" id="macro-scree-chart"></div>
+          </article>
+          <article class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Factor interpretations and loadings</h3>
+                <p>The heatmap is the actual factor map. Positive and negative loadings show which sleeves each principal component is bundling together or pulling apart.</p>
+              </div>
+            </div>
+            <div class="chart-body" id="macro-loadings-chart"></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Risk contribution by factor</h3>
+                <p>Gray bars show how much raw sleeve variance each principal factor explains. Amber bars show the equal-risk budget across the first six factors.</p>
+              </div>
+            </div>
+            <div class="chart-body compact" id="macro-factor-risk-chart"></div>
+          </article>
+        </div>
+        <div class="split">
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Economic Read Of The First Seven PCs</h3>
+                <p>The list below translates the first 5-7 components into economic language and surfaces the strongest sleeve loadings on each one.</p>
+              </div>
+            </div>
+            <ol class="macro-list" id="macro-sequence"></ol>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>16% Vol Factor Backtests</h3>
+                <p>The red line is the ex-post best factor mix at a 16% target volatility. The blue line is the simple equal-weight-across-factors portfolio at the same target volatility.</p>
+              </div>
+            </div>
+            <div class="chart-body compact" id="macro-factor-backtest-chart"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Stage 3</div>
+            <h2>Beta Funds And Portfolio Constructions</h2>
+          </div>
+          <p>
+            Here the beta-fund universe is compared directly to a broader sleeve map: `SPY`, `EFA`, `TLT`, `TIP`, `LQD`, `HYG`,
+            `EEM`, `EMB`, `DBC`, `GLD`, `VNQ`, `CEW`, plus the sector tilts `XLK` and `XLE`.
+            Then we build diversification-first sleeve portfolios at `1x`, `2x`, and `3x`, plus the fund-only alternatives,
+            and compare the free construction against flagship All Weather / risk parity style products.
+          </p>
+        </div>
+        <div class="facts" id="beta-facts"></div>
+        <div class="chart-grid">
+          <article class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Beta funds vs core beta sleeves</h3>
+                <p>Pairwise daily return correlations between the 20 Rose beta funds and the expanded benchmark sleeve set. This is the fast way to see which products are really just equity beta in another wrapper.</p>
+              </div>
+            </div>
+            <div class="chart-body" id="beta-correlation-chart"></div>
+          </article>
+          <article class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Beta funds vs principal factors</h3>
+                <p>Each cell compares a fund's sleeve fingerprint to a PCA loading vector. This is the bridge from product wrapper to underlying factor map.</p>
+              </div>
+            </div>
+            <div class="chart-body" id="beta-factor-affinity-chart"></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Portfolio Weight Matrix</h3>
+                <p>One row per asset, one column per portfolio. The chart now includes the optimization rule itself, so the construction reads like a framework instead of a black box.</p>
+              </div>
+            </div>
+            <div class="chart-body compact" id="beta-weights-chart"></div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Constructed vs accessible alternatives</h3>
+                <p>What if you have the raw sleeves? What if you have a hard 100% retirement-account cap? What if you only have SPY plus the funds, or only the funds?</p>
+              </div>
+            </div>
+            <div class="chart-body compact" id="beta-growth-chart"></div>
+          </article>
+          <article class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Constructed 3x vs flagship diversified funds</h3>
+                <p>The free 3x construction is compared directly against ALLW, RPAR, UPAR, NTSX, RSSB, and REMIX over their common overlap window.</p>
+              </div>
+            </div>
+            <div class="chart-body" id="beta-flagship-chart"></div>
+          </article>
+        </div>
+        <div class="split">
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Portfolio Summary</h3>
+                <p>The key numbers for the static sleeve constructions, the static fund optimizers, and the rolling top-5 fund portfolio.</p>
+              </div>
+            </div>
+            <ol class="macro-list" id="beta-portfolio-summary"></ol>
+          </article>
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Most Diversifying To SPY</h3>
+                <p>Simple two-asset long-only min-vol blend: rank funds by how much annualized SPY volatility disappears. Fees are still shown, but the ordering here is raw diversification first.</p>
+              </div>
+            </div>
+            <ol class="macro-list" id="beta-fee-ranking"></ol>
+            <ul class="source-list" id="beta-rose-links"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel section" id="four-portfolios-section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Four Portfolios</div>
+            <h2>Four Ways To Buy Beta</h2>
+          </div>
+          <p>
+            Bridgewater-synthetic risk parity, Campbell's equal-risk-impact "All Beta" (unlevered and futures-levered),
+            and the retail RSSB-style leverage-constrained build &mdash; backtested 2006 to 2026 on daily Rose data,
+            quarterly rebalance, walk-forward vol estimates, transaction and financing costs applied.
+            Plus Campbell's actual 14-ticker macro book as a benchmark.
+          </p>
+        </div>
+
+        <div class="facts" id="four-summary-facts"></div>
+
+        <div class="chart-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;">
+          <div class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Return vs Risk (hero)</h3>
+                <p>Each portfolio as a point with Sharpe iso-lines. Same story, different tradeoffs.</p>
+              </div>
+            </div>
+            <img src="charts/four_return_vs_risk.png" alt="Return vs Risk" style="width:100%;border-radius:14px;">
+          </div>
+
+          <div class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Cumulative Net Total Return (log)</h3>
+                <p>2006 to 2026, quarterly rebalanced, financing and transaction cost applied.</p>
+              </div>
+            </div>
+            <img src="charts/four_cumulative.png" alt="Cumulative Returns" style="width:100%;border-radius:14px;">
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Drawdowns</h3>
+                <p>How badly each book bled in 2008, 2020, and 2022.</p>
+              </div>
+            </div>
+            <img src="charts/four_drawdowns.png" alt="Drawdowns" style="width:100%;border-radius:14px;">
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>Rolling 3-Year Sharpe</h3>
+                <p>How stable each book's risk-adjusted return has been.</p>
+              </div>
+            </div>
+            <img src="charts/four_rolling_sharpe.png" alt="Rolling Sharpe" style="width:100%;border-radius:14px;">
+          </div>
+
+          <div class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Sharpe By Regime (incl. 2022 spotlight)</h3>
+                <p>Same portfolios across subperiods, VIX regime, and rising-rate regime. 2022 is where the risk-parity thesis was tested hardest.</p>
+              </div>
+            </div>
+            <img src="charts/four_regime_heatmap.png" alt="Regime heatmap" style="width:100%;border-radius:14px;">
+          </div>
+
+          <div class="chart-card wide">
+            <div class="chart-head">
+              <div>
+                <h3>Current Weights</h3>
+                <p>Most recent rebalance. Note: "All Beta (lev 15%)" bars &gt; 100% are gross exposure.</p>
+              </div>
+            </div>
+            <img src="charts/four_current_weights.png" alt="Current weights" style="width:100%;border-radius:14px;">
+          </div>
+        </div>
+
+        <h3 style="margin-top:28px;margin-bottom:10px;">Summary stats</h3>
+        <div class="chart-card" style="padding:14px;overflow-x:auto;">
+          <table id="four-summary-table" style="width:100%;border-collapse:collapse;font-size:0.92rem;"></table>
+        </div>
+
+        <h3 style="margin-top:22px;margin-bottom:10px;">Campbell's book vs equal-risk-impact reference</h3>
+        <div class="chart-card" style="padding:14px;overflow-x:auto;">
+          <table id="four-campbell-delta" style="width:100%;border-collapse:collapse;font-size:0.92rem;"></table>
+        </div>
+
+        <h3 style="margin-top:22px;margin-bottom:10px;">Leverage capacity at 20% drawdown, z=2</h3>
+        <div class="chart-card" style="padding:14px;overflow-x:auto;">
+          <table id="four-lev-cap" style="width:100%;border-collapse:collapse;font-size:0.92rem;"></table>
+        </div>
+
+        <p style="color:var(--stone);font-size:0.85rem;margin-top:14px;">
+          Formula: &sigma;<sub>max</sub> = (r<sub>f</sub> + L) / (z &minus; S). L = 20% DD budget, z = 2.0 (fat-tail), r<sub>f</sub> = 2%.
+          A portfolio where realized vol &gt; &sigma;<sub>max</sub> is already over its leverage capacity; one where realized vol &lt; &sigma;<sub>max</sub> has unused leverage room.
+        </p>
+      </section>
+
+      <section class="panel section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Research</div>
+            <h2>Anchors And Next Steps</h2>
+          </div>
+          <p>
+            These are the references currently grounding the blog frame. The next pass can deepen the alpha-beta
+            allocation model with Rose series for correlations, priors, and uncertainty.
+          </p>
+        </div>
+        <ul class="source-list" id="source-list"></ul>
+        <ul class="note-list" id="note-list"></ul>
+      </section>
+    </main>
+
+    <footer class="panel footer">
+      <div id="build-stamp"></div>
+      <div><a href="all_beta_summary.pdf">Open summary PDF</a></div>
+    </footer>
+  </div>
+
+  <script src="analysis.js"></script>
+  <script src="four_portfolios_analysis.js"></script>
+  <script>
+    const analysis = window.ALL_BETA_ANALYSIS;
+    const pct = (value) => `${(value * 100).toFixed(2)}%`;
+    const bps = (value) => `${Math.round(value * 10000)} bps`;
+
+    function setHero() {
+      const equity = analysis.equity;
+      const macro = analysis.macro;
+      const metrics = [
+        { label: "Equity Beta Floor", value: pct(equity.asymptote_vol) },
+        { label: "90% Equity Benefit", value: `~${equity.n_for_90pct_of_available_diversification} stocks` },
+        { label: "90% Macro Benefit", value: `step ${macro.n_for_90pct_of_available_diversification}` },
+        { label: "Macro Mode", value: macro.mode === "rose_proxies" ? "Rose-backed" : "Fallback" },
+      ];
+      document.getElementById("hero-metrics").innerHTML = metrics.map((metric) => `
+        <div class="metric">
+          <span class="label">${metric.label}</span>
+          <span class="value">${metric.value}</span>
+        </div>
+      `).join("");
+      document.getElementById("hero-quote").textContent =
+        "Thirty stocks do not give you thirty bets. They give you one very clean one. " +
+        "If you want a second bet, you need a new source of risk.";
+    }
+
+    function setEquitySection() {
+      const equity = analysis.equity;
+      const cards = [
+        {
+          title: "Available Diversification",
+          body: `About 90% of the stylized single-name diversification benefit is gone by roughly ${equity.n_for_90pct_of_available_diversification} stocks.`,
+        },
+        {
+          title: "5 Bps Threshold",
+          body: `The marginal benefit of the next stock falls below 5 bps around N=${equity.marginal_threshold_hits["5"]}.`,
+        },
+        {
+          title: "Interpretation",
+          body: equity.interpretation,
+        },
+      ];
+      document.getElementById("equity-cards").innerHTML = cards.map((card) => `
+        <article class="card">
+          <h3>${card.title}</h3>
+          <p>${card.body}</p>
+        </article>
+      `).join("");
+      document.getElementById("equity-formula").textContent = `${equity.formula}  ->  lim N→∞ sigma_p = sigma * sqrt(rho)`;
+    }
+
+    function setMacroSection() {
+      const macro = analysis.macro;
+      const firstVol = macro.steps[0].ann_vol;
+      const lastVol = macro.steps[macro.steps.length - 1].ann_vol;
+      const cards = [
+        {
+          title: "Start",
+          body: `The proxy build begins with equity beta at ${pct(firstVol)} annualized volatility after equal-vol scaling.`,
+        },
+        {
+          title: "Finish",
+          body: `After the full sleeve set, annualized volatility falls to ${pct(lastVol)}.`,
+        },
+        {
+          title: "Interpretation",
+          body: macro.interpretation,
+        },
+      ];
+      document.getElementById("macro-cards").innerHTML = cards.map((card) => `
+        <article class="card">
+          <h3>${card.title}</h3>
+          <p>${card.body}</p>
+        </article>
+      `).join("");
+
+      document.getElementById("macro-sequence").innerHTML = macro.steps.map((step) => {
+        const reductionText = step.marginal_reduction == null ? "Baseline equity sleeve." : `Marginal reduction: ${bps(step.marginal_reduction)}.`;
+        return `<li><strong>Step ${step.step}:</strong> ${step.added_factor}. ${reductionText} Effective dimension: ${step.effective_dimension.toFixed(2)}.</li>`;
+      }).join("");
+    }
+
+    function setResearch() {
+      document.getElementById("source-list").innerHTML = analysis.sources.map((source) => `
+        <li><a href="${source.url}">${source.title}</a> - ${source.note}</li>
+      `).join("");
+      document.getElementById("note-list").innerHTML = analysis.notes.map((note) => `<li>${note}</li>`).join("");
+    }
+
+    function setFooter() {
+      const macro = analysis.macro;
+      const macroWindow = macro.start_date && macro.end_date
+        ? `Rose proxy window: ${macro.start_date} to ${macro.end_date}.`
+        : "Rose proxy window unavailable in fallback mode.";
+      document.getElementById("build-stamp").textContent =
+        `Generated ${analysis.generated_at_utc}. ${macroWindow}`;
+    }
+
+    function setFourPortfolios() {
+      const fp = window.FOUR_PORTFOLIOS;
+      if (!fp) { return; }
+      const fmtPct = (v) => (v == null || isNaN(v)) ? "--" : `${(v * 100).toFixed(2)}%`;
+      const fmtNum = (v, d = 2) => (v == null || isNaN(v)) ? "--" : Number(v).toFixed(d);
+
+      // Summary facts
+      const summary = fp.summary || [];
+      const campbell = summary.find(r => r.portfolio === "Campbell's Book") || {};
+      const allBeta = summary.find(r => r.portfolio === "All Beta (unlev)") || {};
+      const aw = summary.find(r => r.portfolio === "AW-synthetic") || {};
+      const facts = [
+        { label: "AW-synthetic Sharpe", value: fmtNum(aw.sharpe), p: `CAGR ${fmtPct(aw.cagr)} at vol ${fmtPct(aw.vol)}.` },
+        { label: "All Beta unlev Sharpe", value: fmtNum(allBeta.sharpe), p: `Simple 1/vol matches AW risk-adjusted return.` },
+        { label: "Campbell's Book Sharpe", value: fmtNum(campbell.sharpe), p: `Best realized of the five portfolios.` },
+        { label: "Backtest window", value: fp.returns_window ? `${fp.returns_window.start.slice(0,4)}-${fp.returns_window.end.slice(0,4)}` : "--", p: `Quarterly rebalance, walk-forward vol.` },
+      ];
+      document.getElementById("four-summary-facts").innerHTML = facts.map(f => `
+        <div class="fact"><span class="label">${f.label}</span><span class="value">${f.value}</span><p>${f.p}</p></div>
+      `).join("");
+
+      // Summary stats table
+      const cols = [
+        { k: "portfolio", label: "Portfolio" },
+        { k: "cagr", label: "CAGR", fmt: fmtPct },
+        { k: "vol", label: "Vol", fmt: fmtPct },
+        { k: "sharpe", label: "Sharpe", fmt: v => fmtNum(v, 3) },
+        { k: "sortino", label: "Sortino", fmt: v => fmtNum(v, 3) },
+        { k: "max_drawdown", label: "Max DD", fmt: fmtPct },
+        { k: "calmar", label: "Calmar", fmt: v => fmtNum(v, 2) },
+        { k: "worst_month", label: "Worst mo", fmt: fmtPct },
+        { k: "worst_quarter", label: "Worst qt", fmt: fmtPct },
+        { k: "avg_gross", label: "Avg gross", fmt: v => fmtNum(v, 2) + "x" },
+        { k: "turnover_per_year", label: "Turnover/yr", fmt: fmtPct },
+      ];
+      const thead = cols.map(c => `<th style="text-align:left;padding:8px;border-bottom:1px solid var(--line);">${c.label}</th>`).join("");
+      const tbody = summary.map(row => `<tr>${cols.map(c => {
+        const v = row[c.k];
+        const out = c.fmt ? c.fmt(v) : v;
+        return `<td style="padding:8px;border-bottom:1px solid var(--line);">${out}</td>`;
+      }).join("")}</tr>`).join("");
+      document.getElementById("four-summary-table").innerHTML = `<thead><tr>${thead}</tr></thead><tbody>${tbody}</tbody>`;
+
+      // Campbell delta table
+      const deltaRows = (fp.campbell_delta || []).filter(r => Math.abs(r.weight_delta) > 1e-4);
+      const dcols = [
+        { k: "ticker", label: "Ticker" },
+        { k: "weight_reference_erc", label: "ERC weight", fmt: fmtPct },
+        { k: "weight_campbell", label: "Campbell", fmt: fmtPct },
+        { k: "weight_delta", label: "Delta", fmt: fmtPct },
+        { k: "sleeve_vol_3y_ann", label: "Vol (3y)", fmt: fmtPct },
+        { k: "risk_contrib_delta", label: "Risk-contrib delta", fmt: v => fmtPct(v) },
+      ];
+      const dthead = dcols.map(c => `<th style="text-align:left;padding:8px;border-bottom:1px solid var(--line);">${c.label}</th>`).join("");
+      const dtbody = deltaRows.map(row => `<tr>${dcols.map(c => {
+        const v = row[c.k];
+        const out = c.fmt ? c.fmt(v) : v;
+        const style = c.k === "weight_delta" && Math.abs(v) > 0.1 ? "color:var(--rose);font-weight:600;" : "";
+        return `<td style="padding:8px;border-bottom:1px solid var(--line);${style}">${out}</td>`;
+      }).join("")}</tr>`).join("");
+      document.getElementById("four-campbell-delta").innerHTML = `<thead><tr>${dthead}</tr></thead><tbody>${dtbody}</tbody>`;
+
+      // Leverage capacity table
+      const lev = fp.leverage_capacity || {};
+      const levRows = Object.entries(lev).map(([name, info]) => ({ portfolio: name, ...info }));
+      const lcols = [
+        { k: "portfolio", label: "Portfolio" },
+        { k: "realized_vol", label: "Realized vol", fmt: fmtPct },
+        { k: "realized_sharpe", label: "Sharpe", fmt: v => fmtNum(v, 3) },
+        { k: "max_vol_20pct_dd_z2", label: "Max vol at 20% DD (z=2)", fmt: fmtPct },
+        { k: "already_exceeds_cap", label: "Over cap?", fmt: v => v ? "YES" : "no" },
+      ];
+      const lthead = lcols.map(c => `<th style="text-align:left;padding:8px;border-bottom:1px solid var(--line);">${c.label}</th>`).join("");
+      const ltbody = levRows.map(row => `<tr>${lcols.map(c => {
+        const v = row[c.k];
+        const out = c.fmt ? c.fmt(v) : v;
+        const style = c.k === "already_exceeds_cap" && v ? "color:var(--rose);font-weight:700;" : "";
+        return `<td style="padding:8px;border-bottom:1px solid var(--line);${style}">${out}</td>`;
+      }).join("")}</tr>`).join("");
+      document.getElementById("four-lev-cap").innerHTML = `<thead><tr>${lthead}</tr></thead><tbody>${ltbody}</tbody>`;
+    }
+
+    setHero();
+    setEquitySection();
+    setMacroSection();
+    setResearch();
+    setFooter();
+    setFourPortfolios();
+  </script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

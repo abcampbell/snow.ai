@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Risk Briefing</title>
+<style>
+  :root {
+    --bg: #0c0c0c; --p: #171717; --p2: #1d1d1d; --line: #323232; --soft: #262626;
+    --txt: #e6e6e6; --dim: #ababab; --muted: #7f7f7f;
+    --good: #7fd890; --bad: #ff8d8d; --amber: #ffc266; --blue: #8fc5ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--txt);
+               font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
+  .shell { padding: 22px 26px; max-width: 1500px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+  h2 { margin: 0 0 18px; font-size: 12px; color: var(--dim); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+  h3 { margin: 26px 0 10px; font-size: 14px; color: var(--blue); }
+  .stamp { display: flex; gap: 16px; padding: 8px 14px; background: #0a0a0a; border: 1px solid var(--line);
+           border-radius: 4px; margin-bottom: 18px; font-size: 11px; color: var(--dim);
+           font-variant-numeric: tabular-nums; }
+  .stamp .k { color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px; }
+  .stamp .v { color: var(--txt); font-weight: 600; }
+  .top { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 22px; }
+  .card { background: var(--p); border: 1px solid var(--line); padding: 14px; border-radius: 4px; }
+  .card .label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .card .value { font-size: 22px; font-weight: 700; line-height: 1.1; }
+  .card .delta { font-size: 11px; margin-top: 6px; color: var(--dim); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 7px 10px; font-size: 11px; color: var(--dim); text-transform: uppercase;
+       letter-spacing: 0.04em; border-bottom: 1px solid var(--line); background: #111; }
+  td { padding: 6px 10px; border-bottom: 1px solid var(--soft); font-size: 12px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .good { color: var(--good); }
+  .bad { color: var(--bad); }
+  .muted { color: var(--muted); }
+  .heavy { font-weight: 700; }
+  .summary-line { padding: 12px 14px; background: var(--p2); border-radius: 4px;
+                  font-size: 12px; color: var(--dim); line-height: 1.55; }
+  .summary-line strong { color: var(--txt); }
+  .barrow { display: grid; grid-template-columns: 180px 70px 1fr 70px 1fr 60px;
+            gap: 8px; align-items: center; padding: 4px 8px; font-size: 12px; }
+  .barrow:nth-child(even) { background: rgba(255,255,255,0.02); }
+  .barrow .label { color: var(--txt); font-weight: 500; }
+  .barrow .vlabel { color: var(--dim); text-align: right; font-variant-numeric: tabular-nums; }
+  .barrow .vlabel.heavy { color: var(--txt); font-weight: 700; }
+  .barrow .barcell { position: relative; height: 16px; background: rgba(255,255,255,0.03); border-radius: 2px; }
+  .barrow .barcell .zero { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.15); }
+  .barrow .bar { position: absolute; top: 2px; bottom: 2px; border-radius: 2px; }
+  .barrow .bar.pos { background: var(--good); }
+  .barrow .bar.neg { background: var(--bad); }
+  .barrow .bar.vol { background: var(--amber); }
+  .barhead { display: grid; grid-template-columns: 180px 70px 1fr 70px 1fr 60px;
+             gap: 8px; padding: 6px 8px; font-size: 10px; color: var(--dim);
+             text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <h1>Portfolio Risk Briefing</h1>
+  <h2>Vol-adjusted exposure decomposition</h2>
+
+  <div class="top">
+    <div class="card">
+      <div class="label">Positions</div>
+      <div class="value">125</div>
+      <div class="delta">stocks · futures · options</div>
+    </div>
+    <div class="card">
+      <div class="label">Net delta</div>
+      <div class="value">+338%</div>
+      <div class="delta">long bias, mostly low-vol rates</div>
+    </div>
+    <div class="card">
+      <div class="label">Portfolio vol (ann)</div>
+      <div class="value">13.8%</div>
+      <div class="delta">moderate, well-diversified</div>
+    </div>
+    <div class="card">
+      <div class="label">Daily VaR (1σ)</div>
+      <div class="value">0.87%</div>
+      <div class="delta">weekly 1σ ~1.91%</div>
+    </div>
+    <div class="card">
+      <div class="label">Top risk concentration</div>
+      <div class="value">Gold + Sugar</div>
+      <div class="delta">52% of portfolio variance combined</div>
+    </div>
+  </div>
+
+  <h3>Macro theme exposure — raw delta vs vol-adjusted</h3>
+  <div class="card" style="padding: 12px;">
+    <div class="barhead">
+      <div>Theme</div>
+      <div style="text-align: right;">Δ % NLV</div>
+      <div>Raw delta</div>
+      <div style="text-align: right;">σ × Δ</div>
+      <div>Vol-adjusted contribution</div>
+      <div style="text-align: right;">σ used</div>
+    </div>
+    <div class="barrow"><div class="label">Long Grains</div>
+      <div class="vlabel">+41%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 16%;"></div></div>
+      <div class="vlabel heavy">+8.2%</div>
+      <div class="barcell"><div class="bar vol" style="width: 95%;"></div></div>
+      <div class="vlabel">20%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Softs (sugar)</div>
+      <div class="vlabel">+33%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 13%;"></div></div>
+      <div class="vlabel heavy">+6.9%</div>
+      <div class="barcell"><div class="bar vol" style="width: 80%;"></div></div>
+      <div class="vlabel">21%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Tech / Cyber</div>
+      <div class="vlabel">+10%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 4%;"></div></div>
+      <div class="vlabel">+4.6%</div>
+      <div class="barcell"><div class="bar vol" style="width: 53%;"></div></div>
+      <div class="vlabel">46%</div>
+    </div>
+    <div class="barrow"><div class="label">Other (small caps)</div>
+      <div class="vlabel">+15%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 6%;"></div></div>
+      <div class="vlabel">+4.5%</div>
+      <div class="barcell"><div class="bar vol" style="width: 52%;"></div></div>
+      <div class="vlabel">~30%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Gold</div>
+      <div class="vlabel">+21%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 9%;"></div></div>
+      <div class="vlabel">+4.0%</div>
+      <div class="barcell"><div class="bar vol" style="width: 46%;"></div></div>
+      <div class="vlabel">19%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Crude</div>
+      <div class="vlabel">+7.3%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 3%;"></div></div>
+      <div class="vlabel">+2.7%</div>
+      <div class="barcell"><div class="bar vol" style="width: 31%;"></div></div>
+      <div class="vlabel">37%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Duration</div>
+      <div class="vlabel">+227%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 90%;"></div></div>
+      <div class="vlabel">+2.3%</div>
+      <div class="barcell"><div class="bar vol" style="width: 26%;"></div></div>
+      <div class="vlabel">1%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Gas / Power</div>
+      <div class="vlabel">+6.6%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 3%;"></div></div>
+      <div class="vlabel">+2.3%</div>
+      <div class="barcell"><div class="bar vol" style="width: 27%;"></div></div>
+      <div class="vlabel">~35%</div>
+    </div>
+    <div class="barrow"><div class="label">Short Credit + Equity</div>
+      <div class="vlabel">−22%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar neg" style="right: 92%; width: 9%;"></div></div>
+      <div class="vlabel">+2.2%</div>
+      <div class="barcell"><div class="bar vol" style="width: 26%;"></div></div>
+      <div class="vlabel">10%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Metals / Materials</div>
+      <div class="vlabel">+4.8%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 2%;"></div></div>
+      <div class="vlabel">+1.9%</div>
+      <div class="barcell"><div class="bar vol" style="width: 22%;"></div></div>
+      <div class="vlabel">40%</div>
+    </div>
+    <div class="barrow"><div class="label">FX (cable puts)</div>
+      <div class="vlabel">−14.7%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar neg" style="right: 92%; width: 6%;"></div></div>
+      <div class="vlabel">+1.0%</div>
+      <div class="barcell"><div class="bar vol" style="width: 12%;"></div></div>
+      <div class="vlabel">7%</div>
+    </div>
+    <div class="barrow"><div class="label">Long Livestock</div>
+      <div class="vlabel">+5.6%</div>
+      <div class="barcell"><div class="zero" style="left: 8%;"></div><div class="bar pos" style="left: 8%; width: 2%;"></div></div>
+      <div class="vlabel">+0.9%</div>
+      <div class="barcell"><div class="bar vol" style="width: 10%;"></div></div>
+      <div class="vlabel">16%</div>
+    </div>
+  </div>
+
+  <div class="summary-line" style="margin-top: 14px;">
+    <strong>How to read:</strong>
+    <span style="color: var(--good);">Green</span> bars are raw delta (% NLV) — P&L impact on a 1% spot move.
+    <span style="color: var(--amber);">Amber</span> bars are vol-adjusted exposure (|Δ| × annualized σ_underlying) — what each leg actually contributes to portfolio standalone vol.<br><br>
+    The book's vol concentration sits in the <strong>options sleeve</strong> (Grains 8.2%, Softs 6.9%, Tech/Cyber 4.6%) rather than the rates sleeve, despite Duration carrying the largest nominal delta. Standalone vol contributions sum to ~41% NLV; diversified portfolio vol is 13.8%, a 3× reduction from negative cross-asset correlations.
+  </div>
+
+  <div class="grid2" style="margin-top: 18px;">
+    <div>
+      <h3>Theme contribution to portfolio variance</h3>
+      <div class="card" style="padding: 0;">
+        <table>
+          <thead><tr><th>Theme</th><th class="num">Δ % NLV</th><th class="num">% Variance</th></tr></thead>
+          <tbody>
+            <tr><td class="heavy">Gold</td><td class="num good">+21.3%</td><td class="num heavy">26.7%</td></tr>
+            <tr><td class="heavy">Sugar</td><td class="num good">+33.0%</td><td class="num heavy">25.5%</td></tr>
+            <tr><td>Other (small caps)</td><td class="num good">+5.5%</td><td class="num">8.2%</td></tr>
+            <tr><td>Corn</td><td class="num good">+23.1%</td><td class="num">6.9%</td></tr>
+            <tr><td>Power</td><td class="num good">+2.3%</td><td class="num">6.0%</td></tr>
+            <tr><td>Crude</td><td class="num good">+6.0%</td><td class="num">4.0%</td></tr>
+            <tr><td>Materials</td><td class="num good">+2.2%</td><td class="num">3.7%</td></tr>
+            <tr><td>Cyber</td><td class="num good">+5.3%</td><td class="num">3.5%</td></tr>
+            <tr><td>Lasers</td><td class="num good">+2.7%</td><td class="num">3.1%</td></tr>
+            <tr><td>Wheat</td><td class="num good">+6.1%</td><td class="num">3.0%</td></tr>
+            <tr><td>Duration</td><td class="num good">+223.2%</td><td class="num">2.6%</td></tr>
+            <tr><td>Copper</td><td class="num good">+1.5%</td><td class="num">2.1%</td></tr>
+            <tr><td>Livestock</td><td class="num good">+5.6%</td><td class="num">1.2%</td></tr>
+            <tr><td>FX (cable)</td><td class="num bad">−14.7%</td><td class="num">0.5%</td></tr>
+            <tr><td>Credit Short</td><td class="num bad">−17.9%</td><td class="num">−1.1%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h3>Greek totals</h3>
+      <div class="card" style="padding: 0;">
+        <table>
+          <thead><tr><th>Metric</th><th class="num">% NLV</th><th>Read</th></tr></thead>
+          <tbody>
+            <tr><td>Net Delta</td><td class="num good">+338%</td><td class="muted">long bias, low-vol rates dominant</td></tr>
+            <tr><td>Gross Delta</td><td class="num">+692%</td><td class="muted">leverage incl. offsets</td></tr>
+            <tr><td>Net Gamma (per 1% spot)</td><td class="num good">+17.8%</td><td>convex on big moves either way</td></tr>
+            <tr><td>Net Vega (per 1pp IV)</td><td class="num good">+0.9%</td><td class="muted">slightly long volatility</td></tr>
+            <tr><td>Theta (daily)</td><td class="num bad">−0.08%</td><td class="muted">option-carry cost</td></tr>
+            <tr><td>Portfolio Vol (ann)</td><td class="num">13.8%</td><td>delta-normal estimate</td></tr>
+            <tr><td>Daily VaR (1σ)</td><td class="num">0.87%</td><td class="muted">weekly 1σ 1.91%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h3>Convex bets — full reprice asymmetry</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead>
+        <tr><th>Underlying</th><th>Theme</th><th class="num">Δ % NLV</th>
+            <th class="num">If +30%</th><th class="num">If −30%</th>
+            <th class="num">Asymmetry</th><th>Profile</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sugar</td><td>Softs</td><td class="num good">+33.0%</td><td class="num good">+24.5%</td><td class="num good">+ 4.7%</td><td class="num">5.2x</td><td class="good">Convex long</td></tr>
+        <tr><td>KMI</td><td>Gas / Pipes</td><td class="num good">+ 2.1%</td><td class="num good">+ 1.6%</td><td class="num good">+ 0.4%</td><td class="num">4.4x</td><td class="good">Convex long</td></tr>
+        <tr><td>Wheat</td><td>Grains</td><td class="num good">+ 6.1%</td><td class="num good">+ 3.0%</td><td class="num bad">− 0.7%</td><td class="num">4.4x</td><td class="good">Convex long</td></tr>
+        <tr><td>DOW</td><td>Chemicals</td><td class="num good">+ 0.9%</td><td class="num good">+ 0.4%</td><td class="num bad">− 0.1%</td><td class="num">3.6x</td><td class="good">Convex long</td></tr>
+        <tr><td>GBS (5y bund)</td><td>Duration</td><td class="num good">+10.0%</td><td class="num good">+10.1%</td><td class="num good">+ 4.1%</td><td class="num">2.5x</td><td class="good">Convex long</td></tr>
+        <tr><td>Corn</td><td>Grains</td><td class="num good">+21.0%</td><td class="num good">+21.4%</td><td class="num good">+ 8.8%</td><td class="num">2.4x</td><td class="good">Convex long</td></tr>
+        <tr><td>Cattle</td><td>Livestock</td><td class="num good">+ 5.6%</td><td class="num good">+ 7.0%</td><td class="num good">+ 3.6%</td><td class="num">1.9x</td><td class="muted">Asymmetric long</td></tr>
+        <tr><td>GLD</td><td>Gold</td><td class="num good">+17.1%</td><td class="num good">+ 6.3%</td><td class="num bad">− 4.0%</td><td class="num">1.6x</td><td class="muted">Linear long</td></tr>
+        <tr><td>HYG</td><td>Credit Short</td><td class="num bad">−14.3%</td><td class="num good">+16.4%</td><td class="num good">+25.0%</td><td class="num">0.7x</td><td class="bad">Convex short</td></tr>
+        <tr><td>BKLN</td><td>Credit Short</td><td class="num bad">− 3.5%</td><td class="num bad">− 0.1%</td><td class="num good">+ 2.0%</td><td class="num">0.1x</td><td class="bad">Convex short</td></tr>
+        <tr><td>GBP (cable)</td><td>FX</td><td class="num bad">−14.5%</td><td class="num good">+12.0%</td><td class="num good">+20.7%</td><td class="num">0.6x</td><td class="muted">Defensive (USD-strength hedge)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Scenario P&L — full reprice with greeks</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead><tr><th>Scenario</th><th class="num">Total</th>
+                  <th class="num">Δ</th><th class="num">Γ</th><th class="num">V</th><th class="num">Θ</th></tr></thead>
+      <tbody>
+        <tr><td>Recession + persistent inflation</td>
+            <td class="num good heavy">+43.0%</td>
+            <td class="num">+27%</td><td class="num">+12%</td><td class="num">+ 7%</td><td class="num">− 2%</td></tr>
+        <tr><td>Ag spike — corn +30%, wheat +25%</td>
+            <td class="num good heavy">+37.4%</td>
+            <td class="num">+17%</td><td class="num">+21%</td><td class="num">+ 3%</td><td class="num">− 3%</td></tr>
+        <tr><td>Credit blowout — HYG −10%, SPY −20%</td>
+            <td class="num good heavy">+26.0%</td>
+            <td class="num">+11%</td><td class="num">+ 2%</td><td class="num">+14%</td><td class="num">− 1%</td></tr>
+        <tr><td>Gold melt-up — gold +25%, silver +40%</td>
+            <td class="num good">+ 8.1%</td>
+            <td class="num">+ 5%</td><td class="num">+ 1%</td><td class="num">+ 5%</td><td class="num">− 3%</td></tr>
+        <tr><td>Risk-on rip — disinflation</td>
+            <td class="num bad heavy">−13.9%</td>
+            <td class="num">−10%</td><td class="num">+ 2%</td><td class="num">− 5%</td><td class="num">− 2%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid2" style="margin-top: 22px;">
+    <div class="summary-line">
+      <strong>Book character:</strong>
+      Moderate-vol (13.8% ann) book structurally long stagflation and dislocation. Risk concentration sits in the options sleeve (sugar + grains + gold combined ≈ 60% of portfolio variance). Rates exposure carries large nominal delta but small vol contribution. Net gamma +17.8% per 1% move provides convex profile.
+    </div>
+    <div class="summary-line">
+      <strong>Scenario asymmetry:</strong>
+      Four of five named macro scenarios print positive — recession+inflation +43%, ag spike +37%, credit blowout +26%, gold melt-up +8%. The single losing scenario (risk-on disinflation) caps at −14% NLV. The book is positioned for dislocation; benign risk-on environments are the primary drawdown mode.
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "map_code": "gpt.beta.optimized.portfolios.20260419.map",
+  "notebook_code": "gpt.beta.optimized.portfolios.20260419.notebook",
+  "notebook_url": "https://rose.ai/dashboard/gpt.beta.optimized.portfolios.20260419.notebook",
+  "portfolio_columns": [
+    {
+      "label": "SPY baseline",
+      "key": "spy_baseline",
+      "weight_column": "weight_spy_baseline",
+      "color": "#143642",
+      "kind": "baseline"
+    },
+    {
+      "label": "Constructed benchmark 1x",
+      "key": "constructed_1x",
+      "weight_column": "weight_constructed_1x",
+      "color": "#2e6f95",
+      "kind": "constructed"
+    },
+    {
+      "label": "Constructed benchmark 2x",
+      "key": "constructed_2x",
+      "weight_column": "weight_constructed_2x",
+      "color": "#5b8fb9",
+      "kind": "constructed"
+    },
+    {
+      "label": "Constructed benchmark 3x",
+      "key": "constructed_3x",
+      "weight_column": "weight_constructed_3x",
+      "color": "#c97c1a",
+      "kind": "constructed"
+    },
+    {
+      "label": "Retirement-cap optimizer",
+      "key": "retirement_cap",
+      "weight_column": "weight_retirement_cap",
+      "color": "#7b6d8d",
+      "kind": "accessible"
+    },
+    {
+      "label": "SPY + funds optimizer",
+      "key": "spy_plus_funds",
+      "weight_column": "weight_spy_plus_funds",
+      "color": "#4d908e",
+      "kind": "accessible"
+    },
+    {
+      "label": "Funds-only optimizer",
+      "key": "funds_only",
+      "weight_column": "weight_funds_only",
+      "color": "#a23e48",
+      "kind": "accessible"
+    }
+  ],
+  "portfolio_level_codes": {
+    "SPY baseline": "gpt.beta.optimized.spy_baseline.portfolio.return.logic.20260419",
+    "Constructed benchmark 1x": "gpt.beta.optimized.constructed_1x.portfolio.return.logic.20260419",
+    "Constructed benchmark 2x": "gpt.beta.optimized.constructed_2x.portfolio.return.logic.20260419",
+    "Constructed benchmark 3x": "gpt.beta.optimized.constructed_3x.portfolio.return.logic.20260419",
+    "Retirement-cap optimizer": "gpt.beta.optimized.retirement_cap.portfolio.return.logic.20260419",
+    "SPY + funds optimizer": "gpt.beta.optimized.spy_plus_funds.portfolio.return.logic.20260419",
+    "Funds-only optimizer": "gpt.beta.optimized.funds_only.portfolio.return.logic.20260419"
+  },
+  "portfolio_returns_logic_codes": {
+    "SPY baseline": "gpt.beta.optimized.spy_baseline.portfolio.returns.logic.20260419",
+    "Constructed benchmark 1x": "gpt.beta.optimized.constructed_1x.portfolio.returns.logic.20260419",
+    "Constructed benchmark 2x": "gpt.beta.optimized.constructed_2x.portfolio.returns.logic.20260419",
+    "Constructed benchmark 3x": "gpt.beta.optimized.constructed_3x.portfolio.returns.logic.20260419",
+    "Retirement-cap optimizer": "gpt.beta.optimized.retirement_cap.portfolio.returns.logic.20260419",
+    "SPY + funds optimizer": "gpt.beta.optimized.spy_plus_funds.portfolio.returns.logic.20260419",
+    "Funds-only optimizer": "gpt.beta.optimized.funds_only.portfolio.returns.logic.20260419"
+  },
+  "flagship_fund_tickers": [
+    "ALLW",
+    "RPAR",
+    "UPAR",
+    "NTSX",
+    "RSSB",
+    "REMIX"
+  ],
+  "notebook_push_result": {
+    "status_code": 200,
+    "text": "Success"
+  },
+  "updated_at": "2026-04-20T00:12:27.738143+00:00"
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oil Hormuz · Dec Broken Butterfly v002 · 2026-04-26</title>
+<style>
+  :root {
+    --bg: #0c0c0c; --p: #171717; --p2: #1d1d1d; --line: #323232; --soft: #262626;
+    --txt: #e6e6e6; --dim: #ababab; --muted: #7f7f7f;
+    --good: #7fd890; --bad: #ff8d8d; --amber: #ffc266; --blue: #8fc5ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--txt);
+               font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
+  .shell { padding: 18px 22px; max-width: 1500px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
+  h2 { margin: 0 0 14px; font-size: 13px; color: var(--dim); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+  h3 { margin: 24px 0 10px; font-size: 14px; color: var(--blue); }
+  .stamp { display: flex; gap: 16px; padding: 8px 14px; background: #0a0a0a; border: 1px solid var(--line);
+           border-radius: 4px; margin-bottom: 14px; font-size: 11px; color: var(--dim);
+           font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+  .stamp .k { color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px; }
+  .stamp .v { color: var(--txt); font-weight: 600; }
+  .stamp .v.amber { color: var(--amber); }
+  .top { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 18px; }
+  .card { background: var(--p); border: 1px solid var(--line); padding: 14px; border-radius: 4px; }
+  .card.warn { border-left: 3px solid var(--amber); }
+  .card.good { border-left: 3px solid var(--good); }
+  .card.bad { border-left: 3px solid var(--bad); }
+  .card .label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .card .value { font-size: 22px; font-weight: 700; line-height: 1.1; }
+  .card .delta { font-size: 11px; margin-top: 6px; color: var(--dim); }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 7px 10px; font-size: 11px; color: var(--dim); text-transform: uppercase;
+       letter-spacing: 0.04em; border-bottom: 1px solid var(--line); background: #111; }
+  td { padding: 6px 10px; border-bottom: 1px solid var(--soft); font-size: 12px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .good { color: var(--good); }
+  .bad { color: var(--bad); }
+  .muted { color: var(--muted); }
+  .summary-line { padding: 12px 14px; background: var(--p2); border-radius: 4px; margin-top: 18px;
+                  font-size: 12px; color: var(--dim); line-height: 1.55; }
+  .summary-line strong { color: var(--txt); }
+  .summary-line.warn { border-left: 3px solid var(--amber); }
+  .summary-line.good { border-left: 3px solid var(--good); }
+  .summary-line.bad { border-left: 3px solid var(--bad); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  /* payoff bars */
+  .payoff-row { display: grid; grid-template-columns: 60px 60px 1fr 80px; gap: 8px;
+                align-items: center; padding: 4px 0; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .payoff-row .ft { text-align: right; color: var(--dim); }
+  .payoff-row .pl { text-align: right; }
+  .payoff-row .bar-cell { position: relative; height: 16px; background: rgba(255,255,255,0.03); border-radius: 2px; }
+  .payoff-row .bar-zero { position: absolute; left: 25%; top: 0; bottom: 0; width: 1px; background: var(--soft); }
+  .payoff-row .bar { position: absolute; top: 2px; bottom: 2px; border-radius: 2px; }
+  .payoff-row .bar.pos { left: 25%; background: var(--good); }
+  .payoff-row .bar.neg { right: 75%; background: var(--bad); }
+  .payoff-row .pct { color: var(--dim); }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <h1>Oil — Dec Broken Butterfly Sizer</h1>
+  <h2>+90C / -105C / -130C / +140C MCL Dec 2026 (Nov 17 expiry) · Hormuz catalyst trade</h2>
+
+  <div class="stamp">
+    <div><span class="k">Generated:</span><span class="v">2026-04-26</span></div>
+    <div><span class="k">Version:</span><span class="v">v002 (broken fly)</span></div>
+    <div><span class="k">Spot:</span><span class="v">CL front $96.44 · Dec ~$80</span></div>
+    <div><span class="k">IV:</span><span class="v amber">OVX 75.8%</span></div>
+    <div><span class="k">NLV ref:</span><span class="v">redacted (% only)</span></div>
+    <div><span class="k">File:</span><span class="v amber">oil_hormuz.20260426.v002.html</span></div>
+  </div>
+
+  <div class="top">
+    <div class="card good">
+      <div class="label">Max Gain (F = $105-$130)</div>
+      <div class="value good">+1.14%</div>
+      <div class="delta">$1,282 / NLV — body of the fly</div>
+    </div>
+    <div class="card bad">
+      <div class="label">Max Loss (F &lt; $90)</div>
+      <div class="value bad">−0.19%</div>
+      <div class="delta">$218 debit — defined</div>
+    </div>
+    <div class="card good">
+      <div class="label">R:R</div>
+      <div class="value">5.9x</div>
+      <div class="delta">IBKR shows 6.45x (mid prices tighter)</div>
+    </div>
+    <div class="card warn">
+      <div class="label">Tail Hedge (F &gt; $140)</div>
+      <div class="value">+0.25%</div>
+      <div class="delta">long $140C catches the right rip</div>
+    </div>
+    <div class="card">
+      <div class="label">DTE</div>
+      <div class="value">205d</div>
+      <div class="delta">Nov 17 2026 — covers Hormuz timeline</div>
+    </div>
+  </div>
+
+  <div class="summary-line good">
+    <strong>Why this is better than the simple call spread I showed earlier:</strong>
+    The broken fly captures the same Hormuz thesis (modest spike to $105-$130) at <strong>half the cost</strong> of a $105/$130 call spread (0.19% NLV vs 0.4% NLV), <strong>and</strong> gives you upside on the right tail above $140 (the simple spread caps at the upper strike). The trade-off: max gain is slightly lower ($1,282 vs $1,800 on the simple spread), and the upside zone is narrower ($105-$130 vs anything above $130).<br><br>
+    <strong>What this trade is paying you for:</strong> the bet that Hormuz disrupts but doesn't fully close → WTI spikes from $80 (Dec contract) to $105-$130, lands in the body, you keep the full premium. The market is paying 76% IV for tail risk; you're collecting that fear premium by being short the "moderate spike" body and only long the wings.
+  </div>
+
+  <h3>Structure (4 legs, MCL Dec 2026 / Nov 17 expiry)</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead>
+        <tr><th>Leg</th><th class="num">K</th><th class="num">Qty</th><th class="num">Side</th><th class="num">IV (skew)</th><th class="num">Premium</th><th class="num">Leg cost ($)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Long lower wing</td><td class="num">$90</td><td class="num">+1</td><td class="num good">BUY C</td><td class="num">79%</td><td class="num">14.97</td><td class="num bad">−$1,497</td></tr>
+        <tr><td>Short body lower</td><td class="num">$105</td><td class="num">−1</td><td class="num bad">SELL C</td><td class="num">83%</td><td class="num">12.13</td><td class="num good">+$1,213</td></tr>
+        <tr><td>Short body upper</td><td class="num">$130</td><td class="num">−1</td><td class="num bad">SELL C</td><td class="num">91%</td><td class="num">9.39</td><td class="num good">+$939</td></tr>
+        <tr><td>Long upper wing</td><td class="num">$140</td><td class="num">+1</td><td class="num good">BUY C</td><td class="num">94%</td><td class="num">8.72</td><td class="num bad">−$872</td></tr>
+        <tr style="background: var(--p2); font-weight: 600;">
+          <td colspan="6" style="text-align: right; padding-right: 10px;">NET DEBIT</td>
+          <td class="num bad">−$218 (0.19% NLV)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Payoff at expiry (terminal Dec WTI)</h3>
+  <div class="card" style="padding: 14px;">
+    <div style="font-size: 11px; color: var(--muted); margin-bottom: 8px;">Bar shows P&L vs zero (left = loss, right = gain).</div>
+    <div class="payoff-row" style="font-weight: 600; color: var(--dim);">
+      <div class="ft">F_T</div><div></div><div></div><div class="pl">% NLV</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$60</div><div></div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar neg" style="left: calc(25% - 6%); width: 6%;"></div></div>
+      <div class="pl bad">−0.19%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$70</div><div></div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar neg" style="left: calc(25% - 6%); width: 6%;"></div></div>
+      <div class="pl bad">−0.19%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$85</div><div></div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar neg" style="left: calc(25% - 6%); width: 6%;"></div></div>
+      <div class="pl bad">−0.19%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$90</div><div></div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar neg" style="left: calc(25% - 6%); width: 6%;"></div></div>
+      <div class="pl bad">−0.19%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$95</div><div></div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 8%;"></div></div>
+      <div class="pl good">+0.25%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$100</div><div></div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 22%;"></div></div>
+      <div class="pl good">+0.70%</div>
+    </div>
+    <div class="payoff-row" style="background: rgba(127, 216, 144, 0.08); padding: 6px 4px; border-radius: 3px;">
+      <div class="ft">$105</div><div style="color: var(--good); font-weight: 600;">★ MAX</div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 35%;"></div></div>
+      <div class="pl good">+1.14%</div>
+    </div>
+    <div class="payoff-row" style="background: rgba(127, 216, 144, 0.08); padding: 6px 4px; border-radius: 3px;">
+      <div class="ft">$110</div><div style="color: var(--good); font-weight: 600;">★ MAX</div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 35%;"></div></div>
+      <div class="pl good">+1.14%</div>
+    </div>
+    <div class="payoff-row" style="background: rgba(127, 216, 144, 0.08); padding: 6px 4px; border-radius: 3px;">
+      <div class="ft">$120</div><div style="color: var(--good); font-weight: 600;">★ MAX</div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 35%;"></div></div>
+      <div class="pl good">+1.14%</div>
+    </div>
+    <div class="payoff-row" style="background: rgba(127, 216, 144, 0.08); padding: 6px 4px; border-radius: 3px;">
+      <div class="ft">$130</div><div style="color: var(--good); font-weight: 600;">★ MAX</div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 35%;"></div></div>
+      <div class="pl good">+1.14%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$135</div><div></div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 22%;"></div></div>
+      <div class="pl good">+0.70%</div>
+    </div>
+    <div class="payoff-row" style="border-top: 1px dashed var(--soft);"><div class="ft">$140</div><div style="color: var(--amber); font-weight: 600;">tail</div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 8%;"></div></div>
+      <div class="pl good">+0.25%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$150</div><div style="color: var(--amber); font-weight: 600;">tail</div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 8%;"></div></div>
+      <div class="pl good">+0.25%</div>
+    </div>
+    <div class="payoff-row"><div class="ft">$160</div><div style="color: var(--amber); font-weight: 600;">tail</div>
+      <div class="bar-cell"><div class="bar-zero"></div><div class="bar pos" style="width: 8%;"></div></div>
+      <div class="pl good">+0.25%</div>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top: 18px;">
+    <div class="summary-line good">
+      <strong>What you're betting on (the body $105-$130):</strong>
+      <ul style="margin: 6px 0 0; padding-left: 20px; line-height: 1.7;">
+        <li>Hormuz disruption short of full closure → WTI rallies $30-$50</li>
+        <li>Iran-Israel proxy escalation that elevates risk premium without a complete supply shutoff</li>
+        <li>OPEC+ cuts amplifying current geopolitical fear → $110-$125 zone</li>
+        <li>OVX deflates (76% → 50%) but spot rallies → IV crush helps you (you're net short vol on the body)</li>
+      </ul>
+    </div>
+    <div class="summary-line bad">
+      <strong>What kills this trade (max loss zones):</strong>
+      <ul style="margin: 6px 0 0; padding-left: 20px; line-height: 1.7;">
+        <li>F &lt; $90: Hormuz fears unwind, Saudi-Iran detente, OPEC+ raises supply → Dec WTI drifts lower</li>
+        <li>F drifts in $90-$95: small move up not enough — partial loss</li>
+        <li>OVX explodes higher (90%+) → you're short premium on body, mark-to-market hurts before expiry</li>
+        <li>Time decay path-dependence: if WTI sits at $80 most of the period and rallies in last 30 days, the body strikes may not have time to capture full value</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Sizing — how many flies for what risk?</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead>
+        <tr><th>Quantity</th><th class="num">Total Debit</th><th class="num">Cost % NLV</th><th class="num">Max Gain</th><th class="num">Gain % NLV</th><th class="num">Tail (F &gt; $140)</th><th>Read</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1×</td><td class="num">$218</td><td class="num">0.19%</td><td class="num good">$1,282</td><td class="num good">1.14%</td><td class="num">$282</td><td class="muted">starter, defined risk</td></tr>
+        <tr style="background: rgba(255, 194, 102, 0.08);"><td>2×</td><td class="num">$436</td><td class="num">0.39%</td><td class="num good">$2,564</td><td class="num good">2.28%</td><td class="num">$564</td><td>★ goldilocks given OVX 76%</td></tr>
+        <tr><td>3×</td><td class="num">$654</td><td class="num">0.58%</td><td class="num good">$3,846</td><td class="num good">3.43%</td><td class="num">$846</td><td class="muted">aggressive, sizable on Hormuz</td></tr>
+        <tr><td>5×</td><td class="num">$1,090</td><td class="num">0.97%</td><td class="num good">$6,410</td><td class="num good">5.71%</td><td class="num">$1,410</td><td class="muted">conviction sizing</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="summary-line warn">
+    <strong>My recommendation (with knobs to turn):</strong>
+    <strong>2× the broken fly</strong> = 0.39% NLV at risk for up to 2.28% NLV gain on a moderate Hormuz spike. That's roughly the same capital at risk as my prior simple-call-spread suggestion (0.41% NLV) but with much better R:R and a defined upside-tail kicker.<br><br>
+    <strong>Don't go bigger than 3× unless you're really sure on the catalyst</strong> — you're already long ~84% NLV in ag complex calls bleeding theta and stuck SONIA. Adding 1% NLV in oil bleed across a 7-month wait is plausible; adding 3-5% NLV starts to compound the wait-for-a-catalyst risk.<br><br>
+    <strong>On the existing Jul $85/$95:</strong> close it. It's worth ~90% of its $1,000 max value at $94 spot. Roll the proceeds into the new Dec broken fly. Net effect: you replace a fully-cooked near-dated spread with a longer-dated structure that still has convexity to spend.
+  </div>
+
+  <details style="background: var(--p2); border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; margin-top: 14px;">
+    <summary style="cursor: pointer; font-weight: 600; color: var(--blue);">Comparison: Dec broken fly vs. simple call spreads</summary>
+    <div style="margin-top: 10px;">
+      <table>
+        <thead>
+          <tr><th>Structure</th><th class="num">Cost % NLV</th><th class="num">Max Gain % NLV</th><th class="num">R:R</th><th>Sweet spot</th><th>Right tail</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aug $105/$130 spread</td><td class="num">0.41%</td><td class="num">1.8%</td><td class="num">4.5x</td><td>F &gt; $130</td><td class="muted">capped at $130</td></tr>
+          <tr><td>Aug $95/$130 spread</td><td class="num">0.69%</td><td class="num">2.4%</td><td class="num">3.5x</td><td>F &gt; $130</td><td class="muted">capped at $130</td></tr>
+          <tr style="background: rgba(255, 194, 102, 0.08);"><td>★ Dec broken fly +90/-105/-130/+140</td><td class="num">0.19%</td><td class="num">1.14%</td><td class="num">5.9x</td><td>F = $105-$130</td><td>+0.25% above $140 (long wing catches it)</td></tr>
+        </tbody>
+      </table>
+      <p style="color: var(--dim); margin-top: 10px; line-height: 1.55;">
+        The broken fly trades upside ceiling (capped at $1,282 vs $1,800 on the simple spread) for: (a) <strong>half the cost</strong>, (b) <strong>different sweet spot</strong> ($105-$130 modest spike vs $130+ extreme rally), (c) <strong>tail kicker</strong> if WTI really rips. If your view is "Hormuz disrupts but doesn't fully shutter," the broken fly is the right structure. If your view is "Hormuz fully closes, $150+ guaranteed," the simple spread is the right structure.
+      </p>
+    </div>
+  </details>
+
+  <div style="margin-top: 30px; padding: 12px 0; color: var(--muted); font-size: 11px; border-top: 1px solid var(--soft);">
+    Source: <code>~/snow.ai/all.beta.20260419/oil_broken_fly_pricer.py</code> · CL=F + ^OVX via yfinance · Black-76 closed-form with OTM skew · Dec 2026 future estimated at front − $16 backwardation. IBKR analyzer cross-checked: max gain $1,272 vs ours $1,282 (✓), max loss $197 vs ours $218 (~10% diff from skew estimate).
+  </div>
+
+</div>
+</body>
+</html>

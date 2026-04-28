@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oil Hormuz Spread Sizer v001 · 2026-04-26</title>
+<style>
+  :root {
+    --bg: #0c0c0c; --p: #171717; --p2: #1d1d1d; --line: #323232; --soft: #262626;
+    --txt: #e6e6e6; --dim: #ababab; --muted: #7f7f7f;
+    --good: #7fd890; --bad: #ff8d8d; --amber: #ffc266; --blue: #8fc5ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--txt);
+               font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
+  .shell { padding: 18px 22px; max-width: 1500px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
+  h2 { margin: 0 0 14px; font-size: 13px; color: var(--dim); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+  h3 { margin: 24px 0 10px; font-size: 14px; color: var(--blue); }
+  .stamp { display: flex; gap: 16px; padding: 8px 14px; background: #0a0a0a; border: 1px solid var(--line);
+           border-radius: 4px; margin-bottom: 14px; font-size: 11px; color: var(--dim);
+           font-variant-numeric: tabular-nums; }
+  .stamp .k { color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px; }
+  .stamp .v { color: var(--txt); font-weight: 600; }
+  .stamp .v.amber { color: var(--amber); }
+  .top { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .card { background: var(--p); border: 1px solid var(--line); padding: 14px; border-radius: 4px; }
+  .card.warn { border-left: 3px solid var(--amber); }
+  .card .label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .card .value { font-size: 22px; font-weight: 700; line-height: 1.1; }
+  .card .delta { font-size: 11px; margin-top: 6px; color: var(--dim); }
+  .card .delta.up { color: var(--good); }
+  .card .delta.down { color: var(--bad); }
+  .card .delta.warn { color: var(--amber); }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 7px 10px; font-size: 11px; color: var(--dim); text-transform: uppercase;
+       letter-spacing: 0.04em; border-bottom: 1px solid var(--line); background: #111; }
+  td { padding: 6px 10px; border-bottom: 1px solid var(--soft); font-size: 12px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .good { color: var(--good); }
+  .bad { color: var(--bad); }
+  .muted { color: var(--muted); }
+  .pick { background: rgba(255, 194, 102, 0.10); }
+  .pick td { border-top: 1px solid var(--amber); border-bottom: 1px solid var(--amber); font-weight: 600; }
+  .summary-line { padding: 12px 14px; background: var(--p2); border-radius: 4px; margin-top: 18px;
+                  font-size: 12px; color: var(--dim); line-height: 1.55; }
+  .summary-line strong { color: var(--txt); }
+  .summary-line.warn { border-left: 3px solid var(--amber); }
+  .summary-line.bad { border-left: 3px solid var(--bad); }
+  details { background: var(--p2); border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; margin-top: 14px; }
+  summary { cursor: pointer; font-weight: 600; color: var(--blue); }
+  details code { background: #111; padding: 2px 6px; border-radius: 3px; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <h1>Oil — Hormuz Catalyst Spread Sizer</h1>
+  <h2>Black-76 fair-value pricing on MCL call spreads, OVX as ATM IV, OTM skew applied</h2>
+
+  <div class="stamp">
+    <div><span class="k">Generated:</span><span class="v">2026-04-26</span></div>
+    <div><span class="k">Version:</span><span class="v">v001</span></div>
+    <div><span class="k">Spot source:</span><span class="v">CL=F via yfinance</span></div>
+    <div><span class="k">IV source:</span><span class="v">^OVX (CBOE oil vol)</span></div>
+    <div><span class="k">NLV ref:</span><span class="v">redacted</span></div>
+    <div><span class="k">File:</span><span class="v amber">oil_hormuz.20260426.v001.html</span></div>
+  </div>
+
+  <div class="top">
+    <div class="card">
+      <div class="label">WTI front (CL=F)</div>
+      <div class="value">$94.40</div>
+      <div class="delta">used as F in Black-76</div>
+    </div>
+    <div class="card warn">
+      <div class="label">OVX (CBOE oil vol)</div>
+      <div class="value" style="color: var(--amber);">75.8%</div>
+      <div class="delta warn">already pricing supply-shock — buying calls is expensive</div>
+    </div>
+    <div class="card">
+      <div class="label">Risk-free rate</div>
+      <div class="value">4.5%</div>
+      <div class="delta">used in B76 discount</div>
+    </div>
+    <div class="card">
+      <div class="label">OTM skew</div>
+      <div class="value">+5pp / 20% OTM</div>
+      <div class="delta">capped at 1.5× ATM</div>
+    </div>
+  </div>
+
+  <div class="summary-line warn">
+    <strong>Headline:</strong> OVX is at <strong>75.8%</strong>. Normal oil IV is 25-35%; war-time peaks ~50-60%; <strong>76% is "Hormuz already being priced"</strong>. Adding oil call spreads now means buying expensive IV — only pays if WTI <em>actually rips</em> (not just drifts higher). If Hormuz holds and OVX deflates, IV crush dominates the trade.
+  </div>
+
+  <h3>MCL Call Premiums by expiry / strike (Black-76 fair value)</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead>
+        <tr><th>Expiry</th><th class="num">K</th><th class="num">IV</th><th class="num">C premium</th><th class="num">Delta</th><th class="num">$ per contract (mult=100)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Jul 2026</td><td class="num">85</td><td class="num">76%</td><td class="num">15.39</td><td class="num">0.691</td><td class="num">$1,539</td></tr>
+        <tr><td>Jul 2026</td><td class="num">95</td><td class="num">76%</td><td class="num">10.33</td><td class="num">0.544</td><td class="num">$1,033</td></tr>
+        <tr><td>Jul 2026</td><td class="num">105</td><td class="num">79%</td><td class="num">7.05</td><td class="num">0.412</td><td class="num">$705</td></tr>
+        <tr><td>Jul 2026</td><td class="num">115</td><td class="num">81%</td><td class="num">4.86</td><td class="num">0.307</td><td class="num">$486</td></tr>
+        <tr><td>Jul 2026</td><td class="num">130</td><td class="num">85%</td><td class="num">2.88</td><td class="num">0.198</td><td class="num">$288</td></tr>
+        <tr style="border-top: 1px solid var(--line);"><td>Aug 2026</td><td class="num">85</td><td class="num">76%</td><td class="num">17.78</td><td class="num">0.675</td><td class="num">$1,778</td></tr>
+        <tr><td>Aug 2026</td><td class="num">95</td><td class="num">76%</td><td class="num">13.02</td><td class="num">0.558</td><td class="num">$1,302</td></tr>
+        <tr><td>Aug 2026</td><td class="num">105</td><td class="num">79%</td><td class="num">9.85</td><td class="num">0.455</td><td class="num">$985</td></tr>
+        <tr><td>Aug 2026</td><td class="num">115</td><td class="num">81%</td><td class="num">7.56</td><td class="num">0.369</td><td class="num">$756</td></tr>
+        <tr><td>Aug 2026</td><td class="num">130</td><td class="num">85%</td><td class="num">5.26</td><td class="num">0.273</td><td class="num">$526</td></tr>
+        <tr style="border-top: 1px solid var(--line);"><td>Sep 2026</td><td class="num">85</td><td class="num">76%</td><td class="num">19.86</td><td class="num">0.668</td><td class="num">$1,986</td></tr>
+        <tr><td>Sep 2026</td><td class="num">95</td><td class="num">76%</td><td class="num">15.34</td><td class="num">0.570</td><td class="num">$1,534</td></tr>
+        <tr><td>Sep 2026</td><td class="num">105</td><td class="num">79%</td><td class="num">12.29</td><td class="num">0.483</td><td class="num">$1,229</td></tr>
+        <tr><td>Sep 2026</td><td class="num">115</td><td class="num">81%</td><td class="num">10.01</td><td class="num">0.411</td><td class="num">$1,001</td></tr>
+        <tr><td>Sep 2026</td><td class="num">130</td><td class="num">85%</td><td class="num">7.61</td><td class="num">0.326</td><td class="num">$761</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Spread debit, max gain, R:R (% NLV)</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead>
+        <tr><th>Expiry</th><th>Spread</th><th class="num">Debit % NLV</th><th class="num">Max Gain % NLV</th><th class="num">R:R</th><th class="num">Δ exposure % NLV</th><th>Read</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Jul 2026</td><td>$85/$95</td><td class="num">0.45%</td><td class="num">0.4%</td><td class="num">1.0x</td><td class="num">+1.2%</td><td class="muted">your existing — fully cooked at $94 spot</td></tr>
+        <tr><td>Jul 2026</td><td>$95/$115</td><td class="num">0.49%</td><td class="num">1.3%</td><td class="num">2.7x</td><td class="num">+2.0%</td><td class="muted">moderate upside, near-dated</td></tr>
+        <tr><td>Jul 2026</td><td>$95/$130</td><td class="num">0.66%</td><td class="num">2.5%</td><td class="num">3.7x</td><td class="num">+2.9%</td><td>wide, real upside</td></tr>
+        <tr><td>Jul 2026</td><td>$105/$130</td><td class="num">0.37%</td><td class="num">1.9%</td><td class="num">5.0x</td><td class="num">+1.8%</td><td class="muted">cheap binary, but Jul expiry tight on time</td></tr>
+        <tr style="border-top: 1px solid var(--line);"><td>Aug 2026</td><td>$95/$115</td><td class="num">0.49%</td><td class="num">1.3%</td><td class="num">2.7x</td><td class="num">+1.6%</td><td class="muted">moderate upside</td></tr>
+        <tr><td>Aug 2026</td><td>$95/$130</td><td class="num">0.69%</td><td class="num">2.4%</td><td class="num">3.5x</td><td class="num">+2.4%</td><td>wide, balanced</td></tr>
+        <tr><td>Aug 2026</td><td>$100/$120</td><td class="num">0.41%</td><td class="num">1.4%</td><td class="num">3.3x</td><td class="num">+1.4%</td><td class="muted">narrow, quick payoff</td></tr>
+        <tr class="pick"><td>Aug 2026</td><td>$105/$130</td><td class="num">0.41%</td><td class="num">1.8%</td><td class="num">4.5x</td><td class="num">+1.5%</td><td>★ best R:R for the binary</td></tr>
+        <tr style="border-top: 1px solid var(--line);"><td>Sep 2026</td><td>$95/$115</td><td class="num">0.47%</td><td class="num">1.3%</td><td class="num">2.8x</td><td class="num">+1.3%</td><td class="muted">more time, less leverage</td></tr>
+        <tr><td>Sep 2026</td><td>$95/$130</td><td class="num">0.69%</td><td class="num">2.4%</td><td class="num">3.5x</td><td class="num">+2.0%</td><td class="muted">wide + time</td></tr>
+        <tr><td>Sep 2026</td><td>$100/$130</td><td class="num">0.54%</td><td class="num">2.1%</td><td class="num">3.9x</td><td class="num">+1.7%</td><td class="muted">balanced</td></tr>
+        <tr><td>Sep 2026</td><td>$105/$130</td><td class="num">0.42%</td><td class="num">1.8%</td><td class="num">4.3x</td><td class="num">+1.3%</td><td class="muted">cheap + extra time</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="color: var(--amber);">Recommendation</h3>
+  <div class="summary-line warn">
+    <strong>Pick: Aug 2026 $105/$130 call spread × 1-2 contracts.</strong><br>
+    Cost ~0.4-0.8% NLV. Pays 4.5x if WTI gets to $130+ (40% rally on Hormuz closure scenario). Defined risk = premium paid. Crucially: gets you LONGER expiry than your current Jul $85/$95 (more time for the catalyst), and HIGHER strike (where IV crush is less of a kill if Hormuz holds).<br><br>
+    <strong>Mechanics on the existing position:</strong> Your Jul $85/$95 is already worth ~$950 of its $1,000 max value (spot $94 vs $95 strike). <strong>Close it</strong> — collect 90%+ of max gain — and use the proceeds toward the new Aug $105/$130 spread. Net cost change: roughly zero, but exposure moves from "fully-realized 1x" to "potential 4.5x on Hormuz."<br><br>
+    <strong>What this is NOT:</strong> a hedge for SONIA. Oil long and SONIA long correlate -0.19 — modest natural offset. But adding a binary catalyst on top of a leveraged binary catalyst is two coin flips, not a balanced book. Size accordingly.
+  </div>
+
+  <div class="summary-line bad">
+    <strong>What I would NOT do at OVX 75.8%:</strong>
+    <ul style="margin: 6px 0 0; padding-left: 20px; line-height: 1.7;">
+      <li><strong>Buy ATM calls outright</strong> — paying 76% IV for a position that only wins on a real spike. IV crush from 76% → 35% on a "Hormuz holds" outcome destroys 50%+ of premium even if WTI is unchanged.</li>
+      <li><strong>Sell oil vol</strong> — tempting at 76% IV, but if Hormuz actually closes you have no defense. Wrong side of the convexity.</li>
+      <li><strong>Buy CL (full) futures</strong> — 1 contract = $94k notional, ~85% NLV. Wrong sizing, no defined risk.</li>
+      <li><strong>Roll into deeper OTM grain calls</strong> as a "supply shock" hedge — your ag book already has $33k+ of theta-bleeding optionality there. Different supply chain, different catalyst, no reason to double up.</li>
+    </ul>
+  </div>
+
+  <details>
+    <summary>How the pricer works</summary>
+    <p style="color: var(--dim); line-height: 1.6;">
+      Pull <code>CL=F</code> spot and <code>^OVX</code> from yfinance.<br>
+      OVX is the CBOE Oil ETF Volatility Index — implied vol on USO ATM options, ~ proxy for WTI ATM IV.<br>
+      Apply OTM skew: ATM IV + 5pp per 20% OTM, capped at 1.5× ATM. (Crude options exhibit positive call skew during supply-shock fear regimes.)<br>
+      Run Black-76 against each strike: <code>C = e^(-rT) · [F·N(d1) - K·N(d2)]</code>.<br>
+      Spread debit = lo-strike call mid − hi-strike call mid. Max gain = (K_hi − K_lo) − debit. Multiplier = 100 (MCL micro contract).<br>
+      All %NLV figures use $112,251 reference NLV; replace as needed.
+    </p>
+  </details>
+
+  <details>
+    <summary>Caveats — why this isn't a quote</summary>
+    <p style="color: var(--dim); line-height: 1.6;">
+      Black-76 fair value, not market mid. Real bid/ask at IB will likely have 5-10% spread on these strikes. NYMEX market data subscription would give exact quotes; we don't have one on this machine, hence the model approach.<br>
+      OVX is USO-derived, not direct CL=F IV. Front-month WTI vol has historically been ~5-10pp above OVX. So if anything, this pricer slightly UNDERESTIMATES premium — real spreads cost more than shown.<br>
+      OTM skew approximation is generic; actual NYMEX vol surface in fear regimes can be steeper. Treat the % NLV numbers as ±20% accuracy.
+    </p>
+  </details>
+
+  <div style="margin-top: 30px; padding: 12px 0; color: var(--muted); font-size: 11px; border-top: 1px solid var(--soft);">
+    Source: <code>~/snow.ai/all.beta.20260419/mcl_spread_pricer.py</code> · CL=F + ^OVX via yfinance · Black-76 closed-form · 2026-04-26
+  </div>
+
+</div>
+</body>
+</html>

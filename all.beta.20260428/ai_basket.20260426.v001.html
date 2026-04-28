@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Infrastructure Basket — Returns since 2025-12-15</title>
+<style>
+  :root {
+    --bg: #0c0c0c; --p: #171717; --p2: #1d1d1d; --line: #323232; --soft: #262626;
+    --txt: #e6e6e6; --dim: #ababab; --muted: #7f7f7f;
+    --good: #7fd890; --bad: #ff8d8d; --amber: #ffc266; --blue: #8fc5ff; --purple: #b189ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--txt);
+               font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
+  .shell { padding: 22px 26px; max-width: 1500px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+  h2 { margin: 0 0 18px; font-size: 12px; color: var(--dim); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+  h3 { margin: 26px 0 10px; font-size: 14px; color: var(--blue); }
+  .top { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 22px; }
+  .card { background: var(--p); border: 1px solid var(--line); padding: 14px; border-radius: 4px; }
+  .card .label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .card .value { font-size: 22px; font-weight: 700; line-height: 1.1; }
+  .card .delta { font-size: 11px; margin-top: 6px; color: var(--dim); }
+  .card.hero { border-left: 3px solid var(--good); }
+  .card.hero .value { color: var(--good); font-size: 30px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 9px 10px; font-size: 11px; color: var(--dim); text-transform: uppercase;
+       letter-spacing: 0.04em; border-bottom: 1px solid var(--line); background: #111; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--soft); font-size: 12px; vertical-align: top; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.ticker { font-weight: 700; font-size: 13px; color: var(--txt); }
+  td.company { color: var(--txt); }
+  td.company .muted.small { color: var(--muted); font-size: 11px; margin-top: 2px; }
+  td.company .rationale { color: var(--dim); font-size: 11px; margin-top: 4px; font-style: italic; }
+  td.pct { font-weight: 700; font-size: 13px; }
+  .theme-pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px;
+                 background: rgba(143, 197, 255, 0.10); color: var(--blue); border: 1px solid rgba(143, 197, 255, 0.20); white-space: nowrap; }
+  .barcell { position: relative; width: 220px; }
+  .barcell .zero { position: absolute; top: 8px; bottom: 8px; left: 50%; width: 1px; background: rgba(255,255,255,0.15); }
+  .bar { position: absolute; top: 8px; bottom: 8px; border-radius: 2px; }
+  .bar.pos { left: 50%; background: var(--good); }
+  .bar.neg { right: 50%; background: var(--bad); }
+  .heavy { font-weight: 700; }
+  .muted { color: var(--muted); }
+  .good { color: var(--good); }
+  .bad { color: var(--bad); }
+  .footer { margin-top: 32px; padding: 14px 0; color: var(--muted); font-size: 11px;
+            border-top: 1px solid var(--soft); text-align: center; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <h1>AI Infrastructure Basket</h1>
+  <h2>Net returns of constituents since 2025-12-15</h2>
+
+  <div class="top">
+    <div class="card hero">
+      <div class="label">Weighted basket return</div>
+      <div class="value">+54.4%</div>
+      <div class="delta">since 2025-12-15</div>
+    </div>
+    <div class="card">
+      <div class="label">Constituents</div>
+      <div class="value">30</div>
+      <div class="delta">across 4 themes</div>
+    </div>
+    <div class="card">
+      <div class="label">Period</div>
+      <div class="value">133d</div>
+      <div class="delta">2025-12-15 → 2026-04-27</div>
+    </div>
+    <div class="card">
+      <div class="label">Source</div>
+      <div class="value" style="font-size: 14px;">snow.ai.infrastructure.basket.return</div>
+      <div class="delta">Rose logic, prices via yfinance</div>
+    </div>
+  </div>
+
+  <h3>By theme — weighted return</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead><tr><th>Theme</th><th class="num">N</th><th class="num">Total weight</th><th class="num">Weighted return</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">10</td>
+          <td class="num">44.0%</td>
+          <td class="num heavy" style="color: var(--good);">+59.8%</td>
+        </tr>
+        <tr>
+          <td class="theme-cell"><span class="theme-pill">Manufacturing</span></td>
+          <td class="num">4</td>
+          <td class="num">7.0%</td>
+          <td class="num heavy" style="color: var(--good);">+55.5%</td>
+        </tr>
+        <tr>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">7</td>
+          <td class="num">18.5%</td>
+          <td class="num heavy" style="color: var(--good);">+52.1%</td>
+        </tr>
+        <tr>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">9</td>
+          <td class="num">25.0%</td>
+          <td class="num heavy" style="color: var(--good);">+46.2%</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <h3>Constituents — sorted by % change since 2025-12-15</h3>
+  <div class="card" style="padding: 0;">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 80px;">Ticker</th>
+          <th>Company / Description</th>
+          <th>Theme</th>
+          <th class="num">Price</th>
+          <th class="num">Weight</th>
+          <th class="num" style="width: 90px;">% chg</th>
+          <th style="width: 220px;">Bar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">WDC</td>
+          <td class="company">Western Digital Corporation<div class="muted small">Storage (NVMe / Enterprise SSD) · Dataset staging, checkpoints</div><div class="rationale">Oversupplied NAND, cyclical</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">404.00</td>
+          <td class="num">1.0%</td>
+          <td class="num pct" style="color: var(--good);">+134.9%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 120%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">000660.KS</td>
+          <td class="company">SK hynix Inc.<div class="muted small">High-Bandwidth Memory (HBM / DRAM) · Feeds accelerators, bandwidth bottleneck</div><div class="rationale">Abundant, price-elastic, not gating</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">1,286,000</td>
+          <td class="num">1.0%</td>
+          <td class="num pct" style="color: var(--good);">+132.6%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 120%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">2308.TW (Delta)</td>
+          <td class="company">Delta Electronics, Inc.<div class="muted small">Cooling & Thermal Management · Liquid cooling, heat rejection</div><div class="rationale">Assembly constrained but not fundamentally scarce</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">2,050.00</td>
+          <td class="num">2.0%</td>
+          <td class="num pct" style="color: var(--good);">+122.3%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 120%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">INTC</td>
+          <td class="company">Intel Corporation<div class="muted small">CPUs (Host / Control Plane) · Orchestration, I/O, preprocessing</div><div class="rationale">HBM supply tighter than GPUs; capex + yield limited</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">82.54</td>
+          <td class="num">6.0%</td>
+          <td class="num pct" style="color: var(--good);">+120.0%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 120%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">MU</td>
+          <td class="company">Micron Technology, Inc.<div class="muted small">High-Bandwidth Memory (HBM / DRAM) · Feeds accelerators, bandwidth bottleneck</div><div class="rationale">Abundant, price-elastic, not gating</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">496.72</td>
+          <td class="num">1.0%</td>
+          <td class="num pct" style="color: var(--good);">+109.3%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 109.31765541637431%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">STX</td>
+          <td class="company">Seagate Technology Holdings plc<div class="muted small">Storage (NVMe / Enterprise SSD) · Dataset staging, checkpoints</div><div class="rationale">Oversupplied NAND, cyclical</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">586.25</td>
+          <td class="num">1.0%</td>
+          <td class="num pct" style="color: var(--good);">+106.2%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 106.18159251770875%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">ASX</td>
+          <td class="company">ASE Technology Holding Co., Ltd.<div class="muted small">Advanced Packaging / Interposers · Chiplets, HBM integration</div><div class="rationale">CoWoS-style bottleneck; hardest to scale quickly</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">32.00</td>
+          <td class="num">3.0%</td>
+          <td class="num pct" style="color: var(--good);">+105.4%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 105.39152860527152%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">VRT</td>
+          <td class="company">Vertiv Holdings Co<div class="muted small">Power Infrastructure (UPS / PDU) · Electricity delivery & redundancy</div><div class="rationale">Liquid cooling capacity scaling slower than demand</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">323.46</td>
+          <td class="num">3.5%</td>
+          <td class="num pct" style="color: var(--good);">+100.0%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 100.03521661378669%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">MRVL</td>
+          <td class="company">Marvell Technology, Inc.<div class="muted small">Interconnect Silicon (SerDes / CXL) · Chip-to-chip bandwidth</div><div class="rationale">Design wins + qualification cycles matter</div></td>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">164.31</td>
+          <td class="num">3.0%</td>
+          <td class="num pct" style="color: var(--good);">+95.2%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 95.24155572139628%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">COHR</td>
+          <td class="company">Coherent Corp.<div class="muted small">Optical Transceivers · Rack-to-rack / DC-to-DC links</div><div class="rationale">Competitive, but still strained</div></td>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">336.09</td>
+          <td class="num">2.0%</td>
+          <td class="num pct" style="color: var(--good);">+88.3%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 88.33847132839712%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">AMKR</td>
+          <td class="company">Amkor Technology, Inc.<div class="muted small">Advanced Packaging / Interposers · Chiplets, HBM integration</div><div class="rationale">CoWoS-style bottleneck; hardest to scale quickly</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">78.10</td>
+          <td class="num">3.0%</td>
+          <td class="num pct" style="color: var(--good);">+78.2%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 78.20463675352049%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">AMD</td>
+          <td class="company">Advanced Micro Devices, Inc.<div class="muted small">CPUs (Host / Control Plane) · Orchestration, I/O, preprocessing</div><div class="rationale">HBM supply tighter than GPUs; capex + yield limited</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">347.81</td>
+          <td class="num">6.0%</td>
+          <td class="num pct" style="color: var(--good);">+67.6%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 67.55467506049524%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">DELL</td>
+          <td class="company">Dell Technologies Inc.<div class="muted small">AI Servers / Rack-Scale Systems · GPU server integration</div><div class="rationale">Transformers & switchgear are real-world bottlenecks</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">216.09</td>
+          <td class="num">5.0%</td>
+          <td class="num pct" style="color: var(--good);">+66.8%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 66.8124414650008%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">GFS</td>
+          <td class="company">GLOBALFOUNDRIES Inc.<div class="muted small">Semiconductor Foundry · Fabrication of AI silicon</div><div class="rationale">Capacity expanding, but slow & geopolitical</div></td>
+          <td class="theme-cell"><span class="theme-pill">Manufacturing</span></td>
+          <td class="num">61.79</td>
+          <td class="num">2.5%</td>
+          <td class="num pct" style="color: var(--good);">+65.9%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 65.92373289622067%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">LRCX</td>
+          <td class="company">Lam Research Corporation<div class="muted small">Semiconductor Equipment · Enables node scaling</div><div class="rationale">Responds to capex cycles, not scarce now</div></td>
+          <td class="theme-cell"><span class="theme-pill">Manufacturing</span></td>
+          <td class="num">267.78</td>
+          <td class="num">1.0%</td>
+          <td class="num pct" style="color: var(--good);">+63.2%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 63.17761197915699%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">AMAT</td>
+          <td class="company">Applied Materials, Inc.<div class="muted small">Semiconductor Equipment · Enables node scaling</div><div class="rationale">Responds to capex cycles, not scarce now</div></td>
+          <td class="theme-cell"><span class="theme-pill">Manufacturing</span></td>
+          <td class="num">417.04</td>
+          <td class="num">1.0%</td>
+          <td class="num pct" style="color: var(--good);">+59.8%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 59.819398123951316%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">FN</td>
+          <td class="company">Fabrinet<div class="muted small">Optical Transceivers · Rack-to-rack / DC-to-DC links</div><div class="rationale">Competitive, but still strained</div></td>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">720.19</td>
+          <td class="num">2.0%</td>
+          <td class="num pct" style="color: var(--good);">+53.2%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 53.22539876499965%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">ALAB</td>
+          <td class="company">Astera Labs, Inc.<div class="muted small">Interconnect Silicon (SerDes / CXL) · Chip-to-chip bandwidth</div><div class="rationale">Design wins + qualification cycles matter</div></td>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">212.84</td>
+          <td class="num">3.0%</td>
+          <td class="num pct" style="color: var(--good);">+48.2%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 48.155360512515166%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">EQIX</td>
+          <td class="company">Equinix, Inc.<div class="muted small">Data Center RE / Shell · Physical buildings & campuses</div><div class="rationale">Capital intensive but ultimately elastic</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">1,108.76</td>
+          <td class="num">1.5%</td>
+          <td class="num pct" style="color: var(--good);">+46.4%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 46.416826898897014%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">ANET</td>
+          <td class="company">Arista Networks, Inc.<div class="muted small">Ethernet / AI Switches · Scale-out cluster connectivity</div><div class="rationale">Yield + precision manufacturing limits</div></td>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">176.91</td>
+          <td class="num">3.5%</td>
+          <td class="num pct" style="color: var(--good);">+40.5%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 40.52744818478104%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">TSM</td>
+          <td class="company">Taiwan Semiconductor Manufacturing Company Limited<div class="muted small">Semiconductor Foundry · Fabrication of AI silicon</div><div class="rationale">Capacity expanding, but slow & geopolitical</div></td>
+          <td class="theme-cell"><span class="theme-pill">Manufacturing</span></td>
+          <td class="num">402.46</td>
+          <td class="num">2.5%</td>
+          <td class="num pct" style="color: var(--good);">+40.3%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 40.263445538269835%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">CRDO</td>
+          <td class="company">Credo Technology Group Holding Ltd<div class="muted small">Active Electrical Cables · Short-reach high-speed links</div><div class="rationale">Manufacturing scalable</div></td>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">195.04</td>
+          <td class="num">1.5%</td>
+          <td class="num pct" style="color: var(--good);">+37.3%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 37.33276117352784%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">DLR</td>
+          <td class="company">Digital Realty Trust, Inc.<div class="muted small">Data Center RE / Shell · Physical buildings & campuses</div><div class="rationale">Capital intensive but ultimately elastic</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">200.00</td>
+          <td class="num">1.5%</td>
+          <td class="num pct" style="color: var(--good);">+31.7%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 31.7036771764738%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">ETN</td>
+          <td class="company">Eaton Corporation plc<div class="muted small">Power Infrastructure (UPS / PDU) · Electricity delivery & redundancy</div><div class="rationale">Liquid cooling capacity scaling slower than demand</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">423.92</td>
+          <td class="num">3.5%</td>
+          <td class="num pct" style="color: var(--good);">+27.6%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 27.619791258983728%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">AVGO</td>
+          <td class="company">Broadcom Inc.<div class="muted small">AI Accelerators (GPU / ASIC) · Model training & inference FLOPs</div><div class="rationale">Still the binding constraint; long lead times, ecosystem lock-in</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">422.76</td>
+          <td class="num">11.0%</td>
+          <td class="num pct" style="color: var(--good);">+24.9%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 24.91022612871623%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">HPE</td>
+          <td class="company">Hewlett Packard Enterprise Company<div class="muted small">Racks & Enclosures · High-density physical housing</div><div class="rationale">Some lead times, but scalable</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">28.16</td>
+          <td class="num">1.5%</td>
+          <td class="num pct" style="color: var(--good);">+18.6%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 18.553148831760915%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">NVDA</td>
+          <td class="company">NVIDIA Corporation<div class="muted small">AI Accelerators (GPU / ASIC) · Model training & inference FLOPs</div><div class="rationale">Still the binding constraint; long lead times, ecosystem lock-in</div></td>
+          <td class="theme-cell"><span class="theme-pill">Compute</span></td>
+          <td class="num">208.27</td>
+          <td class="num">11.0%</td>
+          <td class="num pct" style="color: var(--good);">+18.1%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 18.14696215158409%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">CSCO</td>
+          <td class="company">Cisco Systems, Inc.<div class="muted small">Ethernet / AI Switches · Scale-out cluster connectivity</div><div class="rationale">Yield + precision manufacturing limits</div></td>
+          <td class="theme-cell"><span class="theme-pill">Networking</span></td>
+          <td class="num">89.01</td>
+          <td class="num">3.5%</td>
+          <td class="num pct" style="color: var(--good);">+15.0%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 14.979157985779178%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">SCHN.PA</td>
+          <td class="company">Schneider Electric S.E.<div class="muted small">Racks & Enclosures · High-density physical housing</div><div class="rationale">Some lead times, but scalable</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">276.00</td>
+          <td class="num">1.5%</td>
+          <td class="num pct" style="color: var(--good);">+13.7%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar pos" style="width: 13.720644198796306%;"></div></td>
+        </tr>
+        <tr>
+          <td class="ticker">SMCI</td>
+          <td class="company">Super Micro Computer, Inc.<div class="muted small">AI Servers / Rack-Scale Systems · GPU server integration</div><div class="rationale">Transformers & switchgear are real-world bottlenecks</div></td>
+          <td class="theme-cell"><span class="theme-pill">Data Center</span></td>
+          <td class="num">29.08</td>
+          <td class="num">5.0%</td>
+          <td class="num pct" style="color: var(--bad);">-7.3%</td>
+          <td class="barcell"><div class="zero"></div><div class="bar neg" style="width: 7.29997084559627%;"></div></td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    Basket logic: <code>snow.ai.infrastructure.basket.return</code> →
+    <code>ai.infrastructure.basket.20251214.snow.001.map:portfolioreturns(returns, stock.weight)</code> ·
+    Prices via yfinance · Period 2025-12-15 to 2026-04-27 · Generated 2026-04-26
+  </div>
+
+</div>
+</body>
+</html>
