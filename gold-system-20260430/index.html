@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gold Signal System v3 - 2026-04-30</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <style>
   :root{--bg:#0d1117;--card:#161b22;--card2:#1c2128;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#f59e0b;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7;--white:#e5e5e5}
   *{margin:0;padding:0;box-sizing:border-box}
@@ -325,7 +326,8 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   ], { plugins: { legend: { display: false } } });
 }).catch(err => {
   document.getElementById('content').innerHTML =
-    '<div style="padding:24px 32px;color:#ef4444">data.json failed to load: ' + err + '</div>';
+    '<div style="padding:24px 32px;color:#ef4444">Render error: ' + (err && err.message ? err.message : err) + '</div>';
+  console.error(err);
 });
 </script>
 </body>
