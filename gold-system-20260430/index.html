@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gold Signal System v3 - 2026-04-30</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <style>
   :root{--bg:#0d1117;--card:#161b22;--card2:#1c2128;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#f59e0b;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7;--white:#e5e5e5}
   *{margin:0;padding:0;box-sizing:border-box}
@@ -87,8 +86,11 @@ fetch('data.json').then(r=>r.json()).then(D=>{
 
   const sys = D.system, gold = D.gold_bh;
 
-  // helper: format a date->value series into a chart dataset
-  const seriesToXY = obj => Object.entries(obj || {}).map(([k,v])=>({x:k, y:v})).sort((a,b)=>a.x.localeCompare(b.x));
+  // helper: format a date->value series into Chart.js data points using ms timestamps on x
+  const seriesToXY = obj => Object.entries(obj || {})
+    .map(([k,v]) => ({x: Date.parse(k), y: v}))
+    .filter(p => !isNaN(p.x) && p.y != null)
+    .sort((a,b) => a.x - b.x);
 
   // YoY computed client-side from sys_pnl (cumulative PnL) and gold_pnl (cumulative gold)
   function annualPctChange(cumObj){
@@ -252,33 +254,46 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   // ---- charts ----
   const palette = {sys:'#ffffff', gold:'#f59e0b', dd_sys:'#ef4444', dd_gold:'#a855f7', sharpe:'#22c55e', signal:'#3b82f6'};
 
+  // Linear x-axis with ms timestamps; no date adapter needed.
+  // Ticks formatted as years using a manual callback.
+  const yearTickCallback = function(value){
+    const d = new Date(value);
+    return isNaN(d) ? '' : d.getUTCFullYear();
+  };
   function makeLine(canvasId, datasets, opts={}){
     const ctx = document.getElementById(canvasId);
     if(!ctx) return;
-    new Chart(ctx, {
-      type: 'line',
-      data: { datasets },
-      options: Object.assign({
-        animation: false,
-        responsive: true,
-        maintainAspectRatio: false,
-        parsing: false,
-        plugins: { legend: { display: true, position: 'top', labels: { boxWidth: 14, font: { size: 10 } } } },
-        scales: {
-          x: { type: 'time', time: { unit: 'year' }, grid: { color: '#1c2128' }, ticks: { font: { size: 10 } } },
-          y: { grid: { color: '#1c2128' }, ticks: { font: { size: 10 } } },
-        },
-        elements: { point: { radius: 0 }, line: { borderWidth: 1.4, tension: 0.05 } },
-      }, opts),
-    });
+    try {
+      new Chart(ctx, {
+        type: 'line',
+        data: { datasets },
+        options: Object.assign({
+          animation: false,
+          responsive: true,
+          maintainAspectRatio: false,
+          parsing: false,
+          plugins: { legend: { display: true, position: 'top', labels: { boxWidth: 14, font: { size: 10 } } } },
+          scales: {
+            x: {
+              type: 'linear',
+              grid: { color: '#1c2128' },
+              ticks: { font: { size: 10 }, callback: yearTickCallback, maxTicksLimit: 12, autoSkip: true },
+            },
+            y: { grid: { color: '#1c2128' }, ticks: { font: { size: 10 } } },
+          },
+          elements: { point: { radius: 0 }, line: { borderWidth: 1.4, tension: 0.05 } },
+        }, opts),
+      });
+    } catch (e) {
+      console.error('chart', canvasId, 'failed:', e);
+    }
   }
 
-  // 1. Cumulative PnL
+  // 1. Cumulative PnL — normalize both to start at 1.0 so the multiplier reads directly
   const sysPnl = seriesToXY(D.series.sys_pnl);
-  const goldPnl = seriesToXY(D.series.gold_pnl).map(p => ({x: p.x, y: p.y + 1}));
-  // Normalize sys_pnl so that t0 = 1 (compounding scale)
-  const sysFirst = sysPnl.length ? sysPnl[0].y : 0;
-  const sysNorm = sysPnl.map(p => ({x: p.x, y: 1 + (p.y - sysFirst)}));
+  const goldPnl = seriesToXY(D.series.gold_pnl);
+  const sysFirst = sysPnl.length ? sysPnl[0].y : 1;
+  const sysNorm = sysPnl.map(p => ({x: p.x, y: p.y / sysFirst}));
   const goldFirst = goldPnl.length ? goldPnl[0].y : 1;
   const goldNorm = goldPnl.map(p => ({x: p.x, y: p.y / goldFirst}));
   makeLine('mainPnl', [
