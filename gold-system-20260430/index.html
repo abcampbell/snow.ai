@@ -132,7 +132,104 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     </tr>
   `).join('');
 
+  // ===== Today's positioning =====
+  const storedRecent = D.stored_composite_recent || [];
+  const lastStored = storedRecent.length ? storedRecent[storedRecent.length - 1] : null;
+  const positionLabel = (v) => {
+    if (v == null) return '-';
+    const pct = (v * 100).toFixed(1) + '%';
+    if (Math.abs(v) < 0.05) return 'NEUTRAL (' + pct + ')';
+    return (v > 0 ? 'LONG ' : 'SHORT ') + Math.abs(v*100).toFixed(1) + '%';
+  };
+  const positionColor = (v) => v == null ? 'var(--text-dim)' : (v > 0.05 ? 'var(--good)' : (v < -0.05 ? 'var(--bad)' : 'var(--text-dim)'));
+
+  const attr = D.attribution || [];
+  const attrSum = D.attribution_total || 0;
+  const maxContrib = attr.length ? Math.max(...attr.map(a => Math.abs(a.contribution))) : 1;
+
+  const attribRows = attr.map(a => {
+    const pct = (a.contribution / Math.max(maxContrib, 0.01)) * 50; // scale to 50% of bar width
+    const isPos = a.contribution >= 0;
+    const barWidth = Math.abs(pct).toFixed(1);
+    const barOffset = isPos ? 50 : (50 - parseFloat(barWidth));
+    const barColor = isPos ? 'var(--good)' : 'var(--bad)';
+    return `
+      <tr>
+        <td style="font-weight:600">${a.name}</td>
+        <td class="num">${a.raw == null ? '-' : (a.raw>=0?'+':'') + a.raw.toFixed(2)}</td>
+        <td class="num" style="color:${isPos ? 'var(--good)' : 'var(--bad)'}">${(a.signal>=0?'+':'') + a.signal.toFixed(3)}</td>
+        <td class="num">${(a.weight*100).toFixed(1)}%</td>
+        <td style="position:relative;width:200px;padding:0 8px">
+          <div style="position:relative;height:14px;background:var(--card2);border-radius:2px">
+            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--text-dim)"></div>
+            <div style="position:absolute;left:${barOffset}%;top:0;height:100%;width:${barWidth}%;background:${barColor};border-radius:2px"></div>
+          </div>
+        </td>
+        <td class="num" style="color:${isPos ? 'var(--good)' : 'var(--bad)'};font-weight:600">${(a.contribution>=0?'+':'') + a.contribution.toFixed(4)}</td>
+      </tr>
+    `;
+  }).join('');
+
   document.getElementById('content').innerHTML = `
+
+  <!-- ========== 0. WHERE THE SYSTEM STANDS RIGHT NOW ========== -->
+  <div class="section-title">Where the system stands right now <span class="sub">latest composite value + per-component attribution</span></div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>Today's position</h2>
+      <span class="rosecode"><span class="rosecode-label">SOURCE:</span>${D.stored_composite_code} (last updated ${lastStored ? lastStored.date : 'n/a'})</span>
+      <div class="stat-row">
+        <div class="stat" style="flex:2">
+          <div class="label">Latest composite value</div>
+          <div class="value" style="color:${positionColor(lastStored ? lastStored.value : null)};font-size:28px">
+            ${lastStored ? (lastStored.value>=0?'+':'') + lastStored.value.toFixed(4) : '-'}
+          </div>
+          <div class="delta" style="color:${positionColor(lastStored ? lastStored.value : null)};font-size:13px;font-weight:600">
+            ${lastStored ? positionLabel(lastStored.value) : '-'}
+          </div>
+        </div>
+        <div class="stat" style="flex:3">
+          <div class="label">Recent trajectory (last 30 obs)</div>
+          <div class="chart-container" style="height:90px;margin-top:6px"><canvas id="recentSpark"></canvas></div>
+        </div>
+      </div>
+      <div class="insight">
+        <strong>Reading:</strong> The composite signal is a weighted sum of -1 to +1 component signals.
+        A value near 0 means components are cancelling. A value near +1 means everything is firing long.
+        ${lastStored && Math.abs(lastStored.value) < 0.05
+          ? 'Right now the system is essentially neutral - long signals (vol skew, ilb_z) are cancelled by short ones (dollar, ilb_change).'
+          : ''}
+      </div>
+    </div>
+
+    <div class="card grid-full">
+      <h2>Per-component attribution as of ${D.attribution_as_of || 'n/a'}</h2>
+      <span class="rosecode"><span class="rosecode-label">METHOD:</span>each row = component_signal &times; weight; sum at bottom = composite. Latest date with all 6 components reporting.</span>
+      <table>
+        <thead><tr>
+          <th>Component</th>
+          <th class="num">Raw value</th>
+          <th class="num">Signal</th>
+          <th class="num">Weight</th>
+          <th>Contribution</th>
+          <th class="num">= sig &times; w</th>
+        </tr></thead>
+        <tbody>${attribRows}
+          <tr style="border-top:2px solid var(--border)">
+            <td colspan="4" style="font-weight:700;text-align:right;padding-top:12px">Composite (sum)</td>
+            <td></td>
+            <td class="num" style="font-weight:700;font-size:14px;color:${attrSum>=0?'var(--good)':'var(--bad)'};padding-top:12px">${(attrSum>=0?'+':'') + attrSum.toFixed(4)}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="insight blue"><strong>How to read attribution:</strong>
+        <code>signal</code> is the component output in [-1,+1]. <code>weight</code> is the optimizer's allocation.
+        <code>contribution</code> is the product. The biggest absolute contribution drives the system's stance.
+        <strong>vol_skew_rz250</strong> (saturated long, raw z = +3.4) is the steady long anchor;
+        <strong>ilb_chg_ma40_rz1250</strong> (largest weight 30.8%) and <strong>dollar</strong> are the short forces this week.
+      </div>
+    </div>
+  </div>
 
   <!-- ========== 1. HEADLINE ========== -->
   <div class="section-title">1. System headline <span class="sub">vs gold buy-and-hold, 2008-06-06 onward</span></div>
@@ -339,6 +436,35 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   makeLine('signalChart', [
     { label: 'Composite signal', data: seriesToXY(D.series.signal), borderColor: palette.signal, backgroundColor: 'transparent' },
   ], { plugins: { legend: { display: false } } });
+
+  // Recent spark — last ~30 obs of stored composite
+  (function(){
+    const ctx = document.getElementById('recentSpark');
+    if (!ctx || !D.stored_composite_recent) return;
+    const pts = D.stored_composite_recent.map(p => ({x: Date.parse(p.date), y: p.value}));
+    if (!pts.length) return;
+    try {
+      new Chart(ctx, {
+        type: 'line',
+        data: { datasets: [{
+          data: pts,
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59,130,246,0.2)',
+          fill: 'origin',
+          borderWidth: 1.5,
+        }]},
+        options: {
+          animation: false, responsive: true, maintainAspectRatio: false, parsing: false,
+          plugins: { legend: { display: false }, tooltip: { displayColors: false } },
+          scales: {
+            x: { type: 'linear', display: false },
+            y: { display: false, suggestedMin: -1, suggestedMax: 1 },
+          },
+          elements: { point: { radius: 0 }, line: { tension: 0.05 } },
+        }
+      });
+    } catch (e) { console.error('spark failed', e); }
+  })();
 }).catch(err => {
   document.getElementById('content').innerHTML =
     '<div style="padding:24px 32px;color:#ef4444">Render error: ' + (err && err.message ? err.message : err) + '</div>';

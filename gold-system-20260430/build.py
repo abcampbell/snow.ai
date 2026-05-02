@@ -21,17 +21,19 @@ os.makedirs(OUTDIR, exist_ok=True)
 # --- The system: 6-signal composite, optimizer weights from gold.system.weights.20260403,
 # system.weight column (nominal RY zeroed; renormalized ILB/dollar/specs/skew). ----------
 COMPONENTS = [
-    ("dollar_ma_rollz20",      "dollar:ma(3,252,ari):rollz(20):signal",                                   0.0937311996),
-    ("ilb_chg_ma40_rz1250",    "usa.real.yield.2y.ilb:change:ma(40):flip:rollzback(1250):signal",         0.3076645410),
-    ("ilb_chg_rz60_clip",      "usa.real.yield.2y.ilb:change:rollzback(60):max(3):min(-3):flip:signal",   0.0684634821),
-    ("ilb_z",                  "usa.real.yield.2y.ilb:z:signal",                                          0.2917819757),
-    ("specs_flip",             "gold.specs:b:ma(1,500,ari):flip:signal",                                  0.1118998917),
-    ("vol_skew_rz250",         "gold.vol.skew:rollzback(250):signal",                                     0.1264589099),
+    # name, signal_chain, weight, raw_underlier (pre :signal)
+    ("dollar_ma_rollz20",      "dollar:ma(3,252,ari):rollz(20):signal",                                   0.0937311996, "dollar:ma(3,252,ari):rollz(20)"),
+    ("ilb_chg_ma40_rz1250",    "usa.real.yield.2y.ilb:change:ma(40):flip:rollzback(1250):signal",         0.3076645410, "usa.real.yield.2y.ilb:change:ma(40):flip:rollzback(1250)"),
+    ("ilb_chg_rz60_clip",      "usa.real.yield.2y.ilb:change:rollzback(60):max(3):min(-3):flip:signal",   0.0684634821, "usa.real.yield.2y.ilb:change:rollzback(60):max(3):min(-3):flip"),
+    ("ilb_z",                  "usa.real.yield.2y.ilb:z:signal",                                          0.2917819757, "usa.real.yield.2y.ilb:z"),
+    ("specs_flip",             "gold.specs:b:ma(1,500,ari):flip:signal",                                  0.1118998917, "gold.specs:b:ma(1,500,ari):flip"),
+    ("vol_skew_rz250",         "gold.vol.skew:rollzback(250):signal",                                     0.1264589099, "gold.vol.skew:rollzback(250)"),
 ]
 
 # Composite chain: weight * component, summed with :add()
 COMPOSITE = COMPONENTS[0][1] + ":mult(" + str(COMPONENTS[0][2]) + ")"
-for name, code, w in COMPONENTS[1:]:
+for c in COMPONENTS[1:]:
+    name, code, w = c[0], c[1], c[2]
     COMPOSITE = COMPOSITE + ":add(" + code + ":mult(" + str(w) + "))"
 
 PERIOD_START = "2008-06-06"   # bounded by gold.vol.skew start
@@ -77,27 +79,46 @@ print(f"  sys rolling Sharpe: n={len(sys_rsharpe) if sys_rsharpe else 0}")
 print(f"  sys drawdown:       n={len(sys_dd) if sys_dd else 0}")
 print(f"  gold drawdown:      n={len(gold_dd) if gold_dd else 0}")
 
-print("\n[4/4] Pulling per-component metrics + values...")
+print("\n[4/4] Pulling per-component metrics + values + recent attribution...")
 components_out = []
-for name, code, weight in COMPONENTS:
+for name, code, weight, rawcode in COMPONENTS:
     chain = code + ":trade(" + GOLD_RETURNS + "):since(" + PERIOD_START + ")"
     risk = risk_table(chain + ":returns")
+    sig_series = series_dict(code)
+    raw_series = series_dict(rawcode)
+    last_sig = None; last_raw = None; last_date = None
+    if sig_series:
+        ds = sorted(sig_series.keys())
+        last_date = ds[-1]
+        last_sig = sig_series[last_date]
+    if raw_series and last_date:
+        last_raw = raw_series.get(last_date)
+    last30_sig = []
+    if sig_series:
+        for d in sorted(sig_series.keys())[-60:]:
+            last30_sig.append({"date": d, "signal": sig_series[d],
+                               "raw": (raw_series or {}).get(d),
+                               "contribution": sig_series[d] * weight})
     if risk is None:
-        print(f"  {name}: FAILED")
+        print(f"  {name}: FAILED risk; have signal={last_sig}")
         components_out.append({
-            "name": name, "rosecode": code, "weight": weight,
+            "name": name, "rosecode": code, "raw_rosecode": rawcode, "weight": weight,
             "sharpe": None, "ann_return": None, "ann_vol": None, "max_dd": None,
+            "last_signal": last_sig, "last_raw": last_raw, "last_date": last_date,
+            "history60": last30_sig,
         })
         continue
     components_out.append({
-        "name": name, "rosecode": code, "weight": weight,
+        "name": name, "rosecode": code, "raw_rosecode": rawcode, "weight": weight,
         "sharpe": risk.get("Sharpe ratio"),
         "ann_return": risk.get("Annual return"),
         "ann_vol": risk.get("Annual volatility"),
         "max_dd": risk.get("Max drawdown"),
         "calmar": risk.get("Calmar ratio"),
+        "last_signal": last_sig, "last_raw": last_raw, "last_date": last_date,
+        "history60": last30_sig,
     })
-    print(f"  {name}: Sharpe {risk.get('Sharpe ratio')}, MaxDD {risk.get('Max drawdown')}")
+    print(f"  {name}: Sharpe {risk.get('Sharpe ratio')}, MaxDD {risk.get('Max drawdown')}, last sig={last_sig:+.3f} (raw {last_raw:+.3f})" if last_raw is not None else f"  {name}: Sharpe {risk.get('Sharpe ratio')}, last sig={last_sig}")
 
 # Gold per-year and signal per-year for the alpha table
 print("\n[bonus] Per-year returns (system vs gold)...")
@@ -112,12 +133,48 @@ sig_series = series_dict(COMPOSITE + ":since(" + PERIOD_START + ")")
 print(f"  composite signal series: n={len(sig_series) if sig_series else 0}")
 
 # --- Build the data file ---
+# Stored pushed composite (extends slightly later than the chain when components stale)
+stored_composite = series_dict("gold.system.004.20260403")
+
+# Build latest-date attribution table — find latest date that has all components
+def find_latest_common(comps):
+    if not comps: return None
+    dsets = [set((c["history60"] or []) and {h["date"] for h in c["history60"]}) for c in comps]
+    if not all(dsets): return None
+    common = set.intersection(*dsets)
+    return max(common) if common else None
+
+latest_common = find_latest_common(components_out)
+attribution = []
+attribution_total = 0.0
+if latest_common:
+    for c in components_out:
+        h = next((x for x in (c["history60"] or []) if x["date"] == latest_common), None)
+        if h:
+            attribution.append({
+                "name": c["name"], "weight": c["weight"], "rosecode": c["rosecode"],
+                "raw_rosecode": c["raw_rosecode"],
+                "raw": h.get("raw"), "signal": h["signal"],
+                "contribution": h["contribution"],
+            })
+            attribution_total += h["contribution"]
+
+print(f"\nLatest-attribution date: {latest_common}, sum = {attribution_total:+.4f}")
+for a in sorted(attribution, key=lambda x: -abs(x["contribution"])):
+    print(f"  {a['name']:>22}: signal={a['signal']:+.3f} weight={a['weight']:.4f} contrib={a['contribution']:+.4f}")
+
 data = {
     "build_date": datetime.now().strftime("%Y-%m-%d"),
     "period": {"start": PERIOD_START, "end": max(sys_pnl.keys()) if sys_pnl else None},
     "composite_chain": COMPOSITE,
     "trade_chain": chain_traded,
     "gold_returns_code": GOLD_RETURNS,
+    "stored_composite_code": "gold.system.004.20260403",
+    "stored_composite_last": (max(stored_composite.keys()), stored_composite[max(stored_composite.keys())]) if stored_composite else None,
+    "stored_composite_recent": [{"date": d, "value": stored_composite[d]} for d in sorted(stored_composite.keys())[-30:]] if stored_composite else [],
+    "attribution_as_of": latest_common,
+    "attribution_total": attribution_total,
+    "attribution": sorted(attribution, key=lambda x: -abs(x["contribution"])),
 
     "system": {
         "ann_return": sys_risk.get("Annual return") if sys_risk else None,
