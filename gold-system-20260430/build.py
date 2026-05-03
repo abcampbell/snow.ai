@@ -151,11 +151,18 @@ if latest_common:
     for c in components_out:
         h = next((x for x in (c["history60"] or []) if x["date"] == latest_common), None)
         if h:
+            # Find the latest date this specific signal reported (may be later than latest_common)
+            sig_last = max((x["date"] for x in (c["history60"] or []) if x["signal"] is not None),
+                           default=None)
+            raw_last = max((x["date"] for x in (c["history60"] or []) if x.get("raw") is not None),
+                           default=None)
             attribution.append({
                 "name": c["name"], "weight": c["weight"], "rosecode": c["rosecode"],
                 "raw_rosecode": c["raw_rosecode"],
                 "raw": h.get("raw"), "signal": h["signal"],
                 "contribution": h["contribution"],
+                "signal_last_date": sig_last,
+                "raw_last_date": raw_last,
             })
             attribution_total += h["contribution"]
 

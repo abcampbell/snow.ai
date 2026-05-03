@@ -147,6 +147,39 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const attrSum = D.attribution_total || 0;
   const maxContrib = attr.length ? Math.max(...attr.map(a => Math.abs(a.contribution))) : 1;
 
+  // Find the freshest per-component date so we can flag staleness
+  const lastDates = attr.map(a => a.signal_last_date).filter(Boolean).sort();
+  const freshestDate = lastDates.length ? lastDates[lastDates.length - 1] : null;
+  const bizDaysBetween = (a, b) => {
+    if (!a || !b) return null;
+    const da = new Date(a), db = new Date(b);
+    let diff = Math.round((db - da) / 86400000);
+    let bd = 0;
+    for (let i = 1; i <= diff; i++) {
+      const d = new Date(da); d.setDate(da.getDate() + i);
+      const dow = d.getUTCDay();
+      if (dow !== 0 && dow !== 6) bd++;
+    }
+    return bd;
+  };
+  const todayStr = D.build_date;
+  const dateCellHTML = (lastDate) => {
+    if (!lastDate) return '<span style="color:var(--text-dim)">-</span>';
+    const lagFromFreshest = bizDaysBetween(lastDate, freshestDate);
+    const lagFromToday = bizDaysBetween(lastDate, todayStr);
+    let color = 'var(--text)';
+    let warn = '';
+    if (lagFromFreshest != null && lagFromFreshest >= 2) {
+      color = 'var(--bad)'; warn = ' STALE';
+    } else if (lagFromFreshest === 1) {
+      color = 'var(--accent)';
+    } else if (lagFromFreshest === 0) {
+      color = 'var(--good)';
+    }
+    const ageNote = lagFromToday != null ? ` <span style="color:var(--text-dim);font-size:10px">(${lagFromToday}b ago)</span>` : '';
+    return `<span style="color:${color};font-weight:600">${lastDate}${warn}</span>${ageNote}`;
+  };
+
   const attribRows = attr.map(a => {
     const pct = (a.contribution / Math.max(maxContrib, 0.01)) * 50; // scale to 50% of bar width
     const isPos = a.contribution >= 0;
@@ -156,10 +189,11 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     return `
       <tr>
         <td style="font-weight:600">${a.name}</td>
+        <td class="num" style="font-size:11px">${dateCellHTML(a.signal_last_date)}</td>
         <td class="num">${a.raw == null ? '-' : (a.raw>=0?'+':'') + a.raw.toFixed(2)}</td>
         <td class="num" style="color:${isPos ? 'var(--good)' : 'var(--bad)'}">${(a.signal>=0?'+':'') + a.signal.toFixed(3)}</td>
         <td class="num">${(a.weight*100).toFixed(1)}%</td>
-        <td style="position:relative;width:200px;padding:0 8px">
+        <td style="position:relative;width:180px;padding:0 8px">
           <div style="position:relative;height:14px;background:var(--card2);border-radius:2px">
             <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--text-dim)"></div>
             <div style="position:absolute;left:${barOffset}%;top:0;height:100%;width:${barWidth}%;background:${barColor};border-radius:2px"></div>
@@ -208,6 +242,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       <table>
         <thead><tr>
           <th>Component</th>
+          <th class="num">Last point</th>
           <th class="num">Raw value</th>
           <th class="num">Signal</th>
           <th class="num">Weight</th>
@@ -216,9 +251,13 @@ fetch('data.json').then(r=>r.json()).then(D=>{
         </tr></thead>
         <tbody>${attribRows}
           <tr style="border-top:2px solid var(--border)">
-            <td colspan="4" style="font-weight:700;text-align:right;padding-top:12px">Composite (sum)</td>
+            <td colspan="5" style="font-weight:700;text-align:right;padding-top:12px">Composite (sum) at ${D.attribution_as_of || '-'}</td>
             <td></td>
             <td class="num" style="font-weight:700;font-size:14px;color:${attrSum>=0?'var(--good)':'var(--bad)'};padding-top:12px">${(attrSum>=0?'+':'') + attrSum.toFixed(4)}</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="font-weight:700;text-align:right;color:var(--text-dim);font-size:11px">Stored composite gold.system.004.20260403 latest (${lastStored ? lastStored.date : '-'})</td>
+            <td class="num" style="font-weight:700;font-size:13px;color:${lastStored && lastStored.value>=0?'var(--good)':'var(--bad)'}">${lastStored ? (lastStored.value>=0?'+':'') + lastStored.value.toFixed(4) : '-'}</td>
           </tr>
         </tbody>
       </table>
