@@ -144,6 +144,64 @@ def find_latest_common(comps):
     common = set.intersection(*dsets)
     return max(common) if common else None
 
+# --- Freshness analysis ---
+component_dates = sorted({c.get("last_date") for c in components_out if c.get("last_date")})
+freshest_date = component_dates[-1] if component_dates else None
+
+# Fresh-only composite: drop components whose last_date is below the freshest.
+fresh_only = []
+fresh_only_total = 0.0
+total_fresh_weight = sum(c["weight"] for c in components_out if c.get("last_date") == freshest_date)
+all_active_active = sum(c["weight"] for c in components_out if c.get("last_date") and component_dates and (c["last_date"] >= component_dates[-2] if len(component_dates) >= 2 else True))
+
+# Stale = >1 business day behind the freshest component.
+def biz_days_between(a, b):
+    if not a or not b: return None
+    from datetime import date
+    da = date.fromisoformat(a); db = date.fromisoformat(b)
+    if db < da: da, db = db, da
+    bd = 0
+    cur = da
+    from datetime import timedelta
+    while cur < db:
+        cur = cur + timedelta(days=1)
+        if cur.weekday() < 5: bd += 1
+    return bd
+
+stale_components = []
+fresh_components = []
+for c in components_out:
+    lag = biz_days_between(c.get("last_date"), freshest_date) if c.get("last_date") else None
+    c_stale_info = {
+        "name": c["name"], "last_date": c.get("last_date"), "weight": c["weight"],
+        "last_signal": c.get("last_signal"), "biz_days_late": lag,
+    }
+    if lag is not None and lag <= 1:
+        fresh_components.append(c)
+    else:
+        stale_components.append(c_stale_info)
+
+# Recompute composite using only fresh components, renormalized
+fresh_weight_sum = sum(c["weight"] for c in fresh_components)
+fresh_only_attribution = []
+if fresh_weight_sum > 0:
+    for c in fresh_components:
+        nw = c["weight"] / fresh_weight_sum
+        sig = c.get("last_signal")
+        contrib = (sig * nw) if sig is not None else None
+        fresh_only_attribution.append({
+            "name": c["name"], "weight_orig": c["weight"], "weight_renorm": nw,
+            "signal": sig, "contribution": contrib, "last_date": c.get("last_date"),
+        })
+        if contrib is not None:
+            fresh_only_total += contrib
+
+print(f"\nFreshness:")
+print(f"  freshest date: {freshest_date}")
+print(f"  fresh: {[c['name'] for c in fresh_components]}")
+print(f"  stale: {[(s['name'], s['last_date']) for s in stale_components]}")
+print(f"  fresh-only composite (renormalized): {fresh_only_total:+.4f}")
+
 latest_common = find_latest_common(components_out)
 attribution = []
 attribution_total = 0.0
@@ -182,6 +240,14 @@ data = {
     "attribution_as_of": latest_common,
     "attribution_total": attribution_total,
     "attribution": sorted(attribution, key=lambda x: -abs(x["contribution"])),
+
+    # Freshness
+    "freshest_date": freshest_date,
+    "stale_components": stale_components,
+    "fresh_components_count": len(fresh_components),
+    "fresh_only_composite": fresh_only_total,
+    "fresh_only_attribution": sorted(fresh_only_attribution, key=lambda x: -abs(x["contribution"] or 0)),
+    "fresh_weight_sum": fresh_weight_sum,
 
     "system": {
         "ann_return": sys_risk.get("Annual return") if sys_risk else None,

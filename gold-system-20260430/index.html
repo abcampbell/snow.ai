@@ -204,9 +204,90 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     `;
   }).join('');
 
+  // ===== Data freshness =====
+  const stale = D.stale_components || [];
+  const freshCount = D.fresh_components_count || 0;
+  const totalCount = freshCount + stale.length;
+  const freshestDate = D.freshest_date || '-';
+  const foComposite = D.fresh_only_composite;
+  const storedVal = lastStored ? lastStored.value : null;
+  const compositeDelta = (foComposite != null && storedVal != null) ? (foComposite - storedVal) : null;
+
+  const statusColor = stale.length === 0 ? 'var(--good)' : (stale.length <= 1 ? 'var(--accent)' : 'var(--bad)');
+  const statusText = stale.length === 0 ? 'ALL FRESH' : `${stale.length} of ${totalCount} STALE`;
+  const staleList = stale.map(s => `
+    <tr>
+      <td style="font-weight:600;color:var(--bad)">${s.name}</td>
+      <td class="num">${s.last_date}</td>
+      <td class="num neg">${s.biz_days_late}b late</td>
+      <td class="num">${(s.weight*100).toFixed(1)}%</td>
+      <td class="num" style="color:${s.last_signal>=0?'var(--good)':'var(--bad)'}">${s.last_signal == null ? '-' : (s.last_signal>=0?'+':'') + s.last_signal.toFixed(3)}</td>
+      <td class="num" style="color:var(--text-dim);font-size:11px">last value forward-filled in stored composite</td>
+    </tr>
+  `).join('');
+
   document.getElementById('content').innerHTML = `
 
-  <!-- ========== 0. WHERE THE SYSTEM STANDS RIGHT NOW ========== -->
+  <!-- ========== 0. DATA FRESHNESS ========== -->
+  <div class="section-title">Data freshness <span class="sub">are all components actually updating?</span></div>
+  <div class="grid">
+    <div class="card grid-full" style="border-color:${statusColor}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px">
+        <div>
+          <h2 style="margin:0">Status</h2>
+          <div style="margin-top:6px">
+            <span style="font-size:20px;font-weight:700;color:${statusColor}">&#9679; ${statusText}</span>
+            <span style="color:var(--text-dim);margin-left:14px;font-size:12px">freshest = ${freshestDate} (build ${D.build_date})</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px">
+          <div class="stat" style="min-width:170px">
+            <div class="label">Stored composite (forward-fill)</div>
+            <div class="value" style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'};font-size:22px">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</div>
+            <div class="delta">at ${lastStored ? lastStored.date : '-'} -- includes stale forward-filled values</div>
+          </div>
+          <div class="stat" style="min-width:170px">
+            <div class="label">Fresh-only composite (drop stale, renorm)</div>
+            <div class="value" style="color:${foComposite!=null && foComposite>=0?'var(--good)':'var(--bad)'};font-size:22px">${foComposite!=null ? (foComposite>=0?'+':'') + foComposite.toFixed(4) : '-'}</div>
+            <div class="delta">${freshCount} of ${totalCount} components, weights renormalized to 1.0</div>
+          </div>
+          ${compositeDelta != null ? `
+          <div class="stat" style="min-width:140px">
+            <div class="label">Difference</div>
+            <div class="value" style="color:${Math.abs(compositeDelta) < 0.01 ? 'var(--text-dim)' : 'var(--accent)'};font-size:22px">${compositeDelta>=0?'+':''}${compositeDelta.toFixed(4)}</div>
+            <div class="delta">${Math.abs(compositeDelta) < 0.01 ? 'stale data not moving the read' : 'stale data IS materially shifting the read'}</div>
+          </div>` : ''}
+        </div>
+      </div>
+      ${stale.length === 0 ? `
+        <div class="insight green" style="margin-top:14px"><strong>All components up to date</strong> within 1 business day of the freshest. Stored composite is reliable.</div>
+      ` : `
+        <div style="margin-top:18px">
+          <h2>Stale components (>1 business day behind freshest)</h2>
+          <table>
+            <thead><tr>
+              <th>Component</th>
+              <th class="num">Last point</th>
+              <th class="num">Biz days late</th>
+              <th class="num">Weight</th>
+              <th class="num">Last signal</th>
+              <th>Note</th>
+            </tr></thead>
+            <tbody>${staleList}</tbody>
+          </table>
+          <div class="insight red" style="margin-top:14px">
+            <strong>Why this matters:</strong> Rose forward-fills stale values when computing the composite, so the
+            stored ${D.stored_composite_code} still produces a number even when components stop updating. The
+            <strong>fresh-only composite</strong> recomputes by dropping stale components and renormalizing the remaining
+            weights to sum to 1.0 - that is what the system would say if it only used live data.
+            ${Math.abs(compositeDelta || 0) > 0.02 ? '<br><br><strong>The delta here is &gt; 2%</strong> - the stale value is materially moving the read. Fix the data feed before trading off the stored composite.' : '<br><br>The delta here is small - stale data is not changing the conclusion.'}
+          </div>
+        </div>
+      `}
+    </div>
+  </div>
+
+  <!-- ========== 1. WHERE THE SYSTEM STANDS RIGHT NOW ========== -->
   <div class="section-title">Where the system stands right now <span class="sub">latest composite value + per-component attribution</span></div>
   <div class="grid">
     <div class="card grid-full">
