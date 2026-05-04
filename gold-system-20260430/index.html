@@ -148,8 +148,8 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const maxContrib = attr.length ? Math.max(...attr.map(a => Math.abs(a.contribution))) : 1;
 
   // Find the freshest per-component date so we can flag staleness
-  const lastDates = attr.map(a => a.signal_last_date).filter(Boolean).sort();
-  const freshestDate = lastDates.length ? lastDates[lastDates.length - 1] : null;
+  const attrLastDates = attr.map(a => a.signal_last_date).filter(Boolean).sort();
+  const attrFreshestDate = attrLastDates.length ? attrLastDates[attrLastDates.length - 1] : null;
   const bizDaysBetween = (a, b) => {
     if (!a || !b) return null;
     const da = new Date(a), db = new Date(b);
@@ -165,7 +165,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const todayStr = D.build_date;
   const dateCellHTML = (lastDate) => {
     if (!lastDate) return '<span style="color:var(--text-dim)">-</span>';
-    const lagFromFreshest = bizDaysBetween(lastDate, freshestDate);
+    const lagFromFreshest = bizDaysBetween(lastDate, attrFreshestDate);
     const lagFromToday = bizDaysBetween(lastDate, todayStr);
     let color = 'var(--text)';
     let warn = '';
