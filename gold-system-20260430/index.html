@@ -204,6 +204,117 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     `;
   }).join('');
 
+  // ===== Signal-by-signal cards =====
+  const SIGNAL_META = {
+    'dollar_ma_rollz20':     { desc: 'Dollar trend regime: dollar vs 252d MA, 20d rolling z-score.' },
+    'ilb_chg_ma40_rz1250':   { desc: 'Speed of real-yield moves: 40d-smoothed change in 2y real yield, 5y rolling z, flipped.' },
+    'ilb_chg_rz60_clip':     { desc: 'Faster cousin of ma40: 60d z of real-yield change, clipped at 3s, flipped.' },
+    'ilb_z':                 { desc: 'Real-yield level: z-score of 2y ILB real yield vs 250d window.' },
+    'specs_flip':            { desc: 'CFTC managed-money positioning, ma(1,500), flipped (contrarian).' },
+    'vol_skew_rz250':        { desc: 'Gold options skew z (250d window). Captures put demand / crash hedging.' },
+  };
+  const directionLabel = (contrib) => {
+    if (contrib == null) return { text: 'STALE', color: 'var(--text-dim)' };
+    if (contrib > 0.05) return { text: 'LONG', color: 'var(--good)' };
+    if (contrib < -0.05) return { text: 'SHORT', color: 'var(--bad)' };
+    return { text: 'NEUTRAL', color: 'var(--text-dim)' };
+  };
+
+  // Map of fresh-only renorm weights for cards that exist there
+  const foMap = {};
+  for (const a of (D.fresh_only_attribution || [])) foMap[a.name] = a;
+  const fullAttrMap = {};
+  for (const a of (D.attribution || [])) fullAttrMap[a.name] = a;
+
+  // Build mini sparkline svg for a component
+  const sparkSvg = (history, freshness, valueKey='signal', height=40, width=200) => {
+    if (!history || history.length === 0) return '';
+    const pad = 2;
+    const vs = history.map(h => h[valueKey]).filter(v => v != null);
+    if (vs.length === 0) return '';
+    let mn = Math.min(...vs), mx = Math.max(...vs);
+    if (valueKey === 'signal') { mn = -1; mx = 1; }
+    if (mn === mx) { mn -= 0.5; mx += 0.5; }
+    const w = width - 2*pad, h = height - 2*pad;
+    const sx = i => pad + (i / Math.max(1, history.length - 1)) * w;
+    const sy = v => pad + (1 - (v - mn) / (mx - mn)) * h;
+    let path = '';
+    let lastVal = null;
+    history.forEach((p, i) => {
+      const v = p[valueKey];
+      if (v == null) return;
+      path += (lastVal === null ? 'M ' : 'L ') + sx(i) + ' ' + sy(v) + ' ';
+      lastVal = v;
+    });
+    const lastV = history[history.length-1][valueKey];
+    const color = freshness === 'STALE' ? '#737373' : (lastV != null && lastV >= 0 ? '#22c55e' : '#ef4444');
+    let svg = `<svg width="${width}" height="${height}" style="display:block">`;
+    // zero line
+    if (mn < 0 && mx > 0) {
+      svg += `<line x1="${pad}" x2="${pad+w}" y1="${sy(0)}" y2="${sy(0)}" stroke="#404040" stroke-width="0.5" stroke-dasharray="2,2"/>`;
+    }
+    svg += `<path d="${path}" stroke="${color}" stroke-width="1.4" fill="none"/>`;
+    if (lastV != null) {
+      svg += `<circle cx="${sx(history.length-1)}" cy="${sy(lastV)}" r="2.5" fill="${color}"/>`;
+    }
+    svg += `</svg>`;
+    return svg;
+  };
+
+  // Build per-signal cards
+  const signalCards = (D.components || []).map(c => {
+    const meta = SIGNAL_META[c.name] || { desc: '' };
+    const fo = foMap[c.name];
+    const fullAttr = fullAttrMap[c.name];
+    const contrib = fo ? fo.contribution : (fullAttr ? fullAttr.contribution : null);
+    const dir = directionLabel(contrib);
+    const lastDate = c.last_date || '-';
+    const fresh = c.last_date === D.freshest_date ? 'FRESH' : (
+      bizDaysBetween(c.last_date, D.freshest_date) === 1 ? '1d' : 'STALE'
+    );
+    const freshColor = fresh === 'FRESH' ? 'var(--good)' : (fresh === '1d' ? 'var(--accent)' : 'var(--bad)');
+    const spark = sparkSvg(c.history60, fresh, 'signal', 50, 240);
+    return `
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+          <div style="flex:1">
+            <div style="font-weight:700;font-size:13px;color:#fff">${c.name}</div>
+            <div style="color:var(--text-dim);font-size:11px;margin-top:3px;line-height:1.5">${meta.desc}</div>
+          </div>
+          <div style="background:${dir.color}22;border:1px solid ${dir.color};color:${dir.color};padding:3px 9px;border-radius:4px;font-weight:700;font-size:11px">${dir.text}</div>
+        </div>
+        <div style="margin:14px 0 6px 0">${spark}</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10.5px">
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">RAW</div><div style="color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${c.last_raw == null ? '-' : (c.last_raw>=0?'+':'') + c.last_raw.toFixed(2)}</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">SIGNAL</div><div style="color:${c.last_signal == null ? 'var(--text-dim)' : (c.last_signal>=0?'var(--good)':'var(--bad)')};font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${c.last_signal == null ? '-' : (c.last_signal>=0?'+':'') + c.last_signal.toFixed(2)}</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">WEIGHT</div><div style="color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${(c.weight*100).toFixed(1)}%</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">CONTRIB</div><div style="color:${contrib == null ? 'var(--text-dim)' : (contrib>=0?'var(--good)':'var(--bad)')};font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${contrib == null ? '-' : (contrib>=0?'+':'') + contrib.toFixed(3)}</div></div>
+        </div>
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--card2);display:flex;justify-content:space-between;align-items:center;font-size:10.5px">
+          <span style="color:${freshColor};font-weight:600">${fresh}</span>
+          <span style="color:var(--text-dim);font-variant-numeric:tabular-nums">${lastDate}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Auto-narrative
+  const fo_attr = (D.fresh_only_attribution || []).slice();
+  fo_attr.sort((a,b) => Math.abs(b.contribution||0) - Math.abs(a.contribution||0));
+  const topShort = fo_attr.find(a => (a.contribution||0) < 0);
+  const topLong  = fo_attr.find(a => (a.contribution||0) > 0);
+  const narrativeHTML = `
+    <div class="card grid-full">
+      <h2>Read</h2>
+      <p style="color:var(--text);font-size:13px;line-height:1.7">
+        Fresh-only composite: <strong style="color:${D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite>=0?'+':''}${D.fresh_only_composite.toFixed(4)}</strong>
+        — system is <strong>${D.fresh_only_composite>0.05 ? 'LONG' : (D.fresh_only_composite<-0.05 ? 'SHORT' : 'NEUTRAL')}</strong> gold.
+        ${topShort ? `Biggest short driver: <strong style="color:var(--bad)">${topShort.name}</strong> (${topShort.contribution.toFixed(3)}).` : ''}
+        ${topLong  ? `Biggest long driver: <strong style="color:var(--good)">${topLong.name}</strong> (+${topLong.contribution.toFixed(3)}).` : ''}
+      </p>
+    </div>
+  `;
+
   // ===== Data freshness =====
   const stale = D.stale_components || [];
   const freshCount = D.fresh_components_count || 0;
@@ -285,6 +396,13 @@ fetch('data.json').then(r=>r.json()).then(D=>{
         </div>
       `}
     </div>
+  </div>
+
+  <!-- ========== Signal-by-signal ========== -->
+  <div class="section-title">Signal-by-signal <span class="sub">what each component is saying right now</span></div>
+  <div class="grid">
+    ${narrativeHTML}
+    ${signalCards}
   </div>
 
   <!-- ========== 1. WHERE THE SYSTEM STANDS RIGHT NOW ========== -->
