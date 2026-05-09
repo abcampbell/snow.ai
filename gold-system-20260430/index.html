@@ -121,6 +121,12 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   for(const [y,v] of goldYoy) yoyByYear[y]=Object.assign(yoyByYear[y]||{}, {gold:v});
   const years = Object.keys(yoyByYear).sort();
 
+  // Lookup maps for attribution (used by both componentRows and the per-signal cards below)
+  const foMap = {};
+  for (const a of (D.fresh_only_attribution || [])) foMap[a.name] = a;
+  const fullAttrMap = {};
+  for (const a of (D.attribution || [])) fullAttrMap[a.name] = a;
+
   const componentRows = D.components.map(c => {
     const fo = foMap[c.name];
     const fa = fullAttrMap[c.name];
@@ -230,11 +236,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     return { text: 'NEUTRAL', color: 'var(--text-dim)' };
   };
 
-  // Map of fresh-only renorm weights for cards that exist there
-  const foMap = {};
-  for (const a of (D.fresh_only_attribution || [])) foMap[a.name] = a;
-  const fullAttrMap = {};
-  for (const a of (D.attribution || [])) fullAttrMap[a.name] = a;
+  // foMap / fullAttrMap already declared above for componentRows
 
   // Mini sparkline using viewBox so it scales to container width.
   const sparkSvg = (history, freshness, valueKey='signal', height=40, width=400) => {
