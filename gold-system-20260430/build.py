@@ -94,18 +94,29 @@ for name, code, weight, rawcode in COMPONENTS:
     if raw_series and last_date:
         last_raw = raw_series.get(last_date)
     last30_sig = []
+    history_long = []
     if sig_series:
-        for d in sorted(sig_series.keys())[-60:]:
+        all_dates = sorted(sig_series.keys())
+        for d in all_dates[-60:]:
             last30_sig.append({"date": d, "signal": sig_series[d],
                                "raw": (raw_series or {}).get(d),
                                "contribution": sig_series[d] * weight})
+        # 5y monthly downsampled for the long-term chart (keep size reasonable)
+        long_dates = [d for d in all_dates if d >= "2008-06-06"]
+        # downsample to weekly
+        prev_week = None
+        for d in long_dates:
+            wk = d[:7] + "-" + str((int(d[8:10]) - 1) // 7)
+            if wk != prev_week:
+                history_long.append({"date": d, "signal": sig_series[d]})
+                prev_week = wk
     if risk is None:
         print(f"  {name}: FAILED risk; have signal={last_sig}")
         components_out.append({
             "name": name, "rosecode": code, "raw_rosecode": rawcode, "weight": weight,
             "sharpe": None, "ann_return": None, "ann_vol": None, "max_dd": None,
             "last_signal": last_sig, "last_raw": last_raw, "last_date": last_date,
-            "history60": last30_sig,
+            "history60": last30_sig, "history_long": history_long,
         })
         continue
     components_out.append({
@@ -116,7 +127,7 @@ for name, code, weight, rawcode in COMPONENTS:
         "max_dd": risk.get("Max drawdown"),
         "calmar": risk.get("Calmar ratio"),
         "last_signal": last_sig, "last_raw": last_raw, "last_date": last_date,
-        "history60": last30_sig,
+        "history60": last30_sig, "history_long": history_long,
     })
     print(f"  {name}: Sharpe {risk.get('Sharpe ratio')}, MaxDD {risk.get('Max drawdown')}, last sig={last_sig:+.3f} (raw {last_raw:+.3f})" if last_raw is not None else f"  {name}: Sharpe {risk.get('Sharpe ratio')}, last sig={last_sig}")
 

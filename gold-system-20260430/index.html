@@ -121,16 +121,26 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   for(const [y,v] of goldYoy) yoyByYear[y]=Object.assign(yoyByYear[y]||{}, {gold:v});
   const years = Object.keys(yoyByYear).sort();
 
-  const componentRows = D.components.map(c => `
-    <tr>
-      <td>${c.name}</td>
-      <td class="num">${(c.weight*100).toFixed(2)}%</td>
-      <td class="num ${cls(c.sharpe)}">${fmtNum(c.sharpe)}</td>
-      <td class="num">${c.ann_return || '-'}</td>
-      <td class="num neg">${c.max_dd || '-'}</td>
-      <td><code class="rosecode" style="margin:0;padding:3px 6px;font-size:10px;border:none">${c.rosecode}</code></td>
-    </tr>
-  `).join('');
+  const componentRows = D.components.map(c => {
+    const fo = foMap[c.name];
+    const fa = fullAttrMap[c.name];
+    const curContrib = fo ? fo.contribution : (fa ? fa.contribution : null);
+    const sat = (curContrib != null && c.weight) ? curContrib / c.weight : null;
+    const wpct = (c.weight*100).toFixed(2) + '%';
+    return `
+      <tr>
+        <td>${c.name}</td>
+        <td class="num">${wpct}</td>
+        <td class="num">&plusmn;${wpct}</td>
+        <td class="num" style="color:${curContrib==null?'var(--text-dim)':(curContrib>=0?'var(--good)':'var(--bad)')};font-weight:600">${curContrib==null?'-':(curContrib>=0?'+':'')+(curContrib*100).toFixed(2)+'%'}</td>
+        <td class="num" style="color:var(--text-dim)">${sat==null?'-':((sat>=0?'+':'')+(sat*100).toFixed(0)+'%')}</td>
+        <td class="num ${cls(c.sharpe)}">${fmtNum(c.sharpe)}</td>
+        <td class="num">${c.ann_return || '-'}</td>
+        <td class="num neg">${c.max_dd || '-'}</td>
+        <td><code class="rosecode" style="margin:0;padding:3px 6px;font-size:10px;border:none">${c.rosecode}</code></td>
+      </tr>
+    `;
+  }).join('');
 
   // ===== Today's positioning =====
   const storedRecent = D.stored_composite_recent || [];
@@ -226,8 +236,8 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const fullAttrMap = {};
   for (const a of (D.attribution || [])) fullAttrMap[a.name] = a;
 
-  // Build mini sparkline svg for a component
-  const sparkSvg = (history, freshness, valueKey='signal', height=40, width=200) => {
+  // Mini sparkline using viewBox so it scales to container width.
+  const sparkSvg = (history, freshness, valueKey='signal', height=40, width=400) => {
     if (!history || history.length === 0) return '';
     const pad = 2;
     const vs = history.map(h => h[valueKey]).filter(v => v != null);
@@ -248,17 +258,44 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     });
     const lastV = history[history.length-1][valueKey];
     const color = freshness === 'STALE' ? '#737373' : (lastV != null && lastV >= 0 ? '#22c55e' : '#ef4444');
-    let svg = `<svg width="${width}" height="${height}" style="display:block">`;
-    // zero line
+    let svg = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" style="display:block;width:100%;height:${height}px">`;
     if (mn < 0 && mx > 0) {
-      svg += `<line x1="${pad}" x2="${pad+w}" y1="${sy(0)}" y2="${sy(0)}" stroke="#404040" stroke-width="0.5" stroke-dasharray="2,2"/>`;
+      svg += `<line x1="${pad}" x2="${pad+w}" y1="${sy(0)}" y2="${sy(0)}" stroke="#404040" stroke-width="0.5" stroke-dasharray="2,2" vector-effect="non-scaling-stroke"/>`;
     }
-    svg += `<path d="${path}" stroke="${color}" stroke-width="1.4" fill="none"/>`;
+    svg += `<path d="${path}" stroke="${color}" stroke-width="1.4" fill="none" vector-effect="non-scaling-stroke"/>`;
     if (lastV != null) {
-      svg += `<circle cx="${sx(history.length-1)}" cy="${sy(lastV)}" r="2.5" fill="${color}"/>`;
+      svg += `<circle cx="${sx(history.length-1)}" cy="${sy(lastV)}" r="3" fill="${color}"/>`;
     }
     svg += `</svg>`;
     return svg;
+  };
+
+  // Saturation bar: visualizes current contrib within ±weight band.
+  // Bar is centered at 50%; full positive end = +weight, full negative end = -weight.
+  // The fill goes from center outward by |contrib|/weight fraction of half-width.
+  const saturationBar = (signal, weight, contrib) => {
+    const w = weight || 0;
+    if (w === 0) return '';
+    const sat = signal == null ? 0 : Math.max(-1, Math.min(1, signal)); // signal is already in [-1,+1]
+    const fill = Math.abs(sat) * 50;
+    const isPos = sat >= 0;
+    const offset = isPos ? 50 : (50 - fill);
+    const barColor = isPos ? 'var(--good)' : 'var(--bad)';
+    const wpct = (w * 100).toFixed(1) + '%';
+    return `
+      <div style="margin-top:8px">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);margin-bottom:3px">
+          <span>-${wpct}</span><span>0</span><span>+${wpct}</span>
+        </div>
+        <div style="position:relative;height:14px;background:var(--card2);border-radius:2px">
+          <div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--text-dim)"></div>
+          <div style="position:absolute;left:0;top:50%;width:100%;height:1px;background:#1c2128;transform:translateY(-0.5px)"></div>
+          <div style="position:absolute;left:${offset}%;top:0;height:100%;width:${fill}%;background:${barColor};border-radius:2px;opacity:0.85"></div>
+        </div>
+        <div style="text-align:center;color:var(--text-dim);font-size:10px;margin-top:3px">
+          contribution = signal &times; weight &nbsp; <span style="color:#fff">|</span>&nbsp; weight is the cap (&plusmn;${wpct})
+        </div>
+      </div>`;
   };
 
   // Build per-signal cards
@@ -273,7 +310,8 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       bizDaysBetween(c.last_date, D.freshest_date) === 1 ? '1d' : 'STALE'
     );
     const freshColor = fresh === 'FRESH' ? 'var(--good)' : (fresh === '1d' ? 'var(--accent)' : 'var(--bad)');
-    const spark = sparkSvg(c.history60, fresh, 'signal', 50, 240);
+    const sparkLong  = sparkSvg(c.history_long || [], fresh, 'signal', 56, 360);
+    const sparkShort = sparkSvg(c.history60 || [],   fresh, 'signal', 42, 360);
     return `
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
@@ -283,13 +321,25 @@ fetch('data.json').then(r=>r.json()).then(D=>{
           </div>
           <div style="background:${dir.color}22;border:1px solid ${dir.color};color:${dir.color};padding:3px 9px;border-radius:4px;font-weight:700;font-size:11px">${dir.text}</div>
         </div>
-        <div style="margin:14px 0 6px 0">${spark}</div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10.5px">
+        <div style="margin-top:12px">
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);letter-spacing:0.5px">
+            <span>SINCE 2008 (weekly)</span>
+            <span style="font-variant-numeric:tabular-nums">signal range: -1 to +1</span>
+          </div>
+          ${sparkLong}
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);letter-spacing:0.5px;margin-top:6px">
+            <span>LAST 60 DAYS</span>
+            <span style="font-variant-numeric:tabular-nums">${c.history60 && c.history60.length ? c.history60[0].date + ' &rarr; ' + c.history60[c.history60.length-1].date : ''}</span>
+          </div>
+          ${sparkShort}
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10.5px;margin-top:14px">
           <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">RAW</div><div style="color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${c.last_raw == null ? '-' : (c.last_raw>=0?'+':'') + c.last_raw.toFixed(2)}</div></div>
           <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">SIGNAL</div><div style="color:${c.last_signal == null ? 'var(--text-dim)' : (c.last_signal>=0?'var(--good)':'var(--bad)')};font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${c.last_signal == null ? '-' : (c.last_signal>=0?'+':'') + c.last_signal.toFixed(2)}</div></div>
-          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">WEIGHT</div><div style="color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${(c.weight*100).toFixed(1)}%</div></div>
-          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">CONTRIB</div><div style="color:${contrib == null ? 'var(--text-dim)' : (contrib>=0?'var(--good)':'var(--bad)')};font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${contrib == null ? '-' : (contrib>=0?'+':'') + contrib.toFixed(3)}</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">MAX (&plusmn;w)</div><div style="color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">&plusmn;${(c.weight*100).toFixed(1)}%</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">CURRENT</div><div style="color:${contrib == null ? 'var(--text-dim)' : (contrib>=0?'var(--good)':'var(--bad)')};font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${contrib == null ? '-' : (contrib>=0?'+':'') + (contrib*100).toFixed(2) + '%'}</div></div>
         </div>
+        ${saturationBar(c.last_signal, c.weight, contrib)}
         <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--card2);display:flex;justify-content:space-between;align-items:center;font-size:10.5px">
           <span style="color:${freshColor};font-weight:600">${fresh}</span>
           <span style="color:var(--text-dim);font-variant-numeric:tabular-nums">${lastDate}</span>
@@ -517,7 +567,15 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       <h2>Six signals - all Rose transforms</h2>
       <table>
         <thead><tr>
-          <th>Signal</th><th class="num">Weight</th><th class="num">Sharpe (alone)</th><th class="num">Ann Ret</th><th class="num">Max DD</th><th>Rosecode</th>
+          <th>Signal</th>
+          <th class="num">Weight</th>
+          <th class="num">Max contrib</th>
+          <th class="num">Current contrib</th>
+          <th class="num">Saturation</th>
+          <th class="num">Sharpe (alone)</th>
+          <th class="num">Ann Ret</th>
+          <th class="num">Max DD</th>
+          <th>Rosecode</th>
         </tr></thead>
         <tbody>${componentRows}</tbody>
       </table>
