@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Earnings Dashboard</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --grid: #e2e8f0;
+      --border: #cbd5e1;
+      --red: #dc2626;
+      --blue: #2563eb;
+      --green: #059669;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.35 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    header {
+      padding: 22px 28px 14px;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+    }
+    h1 { margin: 0 0 6px; font-size: 24px; letter-spacing: 0; }
+    .sub { color: var(--muted); max-width: 1120px; }
+    main { padding: 18px 28px 28px; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .legend { display: flex; align-items: center; gap: 14px; color: var(--muted); }
+    .dot { width: 11px; height: 11px; border-radius: 999px; display: inline-block; margin-right: 6px; }
+    label { color: var(--muted); user-select: none; }
+    input[type="checkbox"] { vertical-align: -2px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(360px, 1fr));
+      gap: 18px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      min-width: 0;
+    }
+    .panel h2 { margin: 0 0 4px; font-size: 17px; }
+    .panel .note { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+    svg { width: 100%; height: 520px; display: block; overflow: visible; }
+    .point { stroke: #fff; stroke-width: 1.4; cursor: pointer; }
+    .fit { fill: none; stroke-width: 2.2; opacity: .9; }
+    .fit.all { stroke: #111827; stroke-dasharray: 6 5; opacity: .7; }
+    .label { font-size: 10px; fill: #111827; pointer-events: none; }
+    .axis { stroke: #94a3b8; stroke-width: 1; }
+    .gridline { stroke: var(--grid); stroke-width: 1; }
+    .tick { fill: var(--muted); font-size: 11px; }
+    .tooltip {
+      position: fixed;
+      z-index: 10;
+      display: none;
+      background: #0f172a;
+      color: white;
+      padding: 8px 10px;
+      border-radius: 6px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, .22);
+      font-size: 12px;
+      max-width: 260px;
+      pointer-events: none;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .stat h3 {
+      margin: 0;
+      padding: 14px 16px;
+      font-size: 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .metric-block { padding: 12px 16px 14px; border-bottom: 1px solid #e5e7eb; }
+    .metric-block:last-child { border-bottom: 0; }
+    .metric-title {
+      color: #334155;
+      font-weight: 750;
+      font-size: 13px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 8px;
+      border-radius: 6px;
+      margin-top: 6px;
+      background: #f8fafc;
+    }
+    .metric-row .k { color: #475569; font-size: 12px; overflow: hidden; text-overflow: ellipsis; }
+    .metric-row .v { font-weight: 800; font-size: 15px; }
+    .metric-row.good { background: #dcfce7; color: #14532d; }
+    .metric-row.bad { background: #fee2e2; color: #7f1d1d; }
+    .metric-row.neutral { background: #f1f5f9; color: #334155; }
+    .outlier-note {
+      display: inline-block;
+      margin: 8px 0 10px;
+      padding: 9px 11px;
+      border-left: 4px solid #f97316;
+      background: #fff7ed;
+      color: #7c2d12;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td { padding: 9px 10px; border-bottom: 1px solid #e5e7eb; text-align: right; white-space: nowrap; }
+    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+    th { background: #f1f5f9; color: #334155; font-size: 12px; cursor: pointer; }
+    tr:last-child td { border-bottom: 0; }
+    .pos { color: var(--green); font-weight: 650; }
+    .neg { color: var(--red); font-weight: 650; }
+    @media (max-width: 980px) {
+      main, header { padding-left: 16px; padding-right: 16px; }
+      .grid, .stats { grid-template-columns: 1fr; }
+      svg { height: 430px; }
+      .table-wrap { overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Earnings Dashboard</h1>
+    <div class="sub">
+      X-axis is beat dollars scaled by current market cap. Y-axis is stock performance from the pre-earnings close through May 7, 2026.
+      Blue is AI infra, green is software/platforms, and red is IT/services.
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <div class="legend">
+        <span><i class="dot" style="background:var(--blue)"></i>AI infra</span>
+        <span><i class="dot" style="background:#16a34a"></i>Software</span>
+        <span><i class="dot" style="background:var(--red)"></i>Services</span>
+      </div>
+      <label><input id="focus" type="checkbox" checked /> focus chart ranges</label>
+      <label><input id="labels" type="checkbox" checked /> labels</label>
+    </div>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Sales Beat / Market Cap</h2>
+        <div class="outlier-note"><b>SMCI excluded from chart:</b> sales beat / market cap was -10.650%, sales surprise was -17.4%, but stock was +20.4% since report. Different situation, so it distorts the sales plot.</div>
+        <svg id="salesChart" role="img" aria-label="Sales beat as percent of market cap against stock performance since earnings"></svg>
+      </div>
+      <div class="panel">
+        <h2>EPS Beat / Market Cap</h2>
+        <div class="note">EPS beat dollars use EPS surprise multiplied by shares outstanding.</div>
+        <svg id="epsChart" role="img" aria-label="EPS beat as percent of market cap against stock performance since earnings"></svg>
+      </div>
+    </section>
+
+    <section class="grid" style="margin-top:18px">
+      <div class="panel">
+        <h2>Sales Beat Z-Score Fit</h2>
+        <div class="note">X and Y are whole-sample Z-scores capped at +/-2.5, then fitted by group and overall.</div>
+        <svg id="salesZChart" role="img" aria-label="Capped Z-score sales beat fit lines by group"></svg>
+      </div>
+      <div class="panel">
+        <h2>EPS Beat Z-Score Fit</h2>
+        <div class="note">Dashed black is whole group. Colored lines are AI infra, software, and services.</div>
+        <svg id="epsZChart" role="img" aria-label="Capped Z-score EPS beat fit lines by group"></svg>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Group Averages and Slopes</h2>
+      <div class="note">Averages include equal-weight and market-cap-weighted figures. Slopes use capped Z-score regression.</div>
+      <div class="table-wrap">
+        <table id="summaryTable"></table>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Underlying Table</h2>
+      <div class="note">Click headers to sort.</div>
+      <div class="table-wrap">
+        <table id="dataTable"></table>
+      </div>
+    </section>
+  </main>
+
+  <div class="tooltip" id="tip"></div>
+
+  <script>
+    const rows = [
+      {ticker:"MSFT", cls:"Software", sales:0.046390, eps:0.049909, since:-1.940591, day1:-5.001748, revSurp:1.780452, epsSurp:5.172414},
+      {ticker:"GOOGL", cls:"Software", sales:0.060558, eps:0.620619, since:13.782947, day1:10.012004, revSurp:2.729482, epsSurp:93.560606},
+      {ticker:"META", cls:"Software", sales:0.047901, eps:0.611209, since:-8.122565, day1:-8.852452, revSurp:1.349892, epsSurp:56.521739},
+      {ticker:"AMZN", cls:"Software", sales:0.145355, eps:0.424088, since:4.416635, day1:2.063914, revSurp:2.391697, epsSurp:70.552147},
+      {ticker:"AAPL", cls:"Software", sales:0.040742, eps:0.020874, since:6.385975, day1:3.690269, revSurp:1.571350, epsSurp:3.076923},
+      {ticker:"AMD", cls:"AI infra", sales:0.052550, eps:0.019586, since:19.593600, day1:23.379400, revSurp:3.535354, epsSurp:6.201550},
+      {ticker:"PLTR", cls:"Software", sales:0.027393, eps:0.036483, since:-4.863610, day1:-5.663916, revSurp:5.844156, epsSurp:17.857143},
+      {ticker:"ANET", cls:"AI infra", sales:0.050424, eps:0.042328, since:-17.888999, day1:-14.807090, revSurp:3.435115, epsSurp:7.407407},
+      {ticker:"IBM", cls:"Software", sales:0.147191, eps:0.043232, since:-9.551001, day1:-9.621398, revSurp:2.051282, epsSurp:5.524862},
+      {ticker:"NOW", cls:"Software", sales:0.020721, eps:0.000000, since:-6.550826, day1:-15.338527, revSurp:0.533333, epsSurp:0.000000},
+      {ticker:"TSLA", cls:"Software", sales:-0.036856, eps:0.004857, since:6.270803, day1:-2.892834, revSurp:-2.482578, epsSurp:5.128205},
+      {ticker:"NFLX", cls:"Software", sales:0.021528, eps:0.532578, since:-18.054961, day1:-9.655558, revSurp:0.657354, epsSurp:61.842105},
+      {ticker:"INTC", cls:"AI infra", sales:0.228696, eps:0.255428, since:67.948534, day1:26.459331, revSurp:10.227273, epsSurp:2800.000000},
+      {ticker:"QCOM", cls:"AI infra", sales:0.004684, eps:0.044433, since:35.048665, day1:19.720001, revSurp:0.094429, epsSurp:3.515625},
+      {ticker:"KLAC", cls:"AI infra", sales:0.021708, eps:0.013044, since:-2.527404, day1:-3.240518, revSurp:1.483680, epsSurp:2.508179},
+      {ticker:"LRCX", cls:"AI infra", sales:0.039073, eps:0.038392, since:10.852657, day1:0.073539, revSurp:2.456140, epsSurp:8.088235},
+      {ticker:"TXN", cls:"AI infra", sales:-0.007704, eps:0.108680, since:22.341839, day1:21.050834, revSurp:-0.412371, epsSurp:22.627737},
+      {ticker:"ASML", cls:"AI infra", sales:0.017108, eps:0.049453, since:-0.111972, day1:-2.405982, revSurp:0.976563, epsSurp:9.765625},
+      {ticker:"TSM", cls:"AI infra", sales:0.000931, eps:0.043463, since:9.018394, day1:-1.260894, revSurp:0.056386, epsSurp:5.438066},
+      {ticker:"SAP", cls:"Software", sales:-0.009710, eps:0.040066, since:0.373517, day1:0.712556, revSurp:-0.178412, epsSurp:3.645833},
+      {ticker:"CDNS", cls:"AI infra", sales:0.010159, eps:0.014010, since:7.212586, day1:-2.277033, revSurp:0.684932, epsSurp:2.617801},
+      {ticker:"SHOP", cls:"Software", sales:0.062069, eps:0.035797, since:-12.395143, day1:-15.617409, revSurp:2.922078, epsSurp:12.500000},
+      {ticker:"DDOG", cls:"Software", sales:0.074252, eps:0.052986, since:31.326969, day1:31.326969, revSurp:5.195184, epsSurp:20.000000},
+      {ticker:"UBER", cls:"Software", sales:-0.051219, eps:0.039098, since:5.181640, day1:8.526390, revSurp:-0.602410, epsSurp:4.347826},
+      {ticker:"TEAM", cls:"Software", sales:0.383950, eps:0.454693, since:31.039872, day1:26.088807, revSurp:5.294118, epsSurp:31.578947},
+      {ticker:"WDC", cls:"AI infra", sales:0.056285, eps:0.071134, since:12.392187, day1:4.545009, revSurp:2.769231, epsSurp:13.807531},
+      {ticker:"STX", cls:"AI infra", sales:0.087281, eps:0.076979, since:28.627534, day1:7.961602, revSurp:5.067568, epsSurp:16.809117},
+      {ticker:"ARM", cls:"AI infra", sales:0.008812, eps:0.009376, since:2.150449, day1:2.150449, revSurp:1.360544, epsSurp:3.448276},
+      {ticker:"SMCI", cls:"AI infra", sales:-10.649784, eps:0.624628, since:20.415469, day1:24.140400, revSurp:-17.352704, epsSurp:33.333333},
+      {ticker:"INFY", cls:"Services", sales:0.039315, eps:0.238663, since:-6.750741, day1:-4.005935, revSurp:0.398406, epsSurp:15.000000},
+      {ticker:"WIT", cls:"Services", sales:-0.289124, eps:0.000000, since:-12.775329, day1:-4.845810, revSurp:-2.264151, epsSurp:0.000000},
+      {ticker:"CTSH", cls:"Services", sales:0.000000, eps:0.134771, since:-5.769231, day1:-0.761971, revSurp:0.000000, epsSurp:5.263158},
+      {ticker:"EPAM", cls:"Services", sales:0.181839, eps:0.105526, since:-4.925211, day1:-2.435241, revSurp:0.719424, epsSurp:4.000000},
+      {ticker:"IT", cls:"Services", sales:-0.189328, eps:0.209152, since:6.817407, day1:1.205063, revSurp:-1.324503, epsSurp:11.036789},
+      {ticker:"CAP", cls:"Services", sales:0.490503, eps:null, since:2.142166, day1:0.292116, revSurp:1.468328, epsSurp:null},
+      {ticker:"MDB", cls:"Software", sales:0.108854, eps:0.061346, since:-10.670682, day1:-23.058424, revSurp:3.834777, epsSurp:12.244898},
+      {ticker:"OKTA", cls:"Software", sales:0.077796, eps:0.061820, since:11.527856, day1:9.831778, revSurp:1.484257, epsSurp:5.882353},
+      {ticker:"TWLO", cls:"Software", sales:0.234035, eps:0.116710, since:39.855228, day1:30.111413, revSurp:5.223881, epsSurp:18.110236},
+      {ticker:"ESTC", cls:"Software", sales:0.215433, eps:0.174351, since:-11.000002, day1:-10.224138, revSurp:2.625636, epsSurp:14.062500},
+      {ticker:"CFLT", cls:"Software", sales:0.060986, eps:0.064537, since:1.307616, day1:-0.228832, revSurp:2.204331, epsSurp:20.000000},
+      {ticker:"CRWD", cls:"Software", sales:0.007769, eps:0.003955, since:31.403633, day1:5.929431, revSurp:0.769231, epsSurp:1.818182},
+      {ticker:"SNOW", cls:"Software", sales:0.056454, eps:0.032527, since:-4.557306, day1:7.450640, revSurp:2.400000, epsSurp:18.518519},
+      {ticker:"GTLB", cls:"Software", sales:0.184845, eps:0.270062, since:-1.030930, day1:-4.352811, revSurp:3.206373, epsSurp:30.434783},
+      {ticker:"NET", cls:"Software", sales:0.018720, eps:0.007790, since:-12.000000, day1:-12.000000, revSurp:2.727889, epsSurp:8.695652}
+    ];
+
+    const marketCaps = {
+      MSFT:3125662.388791, GOOGL:4821825.500536, META:1565724.871943, AMZN:2917005.510204,
+      AAPL:4221733.644498, AMD:666035.123073, PLTR:328551.613764, ANET:178487.267837,
+      IBM:217404.861822, NOW:96520.111943, TSLA:1546569.564931, NFLX:371602.970096,
+      INTC:550950.133804, QCOM:213487.703217, KLAC:230328.976403, LRCX:358304.420541,
+      TXN:259594.858817, ASML:584524.421329, TSM:2147947.528345, SAP:205971.269000,
+      CDNS:98438.728717, SHOP:144999.923349, DDOG:67176.974226, UBER:156191.519101,
+      TEAM:23440.538110, WDC:159901.488654, STX:171858.069176, ARM:226961.532156,
+      SMCI:20188.202585, INFY:50870.887465, WIT:20752.327775, CTSH:24567.619350,
+      EPAM:5499.373514, IT:10563.668965, CAP:17533.030208, MDB:23582.027692,
+      OKTA:14306.695454, TWLO:29910.075702, ESTC:5342.721922, CFLT:11133.730691,
+      CRWD:128724.209711, SNOW:53141.004422, GTLB:4376.639783, NET:90742.935591
+    };
+    rows.forEach(r => r.mcap = marketCaps[r.ticker]);
+
+    const colors = {"Software":"#16a34a", "AI infra":"#2563eb", "Services":"#dc2626"};
+    const fmt = (v, d=1) => `${v >= 0 ? "+" : ""}${v.toFixed(d)}%`;
+    const plain = (v, d=3) => `${v.toFixed(d)}%`;
+    const isNum = v => Number.isFinite(v);
+    const clean = arr => arr.filter(isNum);
+    const median = arr => {
+      const s = clean(arr).slice().sort((a,b)=>a-b);
+      if (!s.length) return null;
+      const m = Math.floor(s.length / 2);
+      return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+    };
+    const safeFmt = (v, d=1) => isNum(v) ? fmt(v, d) : "N/A";
+    const safePlain = (v, d=3) => isNum(v) ? plain(v, d) : "N/A";
+
+    function extent(values, pad = 0.1) {
+      let min = Math.min(...values), max = Math.max(...values);
+      const span = max - min || 1;
+      return [min - span * pad, max + span * pad];
+    }
+
+    function niceTicks(min, max, n = 6) {
+      const raw = (max - min) / Math.max(1, n);
+      const pow = Math.pow(10, Math.floor(Math.log10(raw)));
+      const step = [1, 2, 5, 10].map(x => x * pow).find(x => raw <= x) || 10 * pow;
+      const start = Math.ceil(min / step) * step;
+      const ticks = [];
+      for (let v = start; v <= max + step * 0.5; v += step) ticks.push(v);
+      return ticks;
+    }
+
+    function drawChart(id, xKey, xLabel) {
+      const svg = document.getElementById(id);
+      const focus = document.getElementById("focus").checked;
+      const showLabels = document.getElementById("labels").checked;
+      const w = 900, h = 520, m = {l: 62, r: 26, t: 22, b: 62};
+      svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+      svg.innerHTML = "";
+
+      const dataRows = rows.filter(r => r.ticker !== "SMCI" && isNum(r[xKey]) && isNum(r.since));
+      const xVals = dataRows.map(r => r[xKey]);
+      const yVals = dataRows.map(r => r.since);
+      let xMin, xMax;
+      if (focus && xKey === "sales") [xMin, xMax] = [-0.33, 0.55];
+      else if (focus && xKey === "eps") [xMin, xMax] = [-0.02, 0.70];
+      else [xMin, xMax] = extent(xVals, 0.08);
+      const [yMin, yMax] = focus ? [-24, 72] : extent(yVals, 0.08);
+      const x = v => m.l + (v - xMin) / (xMax - xMin) * (w - m.l - m.r);
+      const y = v => h - m.b - (v - yMin) / (yMax - yMin) * (h - m.t - m.b);
+
+      const add = (name, attrs, text) => {
+        const el = document.createElementNS("http://www.w3.org/2000/svg", name);
+        for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+        if (text !== undefined) el.textContent = text;
+        svg.appendChild(el);
+        return el;
+      };
+
+      niceTicks(xMin, xMax, 6).forEach(t => {
+        const xx = x(t);
+        add("line", {x1:xx, y1:m.t, x2:xx, y2:h-m.b, class:"gridline"});
+        add("text", {x:xx, y:h-m.b+22, "text-anchor":"middle", class:"tick"}, t.toFixed(xKey === "sales" && Math.abs(t) < 1 ? 2 : 1) + "%");
+      });
+      niceTicks(yMin, yMax, 6).forEach(t => {
+        const yy = y(t);
+        add("line", {x1:m.l, y1:yy, x2:w-m.r, y2:yy, class:"gridline"});
+        add("text", {x:m.l-10, y:yy+4, "text-anchor":"end", class:"tick"}, fmt(t, 0));
+      });
+      add("line", {x1:m.l, y1:y(0), x2:w-m.r, y2:y(0), class:"axis"});
+      add("line", {x1:x(0), y1:m.t, x2:x(0), y2:h-m.b, class:"axis"});
+      add("text", {x:w/2, y:h-16, "text-anchor":"middle", class:"tick"}, xLabel);
+      add("text", {x:16, y:h/2, transform:`rotate(-90 16 ${h/2})`, "text-anchor":"middle", class:"tick"}, "Stock performance since report");
+
+      const tip = document.getElementById("tip");
+      dataRows.forEach(r => {
+        const rawX = x(r[xKey]), rawY = y(r.since);
+        const clamped = rawX < m.l || rawX > w-m.r || rawY < m.t || rawY > h-m.b;
+        const cx = Math.max(m.l, Math.min(w-m.r, rawX));
+        const cy = Math.max(m.t, Math.min(h-m.b, rawY));
+        const p = add("circle", {cx, cy, r: clamped ? 7 : 6, fill:colors[r.cls], class:"point", opacity:clamped ? 0.55 : 0.92});
+        p.addEventListener("mousemove", ev => {
+          tip.style.display = "block";
+          tip.style.left = `${ev.clientX + 14}px`;
+          tip.style.top = `${ev.clientY + 14}px`;
+          tip.innerHTML = `<b>${r.ticker}</b> (${r.cls})<br>${xLabel}: ${plain(r[xKey], 3)}<br>Since: ${fmt(r.since, 1)}<br>Sales surprise: ${fmt(r.revSurp, 1)}<br>EPS surprise: ${fmt(r.epsSurp, 1)}`;
+        });
+        p.addEventListener("mouseleave", () => tip.style.display = "none");
+        if (showLabels) {
+          add("text", {x:cx+7, y:cy-7, class:"label"}, r.ticker);
+        }
+      });
+    }
+
+    function zValues(key) {
+      const base = rows.filter(r => r.ticker !== "SMCI" && isNum(r[key]) && isNum(r.since));
+      const xs = base.map(r => r[key]);
+      const ys = base.map(r => r.since);
+      const mean = arr => arr.reduce((a,b)=>a+b,0) / arr.length;
+      const sd = arr => {
+        const m = mean(arr);
+        return Math.sqrt(arr.reduce((a,b)=>a+(b-m)*(b-m),0) / arr.length) || 1;
+      };
+      const xm = mean(xs), ym = mean(ys), xsd = sd(xs), ysd = sd(ys);
+      return base.map(r => ({...r, zx: Math.max(-2.5, Math.min(2.5, (r[key] - xm) / xsd)), zy: Math.max(-2.5, Math.min(2.5, (r.since - ym) / ysd))}));
+    }
+
+    function fitLine(points) {
+      const n = points.length;
+      const mx = points.reduce((a,p)=>a+p.zx,0) / n;
+      const my = points.reduce((a,p)=>a+p.zy,0) / n;
+      const cov = points.reduce((a,p)=>a+(p.zx-mx)*(p.zy-my),0);
+      const vx = points.reduce((a,p)=>a+(p.zx-mx)*(p.zx-mx),0) || 1;
+      const slope = cov / vx;
+      const intercept = my - slope * mx;
+      return {slope, intercept};
+    }
+
+    function drawZChart(id, key, xLabel) {
+      const svg = document.getElementById(id);
+      const showLabels = document.getElementById("labels").checked;
+      const data = zValues(key);
+      const w = 900, h = 520, m = {l: 62, r: 26, t: 22, b: 62};
+      svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+      svg.innerHTML = "";
+      const xMin = -2.65, xMax = 2.65, yMin = -2.65, yMax = 2.65;
+      const x = v => m.l + (v - xMin) / (xMax - xMin) * (w - m.l - m.r);
+      const y = v => h - m.b - (v - yMin) / (yMax - yMin) * (h - m.t - m.b);
+      const add = (name, attrs, text) => {
+        const el = document.createElementNS("http://www.w3.org/2000/svg", name);
+        for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+        if (text !== undefined) el.textContent = text;
+        svg.appendChild(el);
+        return el;
+      };
+      [-2,-1,0,1,2].forEach(t => {
+        add("line", {x1:x(t), y1:m.t, x2:x(t), y2:h-m.b, class:"gridline"});
+        add("text", {x:x(t), y:h-m.b+22, "text-anchor":"middle", class:"tick"}, t.toFixed(0));
+        add("line", {x1:m.l, y1:y(t), x2:w-m.r, y2:y(t), class:"gridline"});
+        add("text", {x:m.l-10, y:y(t)+4, "text-anchor":"end", class:"tick"}, t.toFixed(0));
+      });
+      add("line", {x1:m.l, y1:y(0), x2:w-m.r, y2:y(0), class:"axis"});
+      add("line", {x1:x(0), y1:m.t, x2:x(0), y2:h-m.b, class:"axis"});
+      add("text", {x:w/2, y:h-16, "text-anchor":"middle", class:"tick"}, `${xLabel} capped Z`);
+      add("text", {x:16, y:h/2, transform:`rotate(-90 16 ${h/2})`, "text-anchor":"middle", class:"tick"}, "Since-report performance capped Z");
+
+      const tip = document.getElementById("tip");
+      data.forEach(r => {
+        const p = add("circle", {cx:x(r.zx), cy:y(r.zy), r:5.7, fill:colors[r.cls], class:"point", opacity:.9});
+        p.addEventListener("mousemove", ev => {
+          tip.style.display = "block";
+          tip.style.left = `${ev.clientX + 14}px`;
+          tip.style.top = `${ev.clientY + 14}px`;
+          tip.innerHTML = `<b>${r.ticker}</b> (${r.cls})<br>${xLabel} Z: ${r.zx.toFixed(2)}<br>Performance Z: ${r.zy.toFixed(2)}<br>Since: ${fmt(r.since, 1)}`;
+        });
+        p.addEventListener("mouseleave", () => tip.style.display = "none");
+        if (showLabels) add("text", {x:x(r.zx)+7, y:y(r.zy)-7, class:"label"}, r.ticker);
+      });
+
+      const groups = [["All", data], ["AI infra", data.filter(r=>r.cls==="AI infra")], ["Software", data.filter(r=>r.cls==="Software")], ["Services", data.filter(r=>r.cls==="Services")]];
+      groups.forEach(([g, pts]) => {
+        if (pts.length < 2) return;
+        const f = fitLine(pts);
+        const x1 = -2.5, x2 = 2.5;
+        const y1 = Math.max(-2.5, Math.min(2.5, f.intercept + f.slope * x1));
+        const y2 = Math.max(-2.5, Math.min(2.5, f.intercept + f.slope * x2));
+        add("line", {x1:x(x1), y1:y(y1), x2:x(x2), y2:y(y2), class:g==="All" ? "fit all" : "fit", stroke:g==="All" ? "#111827" : colors[g]});
+      });
+    }
+
+    function renderStats() {
+      const groups = ["AI infra", "Software", "Services"];
+      const avg = (arr, key) => {
+        const vals = clean(arr.map(r => r[key]));
+        return vals.length ? vals.reduce((a,b)=>a+b,0) / vals.length : null;
+      };
+      const tone = v => v > 0.05 ? "good" : (v < -0.05 ? "bad" : "neutral");
+      const row = (label, value, formatter = fmt, digits = 1) =>
+        `<div class="metric-row ${isNum(value) ? tone(value) : "neutral"}"><div class="k">${label}</div><div class="v">${isNum(value) ? formatter(value, digits) : "N/A"}</div></div>`;
+      document.getElementById("stats").innerHTML = groups.map(g => {
+        const arr = rows.filter(r => r.cls === g);
+        return `<div class="stat">
+          <h3 style="color:${colors[g]}">${g}</h3>
+          <div class="metric-block">
+            ${row("Avg sales vs expectations", avg(arr, "revSurp"))}
+            ${row("Avg earnings vs expectations", avg(arr, "epsSurp"))}
+            ${row("Avg share price since", avg(arr, "since"))}
+          </div>
+        </div>`;
+      }).join("");
+    }
+
+    let sortKey = "since", sortDir = -1;
+    function renderTable() {
+      const columns = [
+        ["ticker", "Name"], ["cls", "Class"], ["sales", "Sales Beat/MCap"], ["eps", "EPS Beat/MCap"],
+        ["revSurp", "Sales vs Est"], ["epsSurp", "EPS vs Est"], ["day1", "Day 1"], ["since", "Since"]
+      ];
+      const sorted = rows.slice().sort((a,b) => {
+        const av = a[sortKey], bv = b[sortKey];
+        if (!isNum(av) && !isNum(bv) && typeof av !== "string") return 0;
+        if (!isNum(av) && typeof av !== "string") return 1;
+        if (!isNum(bv) && typeof bv !== "string") return -1;
+        if (typeof av === "string") return av.localeCompare(bv) * sortDir;
+        return (av - bv) * sortDir;
+      });
+      const head = `<thead><tr>${columns.map(([k, label]) => `<th data-key="${k}">${label}</th>`).join("")}</tr></thead>`;
+      const body = sorted.map(r => {
+        const clsTag = `<span style="color:${colors[r.cls]};font-weight:700">${r.cls}</span>`;
+        const cell = v => `<td class="${v < 0 ? "neg" : "pos"}">${fmt(v, 1)}</td>`;
+        return `<tr>
+          <td><b>${r.ticker}</b></td>
+          <td>${clsTag}</td>
+          <td>${safePlain(r.sales, 3)}</td>
+          <td>${safePlain(r.eps, 3)}</td>
+          ${cell(r.revSurp)}
+          ${isNum(r.epsSurp) ? cell(r.epsSurp) : "<td>N/A</td>"}
+          ${cell(r.day1)}
+          ${cell(r.since)}
+        </tr>`;
+      }).join("");
+      const table = document.getElementById("dataTable");
+      table.innerHTML = head + `<tbody>${body}</tbody>`;
+      table.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
+        const k = th.dataset.key;
+        if (sortKey === k) sortDir *= -1;
+        else { sortKey = k; sortDir = k === "ticker" || k === "cls" ? 1 : -1; }
+        renderTable();
+      }));
+    }
+
+    function groupSummary() {
+      const groups = ["AI infra", "Software", "Services"];
+      const zSales = zValues("sales"), zEps = zValues("eps");
+      const byTicker = (arr, t) => arr.find(r => r.ticker === t);
+      const weighted = (arr, key) => {
+        const valid = arr.filter(r => isNum(r[key]) && isNum(r.mcap));
+        const total = valid.reduce((a,r)=>a+r.mcap,0);
+        return valid.length && total ? valid.reduce((a,r)=>a+r[key]*r.mcap/total,0) : null;
+      };
+      const avg = (arr, key) => {
+        const vals = clean(arr.map(r => r[key]));
+        return vals.length ? vals.reduce((a,b)=>a+b,0) / vals.length : null;
+      };
+      const rowsHtml = groups.map(g => {
+        const arr = rows.filter(r => r.cls === g);
+        const salesPts = arr.map(r => byTicker(zSales, r.ticker)).filter(Boolean);
+        const epsPts = arr.map(r => byTicker(zEps, r.ticker)).filter(Boolean);
+        const salesFit = salesPts.length > 1 ? fitLine(salesPts) : {slope:null};
+        const epsFit = epsPts.length > 1 ? fitLine(epsPts) : {slope:null};
+        const salesAvg = avg(arr, "revSurp"), salesW = weighted(arr, "revSurp");
+        const epsAvg = avg(arr, "epsSurp"), epsW = weighted(arr, "epsSurp");
+        const sinceAvg = avg(arr, "since"), sinceW = weighted(arr, "since");
+        return `<tr>
+          <td><span style="color:${colors[g]};font-weight:800">${g}</span></td>
+          <td>${arr.length}</td>
+          <td class="${salesAvg < 0 ? "neg" : "pos"}">${safeFmt(salesAvg, 1)}</td>
+          <td class="${salesW < 0 ? "neg" : "pos"}">${safeFmt(salesW, 1)}</td>
+          <td class="${epsAvg < 0 ? "neg" : "pos"}">${safeFmt(epsAvg, 1)}</td>
+          <td class="${epsW < 0 ? "neg" : "pos"}">${safeFmt(epsW, 1)}</td>
+          <td class="${sinceAvg < 0 ? "neg" : "pos"}">${safeFmt(sinceAvg, 1)}</td>
+          <td class="${sinceW < 0 ? "neg" : "pos"}">${safeFmt(sinceW, 1)}</td>
+          <td>${isNum(salesFit.slope) ? salesFit.slope.toFixed(2) : "N/A"}</td>
+          <td>${isNum(epsFit.slope) ? epsFit.slope.toFixed(2) : "N/A"}</td>
+        </tr>`;
+      }).join("");
+      const allSalesFit = fitLine(zSales), allEpsFit = fitLine(zEps);
+      const allSalesAvg = avg(rows, "revSurp"), allSalesW = weighted(rows, "revSurp");
+      const allEpsAvg = avg(rows, "epsSurp"), allEpsW = weighted(rows, "epsSurp");
+      const allSinceAvg = avg(rows, "since"), allSinceW = weighted(rows, "since");
+      document.getElementById("summaryTable").innerHTML = `
+        <thead><tr>
+          <th>Group</th><th>N</th><th>Avg Sales vs Est</th><th>MCap-Wtd Sales vs Est</th>
+          <th>Avg Earnings vs Est</th><th>MCap-Wtd Earnings vs Est</th>
+          <th>Avg Share Price Since</th><th>MCap-Wtd Share Price Since</th>
+          <th>Sales Z Slope</th><th>EPS Z Slope</th>
+        </tr></thead>
+        <tbody>${rowsHtml}
+          <tr>
+            <td><b>All</b></td>
+            <td>${rows.length}</td>
+            <td class="${allSalesAvg < 0 ? "neg" : "pos"}">${safeFmt(allSalesAvg, 1)}</td>
+            <td class="${allSalesW < 0 ? "neg" : "pos"}">${safeFmt(allSalesW, 1)}</td>
+            <td class="${allEpsAvg < 0 ? "neg" : "pos"}">${safeFmt(allEpsAvg, 1)}</td>
+            <td class="${allEpsW < 0 ? "neg" : "pos"}">${safeFmt(allEpsW, 1)}</td>
+            <td class="${allSinceAvg < 0 ? "neg" : "pos"}">${safeFmt(allSinceAvg, 1)}</td>
+            <td class="${allSinceW < 0 ? "neg" : "pos"}">${safeFmt(allSinceW, 1)}</td>
+            <td>${allSalesFit.slope.toFixed(2)}</td>
+            <td>${allEpsFit.slope.toFixed(2)}</td>
+          </tr>
+        </tbody>`;
+    }
+
+    function renderAll() {
+      renderStats();
+      drawChart("salesChart", "sales", "Sales beat dollars as % of market cap");
+      drawChart("epsChart", "eps", "EPS beat dollars as % of market cap");
+      drawZChart("salesZChart", "sales", "Sales beat / market cap");
+      drawZChart("epsZChart", "eps", "EPS beat / market cap");
+      groupSummary();
+      renderTable();
+    }
+    document.getElementById("focus").addEventListener("change", renderAll);
+    document.getElementById("labels").addEventListener("change", renderAll);
+    renderAll();
+  </script>
+</body>
+</html>
