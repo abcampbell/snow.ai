@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Signal System v3 - 2026-05-09.001</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--card2:#1c2128;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#f59e0b;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7;--white:#e5e5e5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'SF Mono','Cascadia Code','Consolas',monospace;background:var(--bg);color:var(--text);line-height:1.5}
+  .header{padding:28px 32px;border-bottom:1px solid var(--border)}
+  .header h1{font-size:22px;font-weight:600;color:var(--accent)}
+  .header .sub{color:var(--text-dim);font-size:12px;margin-top:6px}
+  .header .concept{color:var(--text);font-size:13px;margin-top:12px;line-height:1.6;max-width:980px}
+  .header .concept code{background:var(--card2);padding:1px 6px;border-radius:3px;font-size:11.5px;color:var(--accent)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px 32px}
+  .grid-full{grid-column:1/-1}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px}
+  .card h2{font-size:13px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+  .rosecode{display:block;font-size:10.5px;color:var(--text-dim);margin-bottom:12px;background:var(--card2);padding:6px 10px;border-radius:4px;font-family:'SF Mono',monospace;word-break:break-all;line-height:1.5;border-left:2px solid var(--accent)}
+  .rosecode-label{color:var(--accent);font-weight:600;margin-right:6px}
+  .stat-row{display:flex;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+  .stat{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px 16px;min-width:110px;flex:1}
+  .stat .label{font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.5px}
+  .stat .value{font-size:22px;font-weight:700;color:#fff;margin-top:2px}
+  .stat .delta{font-size:11px;margin-top:2px;color:var(--text-dim)}
+  .chart-container{position:relative;height:340px}
+  .insight{background:var(--card2);border-left:3px solid var(--accent);padding:12px 16px;margin-top:12px;font-size:12.5px;line-height:1.7;border-radius:0 4px 4px 0}
+  .insight strong{color:#fff}
+  .insight.green{border-left-color:var(--good)}.insight.blue{border-left-color:var(--blue)}.insight.red{border-left-color:var(--bad)}
+  .section-title{font-size:15px;color:#fff;font-weight:600;margin:32px 32px 0;padding-top:16px;border-top:1px solid var(--border)}
+  .section-title .sub{font-size:11px;color:var(--text-dim);font-weight:400;margin-left:10px;text-transform:none;letter-spacing:0}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{text-align:left;padding:8px;color:var(--text-dim);font-weight:500;border-bottom:1px solid var(--border);font-size:10px;text-transform:uppercase;letter-spacing:0.5px}
+  td{padding:6px 8px;border-bottom:1px solid var(--card2)}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr:hover{background:var(--card2)}
+  .corner-mark{position:fixed;bottom:1rem;right:1.5rem;font-size:10px;color:var(--text-dim);z-index:10}
+  .corner-mark a{color:var(--text-dim);text-decoration:none}
+  .err-box{background:#3a1c1c;border-left:3px solid var(--bad);padding:12px 16px;font-size:12.5px;line-height:1.7;color:var(--text);margin:0 32px 16px;border-radius:0 4px 4px 0}
+  .err-box h3{color:var(--bad);font-size:12px;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px}
+  .err-box code{background:#2c1414;padding:1px 5px;border-radius:3px;color:#fbbf24}
+  .pos{color:var(--good)}
+  .neg{color:var(--bad)}
+  body.clean .rosecode, body.clean .impl-only { display: none !important; }
+  body.clean .rosecode-col { display: none !important; }
+  .clean-toggle {
+    position: fixed; top: 12px; right: 16px; z-index: 50;
+    background: #161b22; color: #c9d1d9; border: 1px solid #30363d;
+    padding: 6px 12px; font-family: inherit; font-size: 11.5px; cursor: pointer;
+    border-radius: 4px; letter-spacing: 0.5px;
+  }
+  .clean-toggle.active { background: #f59e0b; color: #0d1117; border-color: #f59e0b; }
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<button class="clean-toggle" id="cleanToggle" onclick="toggleClean()">screenshot mode</button>
+<div class="header">
+  <h1>Gold Signal System v3 - 2026-05-09.001</h1>
+  <div class="sub" id="subBar">Rose-native composite. 6 signals. ILB real yield + dollar + specs + skew. Period 2008-06-06 to ...</div>
+  <div class="concept">
+    Every number on this page is recomputed from a Rose transform chain shown beside its chart. The composite
+    is built by chaining <code>:signal:mult(weight):add(...)</code>, then evaluated via
+    <code>:trade(gold:returns):since(2008-06-06)</code>. To verify, paste the rosecode into Rose and the same
+    Sharpe and drawdown will appear.
+  </div>
+</div>
+
+<div class="err-box">
+  <h3>What changed from v2.003</h3>
+  Prior dashboard reported <code>Sharpe 0.882, MaxDD ~15%</code>. The Sharpe was directionally right but the MaxDD was understated -
+  actual is <strong>-21.2%</strong>. The pushed pre-baked signal also span 2005-2026 but only signals from 2008-06-06 onward are
+  real (gold.vol.skew start). v3 truncates with <code>:since(2008-06-06)</code> so all metrics line up with what Rose returns.
+</div>
+
+<div id="content"><div style="padding:40px 32px;color:var(--text-dim)">Loading data.json...</div></div>
+<div class="corner-mark"><a href="https://snow.ai/links/">snow.ai</a></div>
+
+<script>
+Chart.defaults.color='#8b949e';Chart.defaults.borderColor='#30363d';
+Chart.defaults.font.family="'SF Mono','Cascadia Code','Consolas',monospace";
+Chart.defaults.font.size=10;
+
+function toggleClean() {
+  const on = document.body.classList.toggle('clean');
+  const btn = document.getElementById('cleanToggle');
+  if (btn) {
+    btn.classList.toggle('active', on);
+    btn.textContent = on ? 'screenshot mode: ON' : 'screenshot mode';
+  }
+}
+
+fetch('data.json').then(r=>r.json()).then(D=>{
+  const fmtPct = v => v == null ? '-' : (typeof v === 'string' ? v : (v*100).toFixed(2)+'%');
+  const fmtNum = (v, n=2) => v == null ? '-' : (typeof v === 'string' ? v : Number(v).toFixed(n));
+  const cls = v => {
+    if (v == null) return '';
+    const n = typeof v === 'string' ? parseFloat(v) : v;
+    return n >= 0 ? 'pos' : 'neg';
+  };
+  document.getElementById('subBar').textContent =
+    `Rose-native composite. 6 signals. Period ${D.period.start} to ${D.period.end}.`;
+
+  const sys = D.system, gold = D.gold_bh;
+
+  // helper: format a date->value series into Chart.js data points using ms timestamps on x
+  const seriesToXY = obj => Object.entries(obj || {})
+    .map(([k,v]) => ({x: Date.parse(k), y: v}))
+    .filter(p => !isNaN(p.x) && p.y != null)
+    .sort((a,b) => a.x - b.x);
+
+  // YoY computed client-side from sys_pnl (cumulative PnL) and gold_pnl (cumulative gold)
+  function annualPctChange(cumObj){
+    const arr = Object.entries(cumObj||{}).sort((a,b)=>a[0].localeCompare(b[0]));
+    if(arr.length<2) return [];
+    const out=[];
+    let lastYear=null, lastVal=null, firstYearVal=null;
+    for(const [d,v] of arr){
+      const y = d.slice(0,4);
+      if(y !== lastYear){
+        if(lastYear !== null && firstYearVal !== null && lastVal !== null){
+          // For cumulative series, year return = (end / start) - 1
+          out.push([lastYear, (lastVal/firstYearVal) - 1]);
+        }
+        lastYear = y; firstYearVal = v;
+      }
+      lastVal = v;
+    }
+    if(lastYear !== null && firstYearVal !== null && lastVal !== null){
+      out.push([lastYear, (lastVal/firstYearVal) - 1]);
+    }
+    return out;
+  }
+  const sysYoy = annualPctChange(D.series.sys_pnl);
+  const goldYoy = annualPctChange(D.series.gold_pnl);
+  const yoyByYear = {};
+  for(const [y,v] of sysYoy) yoyByYear[y]={sys:v};
+  for(const [y,v] of goldYoy) yoyByYear[y]=Object.assign(yoyByYear[y]||{}, {gold:v});
+  const years = Object.keys(yoyByYear).sort();
+
+  // Lookup maps for attribution (used by both componentRows and the per-signal cards below)
+  const foMap = {};
+  for (const a of (D.fresh_only_attribution || [])) foMap[a.name] = a;
+  const fullAttrMap = {};
+  for (const a of (D.attribution || [])) fullAttrMap[a.name] = a;
+
+  // Human-readable component labels (used by componentRows below + per-signal cards further down)
+  const SIGNAL_META = {
+    'dollar_ma_rollz20':     { label: 'Dollar Trend',                desc: 'Dollar vs its 252d MA, 20d rolling z-score.' },
+    'ilb_chg_ma40_rz1250':   { label: 'Real Yield (40d change vs 5y)', desc: '40d-smoothed change in 2y ILB real yield, 5y rolling z, flipped.' },
+    'ilb_chg_rz60_clip':     { label: 'Real Yield (60d change)',     desc: '60d z-score of real-yield change, clipped at +/-3, flipped.' },
+    'ilb_z':                 { label: 'Real Yield Level',            desc: 'Z-score of 2y ILB real yield vs 250d window.' },
+    'specs_flip':            { label: 'CFTC Specs (contrarian)',     desc: 'Managed-money positioning, ma(1,500), flipped.' },
+    'vol_skew_rz250':        { label: 'Gold Vol Skew',               desc: 'Z-score of gold options skew (250d window). Put demand / hedging.' },
+  };
+  const labelOf = name => (SIGNAL_META[name] && SIGNAL_META[name].label) || name;
+
+  // Sort by weight descending so most-important rows appear first
+  const componentRows = D.components.slice().sort((a, b) => b.weight - a.weight).map(c => {
+    const fo = foMap[c.name];
+    const fa = fullAttrMap[c.name];
+    const curContrib = fo ? fo.contribution : (fa ? fa.contribution : null);
+    const sat = (curContrib != null && c.weight) ? curContrib / c.weight : null;
+    const wpct = (c.weight*100).toFixed(2) + '%';
+    return `
+      <tr>
+        <td><strong>${labelOf(c.name)}</strong> <span class="impl-only" style="color:var(--text-dim);font-size:10px"> &middot; ${c.name}</span></td>
+        <td class="num">${wpct}</td>
+        <td class="num">&plusmn;${wpct}</td>
+        <td class="num" style="color:${curContrib==null?'var(--text-dim)':(curContrib>=0?'var(--good)':'var(--bad)')};font-weight:600">${curContrib==null?'-':(curContrib>=0?'+':'')+(curContrib*100).toFixed(2)+'%'}</td>
+        <td class="num" style="color:var(--text-dim)">${sat==null?'-':((sat>=0?'+':'')+(sat*100).toFixed(0)+'%')}</td>
+        <td class="num ${cls(c.sharpe)}">${fmtNum(c.sharpe)}</td>
+        <td class="num">${c.ann_return || '-'}</td>
+        <td class="num neg">${c.max_dd || '-'}</td>
+        <td class="rosecode-col"><code class="rosecode" style="margin:0;padding:3px 6px;font-size:10px;border:none">${c.rosecode}</code></td>
+      </tr>
+    `;
+  }).join('');
+
+  // ===== Today's positioning =====
+  const storedRecent = D.stored_composite_recent || [];
+  const lastStored = storedRecent.length ? storedRecent[storedRecent.length - 1] : null;
+  const positionLabel = (v) => {
+    if (v == null) return '-';
+    const pct = (v * 100).toFixed(1) + '%';
+    if (Math.abs(v) < 0.05) return 'NEUTRAL (' + pct + ')';
+    return (v > 0 ? 'LONG ' : 'SHORT ') + Math.abs(v*100).toFixed(1) + '%';
+  };
+  const positionColor = (v) => v == null ? 'var(--text-dim)' : (v > 0.05 ? 'var(--good)' : (v < -0.05 ? 'var(--bad)' : 'var(--text-dim)'));
+
+  const attr = D.attribution || [];
+  const attrSum = D.attribution_total || 0;
+  const maxContrib = attr.length ? Math.max(...attr.map(a => Math.abs(a.contribution))) : 1;
+
+  // Find the freshest per-component date so we can flag staleness
+  const attrLastDates = attr.map(a => a.signal_last_date).filter(Boolean).sort();
+  const attrFreshestDate = attrLastDates.length ? attrLastDates[attrLastDates.length - 1] : null;
+  const bizDaysBetween = (a, b) => {
+    if (!a || !b) return null;
+    const da = new Date(a), db = new Date(b);
+    let diff = Math.round((db - da) / 86400000);
+    let bd = 0;
+    for (let i = 1; i <= diff; i++) {
+      const d = new Date(da); d.setDate(da.getDate() + i);
+      const dow = d.getUTCDay();
+      if (dow !== 0 && dow !== 6) bd++;
+    }
+    return bd;
+  };
+  const todayStr = D.build_date;
+  const dateCellHTML = (lastDate) => {
+    if (!lastDate) return '<span style="color:var(--text-dim)">-</span>';
+    const lagFromFreshest = bizDaysBetween(lastDate, attrFreshestDate);
+    const lagFromToday = bizDaysBetween(lastDate, todayStr);
+    let color = 'var(--text)';
+    let warn = '';
+    if (lagFromFreshest != null && lagFromFreshest >= 2) {
+      color = 'var(--bad)'; warn = ' STALE';
+    } else if (lagFromFreshest === 1) {
+      color = 'var(--accent)';
+    } else if (lagFromFreshest === 0) {
+      color = 'var(--good)';
+    }
+    const ageNote = lagFromToday != null ? ` <span style="color:var(--text-dim);font-size:10px">(${lagFromToday}b ago)</span>` : '';
+    return `<span style="color:${color};font-weight:600">${lastDate}${warn}</span>${ageNote}`;
+  };
+
+  const attrSorted = attr.slice().sort((a, b) => b.weight - a.weight);
+  const attribRows = attrSorted.map(a => {
+    const pct = (a.contribution / Math.max(maxContrib, 0.01)) * 50; // scale to 50% of bar width
+    const isPos = a.contribution >= 0;
+    const barWidth = Math.abs(pct).toFixed(1);
+    const barOffset = isPos ? 50 : (50 - parseFloat(barWidth));
+    const barColor = isPos ? 'var(--good)' : 'var(--bad)';
+    return `
+      <tr>
+        <td style="font-weight:600">${labelOf(a.name)}<span class="impl-only" style="color:var(--text-dim);font-weight:400;font-size:10px"> &middot; ${a.name}</span></td>
+        <td class="num" style="font-size:11px">${dateCellHTML(a.signal_last_date)}</td>
+        <td class="num">${a.raw == null ? '-' : (a.raw>=0?'+':'') + a.raw.toFixed(2)}</td>
+        <td class="num" style="color:${isPos ? 'var(--good)' : 'var(--bad)'}">${(a.signal>=0?'+':'') + a.signal.toFixed(3)}</td>
+        <td class="num">${(a.weight*100).toFixed(1)}%</td>
+        <td style="position:relative;width:180px;padding:0 8px">
+          <div style="position:relative;height:14px;background:var(--card2);border-radius:2px">
+            <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--text-dim)"></div>
+            <div style="position:absolute;left:${barOffset}%;top:0;height:100%;width:${barWidth}%;background:${barColor};border-radius:2px"></div>
+          </div>
+        </td>
+        <td class="num" style="color:${isPos ? 'var(--good)' : 'var(--bad)'};font-weight:600">${(a.contribution>=0?'+':'') + a.contribution.toFixed(4)}</td>
+      </tr>
+    `;
+  }).join('');
+
+  // ===== Signal-by-signal cards (SIGNAL_META + labelOf already declared above) =====
+  const directionLabel = (contrib) => {
+    if (contrib == null) return { text: 'STALE', color: 'var(--text-dim)' };
+    if (contrib > 0.05) return { text: 'LONG', color: 'var(--good)' };
+    if (contrib < -0.05) return { text: 'SHORT', color: 'var(--bad)' };
+    return { text: 'NEUTRAL', color: 'var(--text-dim)' };
+  };
+
+  // foMap / fullAttrMap already declared above for componentRows
+
+  // Sparkline with vertical gradient: deep green at +1, neutral at 0, deep red at -1.
+  // Gradient is in userSpaceOnUse so it spans the full SVG height regardless of where the line sits.
+  let _sparkId = 0;
+  const sparkSvg = (history, freshness, valueKey='signal', height=40, width=400) => {
+    if (!history || history.length === 0) return '';
+    const pad = 2;
+    const vs = history.map(h => h[valueKey]).filter(v => v != null);
+    if (vs.length === 0) return '';
+    let mn = Math.min(...vs), mx = Math.max(...vs);
+    if (valueKey === 'signal') { mn = -1; mx = 1; }
+    if (mn === mx) { mn -= 0.5; mx += 0.5; }
+    const w = width - 2*pad, h = height - 2*pad;
+    const sx = i => pad + (i / Math.max(1, history.length - 1)) * w;
+    const sy = v => pad + (1 - (v - mn) / (mx - mn)) * h;
+    let path = '';
+    let lastVal = null;
+    history.forEach((p, i) => {
+      const v = p[valueKey];
+      if (v == null) return;
+      path += (lastVal === null ? 'M ' : 'L ') + sx(i) + ' ' + sy(v) + ' ';
+      lastVal = v;
+    });
+    const lastV = history[history.length-1][valueKey];
+    const lastDotColor = lastV != null && lastV >= 0 ? '#22c55e' : '#ef4444';
+    const opacity = freshness === 'STALE' ? 0.5 : 1.0;
+    const gradId = 'spark-grad-' + (++_sparkId);
+    // Gradient stops: position +1 (top, y=pad) -> deep green, 0 (mid) -> muted, -1 (bottom, y=pad+h) -> deep red.
+    // If the value range is symmetric around 0 we map exactly; otherwise we map the value extremes.
+    // Pick stops based on the value range so the green/red intensity reflects the value at every y.
+    let svg = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" style="display:block;width:100%;height:${height}px">`;
+    svg += `<defs><linearGradient id="${gradId}" x1="0" y1="${pad}" x2="0" y2="${pad+h}" gradientUnits="userSpaceOnUse">`;
+    svg += `<stop offset="0%" stop-color="#16a34a"/>`;       // top: deep green
+    svg += `<stop offset="35%" stop-color="#84cc16"/>`;      // upper-mid: lime
+    svg += `<stop offset="50%" stop-color="#737373"/>`;      // middle: neutral grey
+    svg += `<stop offset="65%" stop-color="#f97316"/>`;      // lower-mid: orange
+    svg += `<stop offset="100%" stop-color="#dc2626"/>`;     // bottom: deep red
+    svg += `</linearGradient></defs>`;
+    if (mn < 0 && mx > 0) {
+      svg += `<line x1="${pad}" x2="${pad+w}" y1="${sy(0)}" y2="${sy(0)}" stroke="#404040" stroke-width="0.5" stroke-dasharray="2,2" vector-effect="non-scaling-stroke"/>`;
+    }
+    svg += `<path d="${path}" stroke="url(#${gradId})" stroke-width="1.6" fill="none" opacity="${opacity}" vector-effect="non-scaling-stroke"/>`;
+    if (lastV != null) {
+      svg += `<circle cx="${sx(history.length-1)}" cy="${sy(lastV)}" r="3" fill="${lastDotColor}" opacity="${opacity}"/>`;
+    }
+    svg += `</svg>`;
+    return svg;
+  };
+
+  // Saturation bar: visualizes current contrib within ±weight band.
+  // Bar is centered at 50%; full positive end = +weight, full negative end = -weight.
+  // The fill goes from center outward by |contrib|/weight fraction of half-width.
+  const saturationBar = (signal, weight, contrib) => {
+    const w = weight || 0;
+    if (w === 0) return '';
+    const sat = signal == null ? 0 : Math.max(-1, Math.min(1, signal)); // signal is already in [-1,+1]
+    const fill = Math.abs(sat) * 50;
+    const isPos = sat >= 0;
+    const offset = isPos ? 50 : (50 - fill);
+    const barColor = isPos ? 'var(--good)' : 'var(--bad)';
+    const wpct = (w * 100).toFixed(1) + '%';
+    return `
+      <div style="margin-top:8px">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);margin-bottom:3px">
+          <span>-${wpct}</span><span>0</span><span>+${wpct}</span>
+        </div>
+        <div style="position:relative;height:14px;background:var(--card2);border-radius:2px">
+          <div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--text-dim)"></div>
+          <div style="position:absolute;left:0;top:50%;width:100%;height:1px;background:#1c2128;transform:translateY(-0.5px)"></div>
+          <div style="position:absolute;left:${offset}%;top:0;height:100%;width:${fill}%;background:${barColor};border-radius:2px;opacity:0.85"></div>
+        </div>
+        <div style="text-align:center;color:var(--text-dim);font-size:10px;margin-top:3px">
+          contribution = signal &times; weight &nbsp; <span style="color:#fff">|</span>&nbsp; weight is the cap (&plusmn;${wpct})
+        </div>
+      </div>`;
+  };
+
+  // Build per-signal cards (sorted by weight desc)
+  const componentsSorted = (D.components || []).slice().sort((a, b) => b.weight - a.weight);
+  const signalCards = componentsSorted.map(c => {
+    const meta = SIGNAL_META[c.name] || { label: c.name, desc: '' };
+    const fo = foMap[c.name];
+    const fullAttr = fullAttrMap[c.name];
+    const contrib = fo ? fo.contribution : (fullAttr ? fullAttr.contribution : null);
+    const dir = directionLabel(contrib);
+    const lastDate = c.last_date || '-';
+    const fresh = c.last_date === D.freshest_date ? 'FRESH' : (
+      bizDaysBetween(c.last_date, D.freshest_date) === 1 ? '1d' : 'STALE'
+    );
+    const freshColor = fresh === 'FRESH' ? 'var(--good)' : (fresh === '1d' ? 'var(--accent)' : 'var(--bad)');
+    const sparkLong  = sparkSvg(c.history_long || [], fresh, 'signal', 56, 360);
+    const sparkShort = sparkSvg(c.history60 || [],   fresh, 'signal', 42, 360);
+    return `
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+          <div style="flex:1">
+            <div style="font-weight:700;font-size:14px;color:#fff">${meta.label}</div>
+            <div style="color:var(--text-dim);font-size:10.5px;margin-top:2px;line-height:1.5;font-variant-numeric:tabular-nums">weight ${(c.weight*100).toFixed(1)}%</div>
+            <div style="color:var(--text-dim);font-size:11px;margin-top:5px;line-height:1.5">${meta.desc}</div>
+            <div class="impl-only" style="color:var(--text-dim);font-size:10px;margin-top:4px;font-family:'JetBrains Mono',monospace;word-break:break-all">${c.name}</div>
+          </div>
+          <div style="background:${dir.color}22;border:1px solid ${dir.color};color:${dir.color};padding:3px 9px;border-radius:4px;font-weight:700;font-size:11px">${dir.text}</div>
+        </div>
+        <div style="margin-top:12px">
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);letter-spacing:0.5px">
+            <span>SINCE 2008 (weekly)</span>
+            <span style="font-variant-numeric:tabular-nums">signal range: -1 to +1</span>
+          </div>
+          ${sparkLong}
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);letter-spacing:0.5px;margin-top:6px">
+            <span>LAST 60 DAYS</span>
+            <span style="font-variant-numeric:tabular-nums">${c.history60 && c.history60.length ? c.history60[0].date + ' &rarr; ' + c.history60[c.history60.length-1].date : ''}</span>
+          </div>
+          ${sparkShort}
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10.5px;margin-top:14px">
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">RAW</div><div style="color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${c.last_raw == null ? '-' : (c.last_raw>=0?'+':'') + c.last_raw.toFixed(2)}</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">SIGNAL</div><div style="color:${c.last_signal == null ? 'var(--text-dim)' : (c.last_signal>=0?'var(--good)':'var(--bad)')};font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${c.last_signal == null ? '-' : (c.last_signal>=0?'+':'') + c.last_signal.toFixed(2)}</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">MAX (&plusmn;w)</div><div style="color:#fff;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">&plusmn;${(c.weight*100).toFixed(1)}%</div></div>
+          <div><div style="color:var(--text-dim);font-size:9.5px;letter-spacing:0.5px">CURRENT</div><div style="color:${contrib == null ? 'var(--text-dim)' : (contrib>=0?'var(--good)':'var(--bad)')};font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">${contrib == null ? '-' : (contrib>=0?'+':'') + (contrib*100).toFixed(2) + '%'}</div></div>
+        </div>
+        ${saturationBar(c.last_signal, c.weight, contrib)}
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--card2);display:flex;justify-content:space-between;align-items:center;font-size:10.5px">
+          <span style="color:${freshColor};font-weight:600">${fresh}</span>
+          <span style="color:var(--text-dim);font-variant-numeric:tabular-nums">${lastDate}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Auto-narrative
+  const fo_attr = (D.fresh_only_attribution || []).slice();
+  fo_attr.sort((a,b) => Math.abs(b.contribution||0) - Math.abs(a.contribution||0));
+  const topShort = fo_attr.find(a => (a.contribution||0) < 0);
+  const topLong  = fo_attr.find(a => (a.contribution||0) > 0);
+  const narrativeHTML = `
+    <div class="card grid-full">
+      <h2>Read</h2>
+      <p style="color:var(--text);font-size:13px;line-height:1.7">
+        Fresh-only composite: <strong style="color:${D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite>=0?'+':''}${D.fresh_only_composite.toFixed(4)}</strong>
+        — system is <strong>${D.fresh_only_composite>0.05 ? 'LONG' : (D.fresh_only_composite<-0.05 ? 'SHORT' : 'NEUTRAL')}</strong> gold.
+        ${topShort ? `Biggest short driver: <strong style="color:var(--bad)">${labelOf(topShort.name)}</strong> (${topShort.contribution.toFixed(3)}).` : ''}
+        ${topLong  ? `Biggest long driver: <strong style="color:var(--good)">${labelOf(topLong.name)}</strong> (+${topLong.contribution.toFixed(3)}).` : ''}
+      </p>
+    </div>
+  `;
+
+  // ===== Data freshness =====
+  const stale = D.stale_components || [];
+  const freshCount = D.fresh_components_count || 0;
+  const totalCount = freshCount + stale.length;
+  const freshestDate = D.freshest_date || '-';
+  const foComposite = D.fresh_only_composite;
+  const storedVal = lastStored ? lastStored.value : null;
+  const compositeDelta = (foComposite != null && storedVal != null) ? (foComposite - storedVal) : null;
+
+  const statusColor = stale.length === 0 ? 'var(--good)' : (stale.length <= 1 ? 'var(--accent)' : 'var(--bad)');
+  const statusText = stale.length === 0 ? 'ALL FRESH' : `${stale.length} of ${totalCount} STALE`;
+  const staleList = stale.map(s => `
+    <tr>
+      <td style="font-weight:600;color:var(--bad)">${labelOf(s.name)}<span class="impl-only" style="color:var(--text-dim);font-weight:400;font-size:10px"> &middot; ${s.name}</span></td>
+      <td class="num">${s.last_date}</td>
+      <td class="num neg">${s.biz_days_late}b late</td>
+      <td class="num">${(s.weight*100).toFixed(1)}%</td>
+      <td class="num" style="color:${s.last_signal>=0?'var(--good)':'var(--bad)'}">${s.last_signal == null ? '-' : (s.last_signal>=0?'+':'') + s.last_signal.toFixed(3)}</td>
+      <td class="num" style="color:var(--text-dim);font-size:11px">last value forward-filled in stored composite</td>
+    </tr>
+  `).join('');
+
+  // ===== Market read =====
+  const M = D.market || {};
+  const fmtPctSigned = v => v == null ? '-' : (v >= 0 ? '+' : '') + (v*100).toFixed(2) + '%';
+  const fmtNumSigned = (v, p=2) => v == null ? '-' : (v >= 0 ? '+' : '') + v.toFixed(p);
+  const trendColor = v => v == null ? 'var(--text-dim)' : (v > 0 ? 'var(--good)' : 'var(--bad)');
+
+  const readMarketTile = (label, m, fmt='num', unit='') => {
+    if (!m) return `<div class="stat" style="min-width:140px"><div class="label">${label}</div><div class="value" style="color:var(--text-dim)">no data</div></div>`;
+    const valStr = m.value == null ? '-' : (typeof m.value === 'number' ? m.value.toFixed(fmt === 'pct' ? 2 : 2) + unit : m.value);
+    const d5fmt = fmt === 'pct' ? fmtPctSigned(m.pct5) : fmtNumSigned(m.d5, 3);
+    return `
+      <div class="stat" style="min-width:140px">
+        <div class="label">${label}</div>
+        <div class="value">${valStr}</div>
+        <div class="delta" style="color:${trendColor(m.d5)}">${d5fmt} 5d &middot; ${m.date}</div>
+      </div>`;
+  };
+
+  // Auto-narrative for the market read
+  const goldPct5 = M.gold ? M.gold.pct5 : null;
+  const ilbD5 = M.ilb_2y ? M.ilb_2y.d5 : null;
+  const dollarPct5 = M.dollar ? M.dollar.pct5 : null;
+  const skewD5 = M.vol_skew ? M.vol_skew.d5 : null;
+
+  let marketSynthesis = '';
+  const goldDir = goldPct5 == null ? null : (goldPct5 > 0.005 ? 'rallied' : (goldPct5 < -0.005 ? 'sold off' : 'was flat'));
+  const ilbDir  = ilbD5    == null ? null : (ilbD5 > 0.05 ? 'rose sharply'   : (ilbD5 > 0.01 ? 'rose'   : (ilbD5 < -0.05 ? 'fell sharply'   : (ilbD5 < -0.01 ? 'fell'   : 'were flat'))));
+  const skewDir = skewD5   == null ? null : (skewD5 < -0.3 ? 'compressed materially' : (skewD5 < -0.05 ? 'compressed' : (skewD5 > 0.05 ? 'steepened' : 'held')));
+  const dollarDir = dollarPct5 == null ? null : (dollarPct5 > 0.005 ? 'firmer' : (dollarPct5 < -0.005 ? 'weaker' : 'flat'));
+
+  marketSynthesis = `
+    <p style="font-size:13px;line-height:1.7;color:var(--text)">
+      <strong>Last 5 sessions:</strong> Gold ${goldDir || 'moved'}
+      <strong style="color:${trendColor(goldPct5)}">${fmtPctSigned(goldPct5)}</strong> to <strong>$${M.gold ? M.gold.value.toFixed(0) : '-'}</strong>.
+      2y ILB real yields ${ilbDir || 'moved'} <strong style="color:${trendColor(ilbD5)}">${fmtNumSigned(ilbD5,3)} bp</strong> to ${M.ilb_2y ? M.ilb_2y.value.toFixed(2) : '-'}%.
+      Dollar ${dollarDir || 'moved'} <strong style="color:${trendColor(dollarPct5)}">${fmtPctSigned(dollarPct5)}</strong> at ${M.dollar ? M.dollar.value.toFixed(2) : '-'}.
+      Vol skew z-score ${skewDir || 'moved'} <strong style="color:${trendColor(-skewD5)}">${fmtNumSigned(skewD5,2)}</strong> (now ${M.vol_skew ? M.vol_skew.value.toFixed(2) : '-'}).
+    </p>
+    <p style="font-size:13px;line-height:1.7;color:var(--text);margin-top:8px">
+      <strong>System read:</strong> composite at <strong style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'}">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</strong>
+      (stored, ${lastStored ? lastStored.date : '-'}); fresh-only at <strong style="color:${D.fresh_only_composite!=null && D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite!=null ? (D.fresh_only_composite>=0?'+':'') + D.fresh_only_composite.toFixed(4) : '-'}</strong>.
+      ${(ilbD5 != null && ilbD5 > 0.05) ? 'Real-yield surge is driving the rate-of-change signals (ilb_chg_ma40, ilb_chg_rz60) hard short and outweighing the still-elevated vol-skew long anchor.' : ''}
+      ${(skewD5 != null && skewD5 < -0.3) ? ' Vol skew is compressing - long-side anchor is fading.' : ''}
+    </p>
+  `;
+
+  document.getElementById('content').innerHTML = `
+
+  <!-- ========== MARKET READ ========== -->
+  <div class="section-title">Where the market is now <span class="sub">macro inputs driving the system, last 5 sessions</span></div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>Synthesis</h2>
+      ${marketSynthesis}
+      <div class="stat-row" style="margin-top:14px">
+        ${readMarketTile('Gold ($/oz)', M.gold, 'pct', '')}
+        ${readMarketTile('2y ILB Real Yield (%)', M.ilb_2y, 'num', '%')}
+        ${readMarketTile('2y Nominal RY (%)', M.nominal_ry_2y, 'num', '%')}
+        ${readMarketTile('Dollar', M.dollar, 'pct', '')}
+        ${readMarketTile('Gold Vol Skew (z)', M.vol_skew, 'num', '')}
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 0. DATA FRESHNESS ========== -->
+  <div class="section-title">Data freshness <span class="sub">are all components actually updating?</span></div>
+  <div class="grid">
+    <div class="card grid-full" style="border-color:${statusColor}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px">
+        <div>
+          <h2 style="margin:0">Status</h2>
+          <div style="margin-top:6px">
+            <span style="font-size:20px;font-weight:700;color:${statusColor}">&#9679; ${statusText}</span>
+            <span style="color:var(--text-dim);margin-left:14px;font-size:12px">freshest = ${freshestDate} (build ${D.build_date})</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px">
+          <div class="stat" style="min-width:170px">
+            <div class="label">Stored composite (forward-fill)</div>
+            <div class="value" style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'};font-size:22px">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</div>
+            <div class="delta">at ${lastStored ? lastStored.date : '-'} -- includes stale forward-filled values</div>
+          </div>
+          <div class="stat" style="min-width:170px">
+            <div class="label">Fresh-only composite (drop stale, renorm)</div>
+            <div class="value" style="color:${foComposite!=null && foComposite>=0?'var(--good)':'var(--bad)'};font-size:22px">${foComposite!=null ? (foComposite>=0?'+':'') + foComposite.toFixed(4) : '-'}</div>
+            <div class="delta">${freshCount} of ${totalCount} components, weights renormalized to 1.0</div>
+          </div>
+          ${compositeDelta != null ? `
+          <div class="stat" style="min-width:140px">
+            <div class="label">Difference</div>
+            <div class="value" style="color:${Math.abs(compositeDelta) < 0.01 ? 'var(--text-dim)' : 'var(--accent)'};font-size:22px">${compositeDelta>=0?'+':''}${compositeDelta.toFixed(4)}</div>
+            <div class="delta">${Math.abs(compositeDelta) < 0.01 ? 'stale data not moving the read' : 'stale data IS materially shifting the read'}</div>
+          </div>` : ''}
+        </div>
+      </div>
+      ${stale.length === 0 ? `
+        <div class="insight green" style="margin-top:14px"><strong>All components up to date</strong> within 1 business day of the freshest. Stored composite is reliable.</div>
+      ` : `
+        <div style="margin-top:18px">
+          <h2>Stale components (>1 business day behind freshest)</h2>
+          <table>
+            <thead><tr>
+              <th>Component</th>
+              <th class="num">Last point</th>
+              <th class="num">Biz days late</th>
+              <th class="num">Weight</th>
+              <th class="num">Last signal</th>
+              <th>Note</th>
+            </tr></thead>
+            <tbody>${staleList}</tbody>
+          </table>
+          <div class="insight red" style="margin-top:14px">
+            <strong>Why this matters:</strong> Rose forward-fills stale values when computing the composite, so the
+            stored ${D.stored_composite_code} still produces a number even when components stop updating. The
+            <strong>fresh-only composite</strong> recomputes by dropping stale components and renormalizing the remaining
+            weights to sum to 1.0 - that is what the system would say if it only used live data.
+            ${Math.abs(compositeDelta || 0) > 0.02 ? '<br><br><strong>The delta here is &gt; 2%</strong> - the stale value is materially moving the read. Fix the data feed before trading off the stored composite.' : '<br><br>The delta here is small - stale data is not changing the conclusion.'}
+          </div>
+        </div>
+      `}
+    </div>
+  </div>
+
+  <!-- ========== Signal-by-signal ========== -->
+  <div class="section-title">Signal-by-signal <span class="sub">what each component is saying right now</span></div>
+  <div class="grid">
+    ${narrativeHTML}
+    ${signalCards}
+  </div>
+
+  <!-- ========== 1. WHERE THE SYSTEM STANDS RIGHT NOW ========== -->
+  <div class="section-title">Where the system stands right now <span class="sub">latest composite value + per-component attribution</span></div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>Today's position</h2>
+      <span class="rosecode"><span class="rosecode-label">SOURCE:</span>${D.stored_composite_code} (last updated ${lastStored ? lastStored.date : 'n/a'})</span>
+      <div class="stat-row">
+        <div class="stat" style="flex:2">
+          <div class="label">Latest composite value</div>
+          <div class="value" style="color:${positionColor(lastStored ? lastStored.value : null)};font-size:28px">
+            ${lastStored ? (lastStored.value>=0?'+':'') + lastStored.value.toFixed(4) : '-'}
+          </div>
+          <div class="delta" style="color:${positionColor(lastStored ? lastStored.value : null)};font-size:13px;font-weight:600">
+            ${lastStored ? positionLabel(lastStored.value) : '-'}
+          </div>
+        </div>
+        <div class="stat" style="flex:3">
+          <div class="label">Recent trajectory (last 30 obs)</div>
+          <div class="chart-container" style="height:90px;margin-top:6px"><canvas id="recentSpark"></canvas></div>
+        </div>
+      </div>
+      <div class="insight">
+        <strong>Reading:</strong> The composite signal is a weighted sum of -1 to +1 component signals.
+        A value near 0 means components are cancelling. A value near +1 means everything is firing long.
+        ${lastStored && Math.abs(lastStored.value) < 0.05
+          ? 'Right now the system is essentially neutral - long signals (vol skew, ilb_z) are cancelled by short ones (dollar, ilb_change).'
+          : ''}
+      </div>
+    </div>
+
+    <div class="card grid-full">
+      <h2>Per-component attribution as of ${D.attribution_as_of || 'n/a'}</h2>
+      <span class="rosecode"><span class="rosecode-label">METHOD:</span>each row = component_signal &times; weight; sum at bottom = composite. Latest date with all 6 components reporting.</span>
+      <table>
+        <thead><tr>
+          <th>Component</th>
+          <th class="num">Last point</th>
+          <th class="num">Raw value</th>
+          <th class="num">Signal</th>
+          <th class="num">Weight</th>
+          <th>Contribution</th>
+          <th class="num">= sig &times; w</th>
+        </tr></thead>
+        <tbody>${attribRows}
+          <tr style="border-top:2px solid var(--border)">
+            <td colspan="5" style="font-weight:700;text-align:right;padding-top:12px">Composite (sum) at ${D.attribution_as_of || '-'}</td>
+            <td></td>
+            <td class="num" style="font-weight:700;font-size:14px;color:${attrSum>=0?'var(--good)':'var(--bad)'};padding-top:12px">${(attrSum>=0?'+':'') + attrSum.toFixed(4)}</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="font-weight:700;text-align:right;color:var(--text-dim);font-size:11px">Stored composite gold.system.004.20260403 latest (${lastStored ? lastStored.date : '-'})</td>
+            <td class="num" style="font-weight:700;font-size:13px;color:${lastStored && lastStored.value>=0?'var(--good)':'var(--bad)'}">${lastStored ? (lastStored.value>=0?'+':'') + lastStored.value.toFixed(4) : '-'}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="insight blue"><strong>How to read attribution:</strong>
+        <code>signal</code> is the component output in [-1,+1]. <code>weight</code> is the optimizer's allocation.
+        <code>contribution</code> is the product. The biggest absolute contribution drives the system's stance.
+        <strong>vol_skew_rz250</strong> (saturated long, raw z = +3.4) is the steady long anchor;
+        <strong>ilb_chg_ma40_rz1250</strong> (largest weight 30.8%) and <strong>dollar</strong> are the short forces this week.
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 1. HEADLINE ========== -->
+  <div class="section-title">1. System headline <span class="sub">vs gold buy-and-hold, 2008-06-06 onward</span></div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>Composite system</h2>
+      <span class="rosecode"><span class="rosecode-label">CHAIN:</span>${D.composite_chain}</span>
+      <span class="rosecode"><span class="rosecode-label">TRADED:</span>${D.trade_chain}:returns:risk</span>
+      <div class="stat-row">
+        <div class="stat"><div class="label">Sharpe</div><div class="value pos">${fmtNum(sys.sharpe, 3)}</div><div class="delta">vs gold ${fmtNum(gold.sharpe, 2)}</div></div>
+        <div class="stat"><div class="label">Ann Return</div><div class="value pos">${sys.ann_return}</div><div class="delta">vs gold ${gold.ann_return}</div></div>
+        <div class="stat"><div class="label">Ann Vol</div><div class="value">${sys.ann_vol}</div></div>
+        <div class="stat"><div class="label">Max DD</div><div class="value neg">${sys.max_dd}</div><div class="delta">vs gold ${gold.max_dd}</div></div>
+        <div class="stat"><div class="label">Cumulative</div><div class="value pos">${sys.cum_return}</div><div class="delta">vs gold ${gold.cum_return}</div></div>
+        <div class="stat"><div class="label">Calmar</div><div class="value">${fmtNum(sys.calmar, 2)}</div></div>
+        <div class="stat"><div class="label">Sortino</div><div class="value">${fmtNum(sys.sortino, 2)}</div></div>
+      </div>
+    </div>
+    <div class="card grid-full">
+      <h2>Cumulative PnL: system vs gold buy-and-hold</h2>
+      <div class="chart-container" style="height:380px"><canvas id="mainPnl"></canvas></div>
+      <div class="insight green"><strong>White = system. Yellow = gold buy-and-hold.</strong> System produces
+        +${(((parseFloat(sys.cum_return) - parseFloat(gold.cum_return))/parseFloat(gold.cum_return))*100).toFixed(0)}%
+        relative cumulative outperformance with similar volatility and a smaller drawdown.</div>
+    </div>
+  </div>
+
+  <!-- ========== 2. ROLLING SHARPE + DRAWDOWN ========== -->
+  <div class="section-title">2. Rolling Sharpe and drawdown</div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>250d rolling Sharpe</h2>
+      <span class="rosecode"><span class="rosecode-label">ROSE:</span>${D.trade_chain}:returns:rollsharpe(250)</span>
+      <div class="chart-container"><canvas id="rsharpeChart"></canvas></div>
+    </div>
+    <div class="card grid-full">
+      <h2>Drawdown: system vs gold</h2>
+      <span class="rosecode"><span class="rosecode-label">ROSE:</span>${D.trade_chain}:drawdown</span>
+      <div class="chart-container"><canvas id="ddChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ========== 3. COMPONENTS ========== -->
+  <div class="section-title">3. Components <span class="sub">individual Sharpe, weight, source rosecode</span></div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>Six signals - all Rose transforms</h2>
+      <table>
+        <thead><tr>
+          <th>Signal</th>
+          <th class="num">Weight</th>
+          <th class="num">Max contrib</th>
+          <th class="num">Current contrib</th>
+          <th class="num">Saturation</th>
+          <th class="num">Sharpe (alone)</th>
+          <th class="num">Ann Ret</th>
+          <th class="num">Max DD</th>
+          <th class="rosecode-col">Rosecode</th>
+        </tr></thead>
+        <tbody>${componentRows}</tbody>
+      </table>
+      <div class="insight blue"><strong>Method:</strong> each signal evaluated standalone via
+        <code>signal:trade(gold:returns):since(2008-06-06):returns:risk</code>. Weights from offline Dirichlet
+        random search over 200k+ samples maximizing composite Sharpe. Nominal RY (<code>usa.real.yield.2y:flip:signal</code>)
+        was on the optimizer roster but excluded post-hoc - it has 0.97 correlation to gold buy-and-hold so
+        it pads Sharpe without diversifying.</div>
+    </div>
+  </div>
+
+  <!-- ========== 4. ANNUAL RETURNS ========== -->
+  <div class="section-title">4. Annual returns: system vs gold</div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>YoY % - computed client-side from cumulative PnL</h2>
+      <div class="chart-container" style="height:300px"><canvas id="yoyChart"></canvas></div>
+    </div>
+    <div class="card grid-full">
+      <table>
+        <thead><tr><th>Year</th><th class="num">System</th><th class="num">Gold</th><th class="num">Alpha</th></tr></thead>
+        <tbody>
+          ${years.map(y => {
+            const s = yoyByYear[y].sys, g = yoyByYear[y].gold;
+            const a = (s != null && g != null) ? s - g : null;
+            return `<tr>
+              <td style="font-weight:600">${y}</td>
+              <td class="num ${cls(s)}">${s == null ? '-' : (s*100).toFixed(1)+'%'}</td>
+              <td class="num ${cls(g)}">${g == null ? '-' : (g*100).toFixed(1)+'%'}</td>
+              <td class="num ${cls(a)}" style="font-weight:600">${a == null ? '-' : (a*100).toFixed(1)+'%'}</td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ========== 5. SIGNAL VALUE ========== -->
+  <div class="section-title">5. Composite signal value <span class="sub">how the system has been positioned over time</span></div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>Signal value (-1 short to +1 long) &mdash; latest stored value:
+        <span style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'};font-weight:700">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</span>
+        <span style="color:var(--text-dim);font-weight:400;font-size:12px">on ${lastStored ? lastStored.date : '-'} (forward-fills stale components)</span>
+      </h2>
+      <span class="rosecode"><span class="rosecode-label">ROSE:</span>${D.stored_composite_code}</span>
+      <div class="chart-container"><canvas id="signalChart"></canvas></div>
+      <div class="insight"><strong>Reading the chart:</strong> the line is the system's
+        net position over time (-1 = max short, +1 = max long). The current value is shown above the chart.
+        It is <em>not</em> the recently-rising vol-skew-only signal you may be looking at on a per-signal card &mdash;
+        this is the <strong>weighted sum</strong> of all six components, which is currently
+        <strong style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'}">${storedVal!=null && storedVal<0 ? 'SHORT' : (storedVal!=null && storedVal>0 ? 'LONG' : 'NEUTRAL')}</strong>.
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 6. METHODOLOGY ========== -->
+  <div class="section-title">6. Methodology</div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>How to verify any number on this page</h2>
+      <ol style="margin:8px 0 0 22px;line-height:1.9">
+        <li>Open <a href="https://rose.ai" style="color:var(--accent)">rose.ai</a> in a separate window.</li>
+        <li>Pick a chart on this page. Copy the rosecode shown above the chart.</li>
+        <li>Paste into Rose. Same series will plot.</li>
+        <li>Append <code>:risk</code> to any chain to see Sharpe / MaxDD / Calmar in a table.</li>
+      </ol>
+      <p style="margin-top:14px;color:var(--text-dim);font-size:12px">
+        No pre-computed JSON drives the metrics on this page. data.json is just a cache of what Rose returns.
+        Build script: <code>build.py</code> in this directory pulls every series via <code>https://rose.ai/objects?rosecode=...</code>.
+      </p>
+    </div>
+  </div>
+  `;
+
+  // ---- charts ----
+  const palette = {sys:'#ffffff', gold:'#f59e0b', dd_sys:'#ef4444', dd_gold:'#a855f7', sharpe:'#22c55e', signal:'#3b82f6'};
+
+  // Linear x-axis with ms timestamps; no date adapter needed.
+  // Ticks formatted as years using a manual callback.
+  const yearTickCallback = function(value){
+    const d = new Date(value);
+    return isNaN(d) ? '' : d.getUTCFullYear();
+  };
+  function makeLine(canvasId, datasets, opts={}){
+    const ctx = document.getElementById(canvasId);
+    if(!ctx) return;
+    try {
+      new Chart(ctx, {
+        type: 'line',
+        data: { datasets },
+        options: Object.assign({
+          animation: false,
+          responsive: true,
+          maintainAspectRatio: false,
+          parsing: false,
+          plugins: { legend: { display: true, position: 'top', labels: { boxWidth: 14, font: { size: 10 } } } },
+          scales: {
+            x: {
+              type: 'linear',
+              grid: { color: '#1c2128' },
+              ticks: { font: { size: 10 }, callback: yearTickCallback, maxTicksLimit: 12, autoSkip: true },
+            },
+            y: { grid: { color: '#1c2128' }, ticks: { font: { size: 10 } } },
+          },
+          elements: { point: { radius: 0 }, line: { borderWidth: 1.4, tension: 0.05 } },
+        }, opts),
+      });
+    } catch (e) {
+      console.error('chart', canvasId, 'failed:', e);
+    }
+  }
+
+  // 1. Cumulative PnL — normalize both to start at 1.0 so the multiplier reads directly
+  const sysPnl = seriesToXY(D.series.sys_pnl);
+  const goldPnl = seriesToXY(D.series.gold_pnl);
+  const sysFirst = sysPnl.length ? sysPnl[0].y : 1;
+  const sysNorm = sysPnl.map(p => ({x: p.x, y: p.y / sysFirst}));
+  const goldFirst = goldPnl.length ? goldPnl[0].y : 1;
+  const goldNorm = goldPnl.map(p => ({x: p.x, y: p.y / goldFirst}));
+  makeLine('mainPnl', [
+    { label: 'System (cumulative)', data: sysNorm, borderColor: palette.sys, backgroundColor: 'transparent' },
+    { label: 'Gold buy-and-hold', data: goldNorm, borderColor: palette.gold, backgroundColor: 'transparent' },
+  ]);
+
+  // 2. Rolling Sharpe
+  makeLine('rsharpeChart', [
+    { label: '250d rolling Sharpe', data: seriesToXY(D.series.sys_rsharpe), borderColor: palette.sharpe, backgroundColor: 'transparent' },
+  ], { plugins: { legend: { display: false } } });
+
+  // 3. Drawdown
+  makeLine('ddChart', [
+    { label: 'System DD', data: seriesToXY(D.series.sys_drawdown), borderColor: palette.dd_sys, backgroundColor: 'transparent' },
+    { label: 'Gold DD', data: seriesToXY(D.series.gold_drawdown), borderColor: palette.dd_gold, backgroundColor: 'transparent' },
+  ]);
+
+  // 4. YoY bar chart
+  (function(){
+    const ctx = document.getElementById('yoyChart');
+    if (!ctx) return;
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [
+          { label: 'System', data: years.map(y => yoyByYear[y].sys != null ? yoyByYear[y].sys * 100 : null), backgroundColor: palette.sys },
+          { label: 'Gold B&H', data: years.map(y => yoyByYear[y].gold != null ? yoyByYear[y].gold * 100 : null), backgroundColor: palette.gold },
+        ],
+      },
+      options: {
+        animation: false,
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', labels: { boxWidth: 14, font: { size: 10 } } } },
+        scales: { y: { grid: { color: '#1c2128' }, ticks: { callback: v => v + '%' } }, x: { grid: { color: '#1c2128' } } },
+      }
+    });
+  })();
+
+  // 5. Signal value — use the stored composite (matches the latest-value displayed in the title)
+  // so the chart and the headline number always agree.
+  const storedComposite = {};
+  for (const p of (D.stored_composite_recent || [])) storedComposite[p.date] = p.value;
+  // For longer history, fall back to D.series.signal but tail-merge the stored series so the end matches.
+  const sigLong = seriesToXY(D.series.signal);
+  const sigStoredXY = seriesToXY(storedComposite);
+  // Concatenate: long history up to stored series start, then stored series.
+  const storedFirst = sigStoredXY.length ? sigStoredXY[0].x : Infinity;
+  const sigCombined = sigLong.filter(p => p.x < storedFirst).concat(sigStoredXY);
+  makeLine('signalChart', [
+    { label: 'Composite signal (stored)', data: sigCombined, borderColor: palette.signal, backgroundColor: 'transparent' },
+  ], { plugins: { legend: { display: false } } });
+
+  // Recent spark — last ~30 obs of stored composite
+  (function(){
+    const ctx = document.getElementById('recentSpark');
+    if (!ctx || !D.stored_composite_recent) return;
+    const pts = D.stored_composite_recent.map(p => ({x: Date.parse(p.date), y: p.value}));
+    if (!pts.length) return;
+    try {
+      new Chart(ctx, {
+        type: 'line',
+        data: { datasets: [{
+          data: pts,
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59,130,246,0.2)',
+          fill: 'origin',
+          borderWidth: 1.5,
+        }]},
+        options: {
+          animation: false, responsive: true, maintainAspectRatio: false, parsing: false,
+          plugins: { legend: { display: false }, tooltip: { displayColors: false } },
+          scales: {
+            x: { type: 'linear', display: false },
+            y: { display: false, suggestedMin: -1, suggestedMax: 1 },
+          },
+          elements: { point: { radius: 0 }, line: { tension: 0.05 } },
+        }
+      });
+    } catch (e) { console.error('spark failed', e); }
+  })();
+}).catch(err => {
+  document.getElementById('content').innerHTML =
+    '<div style="padding:24px 32px;color:#ef4444">Render error: ' + (err && err.message ? err.message : err) + '</div>';
+  console.error(err);
+});
+</script>
+</body>
+</html>
