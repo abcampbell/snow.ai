@@ -403,7 +403,69 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     </tr>
   `).join('');
 
+  // ===== Market read =====
+  const M = D.market || {};
+  const fmtPctSigned = v => v == null ? '-' : (v >= 0 ? '+' : '') + (v*100).toFixed(2) + '%';
+  const fmtNumSigned = (v, p=2) => v == null ? '-' : (v >= 0 ? '+' : '') + v.toFixed(p);
+  const trendColor = v => v == null ? 'var(--text-dim)' : (v > 0 ? 'var(--good)' : 'var(--bad)');
+
+  const readMarketTile = (label, m, fmt='num', unit='') => {
+    if (!m) return `<div class="stat" style="min-width:140px"><div class="label">${label}</div><div class="value" style="color:var(--text-dim)">no data</div></div>`;
+    const valStr = m.value == null ? '-' : (typeof m.value === 'number' ? m.value.toFixed(fmt === 'pct' ? 2 : 2) + unit : m.value);
+    const d5fmt = fmt === 'pct' ? fmtPctSigned(m.pct5) : fmtNumSigned(m.d5, 3);
+    return `
+      <div class="stat" style="min-width:140px">
+        <div class="label">${label}</div>
+        <div class="value">${valStr}</div>
+        <div class="delta" style="color:${trendColor(m.d5)}">${d5fmt} 5d &middot; ${m.date}</div>
+      </div>`;
+  };
+
+  // Auto-narrative for the market read
+  const goldPct5 = M.gold ? M.gold.pct5 : null;
+  const ilbD5 = M.ilb_2y ? M.ilb_2y.d5 : null;
+  const dollarPct5 = M.dollar ? M.dollar.pct5 : null;
+  const skewD5 = M.vol_skew ? M.vol_skew.d5 : null;
+
+  let marketSynthesis = '';
+  const goldDir = goldPct5 == null ? null : (goldPct5 > 0.005 ? 'rallied' : (goldPct5 < -0.005 ? 'sold off' : 'was flat'));
+  const ilbDir  = ilbD5    == null ? null : (ilbD5 > 0.05 ? 'rose sharply'   : (ilbD5 > 0.01 ? 'rose'   : (ilbD5 < -0.05 ? 'fell sharply'   : (ilbD5 < -0.01 ? 'fell'   : 'were flat'))));
+  const skewDir = skewD5   == null ? null : (skewD5 < -0.3 ? 'compressed materially' : (skewD5 < -0.05 ? 'compressed' : (skewD5 > 0.05 ? 'steepened' : 'held')));
+  const dollarDir = dollarPct5 == null ? null : (dollarPct5 > 0.005 ? 'firmer' : (dollarPct5 < -0.005 ? 'weaker' : 'flat'));
+
+  marketSynthesis = `
+    <p style="font-size:13px;line-height:1.7;color:var(--text)">
+      <strong>Last 5 sessions:</strong> Gold ${goldDir || 'moved'}
+      <strong style="color:${trendColor(goldPct5)}">${fmtPctSigned(goldPct5)}</strong> to <strong>$${M.gold ? M.gold.value.toFixed(0) : '-'}</strong>.
+      2y ILB real yields ${ilbDir || 'moved'} <strong style="color:${trendColor(ilbD5)}">${fmtNumSigned(ilbD5,3)} bp</strong> to ${M.ilb_2y ? M.ilb_2y.value.toFixed(2) : '-'}%.
+      Dollar ${dollarDir || 'moved'} <strong style="color:${trendColor(dollarPct5)}">${fmtPctSigned(dollarPct5)}</strong> at ${M.dollar ? M.dollar.value.toFixed(2) : '-'}.
+      Vol skew z-score ${skewDir || 'moved'} <strong style="color:${trendColor(-skewD5)}">${fmtNumSigned(skewD5,2)}</strong> (now ${M.vol_skew ? M.vol_skew.value.toFixed(2) : '-'}).
+    </p>
+    <p style="font-size:13px;line-height:1.7;color:var(--text);margin-top:8px">
+      <strong>System read:</strong> composite at <strong style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'}">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</strong>
+      (stored, ${lastStored ? lastStored.date : '-'}); fresh-only at <strong style="color:${D.fresh_only_composite!=null && D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite!=null ? (D.fresh_only_composite>=0?'+':'') + D.fresh_only_composite.toFixed(4) : '-'}</strong>.
+      ${(ilbD5 != null && ilbD5 > 0.05) ? 'Real-yield surge is driving the rate-of-change signals (ilb_chg_ma40, ilb_chg_rz60) hard short and outweighing the still-elevated vol-skew long anchor.' : ''}
+      ${(skewD5 != null && skewD5 < -0.3) ? ' Vol skew is compressing - long-side anchor is fading.' : ''}
+    </p>
+  `;
+
   document.getElementById('content').innerHTML = `
+
+  <!-- ========== MARKET READ ========== -->
+  <div class="section-title">Where the market is now <span class="sub">macro inputs driving the system, last 5 sessions</span></div>
+  <div class="grid">
+    <div class="card grid-full">
+      <h2>Synthesis</h2>
+      ${marketSynthesis}
+      <div class="stat-row" style="margin-top:14px">
+        ${readMarketTile('Gold ($/oz)', M.gold, 'pct', '')}
+        ${readMarketTile('2y ILB Real Yield (%)', M.ilb_2y, 'num', '%')}
+        ${readMarketTile('2y Nominal RY (%)', M.nominal_ry_2y, 'num', '%')}
+        ${readMarketTile('Dollar', M.dollar, 'pct', '')}
+        ${readMarketTile('Gold Vol Skew (z)', M.vol_skew, 'num', '')}
+      </div>
+    </div>
+  </div>
 
   <!-- ========== 0. DATA FRESHNESS ========== -->
   <div class="section-title">Data freshness <span class="sub">are all components actually updating?</span></div>

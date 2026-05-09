@@ -74,7 +74,8 @@ print(f"  gold cumulative-returns series: n={len(gold_pnl) if gold_pnl else 0}")
 print("\n[3/4] Pulling rolling Sharpe and drawdown...")
 sys_rsharpe = series_dict(chain_traded + ":returns:rollsharpe(250)")
 sys_dd      = series_dict(chain_traded + ":drawdown")
-gold_dd     = series_dict(GOLD_RETURNS + ":since(" + PERIOD_START + "):drawdown")
+# Gold DD: must be drawdown of the cumulative equity curve, not of the raw return series.
+gold_dd     = series_dict(GOLD_RETURNS + ":since(" + PERIOD_START + "):cum:drawdown")
 print(f"  sys rolling Sharpe: n={len(sys_rsharpe) if sys_rsharpe else 0}")
 print(f"  sys drawdown:       n={len(sys_dd) if sys_dd else 0}")
 print(f"  gold drawdown:      n={len(gold_dd) if gold_dd else 0}")
@@ -144,6 +145,34 @@ sig_series = series_dict(COMPOSITE + ":since(" + PERIOD_START + ")")
 print(f"  composite signal series: n={len(sig_series) if sig_series else 0}")
 
 # --- Build the data file ---
+# --- Market context: latest values + recent moves of the macro forces driving the system ---
+def latest_and_changes(code, lookbacks_bd=(1, 5, 20)):
+    """Return {'value':, 'date':, 'd1':, 'd5':, 'd20':} where dN is value change over N bdays."""
+    series = series_dict(code)
+    if not series: return None
+    keys = sorted(series.keys())
+    last_d = keys[-1]; last_v = series[last_d]
+    out = {"value": last_v, "date": last_d}
+    for n in lookbacks_bd:
+        if len(keys) > n:
+            prev_v = series[keys[-1 - n]]
+            if prev_v is not None and last_v is not None:
+                out[f"d{n}"] = last_v - prev_v
+                if abs(prev_v) > 1e-9:
+                    out[f"pct{n}"] = (last_v / prev_v - 1.0)
+    return out
+
+print("\n[market context] pulling macro inputs...")
+market = {
+    "gold": latest_and_changes("gold"),
+    "ilb_2y": latest_and_changes("usa.real.yield.2y.ilb"),
+    "nominal_ry_2y": latest_and_changes("usa.real.yield.2y"),
+    "dollar": latest_and_changes("dollar"),
+    "vol_skew": latest_and_changes("gold.vol.skew"),
+}
+for k, v in market.items():
+    if v: print(f"  {k:>14}: {v['date']} = {v['value']:.4f}  d5={v.get('d5','?')} pct5={v.get('pct5','?')}")
+
 # Stored pushed composite (extends slightly later than the chain when components stale)
 stored_composite = series_dict("gold.system.004.20260403")
 
@@ -259,6 +288,9 @@ data = {
     "fresh_only_composite": fresh_only_total,
     "fresh_only_attribution": sorted(fresh_only_attribution, key=lambda x: -abs(x["contribution"] or 0)),
     "fresh_weight_sum": fresh_weight_sum,
+
+    # Market context for the synthesis paragraph at the top of the dashboard
+    "market": market,
 
     "system": {
         "ann_return": sys_risk.get("Annual return") if sys_risk else None,
