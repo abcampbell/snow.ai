@@ -238,7 +238,9 @@ fetch('data.json').then(r=>r.json()).then(D=>{
 
   // foMap / fullAttrMap already declared above for componentRows
 
-  // Mini sparkline using viewBox so it scales to container width.
+  // Sparkline with vertical gradient: deep green at +1, neutral at 0, deep red at -1.
+  // Gradient is in userSpaceOnUse so it spans the full SVG height regardless of where the line sits.
+  let _sparkId = 0;
   const sparkSvg = (history, freshness, valueKey='signal', height=40, width=400) => {
     if (!history || history.length === 0) return '';
     const pad = 2;
@@ -259,14 +261,26 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       lastVal = v;
     });
     const lastV = history[history.length-1][valueKey];
-    const color = freshness === 'STALE' ? '#737373' : (lastV != null && lastV >= 0 ? '#22c55e' : '#ef4444');
+    const lastDotColor = lastV != null && lastV >= 0 ? '#22c55e' : '#ef4444';
+    const opacity = freshness === 'STALE' ? 0.5 : 1.0;
+    const gradId = 'spark-grad-' + (++_sparkId);
+    // Gradient stops: position +1 (top, y=pad) -> deep green, 0 (mid) -> muted, -1 (bottom, y=pad+h) -> deep red.
+    // If the value range is symmetric around 0 we map exactly; otherwise we map the value extremes.
+    // Pick stops based on the value range so the green/red intensity reflects the value at every y.
     let svg = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" style="display:block;width:100%;height:${height}px">`;
+    svg += `<defs><linearGradient id="${gradId}" x1="0" y1="${pad}" x2="0" y2="${pad+h}" gradientUnits="userSpaceOnUse">`;
+    svg += `<stop offset="0%" stop-color="#16a34a"/>`;       // top: deep green
+    svg += `<stop offset="35%" stop-color="#84cc16"/>`;      // upper-mid: lime
+    svg += `<stop offset="50%" stop-color="#737373"/>`;      // middle: neutral grey
+    svg += `<stop offset="65%" stop-color="#f97316"/>`;      // lower-mid: orange
+    svg += `<stop offset="100%" stop-color="#dc2626"/>`;     // bottom: deep red
+    svg += `</linearGradient></defs>`;
     if (mn < 0 && mx > 0) {
       svg += `<line x1="${pad}" x2="${pad+w}" y1="${sy(0)}" y2="${sy(0)}" stroke="#404040" stroke-width="0.5" stroke-dasharray="2,2" vector-effect="non-scaling-stroke"/>`;
     }
-    svg += `<path d="${path}" stroke="${color}" stroke-width="1.4" fill="none" vector-effect="non-scaling-stroke"/>`;
+    svg += `<path d="${path}" stroke="url(#${gradId})" stroke-width="1.6" fill="none" opacity="${opacity}" vector-effect="non-scaling-stroke"/>`;
     if (lastV != null) {
-      svg += `<circle cx="${sx(history.length-1)}" cy="${sy(lastV)}" r="3" fill="${color}"/>`;
+      svg += `<circle cx="${sx(history.length-1)}" cy="${sy(lastV)}" r="3" fill="${lastDotColor}" opacity="${opacity}"/>`;
     }
     svg += `</svg>`;
     return svg;
