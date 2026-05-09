@@ -43,10 +43,20 @@
   .err-box code{background:#2c1414;padding:1px 5px;border-radius:3px;color:#fbbf24}
   .pos{color:var(--good)}
   .neg{color:var(--bad)}
+  body.clean .rosecode, body.clean .impl-only { display: none !important; }
+  body.clean .rosecode-col { display: none !important; }
+  .clean-toggle {
+    position: fixed; top: 12px; right: 16px; z-index: 50;
+    background: #161b22; color: #c9d1d9; border: 1px solid #30363d;
+    padding: 6px 12px; font-family: inherit; font-size: 11.5px; cursor: pointer;
+    border-radius: 4px; letter-spacing: 0.5px;
+  }
+  .clean-toggle.active { background: #f59e0b; color: #0d1117; border-color: #f59e0b; }
   @media(max-width:900px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<button class="clean-toggle" id="cleanToggle" onclick="toggleClean()">screenshot mode</button>
 <div class="header">
   <h1>Gold Signal System v3 - 2026-04-30</h1>
   <div class="sub" id="subBar">Rose-native composite. 6 signals. ILB real yield + dollar + specs + skew. Period 2008-06-06 to ...</div>
@@ -72,6 +82,15 @@
 Chart.defaults.color='#8b949e';Chart.defaults.borderColor='#30363d';
 Chart.defaults.font.family="'SF Mono','Cascadia Code','Consolas',monospace";
 Chart.defaults.font.size=10;
+
+function toggleClean() {
+  const on = document.body.classList.toggle('clean');
+  const btn = document.getElementById('cleanToggle');
+  if (btn) {
+    btn.classList.toggle('active', on);
+    btn.textContent = on ? 'screenshot mode: ON' : 'screenshot mode';
+  }
+}
 
 fetch('data.json').then(r=>r.json()).then(D=>{
   const fmtPct = v => v == null ? '-' : (typeof v === 'string' ? v : (v*100).toFixed(2)+'%');
@@ -127,7 +146,8 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const fullAttrMap = {};
   for (const a of (D.attribution || [])) fullAttrMap[a.name] = a;
 
-  const componentRows = D.components.map(c => {
+  // Sort by weight descending so most-important rows appear first
+  const componentRows = D.components.slice().sort((a, b) => b.weight - a.weight).map(c => {
     const fo = foMap[c.name];
     const fa = fullAttrMap[c.name];
     const curContrib = fo ? fo.contribution : (fa ? fa.contribution : null);
@@ -135,7 +155,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     const wpct = (c.weight*100).toFixed(2) + '%';
     return `
       <tr>
-        <td>${c.name}</td>
+        <td><strong>${labelOf(c.name)}</strong> <span class="impl-only" style="color:var(--text-dim);font-size:10px"> &middot; ${c.name}</span></td>
         <td class="num">${wpct}</td>
         <td class="num">&plusmn;${wpct}</td>
         <td class="num" style="color:${curContrib==null?'var(--text-dim)':(curContrib>=0?'var(--good)':'var(--bad)')};font-weight:600">${curContrib==null?'-':(curContrib>=0?'+':'')+(curContrib*100).toFixed(2)+'%'}</td>
@@ -143,7 +163,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
         <td class="num ${cls(c.sharpe)}">${fmtNum(c.sharpe)}</td>
         <td class="num">${c.ann_return || '-'}</td>
         <td class="num neg">${c.max_dd || '-'}</td>
-        <td><code class="rosecode" style="margin:0;padding:3px 6px;font-size:10px;border:none">${c.rosecode}</code></td>
+        <td class="rosecode-col"><code class="rosecode" style="margin:0;padding:3px 6px;font-size:10px;border:none">${c.rosecode}</code></td>
       </tr>
     `;
   }).join('');
@@ -196,7 +216,8 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     return `<span style="color:${color};font-weight:600">${lastDate}${warn}</span>${ageNote}`;
   };
 
-  const attribRows = attr.map(a => {
+  const attrSorted = attr.slice().sort((a, b) => b.weight - a.weight);
+  const attribRows = attrSorted.map(a => {
     const pct = (a.contribution / Math.max(maxContrib, 0.01)) * 50; // scale to 50% of bar width
     const isPos = a.contribution >= 0;
     const barWidth = Math.abs(pct).toFixed(1);
@@ -204,7 +225,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     const barColor = isPos ? 'var(--good)' : 'var(--bad)';
     return `
       <tr>
-        <td style="font-weight:600">${a.name}</td>
+        <td style="font-weight:600">${labelOf(a.name)}<span class="impl-only" style="color:var(--text-dim);font-weight:400;font-size:10px"> &middot; ${a.name}</span></td>
         <td class="num" style="font-size:11px">${dateCellHTML(a.signal_last_date)}</td>
         <td class="num">${a.raw == null ? '-' : (a.raw>=0?'+':'') + a.raw.toFixed(2)}</td>
         <td class="num" style="color:${isPos ? 'var(--good)' : 'var(--bad)'}">${(a.signal>=0?'+':'') + a.signal.toFixed(3)}</td>
@@ -222,13 +243,14 @@ fetch('data.json').then(r=>r.json()).then(D=>{
 
   // ===== Signal-by-signal cards =====
   const SIGNAL_META = {
-    'dollar_ma_rollz20':     { desc: 'Dollar trend regime: dollar vs 252d MA, 20d rolling z-score.' },
-    'ilb_chg_ma40_rz1250':   { desc: 'Speed of real-yield moves: 40d-smoothed change in 2y real yield, 5y rolling z, flipped.' },
-    'ilb_chg_rz60_clip':     { desc: 'Faster cousin of ma40: 60d z of real-yield change, clipped at 3s, flipped.' },
-    'ilb_z':                 { desc: 'Real-yield level: z-score of 2y ILB real yield vs 250d window.' },
-    'specs_flip':            { desc: 'CFTC managed-money positioning, ma(1,500), flipped (contrarian).' },
-    'vol_skew_rz250':        { desc: 'Gold options skew z (250d window). Captures put demand / crash hedging.' },
+    'dollar_ma_rollz20':     { label: 'Dollar Trend',                desc: 'Dollar vs its 252d MA, 20d rolling z-score.' },
+    'ilb_chg_ma40_rz1250':   { label: 'Real Yield (40d change vs 5y)', desc: '40d-smoothed change in 2y ILB real yield, 5y rolling z, flipped.' },
+    'ilb_chg_rz60_clip':     { label: 'Real Yield (60d change)',     desc: '60d z-score of real-yield change, clipped at +/-3, flipped.' },
+    'ilb_z':                 { label: 'Real Yield Level',            desc: 'Z-score of 2y ILB real yield vs 250d window.' },
+    'specs_flip':            { label: 'CFTC Specs (contrarian)',     desc: 'Managed-money positioning, ma(1,500), flipped.' },
+    'vol_skew_rz250':        { label: 'Gold Vol Skew',               desc: 'Z-score of gold options skew (250d window). Put demand / hedging.' },
   };
+  const labelOf = name => (SIGNAL_META[name] && SIGNAL_META[name].label) || name;
   const directionLabel = (contrib) => {
     if (contrib == null) return { text: 'STALE', color: 'var(--text-dim)' };
     if (contrib > 0.05) return { text: 'LONG', color: 'var(--good)' };
@@ -314,9 +336,10 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       </div>`;
   };
 
-  // Build per-signal cards
-  const signalCards = (D.components || []).map(c => {
-    const meta = SIGNAL_META[c.name] || { desc: '' };
+  // Build per-signal cards (sorted by weight desc)
+  const componentsSorted = (D.components || []).slice().sort((a, b) => b.weight - a.weight);
+  const signalCards = componentsSorted.map(c => {
+    const meta = SIGNAL_META[c.name] || { label: c.name, desc: '' };
     const fo = foMap[c.name];
     const fullAttr = fullAttrMap[c.name];
     const contrib = fo ? fo.contribution : (fullAttr ? fullAttr.contribution : null);
@@ -332,8 +355,10 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
           <div style="flex:1">
-            <div style="font-weight:700;font-size:13px;color:#fff">${c.name}</div>
-            <div style="color:var(--text-dim);font-size:11px;margin-top:3px;line-height:1.5">${meta.desc}</div>
+            <div style="font-weight:700;font-size:14px;color:#fff">${meta.label}</div>
+            <div style="color:var(--text-dim);font-size:10.5px;margin-top:2px;line-height:1.5;font-variant-numeric:tabular-nums">weight ${(c.weight*100).toFixed(1)}%</div>
+            <div style="color:var(--text-dim);font-size:11px;margin-top:5px;line-height:1.5">${meta.desc}</div>
+            <div class="impl-only" style="color:var(--text-dim);font-size:10px;margin-top:4px;font-family:'JetBrains Mono',monospace;word-break:break-all">${c.name}</div>
           </div>
           <div style="background:${dir.color}22;border:1px solid ${dir.color};color:${dir.color};padding:3px 9px;border-radius:4px;font-weight:700;font-size:11px">${dir.text}</div>
         </div>
@@ -375,8 +400,8 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       <p style="color:var(--text);font-size:13px;line-height:1.7">
         Fresh-only composite: <strong style="color:${D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite>=0?'+':''}${D.fresh_only_composite.toFixed(4)}</strong>
         — system is <strong>${D.fresh_only_composite>0.05 ? 'LONG' : (D.fresh_only_composite<-0.05 ? 'SHORT' : 'NEUTRAL')}</strong> gold.
-        ${topShort ? `Biggest short driver: <strong style="color:var(--bad)">${topShort.name}</strong> (${topShort.contribution.toFixed(3)}).` : ''}
-        ${topLong  ? `Biggest long driver: <strong style="color:var(--good)">${topLong.name}</strong> (+${topLong.contribution.toFixed(3)}).` : ''}
+        ${topShort ? `Biggest short driver: <strong style="color:var(--bad)">${labelOf(topShort.name)}</strong> (${topShort.contribution.toFixed(3)}).` : ''}
+        ${topLong  ? `Biggest long driver: <strong style="color:var(--good)">${labelOf(topLong.name)}</strong> (+${topLong.contribution.toFixed(3)}).` : ''}
       </p>
     </div>
   `;
@@ -394,7 +419,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const statusText = stale.length === 0 ? 'ALL FRESH' : `${stale.length} of ${totalCount} STALE`;
   const staleList = stale.map(s => `
     <tr>
-      <td style="font-weight:600;color:var(--bad)">${s.name}</td>
+      <td style="font-weight:600;color:var(--bad)">${labelOf(s.name)}<span class="impl-only" style="color:var(--text-dim);font-weight:400;font-size:10px"> &middot; ${s.name}</span></td>
       <td class="num">${s.last_date}</td>
       <td class="num neg">${s.biz_days_late}b late</td>
       <td class="num">${(s.weight*100).toFixed(1)}%</td>
@@ -653,7 +678,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
           <th class="num">Sharpe (alone)</th>
           <th class="num">Ann Ret</th>
           <th class="num">Max DD</th>
-          <th>Rosecode</th>
+          <th class="rosecode-col">Rosecode</th>
         </tr></thead>
         <tbody>${componentRows}</tbody>
       </table>
@@ -692,14 +717,21 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   </div>
 
   <!-- ========== 5. SIGNAL VALUE ========== -->
-  <div class="section-title">5. Composite signal value <span class="sub">how the system has been positioned</span></div>
+  <div class="section-title">5. Composite signal value <span class="sub">how the system has been positioned over time</span></div>
   <div class="grid">
     <div class="card grid-full">
-      <h2>Signal value (-1 short to +1 long)</h2>
-      <span class="rosecode"><span class="rosecode-label">ROSE:</span>${D.composite_chain}:since(${D.period.start})</span>
+      <h2>Signal value (-1 short to +1 long) &mdash; latest stored value:
+        <span style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'};font-weight:700">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</span>
+        <span style="color:var(--text-dim);font-weight:400;font-size:12px">on ${lastStored ? lastStored.date : '-'} (forward-fills stale components)</span>
+      </h2>
+      <span class="rosecode"><span class="rosecode-label">ROSE:</span>${D.stored_composite_code}</span>
       <div class="chart-container"><canvas id="signalChart"></canvas></div>
-      <div class="insight"><strong>Read:</strong> Positive = system is long gold, negative = short. The composite signal
-        is a weighted sum of binary <code>:signal</code> chains, so absolute values stay between -1 and +1 (all weights sum to 1).</div>
+      <div class="insight"><strong>Reading the chart:</strong> the line is the system's
+        net position over time (-1 = max short, +1 = max long). The current value is shown above the chart.
+        It is <em>not</em> the recently-rising vol-skew-only signal you may be looking at on a per-signal card &mdash;
+        this is the <strong>weighted sum</strong> of all six components, which is currently
+        <strong style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'}">${storedVal!=null && storedVal<0 ? 'SHORT' : (storedVal!=null && storedVal>0 ? 'LONG' : 'NEUTRAL')}</strong>.
+      </div>
     </div>
   </div>
 
@@ -806,9 +838,18 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     });
   })();
 
-  // 5. Signal value
+  // 5. Signal value — use the stored composite (matches the latest-value displayed in the title)
+  // so the chart and the headline number always agree.
+  const storedComposite = {};
+  for (const p of (D.stored_composite_recent || [])) storedComposite[p.date] = p.value;
+  // For longer history, fall back to D.series.signal but tail-merge the stored series so the end matches.
+  const sigLong = seriesToXY(D.series.signal);
+  const sigStoredXY = seriesToXY(storedComposite);
+  // Concatenate: long history up to stored series start, then stored series.
+  const storedFirst = sigStoredXY.length ? sigStoredXY[0].x : Infinity;
+  const sigCombined = sigLong.filter(p => p.x < storedFirst).concat(sigStoredXY);
   makeLine('signalChart', [
-    { label: 'Composite signal', data: seriesToXY(D.series.signal), borderColor: palette.signal, backgroundColor: 'transparent' },
+    { label: 'Composite signal (stored)', data: sigCombined, borderColor: palette.signal, backgroundColor: 'transparent' },
   ], { plugins: { legend: { display: false } } });
 
   // Recent spark — last ~30 obs of stored composite
