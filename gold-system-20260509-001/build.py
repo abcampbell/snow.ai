@@ -243,28 +243,26 @@ print(f"  stale: {[(s['name'], s['last_date']) for s in stale_components]}")
 print(f"  fresh-only composite (renormalized): {fresh_only_total:+.4f}")
 
 latest_common = find_latest_common(components_out)
+# Attribution = each component's MOST RECENT value times its weight (forward-fill semantics).
+# This is THE composite "as of today"; sum is the single live composite number.
 attribution = []
 attribution_total = 0.0
-if latest_common:
-    for c in components_out:
-        h = next((x for x in (c["history60"] or []) if x["date"] == latest_common), None)
-        if h:
-            # Find the latest date this specific signal reported (may be later than latest_common)
-            sig_last = max((x["date"] for x in (c["history60"] or []) if x["signal"] is not None),
-                           default=None)
-            raw_last = max((x["date"] for x in (c["history60"] or []) if x.get("raw") is not None),
-                           default=None)
-            attribution.append({
-                "name": c["name"], "weight": c["weight"], "rosecode": c["rosecode"],
-                "raw_rosecode": c["raw_rosecode"],
-                "raw": h.get("raw"), "signal": h["signal"],
-                "contribution": h["contribution"],
-                "signal_last_date": sig_last,
-                "raw_last_date": raw_last,
-            })
-            attribution_total += h["contribution"]
+for c in components_out:
+    sig = c.get("last_signal")
+    if sig is None: continue
+    contrib = sig * c["weight"]
+    attribution.append({
+        "name": c["name"], "weight": c["weight"], "rosecode": c["rosecode"],
+        "raw_rosecode": c["raw_rosecode"],
+        "raw": c.get("last_raw"), "signal": sig,
+        "contribution": contrib,
+        "signal_last_date": c.get("last_date"),
+        "raw_last_date": c.get("last_date"),
+    })
+    attribution_total += contrib
 
-print(f"\nLatest-attribution date: {latest_common}, sum = {attribution_total:+.4f}")
+attribution_as_of = max((c.get("last_date") for c in components_out if c.get("last_date")), default=None)
+print(f"\nLive composite (each component at its latest, sum) as of {attribution_as_of}: {attribution_total:+.4f}")
 for a in sorted(attribution, key=lambda x: -abs(x["contribution"])):
     print(f"  {a['name']:>22}: signal={a['signal']:+.3f} weight={a['weight']:.4f} contrib={a['contribution']:+.4f}")
 
@@ -277,7 +275,7 @@ data = {
     "stored_composite_code": "gold.system.004.20260403",
     "stored_composite_last": (max(stored_composite.keys()), stored_composite[max(stored_composite.keys())]) if stored_composite else None,
     "stored_composite_recent": [{"date": d, "value": stored_composite[d]} for d in sorted(stored_composite.keys())[-30:]] if stored_composite else [],
-    "attribution_as_of": latest_common,
+    "attribution_as_of": attribution_as_of,
     "attribution_total": attribution_total,
     "attribution": sorted(attribution, key=lambda x: -abs(x["contribution"])),
 

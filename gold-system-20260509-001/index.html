@@ -396,14 +396,21 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   fo_attr.sort((a,b) => Math.abs(b.contribution||0) - Math.abs(a.contribution||0));
   const topShort = fo_attr.find(a => (a.contribution||0) < 0);
   const topLong  = fo_attr.find(a => (a.contribution||0) > 0);
+  // Use the LIVE attribution (= each component's latest x weight) for the read
+  const liveAttr = (D.attribution || []).slice().sort((a,b) => Math.abs(b.contribution||0) - Math.abs(a.contribution||0));
+  const liveTopShort = liveAttr.find(a => (a.contribution||0) < 0);
+  const liveTopLong  = liveAttr.find(a => (a.contribution||0) > 0);
+  const lc = D.attribution_total;
+  const lcLabel = lc > 0.05 ? 'LONG' : (lc < -0.05 ? 'SHORT' : 'NEUTRAL');
   const narrativeHTML = `
     <div class="card grid-full">
       <h2>Read</h2>
       <p style="color:var(--text);font-size:13px;line-height:1.7">
-        Fresh-only composite: <strong style="color:${D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite>=0?'+':''}${D.fresh_only_composite.toFixed(4)}</strong>
-        — system is <strong>${D.fresh_only_composite>0.05 ? 'LONG' : (D.fresh_only_composite<-0.05 ? 'SHORT' : 'NEUTRAL')}</strong> gold.
-        ${topShort ? `Biggest short driver: <strong style="color:var(--bad)">${labelOf(topShort.name)}</strong> (${topShort.contribution.toFixed(3)}).` : ''}
-        ${topLong  ? `Biggest long driver: <strong style="color:var(--good)">${labelOf(topLong.name)}</strong> (+${topLong.contribution.toFixed(3)}).` : ''}
+        LIVE composite: <strong style="color:${lc>=0?'var(--good)':'var(--bad)'}">${lc>=0?'+':''}${lc.toFixed(4)}</strong>
+        as of ${D.attribution_as_of} &mdash; system is <strong>${lcLabel}</strong> gold.
+        ${liveTopShort ? `Biggest short driver: <strong style="color:var(--bad)">${labelOf(liveTopShort.name)}</strong> (${liveTopShort.contribution.toFixed(3)}).` : ''}
+        ${liveTopLong  ? `Biggest long driver: <strong style="color:var(--good)">${labelOf(liveTopLong.name)}</strong> (+${liveTopLong.contribution.toFixed(3)}).` : ''}
+        ${stale.length > 0 ? `Fresh-only (drop ${stale.map(s=>labelOf(s.name)).join(', ')}, renorm) = <strong>${D.fresh_only_composite>=0?'+':''}${D.fresh_only_composite.toFixed(4)}</strong>.` : ''}
       </p>
     </div>
   `;
@@ -414,8 +421,10 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const totalCount = freshCount + stale.length;
   const freshestDate = D.freshest_date || '-';
   const foComposite = D.fresh_only_composite;
+  // The LIVE composite = sum of (each component's latest value * weight). This is THE composite.
+  const liveComposite = D.attribution_total;
   const storedVal = lastStored ? lastStored.value : null;
-  const compositeDelta = (foComposite != null && storedVal != null) ? (foComposite - storedVal) : null;
+  const compositeDelta = (foComposite != null && liveComposite != null) ? (foComposite - liveComposite) : null;
 
   const statusColor = stale.length === 0 ? 'var(--good)' : (stale.length <= 1 ? 'var(--accent)' : 'var(--bad)');
   const statusText = stale.length === 0 ? 'ALL FRESH' : `${stale.length} of ${totalCount} STALE`;
@@ -469,9 +478,9 @@ fetch('data.json').then(r=>r.json()).then(D=>{
       Vol skew z-score ${skewDir || 'moved'} <strong style="color:${trendColor(-skewD5)}">${fmtNumSigned(skewD5,2)}</strong> (now ${M.vol_skew ? M.vol_skew.value.toFixed(2) : '-'}).
     </p>
     <p style="font-size:13px;line-height:1.7;color:var(--text);margin-top:8px">
-      <strong>System read:</strong> composite at <strong style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'}">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</strong>
-      (stored, ${lastStored ? lastStored.date : '-'}); fresh-only at <strong style="color:${D.fresh_only_composite!=null && D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite!=null ? (D.fresh_only_composite>=0?'+':'') + D.fresh_only_composite.toFixed(4) : '-'}</strong>.
-      ${(ilbD5 != null && ilbD5 > 0.05) ? 'Real-yield surge is driving the rate-of-change signals (ilb_chg_ma40, ilb_chg_rz60) hard short and outweighing the still-elevated vol-skew long anchor.' : ''}
+      <strong>System read:</strong> LIVE composite at <strong style="color:${liveComposite!=null && liveComposite>=0?'var(--good)':'var(--bad)'}">${liveComposite!=null ? (liveComposite>=0?'+':'') + liveComposite.toFixed(4) : '-'}</strong>
+      as of ${D.attribution_as_of}; fresh-only (drop stale) at <strong style="color:${D.fresh_only_composite!=null && D.fresh_only_composite>=0?'var(--good)':'var(--bad)'}">${D.fresh_only_composite!=null ? (D.fresh_only_composite>=0?'+':'') + D.fresh_only_composite.toFixed(4) : '-'}</strong>.
+      ${(ilbD5 != null && ilbD5 > 0.05) ? 'Real-yield surge is driving the rate-of-change signals (Real Yield 40d/60d change) hard short and outweighing the still-elevated vol-skew long anchor.' : ''}
       ${(skewD5 != null && skewD5 < -0.3) ? ' Vol skew is compressing - long-side anchor is fading.' : ''}
     </p>
   `;
@@ -506,23 +515,28 @@ fetch('data.json').then(r=>r.json()).then(D=>{
             <span style="color:var(--text-dim);margin-left:14px;font-size:12px">freshest = ${freshestDate} (build ${D.build_date})</span>
           </div>
         </div>
-        <div style="display:flex;gap:14px">
-          <div class="stat" style="min-width:170px">
-            <div class="label">Stored composite (forward-fill)</div>
-            <div class="value" style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'};font-size:22px">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</div>
-            <div class="delta">at ${lastStored ? lastStored.date : '-'} -- includes stale forward-filled values</div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <div class="stat" style="min-width:200px">
+            <div class="label">LIVE composite (each component at its latest x weight)</div>
+            <div class="value" style="color:${liveComposite!=null && liveComposite>=0?'var(--good)':'var(--bad)'};font-size:24px">${liveComposite!=null ? (liveComposite>=0?'+':'') + liveComposite.toFixed(4) : '-'}</div>
+            <div class="delta">all 6 components, original weights, forward-fill where stale</div>
           </div>
-          <div class="stat" style="min-width:170px">
-            <div class="label">Fresh-only composite (drop stale, renorm)</div>
-            <div class="value" style="color:${foComposite!=null && foComposite>=0?'var(--good)':'var(--bad)'};font-size:22px">${foComposite!=null ? (foComposite>=0?'+':'') + foComposite.toFixed(4) : '-'}</div>
+          <div class="stat" style="min-width:200px">
+            <div class="label">Fresh-only (drop stale, renormalize)</div>
+            <div class="value" style="color:${foComposite!=null && foComposite>=0?'var(--good)':'var(--bad)'};font-size:24px">${foComposite!=null ? (foComposite>=0?'+':'') + foComposite.toFixed(4) : '-'}</div>
             <div class="delta">${freshCount} of ${totalCount} components, weights renormalized to 1.0</div>
           </div>
           ${compositeDelta != null ? `
-          <div class="stat" style="min-width:140px">
-            <div class="label">Difference</div>
+          <div class="stat" style="min-width:160px">
+            <div class="label">Stale-data shift</div>
             <div class="value" style="color:${Math.abs(compositeDelta) < 0.01 ? 'var(--text-dim)' : 'var(--accent)'};font-size:22px">${compositeDelta>=0?'+':''}${compositeDelta.toFixed(4)}</div>
-            <div class="delta">${Math.abs(compositeDelta) < 0.01 ? 'stale data not moving the read' : 'stale data IS materially shifting the read'}</div>
+            <div class="delta">fresh-only minus live; ${Math.abs(compositeDelta) < 0.01 ? 'small' : 'material'}</div>
           </div>` : ''}
+          <div class="stat impl-only" style="min-width:200px">
+            <div class="label">Stored snapshot (legacy push)</div>
+            <div class="value" style="color:var(--text-dim);font-size:18px">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</div>
+            <div class="delta">${D.stored_composite_code} at ${lastStored ? lastStored.date : '-'} - cached, not authoritative</div>
+          </div>
         </div>
       </div>
       ${stale.length === 0 ? `
@@ -605,13 +619,12 @@ fetch('data.json').then(r=>r.json()).then(D=>{
         </tr></thead>
         <tbody>${attribRows}
           <tr style="border-top:2px solid var(--border)">
-            <td colspan="5" style="font-weight:700;text-align:right;padding-top:12px">Composite (sum) at ${D.attribution_as_of || '-'}</td>
-            <td></td>
-            <td class="num" style="font-weight:700;font-size:14px;color:${attrSum>=0?'var(--good)':'var(--bad)'};padding-top:12px">${(attrSum>=0?'+':'') + attrSum.toFixed(4)}</td>
+            <td colspan="6" style="font-weight:700;text-align:right;padding-top:12px;font-size:13px">LIVE composite (sum, as of ${D.attribution_as_of || '-'})</td>
+            <td class="num" style="font-weight:700;font-size:15px;color:${attrSum>=0?'var(--good)':'var(--bad)'};padding-top:12px">${(attrSum>=0?'+':'') + attrSum.toFixed(4)}</td>
           </tr>
-          <tr>
-            <td colspan="6" style="font-weight:700;text-align:right;color:var(--text-dim);font-size:11px">Stored composite gold.system.004.20260403 latest (${lastStored ? lastStored.date : '-'})</td>
-            <td class="num" style="font-weight:700;font-size:13px;color:${lastStored && lastStored.value>=0?'var(--good)':'var(--bad)'}">${lastStored ? (lastStored.value>=0?'+':'') + lastStored.value.toFixed(4) : '-'}</td>
+          <tr class="impl-only">
+            <td colspan="6" style="text-align:right;color:var(--text-dim);font-size:10.5px">Legacy stored snapshot ${D.stored_composite_code} (${lastStored ? lastStored.date : '-'})</td>
+            <td class="num" style="font-size:11.5px;color:var(--text-dim)">${lastStored ? (lastStored.value>=0?'+':'') + lastStored.value.toFixed(4) : '-'}</td>
           </tr>
         </tbody>
       </table>
@@ -722,17 +735,17 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   <div class="section-title">5. Composite signal value <span class="sub">how the system has been positioned over time</span></div>
   <div class="grid">
     <div class="card grid-full">
-      <h2>Signal value (-1 short to +1 long) &mdash; latest stored value:
-        <span style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'};font-weight:700">${storedVal!=null ? (storedVal>=0?'+':'') + storedVal.toFixed(4) : '-'}</span>
-        <span style="color:var(--text-dim);font-weight:400;font-size:12px">on ${lastStored ? lastStored.date : '-'} (forward-fills stale components)</span>
+      <h2>Signal value (-1 short to +1 long) &mdash; LIVE composite:
+        <span style="color:${liveComposite!=null && liveComposite>=0?'var(--good)':'var(--bad)'};font-weight:700">${liveComposite!=null ? (liveComposite>=0?'+':'') + liveComposite.toFixed(4) : '-'}</span>
+        <span style="color:var(--text-dim);font-weight:400;font-size:12px">as of ${D.attribution_as_of || '-'} (sum of attribution table)</span>
       </h2>
-      <span class="rosecode"><span class="rosecode-label">ROSE:</span>${D.stored_composite_code}</span>
+      <span class="rosecode impl-only"><span class="rosecode-label">CHAIN:</span>${D.composite_chain}</span>
       <div class="chart-container"><canvas id="signalChart"></canvas></div>
       <div class="insight"><strong>Reading the chart:</strong> the line is the system's
-        net position over time (-1 = max short, +1 = max long). The current value is shown above the chart.
-        It is <em>not</em> the recently-rising vol-skew-only signal you may be looking at on a per-signal card &mdash;
-        this is the <strong>weighted sum</strong> of all six components, which is currently
-        <strong style="color:${storedVal!=null && storedVal>=0?'var(--good)':'var(--bad)'}">${storedVal!=null && storedVal<0 ? 'SHORT' : (storedVal!=null && storedVal>0 ? 'LONG' : 'NEUTRAL')}</strong>.
+        net position over time (-1 = max short, +1 = max long). It is the <strong>weighted sum</strong> of all six components.
+        Currently <strong style="color:${liveComposite!=null && liveComposite>=0?'var(--good)':'var(--bad)'}">${liveComposite!=null && liveComposite<-0.05 ? 'SHORT' : (liveComposite!=null && liveComposite>0.05 ? 'LONG' : 'NEUTRAL')}</strong>
+        at <strong>${liveComposite!=null ? (liveComposite>=0?'+':'') + liveComposite.toFixed(4) : '-'}</strong>.
+        The historical line uses the chain composite series; the latest point matches the LIVE value at the top.
       </div>
     </div>
   </div>
