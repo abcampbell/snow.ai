@@ -146,6 +146,17 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   const fullAttrMap = {};
   for (const a of (D.attribution || [])) fullAttrMap[a.name] = a;
 
+  // Human-readable component labels (used by componentRows below + per-signal cards further down)
+  const SIGNAL_META = {
+    'dollar_ma_rollz20':     { label: 'Dollar Trend',                desc: 'Dollar vs its 252d MA, 20d rolling z-score.' },
+    'ilb_chg_ma40_rz1250':   { label: 'Real Yield (40d change vs 5y)', desc: '40d-smoothed change in 2y ILB real yield, 5y rolling z, flipped.' },
+    'ilb_chg_rz60_clip':     { label: 'Real Yield (60d change)',     desc: '60d z-score of real-yield change, clipped at +/-3, flipped.' },
+    'ilb_z':                 { label: 'Real Yield Level',            desc: 'Z-score of 2y ILB real yield vs 250d window.' },
+    'specs_flip':            { label: 'CFTC Specs (contrarian)',     desc: 'Managed-money positioning, ma(1,500), flipped.' },
+    'vol_skew_rz250':        { label: 'Gold Vol Skew',               desc: 'Z-score of gold options skew (250d window). Put demand / hedging.' },
+  };
+  const labelOf = name => (SIGNAL_META[name] && SIGNAL_META[name].label) || name;
+
   // Sort by weight descending so most-important rows appear first
   const componentRows = D.components.slice().sort((a, b) => b.weight - a.weight).map(c => {
     const fo = foMap[c.name];
@@ -241,16 +252,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     `;
   }).join('');
 
-  // ===== Signal-by-signal cards =====
-  const SIGNAL_META = {
-    'dollar_ma_rollz20':     { label: 'Dollar Trend',                desc: 'Dollar vs its 252d MA, 20d rolling z-score.' },
-    'ilb_chg_ma40_rz1250':   { label: 'Real Yield (40d change vs 5y)', desc: '40d-smoothed change in 2y ILB real yield, 5y rolling z, flipped.' },
-    'ilb_chg_rz60_clip':     { label: 'Real Yield (60d change)',     desc: '60d z-score of real-yield change, clipped at +/-3, flipped.' },
-    'ilb_z':                 { label: 'Real Yield Level',            desc: 'Z-score of 2y ILB real yield vs 250d window.' },
-    'specs_flip':            { label: 'CFTC Specs (contrarian)',     desc: 'Managed-money positioning, ma(1,500), flipped.' },
-    'vol_skew_rz250':        { label: 'Gold Vol Skew',               desc: 'Z-score of gold options skew (250d window). Put demand / hedging.' },
-  };
-  const labelOf = name => (SIGNAL_META[name] && SIGNAL_META[name].label) || name;
+  // ===== Signal-by-signal cards (SIGNAL_META + labelOf already declared above) =====
   const directionLabel = (contrib) => {
     if (contrib == null) return { text: 'STALE', color: 'var(--text-dim)' };
     if (contrib > 0.05) return { text: 'LONG', color: 'var(--good)' };
