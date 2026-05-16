@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chart of the Day</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;background:#050507;color:#c0c0d0;font-family:Segoe UI,Arial,sans-serif}
+  header{padding:28px 28px 18px;border-bottom:1px solid #1a1a24;background:#07070b;position:sticky;top:0;z-index:10}
+  h1{margin:0;color:#e8e8f0;font-size:26px;letter-spacing:.02em}.deck{color:#777;margin-top:6px}
+  .shell{display:grid;grid-template-columns:340px minmax(0,1fr);min-height:calc(100vh - 96px)}
+  aside{border-right:1px solid #1a1a24;padding:18px;background:#08080d;overflow:auto}main{min-width:0}
+  .controls{display:flex;gap:8px;margin-bottom:14px}button,select{background:#111118;color:#e8e8f0;border:1px solid #2a2a3a;border-radius:4px;padding:8px 10px}
+  select{width:100%}.card{display:block;text-decoration:none;color:#c0c0d0;border:1px solid #1a1a24;border-radius:6px;padding:12px;margin-bottom:10px;background:#0a0a0f}
+  .card:hover,.card.active{border-color:#4060ff;background:rgba(64,96,255,.08)}.date{color:#e8e8f0;font-weight:700}.desc{color:#777;font-size:13px;margin-top:4px}
+  iframe{width:100%;height:calc(100vh - 96px);border:0;background:#fbfbfa}
+  @media(max-width:900px){.shell{display:block}aside{border-right:0;border-bottom:1px solid #1a1a24}iframe{height:80vh}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Chart of the Day</h1>
+  <div class="deck">Daily chart packet archive. Use the controls or the report navigation to flip through runs.</div>
+</header>
+<div class="shell">
+  <aside>
+    <div class="controls">
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+    </div>
+    <select id="reportSelect" aria-label="Select report"></select>
+    <div id="cards"><a class="card" href="reports/2026-05-15/"><div class="date">2026-05-15</div><div class="desc">15 PDFs, 44 extracted charts</div></a></div>
+  </aside>
+  <main><iframe id="viewer" src="reports/2026-05-15/" title="Chart of the Day report"></iframe></main>
+</div>
+<script>
+const reports = [{"slug": "2026-05-15", "title": "Chart of the Day: 2026-05-15", "start_date": "2026-05-14", "end_date": "2026-05-15", "description": "15 PDFs, 44 extracted charts", "pdf_count": 15, "chart_count": 44, "daily_shot_status": "skipped"}];
+let current = 0;
+const viewer = document.getElementById('viewer');
+const select = document.getElementById('reportSelect');
+const cards = [...document.querySelectorAll('.card')];
+reports.forEach((report, index) => {
+  const option = document.createElement('option');
+  option.value = index;
+  option.textContent = `${report.end_date} - ${report.description}`;
+  select.appendChild(option);
+});
+function load(index) {
+  if (!reports.length) return;
+  current = Math.max(0, Math.min(index, reports.length - 1));
+  viewer.src = `reports/${reports[current].slug}/`;
+  select.value = String(current);
+  cards.forEach((card, cardIndex) => card.classList.toggle('active', cardIndex === current));
+}
+select.addEventListener('change', event => load(Number(event.target.value)));
+document.getElementById('prev').addEventListener('click', () => load(current + 1));
+document.getElementById('next').addEventListener('click', () => load(current - 1));
+cards.forEach((card, index) => card.addEventListener('click', event => { event.preventDefault(); load(index); }));
+load(0);
+</script>
+</body>
+</html>
