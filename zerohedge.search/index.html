@@ -27,6 +27,19 @@
         </div>
       </header>
 
+      <section class="password-panel" id="passwordPanel" hidden>
+        <div>
+          <h2>Locked Index</h2>
+          <p>Enter the password to decrypt and search the full-text archive in this browser.</p>
+        </div>
+        <form id="passwordForm" class="password-form">
+          <label class="visually-hidden" for="passwordInput">Password</label>
+          <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Password">
+          <button class="icon-button primary" type="submit">Unlock</button>
+        </form>
+        <p class="password-error" id="passwordError"></p>
+      </section>
+
       <section class="workspace">
         <aside class="sidebar">
           <section class="panel">
@@ -55,7 +68,7 @@
 
           <section class="panel">
             <div class="panel-title">Hosted Mode</div>
-            <p class="note">This public page is a static preview index. It does not expose the private SQLite DB, credentials, or premium full text.</p>
+            <p class="note">This is a static encrypted full-text export. The SQLite DB and credentials are not published.</p>
           </section>
         </aside>
 

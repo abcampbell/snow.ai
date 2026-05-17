@@ -27,6 +27,10 @@ const el = {
   recencyValue: document.querySelector("#recencyValue"),
   toggleSidebarButton: document.querySelector("#toggleSidebarButton"),
   toggleResultsButton: document.querySelector("#toggleResultsButton"),
+  passwordPanel: document.querySelector("#passwordPanel"),
+  passwordForm: document.querySelector("#passwordForm"),
+  passwordInput: document.querySelector("#passwordInput"),
+  passwordError: document.querySelector("#passwordError"),
 };
 
 function setStatus(message) {
@@ -95,6 +99,68 @@ function qualityMarkup(item) {
     <span class="quality-badge quality-${escapeText(kind)}">${escapeText(label)}</span>
     ${chars ? `<span class="quality-meta">${escapeText(chars)}</span>` : ""}
   `;
+}
+
+function b64ToBytes(value) {
+  const binary = atob(value);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return bytes;
+}
+
+async function deriveDecryptKey(password, manifest) {
+  const material = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(password),
+    "PBKDF2",
+    false,
+    ["deriveKey"],
+  );
+  return crypto.subtle.deriveKey(
+    {
+      name: "PBKDF2",
+      salt: b64ToBytes(manifest.kdf.salt),
+      iterations: manifest.kdf.iterations,
+      hash: "SHA-256",
+    },
+    material,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["decrypt"],
+  );
+}
+
+async function decryptShard(buffer, key) {
+  const bytes = new Uint8Array(buffer);
+  const nonce = bytes.slice(0, 12);
+  const ciphertext = bytes.slice(12);
+  const plaintext = await crypto.subtle.decrypt(
+    { name: "AES-GCM", iv: nonce },
+    key,
+    ciphertext,
+  );
+  return JSON.parse(new TextDecoder().decode(plaintext));
+}
+
+function requestPassword() {
+  el.passwordPanel.hidden = false;
+  el.passwordInput.value = "";
+  el.passwordInput.focus();
+  return new Promise((resolve) => {
+    const onSubmit = (event) => {
+      event.preventDefault();
+      const password = el.passwordInput.value;
+      if (!password) {
+        el.passwordError.textContent = "Password required.";
+        return;
+      }
+      el.passwordForm.removeEventListener("submit", onSubmit);
+      resolve(password);
+    };
+    el.passwordForm.addEventListener("submit", onSubmit);
+  });
 }
 
 function makeExcerpt(item, terms, limit = 520) {
@@ -255,17 +321,51 @@ function updateLayoutButtons() {
   el.toggleResultsButton.textContent = resultsCollapsed ? "Show Results" : "Hide Results";
 }
 
+async function loadPlainShards(manifest) {
+  const shards = [];
+  for (const [index, shard] of manifest.shards.entries()) {
+    setStatus(`Loading index ${index + 1}/${manifest.shards.length}`);
+    const docs = await fetch(`data/${shard}`, { cache: "force-cache" }).then((response) => response.json());
+    el.loadedCount.textContent = String(index + 1);
+    shards.push(docs);
+  }
+  return shards;
+}
+
+async function loadEncryptedShards(manifest) {
+  if (!window.crypto?.subtle) {
+    throw new Error("This browser does not support WebCrypto decryption.");
+  }
+  while (true) {
+    const password = await requestPassword();
+    try {
+      const key = await deriveDecryptKey(password, manifest);
+      const shards = [];
+      for (const [index, shard] of manifest.shards.entries()) {
+        setStatus(`Decrypting index ${index + 1}/${manifest.shards.length}`);
+        const buffer = await fetch(`data/${shard}`, { cache: "force-cache" }).then((response) => response.arrayBuffer());
+        const docs = await decryptShard(buffer, key);
+        el.loadedCount.textContent = String(index + 1);
+        shards.push(docs);
+      }
+      el.passwordPanel.hidden = true;
+      el.passwordError.textContent = "";
+      return shards;
+    } catch (error) {
+      el.passwordError.textContent = "Could not decrypt the archive. Check the password and try again.";
+      setStatus("Locked index");
+    }
+  }
+}
+
 async function loadIndex() {
   const manifest = await fetch("data/manifest.json", { cache: "no-store" }).then((response) => response.json());
   el.articleCount.textContent = Number(manifest.count || 0).toLocaleString();
   el.oldestDate.textContent = shortDate(manifest.oldest);
   el.newestDate.textContent = shortDate(manifest.newest);
-  const shards = await Promise.all(manifest.shards.map(async (shard, index) => {
-    setStatus(`Loading index ${index + 1}/${manifest.shards.length}`);
-    const docs = await fetch(`data/${shard}`, { cache: "force-cache" }).then((response) => response.json());
-    el.loadedCount.textContent = String(index + 1);
-    return docs;
-  }));
+  const shards = manifest.encrypted
+    ? await loadEncryptedShards(manifest)
+    : await loadPlainShards(manifest);
   state.docs = shards.flat();
   for (const doc of state.docs) {
     doc._title = String(doc.t || "").toLowerCase();

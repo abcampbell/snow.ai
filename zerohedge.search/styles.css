@@ -45,6 +45,25 @@ h1 { font-size: 18px; line-height: 1.2; }
 }
 .searchbar input:focus { border-color: var(--accent-2); box-shadow: 0 0 0 3px rgba(0, 106, 103, 0.14); }
 .layout-tools { display: flex; gap: 8px; justify-content: flex-end; }
+.password-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 420px);
+  gap: 14px;
+  align-items: end;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background: #09090d;
+  color: #e8e8f0;
+}
+.password-panel[hidden] { display: none; }
+.password-panel h2 { margin: 0 0 4px; font-size: 16px; }
+.password-panel p { color: #9b9cab; font-size: 12px; }
+.password-form { display: grid; grid-template-columns: 1fr 84px; gap: 8px; }
+.password-form input {
+  width: 100%; height: 44px; border: 1px solid #2a2a38; border-radius: 6px;
+  background: #050507; color: #e8e8f0; padding: 0 12px; outline: none;
+}
+.password-error { grid-column: 1 / -1; min-height: 18px; }
 .icon-button, .tool-button, .mini-button {
   border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer;
 }
