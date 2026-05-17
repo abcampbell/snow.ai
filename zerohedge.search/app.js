@@ -19,6 +19,7 @@ const el = {
   previewTitle: document.querySelector("#previewTitle"),
   previewMeta: document.querySelector("#previewMeta"),
   previewQuality: document.querySelector("#previewQuality"),
+  imagePanel: document.querySelector("#imagePanel"),
   previewText: document.querySelector("#previewText"),
   sourceLink: document.querySelector("#sourceLink"),
   conceptSlider: document.querySelector("#conceptSlider"),
@@ -310,8 +311,46 @@ function selectResult(index) {
   el.previewTitle.textContent = doc.t;
   el.previewMeta.textContent = metaLine(doc) || doc.u;
   el.previewQuality.innerHTML = qualityMarkup(doc);
+  renderImageCarousel(doc.m || []);
   el.previewText.textContent = doc.p || "";
   el.sourceLink.href = doc.u;
+}
+
+function renderImageCarousel(images) {
+  if (!images.length) {
+    el.imagePanel.innerHTML = "";
+    return;
+  }
+  el.imagePanel.innerHTML = `
+    <div class="panel-title">Images (${images.length})</div>
+    <div class="image-carousel">
+      <a class="image-stage" id="currentImageLink" href="${escapeText(images[0])}" target="_blank" rel="noreferrer">
+        <img id="currentImage" src="${escapeText(images[0])}" alt="">
+      </a>
+      <div class="image-thumbs">
+        ${images.map((url, index) => `
+          <button class="thumb-button" type="button" data-index="${index}" aria-label="Image ${index + 1}">
+            <img src="${escapeText(url)}" alt="">
+          </button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+  [...el.imagePanel.querySelectorAll(".thumb-button")].forEach((button) => {
+    button.addEventListener("click", () => setActiveImage(images, Number(button.dataset.index)));
+  });
+  setActiveImage(images, 0);
+}
+
+function setActiveImage(images, index) {
+  if (!images[index]) return;
+  const image = el.imagePanel.querySelector("#currentImage");
+  const link = el.imagePanel.querySelector("#currentImageLink");
+  if (image) image.src = images[index];
+  if (link) link.href = images[index];
+  [...el.imagePanel.querySelectorAll(".thumb-button")].forEach((button, buttonIndex) => {
+    button.classList.toggle("active", buttonIndex === index);
+  });
 }
 
 function updateLayoutButtons() {

@@ -126,6 +126,20 @@ h1 { font-size: 18px; line-height: 1.2; }
 .preview .meta-line { margin-top: 8px; }
 .preview p { margin-top: 18px; max-width: 980px; white-space: pre-wrap; line-height: 1.62; font-size: 15px; }
 .app-shell.results-collapsed .preview p, .app-shell.sidebar-collapsed.results-collapsed .preview p { max-width: 1120px; font-size: 17px; }
+.image-panel { margin-top: 18px; }
+.image-carousel { display: grid; gap: 10px; margin-top: 10px; }
+.image-stage {
+  display: grid; place-items: center; width: min(760px, 100%); max-height: 520px;
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface-2);
+}
+.image-stage img { width: 100%; max-height: 520px; display: block; object-fit: contain; }
+.image-thumbs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.thumb-button {
+  flex: 0 0 92px; width: 92px; height: 68px; padding: 0;
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface-2); cursor: pointer;
+}
+.thumb-button.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(159, 29, 43, 0.16); }
+.thumb-button img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .empty-state {
   display: grid; place-items: center; min-height: 180px; color: var(--muted);
   border: 1px dashed var(--line); border-radius: 8px; padding: 18px; text-align: center;
