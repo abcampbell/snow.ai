@@ -3,64 +3,89 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="1; url=https://staff-classic-thy-couple.trycloudflare.com/">
     <title>zerohedge.search</title>
-    <style>
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #050507;
-        color: #e8e8f0;
-        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      }
-      main {
-        width: min(620px, calc(100vw - 32px));
-        border: 1px solid #1a1a24;
-        border-radius: 8px;
-        padding: 24px;
-        background: #09090d;
-      }
-      h1 {
-        margin: 0 0 8px;
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-      }
-      p { margin: 8px 0; color: #8f90a3; }
-      a {
-        color: #e8e8f0;
-        text-decoration: none;
-        border-bottom: 1px solid #4060ff;
-      }
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 20px;
-      }
-      .button {
-        display: inline-flex;
-        min-height: 38px;
-        align-items: center;
-        border: 1px solid #2a2a38;
-        border-radius: 6px;
-        padding: 0 14px;
-      }
-      code { color: #c7c9ff; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main>
-      <h1>zerohedge.search</h1>
-      <p>Opening the live ZeroHedge RAG dashboard.</p>
-      <p>This is a temporary protected tunnel from Alex's machine. Username: <code>zerohedge</code>. Ask Alex for the password.</p>
-      <div class="actions">
-        <a class="button" href="https://staff-classic-thy-couple.trycloudflare.com/">Open Dashboard</a>
-        <a class="button" href="https://github.com/abcampbell/zerohedge-rag">Source Repo</a>
-      </div>
+    <main class="app-shell" id="appShell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">ZH</span>
+          <div>
+            <h1>zerohedge.search</h1>
+            <p id="statusText">Loading static index</p>
+          </div>
+        </div>
+        <form class="searchbar" id="searchForm">
+          <label class="visually-hidden" for="queryInput">Query</label>
+          <input id="queryInput" name="q" type="search" autocomplete="off" placeholder="Search wheat, Bridgewater, silver...">
+          <button class="icon-button primary" type="submit">Go</button>
+        </form>
+        <div class="layout-tools">
+          <button id="toggleSidebarButton" class="mini-button" type="button">Hide Options</button>
+          <button id="toggleResultsButton" class="mini-button" type="button">Hide Results</button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel-title">Index</div>
+            <dl class="stats-grid">
+              <div><dt>Articles</dt><dd id="articleCount">0</dd></div>
+              <div><dt>Loaded</dt><dd id="loadedCount">0</dd></div>
+              <div><dt>Oldest</dt><dd id="oldestDate">-</dd></div>
+              <div><dt>Newest</dt><dd id="newestDate">-</dd></div>
+            </dl>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">Ranking</div>
+            <label class="slider-row" for="conceptSlider">
+              <span>Concept Match</span>
+              <strong id="conceptValue">85</strong>
+            </label>
+            <input id="conceptSlider" type="range" min="0" max="100" value="85">
+            <label class="slider-row" for="recencySlider">
+              <span>Recent Preference</span>
+              <strong id="recencyValue">0</strong>
+            </label>
+            <input id="recencySlider" type="range" min="0" max="100" value="0">
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">Hosted Mode</div>
+            <p class="note">This public page is a static preview index. It does not expose the private SQLite DB, credentials, or premium full text.</p>
+          </section>
+        </aside>
+
+        <section class="results-pane">
+          <div class="pane-head">
+            <h2>Results</h2>
+            <span id="resultCount">0</span>
+          </div>
+          <div id="resultsList" class="results-list">
+            <div class="empty-state">Loading index...</div>
+          </div>
+        </section>
+
+        <section class="preview-pane">
+          <div class="pane-head">
+            <h2>Preview</h2>
+            <div class="preview-actions">
+              <a id="sourceLink" href="#" target="_blank" rel="noreferrer">Source</a>
+              <a href="https://github.com/abcampbell/zerohedge-rag" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </div>
+          <article class="preview">
+            <h3 id="previewTitle">Select a result</h3>
+            <div id="previewMeta" class="meta-line"></div>
+            <div id="previewQuality" class="quality-line"></div>
+            <p id="previewText">Article preview will appear here.</p>
+          </article>
+        </section>
+      </section>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>
