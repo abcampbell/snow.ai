@@ -362,9 +362,10 @@ function updateLayoutButtons() {
 
 async function loadPlainShards(manifest) {
   const shards = [];
+  const version = encodeURIComponent(manifest.generated_at || "");
   for (const [index, shard] of manifest.shards.entries()) {
     setStatus(`Loading index ${index + 1}/${manifest.shards.length}`);
-    const docs = await fetch(`data/${shard}`, { cache: "force-cache" }).then((response) => response.json());
+    const docs = await fetch(`data/${shard}?v=${version}`, { cache: "force-cache" }).then((response) => response.json());
     el.loadedCount.textContent = String(index + 1);
     shards.push(docs);
   }
@@ -380,9 +381,10 @@ async function loadEncryptedShards(manifest) {
     try {
       const key = await deriveDecryptKey(password, manifest);
       const shards = [];
+      const version = encodeURIComponent(manifest.generated_at || "");
       for (const [index, shard] of manifest.shards.entries()) {
         setStatus(`Decrypting index ${index + 1}/${manifest.shards.length}`);
-        const buffer = await fetch(`data/${shard}`, { cache: "force-cache" }).then((response) => response.arrayBuffer());
+        const buffer = await fetch(`data/${shard}?v=${version}`, { cache: "force-cache" }).then((response) => response.arrayBuffer());
         const docs = await decryptShard(buffer, key);
         el.loadedCount.textContent = String(index + 1);
         shards.push(docs);
