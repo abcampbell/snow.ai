@@ -145,6 +145,7 @@ h1 { font-size: 18px; line-height: 1.2; }
 .eval-summary strong { color: var(--ink); }
 .eval-table { width: 100%; margin-top: 10px; border-collapse: collapse; font-size: 13px; }
 .eval-table th, .eval-table td { border-bottom: 1px solid var(--line); padding: 8px 6px; text-align: left; }
+.image-panel .empty-state, .eval-panel .empty-state { min-height: 92px; }
 .empty-state {
   display: grid; place-items: center; min-height: 180px; color: var(--muted);
   border: 1px dashed var(--line); border-radius: 8px; padding: 18px; text-align: center;

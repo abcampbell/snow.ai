@@ -316,9 +316,9 @@ function selectResult(index) {
   el.previewTitle.textContent = doc.t;
   el.previewMeta.textContent = metaLine(doc) || doc.u;
   el.previewQuality.innerHTML = qualityMarkup(doc);
+  renderEvaluation(doc.e, { silent: true });
   renderImageCarousel(doc.m || []);
   el.previewText.textContent = doc.p || "";
-  el.evalPanel.innerHTML = "";
   el.sourceLink.href = doc.u;
 }
 
@@ -383,8 +383,12 @@ function updateLayoutButtons() {
   el.toggleResultsButton.textContent = resultsCollapsed ? "Show Results" : "Hide Results";
 }
 
-function renderEvaluation(evaluation) {
+function renderEvaluation(evaluation, options = {}) {
   if (!evaluation || !evaluation.ok) {
+    if (options.silent) {
+      el.evalPanel.innerHTML = "";
+      return;
+    }
     const error = evaluation?.error || "No stored return check for this article.";
     el.evalPanel.innerHTML = `<div class="empty-state">${escapeText(error)}</div>`;
     setStatus(error);
@@ -412,7 +416,9 @@ function renderEvaluation(evaluation) {
     </table>
     <div class="meta-line">${escapeText(evaluation.note || "Proxy-based return check.")}</div>
   `;
-  setStatus(`Evaluated ${evaluation.instrument?.symbol || "prediction"}`);
+  if (!options.silent) {
+    setStatus(`Evaluated ${evaluation.instrument?.symbol || "prediction"}`);
+  }
 }
 
 function evaluatePrediction() {
