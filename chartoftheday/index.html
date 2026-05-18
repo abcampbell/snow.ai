@@ -29,12 +29,14 @@
       <button id="next">Next</button>
     </div>
     <select id="reportSelect" aria-label="Select report"></select>
-    <div id="cards"><a class="card" href="reports/2026-05-15/"><div class="date">2026-05-15</div><div class="desc">15 PDFs, 44 extracted charts</div></a></div>
+    <div id="cards"><a class="card" href="reports/2026-05-17/"><div class="date">2026-05-17</div><div class="desc">17 PDFs, 50 extracted charts</div></a>
+<a class="card" href="reports/2026-05-16/"><div class="date">2026-05-16</div><div class="desc">11 PDFs, 32 extracted charts</div></a>
+<a class="card" href="reports/2026-05-15/"><div class="date">2026-05-15</div><div class="desc">15 PDFs, 44 extracted charts</div></a></div>
   </aside>
-  <main><iframe id="viewer" src="reports/2026-05-15/" title="Chart of the Day report"></iframe></main>
+  <main><iframe id="viewer" src="reports/2026-05-17/" title="Chart of the Day report"></iframe></main>
 </div>
 <script>
-const reports = [{"slug": "2026-05-15", "title": "Chart of the Day: 2026-05-15", "start_date": "2026-05-14", "end_date": "2026-05-15", "description": "15 PDFs, 44 extracted charts", "pdf_count": 15, "chart_count": 44, "daily_shot_status": "skipped"}];
+const reports = [{"slug": "2026-05-17", "title": "Chart of the Day: 2026-05-17", "start_date": "2026-05-15", "end_date": "2026-05-17", "description": "17 PDFs, 50 extracted charts", "pdf_count": 17, "chart_count": 50, "daily_shot_status": "skipped"}, {"slug": "2026-05-16", "title": "Chart of the Day: 2026-05-16", "start_date": "2026-05-15", "end_date": "2026-05-16", "description": "11 PDFs, 32 extracted charts", "pdf_count": 11, "chart_count": 32, "daily_shot_status": "skipped"}, {"slug": "2026-05-15", "title": "Chart of the Day: 2026-05-15", "start_date": "2026-05-14", "end_date": "2026-05-15", "description": "15 PDFs, 44 extracted charts", "pdf_count": 15, "chart_count": 44, "daily_shot_status": "skipped"}];
 let current = 0;
 const viewer = document.getElementById('viewer');
 const select = document.getElementById('reportSelect');
