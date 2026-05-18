@@ -140,6 +140,11 @@ h1 { font-size: 18px; line-height: 1.2; }
 }
 .thumb-button.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(159, 29, 43, 0.16); }
 .thumb-button img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.eval-panel { margin-top: 18px; }
+.eval-summary { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; color: var(--muted); font-size: 12px; }
+.eval-summary strong { color: var(--ink); }
+.eval-table { width: 100%; margin-top: 10px; border-collapse: collapse; font-size: 13px; }
+.eval-table th, .eval-table td { border-bottom: 1px solid var(--line); padding: 8px 6px; text-align: left; }
 .empty-state {
   display: grid; place-items: center; min-height: 180px; color: var(--muted);
   border: 1px dashed var(--line); border-radius: 8px; padding: 18px; text-align: center;

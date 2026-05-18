@@ -2,6 +2,7 @@ const state = {
   docs: [],
   results: [],
   selectedIndex: 0,
+  selectedDoc: null,
   ready: false,
 };
 
@@ -20,8 +21,11 @@ const el = {
   previewMeta: document.querySelector("#previewMeta"),
   previewQuality: document.querySelector("#previewQuality"),
   imagePanel: document.querySelector("#imagePanel"),
+  evalPanel: document.querySelector("#evalPanel"),
   previewText: document.querySelector("#previewText"),
   sourceLink: document.querySelector("#sourceLink"),
+  imageButton: document.querySelector("#imageButton"),
+  evalButton: document.querySelector("#evalButton"),
   conceptSlider: document.querySelector("#conceptSlider"),
   conceptValue: document.querySelector("#conceptValue"),
   recencySlider: document.querySelector("#recencySlider"),
@@ -308,11 +312,13 @@ function selectResult(index) {
     button.classList.toggle("active", buttonIndex === index);
   });
   const doc = item.doc;
+  state.selectedDoc = doc;
   el.previewTitle.textContent = doc.t;
   el.previewMeta.textContent = metaLine(doc) || doc.u;
   el.previewQuality.innerHTML = qualityMarkup(doc);
   renderImageCarousel(doc.m || []);
   el.previewText.textContent = doc.p || "";
+  el.evalPanel.innerHTML = "";
   el.sourceLink.href = doc.u;
 }
 
@@ -342,6 +348,23 @@ function renderImageCarousel(images) {
   setActiveImage(images, 0);
 }
 
+function retrieveCharts() {
+  const doc = state.selectedDoc;
+  if (!doc) {
+    setStatus("Select an article first");
+    return;
+  }
+  const images = doc.m || [];
+  renderImageCarousel(images);
+  if (!images.length) {
+    el.imagePanel.innerHTML = `<div class="empty-state">No stored charts found for this article.</div>`;
+    setStatus("No stored charts found");
+    return;
+  }
+  el.imagePanel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  setStatus(`Retrieved ${images.length} chart${images.length === 1 ? "" : "s"}`);
+}
+
 function setActiveImage(images, index) {
   if (!images[index]) return;
   const image = el.imagePanel.querySelector("#currentImage");
@@ -358,6 +381,48 @@ function updateLayoutButtons() {
   const resultsCollapsed = el.appShell.classList.contains("results-collapsed");
   el.toggleSidebarButton.textContent = sidebarCollapsed ? "Show Options" : "Hide Options";
   el.toggleResultsButton.textContent = resultsCollapsed ? "Show Results" : "Hide Results";
+}
+
+function renderEvaluation(evaluation) {
+  if (!evaluation || !evaluation.ok) {
+    const error = evaluation?.error || "No stored return check for this article.";
+    el.evalPanel.innerHTML = `<div class="empty-state">${escapeText(error)}</div>`;
+    setStatus(error);
+    return;
+  }
+  const rows = (evaluation.horizons || []).map((item) => `
+    <tr>
+      <td>${escapeText(item.months)}m</td>
+      <td>${escapeText(item.exit_date || item.target_date || "")}</td>
+      <td>${item.available ? `${Number(item.return_pct).toFixed(2)}%` : "n/a"}</td>
+      <td>${item.directional_hit === null || item.directional_hit === undefined ? "n/a" : item.directional_hit ? "hit" : "miss"}</td>
+    </tr>
+  `).join("");
+  el.evalPanel.innerHTML = `
+    <div class="panel-title">Prediction Check</div>
+    <div class="eval-summary">
+      <strong>${escapeText(evaluation.instrument?.symbol || "")}</strong>
+      <span>${escapeText(evaluation.instrument?.label || "")}</span>
+      <span>direction: ${escapeText(evaluation.direction || "unknown")}</span>
+      <span>${escapeText(evaluation.instrument?.reason || "")}</span>
+    </div>
+    <table class="eval-table">
+      <thead><tr><th>Horizon</th><th>Date</th><th>Return</th><th>Call</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="meta-line">${escapeText(evaluation.note || "Proxy-based return check.")}</div>
+  `;
+  setStatus(`Evaluated ${evaluation.instrument?.symbol || "prediction"}`);
+}
+
+function evaluatePrediction() {
+  const doc = state.selectedDoc;
+  if (!doc) {
+    setStatus("Select an article first");
+    return;
+  }
+  renderEvaluation(doc.e);
+  el.evalPanel.scrollIntoView({ block: "nearest", behavior: "smooth" });
 }
 
 async function loadPlainShards(manifest) {
@@ -455,6 +520,9 @@ el.toggleResultsButton.addEventListener("click", () => {
   el.appShell.classList.toggle("results-collapsed");
   updateLayoutButtons();
 });
+
+el.imageButton.addEventListener("click", retrieveCharts);
+el.evalButton.addEventListener("click", evaluatePrediction);
 
 updateLayoutButtons();
 loadIndex().catch((error) => {
