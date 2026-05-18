@@ -398,8 +398,8 @@ function renderEvaluation(evaluation, options = {}) {
     <tr>
       <td>${escapeText(item.months)}m</td>
       <td>${escapeText(item.exit_date || item.target_date || "")}</td>
-      <td>${item.available ? `${Number(item.return_pct).toFixed(2)}%` : "n/a"}</td>
-      <td>${item.directional_hit === null || item.directional_hit === undefined ? "n/a" : item.directional_hit ? "hit" : "miss"}</td>
+      <td>${item.available ? `${Number(item.return_pct).toFixed(2)}%` : item.pending ? "pending" : "n/a"}</td>
+      <td>${item.pending ? "pending" : item.directional_hit === null || item.directional_hit === undefined ? "n/a" : item.directional_hit ? "hit" : "miss"}</td>
     </tr>
   `).join("");
   el.evalPanel.innerHTML = `
