@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRIDGE — Conditional Machine v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1A1A;--bone:#FAFAF5;--gold:#B8860B;--grey:#6B6B6B;--red:#8B3A2B}
+body{background:var(--bg);color:var(--bone);font-family:'EB Garamond',serif;margin:0 auto;padding:24px;max-width:980px}
+h1{font-family:Cinzel;color:var(--gold);letter-spacing:3px;font-size:26px;margin:8px 0 2px;text-align:center}
+.sub{color:var(--grey);text-align:center;font-style:italic;margin-bottom:16px;font-size:14px}
+.rule{border:none;border-top:1px solid var(--gold);opacity:.5;margin:18px 0}
+h2{font-family:Cinzel;color:var(--gold);font-size:15px;letter-spacing:2px}
+.ax{display:flex;align-items:center;gap:10px;margin:7px 0}
+.axname{width:215px;font-size:13px;color:var(--bone);text-align:right}
+.axbar{flex:1;display:flex;height:24px;gap:3px}
+.seg{border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--bone)}
+.axread{width:130px;font-size:12px;color:var(--gold)}
+.controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:14px 0}
+input[type=range]{flex:1;min-width:200px;accent-color:var(--gold)}
+select{background:#242424;color:var(--bone);border:1px solid var(--grey);border-radius:4px;padding:6px 10px;font-family:inherit;font-size:15px}
+.scen{font-family:Cinzel;color:var(--gold);font-size:22px;min-width:88px;text-align:center}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td,th{padding:7px 8px;font-size:15px;border-bottom:1px solid #2c2c2c;text-align:right}
+th{color:var(--grey);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+td:first-child,th:first-child{text-align:left}
+.bar{height:14px;border-radius:2px;display:inline-block;vertical-align:middle}
+.pos{background:var(--gold)}.neg{background:var(--grey)}
+.gov{color:var(--grey);font-size:12px;font-style:italic}
+.conf-hi{color:var(--gold)}.conf-lo{color:var(--grey);font-style:italic}
+.score{background:#222;border:1px solid #333;border-radius:6px;padding:12px 16px;margin-top:16px;font-size:14px;color:var(--grey)}
+.foot{color:var(--grey);font-size:12px;text-align:center;margin-top:20px;font-style:italic}
+</style></head><body>
+<h1>THE CONDITIONAL MACHINE</h1>
+<div class="sub">v2 — five-axis regime state &middot; each asset conditioned by the regime that GOVERNS it<br>Castra Capital Research &middot; second-moment only &middot; direction comes from your scenario</div>
+<hr class="rule">
+<h2>I &middot; THE REGIME STATE — five axes, read together (asof <span id="asof"></span>)</h2>
+<div id="axes"></div>
+<div id="fingerprint" style="color:var(--bone);font-size:14px;margin-top:10px;font-style:italic"></div>
+<hr class="rule">
+<h2>II &middot; SCENARIO</h2>
+<div class="controls">
+  <span style="font-size:16px">Stocks (SPX)</span>
+  <input type="range" id="mv" min="-10" max="10" value="5" step="0.5">
+  <span class="scen" id="mvlab">+5%</span>
+  <select id="hz"><option value="m">next MONTH</option><option value="q">next QUARTER</option></select>
+</div>
+<h2 style="margin-top:16px">III &middot; PROPAGATED PREDICTION (each asset via ITS governing regime)</h2>
+<table id="tbl"><thead><tr><th>asset</th><th>governed by</th><th>predicted</th><th></th><th>sign acc*</th></tr></thead><tbody></tbody></table>
+<div style="color:var(--grey);font-size:12px;margin-top:6px">*backtest sign accuracy at this horizon (50%=coin flip). Gold rows = trust; grey italic = weak link, no reliable read.</div>
+<div class="score" id="score"></div>
+<div class="foot" id="foot"></div>
+<script>
+const M={"asof": "2026-07-02", "regime_state": {"growth": {"low": 0.13, "mid": 0.75, "high": 0.13}, "inflation": {"low": 0.0, "mid": 0.03, "high": 0.97}, "policy": {"low": 0.0, "mid": 0, "high": 1.0}, "shocks": {"low": 1.0, "mid": 0, "high": 0.0}, "credit": {"low": 0.06, "mid": 0.52, "high": 0.41}}, "governor": {"tlt": "growth", "ief": "growth", "shy": "policy", "gld": "static", "hyg": "growth", "uup": "static", "eem": "shocks", "uso": "inflation"}, "beta_blend": {"tlt": -0.181, "ief": -0.093, "shy": -0.013, "gld": 0.055, "hyg": 0.286, "uup": -0.077, "eem": 1.047, "uso": 0.153}, "beta_static": {"tlt": -0.238, "ief": -0.105, "shy": -0.018, "gld": 0.055, "hyg": 0.376, "uup": -0.077, "eem": 1.17, "uso": 0.669}, "hit_month": {"tlt": 0.526, "ief": 0.497, "shy": 0.468, "gld": 0.444, "hyg": 0.795, "uup": 0.544, "eem": 0.737, "uso": 0.608}, "hit_quarter": {"tlt": 0.403, "ief": 0.419, "shy": 0.387, "gld": 0.468, "hyg": 0.855, "uup": 0.548, "eem": 0.694, "uso": 0.629}, "backtest": {"months": 171, "quarters": 62}}; const NAMES={"tlt": "Bonds 20y+", "ief": "Bonds 10y", "shy": "Bills 2y", "gld": "Gold", "hyg": "HY Credit", "uup": "Dollar", "eem": "EM Equity", "uso": "Oil"}; const AX={"growth": ["inverted", "normal", "steep", "GROWTH (curve)"], "inflation": ["low", "mid", "HIGH", "INFLATION (breakevens)"], "policy": ["easy", "mid", "TIGHT", "POLICY (real 2y)"], "shocks": ["CALM", "mid", "stressed", "SHOCKS (MOVE)"], "credit": ["healthy", "mid", "stressed", "CREDIT (HY drawdown)"]};
+document.getElementById('asof').textContent=M.asof;
+const COLS={low:'#6B6B6B',mid:'#4a4a4a',high:'#B8860B'};
+const axdiv=document.getElementById('axes');
+let fp=[];
+Object.entries(M.regime_state).forEach(([ax,p])=>{
+ const lbl=AX[ax];
+ const row=document.createElement('div');row.className='ax';
+ const dom=Object.entries(p).sort((a,b)=>b[1]-a[1])[0];
+ const domlbl=lbl[dom[0]==='low'?0:dom[0]==='mid'?1:2];
+ row.innerHTML='<div class="axname">'+lbl[3]+'</div>';
+ const bar=document.createElement('div');bar.className='axbar';
+ [['low',0],['mid',1],['high',2]].forEach(([k,i])=>{
+  const d=document.createElement('div');d.className='seg';
+  d.style.width=Math.max(p[k]*100,2)+'%';
+  d.style.background=k==='high'?'#B8860B':(k==='low'?'#555':'#3a3a3a');
+  d.style.opacity=0.35+0.65*p[k];
+  if(p[k]>0.15)d.textContent=lbl[i]+' '+Math.round(p[k]*100)+'%';
+  bar.appendChild(d);});
+ row.appendChild(bar);
+ const rd=document.createElement('div');rd.className='axread';
+ rd.textContent='→ '+domlbl+' ('+Math.round(dom[1]*100)+'%)';row.appendChild(rd);
+ axdiv.appendChild(row);
+ if(dom[1]>0.7)fp.push(lbl[3].split(' ')[0].toLowerCase()+': '+domlbl);
+});
+document.getElementById('fingerprint').textContent='Fingerprint: '+fp.join(' · ')+' — tight policy fighting elevated inflation expectations while volatility sleeps.';
+function render(){
+ const mv=parseFloat(document.getElementById('mv').value);
+ const hz=document.getElementById('hz').value;
+ document.getElementById('mvlab').textContent=(mv>0?'+':'')+mv+'%';
+ const hits=hz==='m'?M.hit_month:M.hit_quarter;
+ const tb=document.querySelector('#tbl tbody');tb.innerHTML='';
+ const rows=Object.keys(M.beta_blend).map(c=>({c,pred:M.beta_blend[c]*mv,hit:hits[c]||0.5,gov:M.governor[c]}));
+ rows.sort((a,b)=>Math.abs(b.pred)-Math.abs(a.pred));
+ rows.forEach(r=>{
+  const tr=document.createElement('tr');
+  const conf=r.hit>=0.6?'conf-hi':(r.hit<0.52?'conf-lo':'');
+  const w=Math.min(Math.abs(r.pred)*22,170);
+  tr.innerHTML='<td>'+(NAMES[r.c]||r.c)+'</td>'+
+   '<td class="gov">'+(r.gov==='static'?'— (ungoverned)':r.gov)+'</td>'+
+   '<td style="font-family:Cinzel;color:'+(r.pred>=0?'#B8860B':'#FAFAF5')+'">'+(r.pred>=0?'+':'')+r.pred.toFixed(1)+'%</td>'+
+   '<td style="text-align:left"><span class="bar '+(r.pred>=0?'pos':'neg')+'" style="width:'+w+'px"></span></td>'+
+   '<td class="'+conf+'">'+Math.round(r.hit*100)+'%</td>';
+  tb.appendChild(tr);});
+ document.getElementById('score').innerHTML='<b style="color:#B8860B;font-family:Cinzel">HONEST SCORECARD</b> — backtested by replaying '+M.backtest.months+' months + '+M.backtest.quarters+' quarters of history. Routing each asset to its governing regime helps EM (via shocks, ~5% better) and oil (via inflation), is neutral for rates, and does NOT help gold or the dollar vs stocks — those are shown ungoverned/static and their coin-flip accuracy is displayed, not hidden. Regime conditioning is a sharpening tool, not a crystal ball.';
+ document.getElementById('foot').textContent='asof '+M.asof+' · five causal regime axes: curve slope, 10y breakevens, real 2y yield, MOVE, HY drawdown · per-asset governor = axis that most reshapes its beta, kept only where it helped at BOTH horizons · not investment advice';
+}
+document.getElementById('mv').oninput=render;document.getElementById('hz').onchange=render;render();
+</script></body></html>

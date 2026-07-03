@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRIDGE — Conditional Machine v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1A1A;--bone:#FAFAF5;--gold:#B8860B;--grey:#6B6B6B}
+body{background:var(--bg);color:var(--bone);font-family:'EB Garamond',serif;margin:0 auto;padding:22px;max-width:980px}
+h1{font-family:Cinzel;color:var(--gold);letter-spacing:3px;font-size:25px;margin:6px 0 2px;text-align:center}
+.sub{color:var(--grey);text-align:center;font-style:italic;margin-bottom:14px;font-size:13.5px}
+.rule{border:none;border-top:1px solid var(--gold);opacity:.5;margin:16px 0}
+h2{font-family:Cinzel;color:var(--gold);font-size:14px;letter-spacing:2px}
+.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}
+input[type=range]{flex:1;min-width:180px;accent-color:var(--gold)}
+select,button{background:#242424;color:var(--bone);border:1px solid var(--grey);border-radius:4px;padding:6px 10px;font-family:inherit;font-size:15px}
+.scen{font-family:Cinzel;color:var(--gold);font-size:21px;min-width:110px;text-align:center}
+.toggle{display:inline-flex;border:1px solid var(--grey);border-radius:4px;overflow:hidden}
+.toggle span{padding:5px 12px;cursor:pointer;font-size:13px;color:var(--grey)}
+.toggle span.on{background:var(--gold);color:#1A1A1A;font-weight:bold}
+table{width:100%;border-collapse:collapse;margin-top:6px}
+td,th{padding:6px 8px;font-size:15px;border-bottom:1px solid #2c2c2c;text-align:right}
+th{color:var(--grey);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+td:first-child,th:first-child{text-align:left}
+.bar{height:13px;border-radius:2px;display:inline-block;vertical-align:middle}
+.pos{background:var(--gold)}.neg{background:var(--grey)}
+.badge{background:#242424;border:1px solid var(--gold);border-radius:4px;padding:8px 12px;margin:8px 0;font-size:13.5px;color:var(--bone)}
+.foot{color:var(--grey);font-size:12px;text-align:center;margin-top:18px;font-style:italic}
+.drvacc{color:var(--grey);font-size:13px;margin-left:6px}
+</style></head><body>
+<h1>THE CONDITIONAL MACHINE</h1>
+<div class="sub">v3 — any asset as driver &middot; insert new assets (auto-identified) &middot; z-score or return space<br>Castra Capital Research &middot; second-moment only &middot; direction comes from your scenario</div>
+<hr class="rule">
+<h2>I &middot; SCENARIO — pick the driver, move it, pick your space</h2>
+<div class="controls">
+  <select id="drv"></select>
+  <span class="toggle" id="spacetog"><span data-s="pct" class="on">% return</span><span data-s="z">z-score (σ)</span></span>
+  <select id="hz"><option value="m">next MONTH</option><option value="q">next QUARTER</option></select>
+</div>
+<div class="controls">
+  <input type="range" id="mv" min="-10" max="10" value="5" step="0.5">
+  <span class="scen" id="mvlab"></span>
+  <span class="drvacc" id="drvacc"></span>
+</div>
+<div class="badge" id="insbadge" style="display:none"></div>
+<h2 style="margin-top:14px">II &middot; PROPAGATED PREDICTION</h2>
+<table id="tbl"><thead><tr><th>asset</th><th>predicted</th><th></th><th>z-score</th></tr></thead><tbody></tbody></table>
+<div style="color:var(--grey);font-size:12px;margin-top:6px">both spaces always shown: % = raw expected move; z = move / that asset's own monthly (or quarterly) σ — the "how unusual" scale.</div>
+<div class="foot" id="foot"></div>
+<script>
+const D={"dm": {"asof": "2026-07-02", "assets": ["spy", "tlt", "ief", "shy", "gld", "hyg", "uup", "eem", "uso"], "matrix": {"spy": {"tlt": -0.181, "ief": -0.093, "shy": -0.013, "gld": 0.055, "hyg": 0.286, "uup": -0.077, "eem": 1.047, "uso": 0.153}, "tlt": {"spy": -0.309, "ief": 0.445, "shy": 0.098, "gld": 0.201, "hyg": -0.025, "uup": -0.038, "eem": -0.368, "uso": -0.416}, "ief": {"spy": -0.677, "tlt": 1.874, "shy": 0.25, "gld": 0.576, "hyg": -0.051, "uup": -0.179, "eem": -0.758, "uso": -0.705}, "shy": {"spy": -2.01, "tlt": 4.831, "ief": 3.182, "gld": 2.683, "hyg": -0.054, "uup": -1.13, "eem": -2.122, "uso": -1.269}, "gld": {"spy": 0.074, "tlt": 0.163, "ief": 0.112, "shy": 0.01, "hyg": 0.062, "uup": -0.185, "eem": 0.233, "uso": 0.506}, "hyg": {"spy": 1.631, "tlt": -0.038, "ief": -0.018, "shy": 0.032, "gld": 0.082, "uup": -0.152, "eem": 1.798, "uso": 0.231}, "uup": {"spy": -0.246, "tlt": -0.244, "ief": -0.18, "shy": -0.049, "gld": -0.929, "hyg": -0.211, "eem": -0.802, "uso": -0.501}, "eem": {"spy": 0.566, "tlt": -0.075, "ief": -0.038, "shy": -0.004, "gld": 0.115, "hyg": 0.183, "uup": -0.084, "uso": 0.15}, "uso": {"spy": 0.094, "tlt": -0.076, "ief": -0.035, "shy": -0.01, "gld": 0.077, "hyg": 0.043, "uup": -0.034, "eem": 0.157}}, "vol_daily": {"spy": 0.00863, "tlt": 0.00558, "ief": 0.00316, "shy": 0.00094, "gld": 0.01512, "hyg": 0.00251, "uup": 0.00325, "eem": 0.02092, "uso": 0.03701}, "vol_month": {"spy": 0.0395, "tlt": 0.0256, "ief": 0.0145, "shy": 0.0043, "gld": 0.0693, "hyg": 0.0115, "uup": 0.0149, "eem": 0.0959, "uso": 0.1696}, "vol_quarter": {"spy": 0.0685, "tlt": 0.0443, "ief": 0.0251, "shy": 0.0075, "gld": 0.12, "hyg": 0.0199, "uup": 0.0258, "eem": 0.166, "uso": 0.2938}, "driver_accuracy_month": {"spy": 0.582, "tlt": 0.615, "ief": 0.632, "shy": 0.66, "gld": 0.609, "hyg": 0.58, "uup": 0.602, "eem": 0.593, "uso": 0.572}, "governors": {"eem": "shocks", "uso": "inflation", "tlt": "growth", "shy": "policy", "hyg": "growth", "ief": "growth", "gld": "static", "uup": "static", "spy": "growth"}}, "ins": [{"ticker": "slv", "n_days": 4837, "identified_as": "gld", "similarity": 0.79, "confidence": 0.79, "fingerprint": {"gld": 0.79, "uup": -0.39, "eem": 0.31, "uso": 0.24, "spy": 0.23}, "vol_daily": 0.03256, "vol_month": 0.1492, "betas_to_drivers": {"spy": 0.389, "tlt": 0.065, "ief": 0.353, "shy": 2.323, "gld": 1.463, "hyg": 0.621, "uup": -1.612, "eem": 0.374, "uso": 0.214}}, {"ticker": "cper", "n_days": 3676, "identified_as": "eem", "similarity": 0.331, "confidence": 0.27, "fingerprint": {"eem": 0.33, "spy": 0.26, "hyg": 0.22, "gld": 0.21, "uup": -0.2}, "vol_daily": 0.01872, "vol_month": 0.0858, "betas_to_drivers": {"spy": 0.492, "tlt": -0.208, "ief": -0.358, "shy": -0.207, "gld": 0.401, "hyg": 0.867, "uup": -0.871, "eem": 0.501, "uso": 0.15}}], "regime": {"growth": {"low": 0.13, "mid": 0.75, "high": 0.13}, "inflation": {"low": 0.0, "mid": 0.03, "high": 0.97}, "policy": {"low": 0.0, "mid": 0, "high": 1.0}, "shocks": {"low": 1.0, "mid": 0, "high": 0.0}, "credit": {"low": 0.06, "mid": 0.52, "high": 0.41}}, "names": {"tlt": "Bonds 20y+", "ief": "Bonds 10y", "shy": "Bills 2y", "gld": "Gold", "hyg": "HY Credit", "uup": "Dollar", "eem": "EM Equity", "uso": "Oil", "spy": "Stocks (SPX)", "slv": "Silver [inserted]", "cper": "Copper [inserted]"}};
+const NM=D.names;
+const known=D.dm.assets;
+const inserted=D.ins.map(i=>i.ticker);
+const drvSel=document.getElementById('drv');
+[...known, ...inserted].forEach(a=>{const o=document.createElement('option');o.value=a;
+ o.textContent=NM[a]||a; if(a==='spy')o.selected=true; drvSel.appendChild(o);});
+let space='pct';
+document.querySelectorAll('#spacetog span').forEach(el=>{el.onclick=()=>{
+ document.querySelectorAll('#spacetog span').forEach(x=>x.classList.remove('on'));
+ el.classList.add('on'); space=el.dataset.s; render();};});
+function getIns(t){return D.ins.find(i=>i.ticker===t);}
+function volOf(a,hz){
+ if(known.includes(a)) return hz==='m'?D.dm.vol_month[a]:D.dm.vol_quarter[a];
+ const i=getIns(a); return hz==='m'?i.vol_month:i.vol_month*Math.sqrt(3);}
+function betaTargets(drv){
+ // returns {target: beta_target_to_driver}
+ if(known.includes(drv)) return D.dm.matrix[drv];
+ // inserted driver: invert its betas_to_drivers? No — we need beta of TARGETS to the new driver.
+ // beta(t,d) = cov(t,d)/var(d) = beta(d,t)*var(t)/var(d). Use its stored betas + vols.
+ const i=getIns(drv); const out={};
+ known.forEach(t=>{
+  const b_d_t=i.betas_to_drivers[t];             // beta of new asset to t
+  const vt=D.dm.vol_daily[t], vd=i.vol_daily;
+  out[t]= b_d_t * (vt*vt)/(vd*vd);               // convert direction
+ });
+ return out;}
+function render(){
+ const drv=drvSel.value; const hz=document.getElementById('hz').value;
+ const raw=parseFloat(document.getElementById('mv').value);
+ const dvol=volOf(drv,hz)*100;   // in %
+ let movePct = space==='pct'? raw : raw/2*dvol;  // z slider: -10..10 -> -5σ..5σ
+ const zIn = movePct/dvol;
+ document.getElementById('mvlab').textContent = space==='pct'
+   ? (movePct>0?'+':'')+movePct.toFixed(1)+'%  ('+zIn.toFixed(1)+'σ)'
+   : (zIn>0?'+':'')+zIn.toFixed(1)+'σ  ('+(movePct>0?'+':'')+movePct.toFixed(1)+'%)';
+ const acc=D.dm.driver_accuracy_month[drv];
+ document.getElementById('drvacc').textContent = acc?('driver propagation accuracy: '+Math.round(acc*100)+'%'):'inserted asset — no backtest yet';
+ const ib=document.getElementById('insbadge');
+ if(!known.includes(drv)){const i=getIns(drv);
+  ib.style.display='block';
+  ib.innerHTML='<b style="color:#B8860B">INSERTED ASSET:</b> '+drv.toUpperCase()+' — machine identifies it as <b style="color:#B8860B">'+(NM[i.identified_as]||i.identified_as).toUpperCase()+'</b> (similarity '+i.similarity+', confidence '+Math.round(i.confidence*100)+'%). Top fingerprint: '+Object.entries(i.fingerprint).map(([k,v])=>k+' '+v).join(' · ');
+ } else ib.style.display='none';
+ const bt=betaTargets(drv);
+ const tb=document.querySelector('#tbl tbody');tb.innerHTML='';
+ const rows=Object.entries(bt).map(([t,b])=>{
+   const p=b*movePct; const tv=volOf(t,hz)*100;
+   return {t,p,z:p/tv};});
+ rows.sort((a,b)=>Math.abs(b.z)-Math.abs(a.z));
+ rows.forEach(r=>{
+  const tr=document.createElement('tr');
+  const w=Math.min(Math.abs(r.z)*40,170);
+  tr.innerHTML='<td>'+(NM[r.t]||r.t)+'</td>'+
+   '<td style="font-family:Cinzel;color:'+(r.p>=0?'#B8860B':'#FAFAF5')+'">'+(r.p>=0?'+':'')+r.p.toFixed(1)+'%</td>'+
+   '<td style="text-align:left"><span class="bar '+(r.p>=0?'pos':'neg')+'" style="width:'+w+'px"></span></td>'+
+   '<td style="color:'+(Math.abs(r.z)>1?'#B8860B':'#6B6B6B')+'">'+(r.z>0?'+':'')+r.z.toFixed(2)+'σ</td>';
+  tb.appendChild(tr);});
+ document.getElementById('foot').textContent='asof '+D.dm.asof+' · betas regime-blended per governing axis where validated · inserted assets fingerprinted vs known set · z = move/own '+(hz==='m'?'monthly':'quarterly')+' σ · not investment advice';
+}
+drvSel.onchange=render;document.getElementById('hz').onchange=render;
+document.getElementById('mv').oninput=render;render();
+</script></body></html>
