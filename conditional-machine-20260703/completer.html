@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRIDGE — The Completer (MAM)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+body{background:#1A1A1A;color:#FAFAF5;font-family:'EB Garamond',serif;margin:0 auto;padding:36px 22px;max-width:960px}
+h1{font-family:Cinzel;color:#B8860B;letter-spacing:3px;font-size:26px;text-align:center;margin-bottom:4px}
+h2{font-family:Cinzel;color:#B8860B;letter-spacing:1.5px;font-size:18px;margin:38px 0 10px;border-bottom:1px solid #333;padding-bottom:6px}
+.sub{color:#6B6B6B;text-align:center;font-style:italic;margin-bottom:26px;font-size:15px}
+.nav{text-align:center;margin-bottom:20px}.nav a{color:#6B6B6B;font-size:13px;margin:0 8px;text-decoration:none}.nav a:hover{color:#B8860B}
+.banner{background:#222;border:1px solid #333;border-left:4px solid #B8860B;border-radius:6px;padding:16px 20px;margin:18px 0;font-size:16.5px}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.stat{flex:1;min-width:150px;background:#222;border:1px solid #333;border-radius:6px;padding:14px 16px;text-align:center}
+.stat .v{font-family:Cinzel;color:#B8860B;font-size:24px}.stat .k{color:#6B6B6B;font-size:12.5px;margin-top:4px}
+.stat .m{color:#6B6B6B;font-size:12px;font-style:italic}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:12px 0}
+th{font-family:Cinzel;color:#B8860B;font-size:12px;letter-spacing:1px;text-align:left;padding:7px 10px;border-bottom:1px solid #444}
+td{padding:6px 10px;border-bottom:1px solid #2a2a2a;color:#FAFAF5}
+td.dim{color:#6B6B6B}tr.hl td{color:#B8860B}
+canvas{display:block;margin:10px auto;max-width:100%}
+.note{color:#6B6B6B;font-size:13.5px;font-style:italic;margin:8px 0}
+.neg{background:#222;border:1px solid #333;border-left:4px solid #6B6B6B;border-radius:6px;padding:14px 18px;margin:14px 0;font-size:15px}
+.foot{color:#6B6B6B;font-size:12px;text-align:center;margin-top:40px;font-style:italic}
+.btns{text-align:center;margin:14px 0}
+button{background:#222;color:#6B6B6B;border:1px solid #333;border-radius:4px;padding:7px 14px;margin:3px;font-family:Cinzel;font-size:12px;letter-spacing:1px;cursor:pointer}
+button.on{color:#B8860B;border-color:#B8860B}
+label{color:#6B6B6B;font-size:13px;margin:0 6px}
+</style></head><body>
+<div class="nav"><a href="index.html">← INDEX</a><a href="time-machine.html">TIME MACHINE</a><a href="scenario.html">SCENARIO</a><a href="regimes.html">REGIMES</a><a href="linkage.html">LINKAGE v3</a><a href="completer.html">COMPLETER</a><a href="linkage-learned.html">LEARNED GRAPH</a></div>
+
+<h1>THE COMPLETER</h1>
+<div class="sub">masked-asset transformer — hide one asset, reconstruct it from the other 82 + the regime state<br>
+CPU-trained 2026-07-03 · scaled &amp; stress-tested on RTX 3090, 2026-07-04 · Castra Capital Research</div>
+
+<div class="banner"><b>Verdict:</b> a 0.46M-parameter transformer beats the frozen linear conditional bar by
+<b>+8.4pp sign accuracy</b> — and a 23× parameter sweep on the 3090 proved the ceiling is the
+<b>data's, not the model's</b>. 90.3% is the information limit of daily cross-section completion
+at this universe. Reproduced on CUDA within 0.2pp.</div>
+
+<div class="stats">
+<div class="stat"><div class="v">90.3%</div><div class="k">SIGN ACCURACY</div><div class="m">bar 81.9%</div></div>
+<div class="stat"><div class="v">0.0034</div><div class="k">MAE</div><div class="m">bar 0.00560 (−39%)</div></div>
+<div class="stat"><div class="v">91.5%</div><div class="k">STRESS SIGN</div><div class="m">calm 89.9% — better when it matters</div></div>
+<div class="stat"><div class="v">10,939</div><div class="k">HELD-OUT PREDICTIONS</div><div class="m">63-day purge, 80/20 chrono split</div></div>
+</div>
+
+<h2>I · THE SCALE LADDER — 23× more parameters, same ceiling</h2>
+<div class="note">Every configuration converges to ~90% held-out sign regardless of capacity. Bigger models peak
+earlier then decay; the largest (10.7M) reaches the lowest train loss and the worst eval — classic overfit.
+The dashed line is the frozen linear bar.</div>
+<canvas id="curves" width="900" height="380"></canvas>
+<table><tr><th>CONFIG</th><th>PARAMS</th><th>BEST SIGN</th><th>@EP</th><th>FINAL SIGN</th><th>FINAL MAE</th><th></th></tr><tr><td>banked CPU</td><td>0.46M</td><td>90.3%</td><td class="dim">16</td><td>90.3%</td><td>0.0034</td><td class="dim">baseline (Mac, 3h)</td></tr><tr><td>d192L6</td><td>2.69M</td><td>90.7%</td><td class="dim">11</td><td>90.4%</td><td>0.0034</td><td class="dim"></td></tr><tr><td>d256L6</td><td>4.76M</td><td>90.4%</td><td class="dim">18</td><td>90.1%</td><td>0.0034</td><td class="dim"></td></tr><tr class="hl"><td>d256L8</td><td>6.34M</td><td>90.9%</td><td class="dim">18</td><td>90.1%</td><td>0.0036</td><td class="dim">best — +0.6pp, within noise</td></tr><tr><td>d384L6</td><td>10.68M</td><td>90.3%</td><td class="dim">6</td><td>89.7%</td><td>0.0037</td><td class="dim">OVERFITS — lowest train loss, worst eval</td></tr><tr><td class="dim">frozen linear bar</td><td class="dim">—</td><td class="dim">81.9%</td><td class="dim">—</td><td class="dim">81.9%</td><td class="dim">0.00560</td><td class="dim"></td></tr></table>
+
+<h2>II · WHERE THE INFORMATION LIVES — block-masking</h2>
+<div class="note">Hide an entire complex ("all commodities") and reconstruct every member from the rest of the
+cross-section. Removes within-block interpolation — what remains is genuine cross-block linkage.
+Overall: 83.2% (vs 90.9% single-mask — harder by design). Training explicitly on blocks adds nothing
+(83.3%): the single-mask model had already learned the cross-block structure.</div>
+<canvas id="blocks" width="900" height="330"></canvas>
+<div class="note">The irreducible residual lives in <b>commodities and FX</b> — a masked gold or oil move often
+simply isn't present in the rest of the cross-section to be recovered. Direct evidence the ceiling is data-limited.</div>
+
+<h2>III · THE HONEST NEGATIVE — forward correlation</h2>
+<div class="neg">The completion-implied correlation readout does <b>not</b> beat the frozen forward-63d bar
+(z-MAE 0.2426 vs bar 0.2172 — ~11% worse; trailing persistence is near-optimal for slow structure).
+What is defensible: the completer reconstructs the <b>contemporaneous</b> 9×9 matrix at z-MAE
+<b>0.0783</b> — faithful conditional cross-section reconstruction, which is what the scenario and
+linkage boards actually need. Framed as such, not dressed up as a forward win.</div>
+
+<h2>IV · SANITY — the three canonical linkages</h2>
+<div class="note">Per-head attention (per-head-max, not head-average — averaging dilutes specialist heads):
+curve chain SHY/IEF/TLT <b>11.8×</b> baseline (L3H2) · risk complex HYG/LQD/IWM/EEM <b>3.8×</b> (L3H3) ·
+gold–dollar GLD/UUP <b>7.6×</b> (L3H1). All three learned by dedicated specialist heads, stable across regimes.
+Full graph → <a href="linkage-learned.html" style="color:#B8860B">THE LEARNED LINKAGE GRAPH</a>.</div>
+
+<div class="foot">the completer is a conditional cross-section reconstructor — never an unconditional return
+forecaster · frozen bars: linear conditional 81.9% / 0.00560 (daily, 12-asset canonical eval) · not investment advice</div>
+<script>
+const CURVES=[{"tag": "banked CPU 0.46M", "color": "#FAFAF5", "pts": [[1, 0.72], [2, 0.836], [3, 0.865], [4, 0.88], [5, 0.884], [6, 0.892], [7, 0.8909999999999999], [8, 0.8959999999999999], [9, 0.8959999999999999], [10, 0.897], [11, 0.897], [12, 0.8959999999999999], [13, 0.898], [14, 0.9], [15, 0.9], [16, 0.903], [17, 0.9], [18, 0.903], [19, 0.9009999999999999], [20, 0.902], [21, 0.902], [22, 0.902], [23, 0.902], [24, 0.902], [25, 0.903]]}, {"tag": "d192L6 2.7M", "color": "#7EA0B7", "pts": [[1, 0.8340798976140416], [2, 0.8910320870280647], [3, 0.8972483773653899], [4, 0.9022762592558735], [5, 0.9017277630496389], [6, 0.8985282018466039], [7, 0.9030990035652253], [8, 0.8992595301215833], [9, 0.9038303318402048], [10, 0.8990766980528385], [11, 0.90666422890575], [12, 0.902824755462108], [13, 0.9027333394277356], [14, 0.901544930980894], [15, 0.8998080263278179], [16, 0.9026419233933632], [17, 0.902824755462108], [18, 0.901544930980894], [19, 0.9017277630496389], [20, 0.9041959959776945], [21, 0.9009964347746595], [22, 0.902184843221501], [23, 0.9043788280464393], [24, 0.904104579943322], [25, 0.9017277630496389], [26, 0.9027333394277356], [27, 0.9025505073589908], [28, 0.9023676752902459], [29, 0.9020934271871286], [30, 0.9024590913246183], [31, 0.9020020111527562], [32, 0.9029161714964805], [33, 0.902824755462108], [34, 0.9037389158058323], [35, 0.9032818356339702], [36, 0.9031904195995978], [37, 0.9030075875308529], [38, 0.9036474997714599], [39, 0.9036474997714599], [40, 0.9036474997714599]]}, {"tag": "d256L6 4.8M", "color": "#8FBC8F", "pts": [[1, 0.8675381661943505], [2, 0.8814334034189597], [3, 0.8998080263278179], [4, 0.8939574001279824], [5, 0.9016363470152665], [6, 0.9024590913246183], [7, 0.8980711216747418], [8, 0.8996251942590731], [9, 0.8998080263278179], [10, 0.8970655452966451], [11, 0.903464667702715], [12, 0.8944144802998446], [13, 0.8966998811591553], [14, 0.902184843221501], [15, 0.9032818356339702], [16, 0.9025505073589908], [17, 0.9027333394277356], [18, 0.9035560837370875], [19, 0.9016363470152665], [20, 0.902824755462108], [21, 0.9030990035652253], [22, 0.9019105951183838], [23, 0.9013620989121492], [24, 0.9012706828777768], [25, 0.9001736904653076], [26, 0.9009964347746595], [27, 0.9020020111527562], [28, 0.9018191790840113], [29, 0.9027333394277356], [30, 0.9025505073589908], [31, 0.901544930980894], [32, 0.901544930980894], [33, 0.9008136027059146], [34, 0.9012706828777768], [35, 0.9016363470152665], [36, 0.9017277630496389], [37, 0.9016363470152665], [38, 0.9010878508090319], [39, 0.9009050187402871], [40, 0.9009964347746595]]}, {"tag": "d256L8 6.3M", "color": "#B8860B", "pts": [[1, 0.8435871651887741], [2, 0.8943230642654721], [3, 0.9009964347746595], [4, 0.8970655452966451], [5, 0.8929518237498857], [6, 0.9046530761495566], [7, 0.9067556449401225], [8, 0.9063899808026328], [9, 0.9067556449401225], [10, 0.906024316665143], [11, 0.9041959959776945], [12, 0.902824755462108], [13, 0.9040131639089496], [14, 0.906024316665143], [15, 0.9052929883901636], [16, 0.9048359082183015], [17, 0.902824755462108], [18, 0.908766797696316], [19, 0.9041959959776945], [20, 0.9045616601151842], [21, 0.9032818356339702], [22, 0.9027333394277356], [23, 0.9057500685620258], [24, 0.906207148733888], [25, 0.8995337782247006], [26, 0.9057500685620258], [27, 0.904287412012067], [28, 0.9056586525276533], [29, 0.9056586525276533], [30, 0.9037389158058323], [31, 0.9018191790840113], [32, 0.9040131639089496], [33, 0.9024590913246183], [34, 0.9027333394277356], [35, 0.9027333394277356], [36, 0.9020020111527562], [37, 0.9051101563214188], [38, 0.9007221866715421], [39, 0.9007221866715421], [40, 0.9005393546027973], [41, 0.9022762592558735], [42, 0.902184843221501], [43, 0.9010878508090319], [44, 0.9011792668434043], [45, 0.9013620989121492], [46, 0.9019105951183838], [47, 0.9014535149465216], [48, 0.9012706828777768], [49, 0.9013620989121492], [50, 0.9013620989121492]]}, {"tag": "d384L6 10.7M", "color": "#BC6F6F", "pts": [[1, 0.8763141054941037], [2, 0.8988938659840936], [3, 0.9024590913246183], [4, 0.9003565225340525], [5, 0.8991681140872109], [6, 0.9027333394277356], [7, 0.9024590913246183], [8, 0.9014535149465216], [9, 0.9001736904653076], [10, 0.9012706828777768], [11, 0.9007221866715421], [12, 0.9003565225340525], [13, 0.9022762592558735], [14, 0.9014535149465216], [15, 0.9006307706371698], [16, 0.8987110339153488], [17, 0.8997166102934455], [18, 0.8958771368498034], [19, 0.9001736904653076], [20, 0.8994423621903281], [21, 0.8984367858122315], [22, 0.9004479385684249], [23, 0.8993509461559558], [24, 0.8948715604717067], [25, 0.8998080263278179], [26, 0.8956943047810586], [27, 0.8975226254685071], [28, 0.8981625377091141], [29, 0.8974312094341348], [30, 0.8970655452966451], [31, 0.8985282018466039], [32, 0.8974312094341348], [33, 0.8963342170216656], [34, 0.8977968735716244], [35, 0.8972483773653899], [36, 0.8977968735716244], [37, 0.8976140415028796], [38, 0.8974312094341348], [39, 0.8972483773653899], [40, 0.8972483773653899]]}];const BAR=0.819;
+(function(){const c=document.getElementById("curves"),x=c.getContext("2d");
+const W=c.width,H=c.height,L=55,Rp=160,T=18,B=34;const pw=W-L-Rp,ph=H-T-B;
+const y0=0.70,y1=0.925,xmax=40;
+const X=e=>L+pw*(e-1)/(xmax-1),Y=s=>T+ph*(1-(s-y0)/(y1-y0));
+x.strokeStyle="#333";x.fillStyle="#6B6B6B";x.font="11px EB Garamond";
+for(let s=0.70;s<=0.92;s+=0.05){x.beginPath();x.moveTo(L,Y(s));x.lineTo(L+pw,Y(s));x.stroke();
+x.fillText((s*100).toFixed(0)+"%",14,Y(s)+4);}
+for(let e=5;e<=40;e+=5){x.fillText(e,X(e)-5,H-14);}
+x.fillText("epoch",L+pw/2-15,H-2);
+x.setLineDash([6,4]);x.strokeStyle="#B8860B";x.beginPath();x.moveTo(L,Y(BAR));x.lineTo(L+pw,Y(BAR));x.stroke();
+x.setLineDash([]);x.fillStyle="#B8860B";x.fillText("linear bar 81.9%",L+6,Y(BAR)-6);
+CURVES.forEach((cv,i)=>{x.strokeStyle=cv.color;x.lineWidth=cv.tag.startsWith("banked")?2.2:1.6;
+x.beginPath();cv.pts.forEach((p,j)=>{const px=X(p[0]),py=Y(p[1]);j?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();
+x.fillStyle=cv.color;x.fillRect(L+pw+14,T+14+i*20,14,3);x.fillText(cv.tag,L+pw+34,T+20+i*20);});
+x.lineWidth=1;})();
+const BLOCKS=[{"name": "rates", "sign": 0.9055823569951758, "n": 7255}, {"name": "equity_us", "sign": 0.9002613240418118, "n": 4592}, {"name": "credit", "sign": 0.8813652628681531, "n": 3633}, {"name": "equity_intl", "sign": 0.8272185638131075, "n": 6378}, {"name": "sectors", "sign": 0.8120091460383736, "n": 10059}, {"name": "fx", "sign": 0.7839881940601365, "n": 5421}, {"name": "commodities", "sign": 0.7489408441864114, "n": 6373}];
+(function(){const c=document.getElementById("blocks"),x=c.getContext("2d");
+const W=c.width,L=150,T=14,rh=38,pw=W-L-120;
+const v0=0.60,v1=0.95;const XX=v=>L+pw*(v-v0)/(v1-v0);
+x.font="13px EB Garamond";
+BLOCKS.forEach((b,i)=>{const y=T+i*rh;
+x.fillStyle="#6B6B6B";x.fillText(b.name.replace("_"," "),12,y+22);
+x.fillStyle=b.sign>0.85?"#B8860B":(b.sign>0.80?"#8a6a1e":"#555");
+x.fillRect(XX(v0),y+8,XX(b.sign)-XX(v0),20);
+x.fillStyle="#FAFAF5";x.fillText((b.sign*100).toFixed(1)+"%",XX(b.sign)+8,y+23);
+x.fillStyle="#444";x.font="11px EB Garamond";x.fillText("n="+b.n.toLocaleString(),XX(v1)+34,y+23);x.font="13px EB Garamond";});
+x.setLineDash([6,4]);x.strokeStyle="#B8860B";x.beginPath();x.moveTo(XX(0.819),T);x.lineTo(XX(0.819),T+BLOCKS.length*rh);x.stroke();
+x.setLineDash([]);x.fillStyle="#B8860B";x.font="11px EB Garamond";x.fillText("single-mask bar 81.9%",XX(0.819)-60,T+BLOCKS.length*rh+16);})();
+</script>
+</body></html>
