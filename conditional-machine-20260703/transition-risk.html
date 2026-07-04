@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRIDGE — Transition Risk</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1A1A;--bone:#FAFAF5;--gold:#B8860B;--grey:#6B6B6B;--red:#8B3A2B}
+body{background:var(--bg);color:var(--bone);font-family:'EB Garamond',serif;margin:0 auto;padding:24px;max-width:860px}
+h1{font-family:Cinzel;color:var(--gold);letter-spacing:3px;font-size:25px;text-align:center;margin:6px 0 2px}
+.sub{color:var(--grey);text-align:center;font-style:italic;margin-bottom:18px;font-size:13.5px}
+.rule{border:none;border-top:1px solid var(--gold);opacity:.5;margin:16px 0}
+h2{font-family:Cinzel;color:var(--gold);font-size:14px;letter-spacing:2px}
+.dial{text-align:center;margin:10px 0}
+.big{font-family:Cinzel;font-size:64px;color:var(--red)}
+.dlab{color:var(--grey);font-size:14px}
+.bar{height:26px;background:#242424;border:1px solid #333;border-radius:4px;position:relative;margin:14px 0}
+.fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#6B6B6B,#B8860B,#8B3A2B)}
+.marker{position:absolute;top:-7px;width:2px;height:40px;background:#FAFAF5}
+.spark{display:flex;align-items:flex-end;gap:1px;height:80px;margin:10px 0}
+.sp{flex:1;background:var(--gold);opacity:.75;border-radius:1px 1px 0 0;min-width:1px}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td,th{padding:6px 8px;font-size:14px;border-bottom:1px solid #2c2c2c;text-align:right}
+th{color:var(--grey);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+td:first-child,th:first-child{text-align:left}
+.hit{color:#8faf8f}.miss{color:var(--red)}
+.note{background:#222;border:1px solid #333;border-radius:6px;padding:12px 16px;margin-top:14px;font-size:14px;color:var(--grey)}
+.foot{color:var(--grey);font-size:12px;text-align:center;margin-top:18px;font-style:italic}
+</style></head><body>
+<h1>TRANSITION RISK</h1>
+<div class="sub">probability the correlation/vol structure is about to jump — the trigger layer of the conditional machine<br>validated on 109 stress onsets across 140 years (AUC 0.766 purged, 3.6&times; top-decile lift)</div>
+<hr class="rule">
+<div class="dial">
+ <div class="big">IN STRESS</div>
+ <div class="dlab">the panel is currently INSIDE a stress spell (began ~2026-03-22). The gauge fires from calm; its last calm reading was 76% — it called this onset one week ahead.</div>
+</div>
+<div class="bar"><div class="fill" style="width:100%"></div><div class="marker" style="left:93%"></div></div>
+<div style="display:flex;justify-content:space-between;color:var(--grey);font-size:12px"><span>calm</span><span>140-year percentile: 93%</span><span>pre-stress</span></div>
+<h2 style="margin-top:20px">LAST 3 YEARS — P(onset within 4 weeks), weekly</h2>
+<div class="spark" id="spark"></div>
+<div style="color:var(--grey);font-size:12px">gaps = weeks already inside stress (gauge only fires from calm). The last calm reading before the March 2026 onset was <b style="color:#B8860B">76.4% — one week before the onset hit.</b></div>
+<h2 style="margin-top:20px">HIGHEST ALARMS IN 140 YEARS — did an onset follow?</h2>
+<table><thead><tr><th>date</th><th>P(onset)</th><th>onset followed within 4w</th></tr></thead><tbody id="alarms"></tbody></table>
+<div class="note"><b style="color:#B8860B;font-family:Cinzel">HOW IT WORKS:</b> logistic trigger on 7 causal features from the 140-year 12-country panel — cross-country correlation level &amp; creep (coupling rises before stress), vol slope/acceleration, dispersion collapse (crowding), vol percentile. Fires only from the calm state; once stress begins, the regime library takes over (post-onset matrix blend +3.8% vs trailing). Second-moment only.</div>
+<div class="foot">asof 2026-03-15 · features today: vol_pct=0.7179, vol_slope=0.1727, vol_accel=0.2157, corr_level=0.6331, corr_creep=0.0932, disp=3.8872, disp_chg=-0.196 · not investment advice</div>
+<script>
+const G={"asof": "2026-03-15", "p_onset_4w": 0.764, "percentile": 0.928, "in_stress_now": true, "base_rate": 0.082, "validation": {"auc_purged": 0.766, "top_decile_lift": 3.59, "n_onsets_140y": 109}, "features_today": {"vol_pct": 0.7179, "vol_slope": 0.1727, "vol_accel": 0.2157, "corr_level": 0.6331, "corr_creep": 0.0932, "disp": 3.8872, "disp_chg": -0.196}, "coefs": {"vol_pct": 1.013, "vol_slope": 0.065, "vol_accel": 0.561, "corr_level": -0.319, "corr_creep": 0.053, "disp": -0.097, "disp_chg": 0.12}, "sparkline_3y": [{"d": "2023-06-25", "p": 0.054}, {"d": "2023-07-02", "p": 0.023}, {"d": "2023-07-09", "p": 0.125}, {"d": "2023-07-16", "p": 0.237}, {"d": "2023-07-23", "p": 0.226}, {"d": "2023-07-30", "p": 0.478}, {"d": "2023-08-06", "p": 0.444}, {"d": "2023-08-13", "p": 0.464}, {"d": "2023-08-20", "p": 0.584}, {"d": "2023-08-27", "p": 0.468}, {"d": "2023-09-03", "p": 0.591}, {"d": "2023-09-10", "p": 0.645}, {"d": "2023-09-17", "p": 0.628}, {"d": "2023-09-24", "p": 0.506}, {"d": "2023-10-01", "p": 0.294}, {"d": "2023-10-08", "p": 0.09}, {"d": "2023-10-15", "p": 0.045}, {"d": "2023-10-22", "p": 0.143}, {"d": "2023-10-29", "p": 0.124}, {"d": "2023-11-05", "p": 0.293}, {"d": "2023-11-12", "p": 0.364}, {"d": "2023-11-19", "p": 0.282}, {"d": "2023-11-26", "p": 0.331}, {"d": "2023-12-03", "p": 0.198}, {"d": "2023-12-10", "p": 0.262}, {"d": "2023-12-17", "p": 0.266}, {"d": "2023-12-24", "p": 0.144}, {"d": "2023-12-31", "p": 0.196}, {"d": "2024-01-07", "p": 0.219}, {"d": "2024-01-14", "p": 0.259}, {"d": "2024-01-21", "p": 0.13}, {"d": "2024-01-28", "p": 0.16}, {"d": "2024-02-04", "p": 0.038}, {"d": "2024-02-11", "p": 0.037}, {"d": "2024-02-18", "p": 0.046}, {"d": "2024-02-25", "p": 0.047}, {"d": "2024-03-03", "p": 0.103}, {"d": "2024-03-10", "p": 0.072}, {"d": "2024-03-17", "p": 0.094}, {"d": "2024-03-24", "p": 0.171}, {"d": "2024-03-31", "p": 0.202}, {"d": "2024-04-07", "p": 0.306}, {"d": "2024-04-14", "p": 0.286}, {"d": "2024-04-21", "p": 0.309}, {"d": "2024-04-28", "p": 0.242}, {"d": "2024-05-05", "p": 0.361}, {"d": "2024-05-12", "p": 0.485}, {"d": "2024-05-19", "p": 0.391}, {"d": "2024-05-26", "p": 0.362}, {"d": "2024-06-02", "p": 0.236}, {"d": "2024-06-09", "p": 0.224}, {"d": "2024-06-16", "p": 0.3}, {"d": "2024-06-23", "p": 0.205}, {"d": "2024-06-30", "p": 0.187}, {"d": "2024-07-07", "p": 0.158}, {"d": "2024-07-14", "p": 0.175}, {"d": "2024-07-21", "p": 0.236}, {"d": "2024-07-28", "p": 0.194}, {"d": "2024-08-04", "p": 0.457}, {"d": "2024-08-11", "p": 0.165}, {"d": "2024-08-18", "p": 0.415}, {"d": "2024-08-25", "p": 0.552}, {"d": "2024-09-01", "p": 0.488}, {"d": "2024-09-08", "p": 0.848}, {"d": "2024-09-15", "p": 0.671}, {"d": "2024-09-22", "p": 0.703}, {"d": "2024-09-29", "p": 0.808}, {"d": "2024-10-06", "p": 0.771}, {"d": "2024-10-13", "p": 0.735}, {"d": "2024-10-20", "p": 0.626}, {"d": "2024-10-27", "p": 0.577}, {"d": "2024-11-03", "p": 0.208}, {"d": "2024-11-10", "p": 0.469}, {"d": "2024-11-17", "p": 0.157}, {"d": "2024-11-24", "p": 0.124}, {"d": "2024-12-01", "p": 0.164}, {"d": "2024-12-08", "p": 0.032}, {"d": "2024-12-15", "p": 0.042}, {"d": "2024-12-22", "p": 0.094}, {"d": "2024-12-29", "p": 0.049}, {"d": "2025-01-05", "p": 0.049}, {"d": "2025-01-12", "p": 0.066}, {"d": "2025-01-19", "p": 0.117}, {"d": "2025-01-26", "p": 0.237}, {"d": "2025-02-02", "p": 0.381}, {"d": "2025-02-09", "p": 0.189}, {"d": "2025-02-16", "p": 0.32}, {"d": "2025-02-23", "p": 0.283}, {"d": "2025-03-02", "p": 0.314}, {"d": "2025-03-09", "p": 0.432}, {"d": "2025-03-16", "p": 0.386}, {"d": "2025-03-23", "p": 0.185}, {"d": "2025-03-30", "p": 0.17}, {"d": "2025-04-06", "p": null}, {"d": "2025-04-13", "p": null}, {"d": "2025-04-20", "p": null}, {"d": "2025-04-27", "p": null}, {"d": "2025-05-04", "p": null}, {"d": "2025-05-11", "p": null}, {"d": "2025-05-18", "p": null}, {"d": "2025-05-25", "p": null}, {"d": "2025-06-01", "p": null}, {"d": "2025-06-08", "p": null}, {"d": "2025-06-15", "p": null}, {"d": "2025-06-22", "p": null}, {"d": "2025-06-29", "p": null}, {"d": "2025-07-06", "p": 0.079}, {"d": "2025-07-13", "p": 0.052}, {"d": "2025-07-20", "p": 0.008}, {"d": "2025-07-27", "p": 0.002}, {"d": "2025-08-03", "p": 0.012}, {"d": "2025-08-10", "p": 0.031}, {"d": "2025-08-17", "p": 0.028}, {"d": "2025-08-24", "p": 0.04}, {"d": "2025-08-31", "p": 0.079}, {"d": "2025-09-07", "p": 0.065}, {"d": "2025-09-14", "p": 0.085}, {"d": "2025-09-21", "p": 0.1}, {"d": "2025-09-28", "p": 0.045}, {"d": "2025-10-05", "p": 0.363}, {"d": "2025-10-12", "p": 0.591}, {"d": "2025-10-19", "p": 0.785}, {"d": "2025-10-26", "p": 0.896}, {"d": "2025-11-02", "p": 0.669}, {"d": "2025-11-09", "p": 0.399}, {"d": "2025-11-16", "p": 0.249}, {"d": "2025-11-23", "p": 0.379}, {"d": "2025-11-30", "p": 0.492}, {"d": "2025-12-07", "p": 0.557}, {"d": "2025-12-14", "p": 0.384}, {"d": "2025-12-21", "p": 0.426}, {"d": "2025-12-28", "p": 0.506}, {"d": "2026-01-04", "p": 0.259}, {"d": "2026-01-11", "p": 0.308}, {"d": "2026-01-18", "p": 0.277}, {"d": "2026-01-25", "p": 0.122}, {"d": "2026-02-01", "p": 0.127}, {"d": "2026-02-08", "p": 0.148}, {"d": "2026-02-15", "p": 0.166}, {"d": "2026-02-22", "p": 0.14}, {"d": "2026-03-01", "p": 0.057}, {"d": "2026-03-08", "p": 0.678}, {"d": "2026-03-15", "p": 0.764}, {"d": "2026-03-22", "p": null}, {"d": "2026-03-29", "p": null}, {"d": "2026-04-05", "p": null}, {"d": "2026-04-12", "p": null}, {"d": "2026-04-19", "p": null}, {"d": "2026-04-26", "p": null}, {"d": "2026-05-03", "p": null}, {"d": "2026-05-10", "p": null}, {"d": "2026-05-17", "p": null}, {"d": "2026-05-24", "p": null}, {"d": "2026-05-31", "p": null}, {"d": "2026-06-07", "p": null}, {"d": "2026-06-14", "p": null}], "top_alarms": [{"date": "2009-09-13", "p": 0.982, "onset_followed": false}, {"date": "2011-08-28", "p": 0.981, "onset_followed": true}, {"date": "2011-08-21", "p": 0.972, "onset_followed": true}, {"date": "2012-06-10", "p": 0.961, "onset_followed": false}, {"date": "2009-10-04", "p": 0.96, "onset_followed": false}, {"date": "2009-09-27", "p": 0.955, "onset_followed": false}, {"date": "2011-08-07", "p": 0.954, "onset_followed": false}, {"date": "2011-08-14", "p": 0.945, "onset_followed": true}, {"date": "2012-06-03", "p": 0.94, "onset_followed": false}, {"date": "2009-09-20", "p": 0.931, "onset_followed": false}, {"date": "1962-05-27", "p": 0.93, "onset_followed": true}, {"date": "1982-04-18", "p": 0.929, "onset_followed": false}]};
+const sp=document.getElementById('spark');
+G.sparkline_3y.forEach(x=>{const d=document.createElement('div');d.className='sp';
+ d.style.height=(x.p===null?2:Math.max(2,x.p*78))+'px'; if(x.p===null){d.style.background='#333';}
+ d.title=x.d+(x.p===null?' (in stress)':' '+Math.round(x.p*100)+'%'); sp.appendChild(d);});
+const tb=document.getElementById('alarms');
+G.top_alarms.forEach(a=>{const tr=document.createElement('tr');
+ tr.innerHTML='<td>'+a.date+'</td><td style="font-family:Cinzel;color:#B8860B">'+Math.round(a.p*100)+'%</td>'+
+ '<td class="'+(a.onset_followed?'hit':'miss')+'">'+(a.onset_followed?'✓ yes':'✗ no')+'</td>';
+ tb.appendChild(tr);});
+</script></body></html>
