@@ -27,7 +27,10 @@ a{color:var(--gold)}
 .card{background:var(--dark);border:1px solid #333;border-radius:6px;padding:14px;text-align:center;text-decoration:none;color:var(--bone);transition:background .15s}
 .card:hover{background:#2a2a2a}
 .card .cn{font-family:Cinzel;color:var(--gold);font-size:22px}.card .cl{color:var(--grey);font-size:11px;letter-spacing:1px}
-@media(max-width:600px){.cards{grid-template-columns:1fr}.stats{gap:20px}}
+.section-intro{background:linear-gradient(135deg,#1e1e1e,#222);border:1px solid #333;border-radius:8px;padding:20px 24px;margin:16px 0}
+.section-intro h3{font-family:Cinzel;color:var(--gold);font-size:16px;letter-spacing:2px;margin:0 0 8px}
+.section-intro p{color:var(--grey);font-size:14px;margin:0}
+@media(max-width:600px){.cards{grid-template-columns:1fr}.stats{gap:20px}.nav-inner{justify-content:flex-start}}
 </style></head><body>
 
 <div class="nav"><div class="nav-inner">
@@ -38,6 +41,7 @@ a{color:var(--gold)}
 <a href="#trade">TRADE</a>
 <a href="#yields">YIELDS</a>
 <a href="#gdp">GDP</a>
+<a href="#eastasia">EAST ASIA</a>
 <a href="#nile">NILE-CHINA</a>
 <a href="#fourth">4TH TURNING</a>
 <a href="discovery.html">DISCOVERY →</a>
@@ -49,7 +53,7 @@ a{color:var(--gold)}
 from Sumerian clay tablets to central bank policy rates</div>
 
 <div class="stats">
-<div class="stat"><div class="n">10,532</div><div class="l">TIME SERIES</div></div>
+<div class="stat"><div class="n">11,210</div><div class="l">TIME SERIES</div></div>
 <div class="stat"><div class="n">454</div><div class="l">SOURCES</div></div>
 <div class="stat"><div class="n">1.2M</div><div class="l">DATA POINTS</div></div>
 <div class="stat"><div class="n">2600 BC</div><div class="l">EARLIEST</div></div>
@@ -59,11 +63,12 @@ from Sumerian clay tablets to central bank policy rates</div>
 <div class="cards">
 <a class="card" href="notebook.html"><div class="cn">5</div><div class="cl">CROSS-CIV ANALYSES</div></a>
 <a class="card" href="discovery.html"><div class="cn">10</div><div class="cl">DISCOVERY ANALYSES</div></a>
-<a class="card" href="#"><div class="cn">41</div><div class="cl">CHARTS</div></a>
+<a class="card" href="#eastasia"><div class="cn">4</div><div class="cl">EAST ASIAN CHARTS</div></a>
 </div>
 
 <hr class="rule">
 
+<!-- ═══ INTEREST RATES ═══ -->
 <h2 id="rates">4,400 YEARS OF INTEREST RATES</h2>
 <p>The longest documented financial series in existence. Stitched from Mesopotamian clay tablet loan records (2400 BC) through Greek temple deposits, Roman lending laws, Venetian <em>prestiti</em>, Florentine <em>Monte</em>, Dutch Republic government bonds, the Bank of England (1694), and consols.</p>
 <img src="img/story_interest_rates.png" alt="4,400 years of interest rates">
@@ -72,6 +77,7 @@ from Sumerian clay tablets to central bank policy rates</div>
 
 <hr class="rule">
 
+<!-- ═══ GRAIN + VOLCANIC ═══ -->
 <h2 id="grain">GRAIN PRICES + VOLCANIC ERUPTIONS</h2>
 <p>Staple grain prices in silver-equivalent from the Babylonian Astronomical Diaries (384 BC) through medieval European wheat to 1954. Below: volcanic eruption intensity (VEI). The physical channel is clear — eruptions cause volcanic winters that kill harvests.</p>
 <img src="img/story_grain_volcanic.png" alt="Grain + volcanic">
@@ -80,20 +86,25 @@ from Sumerian clay tablets to central bank policy rates</div>
 
 <hr class="rule">
 
+<!-- ═══ DIVERGENCE ═══ -->
 <h2 id="divergence">THE GREAT DIVERGENCE</h2>
-<p>When did Europe pull ahead of Asia in living standards? Daily wages in grams of silver for unskilled laborers across 5 cities.</p>
+<p>When did Europe pull ahead of Asia in living standards? Daily wages in grams of silver for unskilled laborers — Beijing, Amsterdam, London, and Istanbul — with 30-year rolling means to reveal the structural trend.</p>
 <img src="img/story_divergence.png" alt="Great Divergence">
 <div class="f"><div class="l">Beijing / London wage ratio</div><div class="r">0.39 (1550s) → 0.11 (1800s)</div>
 <p>The gap opened gradually after 1600, not suddenly. Amsterdam was <em>richer</em> than London until ~1700. Istanbul near parity with London in the 1450s. London wages correlate with New World silver inflows (r = 0.64) and Sound Toll trade volume (r = 0.53). The divergence is entangled with Atlantic trade expansion.</p></div>
 
 <hr class="rule">
 
+<!-- ═══ DEBASEMENT ═══ -->
 <h2 id="debasement">ROMAN DEBASEMENT → INFLATION</h2>
-<p>The denarius lost 97% of its silver content over 500 years — from 97% fine (Republic) to 2.5% (Gallienus, 268 AD). One of the clearest debasement-to-inflation episodes in history.</p>
+<p>The denarius lost 97% of its silver content over 500 years — from 97% fine (Republic) to 2.5% (Gallienus, 268 AD). Shown alongside the English penny's silver content for a millennium of comparison. One of the clearest debasement-to-inflation episodes in history.</p>
 <img src="img/story_debasement.png" alt="Roman debasement">
+<div class="f"><div class="l">Two great debasements</div><div class="r">Rome 97→2.5% · England 92→8%</div>
+<p>Nero's clipping (64 AD) started gradual decline; Caracalla (215) and Gallienus (268) accelerated collapse. The English penny followed a slower arc from 925 fineness (760 AD) to the Great Debasement under Henry VIII. Both ended with fiscal crisis and monetary reform.</p></div>
 
 <hr class="rule">
 
+<!-- ═══ TRADE + WAGES ═══ -->
 <h2 id="trade">BALTIC TRADE vs ENGLISH WAGES</h2>
 <p>2.15 million ship passages through the Danish Sound (1497–1857) vs English real wages. Standardized and smoothed.</p>
 <img src="img/story_trade_wages.png" alt="Sound Toll + wages">
@@ -102,26 +113,76 @@ from Sumerian clay tablets to central bank policy rates</div>
 
 <hr class="rule">
 
+<!-- ═══ SOVEREIGN YIELDS ═══ -->
 <h2 id="yields">SOVEREIGN BOND YIELDS — 4 COUNTRIES</h2>
-<p>Government borrowing costs from Dutch Republic bonds (1600), French rentes, British consols, and US treasuries.</p>
+<p>Government borrowing costs from Dutch Republic bonds (1600), French rentes (1522), British consols (1688), and US treasuries (1790). The correct Dutch series — <code>dutch_republic_govt.pct_yield</code> — shows the Netherlands as the lowest-cost sovereign borrower in Early Modern Europe.</p>
 <img src="img/story_sovereign_yields.png" alt="Sovereign yields">
-<p>The Netherlands led the financial revolution — lowest rates in Europe from 1600. Britain converged after the Glorious Revolution (1688). France was persistently higher (political risk premium). The US started high and converged after the Civil War.</p>
+<div class="f"><div class="l">Financial revolution sequence</div><div class="r">Netherlands → England → France → USA</div>
+<p>The Netherlands led the financial revolution — lowest rates in Europe from 1600, achieving 2-3% yields when France was at 8-10%. Britain converged after the Glorious Revolution (1688). France was persistently higher — a political risk premium reflecting institutional fragility. The US started high and converged after the Civil War.</p></div>
 
 <hr class="rule">
 
+<!-- ═══ UK GDP ═══ -->
 <h2 id="gdp">UK GDP PER CAPITA — 930 YEARS</h2>
-<p>The longest continuous GDP estimate for any country.</p>
+<p>The longest continuous GDP estimate for any country. Bank of England Millennium dataset, 1086–2016.</p>
 <img src="img/story_uk_gdp.png" alt="UK GDP">
 <p>Flat for 700 years. Then exponential. The Industrial Revolution is the most dramatic structural break in the entire dataset — nothing in the preceding seven centuries predicted it. The Black Death (1348) actually <em>raised</em> per-capita income by killing a third of the population.</p>
 
 <hr class="rule">
 
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ═══ EAST ASIA SECTION ═══ -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<h2 id="eastasia" style="font-size:22px;letter-spacing:3px;margin-top:48px">東亞 — EAST ASIA</h2>
+<div class="section-intro">
+<h3>Imperial Records, Disasters & Prices</h3>
+<p>Four new charts drawing on Chinese Qing Dynasty <em>Shilu</em> (實錄) entries, provincial grain price reports across 20 provinces, drought and flood event counts from reaches data (1368–1911), and Korean Joseon-era commodity prices and wages from the Global Price & Income History Group.</p>
+</div>
+
+<!-- ═══ CHINA DROUGHT ═══ -->
+<h2>DROUGHT & FLOOD vs GRAIN PRICES — CHINA (1368–1911)</h2>
+<p>Red bars show drought event counts; blue bars (inverted) show flood events. The gold line tracks the mean Qing grain price across 20 provinces in taels per <em>shi</em>. The Ming–Qing transition (1644) marks a structural break in disaster frequency.</p>
+<img src="img/story_china_drought_grain.png" alt="China drought vs grain prices">
+<div class="f"><div class="l">Disaster–price channel</div><div class="r">544 years of drought + flood data</div>
+<p>Drought events cluster in the late 18th and 19th centuries — coinciding with the Qing fiscal crisis and the Taiping Rebellion. Grain prices across 20 provinces track disaster intensity with visible lag. The physical forcing channel operates at the sub-provincial level: Zhili (直隸) and Shandong (山東) show the strongest drought-price correlations.</p></div>
+
+<hr class="rule">
+
+<!-- ═══ SHILU + DISASTERS ═══ -->
+<h2>IMPERIAL RECORDS: SHILU ENTRIES & DISASTERS</h2>
+<p>Annual count of Qing Shilu (實錄) entries — the official daily records of the emperors — alongside stacked drought and flood events. Administrative capacity tracks with disaster documentation.</p>
+<img src="img/story_china_shilu_disasters.png" alt="Shilu entries vs disasters">
+<div class="f"><div class="l">Imperial bureaucracy as sensor network</div><div class="r">557 years of Shilu records</div>
+<p>Shilu entry counts rise dramatically in the 18th century (Kangxi–Qianlong peak), reflecting bureaucratic expansion. The late Qing decline in entries mirrors the dynasty's administrative collapse. Disaster documentation scales with state capacity — more entries doesn't necessarily mean more disasters; it means better detection.</p></div>
+
+<hr class="rule">
+
+<!-- ═══ KOREA ═══ -->
+<h2>KOREA (JOSEON) — PRICES & WAGES</h2>
+<p>Commodity prices and daily wages from the Joseon Dynasty (1392–1910), drawn from the Global Price & Income History Group. Rice prices in copper/silver equivalents, cotton cloth, wheat, and laborer wages.</p>
+<img src="img/story_korea_weather.png" alt="Korea Joseon prices and wages">
+<div class="f"><div class="l">Joseon economy</div><div class="r">195 years of rice price data</div>
+<p>Korean rice prices show structural inflation from the mid-18th century — the same period as Qing China's grain price rise. Copper wages plateau while silver wages decline, reflecting the global silver deflation that hit both East Asian economies. The Imjin War (1592) and Manchu Invasion (1636) mark exogenous shocks visible in the price record.</p></div>
+
+<hr class="rule">
+
+<!-- ═══ CHINA-KOREA ═══ -->
+<h2>CHINA vs KOREA — PARALLEL EMPIRES</h2>
+<p>Chinese Shilu entry counts (top) vs Korean rice prices and copper wages (bottom). Two East Asian empires, two documentary traditions, one shared monetary and climate system.</p>
+<img src="img/story_china_korea_comparison.png" alt="China-Korea comparison">
+<div class="f"><div class="l">Cross-regional synchrony</div><div class="r">Ming → Qing · Joseon → Opening</div>
+<p>The Imjin War (1592) and Ming–Qing transition (1644) appear as shocks in both records. The 18th-century peak in Chinese administrative output coincides with Joseon's price inflation — both driven by silver flows and demographic pressure. The Taiping Rebellion (1850s) and Korea's forced opening (1876) mark the beginning of the end for both traditional orders.</p></div>
+
+<hr class="rule">
+
+<!-- ═══ GOLD/SILVER ═══ -->
 <h2 id="gold">GOLD / SILVER RATIO ACROSS MILLENNIA</h2>
 <img src="img/story_gold_silver.png" alt="Gold/silver ratio">
 <p>Stable at ~12-15:1 for two thousand years (the classical bimetallic ratio). Then silver collapsed after 1870 (demonetization, industrial production). The ratio hit 86:1 by 2020. The 2,500-year stability is remarkable — a physical constant of monetary systems until industrial mining broke it.</p>
 
 <hr class="rule">
 
+<!-- ═══ NILE-CHINA ═══ -->
 <h2 id="nile">NILE FLOODS → CHINESE DROUGHTS</h2>
 <p>A teleconnection across 5,000 miles. High Nile floods in Egypt predict drought events in China 5 years later.</p>
 <img src="img/story_nile_china.png" alt="Nile-China">
@@ -130,6 +191,7 @@ from Sumerian clay tablets to central bank policy rates</div>
 
 <hr class="rule">
 
+<!-- ═══ FOURTH TURNING ═══ -->
 <h2 id="fourth">THE FOURTH TURNING — TESTED</h2>
 <p>Strauss & Howe claim an ~80-year cycle of crisis in Anglo-American history. We tested their sine-wave prediction against independently-compiled crisis intensity.</p>
 <img src="img/story_fourth_turning.png" alt="Fourth Turning tested">
@@ -143,6 +205,7 @@ from Sumerian clay tablets to central bank policy rates</div>
 <div class="r">Climate drives economics drives politics</div>
 <p>The dominant signal across 4,600 years of data is <strong>physical forcing through agriculture</strong>. Solar minima → cooling → harvest failure → grain price spike → real wage collapse → political instability → war. The chain takes 5-15 years. It works across civilizations simultaneously — volcanic eruptions spike grain prices on both sides of Eurasia.</p>
 <p>The <strong>Great Divergence</strong> was gradual (post-1600), entangled with Atlantic trade. The <strong>Price Revolution</strong> hammered real wages 45%. Interest rates show a 4,400-year secular decline. The Fourth Turning is noise.</p>
+<p>The <strong>East Asian evidence</strong> — 557 years of Chinese Shilu records, 20-province Qing grain prices, and 195 years of Korean Joseon commodity data — confirms the same pattern: drought clusters → grain spikes → fiscal crisis → dynastic collapse. The Ming–Qing and Joseon transitions are visible in every series.</p>
 <p style="margin-top:12px"><a href="discovery.html" style="font-family:Cinzel;letter-spacing:2px">→ DISCOVERY NOTEBOOK: 10 ANALYSES, 24 CHARTS</a></p>
 <p><a href="notebook.html" style="font-family:Cinzel;letter-spacing:2px">→ CROSS-CIVILIZATION ANALYSIS</a></p>
 </div>
