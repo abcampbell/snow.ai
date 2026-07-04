@@ -1,0 +1,229 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEEP HISTORY — Research Notebook · Castra Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1A1A;--bone:#FAFAF5;--gold:#B8860B;--grey:#6B6B6B;--red:#8B3A2B;--dark:#222}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--bone);font-family:'EB Garamond',serif;margin:0;padding:0}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 20px}
+h1{font-family:Cinzel;color:var(--gold);letter-spacing:4px;font-size:28px;text-align:center;margin:20px 0 4px}
+h2{font-family:Cinzel;color:var(--gold);font-size:17px;letter-spacing:2px;margin:36px 0 8px;border-bottom:1px solid #333;padding-bottom:6px}
+h3{font-family:Cinzel;color:var(--gold);font-size:14px;letter-spacing:1px;margin:20px 0 6px}
+.sub{color:var(--grey);text-align:center;font-style:italic;margin-bottom:24px;font-size:14px}
+.rule{border:none;border-top:1px solid var(--gold);opacity:.4;margin:20px 0}
+img{width:100%;border-radius:6px;border:1px solid #333;margin:12px 0}
+p{line-height:1.7;margin:10px 0;font-size:16px}
+.finding{background:var(--dark);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:14px 18px;margin:14px 0}
+.finding .r{font-family:Cinzel;color:var(--gold);font-size:22px}
+.finding .label{color:var(--grey);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+table{width:100%;border-collapse:collapse;margin:14px 0}
+td,th{padding:6px 10px;font-size:14px;border-bottom:1px solid #2a2a2a;text-align:left}
+th{color:var(--grey);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.verdict{background:#1e1e1e;border:1px solid var(--gold);border-radius:8px;padding:20px 24px;margin:20px 0}
+.verdict h3{margin:0 0 8px}
+.verdict p{margin:6px 0;font-size:15px}
+.num{font-family:Cinzel;color:var(--red);font-size:22px}
+.nav{position:sticky;top:0;background:rgba(26,26,26,.95);backdrop-filter:blur(8px);z-index:100;padding:8px 0;border-bottom:1px solid #333}
+.nav-inner{display:flex;gap:8px;overflow-x:auto;max-width:1000px;margin:0 auto;padding:0 20px}
+.nav a{color:var(--grey);font-size:10px;font-family:Cinzel;letter-spacing:1px;text-decoration:none;white-space:nowrap;padding:4px 6px;border-radius:3px;transition:all .15s}
+.nav a:hover,.nav a.active{color:var(--gold);background:#2a2a2a}
+.foot{color:var(--grey);font-size:11px;text-align:center;margin-top:30px;font-style:italic;padding:12px 0;border-top:1px solid #333}
+a{color:var(--gold)}
+</style></head><body>
+<div class="nav"><div class="nav-inner">
+<a href="index.html">← DASHBOARD</a>
+<a href="#datasets">DATASETS</a>
+<a href="#volcanic">VOLCANIC</a>
+<a href="#nile">NILE-CHINA</a>
+<a href="#trade">TRADE</a>
+<a href="#war">WAR</a>
+<a href="#matrix">MATRIX</a>
+<a href="#fourth">4TH TURNING</a>
+</div></div>
+<div class="wrap">
+<h1>DEEP HISTORY</h1>
+<div class="sub">Research Notebook — Cross-Civilization Analysis<br>
+2,796 series · 149 sources · 110 maps on Rose · 398,764 data points<br>
+rose registry: <span style="color:var(--gold)">wld.deep.history.scraper.project.registry.claude.hermes.001.20260704.map</span></div>
+
+<hr class="rule">
+
+<!-- ═══════════ SECTION 1: THE DATASETS ═══════════ -->
+
+<h2 id="datasets">THE DATASETS — 12,000 YEARS</h2>
+
+<img src="img/chart_timeline.png" alt="Coverage timeline">
+<p>Coverage map — every horizontal bar is one dataset. The red dashed line at 1680 marks the pandas Timestamp boundary; everything left of it lives on Rose as maps rather than timeseries.</p>
+
+<h3>Physical World</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div><img src="img/chart_nilometer.png" alt="Nilometer"><p style="font-size:13px;color:var(--grey)">Nilometer — 1,300 years of Nile flood levels. Band = min/max. Gap around 1500 = Mamluk-Ottoman transition.</p></div>
+<div><img src="img/chart_sunspots.png" alt="Sunspots"><p style="font-size:13px;color:var(--grey)">Sunspots — SILSO monthly showing the ~11-year solar cycle. Dalton Minimum (~1800) visible.</p></div>
+</div>
+
+<h3>Economic History</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div><img src="img/chart_babylon.png" alt="Babylon"><p style="font-size:13px;color:var(--grey)">Babylonian commodity prices — oldest economic data on Earth. Massive spike ~310 BC = Seleucid wars.</p></div>
+<div><img src="img/chart_pbh.png" alt="PBH wages"><p style="font-size:13px;color:var(--grey)">745 years of English wages and prices. Real wages flat for 600 years until industrialization ~1820.</p></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div><img src="img/chart_grain.png" alt="Grain"><p style="font-size:13px;color:var(--grey)">Wheat prices in 4 European cities. Remarkable co-movement. Post-1550 rise = Price Revolution.</p></div>
+<div><img src="img/chart_china.png" alt="China disasters"><p style="font-size:13px;color:var(--grey)">Chinese disasters 1368–1911. Locust swarms dominate. Late Ming collapse (~1630s) shows multi-disaster convergence.</p></div>
+</div>
+
+<h3>Event History</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div><img src="img/chart_earthquakes.png" alt="Earthquakes"><p style="font-size:13px;color:var(--grey)">4,722 European earthquakes. Density increase post-1700 is detection bias, not more quakes.</p></div>
+<div><img src="img/chart_asc.png" alt="ASC"><p style="font-size:13px;color:var(--grey)">Anglo-Saxon Chronicle — 500 year-entries. Gap 200–400 AD (sub-Roman dark age). Density explodes with Viking Age.</p></div>
+</div>
+
+<hr class="rule">
+
+<!-- ═══════════ SECTION 2: CROSS-CIV ANALYSIS ═══════════ -->
+
+<h2 id="volcanic">ANALYSIS 1 — VOLCANIC FORCING → GRAIN PRICES</h2>
+<p><em>Do volcanic eruptions predict grain price spikes in both Europe AND China simultaneously?</em></p>
+
+<img src="img/01_physical_forcing_grain_prices.png" alt="Volcanic forcing cross-correlation">
+
+<div class="finding">
+<div class="label">Volcanic VEI → European Wheat</div>
+<div class="r">r = +0.40, p &lt; 0.0001</div>
+<p>Immediate effect — eruption → price spike same year. Spearman ρ = 0.46.</p>
+</div>
+
+<div class="finding">
+<div class="label">Volcanic VEI → Chinese Grain</div>
+<div class="r">r = +0.32, Spearman ρ = +0.53</div>
+<p>Strong positive. Physical channel is real and transcontinental — volcanic winters killed harvests on both sides of Eurasia simultaneously.</p>
+</div>
+
+<div class="finding">
+<div class="label">Low Sunspots → Grain Prices</div>
+<div class="r">r ≈ 0.16 (not significant at lag 0)</div>
+<p>Weak. Sunspot minimum precedes wheat price spike by ~3 years in both Europe and China, but the contemporaneous correlation is not significant.</p>
+</div>
+
+<img src="img/01b_forcing_timeseries.png" alt="Forcing timeseries">
+<p style="color:var(--grey)">Time series overlay: volcanic VEI (top), sunspot count (inverted), European wheat, Chinese grain prices (1736–1857). The volcanic spikes visibly align with grain price peaks in both civilizations.</p>
+
+<hr class="rule">
+
+<h2 id="nile">ANALYSIS 2 — NILE FLOODS → CHINESE DISASTERS</h2>
+<p><em>Is there a teleconnection between the Nile and China? Both driven by ENSO/monsoon variability.</em></p>
+
+<img src="img/02_nile_china_teleconnection.png" alt="Nile-China teleconnection">
+
+<div class="finding">
+<div class="label">Nile Flood Level → Chinese Droughts (lag +5 years)</div>
+<div class="r">r = +0.344, p &lt; 0.0001</div>
+<p>High Nile floods predict Chinese droughts 5 years later. Consistent with El Niño pattern: El Niño strengthens Indian Ocean monsoon (more Nile flooding from Ethiopian highlands) while disrupting East Asian monsoon (more droughts in China).</p>
+</div>
+
+<div class="finding">
+<div class="label">Spearman (total disasters)</div>
+<div class="r">ρ = +0.485, p &lt; 0.0001</div>
+<p>Much stronger than Pearson — a monotonic but non-linear relationship, consistent with shared climatic forcing through ENSO/monsoon systems.</p>
+</div>
+
+<p>The 5-year lag structure suggests low-frequency climate oscillation rather than direct same-year forcing. The direction is counterintuitive but physically plausible: El Niño drives both high Nile <em>and</em> Chinese drought through opposing monsoon effects.</p>
+
+<hr class="rule">
+
+<h2 id="trade">ANALYSIS 3 — SOUND TOLL → ENGLISH WAGES</h2>
+<p><em>Does Baltic trade volume lead or lag English real wages?</em></p>
+
+<img src="img/03_sound_toll_wages.png" alt="Sound Toll vs wages">
+
+<div class="finding">
+<div class="label">Sound Toll → Real Wage (levels)</div>
+<div class="r">r = +0.50</div>
+<p>Strong co-movement. But first-difference drops to r ≈ 0.20 — this is largely a shared upward trend (Early Modern growth), not causation.</p>
+</div>
+
+<p>Trade and wages co-evolved as part of Early Modern economic expansion. No strong evidence that Baltic trade <em>caused</em> English wage growth or vice versa — they are co-determined by broader structural change. The log-transformed analysis shows a modest positive with trade leading wages by ~2 years (r = 0.24).</p>
+
+<hr class="rule">
+
+<h2 id="war">ANALYSIS 4 — WAR CLUSTERING ACROSS CIVILIZATIONS</h2>
+<p><em>Do European wars correlate with Chinese state coercion? Or are they independent?</em></p>
+
+<img src="img/04_war_clustering.png" alt="War clustering">
+
+<div class="finding">
+<div class="label">European Crisis → CBDB Punishments (lag +11 years)</div>
+<div class="r">r = 0.69, p = 0.01</div>
+<p>European crisis intensity predicts Chinese official persecutions 11 years later. But CBDB data is sparse — treat with caution.</p>
+</div>
+
+<p>Wars cluster across civilizations more than chance would predict, but the mechanism is unclear. Climate forcing (volcanic winters, Little Ice Age) is the most parsimonious explanation for simultaneous state stress on both sides of Eurasia. The rolling 30-year correlation oscillates between positive and negative — these are episodic co-occurrences, not a systematic causal mechanism.</p>
+
+<hr class="rule">
+
+<h2 id="matrix">ANALYSIS 5 — CROSS-CIVILIZATION CORRELATION MATRIX</h2>
+<p><em>17 major series from 3 continents, all pairs with 200+ years of overlap.</em></p>
+
+<img src="img/05b_correlation_matrix.png" alt="Correlation matrix">
+
+<h3>Top Cross-Domain Correlations</h3>
+<table>
+<thead><tr><th>r</th><th>Series 1</th><th>×</th><th>Series 2</th><th>Period</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--gold)">+0.81</td><td>England Real Wage</td><td>×</td><td>GVP Volcanic</td><td>1209–1954</td></tr>
+<tr><td style="color:var(--gold)">+0.55</td><td>England Price Basket</td><td>×</td><td>China Droughts</td><td>1368–1911</td></tr>
+<tr><td style="color:var(--gold)">+0.53</td><td>Nile Flood Max</td><td>×</td><td>England Price Basket</td><td>1209–1921</td></tr>
+<tr><td style="color:var(--gold)">+0.52</td><td>England Price Basket</td><td>×</td><td>Shilu Entries</td><td>1352–1912</td></tr>
+<tr><td style="color:var(--gold)">+0.45</td><td>England Real Wage</td><td>×</td><td>Moberg NH Temp</td><td>1209–1954</td></tr>
+<tr><td style="color:var(--gold)">+0.44</td><td>Nile Flood Max</td><td>×</td><td>Shilu Entries</td><td>1352–1912</td></tr>
+<tr><td style="color:var(--gold)">+0.44</td><td>England Price Basket</td><td>×</td><td>China Famine</td><td>1368–1911</td></tr>
+<tr><td style="color:#6688CC">−0.54</td><td>Euro Wheat (Amsterdam)</td><td>×</td><td>CBDB Persons</td><td>1462–1900</td></tr>
+<tr><td style="color:#6688CC">−0.50</td><td>Euro Wheat (Paris)</td><td>×</td><td>CBDB Persons</td><td>1431–1870</td></tr>
+</tbody>
+</table>
+
+<img src="img/05_longrun_comovement.png" alt="Rolling correlations">
+<p style="color:var(--grey)">Rolling 50-year correlations for the top 12 pairs. Most relationships are episodic, not stable — they come and go with climatic and political regimes.</p>
+
+<h3>Two Clusters</h3>
+<p><strong>European economic block:</strong> Euro wheat prices, England wages, Sound Toll — all highly inter-correlated.</p>
+<p><strong>Chinese state activity block:</strong> CBDB, Shilu, disaster counts — moderately inter-correlated.</p>
+<p><strong>Cross-links between blocks</strong> are mediated by volcanic forcing and temperature. The GVP volcanic column is warm across the entire matrix — eruptions affect everything.</p>
+
+<hr class="rule">
+
+<h2 id="fourth">THE FOURTH TURNING — TESTED AND REJECTED</h2>
+<p><em>Strauss-Howe ~80-year generational cycle vs independently-compiled crisis intensity.</em></p>
+
+<img src="img/chart_fourth_turning.png" alt="Fourth Turning overlay">
+
+<div class="verdict">
+<h3>VERDICT</h3>
+<p>The S&H cycle has <span class="num">r = 0.021</span> with independent crisis intensity — effectively <strong>zero correlation</strong>.</p>
+<p>The only signal — war clustering in "Crisis" turnings (79% vs 62%) — is circular: they drew the boxes around the wars they already knew about.</p>
+<p>"Awakening" periods are actually the most crisis-intensive (mean 18.3 vs 16.4 for "Crisis"), and the t-test is not significant (p = 0.15).</p>
+<p>Exogenous physical series (Nile floods, Chinese disasters, sunspots, ice cores, tree rings) show zero phase-dependence, confirming no hidden common driver.</p>
+<p style="color:var(--grey)">It's a narrative framework, not a quantitative one. The real driver of crisis clustering across civilizations is volcanic/climatic forcing — not generational cycles.</p>
+</div>
+
+<hr class="rule">
+
+<h2>CAVEATS</h2>
+<p>Many correlations in the matrix are inflated by shared secular trends (population growth, record-keeping improvement). First-difference analysis typically reduces them by 50–80%. The volcanic eruption count increases over time as the geological record improves — this is a known detection bias. The 50-year rolling correlation charts show that most relationships are episodic, not stable. The CBDB data is Song-heavy (data-entry bias, not historical truth). The Qing grain prices carry late-Qing silver inflation — difference or z-score before regressing.</p>
+
+<div class="foot">
+Castra Capital Research · compiled 2026-07-04 · 149 sources · 110 maps on Rose<br>
+rose: <a href="https://rose.ai">wld.deep.history.scraper.project.registry.claude.hermes.001.20260704.map</a><br>
+<a href="index.html">← Back to Dashboard</a> · not investment advice
+</div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  const secs=document.querySelectorAll('h2[id]');const links=document.querySelectorAll('.nav a');
+  let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
+  links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));
+});
+</script>
+</body></html>
