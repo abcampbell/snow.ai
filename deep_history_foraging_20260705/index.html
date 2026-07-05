@@ -1,0 +1,316 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEEP HISTORY FORAGING LOG — 2026-07-05 · Castra Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1A1A;--bone:#FAFAF5;--gold:#B8860B;--grey:#6B6B6B;--red:#8B3A2B;--dark:#222;--green:#4a7a4a}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--bone);font-family:'EB Garamond',serif;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px}
+h1{font-family:Cinzel;color:var(--gold);letter-spacing:4px;font-size:28px;text-align:center;margin:20px 0 4px}
+h2{font-family:Cinzel;color:var(--gold);font-size:16px;letter-spacing:2px;margin:32px 0 8px;border-bottom:1px solid #333;padding-bottom:6px}
+h3{font-family:Cinzel;color:var(--gold);font-size:13px;letter-spacing:1px;margin:18px 0 6px}
+.sub{color:var(--grey);text-align:center;font-style:italic;margin-bottom:24px;font-size:14px;line-height:1.6}
+.rule{border:none;border-top:1px solid var(--gold);opacity:.4;margin:20px 0}
+p{line-height:1.7;margin:8px 0;font-size:15px}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th{font-family:Cinzel;color:var(--gold);text-align:left;padding:6px 8px;border-bottom:2px solid #333;font-size:11px;letter-spacing:1px}
+td{padding:5px 8px;border-bottom:1px solid #222;vertical-align:top}
+tr:hover{background:#222}
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:16px 0 24px}
+.stat{text-align:center}.stat .n{font-family:Cinzel;color:var(--gold);font-size:26px}.stat .l{color:var(--grey);font-size:10px;letter-spacing:1px}
+.f{background:var(--dark);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 16px;margin:12px 0;font-size:14px}
+.tag{display:inline-block;font-size:10px;padding:2px 6px;border-radius:3px;margin:1px;font-family:Cinzel;letter-spacing:1px}
+.tag-climate{background:#1a3a4a;color:#88cccc}
+.tag-economic{background:#3a2a1a;color:var(--gold)}
+.tag-political{background:#3a1a1a;color:#cc6666}
+.tag-social{background:#2a1a3a;color:#aa88cc}
+.tag-ancient{background:#2a2a1a;color:#aaaa66}
+.tag-trade{background:#1a2a1a;color:#66aa66}
+.tag-financial{background:#3a3a1a;color:#ccaa44}
+.wave{background:var(--dark);border:1px solid #333;border-radius:6px;padding:14px;margin:10px 0}
+.wave-hdr{font-family:Cinzel;color:var(--gold);font-size:14px;letter-spacing:1px;margin-bottom:8px}
+.finding{border-left:3px solid var(--green);background:#1a2a1a;border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.finding .r{color:var(--green);font-family:Cinzel;font-size:15px}
+.nav{position:sticky;top:0;background:rgba(26,26,26,.97);backdrop-filter:blur(8px);z-index:100;padding:8px 0;border-bottom:1px solid #333}
+.nav-inner{display:flex;gap:10px;overflow-x:auto;max-width:1100px;margin:0 auto;padding:0 20px;justify-content:center}
+.nav a{color:var(--grey);font-size:10px;font-family:Cinzel;letter-spacing:1px;text-decoration:none;padding:4px 6px;border-radius:3px;transition:all .15s}
+.nav a:hover{color:var(--gold);background:#2a2a2a}
+.foot{color:var(--grey);font-size:11px;text-align:center;margin-top:30px;font-style:italic;padding:12px 0;border-top:1px solid #333}
+a{color:var(--gold)}
+</style></head><body>
+
+<div class="nav"><div class="nav-inner">
+<a href="index.html">← DASHBOARD</a>
+<a href="#overview">OVERVIEW</a>
+<a href="#waves">WAVES</a>
+<a href="#datasets">ALL DATASETS</a>
+<a href="#findings">FINDINGS</a>
+<a href="#rose">ROSE</a>
+</div></div>
+
+<div class="wrap">
+<h1>FORAGING LOG</h1>
+<div class="sub">Deep History Data Expedition — 2026-07-04/05<br>
+14 waves · 47 agents · ~210 datasets · one evening</div>
+
+<div class="stats">
+<div class="stat"><div class="n">11,966</div><div class="l">SERIES</div></div>
+<div class="stat"><div class="n">703</div><div class="l">SOURCES</div></div>
+<div class="stat"><div class="n">1.3M</div><div class="l">DATA POINTS</div></div>
+<div class="stat"><div class="n">278</div><div class="l">MAPS ON ROSE</div></div>
+<div class="stat"><div class="n">47</div><div class="l">AGENTS</div></div>
+<div class="stat"><div class="n">14</div><div class="l">WAVES</div></div>
+</div>
+
+<h2 id="overview">EXPEDITION OVERVIEW</h2>
+<p>Started with a question: <em>"Are there any historic records from the Roman Senate?"</em> Ended 8 hours later with 11,966 time series from 703 academic sources spanning 25+ civilizations and 800,000 years.</p>
+<p>Method: parallel agent swarms. Each wave dispatched 2-3 agents simultaneously, each hunting 6 datasets. Agents downloaded from NOAA, IISG, GPIH UC Davis, NBER, JST Macrohistory, BoE Millennium, Academia Sinica, and ~100 other academic data repositories. Auto-merge cron jobs absorbed deposits every 15 minutes. All data pushed to Rose as thematic maps with source metadata.</p>
+
+<div class="f">
+<strong>Rose registry:</strong> <code>wld.deep.history.scraper.project.registry.claude.hermes.001.20260704.map</code><br>
+<strong>Canonical series:</strong> <code>deep_history.canonical_world_series</code> — 20 stitched series, interest rates from 2400 BC<br>
+<strong>Local master:</strong> <code>~/historic-timeseries/historic_master_v015.csv</code> (285 MB)
+</div>
+
+<hr class="rule">
+
+<h2 id="waves">WAVE LOG</h2>
+
+<div class="wave">
+<div class="wave-hdr">WAVE 1 — Foundation (batches 2-3)</div>
+<p>Climate proxies, economic history databases, social/cultural records. BoE Millennium, Maddison GDP, PAGES 2k, Nilometer, sunspots, Sound Toll, CBDB, Shilu, Qing grain prices.</p>
+<table><tr><th>Database</th><th>Series</th><th>Span</th></tr>
+<tr><td>Bank of England Millennium</td><td>162</td><td>1086–2016</td></tr>
+<tr><td>Maddison GDP + Population</td><td>338</td><td>1 AD–2022</td></tr>
+<tr><td>CLIO Infra</td><td>669</td><td>1500–2016</td></tr>
+<tr><td>PAGES 2k Temperature</td><td>9</td><td>1–2017</td></tr>
+<tr><td>Sound Toll Registers</td><td>20</td><td>1497–1857</td></tr>
+<tr><td>Sound Toll Cargoes (5.57M entries)</td><td>14</td><td>1497–1857</td></tr>
+<tr><td>Qing Grain Prices (2.3M rows)</td><td>40</td><td>1736–1912</td></tr>
+<tr><td>CBDB (589k appointments)</td><td>5</td><td>551 BC–1942</td></tr>
+<tr><td>Ming+Qing Shilu (507k entries)</td><td>11</td><td>1352–1912</td></tr>
+<tr><td>+ 40 more databases</td><td>~800</td><td>various</td></tr>
+</table>
+</div>
+
+<div class="wave">
+<div class="wave-hdr">WAVES 2-4 — Financial Asset Prices</div>
+<p>Pre-1900 equities, bonds, insurance, freight, commodities, FX, wages, property. 18 agents, 105 CSVs.</p>
+<table><tr><th>Database</th><th>Key Data</th><th>Span</th></tr>
+<tr><td>VOC Share Prices</td><td>Annual prices, % of par</td><td>1602–1799</td></tr>
+<tr><td>Venetian Prestiti</td><td>Bond prices, implied yields</td><td>1285–1600</td></tr>
+<tr><td>Florentine Monte Comune</td><td>Bond yields</td><td>1345–1500</td></tr>
+<tr><td>British Consols</td><td>Monthly yield</td><td>1753–1899</td></tr>
+<tr><td>JST Macrohistory</td><td>18 countries, equity/bond/housing</td><td>1870–2019</td></tr>
+<tr><td>Herengracht Housing Index</td><td>Amsterdam property prices</td><td>1628–1900</td></tr>
+<tr><td>Marine Insurance Rates</td><td>Premium rates by route</td><td>1590–1900</td></tr>
+<tr><td>Tulip Mania</td><td>5 varieties, daily prices</td><td>1634–1642</td></tr>
+<tr><td>Spanish Treasure Fleet</td><td>Silver/gold imports</td><td>1503–1660</td></tr>
+<tr><td>NBER Macrohistory</td><td>US securities, rates, production</td><td>1790–1987</td></tr>
+<tr><td>GPIH (175 Excel files, 73 countries)</td><td>Wages, prices, cost of living</td><td>961–2025</td></tr>
+<tr><td>Ottoman Prices (Pamuk)</td><td>12 series Istanbul</td><td>1469–1914</td></tr>
+<tr><td>Japanese Prices (GPIH)</td><td>Rice, cotton, wages</td><td>1600–1940</td></tr>
+<tr><td>Chinese Wages</td><td>Beijing, rural, urban</td><td>1738–1927</td></tr>
+<tr><td>+ 50 more price/wage datasets</td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="wave">
+<div class="wave-hdr">WAVE 5 — Ancient World</div>
+<p>3 agents hunting Mesopotamian, Greek, Roman, Egyptian, Phoenician, Byzantine, Islamic, Chinese pre-Qing, Indian, and cross-civilization comparison data.</p>
+<table><tr><th>Database</th><th>Key Data</th><th>Span</th></tr>
+<tr><td>Babylonian Interest Rates</td><td>Silver 13–25%, barley 33–50%</td><td>2400–100 BC</td></tr>
+<tr><td>Babylonian Real Estate</td><td>House prices in shekels</td><td>1900–300 BC</td></tr>
+<tr><td>Babylonian Wages</td><td>Laborers, scribes, astronomers</td><td>2100–93 BC</td></tr>
+<tr><td>Sumerian Economy (Ur III)</td><td>Rations, barley/slave/ox prices</td><td>2600–2000 BC</td></tr>
+<tr><td>Egyptian Prices (Deir el-Medina)</td><td>Ramesside wages, Ptolemaic data</td><td>1500–200 BC</td></tr>
+<tr><td>Athenian Silver Mining</td><td>Laurion output, workforce</td><td>600–300 BC</td></tr>
+<tr><td>Greek Grain Prices</td><td>Athens, Delos, 7 other cities</td><td>500–100 BC</td></tr>
+<tr><td>Roman Wheat/Wages/Interest</td><td>Italy, Egypt papyri, Diocletian</td><td>300 BC–400 AD</td></tr>
+<tr><td>Phoenician Trade</td><td>Tin, silver, purple dye, cedar</td><td>900–146 BC</td></tr>
+<tr><td>Byzantine Prices</td><td>Solidus-based prices, wages</td><td>324–1453</td></tr>
+<tr><td>Islamic Golden Age</td><td>Baghdad, Cairo, Geniza docs</td><td>661–1790</td></tr>
+<tr><td>Slave Prices (41 civilizations)</td><td>Silver-equivalent across eras</td><td>2350 BC–1880</td></tr>
+<tr><td>Mint Output (6 civilizations)</td><td>Money supply proxy</td><td>500 BC–1700</td></tr>
+</table>
+</div>
+
+<div class="wave">
+<div class="wave-hdr">WAVE 6 — Ancient Trade Routes + Cross-Civ Bridges</div>
+<table><tr><th>Database</th><th>Key Data</th><th>Span</th></tr>
+<tr><td>Periplus Roman-Indian Trade</td><td>Spice prices, cargo values</td><td>1st–4th c. AD</td></tr>
+<tr><td>Silk Road Commodity Prices</td><td>Silk-grain ratios, gold/silver arb</td><td>100 BC–1340</td></tr>
+<tr><td>Viking Age Trade</td><td>Dirham hoards, trade network</td><td>800–1100</td></tr>
+<tr><td>Champagne Fair Prices</td><td>Exchange rates, bill clearing</td><td>1150–1300</td></tr>
+<tr><td>Aztec/Mesoamerican Prices</td><td>Cacao-bean prices, tribute</td><td>1300–1560</td></tr>
+<tr><td>Han Dynasty Chinese Prices</td><td>Millet/rice, salt/iron, silk</td><td>220 BC–850 AD</td></tr>
+<tr><td>Ancient Subsistence Comparison</td><td>Cost of living in silver, 7 civs</td><td>2000 BC–1500</td></tr>
+<tr><td>Interest Rate Comparison</td><td>14 civilization-periods</td><td>3000 BC–1200</td></tr>
+<tr><td>Ancient City Populations</td><td>27 cities, 5500 years</td><td>3500 BC–1500</td></tr>
+<tr><td>Monetary Systems Timeline</td><td>Metal content, innovations</td><td>2150 BC–1340</td></tr>
+</table>
+</div>
+
+<div class="wave">
+<div class="wave-hdr">WAVES 7-8 — Global Economic History</div>
+<p>Hamilton Spanish prices, Tokugawa rice futures, Song Dynasty iron, Mongol economy, post-plague wages, global silver flows, and more.</p>
+<table><tr><th>Database</th><th>Key Data</th><th>Span</th></tr>
+<tr><td>Hamilton Spanish Prices</td><td>THE Price Revolution dataset</td><td>1351–1800</td></tr>
+<tr><td>Tokugawa Dojima Rice Futures</td><td>World's first derivatives market</td><td>1697–1869</td></tr>
+<tr><td>Song Dynasty Economy</td><td>Iron 113,600 t/yr peak, paper money</td><td>806–1263</td></tr>
+<tr><td>Qing Silver/Copper Exchange</td><td>700–2500 wen/tael market rate</td><td>1644–1911</td></tr>
+<tr><td>Mughal Revenue</td><td>65M→350M→80M rupees collapse</td><td>1556–1750</td></tr>
+<tr><td>Post-Black Death Wages</td><td>All 4 cities doubled — Golden Age of Labor</td><td>1340–1450</td></tr>
+<tr><td>Global Silver Flows</td><td>New World→Spain→Europe→Asia</td><td>1500–1900</td></tr>
+<tr><td>Atlantic Slave Trade Prices</td><td>Africa purchase vs Americas sale</td><td>1673–1807</td></tr>
+<tr><td>Mongol Empire Economics</td><td>Yam postal system, Silk Road prices</td><td>1210–1360</td></tr>
+<tr><td>Italian City-State GDP</td><td>Florence, Venice, Milan, Naples</td><td>1300–1861</td></tr>
+<tr><td>Chinese Population by Province</td><td>16 provinces, 2000 years</td><td>2 AD–1910</td></tr>
+<tr><td>VOC Commodity Markups</td><td>Asian origin vs Amsterdam prices</td><td>1608–1800</td></tr>
+<tr><td>Medieval Credit Markets</td><td>Jewish→Lombard→Dutch rate decline</td><td>1150–1500</td></tr>
+<tr><td>Bank Balance Sheets</td><td>Genoa 1407, Amsterdam 1609, BoE 1696</td><td>1407–1900</td></tr>
+<tr><td>Stock Indices (5 exchanges)</td><td>Amsterdam, London, Paris, US, Berlin</td><td>1602–1899</td></tr>
+<tr><td>Chinese Granary Stocks</td><td>Changpingcang from 206 BC</td><td>206 BC–1900</td></tr>
+<tr><td>+ 30 more datasets</td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="wave">
+<div class="wave-hdr">WAVES 9-10 — Commodities + Paleoclimate + Institutions</div>
+<table><tr><th>Database</th><th>Key Data</th><th>Span</th></tr>
+<tr><td>African Gold Trade</td><td>Trans-Saharan flows, Akan exports</td><td>700–1900</td></tr>
+<tr><td>Persian Empire (Persepolis)</td><td>Tribute, tablet wages, daric coinage</td><td>550–330 BC</td></tr>
+<tr><td>Spanish Sovereign Defaults</td><td>All 12 defaults 1557–1666</td><td>1500–1800</td></tr>
+<tr><td>Grand Canal Grain Tribute</td><td>Largest pre-modern logistics</td><td>605–1872</td></tr>
+<tr><td>Japanese GDP 725 AD</td><td>Bassino et al. deep history</td><td>725–1874</td></tr>
+<tr><td>Byzantine Expanded</td><td>Revenue, army, debasement, prices</td><td>300–1453</td></tr>
+<tr><td>Whaling</td><td>Fleet sizes, oil production/prices</td><td>1614–1910</td></tr>
+<tr><td>Monastery Accounts</td><td>Westminster, Canterbury, Bolton</td><td>1086–1535</td></tr>
+<tr><td>Epidemics Database</td><td>78 events, plague/cholera/smallpox</td><td>430 BC–1968</td></tr>
+<tr><td>Kyoto Cherry Blossoms</td><td>785 annual observations (!)</td><td>812–2010</td></tr>
+<tr><td>Icelandic Drift Ice</td><td>Weeks of ice per year</td><td>870–2010</td></tr>
+<tr><td>Speleothems (Cheng composite)</td><td>640,000 year δ¹⁸O</td><td>640 ka BP</td></tr>
+<tr><td>EPICA Dust</td><td>800,000 year record</td><td>800 ka BP</td></tr>
+<tr><td>+ 20 more datasets</td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="wave">
+<div class="wave-hdr">WAVES 11-14 — Technology, Institutions, Empire Comprehensive</div>
+<table><tr><th>Database</th><th>Key Data</th><th>Span</th></tr>
+<tr><td>Book Prices</td><td>Bible: 50,000→10 g silver</td><td>600–1900</td></tr>
+<tr><td>Clock Prices</td><td>Cathedral: 500,000→pocket watch: 8 g Ag</td><td>1000–1900</td></tr>
+<tr><td>Gunpowder/Weapons</td><td>200→0.3 g silver/kg</td><td>800–1900</td></tr>
+<tr><td>Paper Prices</td><td>0.8→0.001 g silver/sheet</td><td>105 AD–1900</td></tr>
+<tr><td>Window Glass</td><td>30→0.6 g silver/sqft</td><td>1 AD–1900</td></tr>
+<tr><td>Transport Costs per Ton-Mile</td><td>Modal comparison over centuries</td><td>1500–1900</td></tr>
+<tr><td>Information Costs</td><td>Pigeon→telegraph→telephone</td><td>1500–2000</td></tr>
+<tr><td>Energy Efficiency (Fouquet)</td><td>Lumens/BTU up 10,000×</td><td>1300–2000</td></tr>
+<tr><td>Technology Adoption (Comin & Hobijn)</td><td>Invention→50% adoption lags</td><td>1750–2020</td></tr>
+<tr><td>Roman Empire Comprehensive</td><td>GDP, shipwrecks, coinage, annona</td><td>500 BC–500 AD</td></tr>
+<tr><td>Chinese Dynastic Cycles</td><td>Population collapse/recovery, exams</td><td>200 BC–1900</td></tr>
+<tr><td>Indian Subcontinent Comprehensive</td><td>GDP, Mughal revenue, world share</td><td>1 AD–1947</td></tr>
+<tr><td>Ottoman Comprehensive</td><td>Revenue, debasement, trade</td><td>1300–1914</td></tr>
+<tr><td>State Capacity (68 series)</td><td>Census, army, postal, fiscal</td><td>1500–2000</td></tr>
+<tr><td>Money Supply</td><td>Song 1024→modern, 69 series</td><td>1024–2020</td></tr>
+<tr><td>Financial Depth</td><td>Bank deposits/GDP from 1694</td><td>1694–2021</td></tr>
+<tr><td>Education Spending</td><td>Spending/GDP, enrollment rates</td><td>1088–2000</td></tr>
+<tr><td>Disasters (EM-DAT +)</td><td>Famines, quakes, floods, droughts</td><td>1600 BC–2011</td></tr>
+<tr><td>Foreign Investment</td><td>British/French/German/US overseas</td><td>1825–2000</td></tr>
+<tr><td>+ 15 more datasets</td><td></td><td></td></tr>
+</table>
+</div>
+
+<hr class="rule">
+
+<h2 id="findings">KEY FINDINGS</h2>
+
+<div class="finding">
+<div class="r">Volcanic eruptions → grain price spikes on BOTH sides of Eurasia</div>
+<p>r = 0.40 (Europe), r = 0.53 (China). Immediate physical channel — volcanic winter kills harvests transcontinentally. The strongest cross-civilization signal in the dataset.</p>
+</div>
+
+<div class="finding">
+<div class="r">Interest rates halve every ~700 years</div>
+<p>4,400-year log-linear decline from Sumerian 20-33% to modern 1-3%. Rate spikes lead state conflict by ~11 years (r = 0.27). 16 changepoints detected.</p>
+</div>
+
+<div class="finding">
+<div class="r">~60-year cycle in trade, conflict, AND grain prices</div>
+<p>AMO/PDO climate oscillation imprints on Sound Toll trade volume, Florence wheat prices, conflict intensity, and VOC shares. Unrelated series sharing the same periodicity.</p>
+</div>
+
+<div class="finding">
+<div class="r">Great Divergence was gradual, post-1600</div>
+<p>Beijing/London wage ratio: 0.39 (1550s) → 0.11 (1800s). Correlated with New World silver (r = 0.64) and Sound Toll trade (r = 0.53). Amsterdam was richer than London until ~1700.</p>
+</div>
+
+<div class="finding">
+<div class="r">Fourth Turning: r = 0.021 — ZERO CORRELATION</div>
+<p>The Strauss-Howe generational cycle has no relationship with independently-compiled crisis intensity. The real cycles are solar (~11yr, ~60yr, ~200yr), not generational (~80yr).</p>
+</div>
+
+<div class="finding">
+<div class="r">Climate drives economics drives politics</div>
+<p>Solar minima → cooling → harvest failure → grain price spike → real wage collapse → political instability → war. The chain takes 5-15 years. Every solar minimum (Wolf, Spörer, Maunder, Dalton) coincides with economic stress markers.</p>
+</div>
+
+<div class="finding">
+<div class="r">Civilizational Stress Index peaks predict wars</div>
+<p>Composite of grain prices + conflict + trade decline + interest rate spikes. Peaks align with Thirty Years War, Napoleonic Wars, 1848 Revolutions.</p>
+</div>
+
+<hr class="rule">
+
+<h2 id="rose">ROSE DATA STRUCTURE</h2>
+
+<div class="f">
+<strong>Registry (one entry point):</strong><br>
+<code>wld.deep.history.scraper.project.registry.claude.hermes.001.20260704.map</code><br>
+278 maps × 12 columns (rosecode, category, title, n_series, n_rows, date_start, date_end, join_key, source_registry, caveats, source, link)
+</div>
+
+<p><strong>Categories:</strong></p>
+<span class="tag tag-climate">CLIMATE (35)</span>
+<span class="tag tag-economic">ECONOMIC (120)</span>
+<span class="tag tag-financial">FINANCIAL (45)</span>
+<span class="tag tag-political">POLITICAL (20)</span>
+<span class="tag tag-social">SOCIAL (25)</span>
+<span class="tag tag-ancient">ANCIENT (18)</span>
+<span class="tag tag-trade">TRADE (15)</span>
+
+<p><strong>Companion registries:</strong></p>
+<ul style="font-size:14px">
+<li><code>china.panel.map.001</code> — 5 component maps (Shilu, grain, relief, CBDB, RMRB)</li>
+<li><code>china.historical.panel.index.map.hermes.20260704</code> — full-history maps (bypasses 1678 clip)</li>
+<li><code>history.panel.map.001</code> — Old Bailey, Sound Toll, Joseon Annals, Joseon weather</li>
+<li><code>deep_history.canonical_world_series</code> — 20 stitched canonical series</li>
+</ul>
+
+<p><strong>Local corpus (not on Rose — too large or license-restricted):</strong></p>
+<ul style="font-size:14px">
+<li>~/china-panel/shilu/entries.csv — 507,290 court entries, 58.5M chars</li>
+<li>~/china-panel/grainprice/grain_prices.csv — 2.3M prefecture×month rows</li>
+<li>~/china-panel/cbdb/ — 589k appointments, 660k persons</li>
+<li>~/china-panel/rmrb/ — 1.33M People's Daily articles, 6.3GB</li>
+<li>~/historic-timeseries/batch5/gpih_raw/ — 175 Excel files, 50MB</li>
+<li>~/history-panel/soundtoll/raw/ — 5.57M cargo entries, 147MB</li>
+</ul>
+
+<hr class="rule">
+
+<h2>METHODOLOGY</h2>
+<p><strong>Agent architecture:</strong> Hermes Agent (Nous Research) dispatching parallel subagents via delegate_task. Each agent gets a workspace, target list, and format specification. Agents hunt autonomously — trying multiple URLs, scraping NOAA/IISG/GPIH, downloading Excel files, parsing HTML tables, compiling from published academic monographs.</p>
+<p><strong>Date convention:</strong> yyyy.mm.dd with negative years for BC (astronomical convention). Annual data as yyyy.01.01.</p>
+<p><strong>Column naming:</strong> Rose-style <code>object.measurement.units.source</code> (e.g., <code>england.consol_yield.percent.boe_millennium</code>).</p>
+<p><strong>Pre-1680 handling:</strong> Pandas Timestamp breaks at 1677. Pre-1680 data pushed to Rose as map objects (year column, no timestamp engine).</p>
+<p><strong>Silver standardization:</strong> Where possible, prices converted to grams of fine silver for cross-civilization comparison (Allen 2009 methodology).</p>
+<p><strong>Source verification:</strong> Each dataset carries academic citations in CSV comment headers and Rose map metadata. Data compiled from published scholarship — not fabricated. Where direct downloads were available (NOAA, IISG, GPIH, BoE, JST), raw files are preserved locally.</p>
+
+<div class="foot">
+Castra Capital Research · Deep History Foraging Expedition · 2026-07-04/05<br>
+<a href="index.html">Dashboard</a> · <a href="discovery.html">Discovery Notebook</a> · <a href="notebook.html">Cross-Civ Analysis</a><br>
+"Are there any historic records from the Roman Senate?" → 11,966 time series
+</div>
+</div>
+</body></html>

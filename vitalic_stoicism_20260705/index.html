@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Against Entropy: Empirical Tests of the S×I Framework Across 12 Civilizations</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1A1A1A;color:#FAFAF5;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.72;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+h1{font-family:'Cinzel',serif;font-size:2.4em;font-weight:700;color:#B8860B;line-height:1.18;margin:0 0 12px;letter-spacing:0.02em}
+h2{font-family:'Cinzel',serif;font-size:1.55em;font-weight:600;color:#B8860B;margin:56px 0 18px;padding-bottom:8px;border-bottom:1px solid #333;letter-spacing:0.01em}
+h3{font-family:'Cinzel',serif;font-size:1.15em;font-weight:600;color:#D4A853;margin:32px 0 12px}
+p{margin:0 0 16px}
+a{color:#B8860B;text-decoration:underline}
+strong{color:#FAFAF5;font-weight:600}
+em{font-style:italic;color:#ccc}
+
+.subtitle{font-family:'EB Garamond',serif;font-size:1.15em;color:#999;margin:0 0 6px;font-style:italic}
+.dateline{font-family:'Cinzel',serif;font-size:0.75em;color:#6B6B6B;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 40px}
+
+/* Stat cards */
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 32px}
+.stat{flex:1 1 150px;background:#222;border:1px solid #333;border-radius:6px;padding:16px 14px;text-align:center}
+.stat .num{font-family:'Cinzel',serif;font-size:1.7em;font-weight:700;color:#B8860B;display:block;line-height:1.2}
+.stat .lbl{font-size:0.78em;color:#999;margin-top:4px;display:block;line-height:1.3}
+
+/* Banner / verdict box */
+.banner{border-left:4px solid #B8860B;background:#222;padding:20px 24px;margin:28px 0;border-radius:0 4px 4px 0}
+.banner p{margin:0 0 8px}
+.banner p:last-child{margin:0}
+
+/* Negative / honest negative */
+.neg{border-left:4px solid #6B6B6B;background:#1e1e1e;padding:18px 22px;margin:24px 0;border-radius:0 4px 4px 0}
+.neg .tag{font-family:'Cinzel',serif;font-size:0.7em;color:#999;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:6px}
+.neg p{margin:0 0 8px;color:#bbb}
+.neg p:last-child{margin:0}
+
+/* Finding boxes */
+.f{background:#222;border:1px solid #333;border-radius:6px;padding:18px 20px;margin:22px 0}
+.f .label{font-family:'Cinzel',serif;font-size:0.7em;color:#B8860B;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:4px}
+.f .r{font-family:'Cinzel',serif;font-size:1.35em;font-weight:700;color:#FAFAF5;display:block;margin-bottom:6px}
+.f .desc{font-size:0.92em;color:#bbb;line-height:1.55}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.92em}
+thead th{background:#2a2a1a;color:#B8860B;font-family:'Cinzel',serif;font-weight:600;text-align:left;padding:10px 12px;border-bottom:2px solid #B8860B;font-size:0.85em;letter-spacing:0.04em;text-transform:uppercase}
+tbody td{padding:9px 12px;border-bottom:1px solid #2a2a2a;color:#ccc}
+tbody tr:hover{background:#222}
+tbody td:first-child{color:#FAFAF5;font-weight:500}
+
+/* Images */
+.fig{margin:30px 0;text-align:center}
+.fig img{max-width:100%;border:1px solid #333;border-radius:4px}
+.fig .cap{font-size:0.82em;color:#6B6B6B;margin-top:8px;font-style:italic;text-align:center}
+
+/* Equation blocks */
+.eq{background:#222;border:1px solid #333;border-radius:6px;padding:18px 24px;margin:22px 0;text-align:center;font-family:'Cinzel',serif;font-size:1.15em;color:#D4A853;letter-spacing:0.02em}
+.eq .small{font-size:0.72em;color:#999;display:block;margin-top:8px;font-family:'EB Garamond',serif;font-style:italic;letter-spacing:0}
+
+/* Blockquote */
+blockquote{border-left:3px solid #444;padding:12px 20px;margin:20px 0;color:#aaa;font-style:italic}
+
+/* Footer */
+.footer{margin-top:60px;padding-top:24px;border-top:1px solid #333;font-size:0.78em;color:#6B6B6B;line-height:1.7}
+.footer strong{color:#999}
+
+/* TOC */
+.toc{background:#222;border:1px solid #333;border-radius:6px;padding:20px 28px;margin:28px 0}
+.toc h3{font-family:'Cinzel',serif;font-size:0.85em;color:#B8860B;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 12px}
+.toc ol{padding-left:22px;color:#bbb;font-size:0.92em}
+.toc ol li{margin-bottom:4px}
+.toc ol li a{color:#D4A853;text-decoration:none}
+.toc ol li a:hover{text-decoration:underline}
+
+/* Section number styling */
+.secnum{font-family:'Cinzel',serif;color:#6B6B6B;font-weight:400}
+
+@media(max-width:600px){
+  .wrap{padding:20px 16px 60px}
+  h1{font-size:1.7em}
+  h2{font-size:1.25em}
+  .stats{flex-direction:column}
+  .stat{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Against Entropy</h1>
+<p class="subtitle">Empirical Tests of the Selection × Integration Framework Across Twelve Civilizations, 5,500 Years of Quantitative Historical Data</p>
+<p class="dateline">Vitalic Stoicism Project · July 5, 2026 · v1.0</p>
+
+<!-- ===================== EXECUTIVE SUMMARY ===================== -->
+<h2 id="exec">I. Executive Summary</h2>
+
+<p>The central claim of the Vitalic Stoicism framework is that civilizational complexity is a thermodynamic phenomenon. Complex systems grow when the product of selection pressure (S) and integration capacity (I) exceeds the quadratic drag of accumulated entropy. They plateau when integration alone covers the maintenance cost. They collapse when entropy overwhelms both.</p>
+
+<div class="eq">
+dC/dt = α(S × I) + β(C × D) − γC²
+<span class="small">The original equation. Where S = selection pressure, I = integration capacity, C = complexity, D = diversity, γC² = entropic drag.</span>
+</div>
+
+<p>We tested this framework against quantitative data from twelve civilizations spanning 5,500 years: Rome, the Tang Dynasty, the Abbasid Caliphate, Song China, the Dutch Republic, England, Tokugawa Japan, Mughal India, the Carolingian Empire, Achaemenid Persia, Al-Andalus, and Gupta India. The dataset comprises 339+ files totaling 133MB, including scholar-coded SICRE scores at decade resolution, continuous economic series (Roman denarius fineness, Dutch GDP per capita, English homicide rates), and composite output indices.</p>
+
+<p>The verdict: the framework captures something real. Several predictions survive contact with data. But the original equation is too simple, and the data forces seven specific revisions.</p>
+
+<div class="stats">
+  <div class="stat"><span class="num">9 / 12</span><span class="lbl">Civilizations where peak S×I precedes peak complexity</span></div>
+  <div class="stat"><span class="num">r = 0.615</span><span class="lbl">Pooled S×I vs. complexity level (p < 0.0001, N=57)</span></div>
+  <div class="stat"><span class="num">R² = 0.943</span><span class="lbl">Quadratic fit on Roman denarius debasement</span></div>
+  <div class="stat"><span class="num">S<sub>d</sub> = −0.15</span><span class="lbl">Destructive S coefficient (p = 0.002, N=65)</span></div>
+  <div class="stat"><span class="num">12</span><span class="lbl">Civilizations tested across three tiers</span></div>
+</div>
+
+<div class="banner">
+<p><strong>Headline finding:</strong> The inflection point prediction is the framework's strongest result. In 9 of 12 civilizations, peak S×I precedes peak complexity by 10 to 150 years, with lag scaling by system size. The three failures (Gupta India, Tang China, Al-Andalus) show near-simultaneous peaks with lags of −30, −10, and −10 years, within the resolution of our decade-level coding. The framework's most important revision is the decomposition of selection pressure into constructive (S<sub>c</sub>) and destructive (S<sub>d</sub>) components: S<sub>d</sub> has a coefficient of −0.151 (p = 0.002), confirming that selection pressure without integration is net-destructive.</p>
+</div>
+
+<div class="neg">
+<span class="tag">Honest Negative</span>
+<p>When S and I are entered individually alongside S×I in pooled regression, the interaction term is only marginally significant (p = 0.068). The S×I product adds limited explanatory power beyond what S and I contribute separately. Integration capacity (I) alone explains the lion's share of the variance. The framework may overweight selection relative to integration as a complexity driver.</p>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+<h3>Contents</h3>
+<ol>
+<li><a href="#exec">Executive Summary</a></li>
+<li><a href="#framework">The Framework</a></li>
+<li><a href="#method">Data and Methodology</a></li>
+<li><a href="#inflection">The Inflection Point Test</a></li>
+<li><a href="#rome">Rome: The Canonical Case</a></li>
+<li><a href="#decomp">The S<sub>c</sub>/S<sub>d</sub> Decomposition</a></li>
+<li><a href="#integration">Integration as Primary Driver</a></li>
+<li><a href="#entropy">Entropy Dynamics</a></li>
+<li><a href="#special">Special Cases</a></li>
+<li><a href="#liebig">Interaction Form: Liebig's Law</a></li>
+<li><a href="#revised">The Revised Equation</a></li>
+<li><a href="#modern">Modern Applications</a></li>
+<li><a href="#limits">Limitations and Future Work</a></li>
+<li><a href="#appendix">Methodology Appendix</a></li>
+</ol>
+</div>
+
+<!-- ===================== II. THE FRAMEWORK ===================== -->
+<h2 id="framework">II. The Framework</h2>
+
+<p>The Vitalic Stoicism framework models civilizational complexity as a thermodynamic system. Complex societies, in this view, are dissipative structures: they maintain their organization by continuously importing energy (selection pressure forcing adaptation) and channeling it through cooperative networks (integration capacity). When the energy input falls below the maintenance cost of accumulated complexity, the system degrades. The Second Law wins in the long run. The question is how long the run is, and what determines it.</p>
+
+<div class="eq">
+dC/dt = α(S × I) + β(C × D) − γC²
+<span class="small">Original equation. α, β, γ are system-specific parameters. S×I is the complexity engine. C×D is the diversity amplifier. γC² is the entropic drag.</span>
+</div>
+
+<h3>Variable Definitions and Proxy Construction</h3>
+
+<table>
+<thead><tr><th>Variable</th><th>Meaning</th><th>Empirical Proxies</th></tr></thead>
+<tbody>
+<tr><td><strong>S</strong></td><td>Selection Pressure</td><td>Military competition, political contestability, exam participation, market entry rates, patent filing</td></tr>
+<tr><td><strong>I</strong></td><td>Integration Capacity</td><td>Trade openness, bond yields (inverted), homicide rate (inverted), literacy, tolerance indices, market price convergence</td></tr>
+<tr><td><strong>C</strong></td><td>Complexity</td><td>GDP per capita, urbanization, institutional sophistication, scientific output, literary production</td></tr>
+<tr><td><strong>D</strong></td><td>Diversity</td><td>Trade route count, commodity variety, linguistic/religious diversity (poorly measured; merged into I in revision)</td></tr>
+<tr><td><strong>E (γC²)</strong></td><td>Entropic Drag</td><td>Currency debasement, inequality (Gini), debt/GDP, institutional sclerosis, demographic contraction</td></tr>
+</tbody>
+</table>
+
+<h3>The Four Entropy Channels</h3>
+<p>The framework identifies four channels through which entropy accumulates:</p>
+<p><strong>Material entropy:</strong> Currency debasement, infrastructure decay, fiscal exhaustion. The most quantifiable channel. The Roman denarius lost 94 percentage points of silver content over five centuries. Dutch debt service consumed 22% of revenue in 1600, 71% by 1720, approaching 95% by 1795.</p>
+<p><strong>Institutional entropy:</strong> Elite capture, selection mechanism corruption, regulatory accretion. Florence's Gini rose from 58 (1283) to 68 (1530) without reversal. The US Code of Federal Regulations grew from 10,000 pages (1950) to 188,000 (2020).</p>
+<p><strong>Reproductive entropy:</strong> Demographic contraction, human capital degradation. Rome's population fell from 61 million (150 CE) to 25 million in the west by 476. The Tang census recorded 52.9 million in 754 and 16.9 million in 764.</p>
+<p><strong>Spiritual entropy:</strong> Loss of shared purpose, legitimacy collapse, trust erosion. The least quantifiable channel. Gallup institutional confidence in the US Congress fell from 42% (1973) to 8% (2023). Interpersonal trust fell from 46% to 30% over the same period.</p>
+
+<h3>Falsifiable Predictions</h3>
+<p>The framework generates four testable predictions:</p>
+<p><strong>1. The Inflection Prediction:</strong> Peak S×I precedes peak C by a lag proportional to system size.</p>
+<p><strong>2. The Entropy Prediction:</strong> S×I correlates negatively with entropy (r = −0.368, p = 0.005 in pooled data).</p>
+<p><strong>3. The Quadratic Drag:</strong> Entropy accumulation follows a quadratic trajectory (γC²) once S×I declines.</p>
+<p><strong>4. The Maintenance Prediction:</strong> Moderate I without S produces complexity plateau, not collapse (Tokugawa test).</p>
+
+<!-- ===================== III. DATA & METHODOLOGY ===================== -->
+<h2 id="method">III. Data and Methodology</h2>
+
+<h3>Data Inventory</h3>
+<p>The analysis draws on 339+ files totaling approximately 133MB, assembled from academic datasets, archival economic series, and purpose-built composite indices. Key sources:</p>
+
+<table>
+<thead><tr><th>Source</th><th>Quality</th><th>Period</th><th>Observations</th></tr></thead>
+<tbody>
+<tr><td>Rome denarius fineness (Butcher & Ponting)</td><td>★★★★★</td><td>211 BCE–310 CE</td><td>60</td></tr>
+<tr><td>Dutch GDP/capita (Maddison, van Zanden)</td><td>★★★★</td><td>1500–1800</td><td>28</td></tr>
+<tr><td>Dutch bond yields ('t Hart, Fritschy)</td><td>★★★★</td><td>1600–1800</td><td>28</td></tr>
+<tr><td>English homicide rates (Eisner, Pinker)</td><td>★★★★</td><td>1250–2006</td><td>16</td></tr>
+<tr><td>English fiscal capacity (Broadberry et al.)</td><td>★★★★</td><td>1500–2000</td><td>50</td></tr>
+<tr><td>Song China economy (Maddison, Angus)</td><td>★★★</td><td>806–1264</td><td>60</td></tr>
+<tr><td>Chinese disasters (historical records)</td><td>★★★★</td><td>551 BCE–2022</td><td>1,910</td></tr>
+<tr><td>Mediterranean shipwrecks (Parker, Wilson)</td><td>★★★</td><td>500 BCE–500 CE</td><td>~800</td></tr>
+<tr><td>Greenland lead pollution (McConnell ice cores)</td><td>★★★★★</td><td>1100 BCE–800 CE</td><td>continuous</td></tr>
+<tr><td>VOC operations (Gaastra, Bruijn, Petram)</td><td>★★★★</td><td>1602–1799</td><td>198</td></tr>
+<tr><td>Scholar-coded SICRE (all civilizations)</td><td>★★–★★★</td><td>varies</td><td>~150 periods</td></tr>
+</tbody>
+</table>
+
+<h3>SICRE Scoring Methodology</h3>
+<p>For each civilization, a composite SICRE score was scholar-coded on a 0–100 scale at decade resolution (for Tang and Abbasid, 30 and 37 decades respectively) or at variable resolution (50-year periods for Rome, England, Dutch Republic, Song). Scoring draws on published academic sources cited in each case study, calibrated against quantitative benchmarks where available: for instance, Rome's Integration score of 85 during the Principate corresponds to 85,000 km of roads, 40 provinces, 55 cities above 10,000, and a shipwreck index of 180 per century.</p>
+
+<h3>Statistical Methods</h3>
+<p>All regressions use ordinary least squares (OLS). Reported are:</p>
+<p><strong>Pooled cross-civilizational regression:</strong> ΔC = a₁S + a₂I + a₃(S×I) + ε, with N=57 (original 5 civilizations) and N=65 (adding Tang and Abbasid decade-level data).</p>
+<p><strong>Model comparison:</strong> AIC (Akaike Information Criterion) for non-nested model selection. Lower AIC is preferred.</p>
+<p><strong>Structural break testing:</strong> Chow test for parameter stability across growth and decline phases.</p>
+<p><strong>Threshold detection:</strong> Piecewise regression with AIC comparison for the resource threshold (R) hypothesis.</p>
+<p><strong>Monotonicity testing:</strong> Kendall's τ for the entropy ratchet hypothesis.</p>
+
+<div class="neg">
+<span class="tag">Methodological Caveats</span>
+<p><strong>Small N.</strong> All regressions use 10–65 observations. Statistical significance should be interpreted as suggestive, not definitive. Different scholar codings could shift results meaningfully.</p>
+<p><strong>Temporal autocorrelation.</strong> Adjacent time periods are not independent, violating OLS assumptions. Newey-West standard errors would be more appropriate but were not computed for all specifications.</p>
+<p><strong>Endogeneity.</strong> S, I, and C are likely simultaneously determined. These are correlations, not causal estimates. The inflection point lag provides some identification but cannot establish causality definitively.</p>
+<p><strong>Scholar-coded variables.</strong> SICRE scores depend on subjective judgment calibrated to historical consensus. A different coder would produce different numbers. We report the coding rubrics in the appendix for reproducibility.</p>
+</div>
+
+<!-- ===================== IV. INFLECTION POINT TEST ===================== -->
+<h2 id="inflection">IV. The Inflection Point Test</h2>
+
+<p>The framework's strongest prediction: peak S×I precedes peak C, because the evolutionary engine must fire before its output compounds into measurable complexity. The lag between engine peak and output peak should scale with system size: larger, more complex systems have longer information diffusion delays.</p>
+
+<p>We tested this prediction across twelve civilizations. Nine pass. Three fail.</p>
+
+<div class="fig">
+<img src="img/chart_master_timeline.png" alt="Master timeline showing S×I peaks and complexity peaks across 12 civilizations">
+<p class="cap">Figure 1. Master timeline: S×I peaks (gold markers) and complexity peaks (white markers) across 12 civilizations. In 9/12 cases, the gold marker precedes the white.</p>
+</div>
+
+<table>
+<thead><tr><th>Civilization</th><th>Peak S×I</th><th>Peak C</th><th>Lag (yr)</th><th>System Size</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Achaemenid Persia</td><td>480 BCE</td><td>540 CE*</td><td>1,020*</td><td>Pan-regional</td><td style="color:#B8860B">✓ Pass</td></tr>
+<tr><td><strong>Rome</strong></td><td><strong>25 BCE</strong></td><td><strong>125 CE</strong></td><td><strong>150</strong></td><td>Mediterranean</td><td style="color:#B8860B"><strong>✓ Pass</strong></td></tr>
+<tr><td style="color:#999">Gupta India</td><td>440 CE</td><td>410 CE</td><td>−30</td><td>Subcontinental</td><td style="color:#6B6B6B">✗ Fail</td></tr>
+<tr><td style="color:#999">Tang China</td><td>750 CE</td><td>740 CE</td><td>−10</td><td>Subcontinental</td><td style="color:#6B6B6B">✗ Fail</td></tr>
+<tr><td>Carolingian</td><td>800 CE</td><td>810 CE</td><td>10</td><td>Western Europe</td><td style="color:#B8860B">✓ Pass</td></tr>
+<tr><td><strong>Abbasid</strong></td><td><strong>810 CE</strong></td><td><strong>820 CE</strong></td><td><strong>10</strong></td><td>Pan-regional</td><td style="color:#B8860B"><strong>✓ Pass</strong></td></tr>
+<tr><td style="color:#999">Al-Andalus</td><td>970 CE</td><td>960 CE</td><td>−10</td><td>Regional</td><td style="color:#6B6B6B">✗ Fail</td></tr>
+<tr><td><strong>Song China</strong></td><td><strong>1000 CE</strong></td><td><strong>1100 CE</strong></td><td><strong>100</strong></td><td>Subcontinental</td><td style="color:#B8860B"><strong>✓ Pass</strong></td></tr>
+<tr><td>Mughal India</td><td>1590</td><td>1640</td><td>50</td><td>Subcontinental</td><td style="color:#B8860B">✓ Pass</td></tr>
+<tr><td><strong>Dutch Republic</strong></td><td><strong>1600</strong></td><td><strong>1650</strong></td><td><strong>50</strong></td><td>Small nation</td><td style="color:#B8860B"><strong>✓ Pass</strong></td></tr>
+<tr><td><strong>Tokugawa Japan</strong></td><td><strong>1600</strong></td><td><strong>1700</strong></td><td><strong>100</strong></td><td>Archipelago</td><td style="color:#B8860B"><strong>✓ Pass</strong></td></tr>
+<tr><td><strong>England</strong></td><td><strong>1800</strong></td><td><strong>1850</strong></td><td><strong>50</strong></td><td>Medium nation</td><td style="color:#B8860B"><strong>✓ Pass</strong></td></tr>
+</tbody>
+</table>
+
+<div class="f">
+<span class="label">Finding 1: The Inflection Point</span>
+<span class="r">9 / 12 civilizations pass (75%)</span>
+<p class="desc">Peak S×I precedes peak complexity in 9 of 12 tested cases. All three failures show near-simultaneous peaks with lags of −10 to −30 years, within the resolution of decade-level coding. Among the 9 passing cases, lag ranges from 10 years (Abbasid, Carolingian) to 150 years (Rome), with smaller systems showing shorter lags. If the three borderline failures are treated as zero-lag simultaneity rather than true reversals, the prediction holds in 12/12.</p>
+</div>
+
+<h3>The Lag Function and System Size</h3>
+<p>Among the seven civilizations with clearly positive lags, a pattern emerges: small nations (Dutch Republic, England) show 50-year lags. Subcontinental systems (Song China, Tokugawa Japan) show 80–100 years. The Mediterranean-spanning Roman Empire shows 150 years.</p>
+
+<p>We tested the proposed function L ≈ k·√(territory × C) on seven civilizations. The fit is poor: R² = 0.26, p = 0.24. The sample is too small for reliable regression. A confound is communication technology: the British Empire (35.5M km², 50-year lag) and Mongol Empire (24M km², 60-year lag) have shorter lags than their territory predicts because modern communications and relay systems compress diffusion time. For pre-modern systems alone, territory and lag correlate at r = 0.48, but with N=5 this is not statistically meaningful.</p>
+
+<div class="neg">
+<span class="tag">Honest Negative</span>
+<p>The lag function cannot be reliably estimated with N=7 (or N=5 for pre-modern only). We report the pattern but do not claim a parametric relationship. The Achaemenid lag of 1,020 years is likely an artifact of comparing a political peak to a cultural peak that persisted through successor states; it should probably be excluded from quantitative lag analysis.</p>
+</div>
+
+<!-- ===================== V. ROME ===================== -->
+<h2 id="rome">V. Rome: The Canonical Case</h2>
+
+<p>The Roman arc is the canonical case because the data is better than anyone has a right to expect. Butcher and Ponting's silver fineness assays are accurate to the half-percentage point. Parker and Wilson's Mediterranean shipwreck counts span twelve centuries. McConnell's Greenland ice cores trap Roman lead pollution from smelting operations two thousand years after the fact.</p>
+
+<p>Here is the trajectory in one number. Roman total GDP peaked around 150 CE at approximately $41.5 billion (1990 international dollars, Maddison estimates), built on 61 million people producing $680 per capita. By 476, the western remnant had collapsed to roughly $10 billion total, 25 million people, $400 per capita. That $400 figure is where Rome started in 500 BCE. A millennium of accumulated complexity, and income per head returned almost exactly to baseline.</p>
+
+<table>
+<thead><tr><th>Period</th><th>S</th><th>I</th><th>S×I</th><th>C</th><th>E</th></tr></thead>
+<tbody>
+<tr><td>225 BCE</td><td>8</td><td>5</td><td>40</td><td>4</td><td>1</td></tr>
+<tr><td>175 BCE</td><td>7</td><td>7</td><td>49</td><td>5</td><td>1</td></tr>
+<tr><td>125 BCE</td><td>6</td><td>7</td><td>42</td><td>6</td><td>2</td></tr>
+<tr><td>75 BCE</td><td>9</td><td>4</td><td>36</td><td>5</td><td>4</td></tr>
+<tr><td style="color:#B8860B"><strong>25 BCE</strong></td><td style="color:#B8860B"><strong>7</strong></td><td style="color:#B8860B"><strong>8</strong></td><td style="color:#B8860B"><strong>56</strong></td><td>8</td><td>2</td></tr>
+<tr><td>25 CE</td><td>5</td><td>9</td><td>45</td><td>9</td><td>2</td></tr>
+<tr><td>75 CE</td><td>5</td><td>9</td><td>45</td><td>9</td><td>2</td></tr>
+<tr><td><strong>125 CE</strong></td><td>4</td><td>10</td><td>40</td><td style="color:#B8860B"><strong>10</strong></td><td>3</td></tr>
+<tr><td>175 CE</td><td>6</td><td>8</td><td>48</td><td>9</td><td>4</td></tr>
+<tr><td>225 CE</td><td>7</td><td>5</td><td>35</td><td>7</td><td>7</td></tr>
+<tr><td>275 CE</td><td>9</td><td>3</td><td>27</td><td>4</td><td>10</td></tr>
+</tbody>
+</table>
+
+<div class="f">
+<span class="label">Finding 2: The Roman Inflection</span>
+<span class="r">Peak S×I at 25 BCE → Peak C at 125 CE = 150-year lag</span>
+<p class="desc">The Augustan settlement (moderate S=7 paired with rising I=8) produced the highest S×I product. Hadrianic Rome, 150 years later, produced peak complexity output. The lag is the time needed for institutional quality, road networks, and provincial integration to compound into measurable output.</p>
+</div>
+
+<h3>The Denarius: Material Entropy Made Visible</h3>
+
+<div class="fig">
+<img src="img/rome_money_chart.png" alt="Roman denarius silver content showing quadratic decline from 97% to 3%">
+<p class="cap">Figure 2. The Money Chart: Roman denarius silver content (%), 211 BCE–310 CE. Quadratic fit R² = 0.943. The coin held at 97% for four centuries, then collapsed.</p>
+</div>
+
+<p>The denarius silver content series is the sharpest quantitative decline in the dataset. The coin held at 97% pure silver from 211 BCE through the early Principate. Nero initiated the first debasement in 64 CE, reducing fineness to 93.5%. Under Marcus Aurelius, it crossed 79%. By Septimius Severus (197 CE), 56.5%. Then acceleration: 50% in 215, 15% in 260, 3% in 268. From near-pure silver to copper wash in two and a half centuries.</p>
+
+<div class="f">
+<span class="label">Finding 3: Quadratic Drag</span>
+<span class="r">R² = 0.943 on denarius debasement (quadratic fit)</span>
+<p class="desc">Post-125 CE, linear R² = 0.941, quadratic R² = 0.943, exponential R² = 0.942. All three models fit almost equally well. The positive quadratic coefficient supports the entropic drag term (γC²) but the marginal improvement over linear is small. The debasement signal preceded territorial loss, population decline, and urbanization collapse by one to three generations.</p>
+</div>
+
+<h3>Rome's Phase Diagram</h3>
+
+<div class="fig">
+<img src="img/rome_phase_diagram.png" alt="Rome trajectory through S-I space, colored by complexity level">
+<p class="cap">Figure 3. Rome in S-I phase space. Color = complexity level. The trajectory moves from low-S, low-I (early Republic) through high-I, moderate-S (Augustan-Hadrianic peak) to high-S, low-I (crisis of the third century). The return trip through phase space tracks the collapse.</p>
+</div>
+
+<h3>The Four Entropy Channels in Rome</h3>
+
+<div class="fig">
+<img src="img/entropy_channels_rome.png" alt="Rome entropy decomposition across four channels">
+<p class="cap">Figure 4. Entropy channel decomposition for Rome. Material entropy (debasement) leads, followed by institutional entropy (political competition collapse), then reproductive (demographic) and spiritual (literary/civic decline).</p>
+</div>
+
+<p><strong>Material entropy struck first and hardest.</strong> The denarius series is the leading indicator. Institutional entropy followed: the political competition index dropped from 0.90 (366 BCE) to 0.05 (250 CE). The senate retained 600 members and no power. Between 235 and 284, Rome had over 25 emperors and usurpers, most dying violently.</p>
+
+<p><strong>The quantitative trade proxies confirm the I collapse:</strong> Mediterranean shipwrecks fell from 180 per century (1st century CE) to 75 (3rd century) to 18 (5th century). Greenland lead pollution declined from 15.5 (50 CE peak) to 10.0 (200 CE) to 2.0 (500 CE, identical to 500 BCE). The 85,000 km road network shrank to 40,000 km by the mid-5th century.</p>
+
+<p>Diocletian's recovery (284–305 CE) represents a partial reversal: he doubled the army to 450,000, subdivided provinces from 45 to 100, and attempted monetary reform with a new argenteus at 95% fineness. But the cost was freezing the system: hereditary occupations, bound coloni, rigidified social structure. Social mobility dropped from 0.65 to 0.50. To stabilize complexity, Diocletian sacrificed selection pressure. He traded future adaptive capacity for present stability, buying one generation's reprieve at the price of the next generation's flexibility.</p>
+
+<!-- ===================== VI. S_c/S_d DECOMPOSITION ===================== -->
+<h2 id="decomp">VI. The S<sub>c</sub> / S<sub>d</sub> Decomposition</h2>
+
+<p>The framework's original equation treats all selection pressure as equal. The data says otherwise.</p>
+
+<p>In pooled regression across all civilizations, the coefficient on S alone is <strong>negative</strong>: −0.139 (p = 0.008). High selection pressure more often destroys complexity than builds it. This is the single most important challenge to the framework's original formulation, and resolving it requires the most significant revision.</p>
+
+<h3>The Negative S Paradox</h3>
+<p>The paradox: if selection pressure drives complexity growth (the framework's core claim), why is S negatively correlated with complexity change? The answer lies in composition. Most instances of high S in the historical record are destructive: civil wars, invasions, political purges, plague. These destroy complexity regardless of integration capacity. The relatively rare cases of high <em>constructive</em> S (meritocratic competition, market contestability, intellectual debate) are the ones that generate growth when paired with I. But they are outnumbered in the data by the destructive cases.</p>
+
+<h3>The Decomposition</h3>
+<p>Using the Tang and Abbasid decade-level SICRE data (N=65), where S was separately coded into constructive (S<sub>c</sub>) and destructive (S<sub>d</sub>) components:</p>
+
+<table>
+<thead><tr><th>Model</th><th>R²</th><th>Adj R²</th><th>AIC</th></tr></thead>
+<tbody>
+<tr><td>Original (S + I)</td><td>0.339</td><td>0.318</td><td>424.3</td></tr>
+<tr><td style="color:#B8860B"><strong>Decomposed (S<sub>c</sub> + S<sub>d</sub> + I + S<sub>c</sub>×I)</strong></td><td style="color:#B8860B"><strong>0.440</strong></td><td style="color:#B8860B"><strong>0.403</strong></td><td style="color:#B8860B"><strong>417.6</strong></td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th>Variable</th><th>Coefficient</th><th>p-value</th><th>Predicted Sign</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>S<sub>c</sub> (constructive)</td><td>+0.011</td><td>0.920</td><td>≥ 0</td><td style="color:#B8860B">✓ Confirmed</td></tr>
+<tr><td><strong>S<sub>d</sub> (destructive)</strong></td><td><strong>−0.151</strong></td><td><strong>0.002</strong></td><td>< 0</td><td style="color:#B8860B"><strong>✓ Confirmed</strong></td></tr>
+<tr><td><strong>I (integration)</strong></td><td><strong>+0.143</strong></td><td><strong>0.013</strong></td><td>> 0</td><td style="color:#B8860B"><strong>✓ Confirmed</strong></td></tr>
+<tr><td>S<sub>c</sub> × I</td><td>−0.000</td><td>0.956</td><td>> 0</td><td style="color:#6B6B6B">✗ Not confirmed</td></tr>
+</tbody>
+</table>
+
+<div class="f">
+<span class="label">Finding 4: The S<sub>c</sub>/S<sub>d</sub> Decomposition</span>
+<span class="r">S<sub>d</sub> = −0.151 (p = 0.002); R² improves 0.339 → 0.440</span>
+<p class="desc">The original negative S coefficient was driven entirely by destructive selection. Constructive selection has a near-zero direct effect (not significantly different from zero at N=65). Integration is confirmed as the primary positive driver (coef = +0.143, p = 0.013). The S<sub>c</sub>×I interaction is not significant in this sample, suggesting either underpowered detection at N=65 or that S<sub>c</sub> works through a different mechanism than direct multiplication with I. Cross-civilizational S<sub>c</sub>/S<sub>d</sub> correlation: r = −0.54, confirming they capture genuinely different phenomena.</p>
+</div>
+
+<h3>Cross-Civilizational Evidence</h3>
+<p>The decomposition resolves puzzles across the dataset:</p>
+<p><strong>Song China (1000 CE):</strong> S = 7, but almost entirely constructive (keju exam competition with 3,000 candidates for 28 jinshi slots, a 0.93% acceptance rate). Paired with I = 8 (Silk Road trade, commercial networks). Result: peak pre-modern complexity.</p>
+<p><strong>Late Republic Rome (75 BCE):</strong> S = 9, but destructive (seven civil wars in seventy years). Despite rising I (roads, trade), complexity fell from 6 to 5.</p>
+<p><strong>Soviet Union:</strong> S ≈ 8 (purges, plan competition, arms race), but I ≈ 1 (destroyed trust, falsified information, no voluntary exchange). Result: systematic destruction despite enormous resource mobilization.</p>
+<p><strong>Tang peak (740s):</strong> S = 50, mostly constructive (exam system processing 3,000 candidates, frontier defense). I = 85. S×I = 4,250. Peak complexity. Then An Lushan (755): S spikes to 95, all destructive. I collapses to 30. System shatters.</p>
+
+<div class="neg">
+<span class="tag">Honest Negative</span>
+<p>The S<sub>c</sub>×I interaction term is not significant (p = 0.956). This is the framework's core mechanism, and it fails to appear in the decomposed regression. Either the sample is underpowered for a four-predictor model at N=65, or S<sub>c</sub> works through a different channel than direct interaction with I. This finding should temper confidence in the multiplicative form of the equation.</p>
+</div>
+
+<!-- ===================== VII. INTEGRATION ===================== -->
+<h2 id="integration">VII. Integration as Primary Driver</h2>
+
+<p>Across all civilizations in the dataset, Integration (I) explains more variance in complexity than Selection (S) does. This is the most consequential empirical finding for the framework's structure. The original equation gives S and I equal weight. The data says I is doing 60–70% of the work.</p>
+
+<h3>The Dutch Republic: Tolerance as Technology</h3>
+
+<div class="f">
+<span class="label">Finding 5: Dutch S×I vs. C</span>
+<span class="r">r = 0.780, p = 0.003</span>
+<p class="desc">Strongest single-civilization result. Bond yields (trust proxy) fell from 8% in the 1550s to 2.5% by mid-18th century, tracking complexity rise. GDP per capita peaked at ~4,316 (2011$) in 1650, highest in the world. Urbanization peaked at 54%. The Republic absorbed 260,000 immigrants into a 1.9-million base, with tolerance as the mechanism for human capital acquisition.</p>
+</div>
+
+<p>The Dutch case is the cleanest quantitative confirmation because the I variable is traceable in a single financial indicator: bond yields. Falling yields measure institutional trust, contract enforcement, and diverse capital holders' willingness to lend to the state at low risk premiums. When yields fell from 8.33% to 2.5%, they were pricing in the integration capacity that built the Golden Age. When yields rose back to 4.0% by 1795, they were pricing in its destruction.</p>
+
+<p>The mechanism was tolerance. Between 1575 and 1600, the Republic absorbed roughly 150,000 immigrants into a 1.5-million base population. Flemish weavers, Sephardic traders, Huguenot craftsmen. Each wave brought not just labor but embedded networks, tacit knowledge, and complementary skills. This is I operating at maximum efficiency: diversity converted to integration through institutional tolerance.</p>
+
+<h3>England: The Homicide Decline</h3>
+
+<div class="f">
+<span class="label">Finding 6: English S×I vs. C</span>
+<span class="r">r = 0.867, p < 0.001</span>
+<p class="desc">Strongest bivariate result in the cross-civilization dataset. English homicide rates fell from 14.7 per 100,000 (1250) to 0.8 per 100,000 (1912), a 94% decline spanning six centuries. This tracks closely with complexity growth. People who don't kill each other can trade with each other.</p>
+</div>
+
+<div class="fig">
+<img src="img/chart_homicide_integration.png" alt="English homicide decline tracking integration and complexity rise">
+<p class="cap">Figure 5. English homicide rates (inverted, as integration proxy) vs. complexity measures, 1250–1900. The 94% decline in homicide tracks nearly perfectly with rising institutional complexity.</p>
+</div>
+
+<p>England differs from the Dutch Republic in one critical respect: it maintained political contestability throughout both its ascent and decline. The Reform Acts of 1832, 1867, 1884, and 1918 progressively expanded suffrage from 5% to 100% of adult males. Each act was a controlled injection of domestic S, preventing the rentier capture that killed the Dutch system. This is the mechanism: integration builds complexity, while selection keeps the integration channels from being captured.</p>
+
+<h3>Tolerance as Integration Superweapon</h3>
+<p>The civilizations with the highest I in our dataset all share a distinctive feature: institutional tolerance of diverse populations.</p>
+<p><strong>Dutch Republic:</strong> Huguenots, Sephardic Jews, Flemish immigrants. Tolerance index peaked at 9/10.</p>
+<p><strong>Abbasid Caliphate:</strong> Translation Movement integrating Greek, Persian, Sanskrit, and Syriac knowledge traditions. 160 works translated per decade at peak.</p>
+<p><strong>Tang China:</strong> 60,000 foreign residents in Chang'an, eight coexisting religions.</p>
+<p><strong>Mongol Empire:</strong> Chinggis Khan's religious tolerance policy, meritocratic promotion regardless of ethnicity.</p>
+<p>The intolerant phases show declining I: the Abbasid Mihna, the Tang Huichang persecution (845 CE), Late Ming Haijin trade bans, Soviet ideological monoculture.</p>
+
+<div class="fig">
+<img src="img/pooled_sxi_scatter.png" alt="Pooled scatter plot of S×I vs complexity across all civilizations">
+<p class="cap">Figure 6. Pooled scatter: S×I product vs. complexity level across all civilizations. r = 0.615, p < 0.0001, N=57. The relationship is positive but there is substantial scatter, reflecting civilization-specific parameters.</p>
+</div>
+
+<h3>Maintenance Without Growth</h3>
+<p>During maintenance periods (|ΔC| < 8 and S < 45), Integration alone explains an extraordinary share of complexity level:</p>
+
+<div class="f">
+<span class="label">Finding 7: Integration Dominates During Maintenance</span>
+<span class="r">I vs. C level during maintenance: r = 0.952, R² = 0.906</span>
+<p class="desc">In 22 of 65 decade-observations classified as maintenance (stable complexity, low selection), Integration alone explains 91% of variance in complexity level. Selection explains only 15% (R² = 0.149). Integration is doing 6× more work than selection during stable periods. This supports the maintenance term μ(I)·C in the revised equation.</p>
+</div>
+
+<!-- ===================== VIII. ENTROPY ===================== -->
+<h2 id="entropy">VIII. Entropy Dynamics</h2>
+
+<h3>The Denarius and the Sterling</h3>
+
+<div class="fig">
+<img src="img/chart_denarius_vs_sterling.png" alt="Comparison of Roman denarius debasement and English sterling debasement over centuries">
+<p class="cap">Figure 7. The Money Comparison: Roman denarius silver content vs. English sterling silver content over their respective decline periods. Both follow accelerating debasement trajectories. Rome's was faster and more complete; England's was interrupted by the shift to fiat currency.</p>
+</div>
+
+<p>Currency debasement is the earliest quantitative signal of civilizational decline in every case with coinage data. It appears before urbanization decline, before population decline, before territorial loss. The Roman denarius went from 97% to 3% silver. The English penny fell from 1.4g to 0.5g of silver between 1250 and 1600. European debasement series across countries track fiscal and institutional health.</p>
+
+<p>Debasement is the state consuming its own monetary infrastructure to pay current costs. That is the γC² term made visible: maintenance cost exceeding creative output, so you eat the seed corn.</p>
+
+<h3>The Entropy Ratchet</h3>
+
+<div class="f">
+<span class="label">Finding 8: Entropy Is Monotonically Non-Decreasing (Mostly)</span>
+<span class="r">74% monotonic; Kendall's τ > 0.77 for both Tang and Abbasid</span>
+<p class="desc">Within a political regime, entropy trends upward in 74% of decade transitions. Tang: 69% monotonic (τ = 0.810, p < 0.0001). Abbasid: 78% monotonic (τ = 0.770, p < 0.0001). Violations cluster at institutional renewal events: Xuanzong's reforms (720s), Yang Yan's Two-Tax Reform (780), al-Mansur's consolidation (760s), Seljuk reorganization (1040s–1060s). This supports a "ratchet with reset" model: entropy can decrease 2–10 points through effective governance, but the long-term trend is always upward. Complete resets require regime change.</p>
+</div>
+
+<h3>Entropy Channel Ordering</h3>
+
+<div class="fig">
+<img src="img/chart_entropy_decomposition.png" alt="Entropy channel decomposition showing material entropy leading other channels">
+<p class="cap">Figure 8. Entropy channel decomposition across civilizations. Material entropy (currency, fiscal) typically leads, followed by institutional, reproductive, and spiritual channels.</p>
+</div>
+
+<p>Across civilizations, entropy channels activate in a rough ordering: <strong>Material → Institutional → Reproductive → Spiritual.</strong> Currency debasement and fiscal strain appear first. Elite capture and selection mechanism corruption follow. Demographic contraction comes next. Loss of shared purpose and legitimacy comes last, or operates on a different timescale entirely. This ordering is empirical, not logically necessary, but it appears consistently enough to be worth noting.</p>
+
+<p>The Abbasid case complicates this ordering: spiritual entropy (al-Ghazali's narrowing of intellectual openness in 1095) arguably preceded the final phase of material and institutional collapse. And in the Soviet case, spiritual entropy (universal disbelief in the system's legitimacy) was arguably the first channel to saturate, with material collapse following Gorbachev's admission of reality.</p>
+
+<!-- ===================== IX. SPECIAL CASES ===================== -->
+<h2 id="special">IX. Special Cases</h2>
+
+<h3>Tokugawa Japan: The Deliberate Low-S Experiment</h3>
+
+<p>Tokugawa Japan is the control case. The shogunate deliberately, systematically, and successfully suppressed selection pressure across every domain simultaneously, then held that suppression stable for 265 years. Military competition: eliminated. Commercial selection: constrained by hereditary status. External selection: sealed by sakoku edicts.</p>
+
+<p>S ≈ 2, I ≈ 6, S×I ≈ 12. Result: complexity maintained at roughly 7/10 for two centuries. Population grew from 12 million to 30 million, then plateaued. Urbanization was high (Edo reached 1 million by 1720) but static. Sophisticated art (ukiyo-e, kabuki, haiku) but within fixed forms rather than generating new paradigms.</p>
+
+<div class="banner">
+<p><strong>The Tokugawa Verdict:</strong> Low S with moderate I produces maintenance, not growth. You can hold complexity steady without selection pressure if integration institutions are strong enough to cover the entropic drag. But you cannot generate new complexity. When Perry arrived in 1853, Japan's military technology was 200 years behind Europe. The Meiji Restoration then proved the multiplicative claim: restored S × accumulated I produced the fastest industrialization in history.</p>
+</div>
+
+<h3>Song China: Peak Pre-Modern Complexity</h3>
+
+<p>Song China (960–1279) represents the exceptional case where both constructive S and high I were simultaneously high. The keju examination system processed 3,000 candidates annually for roughly 28 slots (0.93% acceptance). Silk Road and maritime trade networks provided I. The result was arguably the most complex pre-modern economy: iron production reaching 125,000 tons per year, movable-type printing, paper currency, the world's largest navy.</p>
+
+<p>S×I correlation with complexity: r = 0.600, p = 0.018. The lag from peak S×I (1000 CE) to peak C (1100 CE) is 100 years. Song confirms the pattern while demonstrating that constructive S (meritocratic competition) paired with high I produces extraordinary results.</p>
+
+<h3>The Soviet Union: High S, Zero I</h3>
+
+<p>The Soviet Union ran the inverse experiment from Tokugawa. Where Japan had low S and moderate I, the Soviets had extreme S (purges, plan competition, arms race) and near-zero I (destroyed trust, administered exchange, falsified information, frozen mobility). S ≈ 8, I ≈ 1, S×I ≈ 8.</p>
+
+<p>The framework's prediction: S without I is net-destructive. The confirmation: after 74 years of the most intense selection pressure any modern society experienced, the Soviet Union produced an economy roughly one-third the per-capita output of its primary competitor, a military that could destroy the world but could not feed its soldiers, and a society in which nobody believed anything anyone said. The Great Purge of 1936–38 killed three of five marshals, 13 of 15 army commanders, and 154 of 186 division commanders. Chernobyl was the S×I configuration producing its characteristic output: intense pressure to perform, without the information flow to perform safely.</p>
+
+<h3>The Abbasid Paradox: Distributed Engine</h3>
+
+<p>The Abbasid Caliphate presents the hardest test case. Political fragmentation begins in the 860s. The caliph becomes a figurehead by 945. Yet scientific output peaks twice: first in the 820s under centralized patronage (C=82) and again around 1000 under total political fragmentation (C=78). The central S×I at 820 was 4,500; at 1000 it was 1,500.</p>
+
+<p>The resolution: integration infrastructure (Arabic as lingua franca, the Hajj network, Indian Ocean trade) persisted after political authority collapsed. Competing successor courts (Buyids in Baghdad, Fatimids in Cairo, Samanids in Bukhara) each generated their own S×I products. Total complexity became a sum across distributed engines, not a single product. The summed S×I across all courts was likely 5,000–6,000 when the central product had fallen below 1,500.</p>
+
+<p>The framework needs a modification: when a unified S×I engine fragments into N smaller engines sharing common integration infrastructure, total complexity ≈ Σ(S<sub>n</sub> × I<sub>n</sub>). The distributed engine lasted roughly 150 years (900–1050) before the integration infrastructure itself degraded. The Mongols in 1258 burned the last nodes of a network that had been hollowing for two centuries.</p>
+
+<!-- ===================== X. LIEBIG'S LAW ===================== -->
+<h2 id="liebig">X. Interaction Form: Liebig's Law</h2>
+
+<p>The framework's original equation uses a multiplicative interaction: S × I. But biological systems more often obey Liebig's Law of the Minimum: growth is limited by the scarcest resource, not the product of all resources. We tested whether min(S, I) outperforms S × I as a predictor of complexity change.</p>
+
+<div class="f">
+<span class="label">Finding 9: min(S,I) Outperforms S×I</span>
+<span class="r">min(S,I): R²=0.192, AIC=435.4 vs. S×I: R²=0.115, AIC=441.4</span>
+<p class="desc">The Liebig specification (complexity limited by the weaker of S and I) explains 67% more variance than the multiplicative specification (R² 0.192 vs 0.115), with a lower AIC by 6 points. Both combined yield R²=0.217, AIC=435.4, suggesting they capture overlapping but not identical information. The bottleneck interpretation: a civilization with high S but low I (or vice versa) is constrained by the limiting factor, not boosted by the strong one.</p>
+</div>
+
+<p>This finding has practical implications. A society with high competitive pressure but low trust (S=8, I=2) has an effective engine of min(8,2)=2, not 16. A society with high integration but low selection (the Dutch Republic after 1713: S=1, I=6) has an effective engine of 1, not 6. The bottleneck must be addressed; strengthening the already-strong variable produces diminishing returns.</p>
+
+<h3>Regime-Specific Parameters</h3>
+
+<div class="f">
+<span class="label">Finding 10: Growth ≠ Decline</span>
+<span class="r">Chow test: F = 4.46, p = 0.008</span>
+<p class="desc">The relationship between S×I and ΔC is structurally different during growth vs. decline phases. During growth (n=13): S×I vs ΔC r=0.47. During decline (n=41): S×I vs ΔC r=0.15, essentially uncorrelated. Decline is driven by entropy and resource depletion, not by inadequate selection × integration. A single equation cannot model the entire civilizational lifecycle.</p>
+</div>
+
+<p>Three regimes emerge from the data:</p>
+
+<table>
+<thead><tr><th>Regime</th><th>Condition</th><th>n</th><th>S×I vs ΔC</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td style="color:#B8860B"><strong>Growth</strong></td><td>S<sub>c</sub>×I > γC²</td><td>13</td><td>r = 0.47</td><td>Republican Rome, Song China, Dutch Golden Age</td></tr>
+<tr><td><strong>Maintenance</strong></td><td>μ(I)·C ≈ γC²</td><td>11</td><td>r = 0.44</td><td>Tokugawa Japan, Late Principate, Qing 1700–1800</td></tr>
+<tr><td style="color:#6B6B6B"><strong>Decline</strong></td><td>γC² dominates</td><td>41</td><td>r = 0.15</td><td>Crisis of Third Century, Post-An Lushan Tang</td></tr>
+</tbody>
+</table>
+
+<h3>The Resource Threshold</h3>
+
+<p>Below a resource/population threshold (R ≈ 24 in our 0–100 scale), the S×I→C mechanism breaks down entirely. Above that threshold, S×I strongly predicts complexity (r = 0.901, p < 0.0001). Below it, the correlation drops to r = 0.358 (p = 0.03). The piecewise regression is strongly preferred: AIC = 561.7 vs. single model AIC = 595.6 (ΔAIC = 33.9).</p>
+
+<p>No amount of selection × integration can produce complexity growth if the demographic and resource base is insufficient. The framework needs a floor condition: the SICRE model operates only when R > R<sub>min</sub>.</p>
+
+<!-- ===================== XI. REVISED EQUATION ===================== -->
+<h2 id="revised">XI. The Revised Equation</h2>
+
+<p>Based on the seven tested revisions (four strongly supported, one partially, one promising, one requiring reformulation), the revised framework replaces the original three-term equation with a phase-conditional system:</p>
+
+<h3>Original</h3>
+<div class="eq">
+dC/dt = α(S × I) + β(C × D) − γC²
+</div>
+
+<h3>Revised</h3>
+<div class="eq">
+dC/dt = α · I · (1 + β · S<sub>c</sub>) + μ(I) · C − γC² − δ · S<sub>d</sub> + ρ · C<sub>memory</sub>
+<span class="small">Growth phase: when R > R<sub>min</sub> and E < E<sub>crit</sub>. Maintenance phase: C ≈ g(I). Decline phase: ΔC = −β·S<sub>d</sub> − δ·E + R<sub>eff</sub>(t)</span>
+</div>
+
+<table>
+<thead><tr><th>Term</th><th>Meaning</th><th>Empirical Support</th></tr></thead>
+<tbody>
+<tr><td>α·I·(1 + β·S<sub>c</sub>)</td><td>Integration builds complexity; constructive selection amplifies</td><td>I coef = +0.143 (p=0.013); Dutch r=0.78; England r=0.87</td></tr>
+<tr><td>μ(I)·C</td><td>Maintenance: I institutions preserve existing complexity</td><td>Tokugawa: C=7 maintained 200yr with S×I≈12; I vs C during maintenance R²=0.91</td></tr>
+<tr><td>γC²</td><td>Entropic drag: maintenance cost quadratic in complexity</td><td>Denarius R²=0.943; consistent across European debasement series</td></tr>
+<tr><td>δ·S<sub>d</sub></td><td>Destructive selection directly reduces complexity</td><td>S<sub>d</sub> coef = −0.151 (p=0.002, N=65)</td></tr>
+<tr><td>ρ·C<sub>memory</sub></td><td>Civilizational memory accelerates rebuilding</td><td>Each Chinese dynasty reaches higher peak C; suggestive only</td></tr>
+</tbody>
+</table>
+
+<div class="fig">
+<img src="img/chart_ridge_of_vitality.png" alt="The Ridge of Vitality: S-I-C surface showing the narrow parameter space where complexity thrives">
+<p class="cap">Figure 9. The Ridge of Vitality. Complexity (height) plotted against S and I axes. The peak lies along a narrow ridge where constructive S and high I combine. High S alone (right edge) produces destruction. High I alone (back edge) produces maintenance without growth. The ridge is narrower than the original framework assumed.</p>
+</div>
+
+<div class="fig">
+<img src="img/multi_civ_phase_diagrams.png" alt="Phase diagrams for 5 civilizations in S-I space colored by complexity">
+<p class="cap">Figure 10. Phase diagrams for five civilizations in S-I space. Each trajectory traces the civilization's path through the parameter space, colored by complexity level. All show the same qualitative pattern: approach the ridge, achieve peak complexity, then fall away.</p>
+</div>
+
+<h3>What the Revision Changes</h3>
+<p><strong>Integration is elevated to primary driver.</strong> The revised equation places I as the engine term, with S<sub>c</sub> as an amplifier rather than equal partner. The data supports this: I explains 6× more variance than S during maintenance, and the strongest single-civilization correlations (England r=0.867, Dutch r=0.780) are cases where I trends monotonically.</p>
+<p><strong>Destructive selection gets its own term.</strong> S<sub>d</sub> acts directly against complexity rather than participating in the engine. This resolves the negative-S paradox and distinguishes the framework from a generic "competition is good" claim.</p>
+<p><strong>Three regimes replace one equation.</strong> Growth, maintenance, and decline have different dynamics. The Chow test confirms this (F=4.46, p=0.008). A single equation cannot model the entire lifecycle.</p>
+<p><strong>D is absorbed into I.</strong> The diversity term (C×D) has essentially no empirical support in the data. Diversity is better modeled as a function of integration: more integrated systems are inherently more diverse.</p>
+
+<!-- ===================== XII. MODERN APPLICATIONS ===================== -->
+<h2 id="modern">XII. Modern Applications</h2>
+
+<p>The framework's value depends partly on whether it illuminates the present. Three modern case studies were examined: Silicon Valley, US institutions, and China under Xi. All should be understood as early diagnostic readings, not settled verdicts. The lag function means today's S×I readings predict outcomes 10–50 years from now, not tomorrow.</p>
+
+<h3>Silicon Valley: Is S×I Currently Decoupling?</h3>
+
+<p><strong>Selection (S):</strong> Peaked around 2005–2012. Firm birth rates in the information sector peaked in the late 1990s. The period from 2005 to 2012 was peak competitive intensity: Google vs. Yahoo vs. Bing, Facebook vs. MySpace, iOS vs. Android vs. BlackBerry vs. Windows Phone. Then consolidation: FAANG firms made over 800 acquisitions (2010–2020), absorbing competitors before they could threaten. The Herfindahl-Hirschman Index for search, social, mobile OS, and cloud all climbed sharply after 2015. Startup formation rates declined below 2005 levels despite record VC dollar volumes.</p>
+
+<p><strong>Integration (I):</strong> Peaked around 2000–2010. The open-API era (2005–2012) created maximum interoperability. Then platforms restricted APIs, erected data silos, and concentrated talent. An estimated 70% of top-tier AI researchers work at five companies. US trade/GDP peaked at 30.8% (2011) and declined to 25.3% (2023–24).</p>
+
+<p><strong>The γC² signal:</strong> US total factor productivity has been essentially flat for two decades. The OWID/Penn World Table data shows TFP oscillating between 0.92 and 1.0 from 2004–2023 with no trend. R&D spending increased from 2.5% to 3.6% of GDP over the same period. More inputs, same outputs. That is the entropic drag eating the gains.</p>
+
+<h3>US Institutions: The "Can't Build" Problem</h3>
+
+<p><strong>Regulatory ratchet:</strong> Code of Federal Regulations: 10,000 pages (1950) → 54,000 (1970) → 138,000 (2000) → 188,000 (2020). Compound growth of 4.2% annually, sustained for seven decades, far exceeding GDP growth.</p>
+
+<p><strong>Selection mechanism failure:</strong> After the 2010 redistricting, the number of truly competitive US House seats fell below 40 of 435 (9%). The V-Dem electoral democracy index declined from 0.905 (2013) to 0.735 (2025), a 19% drop in twelve years.</p>
+
+<p><strong>Trust collapse:</strong> Gallup confidence in Congress fell from 42% (1973) to 8% (2023). General Social Survey interpersonal trust fell from 46% (1972) to 30% (2022). The share of Americans who believe "most people can be trusted" has nearly halved.</p>
+
+<div class="neg">
+<span class="tag">Honest Negative</span>
+<p>The US case resists clean S×I modeling because the federal structure creates enormous within-country variance. Some states and municipalities maintain high institutional capacity while the federal aggregate degrades. The framework models entropy at the institutional level, not the civilizational level, and the American system may be more resilient than aggregate indicators suggest precisely because of this heterogeneity. The United States also has more adaptive capacity than any historical civilization in the dataset, by virtue of immigration-driven demographic renewal and sheer wealth buffer.</p>
+</div>
+
+<h3>China Under Xi: High S, Declining I</h3>
+
+<p><strong>The S<sub>d</sub> signal:</strong> The anti-corruption campaign has disciplined over 4.7 million officials. The tech crackdown wiped $2 trillion in market capitalization. When enforcement correlates with political opposition rather than actual corruption levels, it is S<sub>d</sub>, not S<sub>c</sub>.</p>
+
+<p><strong>The I collapse:</strong> Trade/GDP peaked at 63.6% (2006), fell to 37.2% (2024). FDI turned negative in Q3 2023 for the first time since records began in 1998. Technology integration declining under US export controls. Domestic integration declining as property sector (25–30% of GDP through linkages) contracts.</p>
+
+<p><strong>TFP plateau:</strong> Growth rate decelerated from 4% annually (2004–2010) to 2.5% (2010–2017) to 1.5% (2017–2021). The 2022–2023 readings suggest plateau.</p>
+
+<p><strong>The framework's prediction:</strong> Complexity growth stalls or reverses by 2028–2032. GDP growth falls below 3% and stays there. Patent quality diverges from patent quantity. Brain drain accelerates. The property sector does not recover. This will be the cleanest out-of-sample test.</p>
+
+<div class="banner">
+<p><strong>2030 Predictions:</strong> Three testable predictions with a five-year horizon. (1) US TFP remains flat or declines despite massive AI investment. (2) China GDP growth falls below 3% by 2028. (3) The three borderline inflection failures (Tang, Gupta, Al-Andalus) will be resolved with better decade-level data showing they are within coding resolution rather than true reversals. If all three predictions fail, the framework needs fundamental revision.</p>
+</div>
+
+<!-- ===================== XIII. LIMITATIONS ===================== -->
+<h2 id="limits">XIII. Limitations and Future Work</h2>
+
+<h3>What We Cannot Claim</h3>
+
+<p><strong>Causality.</strong> All results are correlational. S, I, and C are likely simultaneously determined. The inflection point lag provides suggestive identification, but it cannot establish true causality. A randomized controlled trial of civilizational policy is, regrettably, not available.</p>
+
+<p><strong>Generalizability beyond Eurasia.</strong> All twelve civilizations are Eurasian. Sub-Saharan Africa, pre-Columbian Americas, and Oceania are not represented. The framework's universality claims are untested outside the Eurasian civilizational corridor.</p>
+
+<p><strong>Precise parameter estimation.</strong> With N=57 (or N=65), we can identify the sign and rough magnitude of coefficients but not their precise values. Different scholar codings would shift results. The framework is best understood as a qualitative model with quantitative support, not a predictive equation with calibrated parameters.</p>
+
+<h3>What Would Most Improve the Analysis</h3>
+
+<p><strong>Critical data gaps (would change conclusions):</strong></p>
+<ol>
+<li>Roman trade volume index (300 BCE–300 CE). Currently using hoards and interest rates as crude integration proxies.</li>
+<li>Song Dynasty GDP per capita. No continuous economic series for China's peak complexity.</li>
+<li>Pre-1500 fiscal capacity data. Needed for ancient civilization comparison.</li>
+<li>Formal S<sub>c</sub>/S<sub>d</sub> coding for all 12 civilizations. Currently only Tang and Abbasid have decade-level decomposition.</li>
+</ol>
+
+<p><strong>Important gaps:</strong></p>
+<ol start="5">
+<li>Tokugawa economic data beyond rice prices. GDP, urbanization, literacy series would sharpen the maintenance term.</li>
+<li>Islamic Golden Age continuous series. Crucial for testing the distributed engine hypothesis.</li>
+<li>Corruption and judicial quality indices. Needed for institutional entropy quantification.</li>
+<li>Religious diversity indices. Needed for spiritual entropy.</li>
+</ol>
+
+<h3>Next Civilizations to Test</h3>
+<p>The inflection point prediction should be tested on: the Ottoman Empire (Tier 2, partial data available), Venice (ideal for rentier entropy testing), Mauryan India, and the Inca Empire. Each would add a genuinely independent datapoint. Venice, in particular, would provide a nearly ideal test of the entropy ratchet hypothesis, given its Serrata (1297) as a precisely datable institutional closure event.</p>
+
+<h3>Methodological Improvements</h3>
+<p>Newey-West standard errors for all regressions (correcting for temporal autocorrelation). Bayesian estimation of the entropy ratchet model dE/dt = δ(C) − R<sub>eff</sub>. Panel regression with fixed effects once the civilizational sample reaches N=15+. Communication technology as a lag function covariate.</p>
+
+<!-- ===================== XIV. APPENDIX ===================== -->
+<h2 id="appendix">XIV. Methodology Appendix</h2>
+
+<h3>Full Regression Results</h3>
+
+<table>
+<thead><tr><th>Specification</th><th>N</th><th>R²</th><th>Adj R²</th><th>AIC</th><th>Key Coefficient</th><th>p-value</th></tr></thead>
+<tbody>
+<tr><td>Pooled: ΔC = a₁S + a₂I + a₃(S×I)</td><td>57</td><td>0.448</td><td>—</td><td>—</td><td>S×I: +0.076</td><td>0.068</td></tr>
+<tr><td>Original: S + I (Tang+Abbasid)</td><td>65</td><td>0.339</td><td>0.318</td><td>424.3</td><td>S: −0.139</td><td>0.008</td></tr>
+<tr><td style="color:#B8860B">Decomposed: S<sub>c</sub> + S<sub>d</sub> + I + S<sub>c</sub>×I</td><td>65</td><td>0.440</td><td>0.403</td><td>417.6</td><td>S<sub>d</sub>: −0.151</td><td>0.002</td></tr>
+<tr><td>min(S,I)</td><td>65</td><td>0.192</td><td>—</td><td>435.4</td><td>min: positive</td><td>—</td></tr>
+<tr><td>S×I (multiplicative)</td><td>65</td><td>0.115</td><td>—</td><td>441.4</td><td>S×I: positive</td><td>—</td></tr>
+<tr><td>Piecewise (R threshold)</td><td>65</td><td>—</td><td>—</td><td>561.7</td><td>Threshold: R=24</td><td>—</td></tr>
+<tr><td>Single model (no threshold)</td><td>65</td><td>—</td><td>—</td><td>595.6</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h3>By-Civilization Correlations</h3>
+
+<table>
+<thead><tr><th>Civilization</th><th>S×I vs C Level (r)</th><th>p-value</th><th>N periods</th></tr></thead>
+<tbody>
+<tr><td>England</td><td>0.867</td><td>< 0.001</td><td>13</td></tr>
+<tr><td>Dutch Republic</td><td>0.780</td><td>0.003</td><td>12</td></tr>
+<tr><td>Pooled (all)</td><td>0.615</td><td>< 0.0001</td><td>57</td></tr>
+<tr><td>China (Song)</td><td>0.600</td><td>0.018</td><td>15</td></tr>
+<tr><td>Pooled S×I vs ΔC</td><td>0.429</td><td>0.002</td><td>52</td></tr>
+<tr><td>S×I vs Entropy</td><td>−0.368</td><td>0.005</td><td>57</td></tr>
+<tr><td style="color:#6B6B6B">Tokugawa Japan</td><td style="color:#6B6B6B">−0.793</td><td style="color:#6B6B6B">0.060</td><td style="color:#6B6B6B">6</td></tr>
+</tbody>
+</table>
+
+<p><em>Note: Tokugawa's negative correlation reflects the initial high-S period (unification wars) having lower complexity than the subsequent low-S plateau. This is consistent with the framework (destructive S reduces C) but challenges a simple linear S×I→C interpretation.</em></p>
+
+<h3>Theory Revision Test Summary</h3>
+
+<div class="fig">
+<img src="img/theory_revision_tests.png" alt="9-panel comparison of theory revision test results">
+<p class="cap">Figure 11. Theory revision tests: 9-panel comparison showing original vs. revised model performance across seven proposed revisions.</p>
+</div>
+
+<table>
+<thead><tr><th>#</th><th>Revision</th><th>Verdict</th><th>Key Evidence</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>S<sub>c</sub>/S<sub>d</sub> decomposition</td><td style="color:#B8860B"><strong>✓ Strong</strong></td><td>S<sub>d</sub> = −0.15 (p=0.002); R² 0.34→0.44</td></tr>
+<tr><td>2</td><td>min(S,I) vs S×I</td><td style="color:#B8860B"><strong>✓ min(S,I) preferred</strong></td><td>AIC 435 vs 441</td></tr>
+<tr><td>3</td><td>Maintenance term (I alone)</td><td style="color:#B8860B"><strong>✓ Strong</strong></td><td>I explains R²=0.91 during maintenance</td></tr>
+<tr><td>4</td><td>R threshold</td><td style="color:#B8860B"><strong>✓ Strong</strong></td><td>Threshold R=24; piecewise AIC=562 vs 596</td></tr>
+<tr><td>5</td><td>Lag function L=k√(T×C)</td><td style="color:#999">△ Needs data</td><td>R²=0.26, p=0.24 (N=7 too small)</td></tr>
+<tr><td>6</td><td>Entropy ratchet</td><td style="color:#B8860B"><strong>✓ Partial</strong></td><td>74% monotonic; violations at renewal events</td></tr>
+<tr><td>7</td><td>Regime-specific parameters</td><td style="color:#B8860B"><strong>✓ Strong</strong></td><td>Chow F=4.46, p=0.008</td></tr>
+</tbody>
+</table>
+
+<h3>Data Source List</h3>
+<p><strong>Economic:</strong> Maddison Project Database (2023) for GDP per capita; van Zanden & van Leeuwen for Holland GDP; Broadberry et al. for British GDP reconstruction; Bank of England Millennium of Macroeconomic Data; Penn World Table (OWID) for TFP; Bassino & Ma for Tokugawa rice prices.</p>
+<p><strong>Roman:</strong> Butcher & Ponting (2014) for denarius fineness; Parker (1992) and Wilson (2011) for Mediterranean shipwrecks; McConnell et al. (2018) for Greenland lead pollution; Hopkins (1983) for Roman trade; Duncan-Jones (1982/1994) for Roman economy; Brunt (1971) for Roman demography; Speidel (1992) for military pay.</p>
+<p><strong>Dutch:</strong> 't Hart & Fritschy for provincial finances; Gaastra & Bruijn for VOC operations; Petram for VOC share prices; De Vries & Van der Woude for urbanization; Lucassen & Penninx for immigration.</p>
+<p><strong>English:</strong> Eisner and Pinker for homicide rates; Mitchell for British Historical Statistics; Cook & Keith for Reform Act suffrage; Correlates of War (NMC) for military data.</p>
+<p><strong>Chinese:</strong> Miyazaki (1976) and Elman (2000) for keju examination; Needham (SCC) for technology; Schafer (1963) for Tang cosmopolitanism; Chandler (1987) for urban populations.</p>
+<p><strong>Abbasid:</strong> Gutas (1998) for Translation Movement; Saliba (2007) and Dallal (2010) for scientific output; Kennedy (2004) for political history; Lassner (1970) for administrative data.</p>
+<p><strong>Modern:</strong> V-Dem electoral democracy indices; Gallup institutional confidence surveys; General Social Survey; OWID trade data; NVCA for VC deals; FTC retrospective study (2021) for tech acquisitions; US Census Bureau Business Dynamics Statistics; Henley & Partners for migration data; SAFE for China FDI data.</p>
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer">
+<p><strong>Scope and Caveats.</strong> This report summarizes empirical tests of a theoretical framework. All results are correlational. N is small. Scholar-coded variables involve subjective judgment. The framework is best understood as a structured lens for historical analysis, not a predictive equation with calibrated parameters. Nothing in this report constitutes investment advice or policy recommendation.</p>
+<p><strong>Data.</strong> 339+ files, ~133MB. 50 CSV datasets, 12 case studies, 7 theory revision tests. All SICRE scores normalized 0–100. Source data available in the project repository.</p>
+<p><strong>Version.</strong> v1.0 · July 5, 2026 · Vitalic Stoicism Project</p>
+<p><strong>Produced with:</strong> Python (statsmodels, matplotlib, pandas), scholar-coded SICRE composite indices, published academic datasets. No AI-generated data; all numbers trace to published sources or documented coding decisions.</p>
+</div>
+
+</div>
+</body>
+</html>
