@@ -143,8 +143,9 @@ function show(c, writeHash) {
   document.getElementById('st-lag').textContent = d.peak_lag === null ? '—' : (d.peak_lag > 0 ? '+' : '') + d.peak_lag + 'm';
   const rd = document.getElementById('llread');
   if (d.peak_lag === null) rd.textContent = 'insufficient overlap for lead–lag estimate.';
-  else if (d.peak_lag > 0) rd.innerHTML = 'Peak correlation <b style="color:#D4A853">' + d.peak_corr.toFixed(2) + '</b> at <b style="color:#D4A853">+' + d.peak_lag + ' months</b> — the words move before the rate does. The gauge front-runs ' + d.name.replace(/ \(.*\)/, '') + "'s policy moves by about " + d.peak_lag + ' month' + (d.peak_lag > 1 ? 's' : '') + '.';
-  else rd.innerHTML = 'Peak correlation ' + d.peak_corr.toFixed(2) + ' at ' + d.peak_lag + 'm — here the gauge mostly narrates moves already made (coincident/lagging).';
+  else if (d.peak_lag >= 3) rd.innerHTML = 'Peak correlation <b style="color:#D4A853">' + d.peak_corr.toFixed(2) + '</b> at <b style="color:#D4A853">+' + d.peak_lag + ' months</b> — the change window sits fully in the future: the words genuinely front-run ' + d.name.replace(/ \(.*\)/, '') + "'s policy moves.";
+  else if (d.peak_lag > 0) rd.innerHTML = 'Peak correlation ' + d.peak_corr.toFixed(2) + ' at +' + d.peak_lag + 'm — but the 3-month change window ending t+' + d.peak_lag + ' still overlaps the recent past. Essentially coincident: the words move WITH the rate cycle, a marginal lead at best.';
+  else rd.innerHTML = 'Peak correlation ' + d.peak_corr.toFixed(2) + ' at ' + d.peak_lag + 'm — the gauge mostly narrates moves already made (coincident/lagging).';
   drawMain(c); drawLL(c);
   if (writeHash) history.replaceState(null, '', '#cb=' + c);
   tip.style.display = 'none';
