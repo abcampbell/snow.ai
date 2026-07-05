@@ -1,0 +1,177 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEEP HISTORY — Dataset Catalog · Castra Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A1A1A;--bone:#FAFAF5;--gold:#B8860B;--grey:#6B6B6B;--red:#8B3A2B;--dark:#222}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--bone);font-family:'EB Garamond',serif;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:20px}
+h1{font-family:Cinzel;color:var(--gold);letter-spacing:4px;font-size:26px;text-align:center;margin:16px 0 4px}
+.sub{color:var(--grey);text-align:center;font-style:italic;margin-bottom:16px;font-size:13px}
+.controls{display:flex;gap:10px;margin:12px 0;flex-wrap:wrap;align-items:center;justify-content:center}
+.controls input{background:#222;border:1px solid #444;color:var(--bone);padding:8px 14px;border-radius:6px;font-family:'EB Garamond';font-size:14px;width:300px}
+.controls select{background:#222;border:1px solid #444;color:var(--bone);padding:8px 10px;border-radius:6px;font-family:'EB Garamond';font-size:13px}
+.controls .count{color:var(--grey);font-size:12px;font-family:Cinzel;letter-spacing:1px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--dark);border:1px solid #333;border-radius:8px;overflow:hidden;transition:all .2s;cursor:pointer}
+.card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.card img{width:100%;height:125px;object-fit:cover;border-bottom:1px solid #333}
+.card-body{padding:10px 12px}
+.card-title{font-family:Cinzel;color:var(--gold);font-size:12px;letter-spacing:1px;margin-bottom:4px}
+.card-meta{color:var(--grey);font-size:11px;line-height:1.4}
+.card-meta span{display:inline-block;margin-right:10px}
+.card-cols{color:#666;font-size:10px;margin-top:4px;line-height:1.3;max-height:32px;overflow:hidden}
+.tag{display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;font-family:Cinzel;letter-spacing:1px}
+.tag-batch2,.tag-batch3{background:#1a3a1a;color:#66aa66}
+.tag-batch4,.tag-batch5{background:#3a2a1a;color:var(--gold)}
+.tag-batch6,.tag-batch7{background:#1a2a3a;color:#6699cc}
+.tag-batch8,.tag-batch9{background:#3a1a2a;color:#cc6688}
+.tag-original{background:#2a2a1a;color:#aaaa66}
+.nav{position:sticky;top:0;background:rgba(26,26,26,.97);backdrop-filter:blur(8px);z-index:100;padding:8px 0;border-bottom:1px solid #333}
+.nav-inner{display:flex;gap:10px;max-width:1200px;margin:0 auto;padding:0 20px;justify-content:center}
+.nav a{color:var(--grey);font-size:10px;font-family:Cinzel;letter-spacing:1px;text-decoration:none;padding:4px 6px;border-radius:3px}
+.nav a:hover{color:var(--gold);background:#2a2a2a}
+.foot{color:var(--grey);font-size:11px;text-align:center;margin-top:24px;font-style:italic;padding:12px 0;border-top:1px solid #333}
+a{color:var(--gold)}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:200;justify-content:center;align-items:center}
+.modal.active{display:flex}
+.modal-content{background:var(--dark);border:1px solid var(--gold);border-radius:12px;max-width:800px;width:90%;max-height:90vh;overflow-y:auto;padding:24px}
+.modal-content img{width:100%;border-radius:6px;margin:12px 0}
+.modal-close{position:absolute;top:20px;right:20px;color:var(--bone);font-size:24px;cursor:pointer;background:#333;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.modal-title{font-family:Cinzel;color:var(--gold);font-size:18px;letter-spacing:2px}
+.modal-meta{color:var(--grey);font-size:13px;margin:8px 0}
+.modal-cols{color:var(--bone);font-size:12px;margin:8px 0;line-height:1.6}
+.modal-cols code{background:#333;padding:2px 6px;border-radius:3px;font-size:11px}
+@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}.controls input{width:100%}}
+</style></head><body>
+
+<div class="nav"><div class="nav-inner">
+<a href="index.html">← DASHBOARD</a>
+<a href="discovery.html">DISCOVERY</a>
+<a href="../deep_history_foraging_20260705/">FORAGING LOG</a>
+</div></div>
+
+<div class="wrap">
+<h1>DATASET CATALOG</h1>
+<div class="sub">Browse all datasets with preview charts — click any card for details</div>
+
+<div class="controls">
+<input type="text" id="search" placeholder="Search datasets..." oninput="filterCards()">
+<select id="batchFilter" onchange="filterCards()">
+<option value="">All batches</option>
+<option value="original">Original</option>
+<option value="batch2">Batch 2</option>
+<option value="batch3">Batch 3</option>
+<option value="batch4">Batch 4</option>
+<option value="batch5">Batch 5 — Financial Assets</option>
+<option value="batch6">Batch 6 — Global + Paleo</option>
+<option value="batch7">Batch 7 — Empires + Trade</option>
+<option value="batch8">Batch 8 — Commodities + Institutions</option>
+<option value="batch9">Batch 9 — Deep Proxies + Comprehensive</option>
+</select>
+<select id="sortBy" onchange="filterCards()">
+<option value="name">Sort by name</option>
+<option value="span">Sort by time span</option>
+<option value="cols">Sort by # series</option>
+<option value="oldest">Sort by earliest date</option>
+</select>
+<div class="count" id="countDisplay">Loading...</div>
+</div>
+
+<div class="grid" id="grid"></div>
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="modal-close" onclick="closeModal()">×</div>
+<div class="modal-content" id="modalContent"></div>
+</div>
+
+<div class="foot">
+Castra Capital Research · Deep History Catalog · 2026-07-05<br>
+<a href="index.html">Dashboard</a> · <a href="discovery.html">Discovery</a> · <a href="../deep_history_foraging_20260705/">Foraging Log</a>
+</div>
+
+<script>
+let catalog = [];
+
+fetch('previews/catalog.json')
+  .then(r => r.json())
+  .then(data => {
+    catalog = data;
+    filterCards();
+  })
+  .catch(e => {
+    document.getElementById('grid').innerHTML = '<p style="color:#888">Loading catalog...</p>';
+  });
+
+function filterCards() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const batch = document.getElementById('batchFilter').value;
+  const sort = document.getElementById('sortBy').value;
+  
+  let filtered = catalog.filter(d => {
+    if (q && !d.name.toLowerCase().includes(q) && !d.title.toLowerCase().includes(q) &&
+        !d.columns.join(' ').toLowerCase().includes(q)) return false;
+    if (batch && d.batch !== batch) return false;
+    return true;
+  });
+  
+  if (sort === 'span') filtered.sort((a,b) => (b.yr_max-b.yr_min) - (a.yr_max-a.yr_min));
+  else if (sort === 'cols') filtered.sort((a,b) => b.ncols - a.ncols);
+  else if (sort === 'oldest') filtered.sort((a,b) => a.yr_min - b.yr_min);
+  else filtered.sort((a,b) => a.name.localeCompare(b.name));
+  
+  const grid = document.getElementById('grid');
+  grid.innerHTML = filtered.map((d,i) => `
+    <div class="card" onclick="showModal(${i})" data-idx="${i}">
+      <img src="${d.img}" alt="${d.title}" loading="lazy" onerror="this.style.display='none'">
+      <div class="card-body">
+        <div class="card-title">${d.title}</div>
+        <div class="card-meta">
+          <span>${d.yr_min < 0 ? Math.abs(d.yr_min)+' BC' : d.yr_min} – ${d.yr_max}</span>
+          <span>${d.ncols} series</span>
+          <span>${d.nonnull.toLocaleString()} pts</span>
+          <span class="tag tag-${d.batch}">${d.batch}</span>
+        </div>
+        <div class="card-cols">${d.columns.slice(0,4).join(' · ')}</div>
+      </div>
+    </div>
+  `).join('');
+  
+  document.getElementById('countDisplay').textContent = `${filtered.length} / ${catalog.length} datasets`;
+  
+  // Store filtered for modal
+  window._filtered = filtered;
+}
+
+function showModal(idx) {
+  const d = window._filtered[idx];
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-title">${d.title}</div>
+    <div class="modal-meta">
+      <strong>Batch:</strong> ${d.batch} · 
+      <strong>Coverage:</strong> ${d.yr_min < 0 ? Math.abs(d.yr_min)+' BC' : d.yr_min} – ${d.yr_max} · 
+      <strong>Series:</strong> ${d.ncols} · 
+      <strong>Rows:</strong> ${d.nrows} · 
+      <strong>Data points:</strong> ${d.nonnull.toLocaleString()}
+    </div>
+    <img src="${d.img}" alt="${d.title}">
+    <div class="modal-cols">
+      <strong>Series:</strong><br>
+      ${d.columns.map(c => '<code>'+c+'</code>').join(' ')}
+    </div>
+    <div class="modal-meta" style="margin-top:12px">
+      <strong>Rose map:</strong> <code>deep_history.${d.name}</code><br>
+      <strong>Local file:</strong> <code>~/historic-timeseries/${d.batch}/${d.name}.csv</code>
+    </div>
+  `;
+  document.getElementById('modal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+</script>
+</body></html>

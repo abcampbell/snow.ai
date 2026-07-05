@@ -1,0 +1,5829 @@
+[
+  {
+    "name": "aurora",
+    "batch": "batch2",
+    "title": "Aurora",
+    "ncols": 1,
+    "nrows": 596,
+    "nonnull": 596,
+    "yr_min": -200,
+    "yr_max": 1985,
+    "columns": [
+      "aurora.observation_count"
+    ],
+    "img": "previews/aurora.png"
+  },
+  {
+    "name": "boe_millennium",
+    "batch": "batch2",
+    "title": "Boe Millennium",
+    "ncols": 6,
+    "nrows": 931,
+    "nonnull": 3191,
+    "yr_min": 1086,
+    "yr_max": 1871,
+    "columns": [
+      "england.population",
+      "england.population",
+      "england.agriculture",
+      "england.agriculture",
+      "england.agriculture",
+      "england.agriculture"
+    ],
+    "img": "previews/boe_millennium.png"
+  },
+  {
+    "name": "cet_temperature",
+    "batch": "batch2",
+    "title": "Cet Temperature",
+    "ncols": 2,
+    "nrows": 4410,
+    "nonnull": 4777,
+    "yr_min": 1659,
+    "yr_max": 2026,
+    "columns": [
+      "england.temperature_monthly",
+      "england.temperature_annual"
+    ],
+    "img": "previews/cet_temperature.png"
+  },
+  {
+    "name": "clio_infra",
+    "batch": "batch2",
+    "title": "Clio Infra",
+    "ncols": 6,
+    "nrows": 517,
+    "nonnull": 76,
+    "yr_min": 1850,
+    "yr_max": 2010,
+    "columns": [
+      "afghanistan.education_years",
+      "algeria.education_years",
+      "angola.education_years",
+      "argentina.education_years",
+      "armenia.education_years",
+      "australia.education_years"
+    ],
+    "img": "previews/clio_infra.png"
+  },
+  {
+    "name": "comets",
+    "batch": "batch2",
+    "title": "Comets",
+    "ncols": 1,
+    "nrows": 155,
+    "nonnull": 155,
+    "yr_min": -613,
+    "yr_max": 2020,
+    "columns": [
+      "comet.observation"
+    ],
+    "img": "previews/comets.png"
+  },
+  {
+    "name": "cow_capabilities",
+    "batch": "batch2",
+    "title": "Cow Capabilities",
+    "ncols": 6,
+    "nrows": 192,
+    "nonnull": 1152,
+    "yr_min": 1816,
+    "yr_max": 2007,
+    "columns": [
+      "states.count",
+      "military_expenditure.thousands_usd",
+      "military_personnel.thousands",
+      "iron_steel_production.thousands_tons",
+      "primary_energy.thousands_coal_equiv",
+      "total_population.thousands"
+    ],
+    "img": "previews/cow_capabilities.png"
+  },
+  {
+    "name": "cow_wars",
+    "batch": "batch2",
+    "title": "Cow Wars",
+    "ncols": 6,
+    "nrows": 193,
+    "nonnull": 1158,
+    "yr_min": 1816,
+    "yr_max": 2008,
+    "columns": [
+      "active_wars.count",
+      "interstate_wars.count",
+      "intrastate_wars.count",
+      "extrastate_wars.count",
+      "nonstate_wars.count",
+      "battle_deaths.persons"
+    ],
+    "img": "previews/cow_wars.png"
+  },
+  {
+    "name": "crop_yields",
+    "batch": "batch2",
+    "title": "Crop Yields",
+    "ncols": 2,
+    "nrows": 69,
+    "nonnull": 138,
+    "yr_min": 1211,
+    "yr_max": 2000,
+    "columns": [
+      "england.wheat_yield",
+      "england.barley_yield"
+    ],
+    "img": "previews/crop_yields.png"
+  },
+  {
+    "name": "currency_debasement",
+    "batch": "batch2",
+    "title": "Currency Debasement",
+    "ncols": 2,
+    "nrows": 99,
+    "nonnull": 99,
+    "yr_min": -211,
+    "yr_max": 1947,
+    "columns": [
+      "rome.denarius_silver_content",
+      "england.penny_silver_content"
+    ],
+    "img": "previews/currency_debasement.png"
+  },
+  {
+    "name": "english_penny",
+    "batch": "batch2",
+    "title": "English Penny",
+    "ncols": 1,
+    "nrows": 24,
+    "nonnull": 24,
+    "yr_min": 760,
+    "yr_max": 1920,
+    "columns": [
+      "england.penny_silver"
+    ],
+    "img": "previews/english_penny.png"
+  },
+  {
+    "name": "epica_temperature",
+    "batch": "batch2",
+    "title": "Epica Temperature",
+    "ncols": 1,
+    "nrows": 3,
+    "nonnull": 3,
+    "yr_min": 1655,
+    "yr_max": 1857,
+    "columns": [
+      "antarctica.temperature_anomaly"
+    ],
+    "img": "previews/epica_temperature.png"
+  },
+  {
+    "name": "european_state_finance",
+    "batch": "batch2",
+    "title": "European State Finance",
+    "ncols": 5,
+    "nrows": 55,
+    "nonnull": 135,
+    "yr_min": 1290,
+    "yr_max": 1870,
+    "columns": [
+      "england.govt_revenue",
+      "england.govt_expenditure",
+      "france.govt_revenue",
+      "netherlands.govt_revenue",
+      "spain.govt_revenue"
+    ],
+    "img": "previews/european_state_finance.png"
+  },
+  {
+    "name": "gisp2_temperature",
+    "batch": "batch2",
+    "title": "Gisp2 Temperature",
+    "ncols": 1,
+    "nrows": 3329,
+    "nonnull": 3329,
+    "yr_min": 1900,
+    "yr_max": 1949,
+    "columns": [
+      "greenland.temperature"
+    ],
+    "img": "previews/gisp2_temperature.png"
+  },
+  {
+    "name": "gold_silver_ratio",
+    "batch": "batch2",
+    "title": "Gold Silver Ratio",
+    "ncols": 1,
+    "nrows": 68,
+    "nonnull": 68,
+    "yr_min": -500,
+    "yr_max": 2020,
+    "columns": [
+      "gold_silver.price_ratio"
+    ],
+    "img": "previews/gold_silver_ratio.png"
+  },
+  {
+    "name": "gvp_annual",
+    "batch": "batch2",
+    "title": "Gvp Annual",
+    "ncols": 4,
+    "nrows": 1660,
+    "nonnull": 5846,
+    "yr_min": -55500,
+    "yr_max": 2026,
+    "columns": [
+      "gvp_eruption_count.count",
+      "gvp_max_vei.index",
+      "gvp_sum_vei.index",
+      "gvp_eruptions_with_vei.count"
+    ],
+    "img": "previews/gvp_annual.png"
+  },
+  {
+    "name": "gvp_eruptions",
+    "batch": "batch2",
+    "title": "Gvp Eruptions",
+    "ncols": 5,
+    "nrows": 11089,
+    "nonnull": 52750,
+    "yr_min": -55500,
+    "yr_max": 2026,
+    "columns": [
+      "gvp_volcano_number.id",
+      "gvp_eruption_number.id",
+      "gvp_vei.index",
+      "gvp_latitude.degrees",
+      "gvp_longitude.degrees"
+    ],
+    "img": "previews/gvp_eruptions.png"
+  },
+  {
+    "name": "historical_finance",
+    "batch": "batch2",
+    "title": "Historical Finance",
+    "ncols": 6,
+    "nrows": 329,
+    "nonnull": 98,
+    "yr_min": -3000,
+    "yr_max": 2020,
+    "columns": [
+      "mesopotamia.interest_rate",
+      "greece.interest_rate",
+      "rome.interest_rate",
+      "medieval_europe.interest_rate",
+      "england.long_rate",
+      "netherlands.long_rate"
+    ],
+    "img": "previews/historical_finance.png"
+  },
+  {
+    "name": "homicide_rates",
+    "batch": "batch2",
+    "title": "Homicide Rates",
+    "ncols": 6,
+    "nrows": 90,
+    "nonnull": 319,
+    "yr_min": 1250,
+    "yr_max": 2022,
+    "columns": [
+      "belgium.homicide_rate",
+      "corsica_sardinia.homicide_rate",
+      "england.homicide_rate",
+      "france.homicide_rate",
+      "germany.homicide_rate",
+      "ireland.homicide_rate"
+    ],
+    "img": "previews/homicide_rates.png"
+  },
+  {
+    "name": "ice_core_co2",
+    "batch": "batch2",
+    "title": "Ice Core Co2",
+    "ncols": 1,
+    "nrows": 341,
+    "nonnull": 341,
+    "yr_min": 1010,
+    "yr_max": 1978,
+    "columns": [
+      "atmosphere.co2"
+    ],
+    "img": "previews/ice_core_co2.png"
+  },
+  {
+    "name": "ice_cores",
+    "batch": "batch2",
+    "title": "Ice Cores",
+    "ncols": 6,
+    "nrows": 12521,
+    "nonnull": 13205,
+    "yr_min": -799712,
+    "yr_max": 1996,
+    "columns": [
+      "law_dome_co2.ppm",
+      "law_dome_ch4.ppb",
+      "law_dome_n2o.ppb",
+      "epica_domec_deuterium.permil",
+      "epica_domec_temp_anomaly.degC",
+      "epica_domec_co2.ppm"
+    ],
+    "img": "previews/ice_cores.png"
+  },
+  {
+    "name": "interest_rates",
+    "batch": "batch2",
+    "title": "Interest Rates",
+    "ncols": 5,
+    "nrows": 366,
+    "nonnull": 945,
+    "yr_min": 1500,
+    "yr_max": 2016,
+    "columns": [
+      "england.consol_yield",
+      "england.bank_rate",
+      "england.gilt_10yr_yield",
+      "netherlands.bond_yield",
+      "france.rente_yield"
+    ],
+    "img": "previews/interest_rates.png"
+  },
+  {
+    "name": "lead_pollution",
+    "batch": "batch2",
+    "title": "Lead Pollution",
+    "ncols": 1,
+    "nrows": 89,
+    "nonnull": 89,
+    "yr_min": -1100,
+    "yr_max": 2000,
+    "columns": [
+      "greenland.lead_concentration"
+    ],
+    "img": "previews/lead_pollution.png"
+  },
+  {
+    "name": "maddison_gdp",
+    "batch": "batch2",
+    "title": "Maddison Gdp",
+    "ncols": 6,
+    "nrows": 776,
+    "nonnull": 493,
+    "yr_min": 1800,
+    "yr_max": 2022,
+    "columns": [
+      "afg.gdppc",
+      "ago.gdppc",
+      "alb.gdppc",
+      "are.gdppc",
+      "argentina.gdppc",
+      "arm.gdppc"
+    ],
+    "img": "previews/maddison_gdp.png"
+  },
+  {
+    "name": "maddison_population",
+    "batch": "batch2",
+    "title": "Maddison Population",
+    "ncols": 6,
+    "nrows": 776,
+    "nonnull": 537,
+    "yr_min": 1,
+    "yr_max": 2022,
+    "columns": [
+      "afg.population",
+      "ago.population",
+      "alb.population",
+      "are.population",
+      "argentina.population",
+      "arm.population"
+    ],
+    "img": "previews/maddison_population.png"
+  },
+  {
+    "name": "measuringworth",
+    "batch": "batch2",
+    "title": "Measuringworth",
+    "ncols": 6,
+    "nrows": 348,
+    "nonnull": 548,
+    "yr_min": 1257,
+    "yr_max": 2024,
+    "columns": [
+      "gold.uk_official_price",
+      "gold.ny_market_price",
+      "gold.silver_ratio",
+      "usa.cpi",
+      "uk.rpi",
+      "usa.real_gdp"
+    ],
+    "img": "previews/measuringworth.png"
+  },
+  {
+    "name": "nh_temperature",
+    "batch": "batch2",
+    "title": "Nh Temperature",
+    "ncols": 1,
+    "nrows": 1979,
+    "nonnull": 1979,
+    "yr_min": 1,
+    "yr_max": 1979,
+    "columns": [
+      "northern_hemisphere.temperature_anomaly"
+    ],
+    "img": "previews/nh_temperature.png"
+  },
+  {
+    "name": "owda_drought",
+    "batch": "batch2",
+    "title": "Owda Drought",
+    "ncols": 6,
+    "nrows": 2013,
+    "nonnull": 12078,
+    "yr_min": 0,
+    "yr_max": 2012,
+    "columns": [
+      "owda_all_europe_pdsi.index",
+      "owda_british_isles_pdsi.index",
+      "owda_central_europe_pdsi.index",
+      "owda_eastern_europe_pdsi.index",
+      "owda_iberia_pdsi.index",
+      "owda_mediterranean_pdsi.index"
+    ],
+    "img": "previews/owda_drought.png"
+  },
+  {
+    "name": "pages2k_temperature",
+    "batch": "batch2",
+    "title": "Pages2K Temperature",
+    "ncols": 6,
+    "nrows": 2017,
+    "nonnull": 8276,
+    "yr_min": 1,
+    "yr_max": 2017,
+    "columns": [
+      "pages2k_gmst_anomaly.degC",
+      "pages2k_instrumental.degC",
+      "pages2k_p025.degC",
+      "pages2k_p975.degC",
+      "pages2k_gmst_filtered.degC",
+      "pages2k_inst_filtered.degC"
+    ],
+    "img": "previews/pages2k_temperature.png"
+  },
+  {
+    "name": "pandemics",
+    "batch": "batch2",
+    "title": "Pandemics",
+    "ncols": 1,
+    "nrows": 36,
+    "nonnull": 36,
+    "yr_min": -430,
+    "yr_max": 2019,
+    "columns": [
+      "pandemic.deaths"
+    ],
+    "img": "previews/pandemics.png"
+  },
+  {
+    "name": "population",
+    "batch": "batch2",
+    "title": "Population",
+    "ncols": 6,
+    "nrows": 208,
+    "nonnull": 1248,
+    "yr_min": 1,
+    "yr_max": 2022,
+    "columns": [
+      "china.population",
+      "france.population",
+      "germany.population",
+      "india.population",
+      "italy.population",
+      "japan.population"
+    ],
+    "img": "previews/population.png"
+  },
+  {
+    "name": "reinhart_rogoff",
+    "batch": "batch2",
+    "title": "Reinhart Rogoff",
+    "ncols": 6,
+    "nrows": 235,
+    "nonnull": 799,
+    "yr_min": 1693,
+    "yr_max": 2014,
+    "columns": [
+      "uk.debt_gdp",
+      "usa.debt_gdp",
+      "france.debt_gdp",
+      "uk.banking_crisis",
+      "france.banking_crisis",
+      "usa.banking_crisis"
+    ],
+    "img": "previews/reinhart_rogoff.png"
+  },
+  {
+    "name": "roman_debasement",
+    "batch": "batch2",
+    "title": "Roman Debasement",
+    "ncols": 1,
+    "nrows": 34,
+    "nonnull": 34,
+    "yr_min": -211,
+    "yr_max": 301,
+    "columns": [
+      "rome.denarius_silver_content"
+    ],
+    "img": "previews/roman_debasement.png"
+  },
+  {
+    "name": "sea_trade",
+    "batch": "batch2",
+    "title": "Sea Trade",
+    "ncols": 2,
+    "nrows": 65,
+    "nonnull": 96,
+    "yr_min": 1,
+    "yr_max": 2019,
+    "columns": [
+      "global.trade_volume",
+      "british.tramp_freight_rate"
+    ],
+    "img": "previews/sea_trade.png"
+  },
+  {
+    "name": "slave_voyages",
+    "batch": "batch2",
+    "title": "Slave Voyages",
+    "ncols": 6,
+    "nrows": 335,
+    "nonnull": 2010,
+    "yr_min": 1514,
+    "yr_max": 1866,
+    "columns": [
+      "voyages.count",
+      "slaves_embarked.persons",
+      "slaves_disembarked.persons",
+      "avg_embarked_per_voyage.persons",
+      "avg_disembarked_per_voyage.persons",
+      "mortality.persons"
+    ],
+    "img": "previews/slave_voyages.png"
+  },
+  {
+    "name": "tree_rings",
+    "batch": "batch2",
+    "title": "Tree Rings",
+    "ncols": 2,
+    "nrows": 7980,
+    "nonnull": 15960,
+    "yr_min": -6000,
+    "yr_max": 1979,
+    "columns": [
+      "methuselah_walk.ring_width_index",
+      "methuselah_walk.sample_depth"
+    ],
+    "img": "previews/tree_rings.png"
+  },
+  {
+    "name": "volcanic_eruptions",
+    "batch": "batch2",
+    "title": "Volcanic Eruptions",
+    "ncols": 4,
+    "nrows": 200,
+    "nonnull": 710,
+    "yr_min": -141,
+    "yr_max": 1996,
+    "columns": [
+      "volcano.vei",
+      "volcano.deaths",
+      "volcano.latitude",
+      "volcano.longitude"
+    ],
+    "img": "previews/volcanic_eruptions.png"
+  },
+  {
+    "name": "volcanic_eruptions_annual",
+    "batch": "batch2",
+    "title": "Volcanic Eruptions Annual",
+    "ncols": 2,
+    "nrows": 363,
+    "nonnull": 623,
+    "yr_min": -4360,
+    "yr_max": 2026,
+    "columns": [
+      "volcanic.vei_max",
+      "volcanic.eruption_count"
+    ],
+    "img": "previews/volcanic_eruptions_annual.png"
+  },
+  {
+    "name": "wine_harvest",
+    "batch": "batch2",
+    "title": "Wine Harvest",
+    "ncols": 3,
+    "nrows": 633,
+    "nonnull": 1899,
+    "yr_min": 1370,
+    "yr_max": 2003,
+    "columns": [
+      "burgundy.harvest_date_after_sep1",
+      "burgundy.harvest_day_of_year",
+      "burgundy.temperature_anomaly_apr_aug"
+    ],
+    "img": "previews/wine_harvest.png"
+  },
+  {
+    "name": "world_population",
+    "batch": "batch2",
+    "title": "World Population",
+    "ncols": 1,
+    "nrows": 43,
+    "nonnull": 43,
+    "yr_min": -10000,
+    "yr_max": 2020,
+    "columns": [
+      "world.population"
+    ],
+    "img": "previews/world_population.png"
+  },
+  {
+    "name": "amo_nao",
+    "batch": "batch3",
+    "title": "Amo Nao",
+    "ncols": 6,
+    "nrows": 1114,
+    "nonnull": 4031,
+    "yr_min": 910,
+    "yr_max": 2018,
+    "columns": [
+      "nao.winter_index",
+      "nao.ci_lower_5pct",
+      "nao.ci_upper_95pct",
+      "naj.latitude",
+      "naj.ci_lower_1se",
+      "naj.ci_upper_1se"
+    ],
+    "img": "previews/amo_nao.png"
+  },
+  {
+    "name": "arctic_ice",
+    "batch": "batch3",
+    "title": "Arctic Ice",
+    "ncols": 2,
+    "nrows": 572,
+    "nonnull": 1144,
+    "yr_min": 1978,
+    "yr_max": 2026,
+    "columns": [
+      "arctic_ice_extent.M_sq_km",
+      "arctic_ice_area.M_sq_km"
+    ],
+    "img": "previews/arctic_ice.png"
+  },
+  {
+    "name": "bills_of_mortality",
+    "batch": "batch3",
+    "title": "Bills Of Mortality",
+    "ncols": 3,
+    "nrows": 246,
+    "nonnull": 697,
+    "yr_min": 1604,
+    "yr_max": 1849,
+    "columns": [
+      "london_burials.count",
+      "london_plague_deaths.count",
+      "london_christenings.count"
+    ],
+    "img": "previews/bills_of_mortality.png"
+  },
+  {
+    "name": "brecke_conflicts",
+    "batch": "batch3",
+    "title": "Brecke Conflicts",
+    "ncols": 4,
+    "nrows": 601,
+    "nonnull": 1981,
+    "yr_min": 1400,
+    "yr_max": 2000,
+    "columns": [
+      "conflicts.count",
+      "fatalities.total",
+      "fatalities.mean",
+      "fatalities.max"
+    ],
+    "img": "previews/brecke_conflicts.png"
+  },
+  {
+    "name": "cbdb_appointments",
+    "batch": "batch3",
+    "title": "Cbdb Appointments",
+    "ncols": 1,
+    "nrows": 1346,
+    "nonnull": 1346,
+    "yr_min": 1,
+    "yr_max": 1942,
+    "columns": [
+      "china.cbdb_appointments"
+    ],
+    "img": "previews/cbdb_appointments.png"
+  },
+  {
+    "name": "cbdb_persons",
+    "batch": "batch3",
+    "title": "Cbdb Persons",
+    "ncols": 1,
+    "nrows": 1784,
+    "nonnull": 1784,
+    "yr_min": -551,
+    "yr_max": 1942,
+    "columns": [
+      "china.cbdb_persons"
+    ],
+    "img": "previews/cbdb_persons.png"
+  },
+  {
+    "name": "cbdb_punishments",
+    "batch": "batch3",
+    "title": "Cbdb Punishments",
+    "ncols": 1,
+    "nrows": 138,
+    "nonnull": 138,
+    "yr_min": 115,
+    "yr_max": 1862,
+    "columns": [
+      "china.cbdb_punishments"
+    ],
+    "img": "previews/cbdb_punishments.png"
+  },
+  {
+    "name": "city_populations",
+    "batch": "batch3",
+    "title": "City Populations",
+    "ncols": 6,
+    "nrows": 40,
+    "nonnull": 201,
+    "yr_min": -500,
+    "yr_max": 2020,
+    "columns": [
+      "rome_population.thousands",
+      "beijing_population.thousands",
+      "constantinople_population.thousands",
+      "london_population.thousands",
+      "paris_population.thousands",
+      "baghdad_population.thousands"
+    ],
+    "img": "previews/city_populations.png"
+  },
+  {
+    "name": "coal_production",
+    "batch": "batch3",
+    "title": "Coal Production",
+    "ncols": 2,
+    "nrows": 184,
+    "nonnull": 335,
+    "yr_min": 1700,
+    "yr_max": 2020,
+    "columns": [
+      "coal.output",
+      "coal.mines_count"
+    ],
+    "img": "previews/coal_production.png"
+  },
+  {
+    "name": "crop_production",
+    "batch": "batch3",
+    "title": "Crop Production",
+    "ncols": 6,
+    "nrows": 85,
+    "nonnull": 184,
+    "yr_min": 1270,
+    "yr_max": 2023,
+    "columns": [
+      "english_wheat_yield.bushels_per_acre",
+      "english_wheat_yield.tonnes_per_ha",
+      "us_wheat_yield.bushels_per_acre",
+      "us_corn_yield.bushels_per_acre",
+      "global_wheat_production.Mt",
+      "global_rice_production.Mt"
+    ],
+    "img": "previews/crop_production.png"
+  },
+  {
+    "name": "debilt_temperature",
+    "batch": "batch3",
+    "title": "Debilt Temperature",
+    "ncols": 6,
+    "nrows": 321,
+    "nonnull": 950,
+    "yr_min": 1706,
+    "yr_max": 2026,
+    "columns": [
+      "debilt_temperature.degC",
+      "debilt_temperature.degC",
+      "debilt_temperature.degC",
+      "debilt_temperature.degC",
+      "debilt_temperature.degC",
+      "debilt_temperature.degC"
+    ],
+    "img": "previews/debilt_temperature.png"
+  },
+  {
+    "name": "deforestation",
+    "batch": "batch3",
+    "title": "Deforestation",
+    "ncols": 4,
+    "nrows": 51,
+    "nonnull": 204,
+    "yr_min": -6000,
+    "yr_max": 2020,
+    "columns": [
+      "land_use.europe_anthropogenic",
+      "forest.global_area",
+      "cropland.global_area",
+      "pasture.global_area"
+    ],
+    "img": "previews/deforestation.png"
+  },
+  {
+    "name": "dutch_trade",
+    "batch": "batch3",
+    "title": "Dutch Trade",
+    "ncols": 4,
+    "nrows": 197,
+    "nonnull": 608,
+    "yr_min": 1602,
+    "yr_max": 1798,
+    "columns": [
+      "voc_share_price.index",
+      "voc_dividend.pct_par",
+      "voc_dividend_yield.pct",
+      "voc_ships_to_asia.count"
+    ],
+    "img": "previews/dutch_trade.png"
+  },
+  {
+    "name": "eclipses",
+    "batch": "batch3",
+    "title": "Eclipses",
+    "ncols": 6,
+    "nrows": 5000,
+    "nonnull": 29994,
+    "yr_min": -1999,
+    "yr_max": 3000,
+    "columns": [
+      "eclipses.count",
+      "eclipses_total.count",
+      "eclipses_annular.count",
+      "eclipses_partial.count",
+      "eclipses_hybrid.count",
+      "magnitude.ratio"
+    ],
+    "img": "previews/eclipses.png"
+  },
+  {
+    "name": "energy_history",
+    "batch": "batch3",
+    "title": "Energy History",
+    "ncols": 6,
+    "nrows": 51,
+    "nonnull": 258,
+    "yr_min": 1800,
+    "yr_max": 2020,
+    "columns": [
+      "energy.biomass_share",
+      "energy.coal_share",
+      "energy.oil_share",
+      "energy.gas_share",
+      "energy.hydro_share",
+      "energy.nuclear_share"
+    ],
+    "img": "previews/energy_history.png"
+  },
+  {
+    "name": "exchange_rates",
+    "batch": "batch3",
+    "title": "Exchange Rates",
+    "ncols": 6,
+    "nrows": 227,
+    "nonnull": 512,
+    "yr_min": 1791,
+    "yr_max": 2016,
+    "columns": [
+      "usd_per_gbp.ratio",
+      "ffr_per_gbp.ratio",
+      "dm_per_gbp.ratio",
+      "lira_per_gbp.ratio",
+      "yen_per_gbp.ratio",
+      "neer.index"
+    ],
+    "img": "previews/exchange_rates.png"
+  },
+  {
+    "name": "global_slavery",
+    "batch": "batch3",
+    "title": "Global Slavery",
+    "ncols": 5,
+    "nrows": 35,
+    "nonnull": 134,
+    "yr_min": 800,
+    "yr_max": 1875,
+    "columns": [
+      "period_start",
+      "period_end",
+      "slaves_traded.persons",
+      "annual_trade_volume.persons_per_year",
+      "enslaved_stock.persons"
+    ],
+    "img": "previews/global_slavery.png"
+  },
+  {
+    "name": "hadcrut5",
+    "batch": "batch3",
+    "title": "Hadcrut5",
+    "ncols": 3,
+    "nrows": 2102,
+    "nonnull": 6306,
+    "yr_min": 1850,
+    "yr_max": 2025,
+    "columns": [
+      "temperature_anomaly.degC",
+      "temperature_anomaly_lower.degC",
+      "temperature_anomaly_upper.degC"
+    ],
+    "img": "previews/hadcrut5.png"
+  },
+  {
+    "name": "heights",
+    "batch": "batch3",
+    "title": "Heights",
+    "ncols": 2,
+    "nrows": 1490,
+    "nonnull": 2980,
+    "yr_min": 1550,
+    "yr_max": 2000,
+    "columns": [
+      "height.cm",
+      "country_code.code"
+    ],
+    "img": "previews/heights.png"
+  },
+  {
+    "name": "ice_chemistry",
+    "batch": "batch3",
+    "title": "Ice Chemistry",
+    "ncols": 6,
+    "nrows": 1996,
+    "nonnull": 11976,
+    "yr_min": -109100,
+    "yr_max": 1980,
+    "columns": [
+      "sodium.ppb",
+      "ammonium.ppb",
+      "potassium.ppb",
+      "magnesium.ppb",
+      "calcium.ppb",
+      "chloride.ppb"
+    ],
+    "img": "previews/ice_chemistry.png"
+  },
+  {
+    "name": "inequality",
+    "batch": "batch3",
+    "title": "Inequality",
+    "ncols": 3,
+    "nrows": 922,
+    "nonnull": 963,
+    "yr_min": 14,
+    "yr_max": 2015,
+    "columns": [
+      "gini.coefficient",
+      "top1_income_share.pct",
+      "top10_income_share.pct"
+    ],
+    "img": "previews/inequality.png"
+  },
+  {
+    "name": "life_expectancy",
+    "batch": "batch3",
+    "title": "Life Expectancy",
+    "ncols": 5,
+    "nrows": 72,
+    "nonnull": 212,
+    "yr_min": -3000,
+    "yr_max": 2020,
+    "columns": [
+      "life_expectancy.england",
+      "life_expectancy.france",
+      "life_expectancy.world",
+      "life_expectancy.japan",
+      "life_expectancy.china"
+    ],
+    "img": "previews/life_expectancy.png"
+  },
+  {
+    "name": "literacy",
+    "batch": "batch3",
+    "title": "Literacy",
+    "ncols": 6,
+    "nrows": 94,
+    "nonnull": 50,
+    "yr_min": 1475,
+    "yr_max": 2019,
+    "columns": [
+      "literacy_rate.pct",
+      "literacy_rate.pct",
+      "literacy_rate.pct",
+      "literacy_rate.pct",
+      "literacy_rate.pct",
+      "literacy_rate.pct"
+    ],
+    "img": "previews/literacy.png"
+  },
+  {
+    "name": "medieval_money",
+    "batch": "batch3",
+    "title": "Medieval Money",
+    "ncols": 2,
+    "nrows": 33,
+    "nonnull": 40,
+    "yr_min": 800,
+    "yr_max": 1500,
+    "columns": [
+      "continental_coin_stock.tonnes_silver",
+      "english_coin_stock.tonnes_silver"
+    ],
+    "img": "previews/medieval_money.png"
+  },
+  {
+    "name": "migration",
+    "batch": "batch3",
+    "title": "Migration",
+    "ncols": 1,
+    "nrows": 100,
+    "nonnull": 100,
+    "yr_min": 1820,
+    "yr_max": 2019,
+    "columns": [
+      "migration.persons"
+    ],
+    "img": "previews/migration.png"
+  },
+  {
+    "name": "ngrams",
+    "batch": "batch3",
+    "title": "Ngrams",
+    "ncols": 6,
+    "nrows": 520,
+    "nonnull": 3120,
+    "yr_min": 1500,
+    "yr_max": 2019,
+    "columns": [
+      "ngram_war.frequency",
+      "ngram_plague.frequency",
+      "ngram_famine.frequency",
+      "ngram_revolution.frequency",
+      "ngram_liberty.frequency",
+      "ngram_trade.frequency"
+    ],
+    "img": "previews/ngrams.png"
+  },
+  {
+    "name": "patents",
+    "batch": "batch3",
+    "title": "Patents",
+    "ncols": 1,
+    "nrows": 404,
+    "nonnull": 404,
+    "yr_min": 1617,
+    "yr_max": 2020,
+    "columns": [
+      "uk_patents.count"
+    ],
+    "img": "previews/patents.png"
+  },
+  {
+    "name": "polity5",
+    "batch": "batch3",
+    "title": "Polity5",
+    "ncols": 6,
+    "nrows": 17574,
+    "nonnull": 101132,
+    "yr_min": 1776,
+    "yr_max": 2020,
+    "columns": [
+      "polity2.score",
+      "democracy.score",
+      "autocracy.score",
+      "executive_constraints.score",
+      "exec_recruitment_competitiveness.score",
+      "participation_competitiveness.score"
+    ],
+    "img": "previews/polity5.png"
+  },
+  {
+    "name": "poor_law",
+    "batch": "batch3",
+    "title": "Poor Law",
+    "ncols": 1,
+    "nrows": 141,
+    "nonnull": 141,
+    "yr_min": 1600,
+    "yr_max": 1900,
+    "columns": [
+      "poor_relief.gbp_thousands"
+    ],
+    "img": "previews/poor_law.png"
+  },
+  {
+    "name": "qing_grain_prices",
+    "batch": "batch3",
+    "title": "Qing Grain Prices",
+    "ncols": 6,
+    "nrows": 177,
+    "nonnull": 922,
+    "yr_min": 1738,
+    "yr_max": 1911,
+    "columns": [
+      "china_\u56db\u5ddd.grain_price_high",
+      "china_\u56db\u5ddd.grain_price_low",
+      "china_\u5949\u5929.grain_price_high",
+      "china_\u5949\u5929.grain_price_low",
+      "china_\u5b89\u5fbd.grain_price_high",
+      "china_\u5b89\u5fbd.grain_price_low"
+    ],
+    "img": "previews/qing_grain_prices.png"
+  },
+  {
+    "name": "radiocarbon_activity",
+    "batch": "batch3",
+    "title": "Radiocarbon Activity",
+    "ncols": 6,
+    "nrows": 279,
+    "nonnull": 1674,
+    "yr_min": -12000,
+    "yr_max": 1900,
+    "columns": [
+      "radiocarbon_dates.count",
+      "radiocarbon_dates.count",
+      "radiocarbon_dates.count",
+      "radiocarbon_dates.count",
+      "radiocarbon_dates.count",
+      "radiocarbon_dates.count"
+    ],
+    "img": "previews/radiocarbon_activity.png"
+  },
+  {
+    "name": "religion",
+    "batch": "batch3",
+    "title": "Religion",
+    "ncols": 1,
+    "nrows": 332,
+    "nonnull": 332,
+    "yr_min": 33,
+    "yr_max": 2020,
+    "columns": [
+      "adherents_share.pct"
+    ],
+    "img": "previews/religion.png"
+  },
+  {
+    "name": "sea_level",
+    "batch": "batch3",
+    "title": "Sea Level",
+    "ncols": 5,
+    "nrows": 219,
+    "nonnull": 840,
+    "yr_min": 1807,
+    "yr_max": 2025,
+    "columns": [
+      "sea_level_brest.mm",
+      "gmsl.mm",
+      "sea_level_liverpool.mm",
+      "sea_level_amsterdam.mm",
+      "sea_level_stockholm.mm"
+    ],
+    "img": "previews/sea_level.png"
+  },
+  {
+    "name": "shilu_entries",
+    "batch": "batch3",
+    "title": "Shilu Entries",
+    "ncols": 1,
+    "nrows": 557,
+    "nonnull": 557,
+    "yr_min": 1352,
+    "yr_max": 1912,
+    "columns": [
+      "china.shilu_entries"
+    ],
+    "img": "previews/shilu_entries.png"
+  },
+  {
+    "name": "shipwrecks",
+    "batch": "batch3",
+    "title": "Shipwrecks",
+    "ncols": 4,
+    "nrows": 28,
+    "nonnull": 112,
+    "yr_min": -1350,
+    "yr_max": 2010,
+    "columns": [
+      "known_shipwrecks.count",
+      "shipwreck_rate.per_year",
+      "period_start",
+      "period_end"
+    ],
+    "img": "previews/shipwrecks.png"
+  },
+  {
+    "name": "solar_irradiance",
+    "batch": "batch3",
+    "title": "Solar Irradiance",
+    "ncols": 6,
+    "nrows": 2304,
+    "nonnull": 5466,
+    "yr_min": -7439,
+    "yr_max": 2008,
+    "columns": [
+      "tsi.anomaly",
+      "tsi.error",
+      "solar_modulation.phi",
+      "cosmogenic.pc1",
+      "tsi.anomaly",
+      "tsi.error"
+    ],
+    "img": "previews/solar_irradiance.png"
+  },
+  {
+    "name": "sound_toll_cargoes",
+    "batch": "batch3",
+    "title": "Sound Toll Cargoes",
+    "ncols": 6,
+    "nrows": 316,
+    "nonnull": 1896,
+    "yr_min": 1497,
+    "yr_max": 1857,
+    "columns": [
+      "baltic.cargo_cloth",
+      "baltic.cargo_colonial",
+      "baltic.cargo_dairy",
+      "baltic.cargo_fibers",
+      "baltic.cargo_fish",
+      "baltic.cargo_grain"
+    ],
+    "img": "previews/sound_toll_cargoes.png"
+  },
+  {
+    "name": "sound_toll_passages",
+    "batch": "batch3",
+    "title": "Sound Toll Passages",
+    "ncols": 6,
+    "nrows": 317,
+    "nonnull": 1212,
+    "yr_min": 1497,
+    "yr_max": 1857,
+    "columns": [
+      "baltic.total_passages",
+      "baltic.passages_from_dantzig",
+      "baltic.passages_from_konigsberg",
+      "baltic.passages_from_l\u00fcbeck",
+      "baltic.passages_from_stockholm",
+      "baltic.passages_from_amsterdam"
+    ],
+    "img": "previews/sound_toll_passages.png"
+  },
+  {
+    "name": "stock_returns",
+    "batch": "batch3",
+    "title": "Stock Returns",
+    "ncols": 1,
+    "nrows": 185,
+    "nonnull": 185,
+    "yr_min": 1602,
+    "yr_max": 2018,
+    "columns": [
+      "equity_return.pct"
+    ],
+    "img": "previews/stock_returns.png"
+  },
+  {
+    "name": "transport",
+    "batch": "batch3",
+    "title": "Transport",
+    "ncols": 4,
+    "nrows": 66,
+    "nonnull": 218,
+    "yr_min": -3000,
+    "yr_max": 2020,
+    "columns": [
+      "transport.max_speed",
+      "transport.london_edinburgh",
+      "transport.transatlantic",
+      "freight.rate_index"
+    ],
+    "img": "previews/transport.png"
+  },
+  {
+    "name": "uk_rainfall",
+    "batch": "batch3",
+    "title": "Uk Rainfall",
+    "ncols": 6,
+    "nrows": 261,
+    "nonnull": 1566,
+    "yr_min": 1766,
+    "yr_max": 2026,
+    "columns": [
+      "ewp_rainfall.mm",
+      "ewp_rainfall.mm",
+      "ewp_rainfall.mm",
+      "ewp_rainfall.mm",
+      "ewp_rainfall.mm",
+      "ewp_rainfall.mm"
+    ],
+    "img": "previews/uk_rainfall.png"
+  },
+  {
+    "name": "urbanization",
+    "batch": "batch3",
+    "title": "Urbanization",
+    "ncols": 2,
+    "nrows": 1051,
+    "nonnull": 2102,
+    "yr_min": 1500,
+    "yr_max": 2000,
+    "columns": [
+      "urbanization.pct",
+      "country_code.code"
+    ],
+    "img": "previews/urbanization.png"
+  },
+  {
+    "name": "book_production",
+    "batch": "batch4",
+    "title": "Book Production",
+    "ncols": 6,
+    "nrows": 36,
+    "nonnull": 104,
+    "yr_min": 500,
+    "yr_max": 2000,
+    "columns": [
+      "manuscripts_produced.000s",
+      "manuscripts_produced.000s",
+      "manuscripts_produced.000s",
+      "manuscripts_produced.000s",
+      "printed_titles.count",
+      "printed_titles.count"
+    ],
+    "img": "previews/book_production.png"
+  },
+  {
+    "name": "british_trade",
+    "batch": "batch4",
+    "title": "British Trade",
+    "ncols": 6,
+    "nrows": 585,
+    "nonnull": 1010,
+    "yr_min": 1280,
+    "yr_max": 1791,
+    "columns": [
+      "english_wool_exports.000s_sacks",
+      "english_cloth_exports.000s_shortcloths",
+      "english_export_volume.index",
+      "england_wales_imports.000s_gbp_official",
+      "england_wales_domestic_exports.000s_gbp_official",
+      "england_wales_reexports.000s_gbp_official"
+    ],
+    "img": "previews/british_trade.png"
+  },
+  {
+    "name": "cosmic_rays",
+    "batch": "batch4",
+    "title": "Cosmic Rays",
+    "ncols": 5,
+    "nrows": 562,
+    "nonnull": 1557,
+    "yr_min": -7439,
+    "yr_max": 1982,
+    "columns": [
+      "cosmic_ray_pc1.index",
+      "solar_modulation.MV",
+      "tsi_reconstruction.W_m2",
+      "be10_stack.ratio",
+      "tsi_be10.W_m2"
+    ],
+    "img": "previews/cosmic_rays.png"
+  },
+  {
+    "name": "dust_veil",
+    "batch": "batch4",
+    "title": "Dust Veil",
+    "ncols": 3,
+    "nrows": 1500,
+    "nonnull": 4500,
+    "yr_min": 501,
+    "yr_max": 2000,
+    "columns": [
+      "ivi2_nh_sulfate.Tg",
+      "ivi2_sh_sulfate.Tg",
+      "ivi2_global_sulfate.Tg"
+    ],
+    "img": "previews/dust_veil.png"
+  },
+  {
+    "name": "enclosures",
+    "batch": "batch4",
+    "title": "Enclosures",
+    "ncols": 4,
+    "nrows": 146,
+    "nonnull": 156,
+    "yr_min": 1604,
+    "yr_max": 1889,
+    "columns": [
+      "enclosure_acts.count",
+      "enclosure_acts.count",
+      "acres_enclosed.000s_acres",
+      "land_enclosed.pct_total"
+    ],
+    "img": "previews/enclosures.png"
+  },
+  {
+    "name": "enso",
+    "batch": "batch4",
+    "title": "Enso",
+    "ncols": 4,
+    "nrows": 857,
+    "nonnull": 3245,
+    "yr_min": 1150,
+    "yr_max": 2006,
+    "columns": [
+      "nino34_ersst.degC",
+      "nino34_hadsst.degC",
+      "nino34_kaplan.degC",
+      "nino34_treering.index"
+    ],
+    "img": "previews/enso.png"
+  },
+  {
+    "name": "monsoon",
+    "batch": "batch4",
+    "title": "Monsoon",
+    "ncols": 1,
+    "nrows": 893,
+    "nonnull": 893,
+    "yr_min": -6930,
+    "yr_max": 2000,
+    "columns": [
+      "dongge_monsoon_proxy.permil_d18O"
+    ],
+    "img": "previews/monsoon.png"
+  },
+  {
+    "name": "parliament",
+    "batch": "batch4",
+    "title": "Parliament",
+    "ncols": 4,
+    "nrows": 266,
+    "nonnull": 640,
+    "yr_min": 1235,
+    "yr_max": 1913,
+    "columns": [
+      "statutes_enacted.count",
+      "public_acts.count",
+      "private_acts.count",
+      "total_acts.count"
+    ],
+    "img": "previews/parliament.png"
+  },
+  {
+    "name": "press",
+    "batch": "batch4",
+    "title": "Press",
+    "ncols": 6,
+    "nrows": 46,
+    "nonnull": 220,
+    "yr_min": 1600,
+    "yr_max": 1910,
+    "columns": [
+      "english_newspapers.count",
+      "english_periodicals.count",
+      "english_press_titles.count",
+      "english_weekly_circulation.000s",
+      "france_newspapers.count",
+      "germany_newspapers.count"
+    ],
+    "img": "previews/press.png"
+  },
+  {
+    "name": "sediment",
+    "batch": "batch4",
+    "title": "Sediment",
+    "ncols": 2,
+    "nrows": 1229,
+    "nonnull": 2458,
+    "yr_min": -1106,
+    "yr_max": 1999,
+    "columns": [
+      "steel_lake_d18o.permil",
+      "steel_lake_d18o_smooth.permil"
+    ],
+    "img": "previews/sediment.png"
+  },
+  {
+    "name": "sovereign_spreads",
+    "batch": "batch4",
+    "title": "Sovereign Spreads",
+    "ncols": 6,
+    "nrows": 41,
+    "nonnull": 137,
+    "yr_min": 1700,
+    "yr_max": 1913,
+    "columns": [
+      "uk_consol.pct_yield",
+      "france_govt_bond.pct_yield",
+      "france_spread_vs_consol.pct",
+      "germany_govt_bond.pct_yield",
+      "germany_spread_vs_consol.pct",
+      "austria_govt_bond.pct_yield"
+    ],
+    "img": "previews/sovereign_spreads.png"
+  },
+  {
+    "name": "speleothem",
+    "batch": "batch4",
+    "title": "Speleothem",
+    "ncols": 1,
+    "nrows": 1629,
+    "nonnull": 1629,
+    "yr_min": -6930,
+    "yr_max": 2000,
+    "columns": [
+      "dongge_d18o.permil_vPDB"
+    ],
+    "img": "previews/speleothem.png"
+  },
+  {
+    "name": "tibetan_ice",
+    "batch": "batch4",
+    "title": "Tibetan Ice",
+    "ncols": 2,
+    "nrows": 199,
+    "nonnull": 297,
+    "yr_min": 5,
+    "yr_max": 1985,
+    "columns": [
+      "guliya_d18o.permil",
+      "dunde_d18o.permil"
+    ],
+    "img": "previews/tibetan_ice.png"
+  },
+  {
+    "name": "tsunamis",
+    "batch": "batch4",
+    "title": "Tsunamis",
+    "ncols": 6,
+    "nrows": 3092,
+    "nonnull": 12744,
+    "yr_min": -2000,
+    "yr_max": 2024,
+    "columns": [
+      "tsunami_id.id",
+      "latitude.degrees",
+      "longitude.degrees",
+      "eq_magnitude.Mw",
+      "max_water_height.meters",
+      "tsunami_intensity.index"
+    ],
+    "img": "previews/tsunamis.png"
+  },
+  {
+    "name": "universities",
+    "batch": "batch4",
+    "title": "Universities",
+    "ncols": 6,
+    "nrows": 74,
+    "nonnull": 211,
+    "yr_min": 1088,
+    "yr_max": 1900,
+    "columns": [
+      "universities.count",
+      "enrollment.000s_students",
+      "enrollment.000s_students",
+      "enrollment.000s_students",
+      "enrollment.000s_students",
+      "enrollment.000s_students"
+    ],
+    "img": "previews/universities.png"
+  },
+  {
+    "name": "wine_imports",
+    "batch": "batch4",
+    "title": "Wine Imports",
+    "ncols": 2,
+    "nrows": 89,
+    "nonnull": 98,
+    "yr_min": 1286,
+    "yr_max": 1703,
+    "columns": [
+      "english_wine_imports.tuns",
+      "bordeaux_wine_exports.tuns"
+    ],
+    "img": "previews/wine_imports.png"
+  },
+  {
+    "name": "amsterdam_commodities",
+    "batch": "batch5",
+    "title": "Amsterdam Commodities",
+    "ncols": 3,
+    "nrows": 415,
+    "nonnull": 552,
+    "yr_min": 1441,
+    "yr_max": 1900,
+    "columns": [
+      "amsterdam_wheat_price.grams_silver_per_liter",
+      "utrecht_beer_price.plakken_per_quart_x30",
+      "amsterdam_rye_price.grams_silver_per_liter"
+    ],
+    "img": "previews/amsterdam_commodities.png"
+  },
+  {
+    "name": "ancient_trade_proxies",
+    "batch": "batch5",
+    "title": "Ancient Trade Proxies",
+    "ncols": 6,
+    "nrows": 151,
+    "nonnull": 176,
+    "yr_min": -3000,
+    "yr_max": 1700,
+    "columns": [
+      "african_red_slip.distribution_index_100",
+      "largest_city_population.persons",
+      "lead_output.tonnes_per_year",
+      "lead_pollution.ppb",
+      "shipwrecks.count_per_century",
+      "shipwrecks.normalized_index_100"
+    ],
+    "img": "previews/ancient_trade_proxies.png"
+  },
+  {
+    "name": "annuities_tontines",
+    "batch": "batch5",
+    "title": "Annuities Tontines",
+    "ncols": 6,
+    "nrows": 112,
+    "nonnull": 222,
+    "yr_min": 1689,
+    "yr_max": 1800,
+    "columns": [
+      "france.rente_perpetuelle_yield_pct",
+      "france.life_annuity_rate_pct",
+      "france.tontine_initial_rate_pct",
+      "france.tontine_issue_size_mliv",
+      "england.life_annuity_rate_pct",
+      "england.consol_yield_pct"
+    ],
+    "img": "previews/annuities_tontines.png"
+  },
+  {
+    "name": "antwerp_bourse",
+    "batch": "batch5",
+    "title": "Antwerp Bourse",
+    "ncols": 4,
+    "nrows": 86,
+    "nonnull": 149,
+    "yr_min": 1500,
+    "yr_max": 1585,
+    "columns": [
+      "wheat.price_groats_per_viertel",
+      "pepper.price_groats_per_lb",
+      "interest.annuity_yield_pct",
+      "fx.antwerp_on_london_groats_per_gbp"
+    ],
+    "img": "previews/antwerp_bourse.png"
+  },
+  {
+    "name": "athenian_silver",
+    "batch": "batch5",
+    "title": "Athenian Silver",
+    "ncols": 2,
+    "nrows": 43,
+    "nonnull": 86,
+    "yr_min": -600,
+    "yr_max": -300,
+    "columns": [
+      "silver_output_tonnes_annual",
+      "mining_workforce_est"
+    ],
+    "img": "previews/athenian_silver.png"
+  },
+  {
+    "name": "aztec_prices",
+    "batch": "batch5",
+    "title": "Aztec Prices",
+    "ncols": 1,
+    "nrows": 37,
+    "nonnull": 37,
+    "yr_min": 1480,
+    "yr_max": 1560,
+    "columns": [
+      "aztec_prices.value"
+    ],
+    "img": "previews/aztec_prices.png"
+  },
+  {
+    "name": "babylonian_expanded",
+    "batch": "batch5",
+    "title": "Babylonian Expanded",
+    "ncols": 6,
+    "nrows": 210,
+    "nonnull": 762,
+    "yr_min": -384,
+    "yr_max": -60,
+    "columns": [
+      "barley.price",
+      "dates.price",
+      "mustard.price",
+      "cress.price",
+      "sesame.price",
+      "wool.price"
+    ],
+    "img": "previews/babylonian_expanded.png"
+  },
+  {
+    "name": "babylonian_interest",
+    "batch": "batch5",
+    "title": "Babylonian Interest",
+    "ncols": 2,
+    "nrows": 46,
+    "nonnull": 82,
+    "yr_min": -2399,
+    "yr_max": -99,
+    "columns": [
+      "interest_rate.silver",
+      "interest_rate.barley"
+    ],
+    "img": "previews/babylonian_interest.png"
+  },
+  {
+    "name": "babylonian_real_estate",
+    "batch": "batch5",
+    "title": "Babylonian Real Estate",
+    "ncols": 2,
+    "nrows": 45,
+    "nonnull": 90,
+    "yr_min": -1899,
+    "yr_max": -299,
+    "columns": [
+      "property.price",
+      "property.price"
+    ],
+    "img": "previews/babylonian_real_estate.png"
+  },
+  {
+    "name": "babylonian_wages",
+    "batch": "batch5",
+    "title": "Babylonian Wages",
+    "ncols": 3,
+    "nrows": 40,
+    "nonnull": 79,
+    "yr_min": -2099,
+    "yr_max": -92,
+    "columns": [
+      "wage.barley_litres_per_month",
+      "wage.silver_shekels_per_month",
+      "wage.silver_grams_per_month"
+    ],
+    "img": "previews/babylonian_wages.png"
+  },
+  {
+    "name": "banking_history",
+    "batch": "batch5",
+    "title": "Banking History",
+    "ncols": 5,
+    "nrows": 167,
+    "nonnull": 299,
+    "yr_min": 1784,
+    "yr_max": 2010,
+    "columns": [
+      "us.bank_failures",
+      "us.commercial_banks",
+      "uk.banking_crisis",
+      "uk.banks",
+      "global.systemic_banking_crises"
+    ],
+    "img": "previews/banking_history.png"
+  },
+  {
+    "name": "bills_of_exchange",
+    "batch": "batch5",
+    "title": "Bills Of Exchange",
+    "ncols": 4,
+    "nrows": 155,
+    "nonnull": 620,
+    "yr_min": 1590,
+    "yr_max": 1900,
+    "columns": [
+      "bill_rate",
+      "usance_days",
+      "par_rate",
+      "implied_annual_interest_pct"
+    ],
+    "img": "previews/bills_of_exchange.png"
+  },
+  {
+    "name": "boe_stock",
+    "batch": "batch5",
+    "title": "Boe Stock",
+    "ncols": 6,
+    "nrows": 2289,
+    "nonnull": 5706,
+    "yr_min": 1709,
+    "yr_max": 1899,
+    "columns": [
+      "uk.share_index_neal_boe_eic_ssc",
+      "uk.share_index_acheson_mktcap",
+      "uk.share_index_acheson_paidup",
+      "uk.share_index_acheson_unweighted",
+      "uk.share_index_smith_horne",
+      "uk.share_index_spliced"
+    ],
+    "img": "previews/boe_stock.png"
+  },
+  {
+    "name": "british_govt_finance",
+    "batch": "batch5",
+    "title": "British Govt Finance",
+    "ncols": 6,
+    "nrows": 645,
+    "nonnull": 1253,
+    "yr_min": 1263,
+    "yr_max": 1900,
+    "columns": [
+      "england.tax_revenue",
+      "england.direct_taxes",
+      "england.indirect_taxes",
+      "england.crown_revenue",
+      "england.tax_revenue_index",
+      "uk.total_expenditure"
+    ],
+    "img": "previews/british_govt_finance.png"
+  },
+  {
+    "name": "byzantine_prices",
+    "batch": "batch5",
+    "title": "Byzantine Prices",
+    "ncols": 6,
+    "nrows": 87,
+    "nonnull": 84,
+    "yr_min": 324,
+    "yr_max": 1453,
+    "columns": [
+      "barley.hyperpyra_per_modios",
+      "barley.hyperpyra_per_modios",
+      "barley.solidi_per_modios",
+      "bread.hyperpyra_per_litra",
+      "land.solidi_per_stremma",
+      "nomisma.gold_carats"
+    ],
+    "img": "previews/byzantine_prices.png"
+  },
+  {
+    "name": "central_bank_rates",
+    "batch": "batch5",
+    "title": "Central Bank Rates",
+    "ncols": 5,
+    "nrows": 207,
+    "nonnull": 456,
+    "yr_min": 1694,
+    "yr_max": 1900,
+    "columns": [
+      "uk.boe_bank_rate_pct",
+      "france.bdf_discount_rate_pct",
+      "germany.reichsbank_discount_rate_pct",
+      "sweden.riksbank_discount_rate_pct",
+      "netherlands.dnb_discount_rate_pct"
+    ],
+    "img": "previews/central_bank_rates.png"
+  },
+  {
+    "name": "champagne_fairs",
+    "batch": "batch5",
+    "title": "Champagne Fairs",
+    "ncols": 1,
+    "nrows": 46,
+    "nonnull": 46,
+    "yr_min": 1180,
+    "yr_max": 1300,
+    "columns": [
+      "champagne_fairs.value"
+    ],
+    "img": "previews/champagne_fairs.png"
+  },
+  {
+    "name": "chinese_prices_prequing",
+    "batch": "batch5",
+    "title": "Chinese Prices Prequing",
+    "ncols": 6,
+    "nrows": 162,
+    "nonnull": 121,
+    "yr_min": -200,
+    "yr_max": 1644,
+    "columns": [
+      "gdp_per_capita.1990_intl_dollars",
+      "rice.cash_per_shi",
+      "rice.cash_per_shi",
+      "rice.grams_silver_per_liter",
+      "rice.grams_silver_per_liter",
+      "rice.silver_tael_per_shi"
+    ],
+    "img": "previews/chinese_prices_prequing.png"
+  },
+  {
+    "name": "chinese_silver",
+    "batch": "batch5",
+    "title": "Chinese Silver",
+    "ncols": 6,
+    "nrows": 59,
+    "nonnull": 259,
+    "yr_min": 1550,
+    "yr_max": 1840,
+    "columns": [
+      "china.silver_imports_japan",
+      "china.silver_imports_manila",
+      "china.silver_imports_european",
+      "china.silver_imports_overland",
+      "china.silver_imports_total",
+      "china.silver_gold_ratio"
+    ],
+    "img": "previews/chinese_silver.png"
+  },
+  {
+    "name": "chinese_wages",
+    "batch": "batch5",
+    "title": "Chinese Wages",
+    "ncols": 6,
+    "nrows": 190,
+    "nonnull": 484,
+    "yr_min": 1738,
+    "yr_max": 1927,
+    "columns": [
+      "wage.daily",
+      "wage.daily",
+      "wage.daily",
+      "wage.daily",
+      "price.grams_silver_per_kg",
+      "price.grams_silver_per_kg"
+    ],
+    "img": "previews/chinese_wages.png"
+  },
+  {
+    "name": "colonial_commodities",
+    "batch": "batch5",
+    "title": "Colonial Commodities",
+    "ncols": 6,
+    "nrows": 609,
+    "nonnull": 1444,
+    "yr_min": 1265,
+    "yr_max": 1902,
+    "columns": [
+      "england.coffee_price",
+      "england.coffee_price",
+      "england.tea_price",
+      "england.tea_price",
+      "england.sugar_price",
+      "england.sugar_price"
+    ],
+    "img": "previews/colonial_commodities.png"
+  },
+  {
+    "name": "commodity_indices",
+    "batch": "batch5",
+    "title": "Commodity Indices",
+    "ncols": 3,
+    "nrows": 161,
+    "nonnull": 356,
+    "yr_min": 1850,
+    "yr_max": 2010,
+    "columns": [
+      "commodity.real_price_index",
+      "commodity.real_price_index",
+      "commodity.real_price_index"
+    ],
+    "img": "previews/commodity_indices.png"
+  },
+  {
+    "name": "consols",
+    "batch": "batch5",
+    "title": "Consols",
+    "ncols": 2,
+    "nrows": 1757,
+    "nonnull": 3514,
+    "yr_min": 1753,
+    "yr_max": 1899,
+    "columns": [
+      "uk.consol_yield_pct",
+      "uk.consol_price_gbp"
+    ],
+    "img": "previews/consols.png"
+  },
+  {
+    "name": "cotton_prices",
+    "batch": "batch5",
+    "title": "Cotton Prices",
+    "ncols": 4,
+    "nrows": 76,
+    "nonnull": 197,
+    "yr_min": 1700,
+    "yr_max": 1914,
+    "columns": [
+      "cotton_price_american.pence_per_lb",
+      "cotton_price_egyptian.pence_per_lb",
+      "uk_raw_cotton_imports.million_lbs",
+      "egypt_cotton_exports.000_cantars"
+    ],
+    "img": "previews/cotton_prices.png"
+  },
+  {
+    "name": "dutch_finances",
+    "batch": "batch5",
+    "title": "Dutch Finances",
+    "ncols": 6,
+    "nrows": 55,
+    "nonnull": 242,
+    "yr_min": 1574,
+    "yr_max": 1795,
+    "columns": [
+      "holland.revenue",
+      "holland.expenditure",
+      "holland.debt_service",
+      "holland.military_spending",
+      "republic.total_revenue",
+      "republic.total_debt"
+    ],
+    "img": "previews/dutch_finances.png"
+  },
+  {
+    "name": "early_bonds",
+    "batch": "batch5",
+    "title": "Early Bonds",
+    "ncols": 6,
+    "nrows": 84,
+    "nonnull": 258,
+    "yr_min": 1285,
+    "yr_max": 1600,
+    "columns": [
+      "venice_prestiti.pct_of_par",
+      "venice_prestiti.pct_implied_yield",
+      "florence_monte_comune.pct_of_par",
+      "florence_monte_comune.pct_nominal_coupon",
+      "genoa_compere_san_giorgio.pct_of_par",
+      "genoa_compere_san_giorgio.pct_nominal_coupon"
+    ],
+    "img": "previews/early_bonds.png"
+  },
+  {
+    "name": "egyptian_prices",
+    "batch": "batch5",
+    "title": "Egyptian Prices",
+    "ncols": 2,
+    "nrows": 50,
+    "nonnull": 88,
+    "yr_min": -1499,
+    "yr_max": -199,
+    "columns": [
+      "value.amount",
+      "value.silver_equiv_grams"
+    ],
+    "img": "previews/egyptian_prices.png"
+  },
+  {
+    "name": "english_commodities",
+    "batch": "batch5",
+    "title": "English Commodities",
+    "ncols": 6,
+    "nrows": 670,
+    "nonnull": 2065,
+    "yr_min": 1209,
+    "yr_max": 1955,
+    "columns": [
+      "england_april.shillings",
+      "england_august.shillings",
+      "england_building_craftsmen_d/day.various",
+      "england_building_laborers_d/day.various",
+      "england_coal_miners_d/day.various",
+      "england_cost_of_living_(1860s=100).various"
+    ],
+    "img": "previews/english_commodities.png"
+  },
+  {
+    "name": "european_debasement",
+    "batch": "batch5",
+    "title": "European Debasement",
+    "ncols": 5,
+    "nrows": 119,
+    "nonnull": 158,
+    "yr_min": 775,
+    "yr_max": 1844,
+    "columns": [
+      "england.penny",
+      "france.livre_tournois",
+      "netherlands.groot",
+      "spain.maravedi",
+      "ottoman.akce"
+    ],
+    "img": "previews/european_debasement.png"
+  },
+  {
+    "name": "freight_indices",
+    "batch": "batch5",
+    "title": "Freight Indices",
+    "ncols": 3,
+    "nrows": 211,
+    "nonnull": 273,
+    "yr_min": 1600,
+    "yr_max": 1936,
+    "columns": [
+      "freight.tramp_rate_index",
+      "freight.world_rate_index",
+      "freight.atlantic_rate_index"
+    ],
+    "img": "previews/freight_indices.png"
+  },
+  {
+    "name": "freight_rates",
+    "batch": "batch5",
+    "title": "Freight Rates",
+    "ncols": 6,
+    "nrows": 412,
+    "nonnull": 470,
+    "yr_min": 1513,
+    "yr_max": 1900,
+    "columns": [
+      "dutch_freight_gdansk.guilders_per_last",
+      "dutch_freight_bordeaux.guilders_per_last",
+      "dutch_freight_archangel.guilders_per_last",
+      "dutch_freight_via_archangel_to_livorno.guilders_per_last",
+      "ocean_freight_index.index_1869eq100",
+      "us_export_freight_index.index_1830eq100"
+    ],
+    "img": "previews/freight_rates.png"
+  },
+  {
+    "name": "fur_trade",
+    "batch": "batch5",
+    "title": "Fur Trade",
+    "ncols": 4,
+    "nrows": 201,
+    "nonnull": 278,
+    "yr_min": 1670,
+    "yr_max": 1870,
+    "columns": [
+      "beaver_london_auction.shillings_per_lb",
+      "hbc_fur_returns.thousand_made_beaver",
+      "hbc_markup_ratio.ratio",
+      "marten_london.shillings_per_pelt"
+    ],
+    "img": "previews/fur_trade.png"
+  },
+  {
+    "name": "fx_rates_comprehensive",
+    "batch": "batch5",
+    "title": "Fx Rates Comprehensive",
+    "ncols": 6,
+    "nrows": 162,
+    "nonnull": 290,
+    "yr_min": 1590,
+    "yr_max": 1914,
+    "columns": [
+      "gbp_guilder.guilders_per_gbp",
+      "gbp_livre.livres_per_gbp",
+      "gbp_thaler.thalers_per_gbp",
+      "gbp_dollar.dollars_per_gbp",
+      "gbp_franc.francs_per_gbp",
+      "gbp_mark.marks_per_gbp"
+    ],
+    "img": "previews/fx_rates_comprehensive.png"
+  },
+  {
+    "name": "gpih_americas",
+    "batch": "batch5",
+    "title": "Gpih Americas",
+    "ncols": 6,
+    "nrows": 593,
+    "nonnull": 742,
+    "yr_min": 1676,
+    "yr_max": 1816,
+    "columns": [
+      "bolivia.starts_in",
+      "bolivia.unnamed__3",
+      "bolivia.unnamed__4",
+      "bolivia.unnamed__5",
+      "bolivia.unnamed__7",
+      "bolivia.unnamed__8"
+    ],
+    "img": "previews/gpih_americas.png"
+  },
+  {
+    "name": "gpih_asia",
+    "batch": "batch5",
+    "title": "Gpih Asia",
+    "ncols": 6,
+    "nrows": 805,
+    "nonnull": 132,
+    "yr_min": 1900,
+    "yr_max": 1924,
+    "columns": [
+      "beijing.dollars",
+      "beijing.dollars_1",
+      "beijing.dollars_2",
+      "beijing.dollars_3",
+      "beijing.dollars_4",
+      "beijing.dollars_5"
+    ],
+    "img": "previews/gpih_asia.png"
+  },
+  {
+    "name": "gpih_europe",
+    "batch": "batch5",
+    "title": "Gpih Europe",
+    "ncols": 6,
+    "nrows": 863,
+    "nonnull": 3221,
+    "yr_min": 1264,
+    "yr_max": 1913,
+    "columns": [
+      "unnamed:_1.craftsmen_wage",
+      "unnamed:_2.craftsmen_wage",
+      "unnamed:_3.craftsmen_wage",
+      "unnamed:_4.craftsmen_wage",
+      "unnamed:_5.craftsmen_wage",
+      "unnamed:_6.craftsmen_wage"
+    ],
+    "img": "previews/gpih_europe.png"
+  },
+  {
+    "name": "gpih_other",
+    "batch": "batch5",
+    "title": "Gpih Other",
+    "ncols": 6,
+    "nrows": 743,
+    "nonnull": 390,
+    "yr_min": 1850,
+    "yr_max": 1914,
+    "columns": [
+      "australia.for_this_year",
+      "australia.quotations",
+      "australia.place",
+      "australia.price_type",
+      "australia.units",
+      "australia.commodity"
+    ],
+    "img": "previews/gpih_other.png"
+  },
+  {
+    "name": "grain_volatility",
+    "batch": "batch5",
+    "title": "Grain Volatility",
+    "ncols": 6,
+    "nrows": 572,
+    "nonnull": 2208,
+    "yr_min": 1321,
+    "yr_max": 1900,
+    "columns": [
+      "wheat.cv_25yr",
+      "wheat.cv_25yr",
+      "wheat.cv_25yr",
+      "wheat.cv_25yr",
+      "wheat.cross_city_dispersion",
+      "wheat.cross_city_mean_grams_silver"
+    ],
+    "img": "previews/grain_volatility.png"
+  },
+  {
+    "name": "greek_grain",
+    "batch": "batch5",
+    "title": "Greek Grain",
+    "ncols": 3,
+    "nrows": 64,
+    "nonnull": 192,
+    "yr_min": -500,
+    "yr_max": -100,
+    "columns": [
+      "price_drachmas_per_medimnos",
+      "medimnos_kg",
+      "drachma_silver_g"
+    ],
+    "img": "previews/greek_grain.png"
+  },
+  {
+    "name": "greek_prices",
+    "batch": "batch5",
+    "title": "Greek Prices",
+    "ncols": 6,
+    "nrows": 22,
+    "nonnull": 37,
+    "yr_min": -500,
+    "yr_max": -100,
+    "columns": [
+      "wage.drachmas_per_day",
+      "wage.drachmas_per_day",
+      "wage.drachmas_per_day",
+      "wage.drachmas_per_day",
+      "wage.drachmas_per_day",
+      "price.drachmas_per_medimnos"
+    ],
+    "img": "previews/greek_prices.png"
+  },
+  {
+    "name": "han_dynasty_prices",
+    "batch": "batch5",
+    "title": "Han Dynasty Prices",
+    "ncols": 1,
+    "nrows": 46,
+    "nonnull": 46,
+    "yr_min": -220,
+    "yr_max": 850,
+    "columns": [
+      "han_dynasty.value"
+    ],
+    "img": "previews/han_dynasty_prices.png"
+  },
+  {
+    "name": "hanseatic_trade",
+    "batch": "batch5",
+    "title": "Hanseatic Trade",
+    "ncols": 6,
+    "nrows": 38,
+    "nonnull": 196,
+    "yr_min": 1250,
+    "yr_max": 1600,
+    "columns": [
+      "lubeck.trade_index",
+      "hansa.member_cities",
+      "hansa.salt_trade",
+      "hansa.herring_trade",
+      "hansa.grain_exports",
+      "oresund.ship_passages"
+    ],
+    "img": "previews/hanseatic_trade.png"
+  },
+  {
+    "name": "harvest_quality",
+    "batch": "batch5",
+    "title": "Harvest Quality",
+    "ncols": 4,
+    "nrows": 634,
+    "nonnull": 1457,
+    "yr_min": 1370,
+    "yr_max": 2003,
+    "columns": [
+      "harvest.grain_quality_swiss",
+      "harvest.wine_quality_swiss",
+      "harvest.grain_quality_german",
+      "harvest.wine_grape_date_burgundy"
+    ],
+    "img": "previews/harvest_quality.png"
+  },
+  {
+    "name": "housing_prices",
+    "batch": "batch5",
+    "title": "Housing Prices",
+    "ncols": 6,
+    "nrows": 158,
+    "nonnull": 183,
+    "yr_min": 1628,
+    "yr_max": 1900,
+    "columns": [
+      "amsterdam_herengracht.index_1628_eq_100",
+      "norway_real_house_price.index_1990_eq_100",
+      "uk_real_house_price.index_1990_eq_100",
+      "france_real_house_price.index_1990_eq_100",
+      "germany_real_house_price.index_1990_eq_100",
+      "usa_real_house_price.index_1990_eq_100"
+    ],
+    "img": "previews/housing_prices.png"
+  },
+  {
+    "name": "indian_ancient_prices",
+    "batch": "batch5",
+    "title": "Indian Ancient Prices",
+    "ncols": 6,
+    "nrows": 70,
+    "nonnull": 48,
+    "yr_min": -300,
+    "yr_max": 1718,
+    "columns": [
+      "barley.jitals_per_man",
+      "gdp_per_capita.1990_intl_dollars",
+      "ghee.grams_silver_per_kg",
+      "gold_silver_ratio.arthashastra",
+      "gram.grams_silver_per_kg",
+      "rice.grams_silver_per_kg"
+    ],
+    "img": "previews/indian_ancient_prices.png"
+  },
+  {
+    "name": "indian_prices",
+    "batch": "batch5",
+    "title": "Indian Prices",
+    "ncols": 6,
+    "nrows": 338,
+    "nonnull": 528,
+    "yr_min": 1595,
+    "yr_max": 1928,
+    "columns": [
+      "wage.daily",
+      "wage.monthly",
+      "price.grams_silver_per_kg",
+      "price.grams_silver_per_kg",
+      "price.grams_silver_per_kg",
+      "price.seers_per_rupee"
+    ],
+    "img": "previews/indian_prices.png"
+  },
+  {
+    "name": "interest_rates_comprehensive",
+    "batch": "batch5",
+    "title": "Interest Rates Comprehensive",
+    "ncols": 6,
+    "nrows": 145,
+    "nonnull": 227,
+    "yr_min": 1200,
+    "yr_max": 1900,
+    "columns": [
+      "england_private.pct_max_legal_rate",
+      "venice_prestiti.pct_nominal_coupon",
+      "florence_monte.pct_nominal_coupon",
+      "genoa_compere.pct_nominal_coupon",
+      "germany_govt.pct_yield",
+      "spain_juros.pct_yield"
+    ],
+    "img": "previews/interest_rates_comprehensive.png"
+  },
+  {
+    "name": "islamic_prices",
+    "batch": "batch5",
+    "title": "Islamic Prices",
+    "ncols": 6,
+    "nrows": 58,
+    "nonnull": 71,
+    "yr_min": 661,
+    "yr_max": 1258,
+    "columns": [
+      "barley.dirhams_per_irdabb",
+      "barley.dirhams_per_wayba",
+      "barley.dirhams_per_wayba",
+      "bread.dirhams_per_ratl",
+      "bread.dirhams_per_ratl",
+      "dinar.pure_gold_grams"
+    ],
+    "img": "previews/islamic_prices.png"
+  },
+  {
+    "name": "italian_banking",
+    "batch": "batch5",
+    "title": "Italian Banking",
+    "ncols": 6,
+    "nrows": 193,
+    "nonnull": 460,
+    "yr_min": 1285,
+    "yr_max": 1520,
+    "columns": [
+      "florence_wheat.g_silver_per_liter",
+      "north_italy_wheat_10yr.g_silver_per_liter",
+      "florence_oil.soldi_per_staio",
+      "florence_unskilled_wage.g_silver_per_day",
+      "florence_skilled_wage.g_silver_per_day",
+      "florence_deposit_rate.pct_per_annum"
+    ],
+    "img": "previews/italian_banking.png"
+  },
+  {
+    "name": "japanese_prices",
+    "batch": "batch5",
+    "title": "Japanese Prices",
+    "ncols": 6,
+    "nrows": 341,
+    "nonnull": 1449,
+    "yr_min": 1600,
+    "yr_max": 1938,
+    "columns": [
+      "wage.annual",
+      "wage.annual",
+      "wage.daily",
+      "basket.grams_silver",
+      "basket.grams_silver",
+      "price.grams_silver_per_kg"
+    ],
+    "img": "previews/japanese_prices.png"
+  },
+  {
+    "name": "jst_macrohistory",
+    "batch": "batch5",
+    "title": "Jst Macrohistory",
+    "ncols": 6,
+    "nrows": 540,
+    "nonnull": 2162,
+    "yr_min": 1870,
+    "yr_max": 1899,
+    "columns": [
+      "equity.total_return",
+      "equity.capital_gain",
+      "equity.dividend_price_ratio",
+      "equity.dividend_return",
+      "bond.total_return",
+      "bond.yield_rate"
+    ],
+    "img": "previews/jst_macrohistory.png"
+  },
+  {
+    "name": "land_rents",
+    "batch": "batch5",
+    "title": "Land Rents",
+    "ncols": 3,
+    "nrows": 144,
+    "nonnull": 202,
+    "yr_min": 1200,
+    "yr_max": 1914,
+    "columns": [
+      "england_land_price.gbp_per_acre",
+      "england_farmland_rent_index.index_1860_69_eq_100",
+      "england_rent_per_acre.shillings_per_acre"
+    ],
+    "img": "previews/land_rents.png"
+  },
+  {
+    "name": "lottery_prices",
+    "batch": "batch5",
+    "title": "Lottery Prices",
+    "ncols": 5,
+    "nrows": 44,
+    "nonnull": 220,
+    "yr_min": 1596,
+    "yr_max": 1826,
+    "columns": [
+      "ticket_price",
+      "total_tickets",
+      "total_prize_fund",
+      "top_prize",
+      "expected_value_pct"
+    ],
+    "img": "previews/lottery_prices.png"
+  },
+  {
+    "name": "manorial_accounts",
+    "batch": "batch5",
+    "title": "Manorial Accounts",
+    "ncols": 1,
+    "nrows": 668,
+    "nonnull": 668,
+    "yr_min": 1042,
+    "yr_max": 1400,
+    "columns": [
+      "price_pence"
+    ],
+    "img": "previews/manorial_accounts.png"
+  },
+  {
+    "name": "marine_insurance",
+    "batch": "batch5",
+    "title": "Marine Insurance",
+    "ncols": 6,
+    "nrows": 141,
+    "nonnull": 374,
+    "yr_min": 1590,
+    "yr_max": 1900,
+    "columns": [
+      "london_continent_premium.pct",
+      "london_general_premium.pct",
+      "london_jamaica_premium.pct",
+      "london_ny_premium.pct",
+      "marseille_levant_premium.pct",
+      "venice_levant_premium.pct"
+    ],
+    "img": "previews/marine_insurance.png"
+  },
+  {
+    "name": "mediterranean_prices",
+    "batch": "batch5",
+    "title": "Mediterranean Prices",
+    "ncols": 6,
+    "nrows": 590,
+    "nonnull": 1055,
+    "yr_min": 1469,
+    "yr_max": 1914,
+    "columns": [
+      "ancona_wheat_price.grams_silver_per_liter",
+      "andalusia_wheat_price.grams_silver_per_liter",
+      "istanbul_bread_price.akches",
+      "istanbul_butter_price.akches",
+      "istanbul_cpi_akches.akches",
+      "istanbul_cpi_silver.akches"
+    ],
+    "img": "previews/mediterranean_prices.png"
+  },
+  {
+    "name": "mint_output",
+    "batch": "batch5",
+    "title": "Mint Output",
+    "ncols": 6,
+    "nrows": 160,
+    "nonnull": 120,
+    "yr_min": 621,
+    "yr_max": 1700,
+    "columns": [
+      "akce.silver_content_grams",
+      "cash_coin.weight_grams",
+      "mint_output.akce",
+      "mint_output.ducats_per_year",
+      "mint_output.florins_per_year",
+      "mint_output.kg_copper"
+    ],
+    "img": "previews/mint_output.png"
+  },
+  {
+    "name": "nitrate_guano",
+    "batch": "batch5",
+    "title": "Nitrate Guano",
+    "ncols": 5,
+    "nrows": 85,
+    "nonnull": 265,
+    "yr_min": 1830,
+    "yr_max": 1914,
+    "columns": [
+      "guano_london.gbp_per_ton",
+      "guano_peru_exports.thousand_tons",
+      "nitrate_london.gbp_per_ton",
+      "nitrate_chile_exports.thousand_tons",
+      "nitrate_chile_revenue.million_pesos"
+    ],
+    "img": "previews/nitrate_guano.png"
+  },
+  {
+    "name": "opium_prices",
+    "batch": "batch5",
+    "title": "Opium Prices",
+    "ncols": 5,
+    "nrows": 119,
+    "nonnull": 320,
+    "yr_min": 1767,
+    "yr_max": 1900,
+    "columns": [
+      "bengal.opium_price",
+      "bengal.opium_price",
+      "bengal.opium_production",
+      "bengal.opium_exports_china",
+      "india.opium_revenue"
+    ],
+    "img": "previews/opium_prices.png"
+  },
+  {
+    "name": "ottoman_debt",
+    "batch": "batch5",
+    "title": "Ottoman Debt",
+    "ncols": 5,
+    "nrows": 42,
+    "nonnull": 198,
+    "yr_min": 1854,
+    "yr_max": 1914,
+    "columns": [
+      "ottoman_external_debt.million_lira",
+      "ottoman_debt_service.million_lira",
+      "ottoman_state_revenue.million_lira",
+      "ottoman_debt_service_ratio.pct_revenue",
+      "ottoman_bond_price.pct_par"
+    ],
+    "img": "previews/ottoman_debt.png"
+  },
+  {
+    "name": "ottoman_prices",
+    "batch": "batch5",
+    "title": "Ottoman Prices",
+    "ncols": 6,
+    "nrows": 361,
+    "nonnull": 831,
+    "yr_min": 1469,
+    "yr_max": 1914,
+    "columns": [
+      "wage.daily",
+      "wage.daily",
+      "price.grams_silver_per_kg",
+      "price.grams_silver_per_kg",
+      "price.grams_silver_per_kg",
+      "price.grams_silver_per_kg"
+    ],
+    "img": "previews/ottoman_prices.png"
+  },
+  {
+    "name": "paris_bourse",
+    "batch": "batch5",
+    "title": "Paris Bourse",
+    "ncols": 6,
+    "nrows": 100,
+    "nonnull": 220,
+    "yr_min": 1800,
+    "yr_max": 1899,
+    "columns": [
+      "france.rente_5pct_price_francs",
+      "france.rente_3pct_price_francs",
+      "france.equity_total_return",
+      "france.equity_capital_gain",
+      "france.bond_total_return",
+      "france.bond_rate_pct"
+    ],
+    "img": "previews/paris_bourse.png"
+  },
+  {
+    "name": "paris_bread",
+    "batch": "batch5",
+    "title": "Paris Bread",
+    "ncols": 3,
+    "nrows": 234,
+    "nonnull": 273,
+    "yr_min": 1400,
+    "yr_max": 1900,
+    "columns": [
+      "paris.wheat_livres_tournois_per_setier",
+      "paris.bread_sous_per_4lb_loaf",
+      "paris.bread_centimes_per_kg"
+    ],
+    "img": "previews/paris_bread.png"
+  },
+  {
+    "name": "periplus_trade",
+    "batch": "batch5",
+    "title": "Periplus Trade",
+    "ncols": 1,
+    "nrows": 36,
+    "nonnull": 36,
+    "yr_min": 50,
+    "yr_max": 301,
+    "columns": [
+      "periplus_trade.value"
+    ],
+    "img": "previews/periplus_trade.png"
+  },
+  {
+    "name": "phoenician_trade",
+    "batch": "batch5",
+    "title": "Phoenician Trade",
+    "ncols": 1,
+    "nrows": 55,
+    "nonnull": 52,
+    "yr_min": -900,
+    "yr_max": -146,
+    "columns": [
+      "quantity"
+    ],
+    "img": "previews/phoenician_trade.png"
+  },
+  {
+    "name": "portuguese_trade",
+    "batch": "batch5",
+    "title": "Portuguese Trade",
+    "ncols": 6,
+    "nrows": 131,
+    "nonnull": 494,
+    "yr_min": 1750,
+    "yr_max": 1855,
+    "columns": [
+      "lisbon_wheat.g_silver_per_liter",
+      "lisbon_rice.g_silver_per_liter",
+      "lisbon_olive_oil.g_silver_per_liter",
+      "porto_wheat.g_silver_per_liter",
+      "porto_olive_oil.g_silver_per_liter",
+      "braganca_wheat.g_silver_per_liter"
+    ],
+    "img": "previews/portuguese_trade.png"
+  },
+  {
+    "name": "precious_metals",
+    "batch": "batch5",
+    "title": "Precious Metals",
+    "ncols": 6,
+    "nrows": 644,
+    "nonnull": 836,
+    "yr_min": 1257,
+    "yr_max": 1900,
+    "columns": [
+      "gold_british_official.GBP_per_oz",
+      "gold_london_market.GBP_per_oz",
+      "gold_ny_market.USD_per_oz",
+      "gold_silver_ratio.oz_silver_per_oz_gold",
+      "gold_us_official.USD_per_oz",
+      "mexico_silver_production.tonnes_per_year"
+    ],
+    "img": "previews/precious_metals.png"
+  },
+  {
+    "name": "railroads",
+    "batch": "batch5",
+    "title": "Railroads",
+    "ncols": 6,
+    "nrows": 113,
+    "nonnull": 196,
+    "yr_min": 1825,
+    "yr_max": 1913,
+    "columns": [
+      "uk.railway_share_price",
+      "us.railroad_mileage",
+      "uk.railroad_mileage",
+      "germany.railroad_mileage",
+      "france.railroad_mileage",
+      "india.railroad_mileage"
+    ],
+    "img": "previews/railroads.png"
+  },
+  {
+    "name": "real_exchange_rates",
+    "batch": "batch5",
+    "title": "Real Exchange Rates",
+    "ncols": 6,
+    "nrows": 142,
+    "nonnull": 288,
+    "yr_min": 1500,
+    "yr_max": 1900,
+    "columns": [
+      "usd_gbp.nominal_rate",
+      "usd_gbp.real_exchange_rate_1880eq100",
+      "ffr_gbp.real_exchange_rate_1880eq100",
+      "nlg_gbp.real_exchange_rate_1700eq100",
+      "amsterdam_london.silver_wage_ratio_london100",
+      "paris_london.silver_wage_ratio_london100"
+    ],
+    "img": "previews/real_exchange_rates.png"
+  },
+  {
+    "name": "roman_hoards",
+    "batch": "batch5",
+    "title": "Roman Hoards",
+    "ncols": 3,
+    "nrows": 69,
+    "nonnull": 132,
+    "yr_min": -211,
+    "yr_max": 408,
+    "columns": [
+      "closing_year",
+      "total_coins",
+      "denarii_pct"
+    ],
+    "img": "previews/roman_hoards.png"
+  },
+  {
+    "name": "roman_interest",
+    "batch": "batch5",
+    "title": "Roman Interest",
+    "ncols": 2,
+    "nrows": 61,
+    "nonnull": 112,
+    "yr_min": -500,
+    "yr_max": 400,
+    "columns": [
+      "interest_rate_pct_annual",
+      "legal_maximum_pct"
+    ],
+    "img": "previews/roman_interest.png"
+  },
+  {
+    "name": "roman_prices",
+    "batch": "batch5",
+    "title": "Roman Prices",
+    "ncols": 2,
+    "nrows": 13,
+    "nonnull": 14,
+    "yr_min": 1,
+    "yr_max": 275,
+    "columns": [
+      "wage.sestertii_per_day",
+      "price.sestertii_per_modius"
+    ],
+    "img": "previews/roman_prices.png"
+  },
+  {
+    "name": "roman_wages",
+    "batch": "batch5",
+    "title": "Roman Wages",
+    "ncols": 1,
+    "nrows": 61,
+    "nonnull": 61,
+    "yr_min": -200,
+    "yr_max": 301,
+    "columns": [
+      "wage"
+    ],
+    "img": "previews/roman_wages.png"
+  },
+  {
+    "name": "roman_wheat",
+    "batch": "batch5",
+    "title": "Roman Wheat",
+    "ncols": 1,
+    "nrows": 76,
+    "nonnull": 76,
+    "yr_min": -300,
+    "yr_max": 395,
+    "columns": [
+      "price"
+    ],
+    "img": "previews/roman_wheat.png"
+  },
+  {
+    "name": "russian_grain",
+    "batch": "batch5",
+    "title": "Russian Grain",
+    "ncols": 4,
+    "nrows": 157,
+    "nonnull": 307,
+    "yr_min": 1700,
+    "yr_max": 1914,
+    "columns": [
+      "moscow_wheat.g_silver_per_kg",
+      "stpetersburg_wheat.g_silver_per_kg",
+      "ruble_silver_content.grams",
+      "grain_exports.million_poods"
+    ],
+    "img": "previews/russian_grain.png"
+  },
+  {
+    "name": "silk_prices",
+    "batch": "batch5",
+    "title": "Silk Prices",
+    "ncols": 5,
+    "nrows": 297,
+    "nonnull": 696,
+    "yr_min": 1285,
+    "yr_max": 1900,
+    "columns": [
+      "england_silk_thread.pence_per_kg",
+      "england_silk_thread.g_silver_per_kg",
+      "voc_silk.guilders_per_lb",
+      "raw_silk_london.shillings_per_lb",
+      "silk_price_index.index_1900eq100"
+    ],
+    "img": "previews/silk_prices.png"
+  },
+  {
+    "name": "silk_road",
+    "batch": "batch5",
+    "title": "Silk Road",
+    "ncols": 1,
+    "nrows": 31,
+    "nonnull": 31,
+    "yr_min": 50,
+    "yr_max": 1340,
+    "columns": [
+      "silk_road.value"
+    ],
+    "img": "previews/silk_road.png"
+  },
+  {
+    "name": "slave_prices",
+    "batch": "batch5",
+    "title": "Slave Prices",
+    "ncols": 2,
+    "nrows": 236,
+    "nonnull": 394,
+    "yr_min": -2350,
+    "yr_max": 1880,
+    "columns": [
+      "price",
+      "price_grams_silver"
+    ],
+    "img": "previews/slave_prices.png"
+  },
+  {
+    "name": "south_sea",
+    "batch": "batch5",
+    "title": "South Sea",
+    "ncols": 4,
+    "nrows": 200,
+    "nonnull": 564,
+    "yr_min": 1700,
+    "yr_max": 1899,
+    "columns": [
+      "uk.share_index_spliced",
+      "uk.share_index_monthly_based",
+      "uk.neal_6company_index",
+      "uk.acheson_mktcap_index"
+    ],
+    "img": "previews/south_sea.png"
+  },
+  {
+    "name": "sovereign_yields",
+    "batch": "batch5",
+    "title": "Sovereign Yields",
+    "ncols": 6,
+    "nrows": 144,
+    "nonnull": 425,
+    "yr_min": 1700,
+    "yr_max": 1913,
+    "columns": [
+      "uk.govt_bond_yield_pct",
+      "france.govt_bond_yield_pct",
+      "netherlands.govt_bond_yield_pct",
+      "germany.govt_bond_yield_pct",
+      "austria.govt_bond_yield_pct",
+      "russia.govt_bond_yield_pct"
+    ],
+    "img": "previews/sovereign_yields.png"
+  },
+  {
+    "name": "spanish_colonial_fx",
+    "batch": "batch5",
+    "title": "Spanish Colonial Fx",
+    "ncols": 6,
+    "nrows": 56,
+    "nonnull": 193,
+    "yr_min": 1500,
+    "yr_max": 1830,
+    "columns": [
+      "peso.exchange_rate",
+      "peso.exchange_rate",
+      "peso.exchange_rate",
+      "mexico.mint_output",
+      "mexico.wheat_price",
+      "spain.wheat_price"
+    ],
+    "img": "previews/spanish_colonial_fx.png"
+  },
+  {
+    "name": "spanish_treasure",
+    "batch": "batch5",
+    "title": "Spanish Treasure",
+    "ncols": 6,
+    "nrows": 67,
+    "nonnull": 186,
+    "yr_min": 1504,
+    "yr_max": 1658,
+    "columns": [
+      "quinquennial_gold_imports.maravedis_millions",
+      "quinquennial_silver_imports.maravedis_millions",
+      "quinquennial_total_imports.maravedis_millions",
+      "annualized_imports.maravedis_millions",
+      "annualized_imports.pesos",
+      "annualized_silver_imports.kg"
+    ],
+    "img": "previews/spanish_treasure.png"
+  },
+  {
+    "name": "spice_prices",
+    "batch": "batch5",
+    "title": "Spice Prices",
+    "ncols": 4,
+    "nrows": 49,
+    "nonnull": 98,
+    "yr_min": 1350,
+    "yr_max": 1800,
+    "columns": [
+      "pepper_price_europe.g_silver_per_kg",
+      "clove_price_europe.g_silver_per_kg",
+      "pepper_price_asia.g_silver_per_kg",
+      "pepper_spread_europe_asia.ratio"
+    ],
+    "img": "previews/spice_prices.png"
+  },
+  {
+    "name": "sumerian_economy",
+    "batch": "batch5",
+    "title": "Sumerian Economy",
+    "ncols": 1,
+    "nrows": 42,
+    "nonnull": 42,
+    "yr_min": -2599,
+    "yr_max": -2009,
+    "columns": [
+      "value.amount"
+    ],
+    "img": "previews/sumerian_economy.png"
+  },
+  {
+    "name": "swedish_copper",
+    "batch": "batch5",
+    "title": "Swedish Copper",
+    "ncols": 6,
+    "nrows": 192,
+    "nonnull": 591,
+    "yr_min": 1624,
+    "yr_max": 1900,
+    "columns": [
+      "sweden.copper_price",
+      "sweden.copper_price",
+      "sweden.copper_production",
+      "sweden.copper_exports",
+      "us.copper_price",
+      "us.copper_price"
+    ],
+    "img": "previews/swedish_copper.png"
+  },
+  {
+    "name": "terms_of_trade",
+    "batch": "batch5",
+    "title": "Terms Of Trade",
+    "ncols": 6,
+    "nrows": 114,
+    "nonnull": 216,
+    "yr_min": 1800,
+    "yr_max": 1913,
+    "columns": [
+      "uk.index_1880eq100",
+      "latin_america.index_1900eq100",
+      "asia.index_1900eq100",
+      "middle_east.index_1900eq100",
+      "sub_saharan_africa.index_1900eq100",
+      "european_periphery.index_1900eq100"
+    ],
+    "img": "previews/terms_of_trade.png"
+  },
+  {
+    "name": "tin_prices",
+    "batch": "batch5",
+    "title": "Tin Prices",
+    "ncols": 3,
+    "nrows": 61,
+    "nonnull": 111,
+    "yr_min": 1400,
+    "yr_max": 1900,
+    "columns": [
+      "tin_price_london.gbp_per_ton",
+      "cornwall_tin_output.tons",
+      "se_asia_tin_output.tons"
+    ],
+    "img": "previews/tin_prices.png"
+  },
+  {
+    "name": "tulip_prices",
+    "batch": "batch5",
+    "title": "Tulip Prices",
+    "ncols": 5,
+    "nrows": 34,
+    "nonnull": 52,
+    "yr_min": 1634,
+    "yr_max": 1642,
+    "columns": [
+      "semper_augustus_price.guilders_per_bulb",
+      "admirael_de_maan_price.guilders_per_aas",
+      "gouda_price.guilders_per_aas",
+      "switser_price.guilders_per_aas",
+      "centen_price.guilders_per_aas"
+    ],
+    "img": "previews/tulip_prices.png"
+  },
+  {
+    "name": "us_early_finance",
+    "batch": "batch5",
+    "title": "Us Early Finance",
+    "ncols": 6,
+    "nrows": 1485,
+    "nonnull": 4503,
+    "yr_min": 1857,
+    "yr_max": 1971,
+    "columns": [
+      "uk.industrial_shares",
+      "us.call_money_rate",
+      "us.commercial_paper_rate",
+      "us.common_stock_40_avg",
+      "us.djia_industrial",
+      "us.djia_industrial"
+    ],
+    "img": "previews/us_early_finance.png"
+  },
+  {
+    "name": "venetian_trade",
+    "batch": "batch5",
+    "title": "Venetian Trade",
+    "ncols": 5,
+    "nrows": 81,
+    "nonnull": 241,
+    "yr_min": 1200,
+    "yr_max": 1600,
+    "columns": [
+      "venice.pepper_price",
+      "venice.pepper_price",
+      "venice.galley_fleet",
+      "venice.govt_revenue",
+      "venice.spice_imports"
+    ],
+    "img": "previews/venetian_trade.png"
+  },
+  {
+    "name": "viking_trade",
+    "batch": "batch5",
+    "title": "Viking Trade",
+    "ncols": 1,
+    "nrows": 41,
+    "nonnull": 41,
+    "yr_min": 800,
+    "yr_max": 1050,
+    "columns": [
+      "viking_trade.value"
+    ],
+    "img": "previews/viking_trade.png"
+  },
+  {
+    "name": "voc_commodity_trade",
+    "batch": "batch5",
+    "title": "Voc Commodity Trade",
+    "ncols": 6,
+    "nrows": 41,
+    "nonnull": 146,
+    "yr_min": 1602,
+    "yr_max": 1795,
+    "columns": [
+      "voc_pepper_imports.metric_tons",
+      "voc_fine_spice_imports.metric_tons",
+      "voc_textile_imports.000_pieces",
+      "voc_coffee_imports.metric_tons",
+      "voc_total_sales.million_guilders",
+      "voc_ships_outbound.count"
+    ],
+    "img": "previews/voc_commodity_trade.png"
+  },
+  {
+    "name": "voc_shares",
+    "batch": "batch5",
+    "title": "Voc Shares",
+    "ncols": 2,
+    "nrows": 198,
+    "nonnull": 396,
+    "yr_min": 1602,
+    "yr_max": 1799,
+    "columns": [
+      "voc.share_price_pct_par",
+      "voc.share_price_guilders"
+    ],
+    "img": "previews/voc_shares.png"
+  },
+  {
+    "name": "wages_by_city",
+    "batch": "batch5",
+    "title": "Wages By City",
+    "ncols": 6,
+    "nrows": 66,
+    "nonnull": 324,
+    "yr_min": 1260,
+    "yr_max": 1900,
+    "columns": [
+      "london_laborer.grams_silver_per_day",
+      "london_craftsman.grams_silver_per_day",
+      "florence_laborer.grams_silver_per_day",
+      "paris_laborer.grams_silver_per_day",
+      "amsterdam_laborer.grams_silver_per_day",
+      "amsterdam_craftsman.grams_silver_per_day"
+    ],
+    "img": "previews/wages_by_city.png"
+  },
+  {
+    "name": "wic_shares",
+    "batch": "batch5",
+    "title": "Wic Shares",
+    "ncols": 3,
+    "nrows": 59,
+    "nonnull": 177,
+    "yr_min": 1621,
+    "yr_max": 1791,
+    "columns": [
+      "share_price_pct_par",
+      "par_value_guilders",
+      "share_price_guilders"
+    ],
+    "img": "previews/wic_shares.png"
+  },
+  {
+    "name": "wool_prices",
+    "batch": "batch5",
+    "title": "Wool Prices",
+    "ncols": 3,
+    "nrows": 93,
+    "nonnull": 143,
+    "yr_min": 1200,
+    "yr_max": 1900,
+    "columns": [
+      "english_wool_price.shillings_per_sack",
+      "english_wool_exports.sacks",
+      "australia_wool_output.million_lbs"
+    ],
+    "img": "previews/wool_prices.png"
+  },
+  {
+    "name": "african_economy",
+    "batch": "batch6",
+    "title": "African Economy",
+    "ncols": 6,
+    "nrows": 333,
+    "nonnull": 169,
+    "yr_min": 1700,
+    "yr_max": 2012,
+    "columns": [
+      "asante.gold_exports",
+      "benin.nominal_gdp",
+      "benin.unskilled_wage",
+      "benin.unskilled_wage_2",
+      "benin_1.nominal_gdp",
+      "british_west_africa.real_wage_index"
+    ],
+    "img": "previews/african_economy.png"
+  },
+  {
+    "name": "chinese_salt_iron",
+    "batch": "batch6",
+    "title": "Chinese Salt Iron",
+    "ncols": 6,
+    "nrows": 277,
+    "nonnull": 1086,
+    "yr_min": 1738,
+    "yr_max": 1923,
+    "columns": [
+      "beijing.beans",
+      "beijing.beer",
+      "beijing.bread",
+      "beijing.candles",
+      "beijing.cloth",
+      "beijing.col18"
+    ],
+    "img": "previews/chinese_salt_iron.png"
+  },
+  {
+    "name": "construction_costs",
+    "batch": "batch6",
+    "title": "Construction Costs",
+    "ncols": 6,
+    "nrows": 91,
+    "nonnull": 140,
+    "yr_min": 1209,
+    "yr_max": 2000,
+    "columns": [
+      "amsterdam.mason_wage",
+      "england.building_cost_index",
+      "england.house_cost",
+      "england.ship_cost",
+      "florence.mason_wage",
+      "london.laborer_wage"
+    ],
+    "img": "previews/construction_costs.png"
+  },
+  {
+    "name": "coral_proxies",
+    "batch": "batch6",
+    "title": "Coral Proxies",
+    "ncols": 6,
+    "nrows": 417,
+    "nonnull": 638,
+    "yr_min": 167,
+    "yr_max": 2016,
+    "columns": [
+      "Fanning_and_Palmyra_Islan_F_Pr",
+      "Fanning_and_Palmyra_Islan_F_Pr",
+      "Fanning_and_Palmyra_Islan_Nino",
+      "Kiritimati_Island_120_Yea_d18O",
+      "CoralHydro2k_Database__Co_d18O",
+      "CoralHydro2k_Database__Co_SrCa"
+    ],
+    "img": "previews/coral_proxies.png"
+  },
+  {
+    "name": "energy_prices",
+    "batch": "batch6",
+    "title": "Energy Prices",
+    "ncols": 6,
+    "nrows": 46,
+    "nonnull": 83,
+    "yr_min": 1550,
+    "yr_max": 2000,
+    "columns": [
+      "amsterdam.peat_price",
+      "england.coal_consumption",
+      "england.electricity_consumption",
+      "england.firewood_consumption",
+      "england.food_fodder_consumption",
+      "england.gas_consumption"
+    ],
+    "img": "previews/energy_prices.png"
+  },
+  {
+    "name": "fiscal_capacity",
+    "batch": "batch6",
+    "title": "Fiscal Capacity",
+    "ncols": 6,
+    "nrows": 50,
+    "nonnull": 237,
+    "yr_min": 1500,
+    "yr_max": 2000,
+    "columns": [
+      "austria.tax_revenue_to_gdp",
+      "england.tax_revenue_to_gdp",
+      "france.tax_revenue_to_gdp",
+      "netherlands.tax_revenue_to_gdp",
+      "ottoman_empire.tax_revenue_to_gdp",
+      "poland.tax_revenue_to_gdp"
+    ],
+    "img": "previews/fiscal_capacity.png"
+  },
+  {
+    "name": "geniza_trade",
+    "batch": "batch6",
+    "title": "Geniza Trade",
+    "ncols": 6,
+    "nrows": 286,
+    "nonnull": 232,
+    "yr_min": 1040,
+    "yr_max": 1487,
+    "columns": [
+      "cairo.artisan_wage",
+      "cairo.barley_price_c1",
+      "cairo.barley_price_c10",
+      "cairo.barley_price_c11",
+      "cairo.barley_price_c13",
+      "cairo.barley_price_c14"
+    ],
+    "img": "previews/geniza_trade.png"
+  },
+  {
+    "name": "lake_levels",
+    "batch": "batch6",
+    "title": "Lake Levels",
+    "ncols": 6,
+    "nrows": 4562,
+    "nonnull": 5797,
+    "yr_min": -31,
+    "yr_max": 16787,
+    "columns": [
+      "Caspian_Sea_Level_Changes_Duri",
+      "Lake_Naivasha__Kenya_1_650_Yea",
+      "Lake_Naivasha__Kenya_1_650_Yea",
+      "Rainfall_and_drought_in_equato",
+      "Davis_Pond__Massachusetts_16KY",
+      "Davis_Pond__Massachusetts_16KY"
+    ],
+    "img": "previews/lake_levels.png"
+  },
+  {
+    "name": "latin_american_prices",
+    "batch": "batch6",
+    "title": "Latin American Prices",
+    "ncols": 6,
+    "nrows": 377,
+    "nonnull": 1324,
+    "yr_min": 1525,
+    "yr_max": 1861,
+    "columns": [
+      "argentina.cost",
+      "argentina.cost_/_si",
+      "argentina.cost_/_si_1",
+      "argentina.cost_/_si_10",
+      "argentina.cost_/_si_11",
+      "argentina.cost_/_si_12"
+    ],
+    "img": "previews/latin_american_prices.png"
+  },
+  {
+    "name": "magnetic_field",
+    "batch": "batch6",
+    "title": "Magnetic Field",
+    "ncols": 6,
+    "nrows": 1970,
+    "nonnull": 2685,
+    "yr_min": -7439,
+    "yr_max": 1977,
+    "columns": [
+      "A_High_Resolution_Record__varv",
+      "Arctic_Ocean_Spectral_Ref_L_",
+      "Cape_Basin__South_Atlanti_dept",
+      "Cape_Basin__South_Atlanti_Uk37",
+      "9400_Year_Cosmogenic_Isot_1_PC",
+      "9400_Year_Cosmogenic_Isot_1_PC"
+    ],
+    "img": "previews/magnetic_field.png"
+  },
+  {
+    "name": "military",
+    "batch": "batch6",
+    "title": "Military",
+    "ncols": 6,
+    "nrows": 70,
+    "nonnull": 125,
+    "yr_min": 1470,
+    "yr_max": 2007,
+    "columns": [
+      "austria.army_size",
+      "austria.military_expenditure",
+      "austria.military_personnel",
+      "china.military_personnel",
+      "dutch_republic.army_size",
+      "england_britain.army_size"
+    ],
+    "img": "previews/military.png"
+  },
+  {
+    "name": "ocean_circulation",
+    "batch": "batch6",
+    "title": "Ocean Circulation",
+    "ncols": 6,
+    "nrows": 1363,
+    "nonnull": 1097,
+    "yr_min": -8050,
+    "yr_max": 2004,
+    "columns": [
+      "Atlantic_Meridional_Overt_AMOC",
+      "Iceland_Basin_Sortable_Si_SS",
+      "Iceland_Basin_Sortable_Si_SS_c",
+      "North_Atlantic_Oxygen_Iso_sort",
+      "North_Atlantic_SST_and_Sa_d18O",
+      "North_Atlantic_SST_and_Sa_sst_"
+    ],
+    "img": "previews/ocean_circulation.png"
+  },
+  {
+    "name": "pacific_trade",
+    "batch": "batch6",
+    "title": "Pacific Trade",
+    "ncols": 6,
+    "nrows": 40,
+    "nonnull": 58,
+    "yr_min": -5000,
+    "yr_max": 1778,
+    "columns": [
+      "admiralty_islands.obsidian_max_distance",
+      "austronesia.exchange_good_types",
+      "austronesia.max_exchange_distance",
+      "hawaii.food_surplus",
+      "melanesia.obsidian_trade_max_distance",
+      "melanesia.obsidian_trade_volume"
+    ],
+    "img": "previews/pacific_trade.png"
+  },
+  {
+    "name": "plague_mortality",
+    "batch": "batch6",
+    "title": "Plague Mortality",
+    "ncols": 3,
+    "nrows": 72,
+    "nonnull": 216,
+    "yr_min": 1347,
+    "yr_max": 1720,
+    "columns": [
+      "population_before",
+      "estimated_deaths",
+      "mortality_rate_pct"
+    ],
+    "img": "previews/plague_mortality.png"
+  },
+  {
+    "name": "pollen",
+    "batch": "batch6",
+    "title": "Pollen",
+    "ncols": 6,
+    "nrows": 7091,
+    "nonnull": 414,
+    "yr_min": 928,
+    "yr_max": 1947,
+    "columns": [
+      "New_Zealand_Air_Temperatu_Orig",
+      "New_Zealand_Air_Temperatu_age",
+      "New_Zealand_Air_Temperatu_temp",
+      "Lac_Noir__Quebec_1_000_Ye_char",
+      "Lac_Noir__Quebec_1_000_Ye_char",
+      "Lac_Noir__Quebec_1_000_Ye_char"
+    ],
+    "img": "previews/pollen.png"
+  },
+  {
+    "name": "southeast_asian_prices",
+    "batch": "batch6",
+    "title": "Southeast Asian Prices",
+    "ncols": 6,
+    "nrows": 309,
+    "nonnull": 180,
+    "yr_min": 1500,
+    "yr_max": 2000,
+    "columns": [
+      "dutch_east_indies.java",
+      "indonesia.gdp_per_capita",
+      "malaya.tin_price",
+      "moluccas.clove_price",
+      "se_asia.pepper_price",
+      "se_asia.rice_price"
+    ],
+    "img": "previews/southeast_asian_prices.png"
+  },
+  {
+    "name": "sovereign_debt",
+    "batch": "batch6",
+    "title": "Sovereign Debt",
+    "ncols": 6,
+    "nrows": 91,
+    "nonnull": 150,
+    "yr_min": 1340,
+    "yr_max": 2010,
+    "columns": [
+      "florence.debt_to_revenue",
+      "france.debt_to_gdp",
+      "genoa.debt_to_revenue",
+      "germany.debt_to_gdp",
+      "japan.debt_to_gdp",
+      "netherlands.debt_to_gdp"
+    ],
+    "img": "previews/sovereign_debt.png"
+  },
+  {
+    "name": "tree_rings_additional",
+    "batch": "batch6",
+    "title": "Tree Rings Additional",
+    "ncols": 6,
+    "nrows": 744,
+    "nonnull": 2231,
+    "yr_min": 1504,
+    "yr_max": 1996,
+    "columns": [
+      "Briffa___Arrowsmith_Mountain__",
+      "Briffa___Barlow_Pass_am_Mt_Hoo",
+      "siberian_larch_Briffa___Arrows",
+      "siberian_larch_Briffa___Barlow",
+      "kauri_nz_Ahmed___Huia___AGAU__",
+      "kauri_nz_Ahmed___Katikati___AG"
+    ],
+    "img": "previews/tree_rings_additional.png"
+  },
+  {
+    "name": "bank_balance_sheets",
+    "batch": "batch7",
+    "title": "Bank Balance Sheets",
+    "ncols": 6,
+    "nrows": 97,
+    "nonnull": 40,
+    "yr_min": 1420,
+    "yr_max": 1805,
+    "columns": [
+      "total_assets.M_lire_genovesi",
+      "govt_debt_held.M_lire_genovesi",
+      "deposits.M_lire_genovesi",
+      "capital.M_lire_genovesi",
+      "total_assets.M_lire_genovesi",
+      "govt_debt_held.M_lire_genovesi"
+    ],
+    "img": "previews/bank_balance_sheets.png"
+  },
+  {
+    "name": "canals",
+    "batch": "batch7",
+    "title": "Canals",
+    "ncols": 5,
+    "nrows": 39,
+    "nonnull": 89,
+    "yr_min": 1400,
+    "yr_max": 1900,
+    "columns": [
+      "england.canal_mileage",
+      "netherlands.canal_mileage",
+      "france.canal_mileage",
+      "china.grand_canal_grain_tribute",
+      "england.canal_construction_cost"
+    ],
+    "img": "previews/canals.png"
+  },
+  {
+    "name": "chinese_population",
+    "batch": "batch7",
+    "title": "Chinese Population",
+    "ncols": 6,
+    "nrows": 70,
+    "nonnull": 176,
+    "yr_min": 2,
+    "yr_max": 1910,
+    "columns": [
+      "china.total_population",
+      "china.total_households",
+      "china_zhili_beijing.population",
+      "china_shandong.population",
+      "china_shanxi.population",
+      "china_henan.population"
+    ],
+    "img": "previews/chinese_population.png"
+  },
+  {
+    "name": "commodity_volatility",
+    "batch": "batch7",
+    "title": "Commodity Volatility",
+    "ncols": 6,
+    "nrows": 727,
+    "nonnull": 1203,
+    "yr_min": 1214,
+    "yr_max": 1954,
+    "columns": [
+      "wheat_wheat.rolling_cv_25yr",
+      "pbh_basket.rolling_cv_25yr",
+      "english_wool.rolling_cv_25yr",
+      "wheat_wheat.era_avg_cv",
+      "pbh_basket.era_avg_cv",
+      "english_wool.era_avg_cv"
+    ],
+    "img": "previews/commodity_volatility.png"
+  },
+  {
+    "name": "demographic_transition",
+    "batch": "batch7",
+    "title": "Demographic Transition",
+    "ncols": 6,
+    "nrows": 140,
+    "nonnull": 370,
+    "yr_min": 1541,
+    "yr_max": 1971,
+    "columns": [
+      "england.crude_birth_rate",
+      "england.crude_death_rate",
+      "england.natural_increase",
+      "england.infant_mortality",
+      "england.life_expectancy_at_birth",
+      "france.crude_birth_rate"
+    ],
+    "img": "previews/demographic_transition.png"
+  },
+  {
+    "name": "dutch_golden_age",
+    "batch": "batch7",
+    "title": "Dutch Golden Age",
+    "ncols": 6,
+    "nrows": 161,
+    "nonnull": 87,
+    "yr_min": 1500,
+    "yr_max": 1800,
+    "columns": [
+      "dutch_republic.agriculture_share",
+      "dutch_republic.bond_yield",
+      "dutch_republic.butter_exports",
+      "dutch_republic.cheese_exports",
+      "dutch_republic.gdp",
+      "dutch_republic.gdp_per_capita"
+    ],
+    "img": "previews/dutch_golden_age.png"
+  },
+  {
+    "name": "eic_trade",
+    "batch": "batch7",
+    "title": "Eic Trade",
+    "ncols": 6,
+    "nrows": 103,
+    "nonnull": 104,
+    "yr_min": 1601,
+    "yr_max": 1830,
+    "columns": [
+      "imports_from_asia.k_pounds_sterling",
+      "exports_to_asia.k_pounds_sterling",
+      "bullion_sent_to_asia.k_pounds_sterling",
+      "ships_dispatched.count",
+      "total_tonnage.tons",
+      "avg_ship_tonnage.tons"
+    ],
+    "img": "previews/eic_trade.png"
+  },
+  {
+    "name": "global_silver_flows",
+    "batch": "batch7",
+    "title": "Global Silver Flows",
+    "ncols": 6,
+    "nrows": 60,
+    "nonnull": 208,
+    "yr_min": 1500,
+    "yr_max": 1900,
+    "columns": [
+      "new_world.silver_production",
+      "europe.silver_production",
+      "japan.silver_production",
+      "spain_to_europe.silver_flow",
+      "world.silver_flow_to_asia",
+      "manila_galleon.silver_flow"
+    ],
+    "img": "previews/global_silver_flows.png"
+  },
+  {
+    "name": "granary_stocks",
+    "batch": "batch7",
+    "title": "Granary Stocks",
+    "ncols": 6,
+    "nrows": 90,
+    "nonnull": 21,
+    "yr_min": -115,
+    "yr_max": 1600,
+    "columns": [
+      "total_grain_stocks.M_shi",
+      "per_capita_reserve.shi",
+      "total_grain_stocks.M_shi",
+      "total_grain_stocks.M_shi",
+      "total_grain_stocks.M_shi",
+      "n_granaries.count"
+    ],
+    "img": "previews/granary_stocks.png"
+  },
+  {
+    "name": "hamilton_spain",
+    "batch": "batch7",
+    "title": "Hamilton Spain",
+    "ncols": 6,
+    "nrows": 213,
+    "nonnull": 333,
+    "yr_min": 1351,
+    "yr_max": 1800,
+    "columns": [
+      "valencia.price_index",
+      "andalusia.price_index",
+      "old_castile.price_index",
+      "new_castile.price_index",
+      "new_castile.wheat_price",
+      "new_castile.craftsman_wage"
+    ],
+    "img": "previews/hamilton_spain.png"
+  },
+  {
+    "name": "hanseatic_prices",
+    "batch": "batch7",
+    "title": "Hanseatic Prices",
+    "ncols": 6,
+    "nrows": 31,
+    "nonnull": 169,
+    "yr_min": 1250,
+    "yr_max": 1550,
+    "columns": [
+      "lubeck.salt_price",
+      "danzig.salt_price",
+      "lubeck.herring_price",
+      "lubeck.wax_price",
+      "danzig.rye_price",
+      "hamburg.rye_price"
+    ],
+    "img": "previews/hanseatic_prices.png"
+  },
+  {
+    "name": "indian_ocean_trade",
+    "batch": "batch7",
+    "title": "Indian Ocean Trade",
+    "ncols": 6,
+    "nrows": 184,
+    "nonnull": 146,
+    "yr_min": 1500,
+    "yr_max": 1835,
+    "columns": [
+      "bengal.trade_value",
+      "bengal_coromandel.textile_exports",
+      "calicut_malabar.trade_value",
+      "eic.ships_to_asia",
+      "eic.trade_value",
+      "european.bullion_to_asia"
+    ],
+    "img": "previews/indian_ocean_trade.png"
+  },
+  {
+    "name": "inequality_expanded",
+    "batch": "batch7",
+    "title": "Inequality Expanded",
+    "ncols": 6,
+    "nrows": 79,
+    "nonnull": 130,
+    "yr_min": 1290,
+    "yr_max": 1980,
+    "columns": [
+      "england.gini_income",
+      "england.top10_income_share",
+      "england.top1_income_share",
+      "france.top10_income_share",
+      "france.top1_income_share",
+      "netherlands.gini_wealth"
+    ],
+    "img": "previews/inequality_expanded.png"
+  },
+  {
+    "name": "insurance_market",
+    "batch": "batch7",
+    "title": "Insurance Market",
+    "ncols": 6,
+    "nrows": 29,
+    "nonnull": 113,
+    "yr_min": 1680,
+    "yr_max": 1920,
+    "columns": [
+      "lloyds.marine_premium",
+      "lloyds.underwriting_members",
+      "uk.insurance_companies",
+      "france.insurance_companies",
+      "germany.insurance_companies",
+      "us.insurance_companies"
+    ],
+    "img": "previews/insurance_market.png"
+  },
+  {
+    "name": "italian_gdp",
+    "batch": "batch7",
+    "title": "Italian Gdp",
+    "ncols": 6,
+    "nrows": 58,
+    "nonnull": 202,
+    "yr_min": 1300,
+    "yr_max": 1861,
+    "columns": [
+      "italy_cnorth.gdp_per_capita",
+      "florence.gdp_per_capita",
+      "venice.gdp_per_capita",
+      "milan.gdp_per_capita",
+      "naples.gdp_per_capita",
+      "italy.gdp_index"
+    ],
+    "img": "previews/italian_gdp.png"
+  },
+  {
+    "name": "market_integration",
+    "batch": "batch7",
+    "title": "Market Integration",
+    "ncols": 6,
+    "nrows": 63,
+    "nonnull": 210,
+    "yr_min": 1300,
+    "yr_max": 1913,
+    "columns": [
+      "europe.wheat_price_cv",
+      "europe.wheat_price_spread",
+      "north_sea_baltic.grain_cv",
+      "mediterranean.grain_cv",
+      "atlantic.grain_cv",
+      "europe.market_integration_index"
+    ],
+    "img": "previews/market_integration.png"
+  },
+  {
+    "name": "marriage_patterns",
+    "batch": "batch7",
+    "title": "Marriage Patterns",
+    "ncols": 6,
+    "nrows": 24,
+    "nonnull": 36,
+    "yr_min": 1427,
+    "yr_max": 1901,
+    "columns": [
+      "household.size",
+      "household.size",
+      "household.size",
+      "household.size",
+      "household.size",
+      "marriage.age"
+    ],
+    "img": "previews/marriage_patterns.png"
+  },
+  {
+    "name": "medieval_credit",
+    "batch": "batch7",
+    "title": "Medieval Credit",
+    "ncols": 2,
+    "nrows": 70,
+    "nonnull": 121,
+    "yr_min": 1150,
+    "yr_max": 1500,
+    "columns": [
+      "interest_rate_annual_pct",
+      "term_months"
+    ],
+    "img": "previews/medieval_credit.png"
+  },
+  {
+    "name": "medieval_fairs",
+    "batch": "batch7",
+    "title": "Medieval Fairs",
+    "ncols": 6,
+    "nrows": 45,
+    "nonnull": 9,
+    "yr_min": 1460,
+    "yr_max": 1600,
+    "columns": [
+      "fairs.antwerp",
+      "fairs.antwerp",
+      "fairs.antwerp",
+      "fairs.antwerp",
+      "fairs.besancon",
+      "fairs.besancon"
+    ],
+    "img": "previews/medieval_fairs.png"
+  },
+  {
+    "name": "ming_fleets",
+    "batch": "batch7",
+    "title": "Ming Fleets",
+    "ncols": 6,
+    "nrows": 11,
+    "nonnull": 6,
+    "yr_min": 1492,
+    "yr_max": 1519,
+    "columns": [
+      "exploration.columbus",
+      "exploration.columbus",
+      "exploration.columbus",
+      "exploration.columbus",
+      "exploration.magellan",
+      "exploration.magellan"
+    ],
+    "img": "previews/ming_fleets.png"
+  },
+  {
+    "name": "mongol_economy",
+    "batch": "batch7",
+    "title": "Mongol Economy",
+    "ncols": 6,
+    "nrows": 17,
+    "nonnull": 88,
+    "yr_min": 1210,
+    "yr_max": 1360,
+    "columns": [
+      "mongol.yam_stations",
+      "mongol.yam_horses_per_station",
+      "mongol.yam_total_horses",
+      "mongol.yam_daily_riders",
+      "mongol.silk_bolt_price",
+      "mongol.horse_price"
+    ],
+    "img": "previews/mongol_economy.png"
+  },
+  {
+    "name": "mughal_economy",
+    "batch": "batch7",
+    "title": "Mughal Economy",
+    "ncols": 1,
+    "nrows": 80,
+    "nonnull": 80,
+    "yr_min": 1556,
+    "yr_max": 1750,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/mughal_economy.png"
+  },
+  {
+    "name": "ottoman_trade",
+    "batch": "batch7",
+    "title": "Ottoman Trade",
+    "ncols": 6,
+    "nrows": 88,
+    "nonnull": 30,
+    "yr_min": 1784,
+    "yr_max": 1876,
+    "columns": [
+      "total_imports.k_pounds_sterling",
+      "total_exports.k_pounds_sterling",
+      "trade_balance.k_pounds_sterling",
+      "total_imports.k_pounds_sterling",
+      "total_exports.k_pounds_sterling",
+      "trade_balance.k_pounds_sterling"
+    ],
+    "img": "previews/ottoman_trade.png"
+  },
+  {
+    "name": "portuguese_spice",
+    "batch": "batch7",
+    "title": "Portuguese Spice",
+    "ncols": 6,
+    "nrows": 119,
+    "nonnull": 87,
+    "yr_min": 1608,
+    "yr_max": 1640,
+    "columns": [
+      "cinnamon.asian_price",
+      "cinnamon.european_price",
+      "cinnamon.markup",
+      "cloves.asian_price",
+      "cloves.european_price",
+      "cloves.markup"
+    ],
+    "img": "previews/portuguese_spice.png"
+  },
+  {
+    "name": "post_plague_wages",
+    "batch": "batch7",
+    "title": "Post Plague Wages",
+    "ncols": 4,
+    "nrows": 128,
+    "nonnull": 512,
+    "yr_min": 1340,
+    "yr_max": 1450,
+    "columns": [
+      "daily_wage_local",
+      "daily_wage_grams_silver",
+      "wage_index_1340_100",
+      "real_wage_index_1340_100"
+    ],
+    "img": "previews/post_plague_wages.png"
+  },
+  {
+    "name": "postal_rates",
+    "batch": "batch7",
+    "title": "Postal Rates",
+    "ncols": 5,
+    "nrows": 65,
+    "nonnull": 108,
+    "yr_min": 1635,
+    "yr_max": 1920,
+    "columns": [
+      "uk.letter_rate",
+      "uk.letter_volume",
+      "uk.postal_revenue",
+      "us.letter_rate",
+      "france.letter_rate"
+    ],
+    "img": "previews/postal_rates.png"
+  },
+  {
+    "name": "price_convergence",
+    "batch": "batch7",
+    "title": "Price Convergence",
+    "ncols": 6,
+    "nrows": 201,
+    "nonnull": 833,
+    "yr_min": 1600,
+    "yr_max": 1900,
+    "columns": [
+      "cinnamon.amsterdam_price",
+      "cinnamon.asian_price",
+      "cinnamon.price_markup",
+      "cloves.amsterdam_price",
+      "cloves.asian_price",
+      "cloves.price_gap"
+    ],
+    "img": "previews/price_convergence.png"
+  },
+  {
+    "name": "proto_industry",
+    "batch": "batch7",
+    "title": "Proto Industry",
+    "ncols": 5,
+    "nrows": 52,
+    "nonnull": 131,
+    "yr_min": 1275,
+    "yr_max": 1810,
+    "columns": [
+      "england.cloth_exports",
+      "england.raw_wool_exports",
+      "england.industrial_output_index",
+      "europe.linen_output",
+      "england.raw_cotton_imports"
+    ],
+    "img": "previews/proto_industry.png"
+  },
+  {
+    "name": "qing_money",
+    "batch": "batch7",
+    "title": "Qing Money",
+    "ncols": 1,
+    "nrows": 169,
+    "nonnull": 169,
+    "yr_min": 1644,
+    "yr_max": 1911,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/qing_money.png"
+  },
+  {
+    "name": "real_estate_expanded",
+    "batch": "batch7",
+    "title": "Real Estate Expanded",
+    "ncols": 6,
+    "nrows": 117,
+    "nonnull": 372,
+    "yr_min": 1200,
+    "yr_max": 1980,
+    "columns": [
+      "amsterdam_herengracht.property_index",
+      "london.property_index",
+      "paris.property_index",
+      "italy_urban.property_index",
+      "england.farmland_rent",
+      "amsterdam_herengracht.real_property_index"
+    ],
+    "img": "previews/real_estate_expanded.png"
+  },
+  {
+    "name": "russian_economy",
+    "batch": "batch7",
+    "title": "Russian Economy",
+    "ncols": 6,
+    "nrows": 183,
+    "nonnull": 72,
+    "yr_min": 1500,
+    "yr_max": 1870,
+    "columns": [
+      "moscow.beef_price",
+      "moscow.butter_price",
+      "moscow.hemp_price",
+      "moscow.iron_price",
+      "moscow.linen_price",
+      "moscow.rye_price"
+    ],
+    "img": "previews/russian_economy.png"
+  },
+  {
+    "name": "shipping_tonnage",
+    "batch": "batch7",
+    "title": "Shipping Tonnage",
+    "ncols": 6,
+    "nrows": 43,
+    "nonnull": 6,
+    "yr_min": 1450,
+    "yr_max": 1840,
+    "columns": [
+      "shipping.ship_type",
+      "shipping.ship_type",
+      "shipping.ship_type",
+      "shipping.ship_type",
+      "shipping.ship_type",
+      "shipping.ship_type"
+    ],
+    "img": "previews/shipping_tonnage.png"
+  },
+  {
+    "name": "signature_literacy",
+    "batch": "batch7",
+    "title": "Signature Literacy",
+    "ncols": 6,
+    "nrows": 43,
+    "nonnull": 171,
+    "yr_min": 1500,
+    "yr_max": 1900,
+    "columns": [
+      "england.male_signature_rate",
+      "england.female_signature_rate",
+      "france.male_signature_rate",
+      "france.female_signature_rate",
+      "scotland.male_signature_rate",
+      "sweden.reading_ability"
+    ],
+    "img": "previews/signature_literacy.png"
+  },
+  {
+    "name": "slave_trade_prices",
+    "batch": "batch7",
+    "title": "Slave Trade Prices",
+    "ncols": 4,
+    "nrows": 321,
+    "nonnull": 639,
+    "yr_min": 1673,
+    "yr_max": 1807,
+    "columns": [
+      "price_gbp_sterling",
+      "price_spanish_dollars",
+      "markup_pct",
+      "voyage_mortality_pct"
+    ],
+    "img": "previews/slave_trade_prices.png"
+  },
+  {
+    "name": "song_economy",
+    "batch": "batch7",
+    "title": "Song Economy",
+    "ncols": 6,
+    "nrows": 39,
+    "nonnull": 41,
+    "yr_min": 806,
+    "yr_max": 1264,
+    "columns": [
+      "song.city",
+      "song.city",
+      "song.copper_cash",
+      "song.government",
+      "song.iron",
+      "song.maritime"
+    ],
+    "img": "previews/song_economy.png"
+  },
+  {
+    "name": "stock_indices",
+    "batch": "batch7",
+    "title": "Stock Indices",
+    "ncols": 6,
+    "nrows": 122,
+    "nonnull": 69,
+    "yr_min": 1602,
+    "yr_max": 1799,
+    "columns": [
+      "voc_price_index.index_1602eq100",
+      "amsterdam_total_return.index_1602eq100",
+      "voc_price_index.index_1602eq100",
+      "amsterdam_total_return.index_1602eq100",
+      "composite_index.index_1692eq100",
+      "consol_3pct_price.pct_of_par"
+    ],
+    "img": "previews/stock_indices.png"
+  },
+  {
+    "name": "sugar_plantations",
+    "batch": "batch7",
+    "title": "Sugar Plantations",
+    "ncols": 6,
+    "nrows": 135,
+    "nonnull": 149,
+    "yr_min": 1640,
+    "yr_max": 1900,
+    "columns": [
+      "sugar_production.tons",
+      "world_share.pct",
+      "sugar_production.tons",
+      "world_share.pct",
+      "london_muscovado_price.shillings_per_cwt",
+      "london_muscovado_price.shillings_per_cwt"
+    ],
+    "img": "previews/sugar_plantations.png"
+  },
+  {
+    "name": "tokugawa_rice",
+    "batch": "batch7",
+    "title": "Tokugawa Rice",
+    "ncols": 1,
+    "nrows": 178,
+    "nonnull": 170,
+    "yr_min": 1697,
+    "yr_max": 1867,
+    "columns": [
+      "price_monme_per_koku"
+    ],
+    "img": "previews/tokugawa_rice.png"
+  },
+  {
+    "name": "urbanization_detailed",
+    "batch": "batch7",
+    "title": "Urbanization Detailed",
+    "ncols": 6,
+    "nrows": 14,
+    "nonnull": 41,
+    "yr_min": 1000,
+    "yr_max": 1800,
+    "columns": [
+      "amsterdam.population",
+      "austria.urbanization_rate_10k",
+      "beijing.population",
+      "belgium.urbanization_rate_10k",
+      "berlin.population",
+      "cairo.population"
+    ],
+    "img": "previews/urbanization_detailed.png"
+  },
+  {
+    "name": "venetian_arsenal",
+    "batch": "batch7",
+    "title": "Venetian Arsenal",
+    "ncols": 6,
+    "nrows": 24,
+    "nonnull": 22,
+    "yr_min": 1104,
+    "yr_max": 1797,
+    "columns": [
+      "venice.arsenal",
+      "venice.arsenal",
+      "venice.arsenal",
+      "venice.arsenal",
+      "venice.arsenal",
+      "venice.arsenal"
+    ],
+    "img": "previews/venetian_arsenal.png"
+  },
+  {
+    "name": "wine_trade_expanded",
+    "batch": "batch7",
+    "title": "Wine Trade Expanded",
+    "ncols": 6,
+    "nrows": 54,
+    "nonnull": 247,
+    "yr_min": 1200,
+    "yr_max": 1500,
+    "columns": [
+      "england.wine_imports",
+      "england.wine_imports_gascon_share",
+      "gascony.wine_export_price",
+      "england.wine_retail_price",
+      "england.wine_customs_revenue",
+      "england.royal_wine_purchases"
+    ],
+    "img": "previews/wine_trade_expanded.png"
+  },
+  {
+    "name": "wool_cloth_trade",
+    "batch": "batch7",
+    "title": "Wool Cloth Trade",
+    "ncols": 6,
+    "nrows": 100,
+    "nonnull": 348,
+    "yr_min": 1275,
+    "yr_max": 1547,
+    "columns": [
+      "england.wool_exports",
+      "england.cloth_exports",
+      "england.cloth_exports",
+      "england.wool_customs_revenue",
+      "flanders.cloth_production",
+      "england.wool_price"
+    ],
+    "img": "previews/wool_cloth_trade.png"
+  },
+  {
+    "name": "african_gold",
+    "batch": "batch8",
+    "title": "African Gold",
+    "ncols": 5,
+    "nrows": 67,
+    "nonnull": 104,
+    "yr_min": 700,
+    "yr_max": 1900,
+    "columns": [
+      "trans_saharan.gold_flow",
+      "west_africa.share_of_world_gold",
+      "salt_gold.exchange_ratio",
+      "akan.gold_exports_atlantic",
+      "gold_coast.colonial_production"
+    ],
+    "img": "previews/african_gold.png"
+  },
+  {
+    "name": "ancient_dna",
+    "batch": "batch8",
+    "title": "Ancient Dna",
+    "ncols": 1,
+    "nrows": 45,
+    "nonnull": 45,
+    "yr_min": -35000,
+    "yr_max": 1000,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/ancient_dna.png"
+  },
+  {
+    "name": "arctic_ice_historical",
+    "batch": "batch8",
+    "title": "Arctic Ice Historical",
+    "ncols": 1,
+    "nrows": 195,
+    "nonnull": 195,
+    "yr_min": 600,
+    "yr_max": 2020,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/arctic_ice_historical.png"
+  },
+  {
+    "name": "biodiversity",
+    "batch": "batch8",
+    "title": "Biodiversity",
+    "ncols": 1,
+    "nrows": 62,
+    "nonnull": 19,
+    "yr_min": 1500,
+    "yr_max": 2018,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/biodiversity.png"
+  },
+  {
+    "name": "book_prices",
+    "batch": "batch8",
+    "title": "Book Prices",
+    "ncols": 6,
+    "nrows": 40,
+    "nonnull": 178,
+    "yr_min": 600,
+    "yr_max": 1900,
+    "columns": [
+      "bible.price_grams_silver",
+      "bible.price_grams_silver",
+      "book.price_days_wages_skilled",
+      "book.price_grams_silver",
+      "europe.book_titles_per_year",
+      "europe.manuscript_output"
+    ],
+    "img": "previews/book_prices.png"
+  },
+  {
+    "name": "byzantine_expanded",
+    "batch": "batch8",
+    "title": "Byzantine Expanded",
+    "ncols": 6,
+    "nrows": 68,
+    "nonnull": 136,
+    "yr_min": 300,
+    "yr_max": 1453,
+    "columns": [
+      "byzantine.army_size",
+      "byzantine.bread_price",
+      "byzantine.constantinople",
+      "byzantine.gold_coin_fineness",
+      "byzantine.laborer_wage",
+      "byzantine.navy_warships"
+    ],
+    "img": "previews/byzantine_expanded.png"
+  },
+  {
+    "name": "child_labor",
+    "batch": "batch8",
+    "title": "Child Labor",
+    "ncols": 6,
+    "nrows": 50,
+    "nonnull": 33,
+    "yr_min": 1750,
+    "yr_max": 2000,
+    "columns": [
+      "labor.child",
+      "labor.child",
+      "labor.child",
+      "labor.child",
+      "labor.child",
+      "labor.child"
+    ],
+    "img": "previews/child_labor.png"
+  },
+  {
+    "name": "clock_prices",
+    "batch": "batch8",
+    "title": "Clock Prices",
+    "ncols": 6,
+    "nrows": 33,
+    "nonnull": 157,
+    "yr_min": 1280,
+    "yr_max": 1900,
+    "columns": [
+      "cathedral_clock.cost_grams_silver",
+      "table_clock.price_grams_silver",
+      "longcase_clock.price_grams_silver",
+      "pocket_watch.price_grams_silver",
+      "watch.price_days_wages_skilled",
+      "europe.clock_production"
+    ],
+    "img": "previews/clock_prices.png"
+  },
+  {
+    "name": "copper_global",
+    "batch": "batch8",
+    "title": "Copper Global",
+    "ncols": 1,
+    "nrows": 116,
+    "nonnull": 116,
+    "yr_min": 1400,
+    "yr_max": 1950,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/copper_global.png"
+  },
+  {
+    "name": "cotton_expanded",
+    "batch": "batch8",
+    "title": "Cotton Expanded",
+    "ncols": 6,
+    "nrows": 45,
+    "nonnull": 181,
+    "yr_min": 1700,
+    "yr_max": 1920,
+    "columns": [
+      "cotton_price.american_middling",
+      "cotton_price.egyptian_mako",
+      "uk_cotton_imports.total",
+      "uk_cotton_imports.pct_us",
+      "uk_cotton_imports.pct_indian",
+      "uk_cotton_imports.pct_egyptian"
+    ],
+    "img": "previews/cotton_expanded.png"
+  },
+  {
+    "name": "drought_atlases",
+    "batch": "batch8",
+    "title": "Drought Atlases",
+    "ncols": 6,
+    "nrows": 653,
+    "nonnull": 1297,
+    "yr_min": 960,
+    "yr_max": 2016,
+    "columns": [
+      "anzda_australia_mean",
+      "china_longxi_drought",
+      "erda_mean_pdsi",
+      "mada_india_mean",
+      "nada_conus",
+      "nada_region1"
+    ],
+    "img": "previews/drought_atlases.png"
+  },
+  {
+    "name": "dye_trade",
+    "batch": "batch8",
+    "title": "Dye Trade",
+    "ncols": 6,
+    "nrows": 45,
+    "nonnull": 137,
+    "yr_min": 1200,
+    "yr_max": 1914,
+    "columns": [
+      "indigo.india_export_index",
+      "indigo.india_exports",
+      "indigo.price_london",
+      "woad.production_index",
+      "madder.production_index",
+      "cochineal.exports"
+    ],
+    "img": "previews/dye_trade.png"
+  },
+  {
+    "name": "epidemics",
+    "batch": "batch8",
+    "title": "Epidemics",
+    "ncols": 1,
+    "nrows": 78,
+    "nonnull": 78,
+    "yr_min": -430,
+    "yr_max": 1968,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/epidemics.png"
+  },
+  {
+    "name": "fisheries",
+    "batch": "batch8",
+    "title": "Fisheries",
+    "ncols": 6,
+    "nrows": 47,
+    "nonnull": 139,
+    "yr_min": 1400,
+    "yr_max": 1913,
+    "columns": [
+      "dutch_herring.catch",
+      "dutch_herring.fleet_size",
+      "iceland.fish_catch",
+      "british_herring.catch",
+      "newfoundland_cod.catch",
+      "fish.price_index"
+    ],
+    "img": "previews/fisheries.png"
+  },
+  {
+    "name": "gender_wages",
+    "batch": "batch8",
+    "title": "Gender Wages",
+    "ncols": 6,
+    "nrows": 34,
+    "nonnull": 42,
+    "yr_min": 1260,
+    "yr_max": 2010,
+    "columns": [
+      "labor.female_participation_rate",
+      "labor.female_participation_rate",
+      "labor.female_participation_rate",
+      "wages.female",
+      "wages.female",
+      "wages.female"
+    ],
+    "img": "previews/gender_wages.png"
+  },
+  {
+    "name": "glass_prices",
+    "batch": "batch8",
+    "title": "Glass Prices",
+    "ncols": 6,
+    "nrows": 34,
+    "nonnull": 168,
+    "yr_min": 1,
+    "yr_max": 1900,
+    "columns": [
+      "window_glass.price_pence_per_sqft",
+      "window_glass.price_grams_silver",
+      "venetian_goblet.price_grams_silver",
+      "drinking_glass.price_grams_silver",
+      "mirror.price_grams_silver",
+      "venice.glass_exports"
+    ],
+    "img": "previews/glass_prices.png"
+  },
+  {
+    "name": "grand_canal",
+    "batch": "batch8",
+    "title": "Grand Canal",
+    "ncols": 6,
+    "nrows": 123,
+    "nonnull": 173,
+    "yr_min": 605,
+    "yr_max": 1872,
+    "columns": [
+      "china.grand_canal",
+      "china.grand_canal",
+      "china.grand_canal",
+      "china.grand_canal",
+      "china.grand_canal",
+      "china.grand_canal"
+    ],
+    "img": "previews/grand_canal.png"
+  },
+  {
+    "name": "hanse_dutch_transition",
+    "batch": "batch8",
+    "title": "Hanse Dutch Transition",
+    "ncols": 1,
+    "nrows": 94,
+    "nonnull": 94,
+    "yr_min": 1200,
+    "yr_max": 1700,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/hanse_dutch_transition.png"
+  },
+  {
+    "name": "horse_prices",
+    "batch": "batch8",
+    "title": "Horse Prices",
+    "ncols": 6,
+    "nrows": 35,
+    "nonnull": 196,
+    "yr_min": 500,
+    "yr_max": 1900,
+    "columns": [
+      "warhorse.price_grams_silver",
+      "riding_horse.price_grams_silver",
+      "draft_horse.price_grams_silver",
+      "horse.price_days_wages_skilled",
+      "ox.price_grams_silver",
+      "ox.price_days_wages_skilled"
+    ],
+    "img": "previews/horse_prices.png"
+  },
+  {
+    "name": "japanese_economy",
+    "batch": "batch8",
+    "title": "Japanese Economy",
+    "ncols": 6,
+    "nrows": 88,
+    "nonnull": 128,
+    "yr_min": 725,
+    "yr_max": 1910,
+    "columns": [
+      "japan.coal_production",
+      "japan.gdp_per_capita",
+      "japan.gold_silver_ratio",
+      "japan.kyoto",
+      "japan.kyoto",
+      "japan.osaka"
+    ],
+    "img": "previews/japanese_economy.png"
+  },
+  {
+    "name": "mesoamerican_economy",
+    "batch": "batch8",
+    "title": "Mesoamerican Economy",
+    "ncols": 6,
+    "nrows": 34,
+    "nonnull": 114,
+    "yr_min": -200,
+    "yr_max": 1600,
+    "columns": [
+      "obsidian.trade_volume_index",
+      "maya.trade_intensity_index",
+      "maya.salt_production_index",
+      "maya.cacao_trade_index",
+      "maya.jade_trade_index",
+      "cacao.production_index"
+    ],
+    "img": "previews/mesoamerican_economy.png"
+  },
+  {
+    "name": "monastery_accounts",
+    "batch": "batch8",
+    "title": "Monastery Accounts",
+    "ncols": 6,
+    "nrows": 61,
+    "nonnull": 135,
+    "yr_min": 1200,
+    "yr_max": 1535,
+    "columns": [
+      "bolton.priory",
+      "bolton.priory",
+      "bolton.priory",
+      "canterbury.cathedral",
+      "canterbury.cathedral",
+      "canterbury.cathedral"
+    ],
+    "img": "previews/monastery_accounts.png"
+  },
+  {
+    "name": "nutrition",
+    "batch": "batch8",
+    "title": "Nutrition",
+    "ncols": 6,
+    "nrows": 37,
+    "nonnull": 50,
+    "yr_min": 800,
+    "yr_max": 2000,
+    "columns": [
+      "nutrition.calorie_adequacy_index",
+      "nutrition.calorie_adequacy_index",
+      "nutrition.calorie_adequacy_index",
+      "nutrition.calorie_adequacy_index",
+      "nutrition.calories",
+      "nutrition.calories"
+    ],
+    "img": "previews/nutrition.png"
+  },
+  {
+    "name": "paper_prices",
+    "batch": "batch8",
+    "title": "Paper Prices",
+    "ncols": 6,
+    "nrows": 39,
+    "nonnull": 167,
+    "yr_min": 751,
+    "yr_max": 1900,
+    "columns": [
+      "paper.price_grams_silver_per_sheet",
+      "paper.price_days_wages_per_ream",
+      "parchment.price_grams_silver_per_sheet",
+      "paper_parchment.price_ratio",
+      "europe.paper_mills",
+      "europe.paper_output"
+    ],
+    "img": "previews/paper_prices.png"
+  },
+  {
+    "name": "patents_expanded",
+    "batch": "batch8",
+    "title": "Patents Expanded",
+    "ncols": 6,
+    "nrows": 46,
+    "nonnull": 96,
+    "yr_min": 1617,
+    "yr_max": 1852,
+    "columns": [
+      "england.patents",
+      "england.patents",
+      "england.patents",
+      "england.patents",
+      "england.patents",
+      "england.patents"
+    ],
+    "img": "previews/patents_expanded.png"
+  },
+  {
+    "name": "persian_economy",
+    "batch": "batch8",
+    "title": "Persian Economy",
+    "ncols": 1,
+    "nrows": 71,
+    "nonnull": 71,
+    "yr_min": -520,
+    "yr_max": 632,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/persian_economy.png"
+  },
+  {
+    "name": "phenology",
+    "batch": "batch8",
+    "title": "Phenology",
+    "ncols": 1,
+    "nrows": 6016,
+    "nonnull": 6016,
+    "yr_min": 812,
+    "yr_max": 2010,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/phenology.png"
+  },
+  {
+    "name": "profit_rates",
+    "batch": "batch8",
+    "title": "Profit Rates",
+    "ncols": 6,
+    "nrows": 53,
+    "nonnull": 63,
+    "yr_min": 1700,
+    "yr_max": 2010,
+    "columns": [
+      "capital.income_ratio",
+      "capital.income_ratio",
+      "capital.income_ratio",
+      "capital.income_ratio",
+      "returns.capital",
+      "returns.capital"
+    ],
+    "img": "previews/profit_rates.png"
+  },
+  {
+    "name": "rent_income",
+    "batch": "batch8",
+    "title": "Rent Income",
+    "ncols": 6,
+    "nrows": 53,
+    "nonnull": 100,
+    "yr_min": 1500,
+    "yr_max": 2010,
+    "columns": [
+      "income.capital_share",
+      "income.capital_share",
+      "income.capital_share",
+      "rent.agricultural",
+      "rent.agricultural",
+      "rent.housing"
+    ],
+    "img": "previews/rent_income.png"
+  },
+  {
+    "name": "sedimentation",
+    "batch": "batch8",
+    "title": "Sedimentation",
+    "ncols": 1,
+    "nrows": 99,
+    "nonnull": 99,
+    "yr_min": -10000,
+    "yr_max": 2010,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/sedimentation.png"
+  },
+  {
+    "name": "spanish_empire",
+    "batch": "batch8",
+    "title": "Spanish Empire",
+    "ncols": 1,
+    "nrows": 107,
+    "nonnull": 107,
+    "yr_min": 1503,
+    "yr_max": 1800,
+    "columns": [
+      "value"
+    ],
+    "img": "previews/spanish_empire.png"
+  },
+  {
+    "name": "timber_trade",
+    "batch": "batch8",
+    "title": "Timber Trade",
+    "ncols": 6,
+    "nrows": 45,
+    "nonnull": 159,
+    "yr_min": 1497,
+    "yr_max": 1900,
+    "columns": [
+      "baltic.timber_ships_through_sound",
+      "baltic.timber_volume",
+      "norway.timber_exports",
+      "britain.timber_imports_total",
+      "north_america.timber_exports",
+      "north_america.naval_stores"
+    ],
+    "img": "previews/timber_trade.png"
+  },
+  {
+    "name": "water_infrastructure",
+    "batch": "batch8",
+    "title": "Water Infrastructure",
+    "ncols": 2,
+    "nrows": 70,
+    "nonnull": 140,
+    "yr_min": -4000,
+    "yr_max": 2000,
+    "columns": [
+      "length_km",
+      "capacity_m3_per_day"
+    ],
+    "img": "previews/water_infrastructure.png"
+  },
+  {
+    "name": "weapons_prices",
+    "batch": "batch8",
+    "title": "Weapons Prices",
+    "ncols": 6,
+    "nrows": 36,
+    "nonnull": 164,
+    "yr_min": 1267,
+    "yr_max": 1900,
+    "columns": [
+      "gunpowder.price_grams_silver_per_kg",
+      "saltpeter.price_grams_silver_per_kg",
+      "cannon.price_grams_silver",
+      "cannon.price_grams_silver",
+      "musket.price_grams_silver",
+      "musket.price_days_wages_skilled"
+    ],
+    "img": "previews/weapons_prices.png"
+  },
+  {
+    "name": "whaling",
+    "batch": "batch8",
+    "title": "Whaling",
+    "ncols": 6,
+    "nrows": 66,
+    "nonnull": 154,
+    "yr_min": 1700,
+    "yr_max": 1910,
+    "columns": [
+      "american.whaling",
+      "american.whaling",
+      "american.whaling",
+      "american.whaling",
+      "british.whaling",
+      "british.whaling"
+    ],
+    "img": "previews/whaling.png"
+  },
+  {
+    "name": "working_hours",
+    "batch": "batch8",
+    "title": "Working Hours",
+    "ncols": 6,
+    "nrows": 41,
+    "nonnull": 105,
+    "yr_min": 1250,
+    "yr_max": 2010,
+    "columns": [
+      "labor.days",
+      "labor.hours",
+      "labor.hours",
+      "labor.hours",
+      "labor.hours",
+      "labor.hours"
+    ],
+    "img": "previews/working_hours.png"
+  },
+  {
+    "name": "atmospheric_gases",
+    "batch": "batch9",
+    "title": "Atmospheric Gases",
+    "ncols": 6,
+    "nrows": 1016,
+    "nonnull": 1162,
+    "yr_min": -110595,
+    "yr_max": 2006,
+    "columns": [
+      "atmos.gisp2",
+      "atmos.gisp2",
+      "atmos.gisp2",
+      "atmos.law_dome",
+      "atmos.law_dome",
+      "atmos.law_dome"
+    ],
+    "img": "previews/atmospheric_gases.png"
+  },
+  {
+    "name": "chinese_dynastic",
+    "batch": "batch9",
+    "title": "Chinese Dynastic",
+    "ncols": 4,
+    "nrows": 66,
+    "nonnull": 109,
+    "yr_min": -220,
+    "yr_max": 1910,
+    "columns": [
+      "china.exam_candidates",
+      "china.gdp_per_capita",
+      "china.population",
+      "china.tax_revenue"
+    ],
+    "img": "previews/chinese_dynastic.png"
+  },
+  {
+    "name": "commodity_futures",
+    "batch": "batch9",
+    "title": "Commodity Futures",
+    "ncols": 5,
+    "nrows": 121,
+    "nonnull": 350,
+    "yr_min": 1820,
+    "yr_max": 1940,
+    "columns": [
+      "futures.copper",
+      "futures.corn",
+      "futures.cotton",
+      "futures.tin",
+      "futures.wheat"
+    ],
+    "img": "previews/commodity_futures.png"
+  },
+  {
+    "name": "corporate_profits",
+    "batch": "batch9",
+    "title": "Corporate Profits",
+    "ncols": 6,
+    "nrows": 155,
+    "nonnull": 118,
+    "yr_min": 1881,
+    "yr_max": 2020,
+    "columns": [
+      "equity.cape_ratio",
+      "equity.dividend_yield",
+      "equity.dividend_yield",
+      "equity.dividend_yield",
+      "equity.dividend_yield",
+      "equity.dividend_yield"
+    ],
+    "img": "previews/corporate_profits.png"
+  },
+  {
+    "name": "disasters",
+    "batch": "batch9",
+    "title": "Disasters",
+    "ncols": 6,
+    "nrows": 110,
+    "nonnull": 32,
+    "yr_min": -436,
+    "yr_max": 1907,
+    "columns": [
+      "disaster.famine_deaths_low",
+      "disaster.famine_deaths_high",
+      "disaster.famine_deaths_low",
+      "disaster.famine_deaths_high",
+      "disaster.famine_deaths_low",
+      "disaster.famine_deaths_high"
+    ],
+    "img": "previews/disasters.png"
+  },
+  {
+    "name": "dust_aerosol",
+    "batch": "batch9",
+    "title": "Dust Aerosol",
+    "ncols": 6,
+    "nrows": 4578,
+    "nonnull": 4748,
+    "yr_min": -798050,
+    "yr_max": 1992,
+    "columns": [
+      "dust.chinese_loess",
+      "dust.chinese_loess",
+      "dust.epica_dome_c",
+      "dust.gisp2",
+      "dust.gisp2",
+      "dust.saharan"
+    ],
+    "img": "previews/dust_aerosol.png"
+  },
+  {
+    "name": "education",
+    "batch": "batch9",
+    "title": "Education",
+    "ncols": 6,
+    "nrows": 188,
+    "nonnull": 112,
+    "yr_min": 1500,
+    "yr_max": 2000,
+    "columns": [
+      "education.public_spending_gdp",
+      "education.public_spending_gdp",
+      "education.primary_enrollment_gross",
+      "education.primary_enrollment_gross",
+      "education.adult_literacy_rate",
+      "education.adult_literacy_rate"
+    ],
+    "img": "previews/education.png"
+  },
+  {
+    "name": "energy_efficiency",
+    "batch": "batch9",
+    "title": "Energy Efficiency",
+    "ncols": 5,
+    "nrows": 37,
+    "nonnull": 138,
+    "yr_min": 1300,
+    "yr_max": 2020,
+    "columns": [
+      "lighting.efficiency",
+      "lighting.cost",
+      "transport.efficiency",
+      "heating.efficiency",
+      "power.efficiency"
+    ],
+    "img": "previews/energy_efficiency.png"
+  },
+  {
+    "name": "financial_depth",
+    "batch": "batch9",
+    "title": "Financial Depth",
+    "ncols": 6,
+    "nrows": 82,
+    "nonnull": 202,
+    "yr_min": 1694,
+    "yr_max": 2020,
+    "columns": [
+      "financial_depth.bank_deposits_gdp",
+      "financial_depth.bank_deposits_gdp",
+      "financial_depth.bank_deposits_gdp",
+      "financial_depth.bank_deposits_gdp",
+      "financial_depth.bank_deposits_gdp",
+      "financial_depth.bank_deposits_gdp"
+    ],
+    "img": "previews/financial_depth.png"
+  },
+  {
+    "name": "foreign_investment",
+    "batch": "batch9",
+    "title": "Foreign Investment",
+    "ncols": 6,
+    "nrows": 143,
+    "nonnull": 54,
+    "yr_min": 1825,
+    "yr_max": 1945,
+    "columns": [
+      "fdi.overseas_investment_stock",
+      "fdi.overseas_investment_gnp",
+      "fdi.overseas_investment_stock",
+      "fdi.overseas_investment_gnp",
+      "fdi.overseas_investment_gnp",
+      "fdi.overseas_investment_stock"
+    ],
+    "img": "previews/foreign_investment.png"
+  },
+  {
+    "name": "healthcare",
+    "batch": "batch9",
+    "title": "Healthcare",
+    "ncols": 6,
+    "nrows": 151,
+    "nonnull": 53,
+    "yr_min": 1800,
+    "yr_max": 2000,
+    "columns": [
+      "healthcare.hospital_beds_per_1000",
+      "healthcare.hospital_beds_per_1000",
+      "healthcare.hospital_beds_per_1000",
+      "healthcare.hospital_beds_per_1000",
+      "healthcare.hospital_beds_per_1000",
+      "healthcare.hospital_beds_per_1000"
+    ],
+    "img": "previews/healthcare.png"
+  },
+  {
+    "name": "holocene_temperature",
+    "batch": "batch9",
+    "title": "Holocene Temperature",
+    "ncols": 6,
+    "nrows": 136,
+    "nonnull": 222,
+    "yr_min": -10050,
+    "yr_max": 2023,
+    "columns": [
+      "paleo.hadcrut5",
+      "paleo.kaufman2020",
+      "paleo.marcott2013",
+      "paleo.pages2k",
+      "paleo.pages2k",
+      "paleo.pages2k"
+    ],
+    "img": "previews/holocene_temperature.png"
+  },
+  {
+    "name": "indian_comprehensive",
+    "batch": "batch9",
+    "title": "Indian Comprehensive",
+    "ncols": 6,
+    "nrows": 40,
+    "nonnull": 88,
+    "yr_min": 1,
+    "yr_max": 1913,
+    "columns": [
+      "india.gdp_per_capita",
+      "india.gdp_total_index",
+      "india.mughal_land_revenue",
+      "india.population",
+      "india.share_world_gdp",
+      "india.trade_balance_with_europ"
+    ],
+    "img": "previews/indian_comprehensive.png"
+  },
+  {
+    "name": "information_costs",
+    "batch": "batch9",
+    "title": "Information Costs",
+    "ncols": 5,
+    "nrows": 71,
+    "nonnull": 120,
+    "yr_min": 1500,
+    "yr_max": 2023,
+    "columns": [
+      "information.transmission_speed",
+      "transatlantic.cost_per_word",
+      "us_telegraph.rate_10_words_500mi",
+      "us_postal.first_class_rate",
+      "telephone.ny_london_3min"
+    ],
+    "img": "previews/information_costs.png"
+  },
+  {
+    "name": "legal_system",
+    "batch": "batch9",
+    "title": "Legal System",
+    "ncols": 6,
+    "nrows": 131,
+    "nonnull": 53,
+    "yr_min": -450,
+    "yr_max": 1990,
+    "columns": [
+      "legal.code_articles",
+      "legal.code_articles",
+      "legal.acts_per_decade",
+      "legal.acts_per_decade",
+      "legal.court_cases_annual",
+      "legal.court_cases_annual"
+    ],
+    "img": "previews/legal_system.png"
+  },
+  {
+    "name": "medieval_trade_routes",
+    "batch": "batch9",
+    "title": "Medieval Trade Routes",
+    "ncols": 6,
+    "nrows": 46,
+    "nonnull": 97,
+    "yr_min": 800,
+    "yr_max": 1669,
+    "columns": [
+      "medieval.champagne_fairs_index",
+      "medieval.english_cloth_exports",
+      "medieval.english_wool_exports",
+      "medieval.european_silver_outpu",
+      "medieval.flemish_trade_index",
+      "medieval.hanseatic_trade_index"
+    ],
+    "img": "previews/medieval_trade_routes.png"
+  },
+  {
+    "name": "money_supply",
+    "batch": "batch9",
+    "title": "Money Supply",
+    "ncols": 6,
+    "nrows": 774,
+    "nonnull": 501,
+    "yr_min": 1696,
+    "yr_max": 2016,
+    "columns": [
+      "money.10",
+      "money.11",
+      "money.12",
+      "money.13",
+      "money.14",
+      "money.15"
+    ],
+    "img": "previews/money_supply.png"
+  },
+  {
+    "name": "ottoman_comprehensive",
+    "batch": "batch9",
+    "title": "Ottoman Comprehensive",
+    "ncols": 6,
+    "nrows": 49,
+    "nonnull": 86,
+    "yr_min": 1300,
+    "yr_max": 1914,
+    "columns": [
+      "ottoman.akce_silver_content",
+      "ottoman.gdp_per_capita",
+      "ottoman.military_budget_share",
+      "ottoman.population",
+      "ottoman.state_revenue_akce",
+      "ottoman.state_revenue_kurus"
+    ],
+    "img": "previews/ottoman_comprehensive.png"
+  },
+  {
+    "name": "price_indices",
+    "batch": "batch9",
+    "title": "Price Indices",
+    "ncols": 6,
+    "nrows": 290,
+    "nonnull": 411,
+    "yr_min": 1400,
+    "yr_max": 2020,
+    "columns": [
+      "prices.cpi",
+      "prices.cpi",
+      "prices.cpi_composite",
+      "prices.cpi_composite",
+      "prices.cpi_equivalent",
+      "prices.cpi_equivalent"
+    ],
+    "img": "previews/price_indices.png"
+  },
+  {
+    "name": "religious_economics",
+    "batch": "batch9",
+    "title": "Religious Economics",
+    "ncols": 6,
+    "nrows": 87,
+    "nonnull": 28,
+    "yr_min": 585,
+    "yr_max": 1836,
+    "columns": [
+      "religion.tithe_effective_rate",
+      "religion.tithe_effective_rate",
+      "religion.monastic_total_income",
+      "religion.monastic_houses",
+      "religion.monastic_avg_income",
+      "religion.monastic_total_income"
+    ],
+    "img": "previews/religious_economics.png"
+  },
+  {
+    "name": "roman_comprehensive",
+    "batch": "batch9",
+    "title": "Roman Comprehensive",
+    "ncols": 6,
+    "nrows": 54,
+    "nonnull": 103,
+    "yr_min": -500,
+    "yr_max": 500,
+    "columns": [
+      "roman_empire.annona_recipients",
+      "roman_empire.coinage_output",
+      "roman_empire.denarius_silver_c",
+      "roman_empire.gdp_per_capita",
+      "roman_empire.gdp_total",
+      "roman_empire.population"
+    ],
+    "img": "previews/roman_comprehensive.png"
+  },
+  {
+    "name": "scientific_output",
+    "batch": "batch9",
+    "title": "Scientific Output",
+    "ncols": 5,
+    "nrows": 31,
+    "nonnull": 110,
+    "yr_min": 1665,
+    "yr_max": 2020,
+    "columns": [
+      "science.cumulative_journals",
+      "science.annual_papers",
+      "science.active_researchers",
+      "innovation.patent_applications",
+      "science.output_doubling_time"
+    ],
+    "img": "previews/scientific_output.png"
+  },
+  {
+    "name": "sea_surface_temp",
+    "batch": "batch9",
+    "title": "Sea Surface Temp",
+    "ncols": 6,
+    "nrows": 119,
+    "nonnull": 120,
+    "yr_min": -23050,
+    "yr_max": 2010,
+    "columns": [
+      "sst.coral",
+      "sst.coral",
+      "sst.coral",
+      "sst.foram_mgca",
+      "sst.foram_mgca",
+      "sst.foram_mgca"
+    ],
+    "img": "previews/sea_surface_temp.png"
+  },
+  {
+    "name": "speleothems_expanded",
+    "batch": "batch9",
+    "title": "Speleothems Expanded",
+    "ncols": 5,
+    "nrows": 1194,
+    "nonnull": 1228,
+    "yr_min": -639350,
+    "yr_max": 2000,
+    "columns": [
+      "speleo.borneo_gunung_mulu",
+      "speleo.china_composite",
+      "speleo.dongge_cave_china",
+      "speleo.hulu_cave_china",
+      "speleo.soreq_cave_israel"
+    ],
+    "img": "previews/speleothems_expanded.png"
+  },
+  {
+    "name": "state_capacity",
+    "batch": "batch9",
+    "title": "State Capacity",
+    "ncols": 6,
+    "nrows": 44,
+    "nonnull": 13,
+    "yr_min": 1750,
+    "yr_max": 1900,
+    "columns": [
+      "state_capacity.austria",
+      "state_capacity.austria",
+      "state_capacity.belgium",
+      "state_capacity.britain",
+      "state_capacity.britain",
+      "state_capacity.britain"
+    ],
+    "img": "previews/state_capacity.png"
+  },
+  {
+    "name": "tech_adoption",
+    "batch": "batch9",
+    "title": "Tech Adoption",
+    "ncols": 6,
+    "nrows": 95,
+    "nonnull": 122,
+    "yr_min": 1760,
+    "yr_max": 2000,
+    "columns": [
+      "spinning_jenny.adoption",
+      "steam_engine.adoption",
+      "railroad.density",
+      "telephone.adoption",
+      "electricity.adoption",
+      "radio.adoption"
+    ],
+    "img": "previews/tech_adoption.png"
+  },
+  {
+    "name": "terms_of_trade_expanded",
+    "batch": "batch9",
+    "title": "Terms Of Trade Expanded",
+    "ncols": 6,
+    "nrows": 212,
+    "nonnull": 339,
+    "yr_min": 1810,
+    "yr_max": 2010,
+    "columns": [
+      "terms_of_trade.commodity_manufactures",
+      "terms_of_trade.food_manufactures",
+      "terms_of_trade.metals_manufactures",
+      "terms_of_trade.net_barter",
+      "terms_of_trade.net_barter",
+      "terms_of_trade.net_barter"
+    ],
+    "img": "previews/terms_of_trade_expanded.png"
+  },
+  {
+    "name": "transport_costs",
+    "batch": "batch9",
+    "title": "Transport Costs",
+    "ncols": 6,
+    "nrows": 67,
+    "nonnull": 132,
+    "yr_min": 1600,
+    "yr_max": 2020,
+    "columns": [
+      "ocean_freight.rate_index",
+      "atlantic_freight.rate",
+      "road_transport.cost",
+      "canal_transport.cost",
+      "ocean_transport.cost",
+      "us_railroad.freight_rate"
+    ],
+    "img": "previews/transport_costs.png"
+  },
+  {
+    "name": "ultra_long_tree_rings",
+    "batch": "batch9",
+    "title": "Ultra Long Tree Rings",
+    "ncols": 6,
+    "nrows": 65,
+    "nonnull": 170,
+    "yr_min": -10461,
+    "yr_max": 2000,
+    "columns": [
+      "dendro.atlas_cedar_morocco",
+      "dendro.belfast_oak",
+      "dendro.bristlecone_pine_white_mts",
+      "dendro.hohenheim_oak",
+      "dendro.hohenheim_oak",
+      "dendro.huon_pine_tasmania"
+    ],
+    "img": "previews/ultra_long_tree_rings.png"
+  },
+  {
+    "name": "water_transport",
+    "batch": "batch9",
+    "title": "Water Transport",
+    "ncols": 6,
+    "nrows": 34,
+    "nonnull": 92,
+    "yr_min": 1400,
+    "yr_max": 1913,
+    "columns": [
+      "rhine.freight_rate",
+      "danube.freight_rate",
+      "china_grand_canal.freight_rate",
+      "china_coastal.freight_rate",
+      "inland_waterway.cost_index",
+      "coastal_shipping.cost_index"
+    ],
+    "img": "previews/water_transport.png"
+  },
+  {
+    "name": "anglo_saxon_chronicle",
+    "batch": "original",
+    "title": "Anglo Saxon Chronicle",
+    "ncols": 4,
+    "nrows": 500,
+    "nonnull": 2000,
+    "yr_min": 1,
+    "yr_max": 1154,
+    "columns": [
+      "england.event",
+      "england.event",
+      "england.event",
+      "england.event"
+    ],
+    "img": "previews/anglo_saxon_chronicle.png"
+  },
+  {
+    "name": "babylon_prices",
+    "batch": "original",
+    "title": "Babylon Prices",
+    "ncols": 6,
+    "nrows": 455,
+    "nonnull": 1316,
+    "yr_min": -384,
+    "yr_max": -60,
+    "columns": [
+      "barley.price",
+      "dates.price",
+      "mustard.price",
+      "cress.price",
+      "sesame.price",
+      "wool.price"
+    ],
+    "img": "previews/babylon_prices.png"
+  },
+  {
+    "name": "china_disasters",
+    "batch": "original",
+    "title": "China Disasters",
+    "ncols": 6,
+    "nrows": 544,
+    "nonnull": 3264,
+    "yr_min": 1368,
+    "yr_max": 1911,
+    "columns": [
+      "china.flood",
+      "china.drought",
+      "china.pest_vermin",
+      "china.locust",
+      "china.famine",
+      "china.disease"
+    ],
+    "img": "previews/china_disasters.png"
+  },
+  {
+    "name": "china_longxi_drought_index",
+    "batch": "original",
+    "title": "China Longxi Drought Index",
+    "ncols": 1,
+    "nrows": 96,
+    "nonnull": 96,
+    "yr_min": 960,
+    "yr_max": 1990,
+    "columns": [
+      "china_longxi.drought_flood_index"
+    ],
+    "img": "previews/china_longxi_drought_index.png"
+  },
+  {
+    "name": "crisis_intensity",
+    "batch": "original",
+    "title": "Crisis Intensity",
+    "ncols": 3,
+    "nrows": 626,
+    "nonnull": 1878,
+    "yr_min": 1400,
+    "yr_max": 2025,
+    "columns": [
+      "crisis.intensity",
+      "crisis.war_active",
+      "crisis.financial_crisis"
+    ],
+    "img": "previews/crisis_intensity.png"
+  },
+  {
+    "name": "european_earthquakes",
+    "batch": "original",
+    "title": "European Earthquakes",
+    "ncols": 4,
+    "nrows": 4722,
+    "nonnull": 12847,
+    "yr_min": 1000,
+    "yr_max": 1899,
+    "columns": [
+      "europe.earthquake",
+      "europe.earthquake",
+      "europe.earthquake",
+      "europe.earthquake"
+    ],
+    "img": "previews/european_earthquakes.png"
+  },
+  {
+    "name": "european_grain_prices",
+    "batch": "original",
+    "title": "European Grain Prices",
+    "ncols": 4,
+    "nrows": 572,
+    "nonnull": 1167,
+    "yr_min": 1321,
+    "yr_max": 1900,
+    "columns": [
+      "wheat.price",
+      "wheat.price",
+      "wheat.price",
+      "wheat.price"
+    ],
+    "img": "previews/european_grain_prices.png"
+  },
+  {
+    "name": "fourth_turning_cycles",
+    "batch": "original",
+    "title": "Fourth Turning Cycles",
+    "ncols": 5,
+    "nrows": 596,
+    "nonnull": 2980,
+    "yr_min": 1435,
+    "yr_max": 2030,
+    "columns": [
+      "cycle.turning_phase",
+      "cycle.saeculum_position",
+      "cycle.crisis_flag",
+      "cycle.saeculum_number",
+      "cycle.turning_sine"
+    ],
+    "img": "previews/fourth_turning_cycles.png"
+  },
+  {
+    "name": "fourth_turning_turnings",
+    "batch": "original",
+    "title": "Fourth Turning Turnings",
+    "ncols": 2,
+    "nrows": 26,
+    "nonnull": 52,
+    "yr_min": 1435,
+    "yr_max": 2008,
+    "columns": [
+      "saeculum.number",
+      "turning.type"
+    ],
+    "img": "previews/fourth_turning_turnings.png"
+  },
+  {
+    "name": "historical_crises",
+    "batch": "original",
+    "title": "Historical Crises",
+    "ncols": 3,
+    "nrows": 216,
+    "nonnull": 648,
+    "yr_min": 1400,
+    "yr_max": 2023,
+    "columns": [
+      "event.deaths",
+      "event.duration",
+      "event.severity"
+    ],
+    "img": "previews/historical_crises.png"
+  },
+  {
+    "name": "nilometer",
+    "batch": "original",
+    "title": "Nilometer",
+    "ncols": 4,
+    "nrows": 1300,
+    "nonnull": 4286,
+    "yr_min": 622,
+    "yr_max": 1921,
+    "columns": [
+      "nile.flood_level_min",
+      "nile.flood_level_max",
+      "nile.water_depth_min",
+      "nile.water_depth_max"
+    ],
+    "img": "previews/nilometer.png"
+  },
+  {
+    "name": "phelps_brown_hopkins",
+    "batch": "original",
+    "title": "Phelps Brown Hopkins",
+    "ncols": 6,
+    "nrows": 746,
+    "nonnull": 4386,
+    "yr_min": 1209,
+    "yr_max": 1954,
+    "columns": [
+      "england.price_basket",
+      "england.nominal_wage",
+      "england.real_wage",
+      "england.rpi",
+      "england.nominal_earnings",
+      "england.real_earnings"
+    ],
+    "img": "previews/phelps_brown_hopkins.png"
+  },
+  {
+    "name": "sunspots",
+    "batch": "original",
+    "title": "Sunspots",
+    "ncols": 3,
+    "nrows": 3491,
+    "nonnull": 3768,
+    "yr_min": -28,
+    "yr_max": 2026,
+    "columns": [
+      "sunspot.observation",
+      "sunspot.count",
+      "sunspot.count"
+    ],
+    "img": "previews/sunspots.png"
+  }
+]
