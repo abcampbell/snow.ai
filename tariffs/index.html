@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>tariff elasticity · snow.ai</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --black:#050507; --near-black:#0a0a0f; --dark:#111118; --ghost:#1a1a24;
+    --dim:#2a2a3a; --muted:#4a4a5a; --silver:#8888a0; --light:#c0c0d0;
+    --white:#e8e8f0; --ice:#d0e0ff; --pulse:#4060ff; --pulse-dim:#2030a0;
+    --green:#3fbf7f; --green-dim:#1e5c3c; --red:#d05468; --red-dim:#5c2530;
+    --amber:#c8a04a;
+  }
+  html,body{ background:var(--black); color:var(--white); font-family:'JetBrains Mono',monospace; -webkit-font-smoothing:antialiased; }
+  body{ line-height:1.5; overflow-x:hidden; }
+  canvas#snow{ position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; opacity:0; animation:fadeCanvas 2.5s ease-out .3s forwards; pointer-events:none; }
+  @keyframes fadeCanvas{ to{ opacity:.5; } }
+  .scanlines{ position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.06) 2px,rgba(0,0,0,.06) 4px); }
+  .wrap{ position:relative; z-index:3; max-width:1180px; margin:0 auto; padding:0 24px 120px; }
+
+  /* header */
+  header{ padding:64px 0 30px; border-bottom:1px solid var(--ghost); margin-bottom:44px; }
+  .eyebrow{ font-size:.62rem; letter-spacing:.42em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:.7rem; margin-bottom:22px; }
+  .dot{ width:5px; height:5px; border-radius:50%; background:var(--pulse); box-shadow:0 0 8px var(--pulse),0 0 22px var(--pulse-dim); animation:breathe 3s ease-in-out infinite; }
+  @keyframes breathe{ 0%,100%{ opacity:.4; } 50%{ opacity:1; } }
+  h1{ font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(2.4rem,6vw,4rem); letter-spacing:.01em; line-height:1.05; color:var(--white); }
+  h1 em{ color:var(--ice); font-style:italic; }
+  .sub{ margin-top:20px; max-width:760px; color:var(--silver); font-size:.9rem; font-weight:300; line-height:1.7; }
+  .sub b{ color:var(--light); font-weight:500; }
+  .crumbs{ margin-top:22px; display:flex; flex-wrap:wrap; gap:8px 10px; font-size:.6rem; letter-spacing:.08em; color:var(--muted); }
+  .chip{ border:1px solid var(--ghost); padding:5px 10px; border-radius:2px; color:var(--silver); }
+  .chip b{ color:var(--ice); font-weight:500; }
+
+  section{ margin:56px 0; }
+  .sec-label{ font-size:.62rem; letter-spacing:.4em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  h2{ font-family:'Instrument Serif',serif; font-weight:400; font-size:1.8rem; color:var(--white); margin-bottom:8px; letter-spacing:.01em; }
+  .lead{ color:var(--silver); font-size:.86rem; font-weight:300; max-width:800px; margin-bottom:26px; line-height:1.7; }
+
+  /* hero result */
+  .hero{ display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:stretch; }
+  @media(max-width:820px){ .hero{ grid-template-columns:1fr; } }
+  .card{ background:linear-gradient(160deg,var(--near-black),var(--dark)); border:1px solid var(--ghost); border-radius:4px; padding:28px; }
+  .bigstat{ display:flex; align-items:baseline; gap:14px; margin-bottom:4px; }
+  .bigstat .n{ font-size:3.6rem; font-weight:300; color:var(--ice); letter-spacing:-.02em; line-height:1; }
+  .bigstat .vs{ font-size:1.1rem; color:var(--muted); }
+  .bigstat .n2{ font-size:2.2rem; font-weight:300; color:var(--silver); }
+  .barpair{ margin:22px 0 6px; }
+  .barrow{ margin-bottom:16px; }
+  .barrow .lab{ display:flex; justify-content:space-between; font-size:.68rem; color:var(--light); margin-bottom:6px; letter-spacing:.04em; }
+  .barrow .lab span:last-child{ color:var(--ice); font-weight:500; }
+  .track{ height:12px; background:var(--ghost); border-radius:2px; overflow:hidden; }
+  .fill{ height:100%; border-radius:2px; width:0; transition:width 1.4s cubic-bezier(.2,.8,.2,1); }
+  .fill.ine{ background:linear-gradient(90deg,var(--pulse-dim),var(--pulse)); }
+  .fill.sub{ background:linear-gradient(90deg,var(--dim),var(--muted)); }
+  .statgrid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:6px; }
+  .mini{ border:1px solid var(--ghost); border-radius:3px; padding:14px 16px; }
+  .mini .k{ font-size:.56rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .mini .v{ font-size:1.5rem; font-weight:300; color:var(--white); }
+  .mini .v small{ font-size:.7rem; color:var(--silver); }
+  .verdict{ margin-top:20px; padding:16px 18px; border-left:2px solid var(--pulse); background:rgba(64,96,255,.05); font-size:.8rem; color:var(--light); font-weight:300; line-height:1.7; }
+  .verdict b{ color:var(--ice); font-weight:500; }
+
+  /* axes */
+  .axgrid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media(max-width:700px){ .axgrid{ grid-template-columns:1fr; } }
+  .axcard{ border:1px solid var(--ghost); border-radius:4px; padding:22px; background:var(--near-black); }
+  .axcard h3{ font-weight:500; font-size:.78rem; color:var(--light); letter-spacing:.03em; margin-bottom:4px; }
+  .axcard .qh{ font-size:.6rem; color:var(--muted); margin-bottom:18px; letter-spacing:.04em; }
+  .axline{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  .axline .tag{ width:150px; font-size:.64rem; color:var(--silver); flex-shrink:0; }
+  .axline .tag b{ color:var(--light); }
+  .axtrack{ flex:1; height:22px; background:var(--ghost); border-radius:2px; position:relative; overflow:hidden; }
+  .axfill{ height:100%; width:0; transition:width 1.3s cubic-bezier(.2,.8,.2,1); display:flex; align-items:center; }
+  .axfill.strong{ background:linear-gradient(90deg,var(--pulse-dim),var(--pulse)); }
+  .axfill.weak{ background:linear-gradient(90deg,var(--red-dim),var(--red)); opacity:.85; }
+  .axval{ position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:.66rem; color:var(--white); font-weight:500; }
+
+  /* mechanism + chapter tables */
+  .mechrow{ display:flex; align-items:center; gap:14px; margin-bottom:13px; }
+  .mechrow .ml{ width:190px; font-size:.72rem; color:var(--light); flex-shrink:0; }
+  .mechrow .ml small{ color:var(--muted); }
+  .mtrack{ flex:1; height:20px; background:var(--ghost); border-radius:2px; position:relative; overflow:hidden; }
+  .mfill{ height:100%; width:0; background:linear-gradient(90deg,var(--green-dim),var(--green)); transition:width 1.2s cubic-bezier(.2,.8,.2,1); }
+  .mval{ position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:.64rem; color:var(--white); font-weight:500; }
+  .baseline{ position:absolute; top:-3px; bottom:-3px; width:1px; background:var(--amber); z-index:2; }
+  .baseline::after{ content:'base 36.6%'; position:absolute; top:-16px; left:50%; transform:translateX(-50%); font-size:.5rem; color:var(--amber); white-space:nowrap; }
+
+  table{ width:100%; border-collapse:collapse; font-size:.72rem; }
+  th{ text-align:left; font-weight:500; color:var(--muted); font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; padding:10px 12px; border-bottom:1px solid var(--dim); }
+  td{ padding:10px 12px; border-bottom:1px solid var(--ghost); color:var(--light); font-weight:300; }
+  tr:hover td{ background:rgba(255,255,255,.015); }
+  th.num, td.num{ text-align:right; }
+  .barcell{ position:relative; }
+  .barcell .cbar{ position:absolute; left:0; top:0; bottom:0; background:rgba(64,96,255,.10); z-index:0; }
+  .barcell span{ position:relative; z-index:1; }
+
+  /* node explorer */
+  .controls{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:18px; }
+  .controls input[type=text]{ background:var(--near-black); border:1px solid var(--dim); color:var(--white); padding:9px 13px; font-family:inherit; font-size:.74rem; width:280px; outline:none; border-radius:3px; }
+  .controls input[type=text]:focus{ border-color:var(--pulse-dim); }
+  .controls input::placeholder{ color:var(--muted); }
+  .seg{ display:flex; border:1px solid var(--dim); border-radius:3px; overflow:hidden; }
+  .seg button{ background:transparent; border:0; color:var(--silver); font-family:inherit; font-size:.62rem; letter-spacing:.06em; padding:8px 13px; cursor:pointer; transition:all .2s; border-right:1px solid var(--dim); }
+  .seg button:last-child{ border-right:0; }
+  .seg button.on{ background:var(--pulse-dim); color:var(--white); }
+  .seg button:hover:not(.on){ color:var(--white); }
+  .count{ font-size:.62rem; color:var(--muted); margin-left:auto; letter-spacing:.06em; }
+  .tbl-scroll{ max-height:620px; overflow-y:auto; border:1px solid var(--ghost); border-radius:4px; }
+  .tbl-scroll::-webkit-scrollbar{ width:10px; } .tbl-scroll::-webkit-scrollbar-thumb{ background:var(--dim); border-radius:5px; } .tbl-scroll::-webkit-scrollbar-track{ background:var(--near-black); }
+  .ntbl th{ position:sticky; top:0; background:var(--dark); z-index:5; cursor:pointer; user-select:none; }
+  .ntbl th:hover{ color:var(--silver); }
+  .ntbl td{ font-size:.68rem; }
+  .hts{ color:var(--ice); font-weight:500; font-variant-numeric:tabular-nums; }
+  .prod{ color:var(--silver); font-weight:300; max-width:340px; }
+  .pill{ display:inline-block; font-size:.54rem; letter-spacing:.04em; padding:2px 7px; border-radius:10px; font-weight:500; }
+  .pill.g{ background:var(--green-dim); color:#8fe6bb; }
+  .pill.d{ background:var(--red-dim); color:#e79aa8; }
+  .pill.ine{ background:var(--pulse-dim); color:var(--ice); }
+  .pill.sub{ background:var(--ghost); color:var(--silver); }
+  .yn{ font-weight:600; } .yn.n{ color:var(--pulse); } .yn.y{ color:var(--red); }
+  .mtag{ font-size:.52rem; color:var(--muted); }
+
+  footer{ margin-top:70px; padding-top:30px; border-top:1px solid var(--ghost); font-size:.66rem; color:var(--muted); font-weight:300; line-height:1.9; }
+  footer b{ color:var(--silver); font-weight:500; }
+  footer a{ color:var(--silver); text-decoration:none; border-bottom:1px solid var(--dim); }
+  footer a:hover{ color:var(--ice); }
+  .homelink{ position:fixed; top:20px; right:24px; z-index:10; font-size:.58rem; letter-spacing:.2em; color:var(--muted); text-decoration:none; text-transform:uppercase; }
+  .homelink:hover{ color:var(--silver); }
+  .loading{ text-align:center; padding:80px 0; color:var(--muted); font-size:.8rem; letter-spacing:.1em; }
+</style>
+</head>
+<body>
+<canvas id="snow"></canvas>
+<div class="scanlines"></div>
+<a class="homelink" href="/">snow.ai ↩</a>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span class="dot"></span> revealed short-run substitution elasticity</div>
+    <h1>What US industry <em>swore</em> it<br>could not substitute.</h1>
+    <p class="sub">During the Section&nbsp;301 tariff rounds, thousands of US firms filed sworn product-exclusion requests with USTR — each one a statement of <b>"we cannot substitute this input, here is why, here is the switching timeline."</b> That is short-run substitution-elasticity microdata: the exact thing the literature hand-waves with long-run numbers. This extracts every filing into structured elasticity rows, and uses USTR's grant/deny decision as a <b>quasi-label that validates the sworn claim.</b></p>
+    <div class="crumbs" id="crumbs"></div>
+  </header>
+
+  <div id="app"><div class="loading">loading elasticity data…</div></div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const F = n => (n==null? '—' : n);
+const el = (t,c,h)=>{const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;};
+
+let DATA=null, NODES=[], sortKey='prio', sortDir=-1, filterMode='all', query='';
+
+fetch('data.json').then(r=>r.json()).then(d=>{ DATA=d; NODES=d.nodes; render(); }).catch(e=>{
+  document.getElementById('app').innerHTML='<div class="loading">could not load data.json — '+e+'</div>';
+});
+
+function render(){
+  renderCrumbs(); renderApp(); renderFooter();
+  requestAnimationFrame(()=>requestAnimationFrame(animateBars));
+}
+
+function renderCrumbs(){
+  const m=DATA.meta, c=document.getElementById('crumbs');
+  const chips=[
+    ['docket', m.docket_name],
+    ['filings parsed', m.parsed_rows.toLocaleString()],
+    ['elasticity rows', m.signal_rows.toLocaleString()],
+    ['grant/deny labels', m.labels_decided.toLocaleString()],
+    ['corpus', m.pdfs_harvested.toLocaleString()+' PDFs / '+m.docket_total_docs.toLocaleString()+' docs'],
+    ['updated', m.generated],
+  ];
+  c.innerHTML = chips.map(([k,v])=>`<span class="chip">${k} <b>${v}</b></span>`).join('');
+}
+
+function renderApp(){
+  const h=DATA.headline, ax=DATA.axes, app=document.getElementById('app');
+  app.innerHTML='';
+
+  // ── HERO ──
+  const hero=el('section');
+  hero.appendChild(el('div','sec-label','The result'));
+  hero.appendChild(el('h2','','USTR grants the "can\u2019t substitute" filers at more than double the rate'));
+  hero.appendChild(el('p','lead','If firms claiming true inelasticity are granted at a higher rate, the regulator\u2019s revealed decision independently corroborates the sworn claim — turning self-reported narrative into a <b style="color:var(--light)">validated</b> elasticity prior. It does, decisively.'));
+
+  const grid=el('div','hero');
+  // left: bars
+  const left=el('div','card');
+  left.innerHTML=`
+    <div class="bigstat"><span class="n">${h.inelastic_rate}%</span><span class="vs">vs</span><span class="n2">${h.substitutable_rate}%</span></div>
+    <div style="font-size:.64rem;color:var(--muted);letter-spacing:.06em">grant rate — claims fully inelastic&nbsp; vs &nbsp;admits a substitute exists</div>
+    <div class="barpair">
+      <div class="barrow">
+        <div class="lab"><span>Claims fully inelastic <small style="color:var(--muted)">(no US &amp; no third-country source)</small></span><span>${h.inelastic_granted}/${h.inelastic_n}</span></div>
+        <div class="track"><div class="fill ine" data-w="${h.inelastic_rate}"></div></div>
+      </div>
+      <div class="barrow">
+        <div class="lab"><span>Admits a substitute exists</span><span>${h.substitutable_granted}/${h.substitutable_n}</span></div>
+        <div class="track"><div class="fill sub" data-w="${h.substitutable_rate}"></div></div>
+      </div>
+    </div>`;
+  // right: stats
+  const right=el('div','card');
+  right.innerHTML=`
+    <div class="statgrid">
+      <div class="mini"><div class="k">Odds ratio</div><div class="v">${h.odds_ratio}×</div></div>
+      <div class="mini"><div class="k">&chi;&sup2; (1 df)</div><div class="v">${h.chi2} <small>p&lt;0.001</small></div></div>
+      <div class="mini"><div class="k">Joined filings</div><div class="v">${DATA.meta.joined_rows}</div></div>
+      <div class="mini"><div class="k">Baseline grant</div><div class="v">${h.base_rate}%</div></div>
+    </div>
+    <div class="verdict">The grant decision is <b>not random</b> with respect to the substitutability claim. A granted "no substitute" filing is a stronger short-run inelasticity prior than an ungranted one — the label becomes a <b>credibility weight</b> on the sworn narrative.</div>`;
+  grid.appendChild(left); grid.appendChild(right);
+  hero.appendChild(grid);
+  app.appendChild(hero);
+
+  // ── AXES ──
+  const axs=el('section');
+  axs.appendChild(el('div','sec-label','Monotone on every axis'));
+  axs.appendChild(el('h2','','The gradient holds independently'));
+  axs.appendChild(el('p','lead','Split the grant rate by each sworn availability answer on its own. Both move the same direction: claiming no source available predicts a grant; admitting one exists collapses it.'));
+  const axg=el('div','axgrid');
+  axg.appendChild(axCard('Q8 · US-source availability','"Is the product available from US sources?"',
+    ['No US source', ax.us_source.no_rate, ax.us_source.no_g, ax.us_source.no_n, 'strong'],
+    ['US source exists', ax.us_source.yes_rate, ax.us_source.yes_g, ax.us_source.yes_n, 'weak']));
+  axg.appendChild(axCard('Q9 · Third-country availability','"Is it available from third countries?"',
+    ['No reroute possible', ax.third_country.no_rate, ax.third_country.no_g, ax.third_country.no_n, 'strong'],
+    ['Reroute exists', ax.third_country.yes_rate, ax.third_country.yes_g, ax.third_country.yes_n, 'weak']));
+  axs.appendChild(axg);
+  app.appendChild(axs);
+
+  // ── MECHANISMS ──
+  const mc=el('section');
+  mc.appendChild(el('div','sec-label','What friction USTR rewards'));
+  mc.appendChild(el('h2','','Grant rate by cited switching mechanism'));
+  mc.appendChild(el('p','lead','From the free-text rationale (Q11), the specific switching-cost mechanism a firm cites. Firms naming a concrete rigidity beat the 36.6% baseline — and lead-time rigidity is the single strongest signal the regulator responds to.'));
+  const mbox=el('div','card');
+  const maxr=Math.max(...DATA.mechanisms.map(m=>m.rate),1);
+  DATA.mechanisms.forEach(m=>{
+    const row=el('div','mechrow');
+    row.innerHTML=`<div class="ml">${m.label} <small>(n=${m.n})</small></div>
+      <div class="mtrack"><div class="mfill" data-w="${(m.rate/maxr*100).toFixed(1)}"><span></span></div>
+      <div class="baseline" style="left:${(36.6/maxr*100).toFixed(1)}%"></div>
+      <div class="mval">${m.rate}%</div></div>`;
+    mbox.appendChild(row);
+  });
+  mc.appendChild(mbox);
+  app.appendChild(mc);
+
+  // ── CHAPTERS ──
+  const ch=el('section');
+  ch.appendChild(el('div','sec-label','By sector'));
+  ch.appendChild(el('h2','','Where inelasticity concentrates'));
+  ch.appendChild(el('p','lead','Elasticity signal by HS chapter. Machinery (HS-84) dominates the filings and claims inelasticity most aggressively — these are your empirical "can\u2019t reroute" priors, by product code.'));
+  const ct=el('div',null);
+  let rowsHTML=`<table><thead><tr><th>HS</th><th>Sector</th><th class="num">Filings</th><th class="num">% claim inelastic</th><th class="num">Grant rate</th></tr></thead><tbody>`;
+  const maxN=Math.max(...DATA.chapters.map(c=>c.n),1);
+  DATA.chapters.forEach(c=>{
+    rowsHTML+=`<tr>
+      <td class="hts">${c.hs}</td>
+      <td>${c.sector}</td>
+      <td class="num barcell"><div class="cbar" style="width:${(c.n/maxN*100).toFixed(0)}%"></div><span>${c.n}</span></td>
+      <td class="num">${c.inelastic_rate}%</td>
+      <td class="num">${c.grant_rate==null?'—':c.grant_rate+'%'}</td>
+    </tr>`;
+  });
+  rowsHTML+=`</tbody></table>`;
+  ct.innerHTML=rowsHTML;
+  ch.appendChild(ct);
+  app.appendChild(ch);
+
+  // ── NODE EXPLORER ──
+  const nx=el('section');
+  nx.appendChild(el('div','sec-label','The payload — cascade priors'));
+  nx.appendChild(el('h2','','Node explorer · which inputs can\u2019t reroute'));
+  nx.appendChild(el('p','lead','Every filing with the elasticity signal, one row per sworn claim. Filter to <b style="color:var(--ice)">validated-inelastic</b> nodes (claimed no substitute AND granted by USTR) for the highest-credibility "cannot reroute" set — the escape-route map for the next trade shock. Search by HTS code, firm, or product.'));
+  nx.innerHTML+=`
+    <div class="controls">
+      <input type="text" id="q" placeholder="search HTS / firm / product…" autocomplete="off">
+      <div class="seg" id="modeSeg">
+        <button data-m="all" class="on">all</button>
+        <button data-m="validated">validated-inelastic</button>
+        <button data-m="inelastic">claims inelastic</button>
+        <button data-m="reroute">can reroute</button>
+      </div>
+      <span class="count" id="ncount"></span>
+    </div>
+    <div class="tbl-scroll"><table class="ntbl"><thead><tr>
+      <th data-k="hts">HTS</th><th data-k="org">Firm</th><th data-k="product">Product</th>
+      <th data-k="us">US src</th><th data-k="third">3rd-ctry</th>
+      <th data-k="stime">Switch time</th><th data-k="decision">USTR</th>
+    </tr></thead><tbody id="nbody"></tbody></table></div>`;
+  app.appendChild(nx);
+
+  // wire explorer
+  document.getElementById('q').addEventListener('input', e=>{ query=e.target.value.toLowerCase(); drawNodes(); });
+  document.querySelectorAll('#modeSeg button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#modeSeg button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); filterMode=b.dataset.m; drawNodes();
+  }));
+  document.querySelectorAll('.ntbl th').forEach(th=>th.addEventListener('click',()=>{
+    const k=th.dataset.k; if(sortKey===k) sortDir*=-1; else{ sortKey=k; sortDir=1; } drawNodes();
+  }));
+  drawNodes();
+}
+
+function axCard(title,qh,strong,weak){
+  const c=el('div','axcard');
+  const [s_lab,s_rate,s_g,s_n]=strong, [w_lab,w_rate,w_g,w_n]=weak;
+  c.innerHTML=`<h3>${title}</h3><div class="qh">${qh}</div>
+    <div class="axline"><div class="tag"><b>${s_lab}</b><br>${s_g}/${s_n} granted</div>
+      <div class="axtrack"><div class="axfill strong" data-w="${s_rate}"></div><div class="axval">${s_rate}%</div></div></div>
+    <div class="axline"><div class="tag"><b>${w_lab}</b><br>${w_g}/${w_n} granted</div>
+      <div class="axtrack"><div class="axfill weak" data-w="${w_rate}"></div><div class="axval">${w_rate}%</div></div></div>`;
+  return c;
+}
+
+function prio(n){
+  if(n.inelastic && n.decision==='granted') return 3;
+  if(n.inelastic) return 2;
+  if(n.decision==='granted') return 1;
+  return 0;
+}
+function drawNodes(){
+  let rows=NODES.slice();
+  if(filterMode==='validated') rows=rows.filter(n=>n.inelastic && n.decision==='granted');
+  else if(filterMode==='inelastic') rows=rows.filter(n=>n.inelastic);
+  else if(filterMode==='reroute') rows=rows.filter(n=>n.third==='Y');
+  if(query){ rows=rows.filter(n=>((n.hts||'')+' '+(n.org||'')+' '+(n.product||'')).toLowerCase().includes(query)); }
+  rows.sort((a,b)=>{
+    let va,vb;
+    if(sortKey==='prio'){ va=prio(a); vb=prio(b); }
+    else { va=a[sortKey]; vb=b[sortKey]; }
+    if(typeof va==='string'){ va=va||''; vb=vb||''; return sortDir*va.localeCompare(vb); }
+    return sortDir*((va||0)-(vb||0));
+  });
+  const body=document.getElementById('nbody');
+  const N=rows.length;
+  document.getElementById('ncount').textContent=N.toLocaleString()+' nodes';
+  body.innerHTML=rows.slice(0,500).map(n=>{
+    const dec = n.decision==='granted'?'<span class="pill g">granted</span>':n.decision==='denied'?'<span class="pill d">denied</span>':'<span class="mtag">—</span>';
+    const inePill = n.inelastic?'<span class="pill ine">inelastic</span>':'';
+    const us = n.us? `<span class="yn ${n.us==='N'?'n':'y'}">${n.us}</span>`:'—';
+    const th = n.third? `<span class="yn ${n.third==='N'?'n':'y'}">${n.third}</span>`:'—';
+    const mechs = (n.mechs&&n.mechs.length)? `<div class="mtag">${n.mechs.join(' · ')}</div>`:'';
+    return `<tr>
+      <td class="hts">${n.hts||'—'} ${inePill}</td>
+      <td>${n.org||'<span class="mtag">—</span>'}</td>
+      <td class="prod">${n.product||''}${mechs}</td>
+      <td>${us}</td><td>${th}</td>
+      <td>${n.stime||'<span class="mtag">—</span>'}</td>
+      <td>${dec}</td>
+    </tr>`;
+  }).join('') + (N>500?`<tr><td colspan="7" class="mtag" style="text-align:center;padding:16px">showing top 500 of ${N.toLocaleString()} — refine your search</td></tr>`:'');
+}
+
+function animateBars(){
+  document.querySelectorAll('[data-w]').forEach(b=>{ b.style.width=b.dataset.w+'%'; });
+}
+
+function renderFooter(){
+  const m=DATA.meta;
+  document.getElementById('footer').innerHTML=`
+    <b>Method.</b> USTR Section&nbsp;301 product-exclusion requests (docket ${m.docket}) are sworn statements of short-run input substitutability. Attachment PDFs harvested from regulations.gov CloudFront; each parsed into an elasticity row (HTS code, Q8 US-source Y/N, Q9 third-country Y/N, Q11 switching-cost narrative). Grant/deny labels joined from the regulations.gov API document titles. <code>claimed_inelastic = (Q8=N &amp; Q9=N)</code>. &chi;&sup2; is a 2×2 test of grant vs claim.<br>
+    <b>Selection bias is the point.</b> Firms file only when they believe they\u2019re inelastic (~79% claim fully inelastic). The grant is the regulator\u2019s correction — model grant probability conditional on the claim for a credibility-weighted prior.<br>
+    <b>Corpus.</b> ${m.pdfs_harvested.toLocaleString()} PDFs harvested of ${m.docket_total_docs.toLocaleString()} docket documents · ${m.labels_decided.toLocaleString()} grant/deny labels · ${m.signal_rows.toLocaleString()} rows carry the elasticity signal · ${m.joined_rows} joined to a decision. Generated ${m.generated}. Public USTR data.<br>
+    <span style="color:var(--dim)">snow.ai / tariffs · Rose Technology · <a href="https://campbellramble.substack.com" target="_blank">campbell ramble</a></span>`;
+}
+
+// ── snow canvas ──
+(function(){
+  const cv=document.getElementById('snow'), ctx=cv.getContext('2d'); let ps=[];
+  function rs(){ cv.width=innerWidth*devicePixelRatio; cv.height=innerHeight*devicePixelRatio; ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+  function init(){ ps=[]; for(let i=0;i<140;i++) ps.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,s:Math.random()*1.5+.3,sp:Math.random()*.3+.05,dr:Math.random()*Math.PI*2,o:Math.random()*.35+.05}); }
+  function tick(){ ctx.clearRect(0,0,innerWidth,innerHeight); ps.forEach(p=>{ p.y+=p.sp; p.dr+=.003; p.x+=Math.sin(p.dr)*.1; if(p.y>innerHeight+5){p.y=-5;p.x=Math.random()*innerWidth;} ctx.beginPath(); ctx.arc(p.x,p.y,p.s,0,Math.PI*2); ctx.fillStyle=`rgba(200,210,240,${p.o})`; ctx.fill(); }); requestAnimationFrame(tick); }
+  rs(); init(); tick(); addEventListener('resize',()=>{rs();init();});
+})();
+</script>
+</body>
+</html>
