@@ -143,7 +143,7 @@
   <header>
     <div class="eyebrow"><span class="dot"></span> revealed short-run substitution elasticity</div>
     <h1>What US industry <em>swore</em> it<br>could not substitute.</h1>
-    <p class="sub">During the Section&nbsp;301 tariff rounds, thousands of US firms filed sworn product-exclusion requests with USTR — each one a statement of <b>"we cannot substitute this input, here is why, here is the switching timeline."</b> That is short-run substitution-elasticity microdata: the exact thing the literature hand-waves with long-run numbers. This extracts every filing into structured elasticity rows, and uses USTR's grant/deny decision as a <b>quasi-label that validates the sworn claim.</b></p>
+    <p class="sub">During the Section&nbsp;301 tariff rounds, thousands of US firms filed sworn product-exclusion requests with USTR — each one a statement of <b>"we cannot substitute this input, here is why, here is the switching timeline."</b> That is short-run substitution-elasticity microdata: the exact thing the literature hand-waves with long-run numbers. This extracts every filing into structured elasticity rows, asks <b>what USTR actually rewarded</b>, checks it against real China-import data, and contrasts it with the 2025 tariff regime — where the whole confession mechanism has been removed.</p>
     <div class="crumbs" id="crumbs"></div>
   </header>
 
@@ -186,36 +186,39 @@ function renderApp(){
 
   // ── HERO ──
   const hero=el('section');
-  hero.appendChild(el('div','sec-label','The result'));
-  hero.appendChild(el('h2','','USTR grants the "can\u2019t substitute" filers at more than double the rate'));
-  hero.appendChild(el('p','lead','If firms claiming true inelasticity are granted at a higher rate, the regulator\u2019s revealed decision independently corroborates the sworn claim — turning self-reported narrative into a <b style="color:var(--light)">validated</b> elasticity prior. It does, decisively.'));
+  hero.appendChild(el('div','sec-label','The result — corrected at full scale'));
+  hero.appendChild(el('h2','','The sworn "can\u2019t substitute" checkbox predicts almost nothing'));
+  hero.appendChild(el('p','lead','The obvious hypothesis — that firms swearing full inelasticity get granted more often — <b style="color:var(--light)">collapses on the full corpus.</b> Why? <b style="color:var(--ice)">'+DATA.saturation+'% of filers check the box.</b> When nearly everyone takes the same oath, the oath can\u2019t discriminate. (On the first ~2,000 filings it looked like a 2.8\u00d7 effect — a small-sample mirage.) The real signal is not the claim. It\u2019s how the claim is <b style="color:var(--light)">evidenced.</b>'));
 
   const grid=el('div','hero');
-  // left: bars
+  // left: the dead headline
   const left=el('div','card');
   left.innerHTML=`
     <div class="bigstat"><span class="n">${h.inelastic_rate}%</span><span class="vs">vs</span><span class="n2">${h.substitutable_rate}%</span></div>
     <div style="font-size:.64rem;color:var(--muted);letter-spacing:.06em">grant rate — claims fully inelastic&nbsp; vs &nbsp;admits a substitute exists</div>
     <div class="barpair">
       <div class="barrow">
-        <div class="lab"><span>Claims fully inelastic <small style="color:var(--muted)">(no US &amp; no third-country source)</small></span><span>${h.inelastic_granted}/${h.inelastic_n}</span></div>
+        <div class="lab"><span>Claims fully inelastic <small style="color:var(--muted)">(no US &amp; no third-country)</small></span><span>${h.inelastic_granted}/${h.inelastic_n}</span></div>
         <div class="track"><div class="fill ine" data-w="${h.inelastic_rate}"></div></div>
       </div>
       <div class="barrow">
         <div class="lab"><span>Admits a substitute exists</span><span>${h.substitutable_granted}/${h.substitutable_n}</span></div>
         <div class="track"><div class="fill sub" data-w="${h.substitutable_rate}"></div></div>
       </div>
-    </div>`;
-  // right: stats
-  const right=el('div','card');
-  right.innerHTML=`
-    <div class="statgrid">
-      <div class="mini"><div class="k">Odds ratio</div><div class="v">${h.odds_ratio}×</div></div>
-      <div class="mini"><div class="k">&chi;&sup2; (1 df)</div><div class="v">${h.chi2} <small>p&lt;0.001</small></div></div>
-      <div class="mini"><div class="k">Joined filings</div><div class="v">${DATA.meta.joined_rows}</div></div>
-      <div class="mini"><div class="k">Baseline grant</div><div class="v">${h.base_rate}%</div></div>
     </div>
-    <div class="verdict">The grant decision is <b>not random</b> with respect to the substitutability claim. A granted "no substitute" filing is a stronger short-run inelasticity prior than an ungranted one — the label becomes a <b>credibility weight</b> on the sworn narrative.</div>`;
+    <div style="font-size:.6rem;color:var(--muted);margin-top:8px">OR ${h.odds_ratio}\u00d7 \u00b7 \u03c7\u00b2=${h.chi2} \u00b7 barely significant \u00b7 the checkbox is nearly dead</div>`;
+  // right: what actually predicts a grant
+  const right=el('div','card');
+  const preds=(DATA.predictors||[]).slice(0,6);
+  const maxp=Math.max(...preds.map(p=>p.rate),1);
+  right.innerHTML=`
+    <div style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">What actually moves the decision (grant rate vs base)</div>
+    ${preds.map(p=>`<div class="mechrow" style="margin-bottom:11px">
+      <div class="ml" style="width:210px">${p.name.replace('Claims fully inelastic (Q8=N & Q9=N)','Claims fully inelastic (the checkbox)')} <small>n=${p.n}</small></div>
+      <div class="mtrack"><div class="mfill" data-w="${(p.rate/maxp*100).toFixed(1)}"></div>
+        <div class="mval">${p.rate}% ${p.sig==='ns'?'<span style="color:var(--muted)">ns</span>':''}</div></div>
+    </div>`).join('')}
+    <div class="verdict" style="margin-top:16px">USTR grades <b>physical evidence, not pleading</b>: a sole global supplier and a switching timeline measured in <b>years</b> win. Notice the checkbox sits at the bottom \u2014 and citing capital expense actually <b>hurts</b> (OR ${(DATA.sectors_adjusted&&DATA.sectors_adjusted.controls?(DATA.sectors_adjusted.controls.find(c=>c.name==='capex')||{}).odds_ratio:'0.75')}). Budgets don\u2019t move the regulator. The calendar does.</div>`;
   grid.appendChild(left); grid.appendChild(right);
   hero.appendChild(grid);
   app.appendChild(hero);
@@ -274,6 +277,79 @@ function renderApp(){
   ct.innerHTML=rowsHTML;
   ch.appendChild(ct);
   app.appendChild(ch);
+
+  // ── SECTOR DESERVINGNESS (adjusted for filing quality) ──
+  if(DATA.sectors_adjusted && DATA.sectors_adjusted.available){
+    const sa=el('section');
+    sa.appendChild(el('div','sec-label','Which sectors USTR truly protects'));
+    sa.appendChild(el('h2','','Deservingness, after correcting for who filed better'));
+    sa.appendChild(el('p','lead','Raw grant rates conflate "genuinely inelastic" with "well-lawyered." A logistic model holds the filing-quality signals constant (sole-source, years-long switching, lead-time, detail, capex, firm size) and reads off each sector\u2019s <b style="color:var(--ice)">adjusted</b> grant rate — what it would get on identical filings. The gap between raw and adjusted is how much a sector\u2019s rate is real vs. flattery.'));
+    const sbox=el('div',null);
+    let sh=`<table><thead><tr><th>HS</th><th>Sector</th><th class="num">Filings</th><th class="num">Raw grant</th><th class="num">Adjusted</th><th class="num">Δ</th></tr></thead><tbody>`;
+    DATA.sectors_adjusted.sectors.forEach(s=>{
+      const delta=(s.raw!=null)?(s.raw-s.adjusted):null;
+      const dcol=delta==null?'var(--muted)':(delta>3?'var(--red)':(delta<-3?'var(--pulse)':'var(--silver)'));
+      sh+=`<tr><td class="hts">${s.hs}</td><td>${s.sector}</td>
+        <td class="num">${s.n}</td>
+        <td class="num">${s.raw==null?'—':s.raw+'%'}</td>
+        <td class="num" style="color:var(--ice);font-weight:500">${s.adjusted}%</td>
+        <td class="num" style="color:${dcol}">${delta==null?'—':(delta>0?'+':'')+delta.toFixed(1)}</td></tr>`;
+    });
+    sh+=`</tbody></table>`;
+    sbox.innerHTML=sh;
+    sa.appendChild(sbox);
+    sa.appendChild(el('p','lead','<b style="color:var(--light)">The verdict:</b> USTR protects the mechanical guts of industry (machinery HS-84, ~37% even on the merits) and structurally refuses commodity electronics (HS-85, ~17% — <i>half</i> the odds, and the gap is <i>not</i> a lawyering deficit). Instruments (HS-90) look deserving on raw numbers but half that edge is just better filings.'));
+    app.appendChild(sa);
+  }
+
+  // ── TWO EPISODES: THEN vs NOW ──
+  if(DATA.episodes){
+    const ep=DATA.episodes;
+    const es=el('section');
+    es.appendChild(el('div','sec-label','Then vs now — did the market agree?'));
+    es.appendChild(el('h2','','Two tariff shocks, two selection principles'));
+    es.appendChild(el('p','lead','The exclusions are the government\u2019s <i>belief</i> about who can\u2019t reroute. China-import value is the <i>market\u2019s verdict</i>. Around each shock we compare the change in imports from China (12mo before vs after) for the goods each regime chose to protect. <b style="color:var(--light)">The selection principle flipped.</b>'));
+
+    function epCard(title, sub, groups, keys, labels){
+      const c=el('div','axcard');
+      let inner=`<h3>${title}</h3><div class="qh">${sub}</div>`;
+      keys.forEach((k,i)=>{
+        const g=groups[k]; if(!g) return;
+        const v=g.wtd!=null?g.wtd:g.median;
+        const w=Math.min(Math.abs(v),100);
+        const cls=v>-20?'strong':'weak';
+        inner+=`<div class="axline"><div class="tag"><b>${labels[i]}</b><br>n=${g.n} \u00b7 median ${g.median}%</div>
+          <div class="axtrack"><div class="axfill ${cls}" data-w="${w}"></div><div class="axval">${v}%</div></div></div>`;
+      });
+      c.innerHTML=inner;
+      return c;
+    }
+    const eg=el('div','axgrid');
+    eg.appendChild(epCard('THEN · 2018 List 1 (25%)','China-import value change, by 301 exclusion class',
+      ep.then_tight, ['inelastic','elastic'], ['Protected (granted)','Refused (denied)']));
+    eg.appendChild(epCard('NOW · 2025 reciprocal/IEEPA','China-import value change, by 2025 Annex II exemption',
+      ep.now_tight, ['exempt','nonexempt'], ['Exempt in 2025','Not exempt']));
+    es.appendChild(eg);
+    es.appendChild(el('p','lead','<b style="color:var(--light)">THEN,</b> protection modestly tracked substitutability — the goods USTR refused saw China imports fall harder (they could reroute; the protected couldn\u2019t). <b style="color:var(--light)">NOW,</b> exempt and non-exempt fall about the same: the 2025 carve-outs were <b style="color:var(--ice)">not</b> chosen for substitutability at all. (Intermediate goods only; finished consumer electronics dropped — their collapse is secular China+1 relocation, not a tariff response.)'));
+
+    // the flip table
+    if(ep.flip && ep.flip.length){
+      const ft=el('div',null);
+      ft.style.marginTop='24px';
+      let fh=`<div class="sec-label" style="margin-bottom:10px">The flip — chips, computers &amp; phones: 301 losers in 2018, exempt in 2025</div>
+        <table><thead><tr><th>HS6</th><th>Product family</th><th class="num">2018 treatment</th><th class="num">2025 treatment</th></tr></thead><tbody>`;
+      ep.flip.forEach(f=>{
+        fh+=`<tr><td class="hts">${f.hs6}</td><td>${f.family}</td>
+          <td class="num"><span class="pill d">refused</span></td>
+          <td class="num"><span class="pill g">exempt</span></td></tr>`;
+      });
+      fh+=`</tbody></table>`;
+      ft.innerHTML=fh;
+      es.appendChild(ft);
+      es.appendChild(el('p','lead','Same products, opposite treatment, eight years apart. In 2018 commodity electronics were told "you can always find another vendor." In 2025 the very same chips and computers are categorically exempt — not because they became inelastic, but because policy switched from <b>"what can\u2019t you substitute?"</b> to <b>"what do we want onshore?"</b> Machinery — 2018\u2019s darling — got <b style="color:var(--ice)">zero</b> exemptions in 2025.'));
+    }
+    app.appendChild(es);
+  }
 
   // ── NODE EXPLORER ──
   const nx=el('section');
@@ -367,9 +443,10 @@ function animateBars(){
 function renderFooter(){
   const m=DATA.meta;
   document.getElementById('footer').innerHTML=`
-    <b>Method.</b> USTR Section&nbsp;301 product-exclusion requests (docket ${m.docket}) are sworn statements of short-run input substitutability. Attachment PDFs harvested from regulations.gov CloudFront; each parsed into an elasticity row (HTS code, Q8 US-source Y/N, Q9 third-country Y/N, Q11 switching-cost narrative). Grant/deny labels joined from the regulations.gov API document titles. <code>claimed_inelastic = (Q8=N &amp; Q9=N)</code>. &chi;&sup2; is a 2×2 test of grant vs claim.<br>
-    <b>Selection bias is the point.</b> Firms file only when they believe they\u2019re inelastic (~79% claim fully inelastic). The grant is the regulator\u2019s correction — model grant probability conditional on the claim for a credibility-weighted prior.<br>
-    <b>Corpus.</b> ${m.pdfs_harvested.toLocaleString()} PDFs harvested of ${m.docket_total_docs.toLocaleString()} docket documents · ${m.labels_decided.toLocaleString()} grant/deny labels · ${m.signal_rows.toLocaleString()} rows carry the elasticity signal · ${m.joined_rows} joined to a decision. Generated ${m.generated}. Public USTR data.<br>
+    <b>Method.</b> USTR Section&nbsp;301 product-exclusion requests (docket ${m.docket}) are sworn statements of short-run input substitutability. Attachment PDFs harvested from regulations.gov CloudFront; each parsed into an elasticity row (HTS code, Q8 US-source Y/N, Q9 third-country Y/N, Q11 switching-cost narrative). Grant/deny labels joined from the regulations.gov API document titles. Predictors ranked by 2×2 &chi;&sup2;; sector effects from a ridge-logistic with recycled predictions holding filing-quality controls constant.<br>
+    <b>Saturation caveat.</b> ${DATA.saturation}% of filers check the "fully inelastic" box, so that binary barely discriminates at full scale — the discriminating signal is the <i>evidence</i> (sole-source, years-long switching), not the claim.<br>
+    <b>Then/now episodes.</b> China-import value by HS6 from the US Census intltrade API (country 5700), 12mo pre/post each shock (List 1 Jul-2018; reciprocal/IEEPA ~Apr-2025). 2025 exemptions from EO 14257 Annex II (codified HTS 9903.01.32, U.S. Note 2(v)(iii)(a)). Small basket, directional evidence — not a causal panel; the 2025 window is confounded by finished-electronics relocation and a volatile tariff schedule.<br>
+    <b>Corpus.</b> ${m.pdfs_harvested.toLocaleString()} PDFs of ${m.docket_total_docs.toLocaleString()} docket documents · ${m.labels_decided.toLocaleString()} grant/deny labels · ${m.signal_rows.toLocaleString()} elasticity-signal rows · ${m.joined_rows} joined to a decision. Generated ${m.generated}. Public USTR + Census data.<br>
     <span style="color:var(--dim)">snow.ai / tariffs · Rose Technology · <a href="https://campbellramble.substack.com" target="_blank">campbell ramble</a></span>`;
 }
 
