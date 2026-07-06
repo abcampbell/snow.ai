@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Gems: Four Datasets That Survived Two Thousand Years</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1A1A1A;color:#FAFAF5;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.72;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+h1{font-family:'Cinzel',serif;font-size:2.4em;font-weight:700;color:#B8860B;line-height:1.18;margin:0 0 12px;letter-spacing:0.02em}
+h2{font-family:'Cinzel',serif;font-size:1.55em;font-weight:600;color:#B8860B;margin:56px 0 18px;padding-bottom:8px;border-bottom:1px solid #333;letter-spacing:0.01em}
+h3{font-family:'Cinzel',serif;font-size:1.15em;font-weight:600;color:#D4A853;margin:32px 0 12px}
+p{margin:0 0 16px}
+a{color:#B8860B;text-decoration:underline}
+strong{color:#FAFAF5;font-weight:600}
+em{font-style:italic;color:#ccc}
+
+.subtitle{font-family:'EB Garamond',serif;font-size:1.15em;color:#999;margin:0 0 6px;font-style:italic}
+.dateline{font-family:'Cinzel',serif;font-size:0.75em;color:#6B6B6B;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 40px}
+
+/* Nav */
+.nav{display:flex;gap:18px;margin-bottom:32px;flex-wrap:wrap}
+.nav a{font-family:'Cinzel',serif;font-size:0.78em;color:#B8860B;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;padding:6px 14px;border:1px solid #333;border-radius:4px;background:#222;transition:all 0.2s}
+.nav a:hover{background:#2a2a1a;border-color:#B8860B}
+.nav a.active{background:#2a2a1a;border-color:#B8860B;color:#D4A853}
+
+/* Stat cards */
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 32px}
+.stat{flex:1 1 150px;background:#222;border:1px solid #333;border-radius:6px;padding:16px 14px;text-align:center}
+.stat .num{font-family:'Cinzel',serif;font-size:1.7em;font-weight:700;color:#B8860B;display:block;line-height:1.2}
+.stat .lbl{font-size:0.78em;color:#999;margin-top:4px;display:block;line-height:1.3}
+
+/* Banner / verdict box */
+.banner{border-left:4px solid #B8860B;background:#222;padding:20px 24px;margin:28px 0;border-radius:0 4px 4px 0}
+.banner p{margin:0 0 8px}
+.banner p:last-child{margin:0}
+
+/* Negative / honest negative */
+.neg{border-left:4px solid #6B6B6B;background:#1e1e1e;padding:18px 22px;margin:24px 0;border-radius:0 4px 4px 0}
+.neg .tag{font-family:'Cinzel',serif;font-size:0.7em;color:#999;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:6px}
+.neg p{margin:0 0 8px;color:#bbb}
+.neg p:last-child{margin:0}
+
+/* Finding boxes */
+.f{background:#222;border:1px solid #333;border-radius:6px;padding:18px 20px;margin:22px 0}
+.f .label{font-family:'Cinzel',serif;font-size:0.7em;color:#B8860B;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:4px}
+.f .r{font-family:'Cinzel',serif;font-size:1.35em;font-weight:700;color:#FAFAF5;display:block;margin-bottom:6px}
+.f .desc{font-size:0.92em;color:#bbb;line-height:1.55}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.92em}
+thead th{background:#2a2a1a;color:#B8860B;font-family:'Cinzel',serif;font-weight:600;text-align:left;padding:10px 12px;border-bottom:2px solid #B8860B;font-size:0.85em;letter-spacing:0.04em;text-transform:uppercase}
+tbody td{padding:9px 12px;border-bottom:1px solid #2a2a2a;color:#ccc}
+tbody tr:hover{background:#222}
+tbody td:first-child{color:#FAFAF5;font-weight:500}
+
+/* Images */
+.fig{margin:30px 0;text-align:center}
+.fig img{max-width:100%;border:1px solid #333;border-radius:4px}
+.fig .cap{font-size:0.82em;color:#6B6B6B;margin-top:8px;font-style:italic;text-align:center}
+
+/* Equation blocks */
+.eq{background:#222;border:1px solid #333;border-radius:6px;padding:18px 24px;margin:22px 0;text-align:center;font-family:'Cinzel',serif;font-size:1.15em;color:#D4A853;letter-spacing:0.02em}
+.eq .small{font-size:0.72em;color:#999;display:block;margin-top:8px;font-family:'EB Garamond',serif;font-style:italic;letter-spacing:0}
+
+/* Blockquote */
+blockquote{border-left:3px solid #444;padding:12px 20px;margin:20px 0;color:#aaa;font-style:italic}
+
+/* Footer */
+.footer{margin-top:60px;padding-top:24px;border-top:1px solid #333;font-size:0.78em;color:#6B6B6B;line-height:1.7}
+.footer strong{color:#999}
+
+/* TOC */
+.toc{background:#222;border:1px solid #333;border-radius:6px;padding:20px 28px;margin:28px 0}
+.toc h3{font-family:'Cinzel',serif;font-size:0.85em;color:#B8860B;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 12px}
+.toc ol{padding-left:22px;color:#bbb;font-size:0.92em}
+.toc ol li{margin-bottom:4px}
+.toc ol li a{color:#D4A853;text-decoration:none}
+.toc ol li a:hover{text-decoration:underline}
+
+/* Section number styling */
+.secnum{font-family:'Cinzel',serif;color:#6B6B6B;font-weight:400}
+
+/* Source tag */
+.src{font-family:'Cinzel',serif;font-size:0.68em;color:#6B6B6B;text-transform:uppercase;letter-spacing:0.08em;display:block;margin:8px 0 4px}
+
+@media(max-width:600px){
+  .wrap{padding:20px 16px 60px}
+  h1{font-size:1.7em}
+  h2{font-size:1.25em}
+  .stats{flex-direction:column}
+  .stat{flex:1 1 100%}
+  .nav{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- Nav -->
+<div class="nav">
+  <a href="index.html">← Main Report</a>
+  <a href="nations.html">12 Nations</a>
+  <a class="active" href="roman_micro.html">Roman Micro-Gems</a>
+</div>
+
+<h1>Micro-Gems</h1>
+<p class="subtitle">Four Datasets That Survived Two Thousand Years: Banking Records, Military Dispatches, Census Filings, and an Inflation-Era Price List</p>
+<p class="dateline">Vitalic Stoicism Project · Appendix B · July 5, 2026</p>
+
+<!-- Stat cards -->
+<div class="stats">
+  <div class="stat"><span class="num">~1,700</span><span class="lbl">Individual records across four archives</span></div>
+  <div class="stat"><span class="num">26–301 AD</span><span class="lbl">Temporal span of the micro-evidence</span></div>
+  <div class="stat"><span class="num">4</span><span class="lbl">Physical media: wax, wood, papyrus, stone</span></div>
+  <div class="stat"><span class="num">3</span><span class="lbl">Continents of provenance</span></div>
+</div>
+
+<div class="banner">
+<p><strong>Why this appendix exists.</strong> The main report tests the S×I framework against macro-level SICRE scores and continuous economic series. But those aggregates are built from evidence, and the evidence is weirder, more granular, and more interesting than any index can capture. This appendix examines four Roman datasets at the individual-record level: a banking archive from Puteoli, military dispatches from Hadrian's Wall and Roman London, census returns from Egypt, and Diocletian's empire-wide price list. Each survived by accident. Each tells us something about the texture of Roman complexity that no composite score can.</p>
+</div>
+
+<div class="toc">
+  <h3>Contents</h3>
+  <ol>
+    <li><a href="#sulpicii">The Sulpicii Archive: Roman Wall Street, Excavated</a></li>
+    <li><a href="#vindolanda">Vindolanda &amp; Bloomberg: The Army's Paperwork</a></li>
+    <li><a href="#census">Bagnall-Frier Census: Ancient Demography in 300 Households</a></li>
+    <li><a href="#diocletian">Diocletian's Price Edict: 1,400 Prices in a Collapsing Currency</a></li>
+    <li><a href="#why">Why Micro-Data Matters for the Framework</a></li>
+    <li><a href="#buried">What's Still Buried</a></li>
+  </ol>
+</div>
+
+
+<!-- ═══════════════════ 1. SULPICII ═══════════════════ -->
+<h2 id="sulpicii"><span class="secnum">I.</span> The Sulpicii Archive: Roman Wall Street, Excavated</h2>
+
+<p>In 1959, construction workers near Pompeii unearthed a cache of wax tablets from a collapsed building in Murecine, ancient Puteoli. There were 127 of them, sealed in wooden frames, written in cursive Latin. They turned out to be the business records of the Sulpicii, a family banking firm that operated from roughly 26 to 61 AD. Published by Giuseppe Camodeca (1999) and Joseph Wolf (2010), the tablets are catalogued as TPSulp. 1–127.</p>
+
+<p>This is the only complete archive of a Roman financial institution. Not excerpts. Not literary references. Not a stonecutter's summary. The actual paperwork: loan contracts, auction receipts, warehouse deposits, IOUs, legal proceedings. The Sulpicii lent money, brokered grain sales, held deposits in Puteoli's harbor district, and occasionally went to court when borrowers defaulted. They were, in recognizable terms, an investment bank.</p>
+
+<div class="fig">
+  <img src="img/roman_micro_sulpicii.png" alt="Sulpicii Banking Archive: loan sizes and interest rates">
+  <p class="cap">Left: Distribution of transaction sizes in the Sulpicii archive (HS = sestertii). Right: Annual interest rates compared to modern benchmarks. Data from Camodeca (1999) and Wolf (2010).</p>
+</div>
+
+<p>The interest rates are the headline. Roman <em>centesimae</em> was literally "one-hundredths": 1% per month, or 12% per annum. That was the conventional maximum. The Sulpicii's actual rates averaged 8–9%, which means the market was competitive enough to push rates below the ceiling. Compare that to the US prime rate in 2024 (8.50%) and the numbers are nearly identical. Two millennia of financial evolution and we landed in the same band. This is not because Roman banking was primitive. It is because interest rates are constrained by the same physics in any credit market: the lender needs to cover default risk, time preference, and inflation. The Sulpicii knew this. Their contracts include penalty clauses for late payment that would be recognizable to any modern loan officer.</p>
+
+<p>The borrower profiles tell an equally revealing story. The tablets record transactions with Roman citizens, freedmen (<em>liberti</em>), women acting through guardians, and in at least one case, a slave conducting business on behalf of his master. The legal infrastructure required for a slave to sign a binding financial contract is staggering. It required <em>peculium</em> law, agency doctrine, standardized contract forms, and a court system that would enforce claims across status boundaries. This is integration capacity made physical: the wax tablet is the artifact of a legal system complex enough to handle credit across the entire social hierarchy.</p>
+
+<div class="f">
+  <span class="label">Finding: Sulpicii</span>
+  <span class="r">8.5% average interest rate, 127 transactions across all social classes</span>
+  <span class="desc">The Sulpicii archive demonstrates that Roman financial markets operated with competitive interest rates, standardized contracts, and cross-status legal enforcement. The banking infrastructure at Puteoli in 40 AD was not qualitatively different from early modern European finance. This is what high S×I looks like at the transaction level: selection pressure (competition among lenders) and integration capacity (enforceable contracts, standard legal forms) producing a functioning credit market.</span>
+</div>
+
+<h3>S×I Framework Connection</h3>
+
+<p>The Sulpicii archive is pure integration capacity. Every tablet is evidence of a functioning institution: standardized contract language, legal enforcement mechanisms, a shared understanding of interest calculation. The <em>centesimae</em> rate wasn't set by decree; it emerged from competitive lending. Selection pressure operated through market competition among Puteoli's banking houses, and the archive shows it worked. Rates were below the legal ceiling, loan sizes spanned four orders of magnitude, and the system served borrowers from senators to slaves. When this infrastructure collapsed in the third century, it wasn't because Romans forgot how to lend. It was because the integration capacity (the courts, the contract enforcement, the stable currency) eroded under entropic pressure faster than it could be maintained.</p>
+
+
+<!-- ═══════════════════ 2. VINDOLANDA + BLOOMBERG ═══════════════════ -->
+<h2 id="vindolanda"><span class="secnum">II.</span> Vindolanda &amp; Bloomberg: The Army's Paperwork</h2>
+
+<p>Vindolanda is a Roman auxiliary fort near Hadrian's Wall in Northumberland. Between 1973 and the present, excavations have recovered over 1,000 thin wooden tablets written in ink, dating from roughly 85 to 130 AD. The Bloomberg tablets, 405 documents recovered during construction of Bloomberg's London headquarters in 2010–2014, come from the Walbrook stream in Roman Londinium, the earliest dating to 57 AD. Together they constitute the largest cache of Latin handwriting from the Roman provinces.</p>
+
+<p>The Vindolanda tablets are famous for Claudia Severa's birthday invitation (Tab. Vindol. II 291), widely cited as "the earliest known letter written by a woman in Latin." But the real payload is the military administrative data. Tab. Vindol. II 154 is a strength report for the First Cohort of Tungrians, an auxiliary unit originally recruited from what is now Belgium. The numbers are precise: 752 men on the rolls, only 296 actually present at Vindolanda. The rest were scattered across the province: 337 at Corbridge, 46 serving as the governor's guard, 6 posted to London, and small numbers sick, wounded, or on special assignment.</p>
+
+<div class="fig">
+  <img src="img/roman_micro_vindolanda.png" alt="Vindolanda tablets: unit strength and supply records">
+  <p class="cap">Left: Deployment distribution of Cohort I Tungrorum from Tab. Vindol. II 154. Right: Supply items attested in Vindolanda tablets. The unit's actual presence at its home fort was 39% of paper strength.</p>
+</div>
+
+<p>That 39% figure — fewer than four in ten men actually at base — is one of the most important numbers in Roman military history. It means the Roman army did not function as a garrison force sitting behind walls. It was a logistics network, with units fragmented across multiple assignments simultaneously. This requires a bureaucratic infrastructure: transfer orders, supply requisitions, strength reports sent up the chain of command, pay records maintained for men scattered across three or four locations. The tablets are the physical residue of that infrastructure.</p>
+
+<p>The supply records are equally revealing. The tablets document wheat (the legionary staple), barley (for animals and possibly brewing), <em>cervesa</em> (Celtic beer, which tells us local supply chains were integrated into military logistics), vintage wine (imported for officers), pork fat, goat hides, and dozens of other commodities. One tablet (Tab. Vindol. II 180) is essentially a purchase order for clothing and supplies from a local merchant, including socks, sandals, and underpants. The Roman army on the frontier was not living off the land. It was running a supply chain.</p>
+
+<p>The Bloomberg tablets add a financial dimension. They include the earliest known London IOU (dated 8 January 57 AD), property sales, and legal contracts. Together with Vindolanda, they demonstrate that the Roman military-administrative complex extended from northern England to the City of London, maintained in standardized Latin by officers and clerks who expected their paperwork to be read and acted upon by other bureaucrats hundreds of miles away.</p>
+
+<div class="f">
+  <span class="label">Finding: Vindolanda &amp; Bloomberg</span>
+  <span class="r">752 men on paper, 296 present: a 39% home-base ratio</span>
+  <span class="desc">The Vindolanda strength report reveals the Roman army as a distributed logistics network rather than a static garrison force. Maintaining operational effectiveness with 61% of a unit deployed elsewhere required standardized reporting, reliable supply chains, and bureaucratic coordination across the province. The Bloomberg tablets show the same administrative infrastructure operating in civilian London. This is integration capacity at imperial scale, maintained through paperwork.</span>
+</div>
+
+<h3>S×I Framework Connection</h3>
+
+<p>Vindolanda is the bureaucratic skeleton of Roman integration capacity. Every strength report, every supply requisition, every transfer order is evidence of a system maintaining coherence across distance. The Roman army managed roughly 300,000 men across three continents, and it did this with ink on wood. The S×I framework predicts that integration capacity should be observable in institutional infrastructure, and Vindolanda delivers exactly that: standardized forms, hierarchical reporting, logistical coordination. The Bloomberg tablets extend this into the civilian economy. When the framework measures integration declining in the third century, what that means concretely is that the system that produced Tab. Vindol. II 154 stopped working. Units stopped reporting, supply chains fragmented, and the bureaucratic connective tissue dissolved. The tablets are what integration looks like before entropy eats it.</p>
+
+
+<!-- ═══════════════════ 3. BAGNALL-FRIER CENSUS ═══════════════════ -->
+<h2 id="census"><span class="secnum">III.</span> Bagnall-Frier Census: Ancient Demography in 300 Households</h2>
+
+<p>Between the first and third centuries AD, Roman Egypt conducted periodic household censuses for tax purposes. Citizens were required to submit declarations listing every person in their household: name, age, sex, relationship, and legal status. Roughly 300 of these declarations survive on papyrus, published and analyzed by Roger Bagnall and Bruce Frier in their 1994 monograph <em>The Demography of Roman Egypt</em>. This is the only individual-level demographic microdata from any ancient civilization. Nothing comparable exists for Han China, Maurya India, or Achaemenid Persia. For pre-modern demography, this is it.</p>
+
+<div class="fig">
+  <img src="img/roman_micro_census.png" alt="Bagnall-Frier census data: age distribution and age-heaping">
+  <p class="cap">Left: Reconstructed age-sex pyramid from Roman Egyptian census returns, fitted to Model West life tables. Right: Terminal digit distribution showing age-heaping; respondents rounded their ages to multiples of 5 and 10. Whipple's Index of 229 indicates substantial but not extreme digit preference.</p>
+</div>
+
+<p>The headline number: life expectancy at birth was approximately 22 to 25 years. This does not mean most people died in their twenties. It means infant and childhood mortality was so severe (roughly 300 per 1,000 live births dying before age 5) that it dragged the average down catastrophically. If you survived to age 10, your expected remaining years jumped to another 35–40. The age pyramid shows the brutal taper: a broad base of children, steep attrition through the teens and twenties (disease, childbirth, violence), and a thin residual of survivors past 50. The few who made it to 60 were, by the standards of their population, statistical anomalies.</p>
+
+<p>The age-heaping data is almost as interesting as the mortality data. When Egyptians declared their ages, they rounded. Massively. The Whipple's Index, which measures preference for ages ending in 0 or 5, comes in around 229, where 100 means no preference and 500 means every age is rounded. This tells us something about numeracy: most of the population didn't know their exact age. They estimated. "About forty" was good enough for the census clerk. But the pattern also has diagnostic value. Age-heaping correlates inversely with literacy and institutional development across historical populations. Roman Egypt's index of ~229 places it above medieval England (~250–350) but below early modern Netherlands (~120–150). The integration capacity to maintain accurate age records simply didn't exist at the population level.</p>
+
+<p>Household structure provides a third dimension. Average household size was 5–6 persons. Marriage ages were sharply asymmetric: women typically married at 14–15, men at 25–30. This age gap is one of the most robust findings in ancient demography, and it has implications for everything from inheritance patterns to wealth concentration. A 30-year-old man marrying a 15-year-old woman has fifteen years of pre-marriage economic activity; she has none. The patriarchal structure of Roman property law is not incidental to this pattern. It is the institutional expression of it.</p>
+
+<table>
+<thead>
+<tr><th>Demographic Indicator</th><th>Roman Egypt (Bagnall-Frier)</th><th>Pre-Industrial Europe</th><th>Modern OECD</th></tr>
+</thead>
+<tbody>
+<tr><td>Life expectancy at birth (e₀)</td><td>22–25 years</td><td>30–40 years</td><td>78–84 years</td></tr>
+<tr><td>Infant mortality (per 1,000)</td><td>~300</td><td>150–250</td><td>3–6</td></tr>
+<tr><td>Average household size</td><td>5–6</td><td>4–5</td><td>2.3–2.5</td></tr>
+<tr><td>Female marriage age</td><td>14–15</td><td>20–25</td><td>28–32</td></tr>
+<tr><td>Male marriage age</td><td>25–30</td><td>25–28</td><td>30–34</td></tr>
+<tr><td>Whipple's Index (age-heaping)</td><td>~229</td><td>150–350</td><td>~100</td></tr>
+</tbody>
+</table>
+
+<div class="f">
+  <span class="label">Finding: Bagnall-Frier</span>
+  <span class="r">e₀ ≈ 22–25 years, infant mortality ~300/1,000, Whipple's ≈ 229</span>
+  <span class="desc">Roman Egypt's census returns provide the only individual-level demographic microdata from antiquity. The population profile matches UN Model West Level 2, one of the harshest mortality regimes in the model tables. Age-heaping indices reveal population-level numeracy comparable to early medieval Europe. These are the biological constraints within which Roman civilization operated: building aqueducts, codifying law, and running a Mediterranean-wide trade network while losing nearly one child in three before age five.</span>
+</div>
+
+<h3>S×I Framework Connection</h3>
+
+<p>The census data is a reality check on the framework. Roman civilization achieved S×I scores that rank among the highest in the pre-industrial world. It did this while operating under a mortality regime where a third of all children died before age five and most adults didn't know their own age. This means the integration capacity measured by SICRE scores was maintained by a thin institutional elite operating above a demographic floor that was, by any modern standard, catastrophic. The framework's entropy term captures this: the biological baseline (disease, malnutrition, infant death) is a constant entropic drain that integration capacity must overcome just to maintain current complexity, let alone increase it. Rome's achievement was not that it eliminated these constraints. It was that it built durable institutions despite them.</p>
+
+
+<!-- ═══════════════════ 4. DIOCLETIAN'S PRICE EDICT ═══════════════════ -->
+<h2 id="diocletian"><span class="secnum">IV.</span> Diocletian's Price Edict: 1,400 Prices in a Collapsing Currency</h2>
+
+<p>In 301 AD, the Emperor Diocletian issued the <em>Edictum de Pretiis Rerum Venalium</em>, the Edict on Maximum Prices. Fragments survive on stone inscriptions from across the eastern Mediterranean, collectively documenting approximately 1,400 maximum prices for goods and services denominated in <em>denarii communes</em>, the debased silver currency of the Tetrarchy. The edict was an attempt to stop hyperinflation by decree. It failed. Within a few years, enforcement collapsed and the prices became irrelevant. But the list survived, and it is the most comprehensive price dataset from any pre-modern economy.</p>
+
+<div class="fig">
+  <img src="img/roman_micro_diocletian.png" alt="Diocletian's Price Edict: wages and commodity prices">
+  <p class="cap">Left: Maximum wages by occupation from the Edict. Right: Commodity prices on log scale; note the 1,500:1 ratio between purple silk and wheat. Data compiled from Lauffer (1971) and Crawford &amp; Reynolds (1979).</p>
+</div>
+
+<p>The wage data is a complete occupational hierarchy in a single document. A farm laborer earned 25 denarii per day (with maintenance). A carpenter, baker, or blacksmith earned 50. Wall painters got 75. Figure painters, the specialists who painted portraits and mythological scenes, earned 150 per day, three times the skilled-trades rate. Teachers were paid per student per month: 50 denarii for a reading teacher, 200 for a Greek teacher, confirming that Greek-language education commanded a premium even in the Latin-speaking empire. Advocates earned 250 per case preparation; the top-end lawyer rate of 1,000 denarii per case was forty days' farm labor for what might be a morning's work. The Gini coefficient implied by these wage ratios is brutal.</p>
+
+<p>The commodity prices reveal the full span of the Roman trade network. Wheat at 100 denarii per modius and barley at 60 are the staple anchors. Pork at 12 denarii per Italian pound and beef at 8 show that pork was the premium meat. Table wine was 8 denarii per sextarius; aged wine was 30. These are normal agrarian-economy prices. Then the luxury goods arrive and the scale explodes: raw silk at 12,000 denarii per pound, and purple-dyed silk at 150,000. One pound of Tyrian purple silk cost the equivalent of 1,500 modii of wheat — enough grain to feed a family for three years, or three full years of a farm laborer's wages at maximum rate. The trade network that moved silk from China to Rome and murex dye from Phoenicia to Constantinople is visible in that single price ratio.</p>
+
+<table>
+<thead>
+<tr><th>Category</th><th>Item</th><th>Max Price</th><th>Equivalent in Farm Labor Days</th></tr>
+</thead>
+<tbody>
+<tr><td>Grain</td><td>Wheat, 1 modius (8.7 kg)</td><td>100 den.</td><td>4 days</td></tr>
+<tr><td>Grain</td><td>Barley, 1 modius</td><td>60 den.</td><td>2.4 days</td></tr>
+<tr><td>Meat</td><td>Pork, 1 Italian lb (327g)</td><td>12 den.</td><td>0.5 day</td></tr>
+<tr><td>Drink</td><td>Table wine, 1 sextarius (0.55L)</td><td>8 den.</td><td>0.3 day</td></tr>
+<tr><td>Drink</td><td>Aged wine, 1 sextarius</td><td>30 den.</td><td>1.2 days</td></tr>
+<tr><td>Transport</td><td>Wagon, per mile</td><td>20 den.</td><td>0.8 day</td></tr>
+<tr><td>Transport</td><td>Donkey load, per mile</td><td>4 den.</td><td>0.16 day</td></tr>
+<tr><td>Luxury</td><td>Raw silk, 1 lb</td><td>12,000 den.</td><td>480 days (1.5 years)</td></tr>
+<tr><td>Luxury</td><td>Purple-dyed silk, 1 lb</td><td>150,000 den.</td><td>6,000 days (19 years)</td></tr>
+</tbody>
+</table>
+
+<div class="f">
+  <span class="label">Finding: Diocletian's Edict</span>
+  <span class="r">1,400 maximum prices; purple silk = 19 years of farm labor per pound</span>
+  <span class="desc">Diocletian's Price Edict is a snapshot of a complex economy in monetary crisis. The wage structure shows 40:1 ratios between top lawyers and farm laborers. The commodity list spans local grain to intercontinental luxury goods with a price range of nearly 20,000:1. The edict failed as policy (you cannot fix hyperinflation by carving price caps in stone) but succeeded as evidence: it documents the full price structure of a pre-industrial economy at the moment when the integration capacity that sustained it was visibly failing.</span>
+</div>
+
+<h3>S×I Framework Connection</h3>
+
+<p>The Price Edict is entropy made legible. Diocletian issued it because the monetary system, the integration infrastructure that allowed prices to coordinate across the empire, was breaking down. Inflation was running at an estimated 1,000% per decade. The edict's existence is evidence of declining integration capacity: when markets work, you don't need price controls. When they don't, price controls don't work either. The 1,400 items in the edict document the complexity that had been achieved (an empire-wide trade network in silk, wine, and grain) and the entropy that was destroying it (a currency debased to the point where price coordination required imperial decree). The framework predicts that declining S×I precedes collapse. The Price Edict is what that prediction looks like as a primary source: an emperor trying to legislate integration capacity back into existence.</p>
+
+
+<!-- ═══════════════════ 5. WHY MICRO-DATA MATTERS ═══════════════════ -->
+<h2 id="why"><span class="secnum">V.</span> Why Micro-Data Matters for the Framework</h2>
+
+<p>The main report tests the S×I framework using macro-level SICRE scores: composite indices of selection pressure, integration capacity, complexity output, resilience, and entropy, coded at decade resolution by specialist historians. Those scores are defensible and useful. But they are aggregations, and aggregations hide texture.</p>
+
+<p>The four datasets in this appendix are what the aggregations are made of. When we say Rome had high integration capacity in the first century AD, we mean concretely that the Sulpicii could enforce loan contracts across social classes, that Vindolanda's commander could track 752 men scattered across three locations, that Egypt's census bureaucracy could count households by name, and that trade networks could move silk from China to a market stall priced in Roman currency. When we say integration capacity declined in the third century, we mean that these specific capabilities eroded, not all at once, not uniformly, but measurably.</p>
+
+<p>The micro-data also provides calibration points. If the framework's SICRE scores predict high integration capacity for Rome in 50 AD, and the Sulpicii archive shows competitive interest rates and cross-status lending, the prediction and the evidence agree. If the framework predicts declining integration capacity by 300 AD, and Diocletian's Price Edict shows an emperor trying to legislate market coordination, the prediction and the evidence agree again. These are not proofs. But they are the kind of convergent evidence that separates a framework that captures real patterns from one that merely fits curves.</p>
+
+<div class="banner">
+<p><strong>The bottom line:</strong> Composite indices tell you the trajectory. Micro-data tells you the mechanism. The Sulpicii archive is the mechanism of Roman financial integration. Vindolanda is the mechanism of military-administrative integration. Bagnall-Frier is the demographic floor that integration had to overcome. The Price Edict is integration failing. A framework that explains all four is doing real work.</p>
+</div>
+
+
+<!-- ═══════════════════ 6. WHAT'S STILL BURIED ═══════════════════ -->
+<h2 id="buried"><span class="secnum">VI.</span> What's Still Buried</h2>
+
+<p>These four datasets are what survived by accident: wax tablets sealed under volcanic debris, wooden slips preserved in waterlogged soil, papyrus fragments in dry Egyptian sand, stone inscriptions too heavy to steal. For every tablet we have, hundreds were scraped clean and reused, burned, rotted, or simply lost. The survival rate for Roman written documents is estimated at less than 0.01%. What we have is not a sample. It is the residue of a catastrophe.</p>
+
+<p>But the residue is growing. Three active frontiers are expanding the evidence base:</p>
+
+<p><strong>The Herculaneum scrolls.</strong> Vesuvius carbonized approximately 1,800 papyrus scrolls in 79 AD. For 250 years, they were unreadable. In 2023–2024, the Vesuvius Challenge used machine learning to read carbonized scrolls via CT scanning, successfully decoding passages of Philodemus's <em>On Pleasure</em>. If the technique scales (and the early results suggest it will), the Herculaneum library could yield more new Latin and Greek text than all previous papyrus discoveries combined. The scrolls are sitting in the Naples National Library. The technology to read them now exists.</p>
+
+<p><strong>Unexcavated Vindolanda.</strong> The Vindolanda Trust estimates that 80–90% of the fort's deposits remain unexcavated. The waterlogged conditions that preserved the first thousand tablets persist in the lower archaeological layers. Future seasons will almost certainly yield more tablets, more strength reports, more supply records. The Bloomberg excavation was also incomplete. Roman London's Walbrook stream likely contains additional material.</p>
+
+<p><strong>Egyptian papyri in museum collections.</strong> Tens of thousands of papyrus fragments sit in museum storage worldwide, catalogued but unread. The Oxford Oxyrhynchus collection alone contains an estimated 500,000 fragments. Machine learning transcription is beginning to process these at scale. Every new census declaration or tax receipt adds another data point to the Bagnall-Frier framework.</p>
+
+<div class="neg">
+<span class="tag">Honest Limitation</span>
+<p>Everything in this appendix is from the Roman Empire. This is not because Rome was unique. It is because the Roman evidence survived. We have no equivalent of the Sulpicii archive for Mauryan India, no Vindolanda for Han China, no Bagnall-Frier for Achaemenid Persia. The survival bias is overwhelming. When the framework assigns lower confidence to non-Roman civilizations, this is a primary reason: the micro-data that would calibrate those scores does not exist, and we should not pretend otherwise.</p>
+</div>
+
+<p>The framework's long-term value depends on whether the evidence base continues to grow. If AI-assisted reading cracks the Herculaneum scrolls, if Vindolanda's lower layers yield military records from the 70s AD, if machine transcription processes the Oxyrhynchus backlog, the S×I framework will have more calibration points and harder tests. That is how empirical frameworks are supposed to work. You build the model, you test it against the data you have, and you wait for better data to break it or confirm it. The micro-gems in this appendix are the data we have. The data we're about to get might be orders of magnitude larger.</p>
+
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="footer">
+<p><strong>Micro-Gems: Four Datasets That Survived Two Thousand Years</strong></p>
+<p>Appendix B to <em>Against Entropy: Empirical Tests of the S×I Framework Across Twelve Civilizations</em></p>
+<p>Vitalic Stoicism Project · July 5, 2026</p>
+<p style="margin-top:12px"><strong>Key Sources:</strong> Camodeca, G. (1999). <em>Tabulae Pompeianae Sulpiciorum</em>. Rome. · Wolf, J. (2010). "The Sulpicii Archive." In <em>Oxford Handbook of Roman Law</em>. · Bowman, A. K. &amp; Thomas, J. D. (1994–2003). <em>Tabulae Vindolandenses</em> I–III. London. · Tomlin, R. S. O. (2016). <em>Roman London's First Voices</em> (Bloomberg tablets). London. · Bagnall, R. S. &amp; Frier, B. W. (1994). <em>The Demography of Roman Egypt</em>. Cambridge. · Lauffer, S. (1971). <em>Diokletians Preisedikt</em>. Berlin. · Crawford, M. &amp; Reynolds, J. (1979). "The Edict on Maximum Prices." <em>JRS</em> 69.</p>
+<p style="margin-top:8px"><a href="index.html">← Back to Main Report</a> · <a href="nations.html">12 Nations Appendix →</a></p>
+</div>
+
+</div>
+</body>
+</html>
