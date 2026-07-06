@@ -48,7 +48,7 @@ td{padding:5px 8px;border-bottom:1px solid #2a2a2a}
 <div class="pills" id="curvepills"></div>
 <div class="pills" id="curveview" style="margin-top:2px"></div>
 <p class="sub" id="curvesub"></p>
-<canvas id="ccurve" height="380"></canvas>
+<canvas id="ccurve" height="340"></canvas>
 <div id="curvetip"></div>
 <div class="f"><span class="r">$0.74 → $18.1B</span><br>Vicuña, the best undeveloped copper pound, promises C1 $0.74/lb — but demands $18.1B initial capex for a 14.8% IRR at its own price deck. Sub-hurdle. Meanwhile 2026 TC/RC benchmark settled at $0/t: concentrate scarcity, smelting glut.</div>
 
@@ -91,6 +91,7 @@ const D = {"stats":{"facts":52173,"tickers":50,"docs":1736,"years":"2015\u201320
 const G='#B8860B',GR='#6B6B6B',FG='#FAFAF5',RD='#BC5050';
 function cv(id){const c=document.getElementById(id);const r=window.devicePixelRatio||1;
  const w=c.clientWidth;const h=+c.getAttribute('height');c.width=w*r;c.height=h*r;
+ c.style.height=h+'px';c.style.width='100%';
  const x=c.getContext('2d');x.scale(r,r);return[x,w,h];}
 // stats
 document.getElementById('statrow').innerHTML=[
