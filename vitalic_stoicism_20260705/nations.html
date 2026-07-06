@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Empires, One Equation: France, America, and China Through the S×I Lens</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1A1A1A;color:#FAFAF5;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.72;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+h1{font-family:'Cinzel',serif;font-size:2.4em;font-weight:700;color:#B8860B;line-height:1.18;margin:0 0 12px;letter-spacing:0.02em}
+h2{font-family:'Cinzel',serif;font-size:1.55em;font-weight:600;color:#B8860B;margin:56px 0 18px;padding-bottom:8px;border-bottom:1px solid #333;letter-spacing:0.01em}
+h3{font-family:'Cinzel',serif;font-size:1.15em;font-weight:600;color:#D4A853;margin:32px 0 12px}
+p{margin:0 0 16px}
+a{color:#B8860B;text-decoration:underline}
+strong{color:#FAFAF5;font-weight:600}
+em{font-style:italic;color:#ccc}
+
+.subtitle{font-family:'EB Garamond',serif;font-size:1.15em;color:#999;margin:0 0 6px;font-style:italic}
+.dateline{font-family:'Cinzel',serif;font-size:0.75em;color:#6B6B6B;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 40px}
+
+/* Nav back */
+.nav-back{display:inline-block;font-family:'Cinzel',serif;font-size:0.8em;color:#6B6B6B;text-decoration:none;letter-spacing:0.05em;margin-bottom:24px;border:1px solid #333;padding:6px 14px;border-radius:3px;transition:all 0.2s}
+.nav-back:hover{color:#B8860B;border-color:#B8860B}
+
+/* Stat cards */
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 32px}
+.stat{flex:1 1 150px;background:#222;border:1px solid #333;border-radius:6px;padding:16px 14px;text-align:center}
+.stat .num{font-family:'Cinzel',serif;font-size:1.7em;font-weight:700;color:#B8860B;display:block;line-height:1.2}
+.stat .lbl{font-size:0.78em;color:#999;margin-top:4px;display:block;line-height:1.3}
+
+/* Banner / verdict box */
+.banner{border-left:4px solid #B8860B;background:#222;padding:20px 24px;margin:28px 0;border-radius:0 4px 4px 0}
+.banner p{margin:0 0 8px}
+.banner p:last-child{margin:0}
+
+/* Negative / honest negative */
+.neg{border-left:4px solid #6B6B6B;background:#1e1e1e;padding:18px 22px;margin:24px 0;border-radius:0 4px 4px 0}
+.neg .tag{font-family:'Cinzel',serif;font-size:0.7em;color:#999;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:6px}
+.neg p{margin:0 0 8px;color:#bbb}
+.neg p:last-child{margin:0}
+
+/* Finding boxes */
+.f{background:#222;border:1px solid #333;border-radius:6px;padding:18px 20px;margin:22px 0}
+.f .label{font-family:'Cinzel',serif;font-size:0.7em;color:#B8860B;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:4px}
+.f .r{font-family:'Cinzel',serif;font-size:1.35em;font-weight:700;color:#FAFAF5;display:block;margin-bottom:6px}
+.f .desc{font-size:0.92em;color:#bbb;line-height:1.55}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.92em}
+thead th{background:#2a2a1a;color:#B8860B;font-family:'Cinzel',serif;font-weight:600;text-align:left;padding:10px 12px;border-bottom:2px solid #B8860B;font-size:0.85em;letter-spacing:0.04em;text-transform:uppercase}
+tbody td{padding:9px 12px;border-bottom:1px solid #2a2a2a;color:#ccc}
+tbody tr:hover{background:#222}
+tbody td:first-child{color:#FAFAF5;font-weight:500}
+
+/* Images */
+.fig{margin:30px 0;text-align:center}
+.fig img{max-width:100%;border:1px solid #333;border-radius:4px}
+.fig .cap{font-size:0.82em;color:#6B6B6B;margin-top:8px;font-style:italic;text-align:center}
+
+/* Equation blocks */
+.eq{background:#222;border:1px solid #333;border-radius:6px;padding:18px 24px;margin:22px 0;text-align:center;font-family:'Cinzel',serif;font-size:1.15em;color:#D4A853;letter-spacing:0.02em}
+.eq .small{font-size:0.72em;color:#999;display:block;margin-top:8px;font-family:'EB Garamond',serif;font-style:italic;letter-spacing:0}
+
+/* Blockquote */
+blockquote{border-left:3px solid #444;padding:12px 20px;margin:20px 0;color:#aaa;font-style:italic}
+
+/* Footer */
+.footer{margin-top:60px;padding-top:24px;border-top:1px solid #333;font-size:0.78em;color:#6B6B6B;line-height:1.7}
+.footer strong{color:#999}
+
+/* TOC */
+.toc{background:#222;border:1px solid #333;border-radius:6px;padding:20px 28px;margin:28px 0}
+.toc h3{font-family:'Cinzel',serif;font-size:0.85em;color:#B8860B;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 12px}
+.toc ol{padding-left:22px;color:#bbb;font-size:0.92em}
+.toc ol li{margin-bottom:4px}
+.toc ol li a{color:#D4A853;text-decoration:none}
+.toc ol li a:hover{text-decoration:underline}
+
+/* Verdict box */
+.verdict{background:linear-gradient(135deg,#2a2a1a 0%,#222 100%);border:2px solid #B8860B;border-radius:8px;padding:28px 28px;margin:32px 0}
+.verdict h3{color:#B8860B;margin-top:0;margin-bottom:14px;font-size:1.2em}
+.verdict p{margin:0 0 10px}
+.verdict p:last-child{margin:0}
+
+/* Regime tags */
+.regime{display:inline-block;font-family:'Cinzel',serif;font-size:0.72em;padding:3px 10px;border-radius:3px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600}
+.regime-growth{background:#1a3a1a;color:#4CAF50;border:1px solid #4CAF50}
+.regime-maint{background:#3a3a1a;color:#D4A853;border:1px solid #D4A853}
+.regime-decline{background:#3a1a1a;color:#c0392b;border:1px solid #c0392b}
+
+@media(max-width:600px){
+  .wrap{padding:20px 16px 60px}
+  h1{font-size:1.7em}
+  h2{font-size:1.25em}
+  .stats{flex-direction:column}
+  .stat{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a href="index.html" class="nav-back">← Main Report</a>
+
+<h1>Three Empires, One Equation</h1>
+<p class="subtitle">France, America, and China Through the S×I Lens, 1700–2025, with Predictions to 2040</p>
+<p class="dateline">Vitalic Stoicism Project · Modern Nations Analysis · July 5, 2026</p>
+
+<!-- ===================== STATS ===================== -->
+<div class="stats">
+  <div class="stat"><span class="num">3</span><span class="lbl">Modern nations scored on the S×I framework</span></div>
+  <div class="stat"><span class="num">325 yrs</span><span class="lbl">Coverage span (1700–2025)</span></div>
+  <div class="stat"><span class="num">44</span><span class="lbl">Modern indicator datasets used</span></div>
+  <div class="stat"><span class="num">2040</span><span class="lbl">Prediction horizon</span></div>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+<h3>Contents</h3>
+<ol>
+<li><a href="#intro">Introduction: The Framework Applied to Now</a></li>
+<li><a href="#france">France: The Revolutionary Cycle (1700–2025)</a></li>
+<li><a href="#us">The United States: The Institutional Experiment (1776–2025)</a></li>
+<li><a href="#china">China: The Return (1800–2025)</a></li>
+<li><a href="#predictions">The Predictions: Where Is S×I Highest?</a></li>
+<li><a href="#table">Comparative Scorecard and Verdict</a></li>
+<li><a href="#negatives">Honest Negatives</a></li>
+</ol>
+</div>
+
+<!-- ===================== I. INTRODUCTION ===================== -->
+<h2 id="intro">I. Introduction: The Framework Applied to Now</h2>
+
+<p>The <a href="index.html">main report</a> tested the S×I framework against twelve historical civilizations across 5,500 years. The core finding held: complexity grows when constructive selection pressure (S<sub>c</sub>) and integration capacity (I) combine above a threshold, plateaus when integration alone covers maintenance costs, and collapses when accumulated entropy (E) overwhelms both.</p>
+
+<div class="eq">
+dC/dt = α·min(S<sub>c</sub>, I) − δ·S<sub>d</sub> − γC²
+<span class="small">The revised equation. Growth requires both S<sub>c</sub> and I above threshold. S<sub>d</sub> acts directly against complexity. Entropy (γC²) increases quadratically with complexity itself.</span>
+</div>
+
+<p>That analysis stopped at the pre-modern boundary. This companion report takes the framework forward into the modern era, applying it to three nations that between them represent the dominant power structures of the last three centuries: France (the revolutionary cycle), the United States (the institutional experiment), and China (the return). A fourth contender, India, appears in the predictions section because the framework demands it.</p>
+
+<p>The question is simple and uncomfortable: where is S×I highest right now, and where will it be in 2040?</p>
+
+<p>Three things make modern application harder than historical analysis. First, proximity. We lack the temporal distance that clarifies historical arcs. Second, data abundance. For ancient Rome we had a handful of proxy series and filled gaps with narrative. For modern nations we have hundreds of continuous indicators, and the challenge shifts from data scarcity to signal extraction. Third, political valence. Scoring a living nation on "institutional entropy" or "selection mechanism failure" is inherently charged in a way that scoring the Abbasid Caliphate is not.</p>
+
+<p>We proceed anyway, because the framework's value depends on whether it illuminates the present, not just the past.</p>
+
+<!-- ===================== II. FRANCE ===================== -->
+<img src="img/chart1_sxi_timeline.png" alt="Three-nation S×I timeline 1700-2025" style="display:block;margin:18px auto;max-width:100%;border-radius:4px;border:1px solid #333">
+<p class="note" style="text-align:center">Figure 1. S×I product for France, United States, and China (1700–2025). Gold stars mark peak S×I decades.</p>
+
+<img src="img/chart2_complexity_timeline.png" alt="Complexity comparison across three nations" style="display:block;margin:18px auto;max-width:100%;border-radius:4px;border:1px solid #333">
+<p class="note" style="text-align:center">Figure 2. Complexity output (C) for all three nations. US surges post-1870; China's post-1978 acceleration is the steepest in the dataset.</p>
+
+<h2 id="sec2">II. France: The Revolutionary Cycle (1700–2025)</h2>
+
+<p>France is the framework's most instructive modern case because it has completed multiple full cycles of entropy accumulation and violent reset within the data window. No other major nation has oscillated between regime types so frequently across three centuries: monarchy, constitutional monarchy, republic, empire, restoration, republic, empire, republic, occupation, republic, republic. Each transition represents an entropy-clearing event of varying severity, and the GDP per capita series from the Maddison Project captures the complexity cost of each one.</p>
+
+<h3>The Ancien Régime: High I, Dying S<sub>c</sub> (1700–1789)</h3>
+
+<p>France entered the eighteenth century as Europe's largest economy by aggregate output and among its most sophisticated by institutional complexity. Maddison GDP per capita oscillated around $1,758 (2011 USD) in 1700, roughly comparable to England and well above China ($1,543). The salon culture of the Enlightenment represented genuine integration: ideas flowed between philosophes, merchants, and minor nobility. Trade networks were extensive. The <em>rentes</em> (government bonds) created a functioning capital market that integrated savers with the state.</p>
+
+<p>But the selection mechanisms were dying. The <em>noblesse de robe</em> had purchased hereditary offices, converting competitive appointment into rent extraction. The tax system exempted those most able to pay. The parlements blocked reform. By the 1780s, entropy had accumulated to the point where the fiscal system could not fund basic state functions, and every reform attempt was vetoed by incumbents who benefited from the existing structure.</p>
+
+<div class="f">
+<span class="label">Framework Reading, 1780s</span>
+<span class="r">S<sub>c</sub> → 0, I moderate, E → maximum</span>
+<span class="desc">Constructive selection had essentially ceased. Integration still functioned through trade and intellectual networks. But accumulated entropy (fiscal crisis, aristocratic privilege, institutional paralysis) had reached the breaking point. The entropy ratchet predicts: reset is imminent, and it will be violent.</span>
+</div>
+
+<h3>Revolution to Napoleon: Maximum S<sub>d</sub> (1789–1815)</h3>
+
+<p>The Revolution was an entropy-clearing event of catastrophic proportions. The framework distinguishes between constructive selection (competition that builds capacity) and destructive selection (violence that destroys complexity). The Terror was pure S<sub>d</sub>. The Revolutionary Wars were S<sub>d</sub> on a continental scale. GDP per capita fell from $1,698 in 1789 to $1,660 in 1800, a modest decline that masks enormous structural destruction: the dissolution of guilds, the confiscation of Church property, the exile or execution of technical elites, the collapse of the rente market.</p>
+
+<p>Napoleon partially rebuilt. The Code Civil was an integration instrument of extraordinary power: a unified legal framework replacing hundreds of local customary codes. The Napoleonic administrative system (prefects, lycées, the metric system) raised I significantly. But Napoleon's wars consumed the complexity gains almost as fast as they were produced. By 1815, France's GDP per capita stood at $1,786, barely above its 1700 level. A century of net zero growth, because entropy clearance and destructive selection consumed everything the integration gains produced.</p>
+
+<h3>The Oscillation Century (1815–1870)</h3>
+
+<p>What followed was the most rapid regime cycling in any major nation's modern history. Restoration (1815), July Monarchy (1830), Second Republic (1848), Second Empire (1852), each lasting roughly one to two decades. The framework reads each transition as a partial entropy reset: the new regime cleared some institutional deadwood, only to begin accumulating its own entropy immediately.</p>
+
+<p>The striking observation is that GDP per capita rose steadily through this instability: $1,786 (1815) → $2,438 (1848) → $2,990 (1870). The integration substrate (Code Civil, national education, railroad construction, free trade under Napoleon III) persisted across regime changes, even as the political superstructure churned. This supports the main report's finding that I is the primary complexity driver during maintenance phases. The political oscillation was surface noise; the integration infrastructure was the signal.</p>
+
+<h3>The Third Republic to the Catastrophes (1870–1945)</h3>
+
+<p>The Third Republic (1870–1940) was France's longest-lived modern regime, and by the framework's reading, its most successful S×I combination. S<sub>c</sub> rose through democratic competition, colonial economic networks, and the Dreyfusard political contest that stress-tested institutions without destroying them. I rose through the Ferry education laws (universal primary education from 1881), colonial trade integration, and the alliance system. GDP per capita surged: $2,990 (1870) → $4,584 (1900) → $5,555 (1913). The Belle Époque was France's peak S×I period.</p>
+
+<p>Then the twentieth century intervened. World War I was S<sub>d</sub> at industrial scale: 1.4 million dead, the industrial northeast devastated, GDP per capita crashing to $4,481 (1919). The interwar period saw partial recovery to $7,640 by 1939 before World War II destroyed it again: $4,101 in 1945. Two catastrophic S<sub>d</sub> events in thirty years. France's complexity was set back a generation relative to the United States, which experienced the wars as S<sub>c</sub> enhancers (wartime mobilization as institutional capacity building) rather than complexity destroyers.</p>
+
+<h3>The Fifth Republic: De Gaulle's Reset (1958–2025)</h3>
+
+<p>De Gaulle's 1958 constitutional reset was a relatively efficient entropy-clearing event: it replaced the paralyzed Fourth Republic without civil war (barely). The Trente Glorieuses (1945–1975) produced the most sustained complexity growth in French history: GDP per capita from $4,101 (1945) to $18,187 (1970), a 4.4× increase in twenty-five years.</p>
+
+<p>The drivers were textbook S×I. S<sub>c</sub> came from economic competition within the emerging European common market, Marshall Plan-driven institutional modernization, and demographic recovery. I came from European integration (ECSC, EEC, eventually EU), NATO security architecture, and the deliberate construction of technocratic institutions (ENA, Commissariat au Plan). The product was high.</p>
+
+<p>Since 1980, the trajectory has flattened. GDP per capita: $23,537 (1980) → $39,066 (2022), a 66% increase over 42 years versus the 4.4× increase in the prior 25 years. The deceleration is consistent with rising entropy: pension obligations consuming 14% of GDP (highest in the OECD), regulatory burden (the Code du Travail alone exceeds 3,000 pages), demographic decline (TFR 1.68, lowest in recorded French history), and political fragmentation (the gilets jaunes, pension strikes, and the 2024 snap election producing a hung parliament).</p>
+
+<div class="f">
+<span class="label">France Current Regime</span>
+<span class="r"><span class="regime regime-maint">Maintenance</span></span>
+<span class="desc">Moderate S<sub>c</sub> (EU competition provides a floor, but domestic competitive intensity is low). Low S<sub>d</sub> (no major conflict or institutional violence). Moderate I (EU integration is a powerful I-multiplier, but cultural resistance to labor market flexibility and immigration limits I gains). Rising E (pension burden, regulatory sclerosis, demographic decline, political fragmentation). The EU acts as an external I-guarantee that prevents decline, but France cannot generate the S<sub>c</sub> for growth.</span>
+</div>
+
+<!-- ===================== III. UNITED STATES ===================== -->
+<img src="img/chart3_phase_diagrams.png" alt="Phase diagrams for France, US, China" style="display:block;margin:18px auto;max-width:100%;border-radius:4px;border:1px solid #333">
+<p class="note" style="text-align:center">Figure 3. Phase diagrams: each nation's trajectory through S_c-I space, colored by complexity.</p>
+
+<h2 id="us">III. The United States: The Institutional Experiment (1776–2025)</h2>
+
+<p>The American case is the framework's most dramatic modern arc: from maximum S×I to institutional entropy accumulation within a single continuous regime. The Constitution has never been replaced. There has been no regime change since 1789. That is simultaneously America's greatest strength (institutional continuity) and, per the entropy ratchet, its greatest vulnerability. Entropy accumulates and cannot be cleared without systemic rupture.</p>
+
+<h3>Founding to Civil War: The Engine Ignites (1776–1865)</h3>
+
+<p>The founding conditions were nearly optimal for S×I. S<sub>c</sub> was extraordinarily high: frontier competition, democratic political contest, market capitalism with minimal incumbency protection, and immigration-driven labor market dynamism. I was high and rising: the Constitutional framework created a unified legal and monetary space, the postal system and road network integrated a vast geography, and the "melting pot" mechanism converted diversity into productive integration rather than fracture.</p>
+
+<p>GDP per capita tells the story: $2,419 (1775) → $2,674 (1820) → $3,632 (1850). Steady growth, driven by the engine term. The one enormous entropy reservoir was slavery, which the framework reads as simultaneously S<sub>d</sub> (violent coercion destroying human capital) and I-suppression (a caste system that prevented integration across racial lines). The Civil War was the inevitable entropy-clearing event: 620,000 dead, but the institutional reset (13th, 14th, 15th Amendments) cleared the largest single source of accumulated entropy in the system.</p>
+
+<h3>Gilded Age to Progressive Era: Peak Engine (1865–1920)</h3>
+
+<p>Post-Civil War America produced perhaps the highest sustained S×I in modern history. S<sub>c</sub> was maximal: industrial competition between dozens of railroad companies, steel producers, and oil refiners; immigration running at 1–1.5% of population annually; and the founding of research universities (Johns Hopkins 1876, Stanford 1891, Chicago 1892) that created competitive knowledge production. I was rising fast: transcontinental railroad (1869), telegraph, telephone, electrification, and mass public education created integration at continental scale.</p>
+
+<p>GDP per capita: $4,803 (1870) → $8,038 (1900) → $10,108 (1913). A doubling in 43 years. When entropy emerged (the trusts, Tammany Hall corruption, labor exploitation), the Progressive Era provided a competitive-selection correction that cleared entropy without destroying the institutional substrate: antitrust law, the Federal Reserve, direct election of senators, women's suffrage. These were entropy-clearing reforms within the existing constitutional framework.</p>
+
+<h3>The Peak: New Deal to Cold War (1933–1991)</h3>
+
+<p>The New Deal was another entropy reset within the existing regime: banking reform, securities regulation, Social Security. It cleared Depression-era entropy without revolution. World War II, experienced from the American side, was a massive I-builder: Bretton Woods, the UN, NATO, the GI Bill, and the national highway system all raised integration capacity. The war also raised S<sub>c</sub> through wartime industrial mobilization and the subsequent Cold War competition.</p>
+
+<p>The Cold War sustained peak S×I for four decades. S<sub>c</sub> came from superpower competition (the space race, the arms race, and the parallel competition to demonstrate which economic system could generate more complexity). I came from alliance networks, free trade architecture (GATT), mass immigration (1965 Immigration Act), and the construction of the internet (DARPA). GDP per capita: $15,240 (1950) → $36,982 (1990), a 2.4× increase in 40 years.</p>
+
+<div class="stats">
+  <div class="stat"><span class="num">$15,240</span><span class="lbl">US GDP/cap 1950 (2011 USD, Maddison)</span></div>
+  <div class="stat"><span class="num">$58,487</span><span class="lbl">US GDP/cap 2022 (2011 USD, Maddison)</span></div>
+  <div class="stat"><span class="num">77%</span><span class="lbl">Trust in government, 1964</span></div>
+  <div class="stat"><span class="num">16%</span><span class="lbl">Trust in government, 2023</span></div>
+</div>
+
+<h3>The Unipolar Coasting (1991–2008)</h3>
+
+<p>The Soviet collapse removed the primary S<sub>c</sub> source. With no peer competitor, the selection pressure that had driven institutional innovation for four decades evaporated. I remained high through the 1990s (globalization, the internet, continued immigration, NAFTA) and even rose further (WTO accession of China integrated the largest remaining outside economy into the US-led system).</p>
+
+<p>The framework predicts that complexity can coast on accumulated I for a while after S<sub>c</sub> declines, because the maintenance regime requires only I. GDP per capita kept climbing: $36,982 (1990) → $45,886 (2000). But the engine term (S<sub>c</sub> × I) was declining because S<sub>c</sub> was falling. The growth was coming from the I term alone, which covers maintenance but not frontier expansion. This is the Tokugawa pattern applied to a modern democracy.</p>
+
+<h3>The Decline Signals (2008–2025)</h3>
+
+<p>The data since 2008 reads as a textbook entropy accumulation cascade. Every indicator the framework uses to diagnose institutional decline has moved in the predicted direction.</p>
+
+<p><strong>Selection mechanism failure.</strong> The V-Dem electoral democracy index peaked at 0.905 in 2013 and fell to 0.735 by 2025, a 19% decline in twelve years. Congressional productivity collapsed from 906 public laws per Congress (80th, 1947–48) to 116 (118th, 2023–24), an 87% decline. After the 2010 redistricting, the number of truly competitive House seats fell below 40 of 435. When selection mechanisms fail to remove underperformers and reward innovators, entropy accumulates unchecked.</p>
+
+<p><strong>Trust collapse.</strong> Government trust: 77% (1964) → 16% (2023) per Pew/NES surveys. This is not a blip. The series shows a structural decline from the mid-1960s with no sustained reversal in sixty years. The brief spike to 55% after 9/11 (2001) decayed within two years. Trust is the social infrastructure of integration; its collapse means I is declining at the substrate level.</p>
+
+<p><strong>Regulatory entropy ratchet.</strong> The Code of Federal Regulations grew from 54,834 pages (1970) to 185,000 pages (2024), a compound growth rate of 2.3% annually sustained for 54 years. This is the entropy ratchet made visible: each regulation addresses a real problem, but the cumulative effect raises the cost of all future action. NEPA environmental review times now average 4.5 years. Infrastructure costs per mile exceed every peer nation by 3–8×. The system generates complexity maintenance costs faster than it generates productive complexity.</p>
+
+<p><strong>Market concentration.</strong> FAANG-plus firms grew from 6.2% of S&P 500 market capitalization (2010) to 30.7% (2024). Five companies now represent nearly a third of the value of the 500 largest public companies. This is the selection-mechanism equivalent of aristocratic consolidation: incumbents acquire competitors (800+ acquisitions 2010–2020), regulatory moats protect established positions, and the competitive dynamism that drives S<sub>c</sub> declines.</p>
+
+<p><strong>TFP plateau.</strong> Total factor productivity, the best single proxy for complexity generation, has been essentially flat for two decades. The Penn World Table/OWID series shows US TFP oscillating between 0.92 and 1.0 from 2004 to 2023 with no trend. R&D spending increased from 2.5% to 3.6% of GDP over the same period. More inputs, same outputs. That is the entropic drag eating the gains.</p>
+
+<div class="f">
+<span class="label">US Entropy Indicators, Actual Data</span>
+<span class="r">Every series moved in the predicted direction</span>
+<span class="desc">Trust: 77% → 16%. Congressional output: 906 → 116 laws. CFR pages: 54,834 → 185,000. V-Dem democracy: 0.905 → 0.735. FAANG concentration: 6.2% → 30.7%. TFP: flat for 20 years. Trade/GDP: peaked 30.8% (2011), fell to 25.3%. Each series is independently sourced (Pew, Congress.gov, GPO, V-Dem, S&P, Penn World Table, World Bank). The convergence across independent measures is the signal.</span>
+</div>
+
+<div class="f">
+<span class="label">United States Current Regime</span>
+<span class="r"><span class="regime regime-decline">Early Decline</span></span>
+<span class="desc">Declining S<sub>c</sub> (market concentration, political polarization replacing competitive selection with tribal sorting). Rising S<sub>d</sub> (January 6, political violence normalization). Declining I (trust collapse, trade retrenchment, immigration restriction debate, tech platform silos). Rising E (regulatory ratchet, infrastructure decay, debt/GDP at 123%). The framework predicts complexity plateau then decline unless institutional renewal occurs. The entropy ratchet predicts renewal requires rupture.</span>
+</div>
+
+<div class="neg">
+<span class="tag">Honest Negative</span>
+<p>The US case resists clean S×I modeling because the federal structure creates enormous within-country variance. Texas and California operate as near-independent economies with different regulatory environments, demographic trajectories, and political cultures. Some municipalities maintain high institutional capacity while the federal aggregate degrades. The US also has more adaptive capacity than any historical civilization in the dataset: immigration-driven demographic renewal, a wealth buffer unmatched in human history, and the world's deepest capital markets. AI may represent a genuine new I-source. The decline diagnosis could be wrong.</p>
+</div>
+
+<!-- ===================== IV. CHINA ===================== -->
+<h2 id="china">IV. China: The Return (1800–2025)</h2>
+
+<img src="img/chart4_entropy_comparison.png" alt="Entropy comparison across three nations" style="display:block;margin:18px auto;max-width:100%;border-radius:4px;border:1px solid #333">
+<p class="note" style="text-align:center">Figure 4. Entropy (E) comparison. China's Mao-era entropy spike and post-reform reset are the most dramatic in the dataset.</p>
+
+<p>China's modern trajectory is the framework's cleanest natural experiment. No other major civilization has experienced such extreme S×I variation within a 200-year window: from near-zero (late Qing, Mao) to peak (Deng reform era) to declining (Xi era). If the framework captures something real about the relationship between selection, integration, and complexity, China's GDP per capita series should track S×I with a lag. It does.</p>
+
+<h3>The Qing Collapse: Entropy Cascade (1800–1911)</h3>
+
+<p>China in 1700 was still wealthy by global standards: GDP per capita of $1,543 (2011 USD, Maddison), comparable to France's $1,758. By 1820, it had fallen to $882. By 1900, $972. This is a century of stagnation-then-decline while Europe and America surged. The framework's diagnosis: classic entropy cascade.</p>
+
+<p>S<sub>c</sub> was destroyed. The imperial examination system (keju), which had been one of history's most effective meritocratic selection mechanisms, ossified into formulaic composition testing that selected for memorization rather than adaptive capacity. The hereditary aristocracy was thin (a framework advantage in earlier centuries), but the bureaucratic caste had become self-perpetuating. I collapsed through deliberate policy: the closed-door approach restricted trade integration, the Opium Wars destroyed what remained of commercial I, and the Taiping Rebellion (1850–1864, 20–30 million dead) was S<sub>d</sub> at civilizational scale.</p>
+
+<p>The V-Dem electoral democracy index, for what it measures in an imperial context, flatlined at 0.036 throughout the 1800s. There was no competitive selection of any kind. The Qing spent its last decades in the maintenance regime, then shifted to decline.</p>
+
+<h3>Republican Chaos and Mao: S<sub>d</sub> Maximized (1911–1976)</h3>
+
+<p>The Republican period (1911–1949) and the Mao era (1949–1976) represent sixty-five years of near-maximal destructive selection with near-zero integration. Warlord fragmentation, Japanese invasion, civil war, the Great Leap Forward (30+ million dead), and the Cultural Revolution were all S<sub>d</sub> events that destroyed complexity without building integration capacity.</p>
+
+<p>GDP per capita confirms: $985 (1913) → $799 (1950) → $874 (1961, the Great Leap Forward nadir) → $1,237 (1967, pre-Cultural Revolution). The Mao period produced some recovery from the Republican collapse baseline, but TFP was stagnant and per capita income in 1976 was roughly where it had been in 1700.</p>
+
+<p>Two centuries of net-zero complexity growth. The framework explains this without mystery: S<sub>d</sub> was maximal, S<sub>c</sub> was near zero (no market competition, no political competition, no intellectual competition after the Anti-Rightist Campaign), and I was near zero (closed economy, class warfare destroying social integration, diplomatic isolation). V = 0 or negative for seven decades.</p>
+
+<h3>The Deng Revolution: Maximum S×I Increase (1978–2012)</h3>
+
+<p>The reform era beginning in 1978 produced the largest sustained increase in S×I in modern history. The framework's reading is unambiguous: this was the Growth regime at full power.</p>
+
+<p><strong>S<sub>c</sub> rose dramatically.</strong> Township and village enterprises created market competition at the local level. The dual-track pricing system allowed market signals to operate alongside the planned economy, then gradually displaced it. WTO accession (2001) exposed Chinese firms to global competition. The result was competitive pressure more intense than anything in Chinese history since the Warring States period.</p>
+
+<p><strong>I rose even more dramatically.</strong> Special Economic Zones (Shenzhen, Zhuhai, Shantou, Xiamen) were integration laboratories that connected Chinese labor to global capital and technology. Foreign direct investment flooded in: FDI net inflows went from near-zero (1978) to negative $186 billion (2010, meaning $186B more came in than went out). Trade as a share of GDP surged from 15.4% (1978) to 63.6% (2006). Diaspora networks connected Chinese talent to Silicon Valley, Wall Street, and European industry. Technology transfer, both licensed and otherwise, raised domestic capabilities.</p>
+
+<p><strong>TFP confirms.</strong> China's TFP index (Penn World Table via OWID) rose from 0.257 (1978) to 0.800 (2012), a 3.1× increase. GDP per capita: $2,982 (1990) → $10,947 (2012), a 3.7× increase in 22 years.</p>
+
+<div class="stats">
+  <div class="stat"><span class="num">$882</span><span class="lbl">China GDP/cap 1820 (2011 USD)</span></div>
+  <div class="stat"><span class="num">$19,238</span><span class="lbl">China GDP/cap 2022 (2011 USD)</span></div>
+  <div class="stat"><span class="num">63.6%</span><span class="lbl">Peak Trade/GDP (2006)</span></div>
+  <div class="stat"><span class="num">37.2%</span><span class="lbl">Trade/GDP (2024)</span></div>
+</div>
+
+<h3>The Xi Reversal: S<sub>c</sub> Down, S<sub>d</sub> Up, I Collapsing (2012–2025)</h3>
+
+<p>The Xi era represents a systematic reversal of the Deng-era S×I gains, and the data is now extensive enough to call it structural rather than cyclical.</p>
+
+<p><strong>S<sub>c</sub> declining.</strong> The private sector suppression campaign has reduced private enterprise from engine to instrument. The tech crackdowns of 2020–2023 wiped over $1.2 trillion in market capitalization from BATX companies alone. The Ant Group IPO suspension, the Didi investigation, the for-profit tutoring ban, and the gaming restrictions were all S<sub>c</sub>-destroying events: they punished competitive success, signaling to entrepreneurs that the rewards of innovation can be confiscated arbitrarily.</p>
+
+<p><strong>S<sub>d</sub> rising.</strong> The anti-corruption campaign has disciplined over 5.5 million officials (cumulative 2013–2024, from CCDI data). When enforcement correlates with political opposition rather than actual corruption levels, and when the campaign serves to consolidate personal power rather than improve institutional performance, it becomes S<sub>d</sub> rather than S<sub>c</sub>. Wolf warrior diplomacy, the crackdown on Hong Kong, and the Taiwan rhetoric are S<sub>d</sub> signals on the international dimension.</p>
+
+<p><strong>I collapsing.</strong> This is the critical variable, and every indicator points the same direction. Trade/GDP: peaked at 63.6% (2006), fell to 37.2% (2024). FDI net balance flipped from negative $165 billion (2021, meaning massive net inflow) to positive $174 billion (2023, meaning massive net outflow). That reversal is historically extraordinary: foreign capital is leaving faster than it is arriving, for the first time since China opened. US export controls on advanced semiconductors reduce technology integration. Academic collaboration between US and Chinese researchers has declined since 2019. The V-Dem index slipped from 0.094 (2012) to 0.072 (2025).</p>
+
+<p><strong>TFP confirms the plateau.</strong> China's TFP growth decelerated from ~4% annually (2004–2010) to ~2.5% (2010–2017) to near-flat (2021–2023: index 1.000 → 1.014). GDP growth followed: 14.3% (1992) → 7.8% (2012) → 5.4% (2023). The framework predicted this. When S<sub>c</sub> declines and I contracts, the engine term falls, and complexity growth stalls regardless of capital investment levels.</p>
+
+<div class="f">
+<span class="label">China Current Regime</span>
+<span class="r"><span class="regime regime-decline">Growth → Decline Transition</span></span>
+<span class="desc">S<sub>c</sub> declining (private sector suppression, tech crackdowns, reduced market competition). S<sub>d</sub> rising (anti-corruption as loyalty purge, diplomatic aggression). I collapsing (trade retrenchment, FDI reversal, technology decoupling, foreign talent exodus). E rising (property sector distress at 25–30% of GDP through linkages, local government debt, demographic cliff with population peaked 2022). The Liebig bottleneck is I, and it is contracting. Framework prediction: GDP growth below 3% by 2028–2030. Complexity plateau then decline unless I-destruction is reversed, which requires political change the current system is structurally designed to prevent.</span>
+</div>
+
+<!-- ===================== V. PREDICTIONS ===================== -->
+<img src="img/chart5_forward_projection.png" alt="Forward S×I and C projections to 2040" style="display:block;margin:18px auto;max-width:100%;border-radius:4px;border:1px solid #333">
+<p class="note" style="text-align:center">Figure 5. Forward projections to 2040 with confidence bands. France declines slowest; the US faces the steepest trajectory reversal.</p>
+
+<img src="img/chart6_selection_decomposition.png" alt="Constructive vs destructive selection decomposition" style="display:block;margin:18px auto;max-width:100%;border-radius:4px;border:1px solid #333">
+<p class="note" style="text-align:center">Figure 6. S_c/S_d decomposition for all three nations. The US maintained the highest constructive-to-destructive ratio until the 2010s.</p>
+
+<h2 id="predictions">V. The Predictions: Where Is S×I Highest?</h2>
+
+<h3>Current S×I Scores</h3>
+
+<p>Scoring each nation requires converting qualitative assessment to quantitative ranges. We use a 0–10 scale for each component, calibrated against the historical civilizations in the main report where a score of 8–10 represents "among the highest observed in the 12-civilization dataset" and 0–2 represents "near the lowest."</p>
+
+<table>
+<thead><tr><th>Component</th><th>France</th><th>United States</th><th>China</th></tr></thead>
+<tbody>
+<tr><td>S<sub>c</sub> (constructive selection)</td><td>5</td><td>4</td><td>3</td></tr>
+<tr><td>S<sub>d</sub> (destructive selection)</td><td>1</td><td>3</td><td>4</td></tr>
+<tr><td>I (integration capacity)</td><td>6</td><td>5</td><td>4</td></tr>
+<tr><td>E (accumulated entropy)</td><td>5</td><td>6</td><td>7</td></tr>
+<tr><td>C (current complexity)</td><td>7</td><td>9</td><td>7</td></tr>
+<tr><td style="color:#B8860B"><strong>min(S<sub>c</sub>, I) = Liebig bottleneck</strong></td><td style="color:#B8860B"><strong>5</strong></td><td style="color:#B8860B"><strong>4</strong></td><td style="color:#B8860B"><strong>3</strong></td></tr>
+<tr><td style="color:#B8860B"><strong>V = min(S<sub>c</sub>,I) − S<sub>d</sub> − γE</strong></td><td style="color:#B8860B"><strong>+1.5</strong></td><td style="color:#B8860B"><strong>−2</strong></td><td style="color:#B8860B"><strong>−4.5</strong></td></tr>
+</tbody>
+</table>
+
+<p>The scores produce an uncomfortable ranking. France, the nation most observers would rank third in dynamism, scores highest on net vitality (V). Not because France is thriving, but because it has lower entropy, lower destructive selection, and the EU provides an integration floor that the other two systems lack. France's V is slightly positive: barely growing, but growing. The US and China both score negative: declining, with China declining faster.</p>
+
+<div class="banner">
+<p><strong>The Liebig Bottleneck:</strong> In all three nations, the binding constraint is different. France is bottlenecked by S<sub>c</sub> (not enough competitive pressure to drive innovation). The US is bottlenecked by declining I (trust collapse, political fragmentation, regulatory sclerosis preventing coordination). China is bottlenecked by I (the Xi-era integration reversal). The framework's prescription differs by case: France needs more competition, the US needs institutional renewal, China needs to reverse its closing.</p>
+</div>
+
+<h3>The 2040 Trajectories</h3>
+
+<p>Extrapolating current trends forward 15 years is speculative. The framework gives us structural dynamics, not point predictions. But the directional calls are defensible.</p>
+
+<p><strong>France to 2040: Muddle-through maintenance.</strong> The EU integration floor prevents collapse. Demographic headwinds (TFR 1.68, aging population) will drag on complexity growth. Macron-era labor market reforms raised S<sub>c</sub> marginally but were politically costly and may not survive subsequent administrations. Prediction: GDP per capita growth of 0.5–1.5% annually. No dramatic moves in either direction. The EU is the critical variable: if EU integration deepens, France benefits disproportionately as its I rises on external momentum. If the EU fragments, France loses its I floor. Probability of a positive surprise: 25%.</p>
+
+<p><strong>United States to 2040: Fork in the road.</strong> The entropy ratchet predicts that accumulated institutional entropy (regulatory burden, trust deficit, political sorting, market concentration) cannot be cleared without systemic rupture. The question is what form the rupture takes. There are two scenarios:</p>
+
+<p><em>Renewal scenario (30% probability):</em> AI and energy abundance generate sufficient productivity gains to overcome the entropy drag. A political realignment breaks the current polarization equilibrium. Regulatory reform occurs under crisis pressure (as it did in the Progressive Era and New Deal). Immigration is expanded to counteract demographic decline. In this scenario, the US re-enters the Growth regime by 2035 with S<sub>c</sub> rising through AI-driven competitive pressure and I rising through digital integration and demographic renewal. GDP per capita growth reaccelerates to 2–3% annually.</p>
+
+<p><em>Continued decline (70% probability):</em> The entropy ratchet holds. Regulatory burden continues to compound. Trust continues to decline. Political polarization deepens. Market concentration increases. AI productivity gains are captured by incumbent firms rather than distributed. In this scenario, US TFP remains flat or declines, GDP per capita growth falls below 1%, and the US enters the maintenance-to-decline transition that France entered in the 1980s, but from a higher absolute level. The US remains wealthy but stops generating frontier complexity.</p>
+
+<p><strong>China to 2040: The demographic wall.</strong> China's population peaked in 2022. The UN median projection shows a decline from 1.426 billion to ~1.39 billion by 2040, with the working-age population declining faster. This is the R (reproduction/renewal) term collapsing. Combined with declining I and rising E, the framework predicts sustained deceleration.</p>
+
+<p>GDP growth falls below 3% by 2028–2030. Property sector distress continues for a decade (the Japanese precedent suggests 15–20 years of balance sheet repair). Technology decoupling forces higher domestic R&D spending with lower returns (the framework predicts that isolation raises the cost of complexity maintenance). The anti-corruption campaign consumes institutional energy without producing institutional improvement. Prediction: GDP per capita growth of 1–3% annually through 2040, declining through the period. Complexity plateaus then begins contracting in absolute terms by the mid-2030s.</p>
+
+<p>The one scenario that changes this trajectory is regime change or fundamental political reform that reverses the I-destruction. History offers precedents (Deng after Mao), but the current institutional structure (term limit removal, Xi Jinping Thought in the constitution, loyalty-based personnel system) is specifically designed to prevent such correction. Probability of positive surprise: 15%.</p>
+
+<h3>The India Angle</h3>
+
+<p>The framework demands that we look beyond these three, because the highest S×I trajectory globally may belong to none of them.</p>
+
+<p>India in 2025 scores roughly: S<sub>c</sub> = 6 (vigorous democratic competition, tech sector dynamism, startup ecosystem), S<sub>d</sub> = 2 (communal tensions and Kashmir, but no systemic violence), I = 4 (digital integration via Aadhaar/UPI is transformative but infrastructure and bureaucratic integration remain weak), E = 4 (bureaucratic legacy of the License Raj partially cleared, but caste system and regulatory burden persist). min(S<sub>c</sub>, I) = 4. V ≈ +1.</p>
+
+<p>The critical variable is trajectory. India's S<sub>c</sub> is rising (unlike all three nations analyzed above). India's I is rising (UPI processed 13 billion transactions in December 2024 alone; digital integration is happening faster than physical infrastructure can follow). India's R (demographic renewal) is the strongest of any major economy: median age 28, versus 39 for China, 38 for the US, and 42 for France.</p>
+
+<div class="f">
+<span class="label">Framework Prediction</span>
+<span class="r">India has the highest S×I growth rate globally</span>
+<span class="desc">Not the highest level (that remains the US by absolute complexity), but the highest rate of change. The combination of rising S<sub>c</sub>, rising I, favorable demographics, and moderate (not extreme) entropy creates the conditions that the framework associates with the Growth regime. India's GDP per capita trajectory ($2,400 in 2023, growing at 5–6% annually) is consistent with this reading. If India's I continues to rise through digital integration and infrastructure investment, min(S<sub>c</sub>, I) rises from 4 toward 6 by 2035, producing a sustained Growth regime. The framework's projection: India becomes the third-largest economy by 2028 and the world's most dynamic large economy by 2035.</span>
+</div>
+
+<p><strong>Southeast Asia as a parallel play.</strong> Indonesia (population 280 million, median age 30), Vietnam, and the Philippines share India's demographic advantage and are experiencing rising I through ASEAN integration and supply chain diversification away from China. The framework suggests that the locus of maximum S×I is shifting south and east, away from all three nations in our primary analysis. The 2040 world may be one where India and Indonesia matter more than France and possibly more than China.</p>
+
+<!-- ===================== VI. COMPARATIVE TABLE ===================== -->
+<h2 id="table">VI. Comparative Scorecard and Verdict</h2>
+
+<table>
+<thead><tr><th>Dimension</th><th>France</th><th>United States</th><th>China</th><th>India (brief)</th></tr></thead>
+<tbody>
+<tr><td>S<sub>c</sub> (level)</td><td>5 / 10</td><td>4 / 10</td><td>3 / 10</td><td>6 / 10</td></tr>
+<tr><td>S<sub>c</sub> (trajectory)</td><td>Flat</td><td>Declining</td><td>Declining</td><td style="color:#4CAF50">Rising</td></tr>
+<tr><td>S<sub>d</sub> (level)</td><td>1 / 10</td><td>3 / 10</td><td>4 / 10</td><td>2 / 10</td></tr>
+<tr><td>I (level)</td><td>6 / 10</td><td>5 / 10</td><td>4 / 10</td><td>4 / 10</td></tr>
+<tr><td>I (trajectory)</td><td>Flat (EU floor)</td><td>Declining</td><td style="color:#c0392b">Declining fast</td><td style="color:#4CAF50">Rising fast</td></tr>
+<tr><td>E (entropy)</td><td>5 / 10</td><td>6 / 10</td><td>7 / 10</td><td>4 / 10</td></tr>
+<tr><td>C (current complexity)</td><td>7 / 10</td><td>9 / 10</td><td>7 / 10</td><td>4 / 10</td></tr>
+<tr><td>R (demographic renewal)</td><td>Low</td><td>Moderate</td><td>Very low</td><td style="color:#4CAF50"><strong>High</strong></td></tr>
+<tr><td style="color:#B8860B"><strong>min(S<sub>c</sub>, I)</strong></td><td style="color:#B8860B"><strong>5</strong></td><td style="color:#B8860B"><strong>4</strong></td><td style="color:#B8860B"><strong>3</strong></td><td style="color:#B8860B"><strong>4</strong></td></tr>
+<tr><td style="color:#B8860B"><strong>Net Vitality (V)</strong></td><td>+1.5</td><td>−2</td><td>−4.5</td><td style="color:#4CAF50"><strong>+1</strong></td></tr>
+<tr><td><strong>Current Regime</strong></td><td><span class="regime regime-maint">Maintenance</span></td><td><span class="regime regime-decline">Early Decline</span></td><td><span class="regime regime-decline">Growth→Decline</span></td><td><span class="regime regime-growth">Growth</span></td></tr>
+<tr><td><strong>2040 Prediction</strong></td><td>Maintenance continues</td><td>Fork: renewal or decline</td><td>Sustained deceleration</td><td>Continued growth</td></tr>
+<tr><td><strong>Liebig Bottleneck</strong></td><td>S<sub>c</sub> too low</td><td>I collapsing</td><td>I collapsing</td><td>I still building</td></tr>
+</tbody>
+</table>
+
+<div class="verdict">
+<h3>The Verdict</h3>
+<p><strong>Of the three nations analyzed, none is in the Growth regime.</strong> France is in stable Maintenance with the EU providing an I floor. The United States is in early Decline with a narrow path to renewal. China is transitioning from Growth to Decline with the integration reversal as the primary driver.</p>
+<p><strong>The highest S×I growth rate globally belongs to India,</strong> which is the only major economy where both S<sub>c</sub> and I are simultaneously rising. This is not a prediction that India will surpass the US in absolute complexity by 2040 (it will not). It is a prediction that India will be the most dynamic large economy, measured by the rate of complexity generation. The locus of civilizational energy is shifting.</p>
+<p><strong>The uncomfortable implication for the US and China:</strong> both face the same structural problem. Their accumulated entropy cannot be cleared without institutional rupture. The US system has more adaptive capacity (federalism, immigration, wealth buffer, deeper capital markets), but the entropy ratchet predicts that adaptive capacity declines as entropy accumulates. China's system has a precedent for post-crisis renewal (Deng after Mao) but the current regime is specifically designed to prevent that mechanism from operating. The framework does not predict which system breaks first. It predicts that both must break to return to the Growth regime, and that the manner of breaking determines whether what follows is renewal or collapse.</p>
+<p><strong>Bottom line:</strong> Invest in demographics and integration. Avoid nations where S<sub>d</sub> is rising and I is falling. The S×I framework says the same thing about 2030 that it says about 200 BCE Rome or 1100 CE Song China: complexity follows the integration networks, and it always will.</p>
+</div>
+
+<!-- ===================== VII. HONEST NEGATIVES ===================== -->
+<h2 id="negatives">VII. Honest Negatives</h2>
+
+<div class="neg">
+<span class="tag">Proximity Bias</span>
+<p>We are too close to these cases to score them reliably. The framework was calibrated on historical civilizations where we know the full arc: rise, peak, decline, collapse. Modern nations are mid-arc. We may be scoring a temporary dip as structural decline, or a genuine inflection as a blip. The Tokugawa case showed that apparent stagnation can actually be successful maintenance. The US "decline" indicators may reflect institutional adaptation rather than entropy accumulation. We will not know for 50 years.</p>
+</div>
+
+<div class="neg">
+<span class="tag">GDP as Complexity Proxy</span>
+<p>GDP per capita is a crude complexity proxy. It misses environmental degradation (negative complexity), informal economy activity (unmeasured complexity), and distributional effects (the same GDP per capita can correspond to very different complexity levels depending on whether the gains are broadly distributed or concentrated). For China in particular, GDP figures may overstate actual complexity due to real estate investment that creates physical structures but not productive capacity. The framework needs a better complexity index.</p>
+</div>
+
+<div class="neg">
+<span class="tag">Democracy Bias</span>
+<p>The framework risks conflating democratic institutions with selection quality. China's S<sub>c</sub> during the reform era was high despite having no democratic competition whatsoever, because market competition substituted for political competition. Singapore, with minimal democratic selection, maintains extraordinarily high complexity. The V-Dem index may measure what Western academics value rather than what drives complexity. The framework should be agnostic about political form and focus on whether selection mechanisms, whatever their type, effectively reward adaptive behavior and punish maladaptive behavior.</p>
+</div>
+
+<div class="neg">
+<span class="tag">Prediction Uncertainty</span>
+<p>The framework produces regime diagnoses, not point predictions. "China GDP growth falls below 3% by 2028" is falsifiable but could easily be wrong by two years in either direction without invalidating the framework. "The US enters the Growth regime by 2035 under the renewal scenario" depends on political choices that the framework does not model. We can identify the structural dynamics but not the human decisions that determine which path is taken. Predictions beyond 10 years should be understood as scenarios, not forecasts.</p>
+</div>
+
+<div class="neg">
+<span class="tag">Missing Variables</span>
+<p>The modern world has dynamics the framework does not capture. Nuclear weapons make great-power war less likely, which may reduce S<sub>d</sub> permanently. Climate change introduces an entropy source external to the institutional system. AI may represent a genuine discontinuity in the I function, enabling integration at scales previously impossible. Digital currencies and decentralized systems may enable entropy-clearing without institutional rupture. If any of these dynamics dominate, the framework's historical calibration becomes unreliable.</p>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer">
+<p><strong>Scope and Caveats.</strong> This report applies a theoretical framework to modern nation-states. All assessments involve subjective judgment. The SICRE scores are the author's estimates informed by quantitative data, not objective measurements. The framework is best understood as a structured analytical lens, not a predictive model with calibrated parameters. Nothing in this report constitutes investment advice, policy recommendation, or geopolitical forecast.</p>
+<p><strong>Data Sources.</strong> Maddison Project Database (2023) for GDP per capita. V-Dem v14 for electoral democracy indices. Pew Research Center and National Election Studies for US government trust. Congress.gov for legislative productivity. US Government Printing Office for CFR page counts. S&P for market concentration. Penn World Table via OWID for TFP. World Bank for trade/GDP and China GDP growth. SAFE for China FDI data. CCDI for anti-corruption statistics. Total: 44 modern indicator datasets, 50 crosscutting historical datasets.</p>
+<p><strong>Companion to:</strong> <a href="index.html">"Against Entropy: Empirical Tests of the S×I Framework Across 12 Civilizations"</a></p>
+<p><strong>Version.</strong> v1.0 · July 5, 2026 · Vitalic Stoicism Project</p>
+</div>
+
+</div>
+</body>
+</html>
