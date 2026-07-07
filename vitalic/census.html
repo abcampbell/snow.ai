@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>The Census — Vitalic Stoicism</title>
+<style>
+body { background:#1A1A1A; color:#FAFAF5; font-family:Garamond,serif; max-width:960px; margin:40px auto; padding:0 20px; line-height:1.55; }
+h1,h2 { font-family:Cinzel,serif; color:#B8860B; }
+a { color:#7A9CC6; } td,th { border:1px solid #444; padding:6px 10px; text-align:left; font-size:0.92em; }
+table { border-collapse:collapse; margin:18px 0; } .neg { color:#A0442C; }
+.small { color:#6B6B6B; font-size:0.85em; } img { max-width:100%; border:1px solid #333; margin:12px 0; }
+.disclose { border:1px solid #A0442C; background:#221a18; padding:16px 20px; margin:22px 0; font-size:0.9em; }
+</style></head><body>
+<h1>The Census</h1>
+<p>The roster tested polities that produced a complexity peak worth writing home about.
+The census graded everything else: 528 additional polities from a five-sweep screening
+pool of the historical record&rsquo;s also-rans &mdash; conquered, fragmented, absorbed,
+never-consolidated &mdash; blind-graded on the same rubrics, decade by decade, with the
+grading order logged.</p>
+
+<h2>Finding one: the arc is universal</h2>
+<p>Across 576 blind-graded polities &mdash; 48 roster and 528 failures &mdash; the same
+three curves appear: competition declines before the complexity peak, integration
+crests at it. The shape is not a property of success; it is a property of polities.</p>
+<img src="img/fp_vs_roster_aggregate.png" alt="Roster vs failed-pool mean S/I/C arcs, aligned at complexity peak">
+<p class="small">Solid: roster (peaked, censored-excluded per the config rule). Dashed:
+pool (interior-peak only; 96 edge-truncated series excluded from alignment and listed
+in the build log). Ghost-line and exclusion conventions as on the methods page.</p>
+
+<h2>Finding two: engine shape does not pick winners</h2>
+<p>Four preregistered tests asked whether anything in the engine record separates the
+roster from the pool. Frozen reading-rule outcomes, misses first:</p>
+<table>
+<tr><th>test</th><th>question</th><th>outcome (frozen row)</th></tr>
+<tr><td>A &mdash; conversion</td><td>did winners convert engine into complexity faster?</td><td class="neg">Engine explains shape, not success (&alpha; medians .10 vs .10; p=.61; n=47 v 389)</td></tr>
+<tr><td>B &mdash; duration</td><td>did winners hold their peak longer?</td><td class="neg">Duration is not the story; row closes (combined p=.06 vs frozen p&lt;.01)</td></tr>
+<tr><td>C &mdash; combination rule</td><td>with imbalanced polities finally in-sample, does the S&ndash;I combination resolve?</td><td class="neg">UNDETERMINED &mdash; permanent; no third attempt (CI [&minus;10,+1] on n=47 imbalanced)</td></tr>
+<tr><td>D &mdash; failure fingerprints</td><td>do failure modes have predicted signatures?</td><td class="neg">1 of 3: fragmented shows the internal-collapse signature (.585, n=130); conquered (.438) and never-consolidated (.091) miss</td></tr>
+</table>
+<p>Joint verdict, selected verbatim from the frozen interpretation table: <em>&ldquo;The
+census finds no property separating roster from pool beyond the shared shape.
+Conversion, duration, combination, and fingerprint claims all close as unsupported;
+the ordering result remains descriptive.&rdquo;</em></p>
+
+<h2>What remains open</h2>
+<p>Conversion &mdash; why some polities that ran the arc left civilizational records and
+most did not &mdash; is the open question. Within-polity normalization erases levels by
+construction; magnitude and sustain are under preregistered test now
+(conversion tests v2, frozen before results).</p>
+
+<h2>The full pool</h2>
+<img src="img/fp_wall.png" alt="All 528 failed-pool polities, S/I/C/Sd arcs, batch-labeled">
+<p class="small">Every graded pool polity, batch-labeled (fp-rich1 / fp-mod1 / fp-thin1).
+Colors as everywhere: S gold, I blue, C green fill, S<sub>d</sub> red.</p>
+
+<div class="disclose"><strong>Disclosure.</strong> The first 113 pool polities were
+graded before the census prereg existed, in roughly &ldquo;most valiant first&rdquo;
+order; one partial aggregate was viewed by Campbell and Claude on 2026-07-07. These
+tests were designed after that view. The census design (grade everything, select
+nothing) is the mitigation. The grading-order log (grading_sequence.csv) was
+reconstructed from file mtimes for entries predating its creation and is flagged
+accordingly. 64 archaeology-only pool candidates were not graded: no textual record
+to grade from. The ordering headline on the <a href="index.html">main page</a> is
+unchanged by this census and remains the record.</div>
+
+<p class="small"><a href="index.html">&larr; the roster</a> &middot;
+<a href="methods.html">methods &amp; record</a></p>
+</body></html>
