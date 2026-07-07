@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AGO — Greenlight Capital — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>AGO</h1><div class="sub">Greenlight Capital &middot; published 2018-04-23 &middot; 63 pages</div></div><span class="badge badge-short">short</span><div class="gradebox"><div class="g" style="color:#D4A853">B</div><div class="c">composite 68.0</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>AGO is a melting ice cube bond insurer with inadequate loss reserves, particularly for $5B Puerto Rico exposure where likely losses of $2.7-4.5B dwarf $1.3B total reserves. Uses inflated internal credit ratings to hide losses. Faces shrinking business, collapsing pre-provision income, and rating downgrade risk.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Allied Capital had serious problems, hid losses with proprietary grading, fooled auditors, aggressively returned unearned capital</td></tr><tr><td>2</td><td><b>n10</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>AGO uses internal credit ratings that consistently grade credits higher than S&amp;P and Moody&#x27;s</td></tr><tr><td>3</td><td><b>n11</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Internal credit ratings flow directly into loss estimation process affecting reserves</td></tr><tr><td>4</td><td><b>n13</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Puerto Rico defaulted May 2017; has $74B debt plus $52B unfunded pensions (180% of GNP)</td></tr><tr><td>5</td><td><b>n14</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Oversight board analysis: Puerto Rico can support only $4-18B debt after restructuring into 30-year 5% bonds</td></tr><tr><td>6</td><td><b>n15</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>AGO has $5B principal exposure to Puerto Rico ($8B including interest), exceeding its entire capital base</td></tr><tr><td>7</td><td><b>n17</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>AGO has only $1.3B total loss reserves ($1.1B for entire public finance portfolio)</td></tr><tr><td>8</td><td><b>n19</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>S&amp;P said AGO could withstand $2.3B losses; capital distributions reduced this to $1.8B</td></tr><tr><td>9</td><td><b>n21</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>AGO has additional BIG exposures with minimal reserves: US public finance, non-US infrastructure, structured finance</td></tr><tr><td>10</td><td><b>n22</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Puerto Rico default could set precedent for future state bankruptcies, threatening AGO&#x27;s other exposures</td></tr><tr><td>11</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Rating agencies corrected muni bond ratings in 2010; SEC mandated consistent ratings in 2015, ending arbitrage</td></tr><tr><td>12</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Muni bond insurance penetration dropped from 50% pre-crisis to under 10% currently</td></tr><tr><td>13</td><td><b>n6</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Legal recoveries, CDS mark-to-market reversals, and advanced refunding income sources are exhausted or eliminated</td></tr><tr><td>14</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>AGO has 32-54x leverage: $7B equity against $239B guaranteed bonds ($373B with interest)</td></tr><tr><td>15</td><td><b>n9</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>AGO insured over $12B of now-below-investment-grade bonds against $7B equity</td></tr><tr><td>16</td><td><b>n2</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>AGO parallels Allied Capital: serious problems, proprietary grading hides losses, fools auditors, returns unearned capital</td></tr><tr><td>17</td><td><b>n12</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>AGO inflates internal ratings to systematically understate loss reserves</td></tr><tr><td>18</td><td><b>n16</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>AGO will incur $2.7-4.5B losses on Puerto Rico exposure based on fiscal plan, market pricing, and Moody&#x27;s ratings</td></tr><tr><td>19</td><td><b>n5</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>AGO&#x27;s core business model is permanently impaired; new business cannot replace amortization</td></tr><tr><td>20</td><td><b>n18</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>AGO&#x27;s Puerto Rico reserves are vastly inadequate: losses are 2-4x total reserves</td></tr><tr><td>21</td><td><b>n7</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>AGO&#x27;s pre-provision pre-tax income will collapse going forward</td></tr><tr><td>22</td><td><b>n20</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Recognizing actual Puerto Rico losses threatens AGO&#x27;s AA rating and ability to write new business</td></tr><tr><td>23</td><td><b>n23</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Short AGO: melting ice cube paying unearned drops; regulators/auditors will expose inadequate reserves before shareholders receive value</td></tr></tbody></table><h2>Returns</h2><div class="stats"><div class="stat"><div class="v">$31.14</div><div class="k">Px at Pub</div><div class="m">2018-04-23</div></div><div class="stat"><div class="v negv">-0.9%</div><div class="k">1 Month</div><div class="m">alpha -1.7%</div></div><div class="stat"><div class="v negv">-3.1%</div><div class="k">3 Months</div><div class="m">alpha -2.5%</div></div><div class="stat"><div class="v negv">-14.4%</div><div class="k">6 Months</div><div class="m">alpha +10.3%</div></div><div class="stat"><div class="v negv">-32.4%</div><div class="k">1 Year</div><div class="m">alpha +20.4%</div></div><div class="stat"><div class="v pos">+23.9%</div><div class="k">2 Years</div><div class="m">alpha -32.9%</div></div><div class="stat"><div class="v negv">-36.8%</div><div class="k">3 Years</div><div class="m">alpha -26.7%</div></div><div class="stat"><div class="v negv">-168.6%</div><div class="k">To Date</div><div class="m">alpha -51.2%</div></div></div><div class="stats"><div class="stat"><div class="v"><span class="negv">WRONG</span></div><div class="k">Verdict 1y</div></div><div class="stat"><div class="v"><span class="negv">WRONG</span></div><div class="k">Verdict To Date</div></div><div class="stat"><div class="v negv">-2.6%</div><div class="k">Max Drawdown 1y</div></div><div class="stat"><div class="v pos">+32.7%</div><div class="k">Max Gain 1y</div></div></div><div class="sub" style="font-size:.85em">thesis_return = return in the direction of the pitch (short theses gain when the stock falls) &middot; alpha vs SPY</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">6 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>pre-provision pre-tax income collapse expected <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>2018</td><td>&mdash;</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric other not auto-resolvable (v1)</td></tr><tr><td>total expected loss reserves on entire portfolio <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>current</td><td>1.30 $bn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Puerto Rico principal loss (fiscal plan analysis) <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>forward</td><td>2.80 $bn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Puerto Rico principal loss (mark-to-market analysis) <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>forward</td><td>2.80 $bn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Puerto Rico NPV loss (Moody&#x27;s ratings analysis) <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>forward</td><td>3.60 $bn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>S&amp;P loss absorption capacity after capital distributions <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>current</td><td>1.80 $bn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr></tbody></table><h2>Catalysts</h2><ul class="bl"><li>Regulators, auditors or rating agencies figure out inadequate reserves</li><li>Q1 2018 earnings showing Puerto Rico reserve levels post-hurricane</li><li>Puerto Rico debt restructuring outcome under PROMESA Title 3</li><li>S&amp;P rating downgrade if losses exceed $1.8 billion threshold</li><li>Shrinking buyback capacity pressures stock as earnings collapse</li></ul><h2>Red Flags Alleged</h2><ul class="bl"><li>Uses proprietary internal credit ratings consistently higher than S&amp;P and Moody&#x27;s third-party ratings to hide losses</li><li>Reserves only $1.3B total losses against Puerto Rico exposure alone likely requiring $2.7-4.5B</li><li>Increased Puerto Rico reserves only $111M after Hurricane Maria despite $1.5B incremental market-implied losses</li><li>Graded defaulted Puerto Rico bonds CCC/CC internally vs much lower S&amp;P/Moody&#x27;s ratings</li><li>Implies Puerto Rico can support $60B debt (only $111M reserve on $5B exposure) vs oversight board estimate of $4-18B supportable</li><li>Minimal reserves (2.7%) against large below-investment-grade non-US infrastructure portfolio</li><li>Only $100M reserves against $3.4B below-investment-grade structured finance exposure including subprime</li><li>Fooled sleepy auditors and regulators similar to Allied Capital precedent</li><li>Aggressively returning capital ($30% shares bought back) that it doesn&#x27;t really earn</li><li>Asked Moody&#x27;s to withdraw A- rating, disagreeing with methodology, to hide true credit quality</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">GreenlightCapital_AGO_20180423 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 15, "spof": false}, {"id": "n10", "type": "evidence", "layer": 0, "row": 1, "nrows": 15, "spof": false}, {"id": "n11", "type": "evidence", "layer": 0, "row": 2, "nrows": 15, "spof": false}, {"id": "n13", "type": "evidence", "layer": 0, "row": 3, "nrows": 15, "spof": false}, {"id": "n14", "type": "evidence", "layer": 0, "row": 4, "nrows": 15, "spof": false}, {"id": "n15", "type": "evidence", "layer": 0, "row": 5, "nrows": 15, "spof": false}, {"id": "n17", "type": "evidence", "layer": 0, "row": 6, "nrows": 15, "spof": false}, {"id": "n19", "type": "evidence", "layer": 0, "row": 7, "nrows": 15, "spof": false}, {"id": "n21", "type": "evidence", "layer": 0, "row": 8, "nrows": 15, "spof": false}, {"id": "n22", "type": "claim", "layer": 0, "row": 9, "nrows": 15, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 10, "nrows": 15, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 11, "nrows": 15, "spof": false}, {"id": "n6", "type": "evidence", "layer": 0, "row": 12, "nrows": 15, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 13, "nrows": 15, "spof": false}, {"id": "n9", "type": "evidence", "layer": 0, "row": 14, "nrows": 15, "spof": false}, {"id": "n2", "type": "claim", "layer": 1, "row": 0, "nrows": 4, "spof": false}, {"id": "n12", "type": "claim", "layer": 1, "row": 1, "nrows": 4, "spof": false}, {"id": "n16", "type": "claim", "layer": 1, "row": 2, "nrows": 4, "spof": false}, {"id": "n5", "type": "claim", "layer": 1, "row": 3, "nrows": 4, "spof": false}, {"id": "n18", "type": "claim", "layer": 2, "row": 0, "nrows": 2, "spof": false}, {"id": "n7", "type": "claim", "layer": 2, "row": 1, "nrows": 2, "spof": false}, {"id": "n20", "type": "claim", "layer": 3, "row": 0, "nrows": 1, "spof": false}, {"id": "n23", "type": "conclusion", "layer": 4, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n2"}, {"from": "n3", "to": "n5"}, {"from": "n4", "to": "n5"}, {"from": "n5", "to": "n7"}, {"from": "n6", "to": "n7"}, {"from": "n7", "to": "n23"}, {"from": "n8", "to": "n23"}, {"from": "n9", "to": "n18"}, {"from": "n10", "to": "n12"}, {"from": "n11", "to": "n12"}, {"from": "n12", "to": "n18"}, {"from": "n13", "to": "n16"}, {"from": "n14", "to": "n16"}, {"from": "n15", "to": "n16"}, {"from": "n16", "to": "n18"}, {"from": "n17", "to": "n18"}, {"from": "n18", "to": "n20"}, {"from": "n19", "to": "n20"}, {"from": "n20", "to": "n23"}, {"from": "n21", "to": "n23"}, {"from": "n22", "to": "n23"}, {"from": "n2", "to": "n23"}], "maxLayer": 4}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

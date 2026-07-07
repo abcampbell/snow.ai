@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KSS — Macellum — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>KSS</h1><div class="sub">Macellum &middot; published 2022-04-19 &middot; 168 pages</div></div><span class="badge badge-long">long</span><div class="gradebox"><div class="g" style="color:#8B3A3A">F</div><div class="c">composite 26.2</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>Kohl&#x27;s requires sweeping board change and operational overhaul. Current board oversees decade of market share losses, declining EBIT, failed strategic plans, and lowest retail peer valuation. Macellum proposes reconstituted board to execute standalone turnaround or facilitate transparent sale process with multiple credible offers reported.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Kohl&#x27;s TSR underperformed peers over 3-yr, 5-yr, 10-yr, and since pre-COVID periods</td></tr><tr><td>2</td><td><b>n12</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Macellum owns nearly 5% of Kohl&#x27;s and has proven retail value creation track record</td></tr><tr><td>3</td><td><b>n14</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Current Board underallocated capital: failed to monetize real estate, poor share repurchase timing</td></tr><tr><td>4</td><td><b>n15</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Insufficient time exists to complete proper sale process before AGM; Board could have delayed meeting</td></tr><tr><td>5</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Same-store sales declined 3% compound from FY2011-2021; EBIT fell $478M (22%)</td></tr><tr><td>6</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Kohl&#x27;s market share declined while retail peer average grew 42% and industry grew 42% FY2010-2021</td></tr><tr><td>7</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>March 2022 analyst day resulted in 13% stock drop; EBIT guidance down 11% vs 2021</td></tr><tr><td>8</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Kohl&#x27;s 2024 plan yields $1.36B EBIT vs $1.68B in 2021, requiring $2.5B capex</td></tr><tr><td>9</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Kohl&#x27;s trades at 2.9x EV/EBITDA vs peer median 4.8x, lowest in peer group</td></tr><tr><td>10</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Multiple credible acquisition offers reported at ~$70/share vs $47.77 unaffected price</td></tr><tr><td>11</td><td><b>n13</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Macellum nominees bring essential retail expertise, M&amp;A experience, and ownership mentality lacking on current Board</td></tr><tr><td>12</td><td><b>n6</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Current Board oversaw failed multi-year operating plans without credible course correction</td></tr><tr><td>13</td><td><b>n9</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Board running opaque sale process designed to retain control rather than maximize value</td></tr><tr><td>14</td><td><b>n11</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Standalone plan under current Board will not achieve reported offer prices of $70</td></tr><tr><td>15</td><td><b>n10</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Macellum slate can execute superior standalone plan achieving materially higher EBIT and margins</td></tr><tr><td>16</td><td><b>n17</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Window for value-maximizing acquisition will close if Board retains control and rejects offers</td></tr><tr><td>17</td><td><b>n18</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Macellum slate would conduct transparent, credible strategic review and objectively weigh sale vs. standalone plan</td></tr><tr><td>18</td><td><b>n16</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Without sale or majority Board change, value will be permanently impaired as market share losses become irreversible</td></tr><tr><td>19</td><td><b>n19</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Vote for Macellum&#x27;s 10-director slate to maximize shareholder value via credible sale process or superior standalone execution</td></tr></tbody></table><h2>Returns</h2><div class="stats"><div class="stat"><div class="v">$45.88</div><div class="k">Px at Pub</div><div class="m">2022-04-19</div></div><div class="stat"><div class="v negv">-26.7%</div><div class="k">1 Month</div><div class="m">alpha -14.2%</div></div><div class="stat"><div class="v negv">-51.2%</div><div class="k">3 Months</div><div class="m">alpha -39.8%</div></div><div class="stat"><div class="v negv">-51.5%</div><div class="k">6 Months</div><div class="m">alpha -35.6%</div></div><div class="stat"><div class="v negv">-59.1%</div><div class="k">1 Year</div><div class="m">alpha -53.8%</div></div><div class="stat"><div class="v negv">-56.7%</div><div class="k">2 Years</div><div class="m">alpha -72.5%</div></div><div class="stat"><div class="v negv">-86.5%</div><div class="k">3 Years</div><div class="m">alpha -110.1%</div></div><div class="stat"><div class="v negv">-63.2%</div><div class="k">To Date</div><div class="m">alpha -142.0%</div></div></div><div class="stats"><div class="stat"><div class="v"><span class="negv">WRONG</span></div><div class="k">Verdict 1y</div></div><div class="stat"><div class="v"><span class="negv">WRONG</span></div><div class="k">Verdict To Date</div></div><div class="stat"><div class="v negv">-62.6%</div><div class="k">Max Drawdown 1y</div></div><div class="stat"><div class="v pos">+0.0%</div><div class="k">Max Gain 1y</div></div></div><div class="sub" style="font-size:.85em">thesis_return = return in the direction of the pitch (short theses gain when the stock falls) &middot; alpha vs SPY</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">7 estimates &middot; 3 resolvable &middot; mean abs pct error 84.2%</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>EBIT 2024 midpoint <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>FY 2024</td><td>1,494 $ in millions</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric ebitda not auto-resolvable (v1)</td></tr><tr><td>EBIT 2024 consensus <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>FY 2024</td><td>1,360 $ in millions</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric ebitda not auto-resolvable (v1)</td></tr><tr><td>2024 EPS midpoint under company plan <span style="color:var(--grey);font-size:.85em">(eps)</span></td><td>FY 2024</td><td>8.20 $/sh</td><td>0.98 USD/sh</td><td class="negv">-88.0%</td><td><span class="bm bm-miss">miss</span></td><td style="color:var(--grey);font-size:.85em"></td></tr><tr><td>2024 EPS under risk scenario flat sales <span style="color:var(--grey);font-size:.85em">(eps)</span></td><td>FY 2024</td><td>5.64 $/sh</td><td>0.98 USD/sh</td><td class="negv">-82.6%</td><td><span class="bm bm-miss">miss</span></td><td style="color:var(--grey);font-size:.85em"></td></tr><tr><td>Cumulative CapEx 2022-2024 <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>2022E-2024E</td><td>2,500 $ in millions</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric other not auto-resolvable (v1)</td></tr><tr><td>2022 gross margin <span style="color:var(--grey);font-size:.85em">(gross_margin)</span></td><td>FY 2022E</td><td>37 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>Operating margin 2022 plan target range <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>2022 plan</td><td>7.50 %</td><td>1.36 %</td><td class="negv">-81.9%</td><td><span class="bm bm-miss">miss</span></td><td style="color:var(--grey);font-size:.85em"></td></tr></tbody></table><h2>Catalysts</h2><ul class="bl"><li>Board reconstitution with retail sector expertise and ownership perspectives</li><li>Transparent strategic alternatives review process with credible acquirers</li><li>Potential sale-leaseback of real estate assets (~$4 billion opportunity)</li><li>Larger share repurchase programs</li><li>Improved merchandising execution and direct sourcing</li><li>Zero-based cost budgeting and SG&amp;A optimization</li></ul><h2>Red Flags Alleged</h2><ul class="bl"><li>Board rejected credible, well-capitalized acquirer indications without sufficient access/information</li><li>Implemented two-tiered poison pill designed to chill acquirer interest</li><li>Opaque strategic alternatives review process timed to protect incumbent directors</li><li>Misaligned executive compensation rewarding executives for declining results</li><li>Management repeatedly overpromised and underdelivered on strategic plans since 2014</li><li>Refusal to adopt universal proxy card</li><li>Poor governance including lack of executive diversity and entrenched board</li><li>Process appears designed for &#x27;optics sake&#x27; while retaining Board control through AGM</li></ul><h2>Key Risks Acknowledged</h2><ul class="bl"><li>Execution risk in turnaround given decade of underperformance</li><li>Macroeconomic environment evolution affecting potential acquirers</li><li>Competitive retail environment and continued market share pressure</li><li>Capital intensive plan requiring sales growth that has not materialized historically</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">Macellum_KSS_20220419 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 10, "spof": false}, {"id": "n12", "type": "evidence", "layer": 0, "row": 1, "nrows": 10, "spof": false}, {"id": "n14", "type": "claim", "layer": 0, "row": 2, "nrows": 10, "spof": false}, {"id": "n15", "type": "evidence", "layer": 0, "row": 3, "nrows": 10, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 4, "nrows": 10, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 5, "nrows": 10, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 6, "nrows": 10, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 7, "nrows": 10, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 8, "nrows": 10, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 9, "nrows": 10, "spof": false}, {"id": "n13", "type": "claim", "layer": 1, "row": 0, "nrows": 4, "spof": false}, {"id": "n6", "type": "claim", "layer": 1, "row": 1, "nrows": 4, "spof": false}, {"id": "n9", "type": "claim", "layer": 1, "row": 2, "nrows": 4, "spof": false}, {"id": "n11", "type": "claim", "layer": 1, "row": 3, "nrows": 4, "spof": false}, {"id": "n10", "type": "assumption", "layer": 2, "row": 0, "nrows": 2, "spof": false}, {"id": "n17", "type": "assumption", "layer": 2, "row": 1, "nrows": 2, "spof": false}, {"id": "n18", "type": "claim", "layer": 3, "row": 0, "nrows": 2, "spof": false}, {"id": "n16", "type": "claim", "layer": 3, "row": 1, "nrows": 2, "spof": false}, {"id": "n19", "type": "conclusion", "layer": 4, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n6"}, {"from": "n2", "to": "n6"}, {"from": "n3", "to": "n6"}, {"from": "n4", "to": "n6"}, {"from": "n5", "to": "n11"}, {"from": "n6", "to": "n16"}, {"from": "n7", "to": "n16"}, {"from": "n8", "to": "n9"}, {"from": "n15", "to": "n9"}, {"from": "n9", "to": "n17"}, {"from": "n11", "to": "n16"}, {"from": "n14", "to": "n6"}, {"from": "n12", "to": "n13"}, {"from": "n13", "to": "n10"}, {"from": "n10", "to": "n18"}, {"from": "n17", "to": "n16"}, {"from": "n16", "to": "n19"}, {"from": "n18", "to": "n19"}], "maxLayer": 4}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

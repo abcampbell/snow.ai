@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LRN — Kase Capital — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>LRN</h1><div class="sub">Kase Capital &middot; published 2013-09-17 &middot; 133 pages</div></div><span class="badge badge-short">short</span><div class="gradebox"><div class="g" style="color:#BC5050">D</div><div class="c">composite 39.2</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>K12 Inc., the largest for-profit online charter school operator, is aggressively recruiting students ill-suited for virtual learning (including at-risk students), producing dismal academic results and high dropout rates, while misleading investors and regulators. Growth-at-any-cost culture conflicts with educational mission. Stock richly valued despite regulatory headwinds and slowing growth.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n10</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Online schools only appropriate for small, self-motivated subset of students</td></tr><tr><td>2</td><td><b>n13</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>sourced</td><td>K12 uses aggressive, misleading marketing and sales tactics</td></tr><tr><td>3</td><td><b>n14</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>sourced</td><td>K12 Scantron results are unreliable due to self-selection and unsupervised administration</td></tr><tr><td>4</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>K12 revenue grew 32% annually for past decade</td></tr><tr><td>5</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>K12 profit margins persistently low, erratic, declined sharply last quarter</td></tr><tr><td>6</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>K12 generated only $11M free cash flow over past decade</td></tr><tr><td>7</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Former employees describe K12 accepts nearly any student, targets at-risk students</td></tr><tr><td>8</td><td><b>n6</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Only 28% of K12 schools met AYP vs 52% national average</td></tr><tr><td>9</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>K12 students trail state averages 2-11 points reading, 14-36 points math</td></tr><tr><td>10</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>K12 graduation rate 49% vs state average 79%</td></tr><tr><td>11</td><td><b>n9</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Knowledge Universe distributed entire K12 stake to investors</td></tr><tr><td>12</td><td><b>n11</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>K12 prioritizes growth over academics, targeting unsuitable students</td></tr><tr><td>13</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>K12 stock up 122% from 52-week low, near all-time high</td></tr><tr><td>14</td><td><b>n16</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>K12 weak financial quality: low margins, poor cash generation, aggressive accounting</td></tr><tr><td>15</td><td><b>n12</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>K12&#x27;s dismal academic results are endemic, not fixable under current leadership</td></tr><tr><td>16</td><td><b>n18</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>K12 margins will not improve materially from current low levels</td></tr><tr><td>17</td><td><b>n15</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Regulatory scrutiny increasing, beginning to impair K12 growth</td></tr><tr><td>18</td><td><b>n20</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>K12 business model fundamentally broken, harming students and education reform</td></tr><tr><td>19</td><td><b>n17</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>K12 revenue growth will not continue at historical rates</td></tr><tr><td>20</td><td><b>n19</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>sourced</td><td>K12 stock richly valued at 49x trailing P/E, pricing in unrealistic growth</td></tr><tr><td>21</td><td><b>n21</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Short K12 stock: overvalued company with broken model facing increased scrutiny</td></tr></tbody></table><h2>Returns</h2><div class="stats"><div class="stat"><div class="v">$34.90</div><div class="k">Px at Pub</div><div class="m">2013-09-17</div></div><div class="stat"><div class="v pos">+47.0%</div><div class="k">1 Month</div><div class="m">alpha -48.8%</div></div><div class="stat"><div class="v pos">+39.4%</div><div class="k">3 Months</div><div class="m">alpha -44.4%</div></div><div class="stat"><div class="v pos">+40.0%</div><div class="k">6 Months</div><div class="m">alpha -50.8%</div></div><div class="stat"><div class="v pos">+50.1%</div><div class="k">1 Year</div><div class="m">alpha -69.7%</div></div><div class="stat"><div class="v pos">+61.2%</div><div class="k">2 Years</div><div class="m">alpha -82.6%</div></div><div class="stat"><div class="v pos">+61.0%</div><div class="k">3 Years</div><div class="m">alpha -94.2%</div></div><div class="stat"><div class="v negv">-158.7%</div><div class="k">To Date</div><div class="m">alpha -289.0%</div></div></div><div class="stats"><div class="stat"><div class="v"><span class="pos">RIGHT</span></div><div class="k">Verdict 1y</div></div><div class="stat"><div class="v"><span class="negv">WRONG</span></div><div class="k">Verdict To Date</div></div><div class="stat"><div class="v negv">-50.2%</div><div class="k">Max Drawdown 1y</div></div><div class="stat"><div class="v pos">+0.0%</div><div class="k">Max Gain 1y</div></div></div><div class="sub" style="font-size:.85em">thesis_return = return in the direction of the pitch (short theses gain when the stock falls) &middot; alpha vs SPY</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">2 estimates &middot; 1 resolvable &middot; mean abs pct error 98.4%</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>next 12 months <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>FY2014E</td><td>16 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unit not USD-convertible: %</td></tr><tr><td>next 12 months <span style="color:var(--grey);font-size:.85em">(eps)</span></td><td>FY2014E</td><td>32 %</td><td>0.50 USD/sh</td><td class="negv">-98.4%</td><td><span class="bm bm-miss">miss</span></td><td style="color:var(--grey);font-size:.85em"></td></tr></tbody></table><h2>Catalysts</h2><ul class="bl"><li>New schools and enrollment cap expansion (10 new schools and 17,000 new seats mentioned)</li><li>Increased regulatory scrutiny from states and IRS</li><li>Knowledge Universe distributed entire stake to investors (September 2013)</li><li>Deteriorating academic results triggering regulatory action</li></ul><h2>Red Flags Alleged</h2><ul class="bl"><li>Aggressive student recruitment targeting at-risk students least likely to succeed in online schools</li><li>Enrollment violations, uncertified teachers, illegally siphoning profits from nonprofit entities</li><li>Misleading sales tactics with high-pressure call centers using fabricated statistics</li><li>Scantron test results unreliable: given unsupervised at home, only 52% completion rate, self-selected sample</li><li>Only 28% of K12 schools made Adequate Yearly Progress in 2010-11 vs 52% nationally</li><li>Aggressive capitalization of software and curriculum development costs (boosted EBITDA 21% in FY2013)</li><li>Uses BDO USA rather than Big Four accounting firm</li><li>Charging states for students who no longer attend or never showed up</li><li>Teachers told to pass every student regardless of performance</li><li>Days Sales Outstanding doubled in five years (impacting cash flows)</li><li>Enrollment cap violations and accepting students without required documentation</li><li>Targeting dropout and special education students who demand least education</li><li>Growth-at-any-cost culture prioritizing shareholder returns over student outcomes</li><li>Marketing spending of $340 per student (5.2% of per-pupil expenditures), including on Nickelodeon and teen social networks</li><li>Knowledge Universe (founder) distributed entire stake in September 2013</li><li>Steady insider selling since IPO</li></ul><h2>Key Risks Acknowledged</h2><ul class="bl"><li>Shorting is described as &#x27;horrible business&#x27; that cost the fund significantly over 4.5 years</li><li>No &#x27;foreboding feeling that the world will fall apart&#x27; like in 2007, making shorting harder</li><li>Strong political support, especially among Republicans, for school choice</li><li>Online learning has enormous buzz (MOOCs, etc.)</li><li>High short interest (13.7% of shares) down from 27.2% at year start</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">KaseCapital_LRN_20130917 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n10", "type": "claim", "layer": 0, "row": 0, "nrows": 11, "spof": false}, {"id": "n13", "type": "claim", "layer": 0, "row": 1, "nrows": 11, "spof": false}, {"id": "n14", "type": "claim", "layer": 0, "row": 2, "nrows": 11, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 3, "nrows": 11, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 4, "nrows": 11, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 5, "nrows": 11, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 6, "nrows": 11, "spof": false}, {"id": "n6", "type": "evidence", "layer": 0, "row": 7, "nrows": 11, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 8, "nrows": 11, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 9, "nrows": 11, "spof": false}, {"id": "n9", "type": "evidence", "layer": 0, "row": 10, "nrows": 11, "spof": false}, {"id": "n11", "type": "claim", "layer": 1, "row": 0, "nrows": 3, "spof": false}, {"id": "n1", "type": "evidence", "layer": 1, "row": 1, "nrows": 3, "spof": false}, {"id": "n16", "type": "claim", "layer": 1, "row": 2, "nrows": 3, "spof": false}, {"id": "n12", "type": "claim", "layer": 2, "row": 0, "nrows": 2, "spof": false}, {"id": "n18", "type": "assumption", "layer": 2, "row": 1, "nrows": 2, "spof": false}, {"id": "n15", "type": "claim", "layer": 3, "row": 0, "nrows": 2, "spof": false}, {"id": "n20", "type": "claim", "layer": 3, "row": 1, "nrows": 2, "spof": false}, {"id": "n17", "type": "assumption", "layer": 4, "row": 0, "nrows": 1, "spof": false}, {"id": "n19", "type": "claim", "layer": 5, "row": 0, "nrows": 1, "spof": false}, {"id": "n21", "type": "conclusion", "layer": 6, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n2", "to": "n1"}, {"from": "n5", "to": "n11"}, {"from": "n10", "to": "n11"}, {"from": "n6", "to": "n12"}, {"from": "n7", "to": "n12"}, {"from": "n8", "to": "n12"}, {"from": "n14", "to": "n12"}, {"from": "n13", "to": "n11"}, {"from": "n11", "to": "n12"}, {"from": "n12", "to": "n20"}, {"from": "n3", "to": "n16"}, {"from": "n4", "to": "n16"}, {"from": "n12", "to": "n15"}, {"from": "n15", "to": "n17"}, {"from": "n16", "to": "n18"}, {"from": "n17", "to": "n19"}, {"from": "n18", "to": "n19"}, {"from": "n1", "to": "n19"}, {"from": "n9", "to": "n19"}, {"from": "n20", "to": "n21"}, {"from": "n19", "to": "n21"}, {"from": "n15", "to": "n21"}], "maxLayer": 6}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AAXN — Spruce Point Capital Management — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>AAXN</h1><div class="sub">Spruce Point Capital Management &middot; published 2019-06-19 &middot; 72 pages</div></div><span class="badge badge-short">short</span><div class="gradebox"><div class="g" style="color:#6B6B6B">&mdash;</div><div class="c">composite n/a</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>Axon, the Taser stun gun maker repositioning as SaaS provider, will disappoint with significant earnings misses and increasing cash burn. Aggressive revenue recognition has pulled forward sales, undisclosed China tariff exposure will compress margins, and the company will fail to scale beyond niche businesses. Material weaknesses, SEC issues, and flawed acquisitions support expectations of 40-60% downside.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Q1&#x27;19 operating cash burn worst in public history; credit line increased from $10m to $100m despite $350m cash</td></tr><tr><td>2</td><td><b>n10</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>VIEVU acquisition resulted in 70% inventory reserve, separate call center still operating, zero contingent liability by year-end</td></tr><tr><td>3</td><td><b>n12</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Multiple performance obligation revenue recognition increased from 11% to 55% of contracts since 2014</td></tr><tr><td>4</td><td><b>n13</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Axon admits body cam cannot be used without Axon software; public contracts show no stated hardware value</td></tr><tr><td>5</td><td><b>n15</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>CAD/RMS market consolidated by Motorola, Tyler, CentralSquare; buying center outside Axon&#x27;s police chief relationships</td></tr><tr><td>6</td><td><b>n16</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Axon spent $15m on AI acquisitions, already impaired 27% of acquired technology; Motorola spent $1bn on Avigilon</td></tr><tr><td>7</td><td><b>n18</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>EVP World Wide Products from Apple left after less than 2 years; Technology Committee Chair resigned June 2019</td></tr><tr><td>8</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>$234m equity raise June 2018 for undefined purpose, only $5m spent on VIEVU acquisition</td></tr><tr><td>9</td><td><b>n20</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>History of SEC inquiries, material weaknesses in revenue recognition/COGS, CFO resignation, delinquent filings</td></tr><tr><td>10</td><td><b>n21</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Insiders sold $92m stock since 2010 while company repurchased $141m; insider ownership at record low 2.3%</td></tr><tr><td>11</td><td><b>n22</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Audit Committee Chairman was Arthur Andersen partner 1974-2002; Axon audited by Arthur Andersen 1996-2002</td></tr><tr><td>12</td><td><b>n24</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>asserted</td><td>Taser segment valued at 7-9x 2020 EBITDA; Software/Sensors at 3.5-5.5x 2020 sales discount to SaaS peers</td></tr><tr><td>13</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Axon removed word &#x27;China&#x27; from 10-K but cited tariff/customs expenses pressuring Q1&#x27;19 margins without quantification</td></tr><tr><td>14</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Import records show 56% of 2019 shipments from China, concentrated in body cam business</td></tr><tr><td>15</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Taser unit growth stagnant; Software/Sensors growth slowing and margins contracting</td></tr><tr><td>16</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Taser 60 program introduced 2014 with 5-year expected product life; now 5 years into program</td></tr><tr><td>17</td><td><b>n11</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>VIEVU acquisition was defensive failure with no synergies realized</td></tr><tr><td>18</td><td><b>n14</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Revenue recognition is aggressive; hardware lacks standalone value but revenue booked upfront, inflating revenues 6-9%</td></tr><tr><td>19</td><td><b>n3</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Capital raise and borrowing indicate future financial challenges</td></tr><tr><td>20</td><td><b>n17</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Axon unlikely to succeed in CAD/RMS/AI markets; TAM inflated by unrealistic assumptions</td></tr><tr><td>21</td><td><b>n19</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Executive departures signal technology roadmap challenges and constrained market penetration ability</td></tr><tr><td>22</td><td><b>n23</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Governance concerns and accounting history suggest continued aggressive practices</td></tr><tr><td>23</td><td><b>n6</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>China tariff exposure will pressure margins and cause 10% EBITDA miss in 2019</td></tr><tr><td>24</td><td><b>n9</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Early mover advantage eroding; best gains already realized</td></tr><tr><td>25</td><td><b>n25</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Strong Sell recommendation: 40-60% downside to $27.50-$40.00 price target</td></tr></tbody></table><h2>Returns</h2><div class="neg">Returns unavailable &mdash; no_price_data</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">3 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>2019 EBITDA consensus <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2019</td><td>56 $m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Q1 2019 gross margin guidance <span style="color:var(--grey);font-size:.85em">(gross_margin)</span></td><td>Q1 2019</td><td>62 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Q1 2019 actual gross margin <span style="color:var(--grey);font-size:.85em">(gross_margin)</span></td><td>Q1 2019</td><td>59.50 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr></tbody></table><h2>Catalysts</h2><ul class="bl"><li>Earnings disappointment from gross margin pressure due to China tariffs</li><li>Q1 2019 operating cash burn worst in public history signals ongoing financial challenges</li><li>Failure to monetize Records and AI products in H2 2019</li><li>Inability to penetrate CAD/RMS markets against entrenched competitors</li><li>Rising video storage costs pressuring Software and Sensors margins</li><li>VIEVU acquisition failure becoming more apparent</li></ul><h2>Red Flags Alleged</h2><ul class="bl"><li>Aggressive revenue recognition: booking hardware revenue upfront when devices have no standalone value without software, inflating revenues by 6-9%</li><li>Material weaknesses in revenue recognition and cost of goods sold controls identified in 2016</li><li>Total receivables grew 456% while revenues grew only 99% from 2014-2018, suggesting premature revenue recognition</li><li>Undisclosed compensation accounting errors dating back to 2014 in 401k filings</li><li>Concealing China import dependence: removed word &#x27;China&#x27; from 2018 10-K despite 56% of 2019 shipments coming from China</li><li>Senseless $234m equity raise in June 2018 with no defined purpose while holding $96m cash and no debt</li><li>VIEVU acquisition appears failed: 70% inventory reserve on acquired inventory, contingent consideration liability written to zero by year-end 2018</li><li>Poor capex planning: missed 2018 guidance by 20%, quietly increased new HQ cost by 30%</li><li>Stopped disclosing work-in-progress inventory while increasing reserves every year</li><li>Quarterly cloud revenue disclosures don&#x27;t reconcile to annual totals</li><li>Allegations of bribing police chiefs to win contracts</li><li>Audit Committee Chairman was Arthur Andersen partner during Enron era</li><li>EVP Worldwide Products left after less than 2 years; Technology Committee Chair resigned June 2019</li><li>CFO transition, 10-K delay, multiple unanswered SEC comment letters</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">SprucePointCapitalManage_AAXN_20190619 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 16, "spof": false}, {"id": "n10", "type": "evidence", "layer": 0, "row": 1, "nrows": 16, "spof": false}, {"id": "n12", "type": "evidence", "layer": 0, "row": 2, "nrows": 16, "spof": false}, {"id": "n13", "type": "evidence", "layer": 0, "row": 3, "nrows": 16, "spof": false}, {"id": "n15", "type": "evidence", "layer": 0, "row": 4, "nrows": 16, "spof": false}, {"id": "n16", "type": "evidence", "layer": 0, "row": 5, "nrows": 16, "spof": false}, {"id": "n18", "type": "evidence", "layer": 0, "row": 6, "nrows": 16, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 7, "nrows": 16, "spof": false}, {"id": "n20", "type": "evidence", "layer": 0, "row": 8, "nrows": 16, "spof": false}, {"id": "n21", "type": "evidence", "layer": 0, "row": 9, "nrows": 16, "spof": false}, {"id": "n22", "type": "evidence", "layer": 0, "row": 10, "nrows": 16, "spof": false}, {"id": "n24", "type": "assumption", "layer": 0, "row": 11, "nrows": 16, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 12, "nrows": 16, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 13, "nrows": 16, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 14, "nrows": 16, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 15, "nrows": 16, "spof": false}, {"id": "n11", "type": "claim", "layer": 1, "row": 0, "nrows": 8, "spof": false}, {"id": "n14", "type": "claim", "layer": 1, "row": 1, "nrows": 8, "spof": false}, {"id": "n3", "type": "claim", "layer": 1, "row": 2, "nrows": 8, "spof": false}, {"id": "n17", "type": "claim", "layer": 1, "row": 3, "nrows": 8, "spof": false}, {"id": "n19", "type": "claim", "layer": 1, "row": 4, "nrows": 8, "spof": false}, {"id": "n23", "type": "claim", "layer": 1, "row": 5, "nrows": 8, "spof": false}, {"id": "n6", "type": "claim", "layer": 1, "row": 6, "nrows": 8, "spof": false}, {"id": "n9", "type": "claim", "layer": 1, "row": 7, "nrows": 8, "spof": false}, {"id": "n25", "type": "conclusion", "layer": 2, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n3"}, {"from": "n2", "to": "n3"}, {"from": "n3", "to": "n25"}, {"from": "n4", "to": "n6"}, {"from": "n5", "to": "n6"}, {"from": "n6", "to": "n25"}, {"from": "n7", "to": "n9"}, {"from": "n8", "to": "n9"}, {"from": "n9", "to": "n25"}, {"from": "n10", "to": "n11"}, {"from": "n11", "to": "n25"}, {"from": "n12", "to": "n14"}, {"from": "n13", "to": "n14"}, {"from": "n14", "to": "n25"}, {"from": "n15", "to": "n17"}, {"from": "n16", "to": "n17"}, {"from": "n17", "to": "n25"}, {"from": "n18", "to": "n19"}, {"from": "n19", "to": "n25"}, {"from": "n20", "to": "n23"}, {"from": "n21", "to": "n23"}, {"from": "n22", "to": "n23"}, {"from": "n23", "to": "n25"}, {"from": "n24", "to": "n25"}], "maxLayer": 2}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

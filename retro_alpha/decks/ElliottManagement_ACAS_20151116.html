@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ACAS — Elliott Management — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>ACAS</h1><div class="sub">Elliott Management &middot; published 2015-11-16 &middot; 34 pages</div></div><span class="badge badge-long">long</span><div class="gradebox"><div class="g" style="color:#6B6B6B">&mdash;</div><div class="c">composite n/a</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>American Capital trades at persistent 38% discount to NAV ($14.31 vs $19.72/share) due to ineffective management, poor capital allocation, unqualified board, and excessive overhead. Management&#x27;s spin-out proposal permanently impairs value. Portfolio review, cost cuts, and strategic alternatives can unlock 24-63% upside.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>ACAS shares traded at median 71% of NAV since 2011 vs 115% for comparable BDCs</td></tr><tr><td>2</td><td><b>n10</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>ACAS compensation expense ratio is 56% higher than internally managed BDC peers</td></tr><tr><td>3</td><td><b>n12</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Spin-out will permanently impair BDC management business value due to vulnerable contract and limited monetization</td></tr><tr><td>4</td><td><b>n13</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>sourced</td><td>ACAP will continue trading at deep discount to NAV post-spinout due to inferior returns and high costs</td></tr><tr><td>5</td><td><b>n14</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Spin-out enriches management through immediate option vesting and 8% option pool while reducing shareholder rights</td></tr><tr><td>6</td><td><b>n17</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>ACAM EBITDA margins can expand to 51-61% and command 7-10x multiples</td></tr><tr><td>7</td><td><b>n18</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>BDC assets can trade at 70-90% of NAV following operational improvements</td></tr><tr><td>8</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>ACAS diluted NAV is 38% higher than current share price of $14.31</td></tr><tr><td>9</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>ACAS has not traded above NAV since 2008</td></tr><tr><td>10</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>ACAS delivered -53% total return from pre-crisis peak vs S&amp;P 500 +69%</td></tr><tr><td>11</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Wall Street median analyst price target implies 10% discount to NAV for ACAS vs 48% premium for internally managed BDC peers</td></tr><tr><td>12</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>ACAS made $2.6B new investments YTD instead of accretive share repurchases at discount to NAV</td></tr><tr><td>13</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>ACAS Board lacks relevant investment expertise with 15-year average tenure vs 8.4-year S&amp;P 500 average</td></tr><tr><td>14</td><td><b>n9</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>CEO received $100M over 10 years despite -24% total shareholder return; Glass Lewis gave F grade</td></tr><tr><td>15</td><td><b>n16</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Elliott valuation shows ACAS worth $17.79-$23.35 per share through operational improvements and strategic review</td></tr><tr><td>16</td><td><b>n6</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Market recognizes ACAS assets are worth far less under current management</td></tr><tr><td>17</td><td><b>n19</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Share repurchases, cost cuts, portfolio review and strategic alternatives can unlock 24-63% upside</td></tr><tr><td>18</td><td><b>n11</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>ACAS undervaluation stems from ineffective management, poor capital deployment, unqualified Board, excessive overhead and misaligned compensation</td></tr><tr><td>19</td><td><b>n15</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Spin-out permanently impairs shareholder value and destroys opportunity to enhance value</td></tr><tr><td>20</td><td><b>n20</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Shareholders should vote AGAINST spin-out proposal to enable value maximization through Board refresh, portfolio review, cost cuts and strategic alternatives</td></tr></tbody></table><h2>Returns</h2><div class="neg">Returns unavailable &mdash; no_price_data</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">12 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>Diluted NAV per share <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>2015-09-30</td><td>19.72 $/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Management Fee Revenue <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>forward</td><td>248 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>EBITDA Low Case <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>forward</td><td>127 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>EBITDA Mid Case <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>forward</td><td>139 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>EBITDA High Case <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>forward</td><td>152 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>EBITDA Margin Low Case <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>forward</td><td>51 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>EBITDA Margin Mid Case <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>forward</td><td>56 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>EBITDA Margin High Case <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>forward</td><td>61 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>BDC NAV <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>forward</td><td>2,366 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Value per share Low Case <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>forward</td><td>17.79 $/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Value per share Mid Case <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>forward</td><td>20.48 $/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Value per share High Case <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>forward</td><td>23.35 $/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr></tbody></table><h2>Catalysts</h2><ul class="bl"><li>Withdraw management&#x27;s spin-out proposal</li><li>Add qualified independent board members with relevant experience</li><li>Portfolio review by experienced outside adviser and strategic monetization of broadly syndicated loan portfolio</li><li>Share repurchase program expansion</li><li>Cost cutting initiative targeting $50-75 million annual reduction</li><li>Strategic Review Committee to explore all options to maximize shareholder value</li></ul><h2>Red Flags Alleged</h2><ul class="bl"><li>CEO erroneously overpaid leading to $10 million cash bonus in 2014</li><li>Multiple equity grants to CEO violated company incentive plans for several years before board became aware</li><li>Board lacked adequate controls to monitor executive compensation practices</li><li>Glass Lewis recommended voting against directors for 5 consecutive years</li><li>Compensation expense ratio among highest of publicly traded alternative asset managers</li><li>Overhead 56% higher than other internally managed BDCs</li><li>Board average tenure 15 years versus S&amp;P 500 average of 8.4 years</li><li>Directors lack relevant investment experience despite overseeing investment firm</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">ElliottManagement_ACAS_20151116 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 14, "spof": false}, {"id": "n10", "type": "evidence", "layer": 0, "row": 1, "nrows": 14, "spof": false}, {"id": "n12", "type": "claim", "layer": 0, "row": 2, "nrows": 14, "spof": false}, {"id": "n13", "type": "claim", "layer": 0, "row": 3, "nrows": 14, "spof": false}, {"id": "n14", "type": "claim", "layer": 0, "row": 4, "nrows": 14, "spof": false}, {"id": "n17", "type": "assumption", "layer": 0, "row": 5, "nrows": 14, "spof": false}, {"id": "n18", "type": "assumption", "layer": 0, "row": 6, "nrows": 14, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 7, "nrows": 14, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 8, "nrows": 14, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 9, "nrows": 14, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 10, "nrows": 14, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 11, "nrows": 14, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 12, "nrows": 14, "spof": false}, {"id": "n9", "type": "evidence", "layer": 0, "row": 13, "nrows": 14, "spof": false}, {"id": "n16", "type": "evidence", "layer": 1, "row": 0, "nrows": 2, "spof": false}, {"id": "n6", "type": "claim", "layer": 1, "row": 1, "nrows": 2, "spof": false}, {"id": "n19", "type": "claim", "layer": 2, "row": 0, "nrows": 2, "spof": false}, {"id": "n11", "type": "claim", "layer": 2, "row": 1, "nrows": 2, "spof": false}, {"id": "n15", "type": "claim", "layer": 3, "row": 0, "nrows": 1, "spof": false}, {"id": "n20", "type": "conclusion", "layer": 4, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n11"}, {"from": "n2", "to": "n11"}, {"from": "n3", "to": "n11"}, {"from": "n4", "to": "n11"}, {"from": "n5", "to": "n6"}, {"from": "n6", "to": "n11"}, {"from": "n7", "to": "n11"}, {"from": "n8", "to": "n11"}, {"from": "n9", "to": "n11"}, {"from": "n10", "to": "n11"}, {"from": "n11", "to": "n15"}, {"from": "n12", "to": "n15"}, {"from": "n13", "to": "n15"}, {"from": "n14", "to": "n15"}, {"from": "n15", "to": "n20"}, {"from": "n2", "to": "n19"}, {"from": "n16", "to": "n19"}, {"from": "n17", "to": "n16"}, {"from": "n18", "to": "n16"}, {"from": "n19", "to": "n20"}], "maxLayer": 4}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

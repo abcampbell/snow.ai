@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>EXO — GreenWood Investors — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>EXO</h1><div class="sub">GreenWood Investors &middot; published 2016-05-04 &middot; 62 pages</div></div><span class="badge badge-long">long</span><div class="gradebox"><div class="g" style="color:#6B6B6B">&mdash;</div><div class="c">composite n/a</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>EXO trades at 35% discount to NAV despite concentrated private equity portfolio including PartnerRe (best-in-class reinsurer), FCA (undervalued turnaround), CNH (agricultural recovery play), and Ferrari (appreciating luxury asset). NAV expected to triple as value drivers materialize.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n11</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>CNH agricultural production below retail demand, corn below break-even pricing</td></tr><tr><td>2</td><td><b>n12</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>CNH short interest at 27.7 days to cover vs peers at ~11 days</td></tr><tr><td>3</td><td><b>n13</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>CNH has 31.2% incremental margin vs 7.7% EBIT margin in 2015</td></tr><tr><td>4</td><td><b>n15</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Ferrari limited editions appreciate 4-19% annually, outperforming S&amp;P 500</td></tr><tr><td>5</td><td><b>n16</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Ferrari deliveries grew 6% in 2015 with 76% incremental EBIT margin</td></tr><tr><td>6</td><td><b>n17</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Ferrari demand recession-proof, down only 3% in 2008-09 vs peers down 21-59%</td></tr><tr><td>7</td><td><b>n19</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Ferrari trades at 8.3x 2017 EBITDA vs luxury peers at 8.6-27.6x</td></tr><tr><td>8</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Italy worst performing market YTD, creating EXO discount despite only 4.4% revenue exposure</td></tr><tr><td>9</td><td><b>n25</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Management&#x27;s concentrated 3G-style focus will unlock value across holdings</td></tr><tr><td>10</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>PartnerRe has 98.9% 20-year combined ratio, best-in-class underwriting</td></tr><tr><td>11</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>EXO paid 1.08x cash to tangible book for PartnerRe, reduced to 0.86x after reserve redundancies</td></tr><tr><td>12</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Global reinsurance capacity declining as lower rates make non-core players exit</td></tr><tr><td>13</td><td><b>n6</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>FCA new product launches worth €950-1600M EBIT tailwind in next 12 months</td></tr><tr><td>14</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>FCA reducing incentives on old models worth €600-700M tailwind</td></tr><tr><td>15</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Commodity deflation provides &gt;€700M tailwind at 25% pass-through</td></tr><tr><td>16</td><td><b>n9</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>FCA balance sheet improving, interest expense falling from €2346M to €1229M by 2017</td></tr><tr><td>17</td><td><b>n14</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>CNH agricultural normalization drives $1.3B incremental EBIT</td></tr><tr><td>18</td><td><b>n18</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Ferrari free cash flow per share to double from €1.89 to €5.46 by 2019</td></tr><tr><td>19</td><td><b>n26</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Italian market pessimism creating temporary mispricing unrelated to fundamentals</td></tr><tr><td>20</td><td><b>n20</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>PartnerRe purchased at attractive price, generates float for investing</td></tr><tr><td>21</td><td><b>n10</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>FCA EBIT improvements total ~75% of 2015 EBIT, mostly incremental</td></tr><tr><td>22</td><td><b>n23</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>CNH worth €45.50 per EXO share after agricultural normalization</td></tr><tr><td>23</td><td><b>n22</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Ferrari worth €72 per EXO share based on luxury comparables</td></tr><tr><td>24</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>EXO trades at 0.65x P/NAV vs Berkshire 1.41x P/B</td></tr><tr><td>25</td><td><b>n27</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Reinsurance consolidation and improving fundamentals will lower EXO&#x27;s cost of capital</td></tr><tr><td>26</td><td><b>n21</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>FCA fair value €33-36 per share using Ford/GM multiples for 2016-17</td></tr><tr><td>27</td><td><b>n24</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>EXO NAV will triple from €50.41 to €151.03</td></tr><tr><td>28</td><td><b>n28</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Buy EXO: 35% discount to NAV with all holdings poised for inflection</td></tr></tbody></table><h2>Returns</h2><div class="neg">Returns unavailable &mdash; no_price_data</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">16 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>FCA Free Cash Flow <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2015</td><td>3,728 €m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>FCA new product EBIT contribution base case <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>next 12 months</td><td>1,624.60 €m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>FCA reduced incentives tailwind <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2016</td><td>650 €m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>FCA commodities savings tailwind <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2016</td><td>700 €m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>FCA interest expense <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>2016</td><td>1,699 €m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>FCA interest expense <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>2017</td><td>1,229 €m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>CNH Industrial EBIT <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2015</td><td>1,432 $m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>CNH Agricultural demand normalization upside <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>future</td><td>1,294 $m</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>CNH EBIT margin <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>2015</td><td>7.70 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>CNH incremental margin <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>2015</td><td>31.20 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Ferrari FCF per share <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2016</td><td>3.65 €/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Ferrari FCF per share <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2017</td><td>5.40 €/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Ferrari FCF per share <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2018</td><td>5.17 €/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Ferrari FCF per share <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2019</td><td>5.46 €/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Ferrari car deliveries growth <span style="color:var(--grey);font-size:.85em">(units)</span></td><td>2015</td><td>6 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>Ferrari incremental EBIT margin <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>2015</td><td>76 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr></tbody></table><h2>Catalysts</h2><ul class="bl"><li>FCA new product launches (Alfa Romeo Giulia, Maserati Levante, Fiat Toro, Chinese Jeeps, Fiat Tipo) contributing €950-1600m</li><li>FCA reduced incentives on old vehicles (Town &amp; Country, Compass/Patriot, Journey, Punto) contributing €600-700m</li><li>FCA commodities savings &gt;€700m from steel, aluminum, copper, plastics, rubber price declines</li><li>FCA balance sheet deleveraging reducing interest expense from €2,346m to €1,229m</li><li>FCA investment-grade rating coming as net leverage improves</li><li>CNH agricultural market normalization as corn prices below break-even and production below retail demand</li><li>Heavy short interest in CNH (27.7 days to cover) creating potential squeeze</li><li>Ferrari free cash flow doubling from €1.89 to €5.46 per share</li><li>Discount to NAV narrowing from 35% (historically triggers buybacks)</li><li>PartnerRe capital synergies and reinsurance industry consolidation</li></ul><h2>Key Risks Acknowledged</h2><ul class="bl"><li>FCA has history of missing targets</li><li>Italy economic concerns (though only 4.4% of revenue from Italy)</li><li>Agricultural recovery timing uncertain</li><li>Commodities savings depend on 25% pass-through assumption</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">GreenWoodInvestors_EXO_20160504 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n11", "type": "evidence", "layer": 0, "row": 0, "nrows": 16, "spof": false}, {"id": "n12", "type": "evidence", "layer": 0, "row": 1, "nrows": 16, "spof": false}, {"id": "n13", "type": "evidence", "layer": 0, "row": 2, "nrows": 16, "spof": false}, {"id": "n15", "type": "evidence", "layer": 0, "row": 3, "nrows": 16, "spof": false}, {"id": "n16", "type": "evidence", "layer": 0, "row": 4, "nrows": 16, "spof": false}, {"id": "n17", "type": "evidence", "layer": 0, "row": 5, "nrows": 16, "spof": false}, {"id": "n19", "type": "evidence", "layer": 0, "row": 6, "nrows": 16, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 7, "nrows": 16, "spof": false}, {"id": "n25", "type": "assumption", "layer": 0, "row": 8, "nrows": 16, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 9, "nrows": 16, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 10, "nrows": 16, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 11, "nrows": 16, "spof": false}, {"id": "n6", "type": "evidence", "layer": 0, "row": 12, "nrows": 16, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 13, "nrows": 16, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 14, "nrows": 16, "spof": false}, {"id": "n9", "type": "evidence", "layer": 0, "row": 15, "nrows": 16, "spof": false}, {"id": "n14", "type": "claim", "layer": 1, "row": 0, "nrows": 5, "spof": false}, {"id": "n18", "type": "claim", "layer": 1, "row": 1, "nrows": 5, "spof": false}, {"id": "n26", "type": "claim", "layer": 1, "row": 2, "nrows": 5, "spof": false}, {"id": "n20", "type": "claim", "layer": 1, "row": 3, "nrows": 5, "spof": false}, {"id": "n10", "type": "claim", "layer": 1, "row": 4, "nrows": 5, "spof": false}, {"id": "n23", "type": "assumption", "layer": 2, "row": 0, "nrows": 5, "spof": false}, {"id": "n22", "type": "assumption", "layer": 2, "row": 1, "nrows": 5, "spof": false}, {"id": "n1", "type": "evidence", "layer": 2, "row": 2, "nrows": 5, "spof": false}, {"id": "n27", "type": "assumption", "layer": 2, "row": 3, "nrows": 5, "spof": false}, {"id": "n21", "type": "assumption", "layer": 2, "row": 4, "nrows": 5, "spof": false}, {"id": "n24", "type": "claim", "layer": 3, "row": 0, "nrows": 1, "spof": false}, {"id": "n28", "type": "conclusion", "layer": 4, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n28"}, {"from": "n2", "to": "n26"}, {"from": "n26", "to": "n1"}, {"from": "n3", "to": "n20"}, {"from": "n4", "to": "n20"}, {"from": "n5", "to": "n20"}, {"from": "n20", "to": "n27"}, {"from": "n6", "to": "n10"}, {"from": "n7", "to": "n10"}, {"from": "n8", "to": "n10"}, {"from": "n9", "to": "n10"}, {"from": "n10", "to": "n21"}, {"from": "n21", "to": "n24"}, {"from": "n11", "to": "n14"}, {"from": "n12", "to": "n14"}, {"from": "n13", "to": "n14"}, {"from": "n14", "to": "n23"}, {"from": "n23", "to": "n24"}, {"from": "n15", "to": "n18"}, {"from": "n16", "to": "n18"}, {"from": "n17", "to": "n18"}, {"from": "n18", "to": "n22"}, {"from": "n19", "to": "n22"}, {"from": "n22", "to": "n24"}, {"from": "n24", "to": "n28"}, {"from": "n25", "to": "n24"}, {"from": "n27", "to": "n28"}], "maxLayer": 4}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

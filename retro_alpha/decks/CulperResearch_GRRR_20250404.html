@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GRRR — Culper Research — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>GRRR</h1><div class="sub">Culper Research &middot; published 2025-04-04 &middot; 28 pages</div></div><span class="badge badge-short">short</span><div class="gradebox"><div class="g" style="color:#B8860B">C</div><div class="c">composite 62.5</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>Gorilla Technology is alleged to be a brazen fraud with fabricated contracts, fake products (rebranded Dell PCs), phantom offices, fraudulent partners, and no real multi-billion dollar pipeline. Comparisons made to delisted frauds Tingo, Akazoo, and iLearningEngines.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Gorilla incorporated 2001 in Cayman Ugland House, went public via SPAC 2022, headquarters is temporary London office above salon</td></tr><tr><td>2</td><td><b>n10</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Data center Chandan claimed Gorilla is building was actually built 2021 for Telecom Egypt; veteran salesperson never encountered Gorilla in region</td></tr><tr><td>3</td><td><b>n11</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Gorilla reported $52.4M Egypt revenues in 2023 but never received contracted 1B EGP ($32M) payment; 98% receivables past due by 1H 2024</td></tr><tr><td>4</td><td><b>n12</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Gorilla overstated cash by $13M using outdated EGP exchange rate; financial statements contain unexplained line item shifts and contradictions</td></tr><tr><td>5</td><td><b>n13</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Gorilla fired PwC Taiwan auditor Jan 2024, hired Marcum Asia whose parent paid $13M SEC/PCAOB settlement for SPAC audit deficiencies</td></tr><tr><td>6</td><td><b>n14</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Former CFO Daphne Huang was undisclosed CFO of China Hustle fraud Lihua International where CEO was detained for asset theft</td></tr><tr><td>7</td><td><b>n15</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>45% of subsidiary GDPL owned by insider Qureshi&#x27;s Investment Development Ltd; Gorilla committed up to $100M but never disclosed related party ownership</td></tr><tr><td>8</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Gorilla&#x27;s AI hardware products are rebranded Dell PCs and Telpo cameras available on eBay for few hundred dollars</td></tr><tr><td>9</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>PEA Assistant Manager of Smart Grid Division stated unequivocally that no $1.8B contract exists with Gorilla</td></tr><tr><td>10</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Thai law requires public disclosure of awards over $60K; no records exist for claimed PEA or Tourist Police deals</td></tr><tr><td>11</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Sources indicate Thai Tourist Police deal is 100-150 cameras at $200 each, totaling $20-30K not $50-60M claimed</td></tr><tr><td>12</td><td><b>n6</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Global Edge CEO Renato Costa named defendant in 43 Brazilian lawsuits alleging embezzlement, fraud, bad checks</td></tr><tr><td>13</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>ADIG previously announced $100B Turkey and Tunisia infrastructure deals that never materialized; AUD $433M Xinja Bank investment failed</td></tr><tr><td>14</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>ONE Amazon formed July 2020 with just ~$17K capital; CEO Veloso&#x27;s prior ventures ONE Comprador and ONE Natural Energy failed to deliver</td></tr><tr><td>15</td><td><b>n9</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Gorilla&#x27;s Seattle office is mailbox only at Regus; receptionist confirmed no other business dealings beyond mail collection</td></tr><tr><td>16</td><td><b>n23</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Gorilla exhibits fraud hallmarks similar to exposed frauds Tingo, Akazoo, iLearningEngines, and Theia facing SEC/DOJ enforcement</td></tr><tr><td>17</td><td><b>n21</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Gorilla&#x27;s financial statements are unreliable due to premature revenue recognition, accounting errors, concealed receivables issues, and currency manipulation</td></tr><tr><td>18</td><td><b>n22</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Gorilla&#x27;s undisclosed related party transactions with insider Qureshi suggest insiders are looting company funds</td></tr><tr><td>19</td><td><b>n16</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Gorilla&#x27;s claimed AI technology is non-existent; company resells commodity hardware without proprietary capabilities</td></tr><tr><td>20</td><td><b>n20</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Gorilla fabricated operational footprint including Seattle office and Egypt data centers to appear as credible global operator</td></tr><tr><td>21</td><td><b>n17</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Gorilla&#x27;s claimed $1.8B PEA contract and $50-60M Tourist Police deal are fabricated or drastically exaggerated by 99%+</td></tr><tr><td>22</td><td><b>n18</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Global Edge&#x27;s $100B+ fund and promised hundreds of billions to Gorilla are recycled con by partners with fraud histories</td></tr><tr><td>23</td><td><b>n19</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Gorilla&#x27;s claimed $6.6B pipeline and $2B+ signed contracts are almost entirely fictitious based on non-existent or misrepresented deals</td></tr><tr><td>24</td><td><b>n24</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Gorilla is a brazen fraud; shares are worth far less and face regulatory action, delisting, or collapse</td></tr></tbody></table><h2>Returns</h2><div class="stats"><div class="stat"><div class="v">$16.85</div><div class="k">Px at Pub</div><div class="m">2025-04-04</div></div><div class="stat"><div class="v negv">-3.7%</div><div class="k">1 Month</div><div class="m">alpha -8.4%</div></div><div class="stat"><div class="v negv">-25.5%</div><div class="k">3 Months</div><div class="m">alpha +1.4%</div></div><div class="stat"><div class="v negv">-9.3%</div><div class="k">6 Months</div><div class="m">alpha -23.9%</div></div><div class="stat"><div class="v pos">+33.7%</div><div class="k">1 Year</div><div class="m">alpha -64.9%</div></div><div class="stat"><div class="v negv">-10.0%</div><div class="k">To Date</div><div class="m">alpha -40.8%</div></div></div><div class="stats"><div class="stat"><div class="v"><span class="pos">RIGHT</span></div><div class="k">Verdict 1y</div></div><div class="stat"><div class="v"><span class="flatv">FLAT</span></div><div class="k">Verdict To Date</div></div><div class="stat"><div class="v negv">-43.8%</div><div class="k">Max Drawdown 1y</div></div><div class="stat"><div class="v pos">+49.7%</div><div class="k">Max Gain 1y</div></div></div><div class="sub" style="font-size:.85em">thesis_return = return in the direction of the pitch (short theses gain when the stock falls) &middot; alpha vs SPY</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">9 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>PEA Thailand contract total value <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>15-year contract announced March 2025</td><td>1,800 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>PEA contract prepayment <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>2025</td><td>180 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>Royal Thai Tourist Police contract <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>5-year contract announced January 2025</td><td>55 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>BroadSat partnership annual revenues <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>Annual, announced December 2024</td><td>20 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>Egypt contract revenue recognized 2023 <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>2023</td><td>52.30 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>Signed contracts or contracts won <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>As of March 2025</td><td>2,000 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric other not auto-resolvable (v1)</td></tr><tr><td>Late stage contracts, MOUs, government frameworks pipeline <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>As of March 2025</td><td>4,600 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric other not auto-resolvable (v1)</td></tr><tr><td>Total qualified leads pipeline <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>As of February 2025</td><td>6,600 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric other not auto-resolvable (v1)</td></tr><tr><td>Gorilla allocation from Global Edge fund raises <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>Per $100 million raised</td><td>27.50 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr></tbody></table><h2>Red Flags Alleged</h2><ul class="bl"><li>Fabricated $1.8 billion Thailand PEA contract - PEA Assistant Manager stated no such contract exists</li><li>Misrepresented $50-60 million Thai Tourist Police deal - sources indicate actual value $20,000-30,000</li><li>Products are rebranded commodity hardware (Dell PCs, Telpo cameras) not proprietary AI technology</li><li>Global Edge $100 billion fund backed by parties with history of unfulfilled commitments (ADIG, Brasilinvest)</li><li>Global Edge CEO Renato da Cruz Costa named defendant in 43+ Brazilian lawsuits for fraud, embezzlement</li><li>Seattle office announced as &#x27;central U.S. hub&#x27; is only a mailbox at Regus virtual office</li><li>BroadSat Technologies partner has no physical offices, non-operational phone lines, $17,000 registered capital</li><li>CEO claims building 2, then 4, then 20+ data centers in Egypt with zero third-party evidence</li><li>Never received $32 million 2023 payment from Egypt Government but booked revenue anyway</li><li>98% of receivables past due as of 1H 2024, credit allowance increased to up to 100%</li><li>Overstated cash by $13 million using incorrect Egyptian Pound exchange rate</li><li>Fired PwC Taiwan auditor, hired Marcum Asia after parent settled $13 million in SEC/PCAOB charges</li><li>CFO Daphne Huang previously CFO at China Hustle fraud Lihua International, undisclosed in filings</li><li>Undisclosed related party ownership: insider Muhammad Tofiq Qureshi owns 45% of GDPL subsidiary</li><li>Acquired SeeQuestor from insider Qureshi for $6 million (20x book value) plus $1 million advisory fee</li><li>Financial statement errors and conflicting disclosures across revenue, receivables, contract assets</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">CulperResearch_GRRR_20250404 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 15, "spof": false}, {"id": "n10", "type": "evidence", "layer": 0, "row": 1, "nrows": 15, "spof": false}, {"id": "n11", "type": "evidence", "layer": 0, "row": 2, "nrows": 15, "spof": false}, {"id": "n12", "type": "evidence", "layer": 0, "row": 3, "nrows": 15, "spof": false}, {"id": "n13", "type": "evidence", "layer": 0, "row": 4, "nrows": 15, "spof": false}, {"id": "n14", "type": "evidence", "layer": 0, "row": 5, "nrows": 15, "spof": false}, {"id": "n15", "type": "evidence", "layer": 0, "row": 6, "nrows": 15, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 7, "nrows": 15, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 8, "nrows": 15, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 9, "nrows": 15, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 10, "nrows": 15, "spof": false}, {"id": "n6", "type": "evidence", "layer": 0, "row": 11, "nrows": 15, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 12, "nrows": 15, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 13, "nrows": 15, "spof": false}, {"id": "n9", "type": "evidence", "layer": 0, "row": 14, "nrows": 15, "spof": false}, {"id": "n23", "type": "claim", "layer": 1, "row": 0, "nrows": 7, "spof": false}, {"id": "n21", "type": "claim", "layer": 1, "row": 1, "nrows": 7, "spof": false}, {"id": "n22", "type": "claim", "layer": 1, "row": 2, "nrows": 7, "spof": false}, {"id": "n16", "type": "claim", "layer": 1, "row": 3, "nrows": 7, "spof": false}, {"id": "n20", "type": "claim", "layer": 1, "row": 4, "nrows": 7, "spof": false}, {"id": "n17", "type": "claim", "layer": 1, "row": 5, "nrows": 7, "spof": false}, {"id": "n18", "type": "claim", "layer": 1, "row": 6, "nrows": 7, "spof": false}, {"id": "n19", "type": "claim", "layer": 2, "row": 0, "nrows": 1, "spof": false}, {"id": "n24", "type": "conclusion", "layer": 3, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n23"}, {"from": "n2", "to": "n16"}, {"from": "n3", "to": "n17"}, {"from": "n4", "to": "n17"}, {"from": "n5", "to": "n17"}, {"from": "n6", "to": "n18"}, {"from": "n7", "to": "n18"}, {"from": "n8", "to": "n18"}, {"from": "n9", "to": "n20"}, {"from": "n10", "to": "n20"}, {"from": "n11", "to": "n21"}, {"from": "n12", "to": "n21"}, {"from": "n13", "to": "n21"}, {"from": "n14", "to": "n21"}, {"from": "n15", "to": "n22"}, {"from": "n16", "to": "n19"}, {"from": "n17", "to": "n19"}, {"from": "n18", "to": "n19"}, {"from": "n19", "to": "n24"}, {"from": "n20", "to": "n24"}, {"from": "n21", "to": "n24"}, {"from": "n22", "to": "n24"}, {"from": "n23", "to": "n24"}], "maxLayer": 3}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

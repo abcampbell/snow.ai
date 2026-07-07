@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HOME — Viceroy Research — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>HOME</h1><div class="sub">Viceroy Research &middot; published 2022-11-23 &middot; 27 pages</div></div><span class="badge badge-short">short</span><div class="gradebox"><div class="g" style="color:#D4A853">B</div><div class="c">composite 67.2</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>Home REIT systematically overpaid for properties, inflated NAV through accounting tricks, and rents to financially non-viable charities that cannot pay rent. Many tenants show zero rental expenses despite large contracted amounts. Substantial receivables and straight-line rent likely uncollectable.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Several large tenants (Dovecot, Princess Drive, CG Community Council) show zero or minimal rent outflows in public charity accounts.</td></tr><tr><td>2</td><td><b>n11</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Property valuations use Investment Method (yield-based); any impairment to revenues directly impacts balance sheet.</td></tr><tr><td>3</td><td><b>n12</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Transaction records show properties flipped between parties in days for immense profits with no evident capex.</td></tr><tr><td>4</td><td><b>n13</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Properties acquired at inflated prices (e.g., 144 Birches Head Road for £5.9m vs £195k prior sale).</td></tr><tr><td>5</td><td><b>n14</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Some portfolios show unreasonable appreciation (Home Holdings 3: 123% in 9 months, Home Holdings 4: 74% in 9 months).</td></tr><tr><td>6</td><td><b>n16</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Alvarium compensated as percentage of NAV, creating incentive to maximize spending and leverage regardless of portfolio performance.</td></tr><tr><td>7</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Circle Housing (7.5% of revenue) is in administration; administrator notes round-robin donations to pay rent.</td></tr><tr><td>8</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Charity financials show government grants are limited and assessed yearly, not matching claimed 25-year leases.</td></tr><tr><td>9</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Home REIT&#x27;s largest tenants share same office and directors including Peter Mitchell, suspended for sexual harassment allegations.</td></tr><tr><td>10</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Noble Tree chairman named in overseas court cases including alleged fraud and breach of contract.</td></tr><tr><td>11</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Accounts receivable at 70+ days versus 30-day payment terms, with no impairments recorded as of H1 2022.</td></tr><tr><td>12</td><td><b>n8</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Home REIT adopts straight-line revenue model deferring substantial rent collection to back-end of 25-year lease terms.</td></tr><tr><td>13</td><td><b>n17</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Management incentives are misaligned with fixing problems and aligned with rolling up bad assets to inflate NAV.</td></tr><tr><td>14</td><td><b>n6</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Home REIT&#x27;s tenants are financially weak, untrustworthy, or non-operational as social housing providers.</td></tr><tr><td>15</td><td><b>n9</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Cash conversion only 53.2% in H1 2022 due to overdue receivables and straight-line uncollected rent.</td></tr><tr><td>16</td><td><b>n15</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Home REIT systematically inflated property values through overpayment and excessive revaluation, artificially boosting NAV.</td></tr><tr><td>17</td><td><b>n10</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Receivables and straight-line revenues are uncollectable given tenant quality and cash flow deterioration.</td></tr><tr><td>18</td><td><b>n18</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Adjusting for uncollectable straight-line rent and receivables implies property write-downs of £135m-£197m.</td></tr><tr><td>19</td><td><b>n19</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Home REIT has significant downside; short position warranted given tenant insolvency, inflated NAV, and uncollectable revenues.</td></tr></tbody></table><h2>Returns</h2><div class="stats"><div class="stat"><div class="v">$62.18</div><div class="k">Px at Pub</div><div class="m">2022-11-23</div></div><div class="stat"><div class="v pos">+36.6%</div><div class="k">1 Month</div><div class="m">alpha -32.2%</div></div><div class="stat"><div class="v pos">+38.8%</div><div class="k">3 Months</div><div class="m">alpha -38.3%</div></div><div class="stat"><div class="v pos">+38.8%</div><div class="k">6 Months</div><div class="m">alpha -41.8%</div></div><div class="stat"><div class="v pos">+38.8%</div><div class="k">1 Year</div><div class="m">alpha -53.6%</div></div><div class="stat"><div class="v pos">+38.8%</div><div class="k">2 Years</div><div class="m">alpha -91.1%</div></div><div class="stat"><div class="v pos">+99.4%</div><div class="k">3 Years</div><div class="m">alpha -170.0%</div></div><div class="stat"><div class="v pos">+84.6%</div><div class="k">To Date</div><div class="m">alpha -180.8%</div></div></div><div class="stats"><div class="stat"><div class="v"><span class="pos">RIGHT</span></div><div class="k">Verdict 1y</div></div><div class="stat"><div class="v"><span class="pos">RIGHT</span></div><div class="k">Verdict To Date</div></div><div class="stat"><div class="v negv">-43.7%</div><div class="k">Max Drawdown 1y</div></div><div class="stat"><div class="v pos">+4.5%</div><div class="k">Max Gain 1y</div></div></div><div class="sub" style="font-size:.85em">thesis_return = return in the direction of the pitch (short theses gain when the stock falls) &middot; alpha vs SPY</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">8 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>accounts_receivable_days <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>H1 2022</td><td>73 days</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>estimated_annual_straight-line_rent <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>HY 2022 annualized</td><td>4.12 GBPm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>estimated_unrecoverable_receivables_bull <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>HY 2022 annualized</td><td>3.48 GBPm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>estimated_unrecoverable_receivables_base <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>HY 2022 annualized</td><td>6.97 GBPm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>estimated_property_valuation_bull <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>HY 2022</td><td>578.28 GBPm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>estimated_property_valuation_base <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>HY 2022</td><td>516.42 GBPm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>estimated_writedown_bull <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>HY 2022</td><td>-135.09 GBPm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>estimated_writedown_base <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>HY 2022</td><td>-196.96 GBPm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr></tbody></table><h2>Red Flags Alleged</h2><ul class="bl"><li>Circle Housing &amp; Support (7.5% of revenue) in administration, had round-robin donations from landlords to pay rent</li><li>Dovecot and Princess Drive reported £0 rent expense for Oct 2020-Mar 2022 despite £2.4m contracted rent to Home REIT</li><li>CG Community Council total expenditure £20.3k in 2021 contradicts £2.6m contracted rent claim, no evidence of social housing activity</li><li>Multiple major tenants (Big Help, CG Community Council, Dovecot) share same office and trustees including Peter Mitchell, suspended councilor amid sexual harassment allegations</li><li>Noble Tree chairman Jakob Kinde named in court cases for allegedly fraudulent asset stripping in Zimbabwe, breach of contract, possible counterfeit share sales</li><li>Accounts receivable at 70+ days vs 30-day payment terms in leases, no impairments recorded</li><li>Straight-line revenue model records rent upfront but actual collection deferred to back-end of 25-year leases</li><li>Home REIT overpaid for properties: 144 Birches Head Road purchased for £5.858m vs £195k two months prior, £5.8m premium not in title registry</li><li>27 Neswick Street purchased for £11.657m vs £170k same day, £11.5m premium not in title registry</li><li>Peterlee portfolio appreciated 160% in under 12 months (£326k to £848k)</li><li>Home Holdings 3 portfolio appreciated 123% in 9 months</li><li>Home Holdings 4 portfolio appreciated 74% in 9 months</li><li>Alvarium fee structure based on percentage of NAV incentivizes inflating asset values, not aligned with performance</li><li>Knight Frank valuation based on yield despite claiming comparable transactions; did not inspect interiors or review lease documents</li><li>Government grants assessed yearly but Home REIT claims 25-year lease terms</li><li>Tenant operators have interests in for-profit development companies and government-subsidized programs</li><li>Three CFO changes in 2022, latest appointed less than 1 month before audited accounts due</li><li>Gareth Jones (resigned CFO) previously Finance Director of Civitas which came under similar scrutiny</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">ViceroyResearch_HOME_20221123 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 12, "spof": false}, {"id": "n11", "type": "evidence", "layer": 0, "row": 1, "nrows": 12, "spof": false}, {"id": "n12", "type": "evidence", "layer": 0, "row": 2, "nrows": 12, "spof": false}, {"id": "n13", "type": "evidence", "layer": 0, "row": 3, "nrows": 12, "spof": false}, {"id": "n14", "type": "evidence", "layer": 0, "row": 4, "nrows": 12, "spof": false}, {"id": "n16", "type": "evidence", "layer": 0, "row": 5, "nrows": 12, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 6, "nrows": 12, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 7, "nrows": 12, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 8, "nrows": 12, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 9, "nrows": 12, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 10, "nrows": 12, "spof": false}, {"id": "n8", "type": "evidence", "layer": 0, "row": 11, "nrows": 12, "spof": false}, {"id": "n17", "type": "claim", "layer": 1, "row": 0, "nrows": 3, "spof": false}, {"id": "n6", "type": "claim", "layer": 1, "row": 1, "nrows": 3, "spof": false}, {"id": "n9", "type": "evidence", "layer": 1, "row": 2, "nrows": 3, "spof": false}, {"id": "n15", "type": "claim", "layer": 2, "row": 0, "nrows": 2, "spof": false}, {"id": "n10", "type": "claim", "layer": 2, "row": 1, "nrows": 2, "spof": false}, {"id": "n18", "type": "claim", "layer": 3, "row": 0, "nrows": 1, "spof": false}, {"id": "n19", "type": "conclusion", "layer": 4, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n6"}, {"from": "n2", "to": "n6"}, {"from": "n3", "to": "n6"}, {"from": "n4", "to": "n6"}, {"from": "n5", "to": "n6"}, {"from": "n6", "to": "n10"}, {"from": "n7", "to": "n9"}, {"from": "n8", "to": "n9"}, {"from": "n9", "to": "n10"}, {"from": "n10", "to": "n18"}, {"from": "n11", "to": "n18"}, {"from": "n12", "to": "n15"}, {"from": "n13", "to": "n15"}, {"from": "n14", "to": "n15"}, {"from": "n15", "to": "n18"}, {"from": "n16", "to": "n17"}, {"from": "n17", "to": "n15"}, {"from": "n18", "to": "n19"}, {"from": "n6", "to": "n19"}, {"from": "n10", "to": "n19"}, {"from": "n15", "to": "n19"}, {"from": "n17", "to": "n19"}], "maxLayer": 4}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

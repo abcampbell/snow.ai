@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>X — Ancora — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>X</h1><div class="sub">Ancora &middot; published 2025-04-07 &middot; 155 pages</div></div><span class="badge badge-long">long</span><div class="gradebox"><div class="g" style="color:#6B6B6B">&mdash;</div><div class="c">composite n/a</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>U.S. Steel requires new leadership to revitalize unionized legacy NAFR assets through $6.5B capital investment program targeting Mon Valley, Gary Works, and Granite City facilities. Proposed strategy projects $75+ per share value via special dividend, operational improvements, and potential Big River divestiture, versus current management&#x27;s plan to close mills and eliminate thousands of union jobs.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Ancora owns $100M+ equity stake in U.S. Steel</td></tr><tr><td>2</td><td><b>n12</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Kestenbaum achieved 498% return at Stelco, outperformed U.S. Steel, sold for $1.7B after buying for $53M</td></tr><tr><td>3</td><td><b>n14</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>U.S. Steel has $4.3B liquidity: $1.4B cash, $2.3B credit, $565M termination fee</td></tr><tr><td>4</td><td><b>n15</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Big River received $8-9B offers during strategic alternatives process</td></tr><tr><td>5</td><td><b>n16</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>$2.9B Phase One CapEx will deliver $1.1B incremental EBITDA by 2027 at $800/ton HRC</td></tr><tr><td>6</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>asserted</td><td>Nippon $55/share deal blocked by executive order from Trump administration</td></tr><tr><td>7</td><td><b>n21</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Ancora slate will not block Nippon deal if it receives government approval</td></tr><tr><td>8</td><td><b>n22</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Revitalized NAFR assets achieve 6.0x EBITDA multiple by 2027</td></tr><tr><td>9</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Burritt shifted strategy from NAFR Asset Revitalization to Big River Mini Mill investment post-2019</td></tr><tr><td>10</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>U.S. Steel spent $6.5B on Mini Mill vs. $3.4B on NAFR 2019-2024</td></tr><tr><td>11</td><td><b>n5</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>NAFR shipments declined 27% since 2019; capacity utilization dropped from 71% to 63%</td></tr><tr><td>12</td><td><b>n6</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>U.S. Steel TSR 13.5% vs. peer median 241.2% during Burritt tenure through Aug 2023</td></tr><tr><td>13</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>USW statements criticize Burritt for broken commitments and calling him &#x27;Blackmailing CEO&#x27;</td></tr><tr><td>14</td><td><b>n9</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Current Board lacks judgment: pursued risky Nippon deal for $1/share premium despite clear political opposition</td></tr><tr><td>15</td><td><b>n13</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Kestenbaum can replicate Stelco turnaround success at U.S. Steel</td></tr><tr><td>16</td><td><b>n17</b></td><td><span class="dot" style="background:#BC5050"></span> assumption</td><td>speculative</td><td>Big River can be sold for $8-9B generating $7.6B after-tax proceeds</td></tr><tr><td>17</td><td><b>n8</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Burritt&#x27;s capital allocation destroyed value: prioritized non-union Mini Mill over advantaged union NAFR assets</td></tr><tr><td>18</td><td><b>n10</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Management has irreparably damaged labor relations critical to operations</td></tr><tr><td>19</td><td><b>n20</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Kestenbaum leadership will repair USW relations and secure new labor agreement before 2026 expiration</td></tr><tr><td>20</td><td><b>n18</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Ancora plan funds $2.9B Phase One investments without dilution using existing capital</td></tr><tr><td>21</td><td><b>n19</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Sale of Big River and non-core assets enables $19.25/share special dividend</td></tr><tr><td>22</td><td><b>n11</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>If Nippon deal fails, Burritt will close plants costing $3.5B+ in severance and liabilities</td></tr><tr><td>23</td><td><b>n23</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Combined strategy delivers $75.67 total return: $56.42 equity value + $19.25 dividend</td></tr><tr><td>24</td><td><b>n24</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Vote for Ancora slate to pursue $75+ per share through Kestenbaum turnaround or continued Nippon pursuit</td></tr></tbody></table><h2>Returns</h2><div class="neg">Returns unavailable &mdash; no_price_data</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">12 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>NAFR Proforma 2027 EBITDA <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2027</td><td>2,059 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>NAFR 2024 EBITDA <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2024</td><td>934 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>NAFR EBITDA 2025E <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2025E</td><td>981 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>NAFR EBITDA 2026E <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2026E</td><td>1,280 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>NAFR EBITDA 2028E <span style="color:var(--grey);font-size:.85em">(ebitda)</span></td><td>2028E</td><td>2,202 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>EBITDA Margin 2024A <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>2024A</td><td>12 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no SEC XBRL for ticker</td></tr><tr><td>EBITDA Margin 2027E <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>2027E</td><td>23 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>EBITDA Margin 2028E <span style="color:var(--grey);font-size:.85em">(op_margin)</span></td><td>2028E</td><td>25 %</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Shipments (tons) 2027E <span style="color:var(--grey);font-size:.85em">(units)</span></td><td>2027E</td><td>8,162,000 tons</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Granulated Iron production 2027E <span style="color:var(--grey);font-size:.85em">(units)</span></td><td>2027E</td><td>1,000,000 tons</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Special Dividend per Share <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>One-time</td><td>19.25 $/sh</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Big River Sale Proceeds (net) <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>N/A</td><td>7,626 $mn</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr></tbody></table><h2>Catalysts</h2><ul class="bl"><li>Installation of Alan Kestenbaum as CEO to rebuild union relations</li><li>$1.5B Mon Valley Arvedi Endless Strip Production line investment driving 300K tons additional capacity, $80/ton price improvement and $90/ton cost reduction</li><li>$950M Gary Works Blast Furnace upgrades adding 1.3M tons capacity and reducing costs by $50/ton</li><li>$300M Granite City investment producing 1M tons granulated iron at $100/ton margin</li><li>Special dividend of $19.25/share from Big River sale proceeds ($8-9B estimated value)</li><li>Phase Two capital program ($3.7B) including Great Lakes revival and new Gary EAF</li><li>New labor agreement with USW ahead of 2026 expiration</li><li>Trump administration steel tariffs creating favorable pricing environment</li><li>$565M merger termination fee collection if Nippon deal terminates</li></ul><h2>Red Flags Alleged</h2><ul class="bl"><li>Management blew Big River 2 budget by 20% ($600M overrun from $3.0B to $3.6B)</li><li>2024 revenue missed management forecast by 11.6% ($17.7B forecast vs $15.6B actual)</li><li>2024 Adjusted EBITDA missed forecast by 51.2% ($2.4B forecast vs $1.2B actual)</li><li>Total Shareholder Return of 13.5% under Burritt tenure vs peer median of 241.2%</li><li>NAFR shipments declined 27% from 2019 levels despite being called &#x27;world class&#x27;</li><li>NAFR raw steel production averaged only 63% of capacity in 2024, down from 71% in 2023</li><li>Depreciation outpaced CapEx in NAFR segment in 4 of last 5 years</li><li>$120M spent on strategic alternatives process costs that could have been invested in plants</li><li>Company canceled $1.2B Mon Valley investment after two years to redirect to Big River</li><li>Free Cash Flow turned negative in 2023 and worsened in 2024 despite $11B investment since 2017</li><li>Indefinitely idled Granite City and Great Lakes facilities eliminating 2,500+ union jobs</li><li>CEO threatened to close Mon Valley and relocate headquarters if Nippon deal fails</li></ul><h2>Key Risks Acknowledged</h2><ul class="bl"><li>Nippon deal may proceed, making board change unnecessary</li><li>Capital investment program requires $6.5B in Phase 1 and additional $3.7B in Phase 2</li><li>Reliance on existing liquidity and asset sales to fund investments without equity dilution</li><li>Union contract renegotiation in 2026 carries execution risk</li><li>Big River sale depends on achieving $8-9B valuation received during strategic alternatives process</li><li>Asset retirement obligations and environmental liabilities at 100+ year old plants are substantial</li><li>Hot-rolled coil price assumptions of $800/ton underpin EBITDA projections</li><li>Capital program execution timeline spans 2025-2031 with multiple phases</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">Ancora_X_20250407 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 14, "spof": false}, {"id": "n12", "type": "evidence", "layer": 0, "row": 1, "nrows": 14, "spof": false}, {"id": "n14", "type": "evidence", "layer": 0, "row": 2, "nrows": 14, "spof": false}, {"id": "n15", "type": "evidence", "layer": 0, "row": 3, "nrows": 14, "spof": false}, {"id": "n16", "type": "assumption", "layer": 0, "row": 4, "nrows": 14, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 5, "nrows": 14, "spof": false}, {"id": "n21", "type": "claim", "layer": 0, "row": 6, "nrows": 14, "spof": false}, {"id": "n22", "type": "assumption", "layer": 0, "row": 7, "nrows": 14, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 8, "nrows": 14, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 9, "nrows": 14, "spof": false}, {"id": "n5", "type": "evidence", "layer": 0, "row": 10, "nrows": 14, "spof": false}, {"id": "n6", "type": "evidence", "layer": 0, "row": 11, "nrows": 14, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 12, "nrows": 14, "spof": false}, {"id": "n9", "type": "claim", "layer": 0, "row": 13, "nrows": 14, "spof": false}, {"id": "n13", "type": "assumption", "layer": 1, "row": 0, "nrows": 4, "spof": false}, {"id": "n17", "type": "assumption", "layer": 1, "row": 1, "nrows": 4, "spof": false}, {"id": "n8", "type": "claim", "layer": 1, "row": 2, "nrows": 4, "spof": false}, {"id": "n10", "type": "claim", "layer": 1, "row": 3, "nrows": 4, "spof": false}, {"id": "n20", "type": "claim", "layer": 2, "row": 0, "nrows": 4, "spof": false}, {"id": "n18", "type": "claim", "layer": 2, "row": 1, "nrows": 4, "spof": false}, {"id": "n19", "type": "claim", "layer": 2, "row": 2, "nrows": 4, "spof": false}, {"id": "n11", "type": "claim", "layer": 2, "row": 3, "nrows": 4, "spof": false}, {"id": "n23", "type": "claim", "layer": 3, "row": 0, "nrows": 1, "spof": false}, {"id": "n24", "type": "conclusion", "layer": 4, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n24"}, {"from": "n2", "to": "n11"}, {"from": "n3", "to": "n8"}, {"from": "n4", "to": "n8"}, {"from": "n5", "to": "n8"}, {"from": "n6", "to": "n8"}, {"from": "n7", "to": "n10"}, {"from": "n8", "to": "n11"}, {"from": "n9", "to": "n11"}, {"from": "n10", "to": "n11"}, {"from": "n11", "to": "n24"}, {"from": "n12", "to": "n13"}, {"from": "n13", "to": "n18"}, {"from": "n13", "to": "n20"}, {"from": "n14", "to": "n18"}, {"from": "n15", "to": "n17"}, {"from": "n16", "to": "n23"}, {"from": "n17", "to": "n19"}, {"from": "n18", "to": "n23"}, {"from": "n19", "to": "n23"}, {"from": "n20", "to": "n23"}, {"from": "n21", "to": "n24"}, {"from": "n22", "to": "n23"}, {"from": "n23", "to": "n24"}], "maxLayer": 4}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>

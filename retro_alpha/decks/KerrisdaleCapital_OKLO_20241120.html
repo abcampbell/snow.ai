@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OKLO — Kerrisdale Capital — Retro Alpha</title><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet"><style>
+:root{--bg:#1A1A1A;--fg:#FAFAF5;--gold:#B8860B;--lgold:#D4A853;--grey:#6B6B6B;--card:#222;--line:#333;--red:#BC5050;--green:#7fb069}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'EB Garamond',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+h1{font-family:Cinzel,serif;font-weight:700;letter-spacing:.12em;color:var(--gold);font-size:1.7em;margin:.2em 0 .1em}
+h2{font-family:Cinzel,serif;font-weight:600;letter-spacing:.08em;color:var(--fg);font-size:1.1em;margin:1.9em 0 .55em;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--grey);font-style:italic;margin-bottom:14px}
+a{color:var(--lgold)}
+.nav-back{display:inline-block;font-family:Cinzel,serif;font-size:.78em;color:var(--grey);text-decoration:none;letter-spacing:.06em;border:1px solid var(--line);padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.nav-back:hover{color:var(--gold);border-color:var(--gold)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.badge{display:inline-block;font-family:Cinzel,serif;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:3px;vertical-align:middle}
+.badge-long{background:rgba(184,134,11,.16);color:var(--lgold);border:1px solid var(--gold)}
+.badge-short{background:rgba(188,80,80,.14);color:var(--red);border:1px solid var(--red)}
+.gradebox{margin-left:auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 22px}
+.gradebox .g{font-family:Cinzel,serif;font-size:2.1em;font-weight:700;line-height:1}
+.gradebox .c{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.banner{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 18px;margin:16px 0}
+.neg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--grey);border-radius:6px;padding:14px 18px;margin:16px 0;color:#bbb}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;min-width:108px;flex:1}
+.stat .v{font-family:Cinzel,serif;font-size:1.25em;font-weight:700}
+.stat .k{color:var(--grey);font-size:.72em;text-transform:uppercase;letter-spacing:.08em}
+.stat .m{color:var(--grey);font-size:.76em;font-style:italic}
+.pos{color:var(--green)}.negv{color:var(--red)}.flatv{color:var(--grey)}
+canvas{width:100%;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0;color:#bbb;font-size:.85em}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+.ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
+th{font-family:Cinzel,serif;font-size:.76em;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding:8px 6px;text-align:left;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+tbody tr:hover{background:#262626}
+.bm{display:inline-block;font-family:Cinzel,serif;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.bm-beat{color:var(--green);border:1px solid var(--green)}
+.bm-miss{color:var(--red);border:1px solid var(--red)}
+.bm-inline{color:var(--lgold);border:1px solid var(--gold)}
+.bm-unresolved{color:var(--grey);border:1px solid var(--line)}
+ul.bl{margin:6px 0 6px 4px;padding-left:20px}
+ul.bl li{margin:5px 0}
+.spof{color:var(--red);font-weight:700}
+.footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;color:var(--grey);font-size:.85em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><a class="nav-back" href="../index.html">&larr; RETRO ALPHA</a><div class="hdr"><div><h1>OKLO</h1><div class="sub">Kerrisdale Capital &middot; published 2024-11-20 &middot; 26 pages</div></div><span class="badge badge-short">short</span><div class="gradebox"><div class="g" style="color:#B8860B">C</div><div class="c">composite 63.8</div></div></div><div class="banner"><div style="font-family:Cinzel,serif;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Thesis</div>Oklo is a pre-revenue $3bn SPAC trading on nuclear hype despite no NRC approval, grossly understated fuel costs (lowballed 5x per experts), unrealistic timelines, inexperienced management, and sodium-cooled reactor reliability problems. Unit economics are not commercially viable; massive dilution likely needed.</div><h2>Argument DAG</h2><canvas id="dagCanvas" height="340"></canvas><div class="legend"><span><span class="dot" style="background:#7fb069"></span>evidence</span><span><span class="dot" style="background:#BC5050"></span>assumption</span><span><span class="dot" style="background:#D4A853"></span>claim</span><span><span class="dot" style="background:#B8860B"></span>conclusion</span><span><span class="ring"></span>single point of failure</span><span style="color:var(--grey);font-style:italic">layered left&rarr;right by inferential depth</span></div><table><thead><tr><th>#</th><th>Node</th><th>Type</th><th>Grounding</th><th>Text</th></tr></thead><tbody><tr><td>1</td><td><b>n1</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Oklo has no NRC-approved design, no revenue, and aims for late 2027 first reactor deployment.</td></tr><tr><td>2</td><td><b>n10</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>NuScale&#x27;s US SMR project cost ballooned from $4.2bn to $9.3bn, causing project termination before NRC license.</td></tr><tr><td>3</td><td><b>n12</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Large fraction of sodium-cooled reactors shut down for long periods by sodium leak fires and reliability problems.</td></tr><tr><td>4</td><td><b>n14</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Citi estimates $2.7bn additional capital needed over five years to support Oklo&#x27;s deployment plans.</td></tr><tr><td>5</td><td><b>n16</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Morgan Stanley estimates only 1%-3% of US data center power through 2035 from SMRs.</td></tr><tr><td>6</td><td><b>n19</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>No commercial HALEU supply exists; won&#x27;t be available until well into 2030s per supply experts.</td></tr><tr><td>7</td><td><b>n2</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Former NRC Commissioner states Oklo&#x27;s 2027 timeline is beyond optimistic; will take at least 4 years for license.</td></tr><tr><td>8</td><td><b>n3</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Oklo has fewer than 88 employees versus competitors with 450+ employees who won Big Tech contracts.</td></tr><tr><td>9</td><td><b>n4</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Former Oklo employee describes management as very inexperienced people who don&#x27;t understand the real world.</td></tr><tr><td>10</td><td><b>n6</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Oklo&#x27;s fuel cost assumption of $7,000/kg is lowballed by factor of 5x per experts and former employee.</td></tr><tr><td>11</td><td><b>n7</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>Multiple experts estimate HALEU costs at $30,000-$40,000/kg, not Oklo&#x27;s assumed $7,000/kg.</td></tr><tr><td>12</td><td><b>n9</b></td><td><span class="dot" style="background:#7fb069"></span> evidence</td><td>sourced</td><td>All operating SMRs worldwide experienced 300%-700% cost escalation versus original estimates.</td></tr><tr><td>13</td><td><b>n13</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Oklo&#x27;s sodium-cooled design has serious inherent reliability problems that will cause operational issues.</td></tr><tr><td>14</td><td><b>n15</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Oklo requires billions in additional capital, creating high risk of dilutive equity raises.</td></tr><tr><td>15</td><td><b>n17</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>SMRs will not meaningfully contribute to data center power needs for over a decade.</td></tr><tr><td>16</td><td><b>n11</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>SMRs consistently experience dramatic cost escalation, making Oklo&#x27;s promoted economics unrealistic.</td></tr><tr><td>17</td><td><b>n5</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Oklo management lacks experience and resources to execute commercialization successfully.</td></tr><tr><td>18</td><td><b>n8</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>With realistic 5x higher fuel costs, Oklo&#x27;s overnight capital costs and LCOE become commercially unviable.</td></tr><tr><td>19</td><td><b>n18</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Oklo&#x27;s regulatory approval and deployment timelines will slip significantly beyond 2027 target.</td></tr><tr><td>20</td><td><b>n20</b></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Lack of fuel supply and inflated economics mean Oklo cannot achieve commercial viability.</td></tr><tr><td>21</td><td><b>n21</b> <span class="spof" title="single point of failure">&#9888;</span></td><td><span class="dot" style="background:#D4A853"></span> claim</td><td>asserted</td><td>Execution setbacks and capital raises will cause Oklo&#x27;s unsustainable stock price to collapse.</td></tr><tr><td>22</td><td><b>n22</b></td><td><span class="dot" style="background:#B8860B"></span> conclusion</td><td>asserted</td><td>Kerrisdale is short Oklo; stock will decline as overpromised timelines slip and dilutive capital needs emerge.</td></tr></tbody></table><h2>Returns</h2><div class="stats"><div class="stat"><div class="v">$20.95</div><div class="k">Px at Pub</div><div class="m">2024-11-20</div></div><div class="stat"><div class="v negv">-2.7%</div><div class="k">1 Month</div><div class="m">alpha +2.3%</div></div><div class="stat"><div class="v negv">-115.4%</div><div class="k">3 Months</div><div class="m">alpha +111.2%</div></div><div class="stat"><div class="v negv">-75.7%</div><div class="k">6 Months</div><div class="m">alpha +76.4%</div></div><div class="stat"><div class="v negv">-320.1%</div><div class="k">1 Year</div><div class="m">alpha +308.2%</div></div><div class="stat"><div class="v negv">-147.4%</div><div class="k">To Date</div><div class="m">alpha +117.6%</div></div></div><div class="stats"><div class="stat"><div class="v"><span class="negv">WRONG</span></div><div class="k">Verdict 1y</div></div><div class="stat"><div class="v"><span class="negv">WRONG</span></div><div class="k">Verdict To Date</div></div><div class="stat"><div class="v negv">-12.3%</div><div class="k">Max Drawdown 1y</div></div><div class="stat"><div class="v pos">+731.2%</div><div class="k">Max Gain 1y</div></div></div><div class="sub" style="font-size:.85em">thesis_return = return in the direction of the pitch (short theses gain when the stock falls) &middot; alpha vs SPY</div><h2>Estimates vs Actuals</h2><div class="sub" style="font-size:.9em">13 estimates &middot; 0 resolvable</div><table><thead><tr><th>Metric</th><th>Period</th><th>Deck Value</th><th>Actual</th><th>Pct Error</th><th>Result</th><th>Note</th></tr></thead><tbody><tr><td>Total revenue <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>2024E</td><td>0 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>Total revenue <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>2025E</td><td>0 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">no annual XBRL fact for FY</td></tr><tr><td>Total revenue <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>2026E</td><td>0 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Total revenue <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>2027E</td><td>0 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Total revenue <span style="color:var(--grey);font-size:.85em">(revenue)</span></td><td>2028E</td><td>0 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Free cash flow <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2024E</td><td>-45 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric fcf not auto-resolvable (v1)</td></tr><tr><td>Free cash flow <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2025E</td><td>-64 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">metric fcf not auto-resolvable (v1)</td></tr><tr><td>Free cash flow <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2026E</td><td>-69 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Free cash flow <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2027E</td><td>-75 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Free cash flow <span style="color:var(--grey);font-size:.85em">(fcf)</span></td><td>2028E</td><td>-85 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">period not yet elapsed</td></tr><tr><td>Capex requirements for deployment <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>Five years following initial reactor deployment</td><td>2,700 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Total capex requirements <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>Five years following initial reactor deployment</td><td>4,600 $mm</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr><tr><td>Customer pipeline <span style="color:var(--grey);font-size:.85em">(other)</span></td><td>Current</td><td>2,100 MW</td><td>&mdash;</td><td class="flatv">&mdash;</td><td><span class="bm bm-unresolved">unresolved</span></td><td style="color:var(--grey);font-size:.85em">unparseable period</td></tr></tbody></table><h2>Red Flags Alleged</h2><ul class="bl"><li>Fuel cost assumption of $7,000/kg HALEU is lowballed by a factor of 5x according to multiple industry experts; realistic cost is $30,000-$40,000/kg</li><li>Oklo&#x27;s combined license application was denied by NRC in 2022 in unprecedented fashion described as worst &#x27;flame out&#x27; a former commissioner had seen</li><li>Management has zero experience building or operating commercial nuclear power plants</li><li>No demonstration reactor or prototype built before pursuing commercial license, contrary to industry best practices</li><li>Only 88 employees compared to 450+ at competitors who won Big Tech deals</li><li>Non-binding LOIs in customer pipeline contain no actual commitments and lack finalized PPAs</li><li>Illustrative unit economics used by Street analysts without adjustment despite unrealistic fuel cost assumptions</li><li>Promoted overnight capital costs of ~$2,300-$4,600/kW vastly understate likely costs per experts</li><li>Sodium-cooled reactor design has well-documented history of leaks, fires, and reliability problems globally</li></ul><div class="footer"><a class="nav-back" href="../index.html" style="margin-bottom:0">&larr; RETRO ALPHA</a><div style="margin-top:10px">KerrisdaleCapital_OKLO_20241120 &middot; grades from panel/decks.csv &middot; returns are thesis-direction adjusted &middot; not investment advice</div></div></div><script>window.__DECK__ = {"dag": {"nodes": [{"id": "n1", "type": "evidence", "layer": 0, "row": 0, "nrows": 12, "spof": false}, {"id": "n10", "type": "evidence", "layer": 0, "row": 1, "nrows": 12, "spof": false}, {"id": "n12", "type": "evidence", "layer": 0, "row": 2, "nrows": 12, "spof": false}, {"id": "n14", "type": "evidence", "layer": 0, "row": 3, "nrows": 12, "spof": false}, {"id": "n16", "type": "evidence", "layer": 0, "row": 4, "nrows": 12, "spof": false}, {"id": "n19", "type": "evidence", "layer": 0, "row": 5, "nrows": 12, "spof": false}, {"id": "n2", "type": "evidence", "layer": 0, "row": 6, "nrows": 12, "spof": false}, {"id": "n3", "type": "evidence", "layer": 0, "row": 7, "nrows": 12, "spof": false}, {"id": "n4", "type": "evidence", "layer": 0, "row": 8, "nrows": 12, "spof": false}, {"id": "n6", "type": "evidence", "layer": 0, "row": 9, "nrows": 12, "spof": false}, {"id": "n7", "type": "evidence", "layer": 0, "row": 10, "nrows": 12, "spof": false}, {"id": "n9", "type": "evidence", "layer": 0, "row": 11, "nrows": 12, "spof": false}, {"id": "n13", "type": "claim", "layer": 1, "row": 0, "nrows": 6, "spof": false}, {"id": "n15", "type": "claim", "layer": 1, "row": 1, "nrows": 6, "spof": false}, {"id": "n17", "type": "claim", "layer": 1, "row": 2, "nrows": 6, "spof": false}, {"id": "n11", "type": "claim", "layer": 1, "row": 3, "nrows": 6, "spof": false}, {"id": "n5", "type": "claim", "layer": 1, "row": 4, "nrows": 6, "spof": false}, {"id": "n8", "type": "claim", "layer": 1, "row": 5, "nrows": 6, "spof": false}, {"id": "n18", "type": "claim", "layer": 2, "row": 0, "nrows": 2, "spof": false}, {"id": "n20", "type": "claim", "layer": 2, "row": 1, "nrows": 2, "spof": false}, {"id": "n21", "type": "claim", "layer": 3, "row": 0, "nrows": 1, "spof": true}, {"id": "n22", "type": "conclusion", "layer": 4, "row": 0, "nrows": 1, "spof": false}], "edges": [{"from": "n1", "to": "n18"}, {"from": "n2", "to": "n18"}, {"from": "n3", "to": "n5"}, {"from": "n4", "to": "n5"}, {"from": "n5", "to": "n18"}, {"from": "n6", "to": "n8"}, {"from": "n7", "to": "n8"}, {"from": "n8", "to": "n20"}, {"from": "n9", "to": "n11"}, {"from": "n10", "to": "n11"}, {"from": "n11", "to": "n20"}, {"from": "n12", "to": "n13"}, {"from": "n13", "to": "n20"}, {"from": "n14", "to": "n15"}, {"from": "n15", "to": "n21"}, {"from": "n16", "to": "n17"}, {"from": "n17", "to": "n20"}, {"from": "n18", "to": "n21"}, {"from": "n19", "to": "n20"}, {"from": "n20", "to": "n21"}, {"from": "n21", "to": "n22"}], "maxLayer": 4}};
+
+(function(){
+  var P = window.__DECK__;
+  if(!P || !P.dag) return;
+  var dag = P.dag;
+  var c = document.getElementById('dagCanvas');
+  if(!c) return;
+  var COLORS = {evidence:'#7fb069', assumption:'#BC5050', claim:'#D4A853', conclusion:'#B8860B'};
+
+  function draw(){
+    var maxRows = 1, i;
+    for(i=0;i<dag.nodes.length;i++){ if(dag.nodes[i].nrows>maxRows) maxRows = dag.nodes[i].nrows; }
+    var h = Math.max(260, Math.min(560, maxRows*40+80));
+    var w = c.parentNode.clientWidth || 900;
+    var r = window.devicePixelRatio || 1;
+    c.width = Math.round(w*r); c.height = Math.round(h*r);
+    c.style.height = h+'px'; c.style.width = '100%';
+    var x = c.getContext('2d');
+    x.setTransform(r,0,0,r,0,0);
+    x.clearRect(0,0,w,h);
+
+    var padX = 46, padTop = 30, padBot = 26;
+    var innerW = w - 2*padX, innerH = h - padTop - padBot;
+    var maxLayer = Math.max(1, dag.maxLayer);
+    var pos = {};
+    for(i=0;i<dag.nodes.length;i++){
+      var n = dag.nodes[i];
+      var nx = padX + (n.layer/maxLayer)*innerW;
+      var ny = padTop + ((n.row+0.5)/n.nrows)*innerH;
+      pos[n.id] = {x:nx, y:ny, node:n};
+    }
+
+    // edges: quadratic curves, grey
+    x.strokeStyle = 'rgba(107,107,107,0.55)';
+    x.lineWidth = 1;
+    for(i=0;i<dag.edges.length;i++){
+      var e = dag.edges[i];
+      var a = pos[e.from], b = pos[e.to];
+      if(!a || !b) continue;
+      x.beginPath();
+      x.moveTo(a.x+8, a.y);
+      var mx = (a.x+b.x)/2;
+      var my = (a.y+b.y)/2 + (a.y===b.y ? -14 : (b.y-a.y)*0.12);
+      x.quadraticCurveTo(mx, my, b.x-8, b.y);
+      x.stroke();
+    }
+
+    // nodes
+    for(var id in pos){
+      var p = pos[id], n2 = p.node;
+      if(n2.spof){
+        x.beginPath();
+        x.arc(p.x, p.y, 11, 0, Math.PI*2);
+        x.strokeStyle = '#BC5050';
+        x.lineWidth = 2;
+        x.stroke();
+      }
+      x.beginPath();
+      x.arc(p.x, p.y, 7, 0, Math.PI*2);
+      x.fillStyle = COLORS[n2.type] || '#6B6B6B';
+      x.fill();
+      x.fillStyle = '#FAFAF5';
+      x.font = '10px "EB Garamond", serif';
+      x.textAlign = 'center';
+      x.fillText(n2.id, p.x, p.y - 14);
+    }
+  }
+  draw();
+  var t = null;
+  window.addEventListener('resize', function(){
+    if(t) clearTimeout(t);
+    t = setTimeout(draw, 120);
+  });
+})();
+</script></body></html>
