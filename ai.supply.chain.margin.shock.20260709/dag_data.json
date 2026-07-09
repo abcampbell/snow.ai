@@ -188,12 +188,13 @@
   },
   {
    "id": "SK Hynix",
-   "gm": 62.0,
+   "gm": 79.27,
    "layer": 1,
    "spot": 0.7,
    "tenor": 1.0,
    "kernel_note": "HBM ~0% spot 1yr lock (sold out thru 26); commodity mostly spot; blended per Cambrian 70/1yr",
-   "hbm_share": 0.4
+   "hbm_share": 0.4,
+   "gm_source": "IR/stockanalysis 2026-Q1"
   },
   {
    "id": "SMCI",
@@ -213,12 +214,13 @@
   },
   {
    "id": "Samsung",
-   "gm": 38.0,
+   "gm": 61.17,
    "layer": 1,
    "spot": 0.55,
    "tenor": 1.0,
    "kernel_note": "Cambrian 55% spot 1yr",
-   "hbm_share": 0.1
+   "hbm_share": 0.1,
+   "gm_source": "IR/stockanalysis 2026-Q1"
   },
   {
    "id": "Shin-Etsu",
@@ -230,11 +232,12 @@
   },
   {
    "id": "TSMC",
-   "gm": 58.0,
+   "gm": 66.25,
    "layer": 1,
    "spot": 0.85,
    "tenor": 1.0,
-   "kernel_note": "Cambrian 85% 1yr"
+   "kernel_note": "Cambrian 85% 1yr",
+   "gm_source": "IR/stockanalysis 2026-Q1"
   },
   {
    "id": "Wistron",
