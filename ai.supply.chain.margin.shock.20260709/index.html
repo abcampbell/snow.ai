@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>HBM Complex — Margin Propagation</title>
+<style>
+html,body{height:100%;width:100%}
+body{background:#0d0d12;color:#ddd;font-family:Segoe UI,Arial,sans-serif;margin:0;overflow:hidden}
+#c{position:fixed;top:0;left:0;width:100vw;height:100vh}
+#panel{position:fixed;top:12px;left:12px;background:#16161ecc;padding:14px 18px;border-radius:10px;z-index:10;width:290px;backdrop-filter:blur(6px)}
+#panel h2{margin:0 0 6px;font-size:15px;color:#fff}
+#panel .sub{font-size:11px;color:#888;margin-bottom:10px}
+.sliderrow{margin:8px 0}
+.sliderrow label{font-size:12px;color:#aaa;display:block}
+.sliderrow input[type=range]{width:100%}
+.val{color:#fff;font-weight:600}
+#shocks{font-size:12px;margin-top:8px}
+#shocks .chip{display:inline-block;background:#26263a;border-radius:6px;padding:2px 8px;margin:2px;cursor:pointer}
+#shocks .chip:hover{background:#3a3a55}
+button{background:#33334d;color:#ddd;border:0;border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;margin-top:6px}
+button:hover{background:#45456a}
+#legend{position:fixed;bottom:12px;left:12px;font-size:11px;color:#999;background:#16161ecc;padding:8px 12px;border-radius:8px}
+#tip{position:fixed;pointer-events:none;background:#000c;padding:8px 10px;border-radius:6px;font-size:12px;display:none;z-index:20;max-width:320px}
+.hint{font-size:11px;color:#777;margin-top:8px;line-height:1.5}
+</style></head><body>
+<div id="panel">
+ <h2 id="selname">Click a node</h2>
+ <div class="sub">then drag its output-price slider</div>
+ <div class="sliderrow" id="shockrow" style="display:none">
+   <label>Output price change: <span class="val" id="shockval">0%</span></label>
+   <input type="range" id="shock" min="-80" max="300" value="0" step="5">
+ </div>
+ <div class="sliderrow">
+   <label>Cost pass-through downstream: <span class="val" id="ptval">50%</span></label>
+   <input type="range" id="pt" min="0" max="100" value="50" step="5">
+ </div>
+ <div class="sliderrow">
+   <label><input type="checkbox" id="capex"> include CAPEX edges (hyperscaler exposure)</label>
+ </div>
+ <div id="shocks"></div>
+ <button id="reset">reset all</button>
+ <div class="hint">Node color = Δ gross margin (pp) vs baseline.<br>Green = expanding, red = compressing.<br>Ring = shocked node. Solid edge = COGS, dashed = CAPEX.<br>ΔGM = passthrough-adjusted, first-order, buyer-side SPLC weights.</div>
+</div>
+<div id="legend">DRAM +250% preset: click SK Hynix &amp; Micron, set +250 · data: Bloomberg SPLC (Jul 2026) + SEC XBRL margins</div>
+<div id="tip"></div>
+<svg id="c" width="100%" height="100%"></svg>
+<script>
+const DATA = {"nodes": [{"id": "AMAT", "gm": 47.5, "layer": 0}, {"id": "AMD", "gm": 52.82, "layer": 2}, {"id": "ASML", "gm": 51.0, "layer": 0}, {"id": "Advantest", "gm": 57.0, "layer": 0}, {"id": "Amazon", "gm": 49.0, "layer": 4}, {"id": "Apple", "gm": 46.0, "layer": 4}, {"id": "Broadcom", "gm": 69.48, "layer": 2}, {"id": "CoreWeave", "gm": 74.0, "layer": 4}, {"id": "Dell", "gm": 17.75, "layer": 3}, {"id": "Foxconn", "gm": 6.5, "layer": 3}, {"id": "Google", "gm": 58.0, "layer": 4}, {"id": "HPE", "gm": 33.0, "layer": 3}, {"id": "Ibiden", "gm": 25.0, "layer": 0}, {"id": "Intel", "gm": 38.0, "layer": 2}, {"id": "KLA", "gm": 60.0, "layer": 0}, {"id": "Kioxia", "gm": 45.0, "layer": 1}, {"id": "Lam", "gm": 48.0, "layer": 0}, {"id": "Lenovo", "gm": 16.0, "layer": 3}, {"id": "Meta", "gm": 81.0, "layer": 4}, {"id": "Micron", "gm": 84.56, "layer": 1}, {"id": "Microsoft", "gm": 69.0, "layer": 4}, {"id": "NVIDIA", "gm": 74.93, "layer": 2}, {"id": "Oracle", "gm": 71.0, "layer": 4}, {"id": "SK Hynix", "gm": 62.0, "layer": 1}, {"id": "SMCI", "gm": 9.95, "layer": 3}, {"id": "SUMCO", "gm": 25.0, "layer": 0}, {"id": "Samsung", "gm": 38.0, "layer": 1}, {"id": "Shin-Etsu", "gm": 40.0, "layer": 0}, {"id": "TSMC", "gm": 58.0, "layer": 1}, {"id": "Wistron", "gm": 6.0, "layer": 3}, {"id": "Wiwynn", "gm": 8.5, "layer": 3}], "links": [{"source": "ASML", "target": "SK Hynix", "w_buyer": 14.43, "w_seller": 7.35, "tag": "CAPEX"}, {"source": "Lam", "target": "SK Hynix", "w_buyer": 5.24, "w_seller": 3.56, "tag": "CAPEX"}, {"source": "AMAT", "target": "SK Hynix", "w_buyer": 3.34, "w_seller": 1.42, "tag": "CAPEX"}, {"source": "KLA", "target": "SK Hynix", "w_buyer": 2.94, "w_seller": 3.23, "tag": "CAPEX"}, {"source": "Shin-Etsu", "target": "SK Hynix", "w_buyer": 1.43, "w_seller": 2.42, "tag": "COGS"}, {"source": "SUMCO", "target": "SK Hynix", "w_buyer": 0.36, "w_seller": 3.79, "tag": "COGS"}, {"source": "SK Hynix", "target": "NVIDIA", "w_buyer": 26.53, "w_seller": 26.98, "tag": "COGS"}, {"source": "SK Hynix", "target": "Microsoft", "w_buyer": 5.01, "w_seller": 8.88, "tag": "CAPEX"}, {"source": "SK Hynix", "target": "Apple", "w_buyer": 1.88, "w_seller": 8.3, "tag": "COGS"}, {"source": "SK Hynix", "target": "Google", "w_buyer": 4.43, "w_seller": 7.32, "tag": "CAPEX"}, {"source": "SK Hynix", "target": "Amazon", "w_buyer": 2.96, "w_seller": 6.94, "tag": "CAPEX"}, {"source": "SK Hynix", "target": "Meta", "w_buyer": 5.14, "w_seller": 6.51, "tag": "CAPEX"}, {"source": "SK Hynix", "target": "Dell", "w_buyer": 1.69, "w_seller": 2.59, "tag": "COGS"}, {"source": "SK Hynix", "target": "Lenovo", "w_buyer": 1.91, "w_seller": 2.13, "tag": "COGS"}, {"source": "SK Hynix", "target": "Intel", "w_buyer": 2.84, "w_seller": 1.47, "tag": "COGS"}, {"source": "SK Hynix", "target": "HPE", "w_buyer": 7.16, "w_seller": 0.26, "tag": "CAPEX"}, {"source": "ASML", "target": "Micron", "w_buyer": 11.47, "w_seller": 7.11, "tag": "CAPEX"}, {"source": "Lam", "target": "Micron", "w_buyer": 5.24, "w_seller": 5.28, "tag": "CAPEX"}, {"source": "AMAT", "target": "Micron", "w_buyer": 4.08, "w_seller": 3.16, "tag": "CAPEX"}, {"source": "KLA", "target": "Micron", "w_buyer": 3.03, "w_seller": 4.96, "tag": "CAPEX"}, {"source": "Shin-Etsu", "target": "Micron", "w_buyer": 1.45, "w_seller": 2.03, "tag": "COGS"}, {"source": "Micron", "target": "NVIDIA", "w_buyer": 13.62, "w_seller": 17.0, "tag": "COGS"}, {"source": "Micron", "target": "Lenovo", "w_buyer": 3.57, "w_seller": 4.93, "tag": "COGS"}, {"source": "Micron", "target": "Microsoft", "w_buyer": 2.18, "w_seller": 4.76, "tag": "CAPEX"}, {"source": "Micron", "target": "Dell", "w_buyer": 2.88, "w_seller": 4.52, "tag": "COGS"}, {"source": "Micron", "target": "Apple", "w_buyer": 0.79, "w_seller": 4.32, "tag": "COGS"}, {"source": "Micron", "target": "Amazon", "w_buyer": 0.9, "w_seller": 2.59, "tag": "CAPEX"}, {"source": "Micron", "target": "SMCI", "w_buyer": 1.34, "w_seller": 1.17, "tag": "COGS"}, {"source": "Micron", "target": "AMD", "w_buyer": 2.93, "w_seller": 1.01, "tag": "COGS"}, {"source": "Micron", "target": "Intel", "w_buyer": 0.96, "w_seller": 0.61, "tag": "COGS"}, {"source": "Micron", "target": "HPE", "w_buyer": 0.95, "w_seller": 0.45, "tag": "COGS"}, {"source": "TSMC", "target": "NVIDIA", "w_buyer": 37.35, "w_seller": 19.04, "tag": "COGS"}, {"source": "Advantest", "target": "NVIDIA", "w_buyer": 24.44, "w_seller": 21.6, "tag": "CAPEX"}, {"source": "Wistron", "target": "NVIDIA", "w_buyer": 16.58, "w_seller": 15.57, "tag": "COGS"}, {"source": "Foxconn", "target": "NVIDIA", "w_buyer": 5.03, "w_seller": 1.6, "tag": "COGS"}, {"source": "Ibiden", "target": "NVIDIA", "w_buyer": 1.23, "w_seller": 29.43, "tag": "COGS"}, {"source": "NVIDIA", "target": "Microsoft", "w_buyer": 50.28, "w_seller": 22.05, "tag": "CAPEX"}, {"source": "NVIDIA", "target": "Amazon", "w_buyer": 24.17, "w_seller": 14.02, "tag": "CAPEX"}, {"source": "NVIDIA", "target": "SMCI", "w_buyer": 54.47, "w_seller": 9.5, "tag": "COGS"}, {"source": "NVIDIA", "target": "Google", "w_buyer": 11.9, "w_seller": 4.87, "tag": "CAPEX"}, {"source": "NVIDIA", "target": "Meta", "w_buyer": 13.07, "w_seller": 4.1, "tag": "CAPEX"}, {"source": "NVIDIA", "target": "Dell", "w_buyer": 6.48, "w_seller": 2.54, "tag": "COGS"}, {"source": "NVIDIA", "target": "Wiwynn", "w_buyer": 19.48, "w_seller": 2.5, "tag": "COGS"}, {"source": "NVIDIA", "target": "Oracle", "w_buyer": 11.18, "w_seller": 1.98, "tag": "CAPEX"}, {"source": "NVIDIA", "target": "CoreWeave", "w_buyer": 22.82, "w_seller": 1.36, "tag": "CAPEX"}, {"source": "NVIDIA", "target": "Lenovo", "w_buyer": 4.02, "w_seller": 1.11, "tag": "COGS"}, {"source": "NVIDIA", "target": "HPE", "w_buyer": 5.13, "w_seller": 0.48, "tag": "COGS"}, {"source": "Broadcom", "target": "SMCI", "w_buyer": 1.84, "w_seller": 0.46, "tag": "COGS"}, {"source": "Intel", "target": "SMCI", "w_buyer": 1.64, "w_seller": 0.55, "tag": "COGS"}, {"source": "AMD", "target": "SMCI", "w_buyer": 1.13, "w_seller": 0.77, "tag": "COGS"}, {"source": "Intel", "target": "Dell", "w_buyer": 12.16, "w_seller": 19.04, "tag": "COGS"}, {"source": "Foxconn", "target": "Dell", "w_buyer": 3.69, "w_seller": 1.24, "tag": "COGS"}, {"source": "Kioxia", "target": "Dell", "w_buyer": 1.55, "w_seller": 8.77, "tag": "COGS"}, {"source": "AMD", "target": "Dell", "w_buyer": 1.35, "w_seller": 4.26, "tag": "COGS"}, {"source": "Broadcom", "target": "Dell", "w_buyer": 1.02, "w_seller": 1.21, "tag": "COGS"}, {"source": "Dell", "target": "CoreWeave", "w_buyer": 14.68, "w_seller": 1.21, "tag": "CAPEX"}, {"source": "TSMC", "target": "AMD", "w_buyer": 37.35, "w_seller": 5.2, "tag": "COGS"}, {"source": "Samsung", "target": "AMD", "w_buyer": 11.39, "w_seller": 0.99, "tag": "COGS"}, {"source": "Ibiden", "target": "AMD", "w_buyer": 1.93, "w_seller": 11.02, "tag": "COGS"}, {"source": "AMD", "target": "Meta", "w_buyer": 2.55, "w_seller": 5.49, "tag": "CAPEX"}, {"source": "AMD", "target": "Oracle", "w_buyer": 3.24, "w_seller": 3.58, "tag": "CAPEX"}, {"source": "AMD", "target": "Microsoft", "w_buyer": 1.39, "w_seller": 3.09, "tag": "CAPEX"}, {"source": "AMD", "target": "Lenovo", "w_buyer": 1.4, "w_seller": 2.92, "tag": "COGS"}, {"source": "AMD", "target": "Google", "w_buyer": 0.7, "w_seller": 2.05, "tag": "CAPEX"}, {"source": "AMD", "target": "Amazon", "w_buyer": 0.49, "w_seller": 2.05, "tag": "CAPEX"}, {"source": "AMD", "target": "Wistron", "w_buyer": 0.7, "w_seller": 1.56, "tag": "COGS"}, {"source": "AMD", "target": "Samsung", "w_buyer": 0.3, "w_seller": 1.37, "tag": "COGS"}, {"source": "AMD", "target": "Wiwynn", "w_buyer": 1.46, "w_seller": 1.25, "tag": "COGS"}, {"source": "AMD", "target": "HPE", "w_buyer": 1.13, "w_seller": 0.95, "tag": "COGS"}, {"source": "ASML", "target": "TSMC", "w_buyer": 15.32, "w_seller": 16.56, "tag": "CAPEX"}, {"source": "AMAT", "target": "TSMC", "w_buyer": 15.08, "w_seller": 18.0, "tag": "CAPEX"}, {"source": "Lam", "target": "TSMC", "w_buyer": 8.37, "w_seller": 18.0, "tag": "CAPEX"}, {"source": "KLA", "target": "TSMC", "w_buyer": 4.88, "w_seller": 17.0, "tag": "CAPEX"}, {"source": "Advantest", "target": "TSMC", "w_buyer": 1.98, "w_seller": 11.1, "tag": "CAPEX"}, {"source": "Shin-Etsu", "target": "TSMC", "w_buyer": 1.45, "w_seller": 4.38, "tag": "COGS"}, {"source": "TSMC", "target": "Apple", "w_buyer": 7.7, "w_seller": 17.01, "tag": "COGS"}, {"source": "TSMC", "target": "Broadcom", "w_buyer": 22.95, "w_seller": 4.23, "tag": "COGS"}, {"source": "TSMC", "target": "Amazon", "w_buyer": 1.25, "w_seller": 4.09, "tag": "COGS"}, {"source": "TSMC", "target": "Intel", "w_buyer": 9.82, "w_seller": 2.54, "tag": "COGS"}]};
+const W = Math.max(innerWidth,1200), H = Math.max(innerHeight,800);
+const svg = document.getElementById('c');
+svg.setAttribute('width',W); svg.setAttribute('height',H);
+svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+const NS = 'http://www.w3.org/2000/svg';
+const shocks = {};   // nodeId -> pct output price change
+let passthrough = 0.5, useCapex = false, selected = null;
+
+// layout: columns by layer
+const layers = {};
+DATA.nodes.forEach(n=>{ (layers[n.layer]=layers[n.layer]||[]).push(n); });
+Object.entries(layers).forEach(([L,arr])=>{
+  arr.sort((a,b)=>a.id.localeCompare(b.id));
+  arr.forEach((n,i)=>{ n.x = 90 + L*( (W-180)/4 ); n.y = 70 + (i+0.5)*(H-120)/arr.length; });
+});
+const byId = Object.fromEntries(DATA.nodes.map(n=>[n.id,n]));
+
+// margin propagation
+function compute(){
+  // effective output price change per node = direct shock + passthrough of input cost increases (iterate)
+  const dOut = {}; DATA.nodes.forEach(n=>dOut[n.id]= shocks[n.id]||0);
+  const dGM = {}; DATA.nodes.forEach(n=>dGM[n.id]=0);
+  for(let iter=0; iter<4; iter++){
+    DATA.nodes.forEach(n=>{
+      let costChgRev = 0; // input cost change as % of revenue
+      DATA.links.forEach(l=>{
+        if(l.target!==n.id) return;
+        if(l.tag==='CAPEX' && !useCapex) return;
+        const w = (l.w_buyer||0)/100;            // share of buyer COGS
+        const dp = dOut[l.source]/100;           // supplier output price chg
+        const cogsRatio = 1 - (n.gm||40)/100;
+        costChgRev += w * dp * cogsRatio;        // as fraction of revenue
+      });
+      const direct = (shocks[n.id]||0)/100;
+      const recovered = passthrough * costChgRev;
+      dOut[n.id] = (direct + recovered)*100;
+      // ΔGM in pp: revenue gains from own price minus cost increase
+      const gm=(n.gm||40)/100;
+      const dRev = dOut[n.id]/100;
+      const newGM = ( (1+dRev) - (1-gm)*(1 + costChgRev/(1-gm) ) ) / (1+dRev);
+      dGM[n.id] = (newGM - gm)*100;
+    });
+  }
+  return dGM;
+}
+function color(d){
+  if(Math.abs(d)<0.15) return '#3a3a4a';
+  const t = Math.max(-1,Math.min(1,d/15));
+  if(t>0){ const g=Math.round(120+100*t); return `rgb(${Math.round(40*(1-t))},${g},80)`; }
+  const r=Math.round(140+110*(-t)); return `rgb(${r},${Math.round(50*(1+t))},60)`;
+}
+function render(){
+  const dGM = compute();
+  svg.innerHTML='';
+  // edges
+  DATA.links.forEach(l=>{
+    const s=byId[l.source], t=byId[l.target];
+    const p=document.createElementNS(NS,'path');
+    const mx=(s.x+t.x)/2;
+    p.setAttribute('d',`M${s.x},${s.y} C${mx},${s.y} ${mx},${t.y} ${t.x},${t.y}`);
+    p.setAttribute('stroke', shocks[l.source]? '#c9a227':'#494955');
+    p.setAttribute('stroke-width', Math.max(1,Math.min(9,(l.w_buyer||1)/4)));
+    p.setAttribute('fill','none');
+    if(l.tag==='CAPEX') p.setAttribute('stroke-dasharray','6,5');
+    p.setAttribute('opacity', l.tag==='CAPEX'&&!useCapex ? 0.25:0.75);
+    svg.appendChild(p);
+  });
+  // nodes
+  DATA.nodes.forEach(n=>{
+    const g=document.createElementNS(NS,'g');
+    g.style.cursor='pointer';
+    const c=document.createElementNS(NS,'ellipse');
+    c.setAttribute('cx',n.x);c.setAttribute('cy',n.y);
+    c.setAttribute('rx',44);c.setAttribute('ry',20);
+    c.setAttribute('fill',color(dGM[n.id]));
+    if(shocks[n.id]){ c.setAttribute('stroke','#ffd54a'); c.setAttribute('stroke-width',3);}
+    if(selected===n.id){ c.setAttribute('stroke','#fff'); c.setAttribute('stroke-width',2);}
+    const t=document.createElementNS(NS,'text');
+    t.setAttribute('x',n.x);t.setAttribute('y',n.y+1);
+    t.setAttribute('text-anchor','middle');t.setAttribute('fill','#fff');
+    t.setAttribute('font-size','12');t.setAttribute('font-weight','600');
+    t.textContent=n.id;
+    const t2=document.createElementNS(NS,'text');
+    t2.setAttribute('x',n.x);t2.setAttribute('y',n.y+13);
+    t2.setAttribute('text-anchor','middle');t2.setAttribute('fill','#ffffffbb');
+    t2.setAttribute('font-size','9.5');
+    const d=dGM[n.id];
+    t2.textContent = `GM ${(n.gm+d).toFixed(1)}% (${d>=0?'+':''}${d.toFixed(1)}pp)`;
+    g.appendChild(c);g.appendChild(t);g.appendChild(t2);
+    g.onclick=()=>{ selected=n.id; syncPanel(); render(); };
+    g.onmousemove=(ev)=>{
+      const tip=document.getElementById('tip');
+      const ins = DATA.links.filter(l=>l.target===n.id && (useCapex||l.tag!=='CAPEX')).sort((a,b)=>(b.w_buyer||0)-(a.w_buyer||0)).slice(0,5)
+        .map(l=>`${l.source} → ${l.w_buyer||'?'}% of COGS${l.tag==='CAPEX'?' (capex)':''}`).join('<br>');
+      tip.innerHTML=`<b>${n.id}</b> · baseline GM ${n.gm}%<br>${ins||'no mapped inputs'}`;
+      tip.style.display='block'; tip.style.left=(ev.clientX+14)+'px'; tip.style.top=(ev.clientY+8)+'px';
+    };
+    g.onmouseleave=()=>{document.getElementById('tip').style.display='none';};
+    svg.appendChild(g);
+  });
+  // chips
+  const sh=document.getElementById('shocks');
+  sh.innerHTML=Object.entries(shocks).filter(([k,v])=>v!==0).map(([k,v])=>`<span class="chip" data-n="${k}">${k} ${v>0?'+':''}${v}% ✕</span>`).join('');
+  sh.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{delete shocks[ch.dataset.n]; syncPanel(); render();});
+}
+function syncPanel(){
+  const row=document.getElementById('shockrow');
+  if(selected){ document.getElementById('selname').textContent=selected;
+    row.style.display='block';
+    document.getElementById('shock').value=shocks[selected]||0;
+    document.getElementById('shockval').textContent=(shocks[selected]||0)+'%';
+  }
+}
+document.getElementById('shock').oninput=e=>{
+  if(!selected) return;
+  shocks[selected]=+e.target.value;
+  document.getElementById('shockval').textContent=e.target.value+'%';
+  render();
+};
+document.getElementById('pt').oninput=e=>{ passthrough=+e.target.value/100;
+  document.getElementById('ptval').textContent=e.target.value+'%'; render(); };
+document.getElementById('capex').onchange=e=>{ useCapex=e.target.checked; render(); };
+document.getElementById('reset').onclick=()=>{ Object.keys(shocks).forEach(k=>delete shocks[k]); selected=null;
+  document.getElementById('selname').textContent='Click a node';
+  document.getElementById('shockrow').style.display='none'; render(); };
+render();
+</script></body></html>

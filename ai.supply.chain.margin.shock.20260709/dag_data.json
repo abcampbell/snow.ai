@@ -1,0 +1,714 @@
+{
+ "nodes": [
+  {
+   "id": "AMAT",
+   "gm": 47.5,
+   "layer": 0
+  },
+  {
+   "id": "AMD",
+   "gm": 52.82,
+   "layer": 2
+  },
+  {
+   "id": "ASML",
+   "gm": 51.0,
+   "layer": 0
+  },
+  {
+   "id": "Advantest",
+   "gm": 57.0,
+   "layer": 0
+  },
+  {
+   "id": "Amazon",
+   "gm": 49.0,
+   "layer": 4
+  },
+  {
+   "id": "Apple",
+   "gm": 46.0,
+   "layer": 4
+  },
+  {
+   "id": "Broadcom",
+   "gm": 69.48,
+   "layer": 2
+  },
+  {
+   "id": "CoreWeave",
+   "gm": 74.0,
+   "layer": 4
+  },
+  {
+   "id": "Dell",
+   "gm": 17.75,
+   "layer": 3
+  },
+  {
+   "id": "Foxconn",
+   "gm": 6.5,
+   "layer": 3
+  },
+  {
+   "id": "Google",
+   "gm": 58.0,
+   "layer": 4
+  },
+  {
+   "id": "HPE",
+   "gm": 33.0,
+   "layer": 3
+  },
+  {
+   "id": "Ibiden",
+   "gm": 25.0,
+   "layer": 0
+  },
+  {
+   "id": "Intel",
+   "gm": 38.0,
+   "layer": 2
+  },
+  {
+   "id": "KLA",
+   "gm": 60.0,
+   "layer": 0
+  },
+  {
+   "id": "Kioxia",
+   "gm": 45.0,
+   "layer": 1
+  },
+  {
+   "id": "Lam",
+   "gm": 48.0,
+   "layer": 0
+  },
+  {
+   "id": "Lenovo",
+   "gm": 16.0,
+   "layer": 3
+  },
+  {
+   "id": "Meta",
+   "gm": 81.0,
+   "layer": 4
+  },
+  {
+   "id": "Micron",
+   "gm": 84.56,
+   "layer": 1
+  },
+  {
+   "id": "Microsoft",
+   "gm": 69.0,
+   "layer": 4
+  },
+  {
+   "id": "NVIDIA",
+   "gm": 74.93,
+   "layer": 2
+  },
+  {
+   "id": "Oracle",
+   "gm": 71.0,
+   "layer": 4
+  },
+  {
+   "id": "SK Hynix",
+   "gm": 62.0,
+   "layer": 1
+  },
+  {
+   "id": "SMCI",
+   "gm": 9.95,
+   "layer": 3
+  },
+  {
+   "id": "SUMCO",
+   "gm": 25.0,
+   "layer": 0
+  },
+  {
+   "id": "Samsung",
+   "gm": 38.0,
+   "layer": 1
+  },
+  {
+   "id": "Shin-Etsu",
+   "gm": 40.0,
+   "layer": 0
+  },
+  {
+   "id": "TSMC",
+   "gm": 58.0,
+   "layer": 1
+  },
+  {
+   "id": "Wistron",
+   "gm": 6.0,
+   "layer": 3
+  },
+  {
+   "id": "Wiwynn",
+   "gm": 8.5,
+   "layer": 3
+  }
+ ],
+ "links": [
+  {
+   "source": "ASML",
+   "target": "SK Hynix",
+   "w_buyer": 14.43,
+   "w_seller": 7.35,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Lam",
+   "target": "SK Hynix",
+   "w_buyer": 5.24,
+   "w_seller": 3.56,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMAT",
+   "target": "SK Hynix",
+   "w_buyer": 3.34,
+   "w_seller": 1.42,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "KLA",
+   "target": "SK Hynix",
+   "w_buyer": 2.94,
+   "w_seller": 3.23,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Shin-Etsu",
+   "target": "SK Hynix",
+   "w_buyer": 1.43,
+   "w_seller": 2.42,
+   "tag": "COGS"
+  },
+  {
+   "source": "SUMCO",
+   "target": "SK Hynix",
+   "w_buyer": 0.36,
+   "w_seller": 3.79,
+   "tag": "COGS"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "NVIDIA",
+   "w_buyer": 26.53,
+   "w_seller": 26.98,
+   "tag": "COGS"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Microsoft",
+   "w_buyer": 5.01,
+   "w_seller": 8.88,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Apple",
+   "w_buyer": 1.88,
+   "w_seller": 8.3,
+   "tag": "COGS"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Google",
+   "w_buyer": 4.43,
+   "w_seller": 7.32,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Amazon",
+   "w_buyer": 2.96,
+   "w_seller": 6.94,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Meta",
+   "w_buyer": 5.14,
+   "w_seller": 6.51,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Dell",
+   "w_buyer": 1.69,
+   "w_seller": 2.59,
+   "tag": "COGS"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Lenovo",
+   "w_buyer": 1.91,
+   "w_seller": 2.13,
+   "tag": "COGS"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "Intel",
+   "w_buyer": 2.84,
+   "w_seller": 1.47,
+   "tag": "COGS"
+  },
+  {
+   "source": "SK Hynix",
+   "target": "HPE",
+   "w_buyer": 7.16,
+   "w_seller": 0.26,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "ASML",
+   "target": "Micron",
+   "w_buyer": 11.47,
+   "w_seller": 7.11,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Lam",
+   "target": "Micron",
+   "w_buyer": 5.24,
+   "w_seller": 5.28,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMAT",
+   "target": "Micron",
+   "w_buyer": 4.08,
+   "w_seller": 3.16,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "KLA",
+   "target": "Micron",
+   "w_buyer": 3.03,
+   "w_seller": 4.96,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Shin-Etsu",
+   "target": "Micron",
+   "w_buyer": 1.45,
+   "w_seller": 2.03,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "NVIDIA",
+   "w_buyer": 13.62,
+   "w_seller": 17.0,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "Lenovo",
+   "w_buyer": 3.57,
+   "w_seller": 4.93,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "Microsoft",
+   "w_buyer": 2.18,
+   "w_seller": 4.76,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Micron",
+   "target": "Dell",
+   "w_buyer": 2.88,
+   "w_seller": 4.52,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "Apple",
+   "w_buyer": 0.79,
+   "w_seller": 4.32,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "Amazon",
+   "w_buyer": 0.9,
+   "w_seller": 2.59,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Micron",
+   "target": "SMCI",
+   "w_buyer": 1.34,
+   "w_seller": 1.17,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "AMD",
+   "w_buyer": 2.93,
+   "w_seller": 1.01,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "Intel",
+   "w_buyer": 0.96,
+   "w_seller": 0.61,
+   "tag": "COGS"
+  },
+  {
+   "source": "Micron",
+   "target": "HPE",
+   "w_buyer": 0.95,
+   "w_seller": 0.45,
+   "tag": "COGS"
+  },
+  {
+   "source": "TSMC",
+   "target": "NVIDIA",
+   "w_buyer": 37.35,
+   "w_seller": 19.04,
+   "tag": "COGS"
+  },
+  {
+   "source": "Advantest",
+   "target": "NVIDIA",
+   "w_buyer": 24.44,
+   "w_seller": 21.6,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Wistron",
+   "target": "NVIDIA",
+   "w_buyer": 16.58,
+   "w_seller": 15.57,
+   "tag": "COGS"
+  },
+  {
+   "source": "Foxconn",
+   "target": "NVIDIA",
+   "w_buyer": 5.03,
+   "w_seller": 1.6,
+   "tag": "COGS"
+  },
+  {
+   "source": "Ibiden",
+   "target": "NVIDIA",
+   "w_buyer": 1.23,
+   "w_seller": 29.43,
+   "tag": "COGS"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Microsoft",
+   "w_buyer": 50.28,
+   "w_seller": 22.05,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Amazon",
+   "w_buyer": 24.17,
+   "w_seller": 14.02,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "SMCI",
+   "w_buyer": 54.47,
+   "w_seller": 9.5,
+   "tag": "COGS"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Google",
+   "w_buyer": 11.9,
+   "w_seller": 4.87,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Meta",
+   "w_buyer": 13.07,
+   "w_seller": 4.1,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Dell",
+   "w_buyer": 6.48,
+   "w_seller": 2.54,
+   "tag": "COGS"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Wiwynn",
+   "w_buyer": 19.48,
+   "w_seller": 2.5,
+   "tag": "COGS"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Oracle",
+   "w_buyer": 11.18,
+   "w_seller": 1.98,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "CoreWeave",
+   "w_buyer": 22.82,
+   "w_seller": 1.36,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "Lenovo",
+   "w_buyer": 4.02,
+   "w_seller": 1.11,
+   "tag": "COGS"
+  },
+  {
+   "source": "NVIDIA",
+   "target": "HPE",
+   "w_buyer": 5.13,
+   "w_seller": 0.48,
+   "tag": "COGS"
+  },
+  {
+   "source": "Broadcom",
+   "target": "SMCI",
+   "w_buyer": 1.84,
+   "w_seller": 0.46,
+   "tag": "COGS"
+  },
+  {
+   "source": "Intel",
+   "target": "SMCI",
+   "w_buyer": 1.64,
+   "w_seller": 0.55,
+   "tag": "COGS"
+  },
+  {
+   "source": "AMD",
+   "target": "SMCI",
+   "w_buyer": 1.13,
+   "w_seller": 0.77,
+   "tag": "COGS"
+  },
+  {
+   "source": "Intel",
+   "target": "Dell",
+   "w_buyer": 12.16,
+   "w_seller": 19.04,
+   "tag": "COGS"
+  },
+  {
+   "source": "Foxconn",
+   "target": "Dell",
+   "w_buyer": 3.69,
+   "w_seller": 1.24,
+   "tag": "COGS"
+  },
+  {
+   "source": "Kioxia",
+   "target": "Dell",
+   "w_buyer": 1.55,
+   "w_seller": 8.77,
+   "tag": "COGS"
+  },
+  {
+   "source": "AMD",
+   "target": "Dell",
+   "w_buyer": 1.35,
+   "w_seller": 4.26,
+   "tag": "COGS"
+  },
+  {
+   "source": "Broadcom",
+   "target": "Dell",
+   "w_buyer": 1.02,
+   "w_seller": 1.21,
+   "tag": "COGS"
+  },
+  {
+   "source": "Dell",
+   "target": "CoreWeave",
+   "w_buyer": 14.68,
+   "w_seller": 1.21,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "TSMC",
+   "target": "AMD",
+   "w_buyer": 37.35,
+   "w_seller": 5.2,
+   "tag": "COGS"
+  },
+  {
+   "source": "Samsung",
+   "target": "AMD",
+   "w_buyer": 11.39,
+   "w_seller": 0.99,
+   "tag": "COGS"
+  },
+  {
+   "source": "Ibiden",
+   "target": "AMD",
+   "w_buyer": 1.93,
+   "w_seller": 11.02,
+   "tag": "COGS"
+  },
+  {
+   "source": "AMD",
+   "target": "Meta",
+   "w_buyer": 2.55,
+   "w_seller": 5.49,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMD",
+   "target": "Oracle",
+   "w_buyer": 3.24,
+   "w_seller": 3.58,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMD",
+   "target": "Microsoft",
+   "w_buyer": 1.39,
+   "w_seller": 3.09,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMD",
+   "target": "Lenovo",
+   "w_buyer": 1.4,
+   "w_seller": 2.92,
+   "tag": "COGS"
+  },
+  {
+   "source": "AMD",
+   "target": "Google",
+   "w_buyer": 0.7,
+   "w_seller": 2.05,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMD",
+   "target": "Amazon",
+   "w_buyer": 0.49,
+   "w_seller": 2.05,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMD",
+   "target": "Wistron",
+   "w_buyer": 0.7,
+   "w_seller": 1.56,
+   "tag": "COGS"
+  },
+  {
+   "source": "AMD",
+   "target": "Samsung",
+   "w_buyer": 0.3,
+   "w_seller": 1.37,
+   "tag": "COGS"
+  },
+  {
+   "source": "AMD",
+   "target": "Wiwynn",
+   "w_buyer": 1.46,
+   "w_seller": 1.25,
+   "tag": "COGS"
+  },
+  {
+   "source": "AMD",
+   "target": "HPE",
+   "w_buyer": 1.13,
+   "w_seller": 0.95,
+   "tag": "COGS"
+  },
+  {
+   "source": "ASML",
+   "target": "TSMC",
+   "w_buyer": 15.32,
+   "w_seller": 16.56,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "AMAT",
+   "target": "TSMC",
+   "w_buyer": 15.08,
+   "w_seller": 18.0,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Lam",
+   "target": "TSMC",
+   "w_buyer": 8.37,
+   "w_seller": 18.0,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "KLA",
+   "target": "TSMC",
+   "w_buyer": 4.88,
+   "w_seller": 17.0,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Advantest",
+   "target": "TSMC",
+   "w_buyer": 1.98,
+   "w_seller": 11.1,
+   "tag": "CAPEX"
+  },
+  {
+   "source": "Shin-Etsu",
+   "target": "TSMC",
+   "w_buyer": 1.45,
+   "w_seller": 4.38,
+   "tag": "COGS"
+  },
+  {
+   "source": "TSMC",
+   "target": "Apple",
+   "w_buyer": 7.7,
+   "w_seller": 17.01,
+   "tag": "COGS"
+  },
+  {
+   "source": "TSMC",
+   "target": "Broadcom",
+   "w_buyer": 22.95,
+   "w_seller": 4.23,
+   "tag": "COGS"
+  },
+  {
+   "source": "TSMC",
+   "target": "Amazon",
+   "w_buyer": 1.25,
+   "w_seller": 4.09,
+   "tag": "COGS"
+  },
+  {
+   "source": "TSMC",
+   "target": "Intel",
+   "w_buyer": 9.82,
+   "w_seller": 2.54,
+   "tag": "COGS"
+  }
+ ]
+}
