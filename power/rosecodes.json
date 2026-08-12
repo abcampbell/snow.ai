@@ -1,82 +1,197 @@
 {
-  "namespace": "power.ai.primer",
-  "source": "power2026.ai",
-  "author": "Neel Somani",
-  "rosecodes": [
-    {
-      "code": "power.dc.demand.us.gw",
-      "descriptor": "US Data Center Electricity Demand (GW)",
-      "frequency": "annual",
-      "unit": "GW",
-      "source": "Goldman Sachs, IEA, industry estimates"
-    },
-    {
-      "code": "power.dc.consumption.global.twh",
-      "descriptor": "Global Data Center Electricity Consumption (TWh)",
-      "frequency": "annual",
-      "unit": "TWh",
-      "source": "IEA"
-    },
-    {
-      "code": "power.pjm.capacity.clearing.price",
-      "descriptor": "PJM Capacity Auction Clearing Price ($/MW-day UCAP)",
-      "frequency": "annual",
-      "unit": "$/MW-day",
-      "source": "PJM Interconnection"
-    },
-    {
-      "code": "power.interconnection.queue.pending.gw",
-      "descriptor": "US Interconnection Queue Total Pending Capacity (GW)",
-      "frequency": "annual",
-      "unit": "GW",
-      "source": "PJM, LBNL"
-    },
-    {
-      "code": "power.dc.btm.gas.planned.gw",
-      "descriptor": "Behind-the-Meter Gas Generation Planned for Data Centers (GW)",
-      "frequency": "snapshot",
-      "unit": "GW",
-      "source": "Cleanview analysis"
-    },
-    {
-      "code": "power.ai.energy.market.value.usd.bn",
-      "descriptor": "AI in Energy & Power Market Value (USD Billion)",
-      "frequency": "annual",
-      "unit": "USD Billion",
-      "source": "Research and Markets"
-    },
-    {
-      "code": "power.gas.combined.cycle.heat.rate",
-      "descriptor": "Combined Cycle Gas Turbine Reference Heat Rate (MMBtu/MWh)",
-      "frequency": "reference",
-      "unit": "MMBtu/MWh",
-      "source": "Industry standard"
-    },
-    {
-      "code": "power.gas.peaker.heat.rate",
-      "descriptor": "Gas Peaker Reference Heat Rate (MMBtu/MWh)",
-      "frequency": "reference",
-      "unit": "MMBtu/MWh",
-      "source": "Industry standard"
-    }
-  ],
-  "related_existing_rosecodes": {
-    "note": "Existing rosecodes in this codebase that connect to the power thesis",
-    "codes": [
-      "gold.vol.skew",
-      "dollar",
-      "usa.real.yield.2y.ilb"
+  "notebook_code": "power.gas.20260810",
+  "notebook_url": "https://rose.ai/dashboard/power.gas.20260810",
+  "push_user": "acampbell",
+  "push_pass": "bananaman",
+
+  "rosecodes": {
+    "primer_and_reference": [
+      {
+        "code": "power.gas.20260810.map",
+        "type": "notebook_map",
+        "descriptor": "Power 2026 (Somani) — full primer notebook map with chapter structure, key data, and cross-references to energy.pipelines and conditional-machine",
+        "tags": ["power", "gas", "primer", "data_center", "ai"]
+      }
     ],
-    "energy_pipelines_metrics": [
-      "JKM-HH spread (Asia gas premium over Henry Hub)",
-      "TTF-HH spread (Europe gas premium over Henry Hub)",
-      "Brent beta (oil correlation)"
+
+    "market_structure": [
+      {
+        "code": "power.iso.pjm.capacity.clearing.price",
+        "type": "time_series",
+        "descriptor": "PJM Capacity Auction RTO Clearing Price ($/MW-day UCAP)",
+        "frequency": "annual",
+        "unit": "$/MW-day",
+        "values": {"2025": 269.92, "2026": 329.17},
+        "source": "PJM Interconnection"
+      },
+      {
+        "code": "power.iso.pjm.capacity.clearing.bge",
+        "type": "time_series",
+        "descriptor": "PJM Capacity Auction BGE Zone Clearing Price ($/MW-day UCAP)",
+        "frequency": "annual",
+        "unit": "$/MW-day",
+        "values": {"2026": 466.35},
+        "source": "PJM Interconnection"
+      },
+      {
+        "code": "power.iso.pjm.capacity.clearing.dominion",
+        "type": "time_series",
+        "descriptor": "PJM Capacity Auction Dominion Zone Clearing Price ($/MW-day UCAP)",
+        "frequency": "annual",
+        "unit": "$/MW-day",
+        "values": {"2026": 444.26},
+        "source": "PJM Interconnection"
+      },
+      {
+        "code": "power.iso.pjm.capacity.procured.mw",
+        "type": "time_series",
+        "descriptor": "PJM Capacity Auction Total Procured (MW)",
+        "frequency": "annual",
+        "unit": "MW",
+        "values": {"2026": 134311},
+        "source": "PJM Interconnection"
+      },
+      {
+        "code": "power.iso.ercot.price.cap",
+        "type": "reference",
+        "descriptor": "ERCOT System-Wide Offer Cap ($/MWh)",
+        "value": 5000,
+        "unit": "$/MWh",
+        "note": "Energy-only market; VOLL × P(lost load) adder"
+      },
+      {
+        "code": "power.iso.alberta.price.cap",
+        "type": "reference",
+        "descriptor": "Alberta Pool Price Cap (CAD/MWh)",
+        "value": 1000,
+        "unit": "CAD/MWh",
+        "note": "Energy-only; scarcity rent; slated to increase"
+      }
     ],
-    "conditional_machine_assets": [
-      "oil_wti (26.2% ann vol)",
-      "natgas (53.8% ann vol)",
-      "gold (16.2% ann vol)",
-      "copper (20.6% ann vol)"
+
+    "plant_economics": [
+      {
+        "code": "power.heat.rate.ccgt.reference",
+        "type": "reference",
+        "descriptor": "Combined Cycle Gas Turbine Reference Heat Rate (MMBtu/MWh)",
+        "value": 7,
+        "unit": "MMBtu/MWh",
+        "note": "Standard 7-HR spark spread reference"
+      },
+      {
+        "code": "power.heat.rate.ccgt.efficient",
+        "type": "reference",
+        "descriptor": "Efficient CCGT Heat Rate — Homer City target (MMBtu/MWh)",
+        "value": 6,
+        "unit": "MMBtu/MWh"
+      },
+      {
+        "code": "power.heat.rate.coal.reference",
+        "type": "reference",
+        "descriptor": "Coal Plant Reference Heat Rate (MMBtu/MWh)",
+        "value": 10,
+        "unit": "MMBtu/MWh",
+        "note": "Homer City old coal units; uncompetitive vs 6-7 HR gas"
+      },
+      {
+        "code": "power.homer.city.capacity.gw",
+        "type": "reference",
+        "descriptor": "Homer City Redevelopment Planned Gas Capacity (GW)",
+        "value": 4.4,
+        "unit": "GW",
+        "note": "Was 2 GW coal; EQT gas partner; PA DEP permit Nov 2025; $10B construction"
+      }
+    ],
+
+    "data_center_demand": [
+      {
+        "code": "power.dc.demand.us.gw",
+        "type": "time_series",
+        "descriptor": "US Data Center Electricity Demand (GW, annual estimates)",
+        "frequency": "annual",
+        "unit": "GW",
+        "values": {
+          "2023": 23,
+          "2024": 31,
+          "2025": 31,
+          "2026": 42,
+          "2027": 66,
+          "2030": 134
+        },
+        "source": "Goldman Sachs, industry estimates",
+        "note": "2027+ are projections; AI racks 50-100 kW vs 5-10 kW traditional"
+      },
+      {
+        "code": "power.dc.share.us.pct",
+        "type": "reference",
+        "descriptor": "Data Center Share of US Power Consumption (%)",
+        "value": 5,
+        "unit": "%",
+        "source": "DOE",
+        "note": "Doubling every ~2 years"
+      }
+    ],
+
+    "deals": [
+      {
+        "code": "power.deal.anthropic.terawulf.mwh",
+        "type": "reference",
+        "descriptor": "Anthropic-TeraWulf PPA Implied Price ($/MWh, no GPUs, includes building+cooling)",
+        "value": 271,
+        "unit": "$/MWh",
+        "capacity_mw": 400,
+        "duration_years": 20,
+        "total_value_usd_bn": 19,
+        "start": "H2 2027"
+      },
+      {
+        "code": "power.deal.spacex.reflection.mwh",
+        "type": "reference",
+        "descriptor": "SpaceX-Reflection Implied Price ($/MWh, with GPUs, 90-day out)",
+        "value": 5000,
+        "unit": "$/MWh",
+        "note": "High optionality; includes GPUs; difficult to underwrite against"
+      }
+    ],
+
+    "interconnection": [
+      {
+        "code": "power.interconnection.queue.gw",
+        "type": "time_series",
+        "descriptor": "US Interconnection Queue Total Pending Capacity (GW)",
+        "frequency": "snapshot",
+        "unit": "GW",
+        "values": {"2026": 2600},
+        "source": "PJM, LBNL",
+        "note": "5+ year wait times; 16 GW added Q1 2026 alone"
+      },
+      {
+        "code": "power.dc.btm.gas.planned.gw",
+        "type": "reference",
+        "descriptor": "Behind-the-Meter Gas Generation Planned for Data Centers (GW)",
+        "value": 56,
+        "unit": "GW",
+        "source": "Cleanview",
+        "note": "46 DC projects; 90% announced in 2025; bypassing grid queue"
+      }
     ]
+  },
+
+  "related_existing_rosecodes": {
+    "energy_pipelines": {
+      "spreads_tracked": ["JKM-HH", "TTF-HH", "JKM-TTF"],
+      "gas_prices": ["hh_usd_mmbtu", "jkm_usd_mmbtu", "ttf_usd_mmbtu"],
+      "connection": "HH gas price × heat rate = gas plant variable cost → sets power price via merit order"
+    },
+    "conditional_machine": {
+      "natgas_vol_pct": 53.8,
+      "connection": "Gas vol feeds HRCO valuation; gas plant is long a call option on spark spread"
+    },
+    "portfolio": {
+      "sleeve": "Long Gas/Power",
+      "tickers": ["BE", "ETN", "SMR", "VST"],
+      "delta_pct": 6.6,
+      "connection": "Equity proxies for capacity scarcity / interconnection bottleneck / DC demand pull"
+    }
   }
 }

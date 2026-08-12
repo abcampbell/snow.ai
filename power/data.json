@@ -1,164 +1,245 @@
 {
+  "notebook_code": "power.gas.20260810",
   "source": {
     "url": "https://power2026.ai/",
     "author": "Neel Somani",
+    "background": "Former Citadel quantitative researcher, power & gas",
     "title": "Power 2026 — Electricity Pricing in the Age of AI",
-    "author_background": "Former Citadel quantitative researcher covering power and gas markets",
-    "format": "11-chapter primer, 2 parts",
-    "retrieved": "2026-08-12",
-    "retrieval_method": "web_search_synthesis",
-    "note": "Direct fetch blocked by egress policy; content reconstructed from press coverage, book listings, and author posts"
+    "editorial": "Tina He, Samuel Spitz",
+    "chapters": 11,
+    "parts": 2,
+    "retrieved": "2026-08-12"
   },
-  "primer_structure": {
+  "structure": {
     "part_1": {
-      "title": "Power Plant Fundamentals & Commodity Frameworks",
-      "topics": [
-        "How AI demand is exploding — data center power doubling every ~2 years",
-        "Power plant types: natural gas (peaker, combined cycle), renewables, nuclear, coal",
-        "Merit order dispatch — generators bid marginal cost, last unit needed sets clearing price",
-        "Heat rates — efficiency measure (MMBtu/MWh); lower is more efficient",
-        "Building a power plant: site selection, permitting, interconnection, fuel access",
-        "Behind-the-meter (BTM) generation vs front-of-meter grid connection",
-        "Regional market structure: ISOs/RTOs (ERCOT, PJM, CAISO, MISO, SPP, NYISO, ISO-NE)"
+      "title": "All About Power Plants",
+      "chapters": [
+        {"ch": 1, "title": "Preface: Motivation", "key": "AI demand exploding; power is the real constraint; DC ~5% of US consumption; demand doubling every 2 years"},
+        {"ch": 2, "title": "Fundamentals of Commodities Pricing", "key": "System balance equation; marginal pricing; ISOs; power is special (grid frequency, ISO dispatch)"},
+        {"ch": 3, "title": "The Power Plant", "key": "EIA-860; merit order; heat rates; SCGT vs CCGT vs peaker; offer curves; startup costs"},
+        {"ch": 4, "title": "To Build A Power Plant", "key": "Scoping, site selection, financing, construction, operation; BTM compute; PPAs; HRCOs; EPC; turbine backlog"},
+        {"ch": 5, "title": "Case Study: Homer City", "key": "2 GW coal → 4.4 GW gas; PJM; $10B cost; ~6 heat rate; EQT partner; PA DEP air permit Nov 2025; 1000 workers"},
+        {"ch": 6, "title": "Meeting the Growing Demand", "key": "Gov responses; separate grids; propensity to buy; Anthropic/TeraWulf $19B 400MW 20yr; SpaceX/Reflection ~$5000/MWh"}
       ]
     },
     "part_2": {
-      "title": "Trading Methodologies & Practical Pricing Models",
-      "topics": [
-        "Locational Marginal Pricing (LMP) — price at each grid node = energy + congestion + losses",
-        "Forward contracts and hedging — locking in future electricity prices",
-        "Spark spread — electricity price minus fuel cost (gas price × heat rate)",
-        "Dark spread (coal), green spread (renewables), quark spread (nuclear)",
-        "Heat Rate Call Option — right to convert fuel to electricity at market prices",
-        "Capacity markets — separate payment for being available (PJM, ISO-NE) vs energy-only (ERCOT)",
-        "Congestion and transmission constraints — how location drives price divergence"
+      "title": "How To Trade Power",
+      "chapters": [
+        {"ch": 7, "title": "Power Markets in the United States", "key": "PJM (most liquid, VA data center capital); MISO (coal retirements, wind); CAISO (NP-15/SP-15, renewables, no coal); ERCOT (isolated, energy-only, $9000 spikes, negative wind); SPP; NYISO; ISO-NE"},
+        {"ch": 8, "title": "Case Study: Alberta", "key": "Energy-only market; scarcity rent; C$1000 cap; duck curve; batteries flatten curve; AECO gas hub; aggressive restructuring"},
+        {"ch": 9, "title": "The Production Cost Model", "key": "Minimize total system cost; LMP = Lagrange multiplier of balance constraint; DA vs RT markets; ancillary services; unit commitment vs economic dispatch; binding constraints"},
+        {"ch": 10, "title": "Practical Approximations", "key": "Continuous relaxation; exogenous flows; predictable battery dynamics; merit order dispatch; linearize losses"},
+        {"ch": 11, "title": "Types of Power Trades", "key": "DA/RT clearing; forwards/hedging; congestion/FTRs; spark spread; dark spread; effective heat rate; time spreads"}
+      ]
+    }
+  },
+  "key_data": {
+    "heat_rates": {
+      "ccgt_efficient": {"value": 6, "unit": "MMBtu/MWh", "context": "Homer City redevelopment target, very good"},
+      "ccgt_typical": {"value": 7, "unit": "MMBtu/MWh", "context": "Standard combined cycle, most common spark spread reference"},
+      "scgt": {"value": "8-9", "unit": "MMBtu/MWh", "context": "Simple cycle gas turbine, Brayton cycle only"},
+      "coal_homer_city": {"value": 10, "unit": "MMBtu/MWh", "context": "Homer City's old coal units, uncompetitive vs 6-7 HR gas"},
+      "peaker": {"value": "10+", "unit": "MMBtu/MWh", "context": "Inefficient units including oil/diesel, dispatched last"}
+    },
+    "plant_economics": {
+      "homer_city": {
+        "old_capacity_gw": 2.0,
+        "new_capacity_gw": 4.4,
+        "construction_cost_usd_bn": 10,
+        "old_fuel": "coal",
+        "new_fuel": "natural_gas",
+        "old_heat_rate": 10,
+        "new_heat_rate": 6,
+        "gas_partner": "EQT Corporation",
+        "location": "Pennsylvania",
+        "market": "PJM",
+        "permit": "PA DEP air quality approved Nov 2025",
+        "workers": 1000
+      },
+      "revenue_example": {
+        "capacity_mw": 100,
+        "hours": 16,
+        "price_mwh": 60,
+        "daily_gross_revenue_usd": 96000,
+        "note": "100 MW × 16 hrs × $60/MWh"
+      },
+      "financing_benchmark": {
+        "spread_above_sofr_pct": 2.25,
+        "context": "Established developer with hyperscaler tenant"
+      }
+    },
+    "deals": {
+      "anthropic_terawulf": {
+        "total_value_usd_bn": 19,
+        "capacity_mw": 400,
+        "duration_years": 20,
+        "start": "H2 2027",
+        "implied_price_mwh": 271,
+        "includes_gpus": false,
+        "includes_building_cooling": true
+      },
+      "spacex_reflection": {
+        "implied_price_mwh": 5000,
+        "includes_gpus": true,
+        "optionality": "90-day out for either party",
+        "note": "High optionality makes underwriting difficult"
+      }
+    },
+    "market_structures": {
+      "capacity_markets": {
+        "markets": ["PJM", "ISO-NE", "CAISO (resource adequacy)"],
+        "mechanism": "Periodic payment for generator existence (insurance against scarcity)",
+        "pjm": "Capacity market operated by ISO",
+        "caiso": "Resource adequacy requirements — utilities negotiate with generators",
+        "isone": "Forward capacity market"
+      },
+      "energy_only": {
+        "markets": ["ERCOT", "Alberta"],
+        "mechanism": "No capacity payments; scarcity pricing provides investment signal",
+        "ercot_cap_mwh": 5000,
+        "ercot_mechanism": "Price adder = VOLL × probability of lost load",
+        "alberta_cap_cad_mwh": 1000,
+        "alberta_mechanism": "Scarcity rent above marginal cost",
+        "missing_money": "Without scarcity pricing, marginal units earn zero profit and shut down"
+      },
+      "no_organized_market": {
+        "regions": ["Georgia", "Florida", "Southeast US", "Pacific Northwest"],
+        "mechanism": "Regulated utilities with fixed cost-plus margin"
+      }
+    },
+    "iso_profiles": {
+      "pjm": {
+        "full_name": "Pennsylvania-Jersey-Maryland",
+        "coverage": "PA, NJ, MD, VA, WV, OH, parts of IL, KY, MI, IN",
+        "key_feature": "Most liquid US power market; Virginia is DC capital of US",
+        "market_type": "capacity_market",
+        "data_center_hub": "Virginia"
+      },
+      "caiso": {
+        "full_name": "California Independent System Operator",
+        "zones": ["NP-15", "SP-15", "ZP-26"],
+        "key_transmission": "Path 15 (connects NP-15 and SP-15)",
+        "key_feature": "Renewables-forward, no coal; solar + wind + nuclear + gas only",
+        "imports": "NP-15 imports from Pacific Northwest (hydro)",
+        "nuclear": "Diablo Canyon in ZP-26",
+        "btm_solar": "Significant behind-the-meter residential solar",
+        "first_dc_ban": "Monterey Park ballot measure"
+      },
+      "ercot": {
+        "full_name": "Electric Reliability Council of Texas",
+        "key_feature": "Isolated grid (third US interconnection); energy-only; legendary volatility",
+        "grid": "Separate from Western and Eastern Interconnections; ~1 GW HVDC ties",
+        "wind": "North and West Texas; drives price negative (to -$20/MWh); PTC subsidies keep turbines running",
+        "price_cap_mwh": 5000,
+        "regulation": "Not under FERC (due to grid isolation)",
+        "dc_bitcoin": "Negative prices attracted Bitcoin mines, now data centers"
+      },
+      "miso": {
+        "full_name": "Midcontinent Independent System Operator",
+        "key_feature": "Coal retirements → renewables; large wind; borders PJM with inter-regional flows",
+        "coal_note": "EIA May 2026: MISO coal units more profitable than gas recently",
+        "dc_growth": "Indiana, Illinois, Michigan popular for new DCs"
+      },
+      "spp": {"full_name": "Southwest Power Pool", "key_feature": "Known for wind"},
+      "nyiso": {"full_name": "New York ISO", "key_feature": "Manhattan demand sink; upstate nuclear can't reach it (transmission constraint)"},
+      "isone": {"full_name": "ISO New England", "key_feature": "Winter gas scarcity forces oil dispatch"}
+    },
+    "pricing_mechanics": {
+      "lmp": {
+        "definition": "Locational Marginal Price = Lagrange multiplier of each node's balance constraint",
+        "decomposition": "Energy + Congestion + Losses",
+        "computation": "Solved via Gurobi/CPLEX optimization of production cost model"
+      },
+      "spark_spread": {
+        "formula": "Power Price - (Heat Rate × Natural Gas Price)",
+        "example": "7 heat rate spark spread = Power - 7 × Gas",
+        "usage": "Gas plant hedges by selling spark spread; trader buys if bullish on gas plant profitability"
+      },
+      "dark_spread": "Same as spark spread but for coal plants",
+      "effective_heat_rate": "Implied HR where gas plant earns $0 profit at current gas and power prices",
+      "hrco": {
+        "name": "Heat Rate Call Option",
+        "definition": "Financial instrument mimicking plant economics; buyer gets upside, seller gets fixed payments",
+        "usage": "Plant owner sells HRCO to lock in steady cash flows for debt underwriting"
+      },
+      "da_vs_rt": {
+        "day_ahead": "Computed day before delivery; most common market to trade; financial settlement",
+        "real_time": "Recomputed every 5 minutes on delivery day; weather-driven",
+        "virtual_trading": "Arbitrages DA vs RT price differences"
+      },
+      "ftr": {
+        "name": "Financial Transmission Rights",
+        "definition": "Payoff depends on congestion between two nodes",
+        "usage": "Basis trade — buy price at one location, sell at another"
+      }
+    },
+    "system_balance": {
+      "general": "Supply = Demand + Net Exports + Change in Storage",
+      "power": "Generation = Power Consumption + Net Power Exports + Change in Storage + Losses",
+      "constraints": [
+        "Transmission line ratings (max power flow)",
+        "Storage bounds (can't draw more than stored; max capacity)",
+        "Generator capacity (0 to max MW)",
+        "Grid frequency stability (60 Hz)"
       ]
     },
-    "case_studies": [
-      {
-        "name": "Texas Negative Prices",
-        "region": "ERCOT",
-        "description": "Negative price hours driven by wind overgeneration and inflexible baseload; energy-only market without capacity payments amplifies price volatility"
-      },
-      {
-        "name": "Homer City Redevelopment",
-        "region": "PJM",
-        "description": "Retired coal plant (heat rate ~10) being redeveloped as natural gas facility; illustrates economics of repowering at existing grid interconnection points"
-      },
-      {
-        "name": "California Evening Price Spike",
-        "region": "CAISO",
-        "description": "Rising evening prices as solar drops off and gas peakers ramp up — the duck curve in action; NP-15 vs SP-15 split via Path 15 transmission"
-      }
-    ]
-  },
-  "key_concepts": {
-    "marginal_pricing": "In competitive electricity markets, generators submit cost-based offers. The last generator needed to meet demand sets the market-clearing price (system marginal price). All dispatched generators receive this price.",
-    "lmp": "Locational Marginal Price = Energy component + Congestion component + Loss component. The Lagrange multiplier of each location's balance constraint equals the marginal cost of an additional MWh at that node.",
-    "spark_spread": "Spark Spread = Electricity Price - (Natural Gas Price × Heat Rate). A '7 heat-rate spark spread' assumes a combined-cycle gas turbine with 7.0 MMBtu/MWh efficiency.",
-    "heat_rate_call": "A Heat Rate Call Option represents the right, but not the obligation, to convert fuel into electricity and sell at market prices. Gas plants are effectively long heat-rate call options.",
-    "capacity_market": "PJM and ISO-NE run forward capacity auctions paying generators for availability ($/MW-day). ERCOT is energy-only — no capacity payments, prices spike to VOLL ($5,000/MWh cap) during scarcity.",
-    "btm_generation": "Behind-the-meter: power generated and consumed on-site, bypassing the grid. Simplifies interconnection but requires fuel access (gas pipeline spur), cooling, and on-site space.",
-    "merit_order": "Generators dispatched lowest marginal cost first: nuclear/renewables (near-zero) → coal → combined-cycle gas → gas peakers. Last unit dispatched sets the price."
-  },
-  "market_data": {
+    "duck_curve": {
+      "definition": "Net demand (demand minus renewables) very low daytime, high evening",
+      "cause": "High solar/wind penetration depresses daytime prices to ~$0",
+      "consequence": "Less efficient SCGTs needed in evening (cheap to start/stop); widens day-evening spread",
+      "observed_in": ["CAISO", "Alberta"],
+      "solution": "Batteries buy cheap daytime power, discharge in evening — flattening the curve"
+    },
     "data_center_demand": {
-      "unit": "GW",
-      "series": {
-        "2023": 23,
-        "2024": 31,
-        "2025": 31,
-        "2026": 42,
-        "2027_projected": 66,
-        "2030_projected": 134
-      },
-      "source": "Goldman Sachs, various industry estimates",
-      "note": "US data center electricity demand; AI racks require 50-100 kW vs 5-10 kW for traditional racks"
+      "current_share_pct": 5,
+      "doubling_period_years": 2,
+      "rack_power_kw": {"traditional": "5-10", "ai": "50-100"},
+      "note": "Would outpace total US generation by mid-2030s at current doubling rate"
     },
-    "global_dc_consumption_twh": {
-      "2025": 447,
-      "2026": 565,
-      "yoy_growth_pct": 26.4,
-      "source": "IEA"
+    "grid_topology": {
+      "interconnections": ["Western Interconnection", "Eastern Interconnection", "Texas (ERCOT)"],
+      "ties": "Limited HVDC between interconnections (~1 GW ERCOT-rest)",
+      "note": "HVDC can connect grids at different frequencies but expensive to install"
     },
-    "pjm_capacity_auction": {
-      "delivery_year": "2026/2027",
-      "rto_clearing_price_mw_day": 329.17,
-      "bge_zone_mw_day": 466.35,
-      "dominion_zone_mw_day": 444.26,
-      "prior_year_rto_mw_day": 269.92,
-      "total_procured_mw": 134311,
-      "unit": "$/MW-day (UCAP)",
-      "source": "PJM Interconnection"
-    },
-    "interconnection_queue": {
-      "total_pending_gw": 2600,
-      "wait_time_years": "5+",
-      "q1_2026_additions_gw": 16,
-      "gas_pipeline_to_2030_gw": 64,
-      "btm_gas_planned_gw": 56,
-      "btm_projects_count": 46,
-      "source": "Various (Cleanview, PJM, industry reports)"
-    },
-    "ai_energy_market": {
-      "2026_value_usd_bn": 7.95,
-      "2030_projected_usd_bn": 18.31,
-      "cagr_pct": 23.2,
-      "source": "Research and Markets"
-    },
-    "natural_gas_context": {
-      "henry_hub_recent_range_usd_mmbtu": "2.00-3.50",
-      "note": "Gas is the marginal fuel in most US power markets; gas price × heat rate = variable cost of gas-fired generation",
-      "combined_cycle_heat_rate": 6.5,
-      "peaker_heat_rate": 10.0,
-      "coal_plant_heat_rate": 10.0,
-      "units": "MMBtu/MWh"
-    },
-    "nuclear_ppa_pipeline": [
-      {"entity": "Microsoft", "project": "Three Mile Island restart + Helion fusion", "capacity_note": "837 MW (TMI Unit 1)"},
-      {"entity": "Amazon", "project": "Susquehanna + X-energy SMRs", "capacity_gw": 1.92},
-      {"entity": "Google", "project": "Kairos Power SMR", "capacity_note": "Multiple SMR units"},
-      {"entity": "Meta", "project": "Vistra, Oklo, TerraPower", "capacity_gw": 6.6}
-    ],
-    "ercot_characteristics": {
-      "market_type": "energy-only",
-      "price_cap_mwh": 5000,
-      "negative_price_hours": "Driven by wind overgeneration + inflexible baseload",
-      "key_feature": "No capacity payments — scarcity pricing provides investment signal"
-    },
-    "caiso_characteristics": {
-      "zones": ["NP-15", "SP-15"],
-      "interconnection": "Path 15 transmission line",
-      "key_feature": "Duck curve — solar depression midday, evening ramp requires gas peakers",
-      "evening_price_pattern": "Rising prices as solar drops and gas peakers dispatch"
+    "production_cost_model": {
+      "objective": "Minimize total system cost",
+      "constraints": ["Balance at each node", "Transmission ratings", "Generator capacity bounds", "Reliability reserves"],
+      "output": "Generation per unit + LMP at each node",
+      "solver": "Gurobi or CPLEX (mixed integer for unit commitment)",
+      "approximations": [
+        "Continuous relaxation (drop binary on/off)",
+        "Exogenous interchange (fix flows)",
+        "Predictable battery dynamics (charge day, discharge evening)",
+        "Merit order dispatch (sort by marginal cost)",
+        "Linearize or ignore losses"
+      ],
+      "risks": "Flow modeling errors; startup cost omission; no reliability constraints; demand model errors; BTM solar growth; new DC/BTC demand"
     }
   },
   "comparison_to_prior_work": {
-    "energy_pipelines_gas_chokepoint": {
-      "path": "energy.pipelines/index.html",
-      "focus": "LNG equity screen — US gas, LNG export terminals, spread beta analysis",
-      "key_metrics": ["JKM-HH spread beta", "TTF-HH spread beta", "Brent orthogonality"],
-      "overlap": "Natural gas pricing fundamentals, international gas spreads, Henry Hub as reference price",
-      "power2026_extension": "Power 2026 extends from gas commodity pricing into how gas prices flow through to electricity pricing via heat rates and spark spreads. The gas chokepoint thesis (international gas spread scarcity) is upstream of the power market thesis (gas as marginal fuel setting electricity prices)."
+    "energy_pipelines": {
+      "path": "energy.pipelines/",
+      "what": "Gas Chokepoint Dashboard — 36 LNG/gas equities, JKM-HH/TTF-HH spread betas",
+      "overlap": "Henry Hub as reference gas price; international gas spread thesis",
+      "extension": "Power 2026 shows how HH gas price flows through to power price via heat rate × gas price = variable cost of gas generation. The gas chokepoint thesis is UPSTREAM of the power thesis."
     },
-    "conditional_machine_natgas_vol": {
-      "path": "conditional-machine-20260703/linkage.html",
-      "focus": "Cross-asset volatility and covariance forecasting",
-      "key_data": {"natgas_annualized_vol_pct": 53.8, "oil_wti_vol_pct": 26.2, "gold_vol_pct": 16.2},
-      "overlap": "Natural gas volatility regime is critical context for power market pricing — gas vol directly feeds through to electricity price vol via spark spread mechanics",
-      "power2026_extension": "Power 2026's heat-rate-call-option framework explains WHY natgas vol matters for power: a gas plant is long a call option on the spark spread, so higher gas vol = higher option value = different investment economics."
+    "conditional_machine": {
+      "path": "conditional-machine-20260703/",
+      "what": "BRIDGE v0.003 — natgas 53.8% annualized vol, 8-asset commodity universe",
+      "overlap": "Natural gas volatility regime",
+      "extension": "Gas plant is long a heat rate call option. Natgas vol directly impacts HRCO value and plant investment economics. The vol model feeds plant valuation."
     },
-    "commodity_rv": {
-      "path": "commodity.rv.secure/index.html",
-      "focus": "Commodity relative value analysis",
-      "overlap": "Energy commodity cross-relationships",
-      "power2026_extension": "Adds the electricity layer on top of commodity RV — electricity as a derivative commodity priced off gas/coal/renewables through merit-order dispatch."
+    "portfolio_sleeve": {
+      "path": "all.beta.20260428/",
+      "what": "Long Gas/Power sleeve: BE, ETN, SMR, VST (+6.6% delta, ~6% of portfolio variance)",
+      "overlap": "Power equity proxies",
+      "extension": "Power 2026 provides the fundamental WHY: capacity scarcity, interconnection queue, $329/MW-day PJM clearing, ERCOT energy-only volatility. These equities are plays on the primer's thesis."
     },
-    "cascade_system": {
-      "path": "cascade/index.html",
-      "focus": "Market cascade / contagion analysis",
-      "overlap": "Energy sector cascade effects",
-      "power2026_extension": "Data center demand shock is a structural demand cascade — AI capex → GPU demand → power demand → gas demand → infrastructure capex. Power 2026 maps the bottleneck at the power/grid layer."
-    }
+    "gap_filled": [
+      "No wholesale power market data existed — now have ISO structure, LMP mechanics, capacity auction data",
+      "No spark spread or heat rate framework — now have the gas→power price transmission mechanism",
+      "No interconnection/BTM data — now have queue analysis, Homer City case study, BTM compute framework",
+      "No production cost model — now have optimization framework, DA/RT markets, FTRs"
+    ]
   }
 }
