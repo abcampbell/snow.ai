@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power 2026 — AI Power Market Primer</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #181b22;
+      --panel-2: #20242d;
+      --text: #edf0f4;
+      --muted: #aab2bf;
+      --line: #343a46;
+      --green: #64d2a3;
+      --amber: #ffc857;
+      --red: #ff6b6b;
+      --blue: #61a8ff;
+      --violet: #b18cff;
+      --cyan: #5ed6d1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 14px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 64px; }
+    header {
+      padding: 32px 0 20px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+    h1 { margin: 0; font-size: 26px; font-weight: 720; }
+    .sub { color: var(--muted); margin-top: 6px; font-size: 13px; }
+    .sub a { color: var(--blue); text-decoration: none; }
+    h2 {
+      font-size: 17px; font-weight: 700;
+      margin: 36px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    h3 { font-size: 14px; font-weight: 650; margin: 20px 0 8px; color: var(--amber); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .metric .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .metric .value { font-size: 28px; font-weight: 720; margin-top: 6px; }
+    .metric small { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    section h3:first-child { margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+    th, td { padding: 7px 10px; border-bottom: 1px solid #272c36; text-align: left; }
+    th { color: var(--muted); font-weight: 650; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+    td:nth-child(n+2), th:nth-child(n+2) { text-align: right; }
+    .pill {
+      display: inline-block; padding: 2px 8px; border-radius: 999px;
+      font-size: 11px; font-weight: 700;
+    }
+    .pill-green { background: #1a3d2e; color: var(--green); }
+    .pill-amber { background: #3d3220; color: var(--amber); }
+    .pill-blue { background: #1a2d42; color: var(--blue); }
+    .pill-violet { background: #2d1f42; color: var(--violet); }
+    .pill-red { background: #3d1a1a; color: var(--red); }
+    .bar-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+    .bar-label { width: 140px; font-size: 12px; color: var(--muted); text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 22px; background: var(--panel-2); border-radius: 4px; overflow: hidden; position: relative; }
+    .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 11px; font-weight: 700; min-width: 32px; }
+    .linkage { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .linkage b { color: var(--text); }
+    .linkage .arrow { color: var(--amber); font-weight: 700; }
+    code { background: var(--panel-2); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+    .tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; margin-left: 4px; }
+    .overlap { background: #1a3d2e; color: var(--green); }
+    .new-data { background: #1a2d42; color: var(--blue); }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Power 2026 — AI Power Market Primer</h1>
+    <div class="sub">
+      Source: <a href="https://power2026.ai/">power2026.ai</a> by Neel Somani (former Citadel quant, power &amp; gas) &middot;
+      Structured for Rose.ai under <code>power.*</code> namespace &middot; 2026-08-12
+    </div>
+  </header>
+
+  <h2>Headline Metrics</h2>
+  <div class="metrics">
+    <div class="metric">
+      <div class="label">DC Demand 2026</div>
+      <div class="value" style="color:var(--amber)">42 <span style="font-size:14px">GW</span></div>
+      <small>Up from 23 GW in 2023 (+83%)</small>
+    </div>
+    <div class="metric">
+      <div class="label">DC Demand 2030E</div>
+      <div class="value" style="color:var(--red)">134 <span style="font-size:14px">GW</span></div>
+      <small>Projected — would need ~6× current capacity</small>
+    </div>
+    <div class="metric">
+      <div class="label">PJM Capacity Price</div>
+      <div class="value" style="color:var(--green)">$329</div>
+      <small>/MW-day (2026/27 auction, +22% YoY)</small>
+    </div>
+    <div class="metric">
+      <div class="label">Queue Backlog</div>
+      <div class="value" style="color:var(--violet)">2,600 <span style="font-size:14px">GW</span></div>
+      <small>Interconnection queue, 5+ yr wait</small>
+    </div>
+    <div class="metric">
+      <div class="label">BTM Gas Planned</div>
+      <div class="value" style="color:var(--blue)">56 <span style="font-size:14px">GW</span></div>
+      <small>46 DC projects bypassing the grid</small>
+    </div>
+    <div class="metric">
+      <div class="label">AI Energy Mkt</div>
+      <div class="value" style="color:var(--cyan)">$8.0B</div>
+      <small>→ $18.3B by 2030 (23% CAGR)</small>
+    </div>
+  </div>
+
+  <h2>Data Center Power Demand Trajectory</h2>
+  <section>
+    <div id="demandBars">
+      <div class="bar-row">
+        <div class="bar-label">2023</div>
+        <div class="bar-track"><div class="bar-fill" style="width:17%;background:var(--blue)">23 GW</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2024</div>
+        <div class="bar-track"><div class="bar-fill" style="width:23%;background:var(--blue)">31 GW</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2025</div>
+        <div class="bar-track"><div class="bar-fill" style="width:23%;background:var(--blue)">31 GW</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2026</div>
+        <div class="bar-track"><div class="bar-fill" style="width:31%;background:var(--amber)">42 GW</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2027E</div>
+        <div class="bar-track"><div class="bar-fill" style="width:49%;background:var(--amber)">66 GW</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2030E</div>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--red)">134 GW</div></div>
+      </div>
+    </div>
+    <small style="color:var(--muted);display:block;margin-top:10px">AI racks: 50–100 kW each vs 5–10 kW traditional. Demand doubling every ~2 years.</small>
+  </section>
+
+  <h2>Power 2026 Primer Structure</h2>
+  <div class="grid2">
+    <section>
+      <h3>Part 1 — Fundamentals</h3>
+      <table>
+        <tr><td>Power plant types</td><td><span class="pill pill-green">gas</span> <span class="pill pill-amber">coal</span> <span class="pill pill-blue">nuclear</span> <span class="pill pill-violet">renewables</span></td></tr>
+        <tr><td>Merit order dispatch</td><td>Lowest marginal cost first</td></tr>
+        <tr><td>Heat rates</td><td>CC: 6.5 · Peaker: 10.0 MMBtu/MWh</td></tr>
+        <tr><td>Building a plant</td><td>Site → permit → interconnect → fuel</td></tr>
+        <tr><td>BTM generation</td><td>On-site, bypass grid queue</td></tr>
+        <tr><td>ISO/RTO markets</td><td>ERCOT · PJM · CAISO · MISO · SPP · NYISO</td></tr>
+      </table>
+    </section>
+    <section>
+      <h3>Part 2 — Trading & Pricing</h3>
+      <table>
+        <tr><td>LMP</td><td>Energy + Congestion + Losses</td></tr>
+        <tr><td>Spark spread</td><td>Elec price − (Gas × Heat rate)</td></tr>
+        <tr><td>Dark spread</td><td>Coal equivalent</td></tr>
+        <tr><td>Heat rate call</td><td>Option on fuel→electricity conversion</td></tr>
+        <tr><td>Capacity markets</td><td>PJM: $329/MW-day · ERCOT: energy-only</td></tr>
+        <tr><td>Forward contracts</td><td>Lock in prices, manage basis risk</td></tr>
+      </table>
+    </section>
+  </div>
+
+  <h2>Case Studies</h2>
+  <div class="grid2">
+    <section>
+      <h3>Texas Negative Prices <span class="pill pill-red">ERCOT</span></h3>
+      <p style="color:var(--muted);font-size:13px;margin:0">Wind overgeneration + inflexible baseload → negative clearing prices. Energy-only market (no capacity payments) amplifies volatility. Price cap: $5,000/MWh during scarcity.</p>
+    </section>
+    <section>
+      <h3>Homer City Redevelopment <span class="pill pill-green">PJM</span></h3>
+      <p style="color:var(--muted);font-size:13px;margin:0">Retired coal plant (heat rate ~10) being converted to gas. Economics: reuse existing grid interconnection point rather than wait 5+ years in queue. Capacity auction provides revenue certainty.</p>
+    </section>
+    <section>
+      <h3>California Evening Prices <span class="pill pill-amber">CAISO</span></h3>
+      <p style="color:var(--muted);font-size:13px;margin:0">Duck curve: solar depression midday, evening ramp requires gas peakers at higher heat rates. NP-15 vs SP-15 split via Path 15 transmission constraint.</p>
+    </section>
+    <section>
+      <h3>Nuclear Pipeline <span class="pill pill-blue">Multi-region</span></h3>
+      <p style="color:var(--muted);font-size:13px;margin:0">MSFT: Three Mile Island 837 MW restart. AMZN: Susquehanna 1.92 GW + X-energy SMR. GOOGL: Kairos Power SMR. META: 6.6 GW across Vistra, Oklo, TerraPower.</p>
+    </section>
+  </div>
+
+  <h2>Linkage to Prior Work</h2>
+  <section>
+    <h3>Connection Map</h3>
+    <div class="linkage">
+      <p><b>Gas Chokepoint Dashboard</b> <code>energy.pipelines/</code> <span class="tag overlap">overlap</span><br>
+        36 gas/LNG equities with JKM-HH, TTF-HH spread betas.
+        <span class="arrow">→</span> Power 2026 extends: gas commodity pricing flows into electricity via heat rates and spark spreads.
+        The gas chokepoint thesis (international spread scarcity) is <b>upstream</b> of the power thesis (gas as marginal fuel setting electricity prices).
+      </p>
+      <p><b>BRIDGE Volatility Model</b> <code>conditional-machine-20260703/</code> <span class="tag overlap">overlap</span><br>
+        natgas at 53.8% annualized vol (highest in the commodity universe).
+        <span class="arrow">→</span> Power 2026 explains <b>why</b> gas vol matters for power: a gas plant is long a call option on the spark spread.
+        Higher gas vol = higher option value = different plant investment economics.
+      </p>
+      <p><b>Long Gas/Power Sleeve</b> <code>all.beta.20260428/</code> <span class="tag overlap">overlap</span><br>
+        Portfolio holds BE, ETN, SMR, VST as power equity proxies (+6.6% delta, ~6% of variance).
+        <span class="arrow">→</span> Power 2026 provides the <b>fundamental framework</b> for why these names work: capacity scarcity, interconnection bottleneck, data center demand pull.
+      </p>
+      <p><b>Commodity RV / Cascade</b> <code>commodity.rv.secure/</code> <code>cascade/</code> <span class="tag new-data">new layer</span><br>
+        Energy commodity cross-relationships and contagion modeling.
+        <span class="arrow">→</span> Power 2026 adds the <b>electricity derivative layer</b>: electricity as a commodity priced off gas/coal/renewables through merit-order dispatch.
+        AI capex → GPU demand → power demand → gas demand → infrastructure capex.
+      </p>
+    </div>
+  </section>
+
+  <h2>Gap Analysis — What Power 2026 Adds</h2>
+  <section>
+    <table>
+      <thead>
+        <tr><th>Domain</th><th>Prior Work</th><th>Power 2026 Addition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Wholesale power data</td><td>None (equity proxies only)</td><td>LMP, capacity auction, dispatch economics</td></tr>
+        <tr><td>ISO/RTO analysis</td><td>None</td><td>ERCOT, PJM, CAISO pricing frameworks</td></tr>
+        <tr><td>Spark spread / heat rate</td><td>None</td><td>Gas→electricity price transmission mechanism</td></tr>
+        <tr><td>Interconnection queue</td><td>None</td><td>2,600 GW backlog, 5+ yr constraint</td></tr>
+        <tr><td>BTM generation</td><td>None</td><td>56 GW planned gas bypassing grid</td></tr>
+        <tr><td>Capacity markets</td><td>None</td><td>PJM auction ($329/MW-day), ERCOT energy-only</td></tr>
+        <tr><td>Data center demand</td><td>AI basket (GPU/infra equities)</td><td>23→42→134 GW demand trajectory</td></tr>
+        <tr><td>Nuclear pipeline</td><td>SMR in portfolio</td><td>MSFT/AMZN/GOOGL/META PPAs, 10+ GW</td></tr>
+        <tr><td>Gas fundamentals</td><td>HH, JKM, TTF spreads + 36 equities</td><td>Gas as marginal fuel, heat rate economics</td></tr>
+        <tr><td>Vol/regime context</td><td>natgas 53.8% vol in BRIDGE</td><td>Heat rate call option framework</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <h2>Rose.ai Rosecodes</h2>
+  <section>
+    <table>
+      <thead>
+        <tr><th>Rosecode</th><th>Description</th><th>Latest</th><th>Unit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>power.dc.demand.us.gw</code></td><td>US Data Center Electricity Demand</td><td>42 (2026)</td><td>GW</td></tr>
+        <tr><td><code>power.dc.consumption.global.twh</code></td><td>Global DC Electricity Consumption</td><td>565 (2026)</td><td>TWh</td></tr>
+        <tr><td><code>power.pjm.capacity.clearing.price</code></td><td>PJM Capacity Auction Clearing Price</td><td>329.17 (2026/27)</td><td>$/MW-day</td></tr>
+        <tr><td><code>power.interconnection.queue.pending.gw</code></td><td>US Interconnection Queue Backlog</td><td>2,600 (2026)</td><td>GW</td></tr>
+        <tr><td><code>power.dc.btm.gas.planned.gw</code></td><td>BTM Gas Generation Planned for DCs</td><td>56 (2026)</td><td>GW</td></tr>
+        <tr><td><code>power.ai.energy.market.value.usd.bn</code></td><td>AI in Energy Market Value</td><td>7.95 (2026)</td><td>USD Bn</td></tr>
+      </tbody>
+    </table>
+    <small style="color:var(--muted);display:block;margin-top:10px">Push: <code>python push_to_rose.py</code> &middot; Credentials: ROSE_ADMIN_USER / ROSE_ADMIN_PASS (default: acampbell / bananaman)</small>
+  </section>
+
+  <footer>
+    Source: <a href="https://power2026.ai/" style="color:var(--blue)">power2026.ai</a> by Neel Somani &middot;
+    Data synthesized from press coverage + industry reports (direct fetch blocked by egress policy) &middot;
+    Structured for Rose.ai &middot; snow.ai/power &middot; 2026-08-12
+  </footer>
+</div>
+</body>
+</html>

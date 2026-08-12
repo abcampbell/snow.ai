@@ -1,0 +1,164 @@
+{
+  "source": {
+    "url": "https://power2026.ai/",
+    "author": "Neel Somani",
+    "title": "Power 2026 — Electricity Pricing in the Age of AI",
+    "author_background": "Former Citadel quantitative researcher covering power and gas markets",
+    "format": "11-chapter primer, 2 parts",
+    "retrieved": "2026-08-12",
+    "retrieval_method": "web_search_synthesis",
+    "note": "Direct fetch blocked by egress policy; content reconstructed from press coverage, book listings, and author posts"
+  },
+  "primer_structure": {
+    "part_1": {
+      "title": "Power Plant Fundamentals & Commodity Frameworks",
+      "topics": [
+        "How AI demand is exploding — data center power doubling every ~2 years",
+        "Power plant types: natural gas (peaker, combined cycle), renewables, nuclear, coal",
+        "Merit order dispatch — generators bid marginal cost, last unit needed sets clearing price",
+        "Heat rates — efficiency measure (MMBtu/MWh); lower is more efficient",
+        "Building a power plant: site selection, permitting, interconnection, fuel access",
+        "Behind-the-meter (BTM) generation vs front-of-meter grid connection",
+        "Regional market structure: ISOs/RTOs (ERCOT, PJM, CAISO, MISO, SPP, NYISO, ISO-NE)"
+      ]
+    },
+    "part_2": {
+      "title": "Trading Methodologies & Practical Pricing Models",
+      "topics": [
+        "Locational Marginal Pricing (LMP) — price at each grid node = energy + congestion + losses",
+        "Forward contracts and hedging — locking in future electricity prices",
+        "Spark spread — electricity price minus fuel cost (gas price × heat rate)",
+        "Dark spread (coal), green spread (renewables), quark spread (nuclear)",
+        "Heat Rate Call Option — right to convert fuel to electricity at market prices",
+        "Capacity markets — separate payment for being available (PJM, ISO-NE) vs energy-only (ERCOT)",
+        "Congestion and transmission constraints — how location drives price divergence"
+      ]
+    },
+    "case_studies": [
+      {
+        "name": "Texas Negative Prices",
+        "region": "ERCOT",
+        "description": "Negative price hours driven by wind overgeneration and inflexible baseload; energy-only market without capacity payments amplifies price volatility"
+      },
+      {
+        "name": "Homer City Redevelopment",
+        "region": "PJM",
+        "description": "Retired coal plant (heat rate ~10) being redeveloped as natural gas facility; illustrates economics of repowering at existing grid interconnection points"
+      },
+      {
+        "name": "California Evening Price Spike",
+        "region": "CAISO",
+        "description": "Rising evening prices as solar drops off and gas peakers ramp up — the duck curve in action; NP-15 vs SP-15 split via Path 15 transmission"
+      }
+    ]
+  },
+  "key_concepts": {
+    "marginal_pricing": "In competitive electricity markets, generators submit cost-based offers. The last generator needed to meet demand sets the market-clearing price (system marginal price). All dispatched generators receive this price.",
+    "lmp": "Locational Marginal Price = Energy component + Congestion component + Loss component. The Lagrange multiplier of each location's balance constraint equals the marginal cost of an additional MWh at that node.",
+    "spark_spread": "Spark Spread = Electricity Price - (Natural Gas Price × Heat Rate). A '7 heat-rate spark spread' assumes a combined-cycle gas turbine with 7.0 MMBtu/MWh efficiency.",
+    "heat_rate_call": "A Heat Rate Call Option represents the right, but not the obligation, to convert fuel into electricity and sell at market prices. Gas plants are effectively long heat-rate call options.",
+    "capacity_market": "PJM and ISO-NE run forward capacity auctions paying generators for availability ($/MW-day). ERCOT is energy-only — no capacity payments, prices spike to VOLL ($5,000/MWh cap) during scarcity.",
+    "btm_generation": "Behind-the-meter: power generated and consumed on-site, bypassing the grid. Simplifies interconnection but requires fuel access (gas pipeline spur), cooling, and on-site space.",
+    "merit_order": "Generators dispatched lowest marginal cost first: nuclear/renewables (near-zero) → coal → combined-cycle gas → gas peakers. Last unit dispatched sets the price."
+  },
+  "market_data": {
+    "data_center_demand": {
+      "unit": "GW",
+      "series": {
+        "2023": 23,
+        "2024": 31,
+        "2025": 31,
+        "2026": 42,
+        "2027_projected": 66,
+        "2030_projected": 134
+      },
+      "source": "Goldman Sachs, various industry estimates",
+      "note": "US data center electricity demand; AI racks require 50-100 kW vs 5-10 kW for traditional racks"
+    },
+    "global_dc_consumption_twh": {
+      "2025": 447,
+      "2026": 565,
+      "yoy_growth_pct": 26.4,
+      "source": "IEA"
+    },
+    "pjm_capacity_auction": {
+      "delivery_year": "2026/2027",
+      "rto_clearing_price_mw_day": 329.17,
+      "bge_zone_mw_day": 466.35,
+      "dominion_zone_mw_day": 444.26,
+      "prior_year_rto_mw_day": 269.92,
+      "total_procured_mw": 134311,
+      "unit": "$/MW-day (UCAP)",
+      "source": "PJM Interconnection"
+    },
+    "interconnection_queue": {
+      "total_pending_gw": 2600,
+      "wait_time_years": "5+",
+      "q1_2026_additions_gw": 16,
+      "gas_pipeline_to_2030_gw": 64,
+      "btm_gas_planned_gw": 56,
+      "btm_projects_count": 46,
+      "source": "Various (Cleanview, PJM, industry reports)"
+    },
+    "ai_energy_market": {
+      "2026_value_usd_bn": 7.95,
+      "2030_projected_usd_bn": 18.31,
+      "cagr_pct": 23.2,
+      "source": "Research and Markets"
+    },
+    "natural_gas_context": {
+      "henry_hub_recent_range_usd_mmbtu": "2.00-3.50",
+      "note": "Gas is the marginal fuel in most US power markets; gas price × heat rate = variable cost of gas-fired generation",
+      "combined_cycle_heat_rate": 6.5,
+      "peaker_heat_rate": 10.0,
+      "coal_plant_heat_rate": 10.0,
+      "units": "MMBtu/MWh"
+    },
+    "nuclear_ppa_pipeline": [
+      {"entity": "Microsoft", "project": "Three Mile Island restart + Helion fusion", "capacity_note": "837 MW (TMI Unit 1)"},
+      {"entity": "Amazon", "project": "Susquehanna + X-energy SMRs", "capacity_gw": 1.92},
+      {"entity": "Google", "project": "Kairos Power SMR", "capacity_note": "Multiple SMR units"},
+      {"entity": "Meta", "project": "Vistra, Oklo, TerraPower", "capacity_gw": 6.6}
+    ],
+    "ercot_characteristics": {
+      "market_type": "energy-only",
+      "price_cap_mwh": 5000,
+      "negative_price_hours": "Driven by wind overgeneration + inflexible baseload",
+      "key_feature": "No capacity payments — scarcity pricing provides investment signal"
+    },
+    "caiso_characteristics": {
+      "zones": ["NP-15", "SP-15"],
+      "interconnection": "Path 15 transmission line",
+      "key_feature": "Duck curve — solar depression midday, evening ramp requires gas peakers",
+      "evening_price_pattern": "Rising prices as solar drops and gas peakers dispatch"
+    }
+  },
+  "comparison_to_prior_work": {
+    "energy_pipelines_gas_chokepoint": {
+      "path": "energy.pipelines/index.html",
+      "focus": "LNG equity screen — US gas, LNG export terminals, spread beta analysis",
+      "key_metrics": ["JKM-HH spread beta", "TTF-HH spread beta", "Brent orthogonality"],
+      "overlap": "Natural gas pricing fundamentals, international gas spreads, Henry Hub as reference price",
+      "power2026_extension": "Power 2026 extends from gas commodity pricing into how gas prices flow through to electricity pricing via heat rates and spark spreads. The gas chokepoint thesis (international gas spread scarcity) is upstream of the power market thesis (gas as marginal fuel setting electricity prices)."
+    },
+    "conditional_machine_natgas_vol": {
+      "path": "conditional-machine-20260703/linkage.html",
+      "focus": "Cross-asset volatility and covariance forecasting",
+      "key_data": {"natgas_annualized_vol_pct": 53.8, "oil_wti_vol_pct": 26.2, "gold_vol_pct": 16.2},
+      "overlap": "Natural gas volatility regime is critical context for power market pricing — gas vol directly feeds through to electricity price vol via spark spread mechanics",
+      "power2026_extension": "Power 2026's heat-rate-call-option framework explains WHY natgas vol matters for power: a gas plant is long a call option on the spark spread, so higher gas vol = higher option value = different investment economics."
+    },
+    "commodity_rv": {
+      "path": "commodity.rv.secure/index.html",
+      "focus": "Commodity relative value analysis",
+      "overlap": "Energy commodity cross-relationships",
+      "power2026_extension": "Adds the electricity layer on top of commodity RV — electricity as a derivative commodity priced off gas/coal/renewables through merit-order dispatch."
+    },
+    "cascade_system": {
+      "path": "cascade/index.html",
+      "focus": "Market cascade / contagion analysis",
+      "overlap": "Energy sector cascade effects",
+      "power2026_extension": "Data center demand shock is a structural demand cascade — AI capex → GPU demand → power demand → gas demand → infrastructure capex. Power 2026 maps the bottleneck at the power/grid layer."
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "namespace": "power.ai.primer",
+  "source": "power2026.ai",
+  "author": "Neel Somani",
+  "rosecodes": [
+    {
+      "code": "power.dc.demand.us.gw",
+      "descriptor": "US Data Center Electricity Demand (GW)",
+      "frequency": "annual",
+      "unit": "GW",
+      "source": "Goldman Sachs, IEA, industry estimates"
+    },
+    {
+      "code": "power.dc.consumption.global.twh",
+      "descriptor": "Global Data Center Electricity Consumption (TWh)",
+      "frequency": "annual",
+      "unit": "TWh",
+      "source": "IEA"
+    },
+    {
+      "code": "power.pjm.capacity.clearing.price",
+      "descriptor": "PJM Capacity Auction Clearing Price ($/MW-day UCAP)",
+      "frequency": "annual",
+      "unit": "$/MW-day",
+      "source": "PJM Interconnection"
+    },
+    {
+      "code": "power.interconnection.queue.pending.gw",
+      "descriptor": "US Interconnection Queue Total Pending Capacity (GW)",
+      "frequency": "annual",
+      "unit": "GW",
+      "source": "PJM, LBNL"
+    },
+    {
+      "code": "power.dc.btm.gas.planned.gw",
+      "descriptor": "Behind-the-Meter Gas Generation Planned for Data Centers (GW)",
+      "frequency": "snapshot",
+      "unit": "GW",
+      "source": "Cleanview analysis"
+    },
+    {
+      "code": "power.ai.energy.market.value.usd.bn",
+      "descriptor": "AI in Energy & Power Market Value (USD Billion)",
+      "frequency": "annual",
+      "unit": "USD Billion",
+      "source": "Research and Markets"
+    },
+    {
+      "code": "power.gas.combined.cycle.heat.rate",
+      "descriptor": "Combined Cycle Gas Turbine Reference Heat Rate (MMBtu/MWh)",
+      "frequency": "reference",
+      "unit": "MMBtu/MWh",
+      "source": "Industry standard"
+    },
+    {
+      "code": "power.gas.peaker.heat.rate",
+      "descriptor": "Gas Peaker Reference Heat Rate (MMBtu/MWh)",
+      "frequency": "reference",
+      "unit": "MMBtu/MWh",
+      "source": "Industry standard"
+    }
+  ],
+  "related_existing_rosecodes": {
+    "note": "Existing rosecodes in this codebase that connect to the power thesis",
+    "codes": [
+      "gold.vol.skew",
+      "dollar",
+      "usa.real.yield.2y.ilb"
+    ],
+    "energy_pipelines_metrics": [
+      "JKM-HH spread (Asia gas premium over Henry Hub)",
+      "TTF-HH spread (Europe gas premium over Henry Hub)",
+      "Brent beta (oil correlation)"
+    ],
+    "conditional_machine_assets": [
+      "oil_wti (26.2% ann vol)",
+      "natgas (53.8% ann vol)",
+      "gold (16.2% ann vol)",
+      "copper (20.6% ann vol)"
+    ]
+  }
+}
