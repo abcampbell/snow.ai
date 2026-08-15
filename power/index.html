@@ -138,6 +138,25 @@
     </div>
   </div>
 
+  <h2>ISO Day-Ahead Power Prices <span style="font-size:12px;font-weight:400;color:var(--muted)">(Bloomberg, 2026-08-15)</span></h2>
+  <section>
+    <table>
+      <thead>
+        <tr><th>ISO</th><th>Hub</th><th>Bloomberg Ticker</th><th>DA 24AV ($/MWh)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="pill pill-red">ERCOT</span></td><td>North Hub</td><td><code>ERDAHBNT Index</code></td><td style="color:var(--green)">30.55</td></tr>
+        <tr><td><span class="pill pill-amber">CAISO</span></td><td>SP-15</td><td><code>CSDASP15 Index</code></td><td>38.88</td></tr>
+        <tr><td><span class="pill pill-violet">SPP</span></td><td>North Hub</td><td><code>PPDASPPN Index</code></td><td>40.96</td></tr>
+        <tr><td><span class="pill pill-blue">MISO</span></td><td>Illinois Hub</td><td><code>MSDAILHB Index</code></td><td>44.43</td></tr>
+        <tr><td><span class="pill pill-amber">NYISO</span></td><td>NYC</td><td><code>NSDANYCZ Index</code></td><td>46.48</td></tr>
+        <tr><td><span class="pill pill-blue">ISO-NE</span></td><td>Internal Hub</td><td><code>NEDAINHB Index</code></td><td>47.62</td></tr>
+        <tr><td><span class="pill pill-green">PJM</span></td><td>Western Hub</td><td><code>MJDAWSTN Index</code></td><td style="color:var(--red);font-weight:700">52.44</td></tr>
+      </tbody>
+    </table>
+    <small style="color:var(--muted);display:block;margin-top:10px">Day-ahead 24-hour average LMP. PJM highest — capacity scarcity + VA data center corridor demand. ERCOT cheapest — energy-only market, wind depression.</small>
+  </section>
+
   <h2>Data Center Power Demand Trajectory</h2>
   <section>
     <div id="demandBars">

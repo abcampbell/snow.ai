@@ -154,6 +154,79 @@
       }
     ],
 
+    "da_prices_bloomberg": [
+      {
+        "code": "power.iso.ercot.north.da.24av",
+        "type": "time_series",
+        "descriptor": "ERCOT North Hub Day-Ahead 24hr Average LMP ($/MWh)",
+        "frequency": "daily",
+        "unit": "$/MWh",
+        "bbg_ticker": "ERDAHBNT Index",
+        "values": {"2026-08-15": 30.55},
+        "source": "Bloomberg"
+      },
+      {
+        "code": "power.iso.caiso.sp15.da.24av",
+        "type": "time_series",
+        "descriptor": "CAISO SP-15 Day-Ahead 24hr Average LMP ($/MWh)",
+        "frequency": "daily",
+        "unit": "$/MWh",
+        "bbg_ticker": "CSDASP15 Index",
+        "values": {"2026-08-15": 38.88},
+        "source": "Bloomberg"
+      },
+      {
+        "code": "power.iso.spp.north.da.24av",
+        "type": "time_series",
+        "descriptor": "SPP North Hub Day-Ahead 24hr Average LMP ($/MWh)",
+        "frequency": "daily",
+        "unit": "$/MWh",
+        "bbg_ticker": "PPDASPPN Index",
+        "values": {"2026-08-15": 40.96},
+        "source": "Bloomberg"
+      },
+      {
+        "code": "power.iso.miso.illinois.da.24av",
+        "type": "time_series",
+        "descriptor": "MISO Illinois Hub Day-Ahead 24hr Average LMP ($/MWh)",
+        "frequency": "daily",
+        "unit": "$/MWh",
+        "bbg_ticker": "MSDAILHB Index",
+        "values": {"2026-08-15": 44.43},
+        "source": "Bloomberg"
+      },
+      {
+        "code": "power.iso.nyiso.nyc.da.24av",
+        "type": "time_series",
+        "descriptor": "NYISO New York City Day-Ahead 24hr Average LMP ($/MWh)",
+        "frequency": "daily",
+        "unit": "$/MWh",
+        "bbg_ticker": "NSDANYCZ Index",
+        "values": {"2026-08-15": 46.48},
+        "source": "Bloomberg"
+      },
+      {
+        "code": "power.iso.isone.internal.da.24av",
+        "type": "time_series",
+        "descriptor": "ISO-NE Internal Hub Day-Ahead 24hr Average LMP ($/MWh)",
+        "frequency": "daily",
+        "unit": "$/MWh",
+        "bbg_ticker": "NEDAINHB Index",
+        "values": {"2026-08-15": 47.62},
+        "source": "Bloomberg"
+      },
+      {
+        "code": "power.iso.pjm.western.da.24av",
+        "type": "time_series",
+        "descriptor": "PJM Western Hub Day-Ahead 24hr Average LMP ($/MWh)",
+        "frequency": "daily",
+        "unit": "$/MWh",
+        "bbg_ticker": "MJDAWSTN Index",
+        "values": {"2026-08-15": 52.44},
+        "source": "Bloomberg"
+      }
+    ],
+
     "interconnection": [
       {
         "code": "power.interconnection.queue.gw",

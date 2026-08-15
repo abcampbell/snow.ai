@@ -196,6 +196,20 @@
       "rack_power_kw": {"traditional": "5-10", "ai": "50-100"},
       "note": "Would outpace total US generation by mid-2030s at current doubling rate"
     },
+    "bloomberg_da_prices": {
+      "as_of": "2026-08-15",
+      "source": "Bloomberg Terminal",
+      "series": [
+        {"iso": "ERCOT", "hub": "HB_NORTH", "bbg_field": "ERCOT HB_NORTH DA 24AV", "bbg_ticker": "ERDAHBNT Index", "price_usd_mwh": 30.55},
+        {"iso": "CAISO", "hub": "TH_SP15_GEN-APND", "bbg_field": "CAISO TH_SP15_GEN-APND DA 24AV", "bbg_ticker": "CSDASP15 Index", "price_usd_mwh": 38.88},
+        {"iso": "SPP", "hub": "SPPNORTH_HUB", "bbg_field": "SPP SPPNORTH_HUB DA 24AV", "bbg_ticker": "PPDASPPN Index", "price_usd_mwh": 40.96},
+        {"iso": "MISO", "hub": "ILLINOIS.HUB", "bbg_field": "MISO ILLINOIS.HUB DA 24AV", "bbg_ticker": "MSDAILHB Index", "price_usd_mwh": 44.43},
+        {"iso": "NYISO", "hub": "N.Y.C.", "bbg_field": "NYISO N.Y.C. DA 24AV", "bbg_ticker": "NSDANYCZ Index", "price_usd_mwh": 46.48},
+        {"iso": "ISO-NE", "hub": ".H.INTERNAL_HUB", "bbg_field": "NEISO .H.INTERNAL_HUB DA 24AV", "bbg_ticker": "NEDAINHB Index", "price_usd_mwh": 47.62},
+        {"iso": "PJM", "hub": "WESTERN HUB", "bbg_field": "PJM WESTERN HUB DA 24AV", "bbg_ticker": "MJDAWSTN Index", "price_usd_mwh": 52.44}
+      ],
+      "note": "Day-ahead 24-hour average LMP. PJM highest — consistent with capacity scarcity / DC demand in VA corridor. ERCOT cheapest — energy-only market, wind depression."
+    },
     "grid_topology": {
       "interconnections": ["Western Interconnection", "Eastern Interconnection", "Texas (ERCOT)"],
       "ties": "Limited HVDC between interconnections (~1 GW ERCOT-rest)",
