@@ -1,0 +1,25 @@
+code,type,descriptor,unit,latest_value,latest_date,frequency,source,bbg_ticker,note
+power.gas.20260810.map,notebook_map,"Power 2026 (Somani) — full primer notebook map with chapter structure, key data, and cross-references",,,,,power2026.ai,,
+power.iso.pjm.capacity.clearing.price,time_series,PJM Capacity Auction RTO Clearing Price ($/MW-day UCAP),$/MW-day,329.17,2026,annual,PJM Interconnection,,Prior year: 269.92 (2025)
+power.iso.pjm.capacity.clearing.bge,time_series,PJM Capacity Auction BGE Zone Clearing Price ($/MW-day UCAP),$/MW-day,466.35,2026,annual,PJM Interconnection,,
+power.iso.pjm.capacity.clearing.dominion,time_series,PJM Capacity Auction Dominion Zone Clearing Price ($/MW-day UCAP),$/MW-day,444.26,2026,annual,PJM Interconnection,,
+power.iso.pjm.capacity.procured.mw,time_series,PJM Capacity Auction Total Procured (MW),MW,134311,2026,annual,PJM Interconnection,,
+power.iso.ercot.price.cap,reference,ERCOT System-Wide Offer Cap ($/MWh),$/MWh,5000,,,,,"Energy-only market; VOLL x P(lost load) adder"
+power.iso.alberta.price.cap,reference,Alberta Pool Price Cap (CAD/MWh),CAD/MWh,1000,,,,,Energy-only; scarcity rent; slated to increase
+power.heat.rate.ccgt.reference,reference,Combined Cycle Gas Turbine Reference Heat Rate (MMBtu/MWh),MMBtu/MWh,7,,,,,"Standard 7-HR spark spread reference"
+power.heat.rate.ccgt.efficient,reference,Efficient CCGT Heat Rate — Homer City target (MMBtu/MWh),MMBtu/MWh,6,,,,,
+power.heat.rate.coal.reference,reference,Coal Plant Reference Heat Rate (MMBtu/MWh),MMBtu/MWh,10,,,,,"Homer City old coal units; uncompetitive vs 6-7 HR gas"
+power.homer.city.capacity.gw,reference,Homer City Redevelopment Planned Gas Capacity (GW),GW,4.4,,,,,"Was 2 GW coal; EQT gas partner; PA DEP permit Nov 2025; $10B construction"
+power.dc.demand.us.gw,time_series,US Data Center Electricity Demand (GW),GW,42,2026,annual,"Goldman Sachs, industry estimates",,"2023:23 | 2024:31 | 2025:31 | 2026:42 | 2027:66 | 2030:134"
+power.dc.share.us.pct,reference,Data Center Share of US Power Consumption (%),pct,5,,,DOE,,Doubling every ~2 years
+power.deal.anthropic.terawulf.mwh,reference,"Anthropic-TeraWulf PPA Implied Price ($/MWh, no GPUs, includes building+cooling)",$/MWh,271,,,,,400 MW | 20 yr | $19B total | H2 2027 start
+power.deal.spacex.reflection.mwh,reference,"SpaceX-Reflection Implied Price ($/MWh, with GPUs, 90-day out)",$/MWh,5000,,,,,"High optionality; includes GPUs; difficult to underwrite against"
+power.iso.ercot.north.da.24av,time_series,ERCOT North Hub Day-Ahead 24hr Average LMP ($/MWh),$/MWh,30.55,2026-08-15,daily,Bloomberg,ERDAHBNT Index,
+power.iso.caiso.sp15.da.24av,time_series,CAISO SP-15 Day-Ahead 24hr Average LMP ($/MWh),$/MWh,38.88,2026-08-15,daily,Bloomberg,CSDASP15 Index,
+power.iso.spp.north.da.24av,time_series,SPP North Hub Day-Ahead 24hr Average LMP ($/MWh),$/MWh,40.96,2026-08-15,daily,Bloomberg,PPDASPPN Index,
+power.iso.miso.illinois.da.24av,time_series,MISO Illinois Hub Day-Ahead 24hr Average LMP ($/MWh),$/MWh,44.43,2026-08-15,daily,Bloomberg,MSDAILHB Index,
+power.iso.nyiso.nyc.da.24av,time_series,NYISO New York City Day-Ahead 24hr Average LMP ($/MWh),$/MWh,46.48,2026-08-15,daily,Bloomberg,NSDANYCZ Index,
+power.iso.isone.internal.da.24av,time_series,ISO-NE Internal Hub Day-Ahead 24hr Average LMP ($/MWh),$/MWh,47.62,2026-08-15,daily,Bloomberg,NEDAINHB Index,
+power.iso.pjm.western.da.24av,time_series,PJM Western Hub Day-Ahead 24hr Average LMP ($/MWh),$/MWh,52.44,2026-08-15,daily,Bloomberg,MJDAWSTN Index,
+power.interconnection.queue.gw,time_series,US Interconnection Queue Total Pending Capacity (GW),GW,2600,2026,snapshot,"PJM, LBNL",,"5+ year wait times; 16 GW added Q1 2026 alone"
+power.dc.btm.gas.planned.gw,reference,Behind-the-Meter Gas Generation Planned for Data Centers (GW),GW,56,,,Cleanview,,"46 DC projects; 90% announced in 2025; bypassing grid queue"
