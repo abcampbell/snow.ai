@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050507">
+  <meta name="description" content="Swarm: a design for agents that remember prior work, carry clear roles and skills, coordinate tasks, and improve through evidence. Read the systems presentation.">
+  <link rel="canonical" href="https://snow.ai/swarm/">
+  <meta property="og:title" content="Swarm — snow.ai">
+  <meta property="og:description" content="A firm that remembers, works, and learns. The systems design, in 16 slides.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://snow.ai/swarm/">
+  <meta property="og:image" content="https://snow.ai/swarm/systems-preview.png">
+  <title>Swarm — snow.ai</title>
+  <style>
+    :root { color-scheme: dark; --bg:#050507; --panel:#0d0d13; --line:#292935; --text:#e8e8f0; --soft:#aaaabd; --ice:#d0e0ff; }
+    * { box-sizing:border-box; }
+    html { background:var(--bg); }
+    body { margin:0; color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+    a { color:inherit; text-underline-offset:.22em; }
+    a:focus-visible { outline:3px solid var(--ice); outline-offset:6px; }
+    .wrap { width:min(1120px,calc(100% - 64px)); margin:auto; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-bottom:1px solid var(--line); }
+    .brand { font-family:ui-monospace,Consolas,monospace; font-size:22px; letter-spacing:.22em; text-decoration:none; }
+    .breadcrumb,.eyebrow,.meta,.number,footer { font-family:ui-monospace,Consolas,monospace; }
+    .breadcrumb { font-size:12px; color:var(--soft); }
+    .hero { padding:74px 0 43px; }
+    .eyebrow { margin:0 0 20px; color:var(--ice); font-size:11px; letter-spacing:.17em; text-transform:uppercase; }
+    h1 { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(58px,8vw,100px); font-weight:400; line-height:1.02; letter-spacing:-.055em; }
+    .lede { max-width:710px; margin:25px 0 0; color:var(--soft); font-size:clamp(18px,2.2vw,23px); line-height:1.5; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin:31px 0 18px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:20px; min-height:50px; padding:12px 21px; border:1px solid var(--line); border-radius:5px; text-decoration:none; font-size:14px; font-weight:600; background:var(--panel); }
+    .button:hover { border-color:var(--ice); }
+    .button.primary { color:#11131a; background:var(--ice); border-color:var(--ice); }
+    .button.primary:hover { background:#e6eeff; }
+    .meta { margin:0; font-size:11px; color:var(--soft); }
+    .document { border:1px solid var(--line); border-radius:9px; overflow:hidden; background:var(--panel); }
+    .document-heading { padding:21px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .document-heading h2 { margin:0; font-size:16px; font-weight:500; }
+    .document-heading a { color:var(--ice); font-size:13px; }
+    .preview { display:block; text-decoration:none; }
+    .preview img { width:100%; height:auto; display:block; }
+    .preview:hover img { opacity:.95; }
+    .document-caption { margin:0; padding:15px 24px; color:var(--soft); font-size:13px; }
+    .overview { padding:55px 0 65px; }
+    .overview > h2 { font-size:24px; font-weight:400; margin:0 0 22px; }
+    .systems { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .system { padding:26px 24px 25px 0; }
+    .system + .system { padding-left:24px; border-left:1px solid var(--line); }
+    .number { font-size:11px; color:var(--soft); }
+    .system h3 { margin:18px 0 10px; font-size:17px; font-weight:500; }
+    .system p { margin:0; font-size:14px; color:var(--soft); }
+    .scope { margin:22px 0 0; max-width:830px; color:var(--soft); font-size:14px; }
+    footer { display:flex; justify-content:space-between; gap:20px; padding:25px 0 32px; border-top:1px solid var(--line); color:var(--soft); font-size:11px; }
+    @media(max-width:760px) {
+      .wrap { width:calc(100% - 36px); }
+      header { padding:23px 0; }
+      .hero { padding:49px 0 31px; }
+      .systems { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .system:nth-child(3) { border-left:0; padding-left:0; }
+      .system:nth-child(n+3) { border-top:1px solid var(--line); }
+      .document-heading,.document-caption { padding:16px; }
+      .overview { padding:37px 0 40px; }
+    }
+    @media(max-width:430px) {
+      .actions { flex-direction:column; }
+      .button { width:100%; }
+      .system,.system + .system { padding-right:14px; }
+      .system + .system { padding-left:14px; }
+      .system:nth-child(3) { padding-left:0; }
+      footer { flex-direction:column; gap:10px; }
+    }
+    @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/" aria-label="snow.ai home">snow</a>
+      <span class="breadcrumb">/ swarm</span>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <p class="eyebrow">Systems design · 12 September 2026</p>
+        <h1 id="title">Swarm</h1>
+        <p class="lede">A firm that remembers, works, and learns. Connecting agent memory, roles and skills, coordinated work, and controlled improvement.</p>
+        <div class="actions">
+          <a class="button primary" href="./swarm-systems-design-2026-09-12.pptx" download>Download PowerPoint <span aria-hidden="true">↓</span></a>
+          <a class="button" href="./swarm-systems-design-2026-09-12.pdf">Read the PDF <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="meta">16 slides · Editable PowerPoint + PDF · Design review</p>
+      </section>
+      <section class="document" aria-labelledby="document-title">
+        <div class="document-heading">
+          <h2 id="document-title">The systems we designed</h2>
+          <a href="./swarm-systems-design-2026-09-12.pdf">Open all 16 slides <span aria-hidden="true">↗</span></a>
+        </div>
+        <a class="preview" href="./swarm-systems-design-2026-09-12.pdf" aria-label="Read the complete Swarm systems presentation as a PDF">
+          <img src="./systems-preview.png" width="1600" height="900" alt="Presentation cover: A firm that remembers, works, and learns. Four systems: memoryNet, Persona manager, Runtime, and Evolution engine." fetchpriority="high">
+        </a>
+        <p class="document-caption">Architecture, agent identity, thread handoffs, the firm’s workflow, skills, and learning from prior work.</p>
+      </section>
+      <section class="overview" aria-labelledby="overview-title">
+        <h2 id="overview-title">Four systems. One continuing record of work.</h2>
+        <div class="systems">
+          <article class="system"><span class="number">01 / MEMORY</span><h3>memoryNet</h3><p>Find prior sessions, original evidence, outputs, and decisions. Give the next agent a thread it can pick up.</p></article>
+          <article class="system"><span class="number">02 / ROLES</span><h3>Persona manager</h3><p>Define the job, its working loop, required skills, standards, collaborators, and escalation path.</p></article>
+          <article class="system"><span class="number">03 / EXECUTION</span><h3>Runtime</h3><p>Load the context, assign tasks, coordinate agents, collect results, and record what happened.</p></article>
+          <article class="system"><span class="number">04 / IMPROVEMENT</span><h3>Evolution engine</h3><p>Compare role versions under controlled conditions, preserve the evidence, and review changes before adoption.</p></article>
+        </div>
+        <p class="scope">The deck distinguishes working local memory and review tools from draft roles and procedures, and from the runtime and evolution engine still to be built.</p>
+      </section>
+    </main>
+    <footer><span>snow.ai / swarm</span><a href="./swarm-systems-design-2026-09-12.pdf" download>Download PDF ↓</a></footer>
+  </div>
+</body>
+</html>
