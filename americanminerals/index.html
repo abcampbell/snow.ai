@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>American Minerals Company</title>
+<meta name="description" content="American Minerals Company explores, mines and refines the critical minerals the United States imports today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  /* limestone, basalt ink, and the three mineral pigments: hematite, quartz, azurite */
+  --ground:#ECEDE8; --paper:#F7F7F3; --ink:#18212B; --muted:#56616C; --line:#CBCEC6;
+  --hematite:#A33A24; --azurite:#2A5698; --pyrite:#A9862A;
+  --s0:#D9CDB4; --s1:#BCA88A; --s2:#8E9A86; --s3:#B0623F; --s4:#6A7580; --s5:#8B819B; --s6:#4A5663; --s7:#394552;
+  --display:"Big Shoulders Display","Oswald","Arial Narrow",sans-serif;
+  --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --ground:#101317; --paper:#171B20; --ink:#E7E8E2; --muted:#98A1AA; --line:#2B3139;
+    --hematite:#D86A50; --azurite:#7FA3DE; --pyrite:#D1AE52;
+    --s0:#5B5345; --s1:#4E4536; --s2:#3E4A40; --s3:#7A3F29; --s4:#343C45; --s5:#433D50; --s6:#262D35; --s7:#1D232A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ground:#101317; --paper:#171B20; --ink:#E7E8E2; --muted:#98A1AA; --line:#2B3139;
+  --hematite:#D86A50; --azurite:#7FA3DE; --pyrite:#D1AE52;
+  --s0:#5B5345; --s1:#4E4536; --s2:#3E4A40; --s3:#7A3F29; --s4:#343C45; --s5:#433D50; --s6:#262D35; --s7:#1D232A;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:clip;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--azurite);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.95;text-wrap:balance;margin:0;letter-spacing:.005em}
+h2{font-size:clamp(40px,6vw,72px);text-transform:uppercase}
+p{margin:0}
+
+/* ---------- header ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.mark{display:flex;flex-wrap:wrap;align-items:baseline;gap:0;min-width:0;text-decoration:none;font-family:var(--display);font-weight:900;font-size:clamp(20px,5.4vw,26px);letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.mark .dot{color:var(--hematite)}
+.mark .tld{font-weight:500;letter-spacing:.02em;text-transform:none;color:var(--muted)}
+.nav{display:flex;gap:clamp(14px,2.4vw,28px);flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(40px,7vw,88px) 28px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end}
+.hero h1{font-size:clamp(50px,9vw,132px);overflow-wrap:break-word;text-transform:uppercase;font-weight:900;line-height:.86}
+.hero h1 .red{color:var(--hematite)}
+.hero h1 .blue{color:var(--azurite)}
+.hero-side{display:grid;gap:22px;padding-bottom:8px}
+.hero-side p.lede{font-size:clamp(18px,1.6vw,21px);line-height:1.5;max-width:34ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;font:600 15px/1 var(--body);text-decoration:none;border:1.5px solid var(--ink);border-radius:2px;cursor:pointer;background:transparent;color:var(--ink);transition:background .15s,color .15s}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--hematite);border-color:var(--hematite)}
+
+/* ---------- cross-section ---------- */
+.section-fig{margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.section-fig .canvas-box{position:relative;height:clamp(300px,38vw,470px)}
+.section-fig canvas{display:block;width:100%;height:100%}
+.section-fig figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:12px;color:var(--muted)}
+
+/* ---------- elements ---------- */
+.block{padding-block:clamp(64px,9vw,120px)}
+.block-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:44px}
+.block-head p{max-width:52ch;color:var(--muted)}
+.elements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.el{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 22px 22px;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:6px;background:var(--paper)}
+.el-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.el-sym{font-family:var(--display);font-weight:900;font-size:96px;line-height:.9;letter-spacing:-.01em}
+.el-name{font-weight:600;font-size:18px}
+.el-use{color:var(--muted);font-size:15px;line-height:1.45}
+.reliance{margin-top:14px;display:grid;gap:6px}
+.reliance-row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.reliance-row b{color:var(--hematite);font-weight:500}
+.bar{height:8px;background:var(--line);position:relative}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--hematite)}
+.footnote{margin-top:18px;color:var(--muted);max-width:80ch}
+
+/* ---------- refine band ---------- */
+.band{background:var(--ink);color:var(--paper)}
+.band .wrap{padding-block:clamp(56px,8vw,104px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.big-num{font-family:var(--display);font-weight:900;font-size:clamp(120px,20vw,260px);line-height:.8;color:var(--pyrite)}
+.big-num sup{font-size:.35em;vertical-align:.95em;margin-left:4px}
+.band h3{font-size:clamp(32px,4vw,52px);text-transform:uppercase;margin-bottom:18px}
+.band p{max-width:56ch;opacity:.82}
+.band .mono{opacity:.6;margin-top:18px;display:block}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:step;position:relative}
+.step{padding:22px 20px 0 0;border-top:1.5px solid var(--ink);position:relative;display:grid;gap:10px;align-content:start}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.step::after{content:"";position:absolute;top:-6px;left:0;width:10px;height:10px;background:var(--ground);border:1.5px solid var(--ink);border-radius:50%}
+.step h3{font-size:34px;text-transform:uppercase}
+.step p{font-size:15px;color:var(--muted);line-height:1.5}
+.step.key::after{background:var(--hematite);border-color:var(--hematite)}
+.step.key h3{color:var(--hematite)}
+
+/* ---------- principles ---------- */
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.principle{display:grid;gap:12px;align-content:start}
+.principle h3{font-size:30px;text-transform:uppercase}
+.principle p{color:var(--muted)}
+.swatch{width:44px;height:44px;border-radius:50%}
+
+/* ---------- contact ---------- */
+.contact{background:var(--paper);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px)}
+.contact h2{margin-bottom:22px}
+.who{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.who li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);align-items:baseline}
+.who strong{font-weight:600;font-size:18px;display:block}
+.who span{color:var(--muted);font-size:15px}
+.who .mono{color:var(--muted);white-space:nowrap}
+.email{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.email code{font-family:var(--mono);font-size:clamp(15px,1.8vw,19px);padding:12px 14px;border:1px solid var(--line);background:var(--ground);user-select:all;overflow-wrap:anywhere}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px;color:var(--muted)}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .hero,.block-head,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .elements{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:minmax(0,1fr);gap:0}
+  .step{padding:18px 0 24px 28px;border-top:0;border-left:1.5px solid var(--ink)}
+  .step::after{top:22px;left:-6px}
+  .principles{grid-template-columns:minmax(0,1fr)}
+  .band .wrap{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:540px){
+  .elements{grid-template-columns:minmax(0,1fr)}
+  .el-sym{font-size:80px}
+  .who li{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="#top" aria-label="American Minerals Company, home">American Minerals<span class="dot">.</span><span class="tld">company</span></a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#minerals">Minerals</a>
+    <a href="#process">How we work</a>
+    <a href="#principles">Principles</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <h1>Critical minerals, from <span class="red">American</span> <span class="blue">ground.</span></h1>
+    <div class="hero-side">
+      <p class="eyebrow">39.8283° N · 98.5795° W</p>
+      <p class="lede">We explore, mine and refine the metals the United States now buys from abroad: antimony, gallium, graphite, rare earths, cobalt and lithium.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="#contact">Work with us</a>
+        <a class="btn" href="#minerals">What we mine</a>
+      </div>
+    </div>
+  </section>
+
+  <figure class="section-fig">
+    <div class="canvas-box"><canvas id="xsec" aria-label="Illustrative geological cross-section showing rock strata offset by a fault, with a drill hole passing through a mineralized zone"></canvas></div>
+    <figcaption class="wrap mono">
+      <span>Section A–A′ · illustrative · vertical exaggeration 2×</span>
+      <span>Drill hole AMC-001 · 0–400 m</span>
+    </figcaption>
+  </figure>
+
+  <section class="wrap block" id="minerals">
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">What we're after</p>
+        <h2>Six elements the country can't make without.</h2>
+      </div>
+      <p>Each of these goes into something the United States builds: motors, radar, batteries, jet engines, ammunition. Each is mostly or entirely imported. The red bar is the share of U.S. consumption that comes from abroad.</p>
+    </div>
+
+    <div class="elements">
+      <article class="el">
+        <div class="el-top"><span>51</span><span>121.760</span></div>
+        <div class="el-sym">Sb</div>
+        <div class="el-name">Antimony</div>
+        <p class="el-use">Flame retardants, primers and munitions, lead-acid batteries.</p>
+        <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>≈85%</b></div><div class="bar"><i style="width:85%"></i></div></div>
+      </article>
+      <article class="el">
+        <div class="el-top"><span>31</span><span>69.723</span></div>
+        <div class="el-sym">Ga</div>
+        <div class="el-name">Gallium</div>
+        <p class="el-use">Radar, power electronics, LEDs and solar cells.</p>
+        <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>100%</b></div><div class="bar"><i style="width:100%"></i></div></div>
+      </article>
+      <article class="el">
+        <div class="el-top"><span>6</span><span>12.011</span></div>
+        <div class="el-sym">C</div>
+        <div class="el-name">Natural graphite</div>
+        <p class="el-use">Battery anodes, refractories and lubricants.</p>
+        <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>100%</b></div><div class="bar"><i style="width:100%"></i></div></div>
+      </article>
+      <article class="el">
+        <div class="el-top"><span>60</span><span>144.242</span></div>
+        <div class="el-sym">Nd</div>
+        <div class="el-name">Neodymium &amp; rare earths</div>
+        <p class="el-use">Permanent magnets for EV motors, wind turbines and guidance systems.</p>
+        <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>80%+</b></div><div class="bar"><i style="width:80%"></i></div></div>
+      </article>
+      <article class="el">
+        <div class="el-top"><span>27</span><span>58.933</span></div>
+        <div class="el-sym">Co</div>
+        <div class="el-name">Cobalt</div>
+        <p class="el-use">Superalloys for jet engines, battery cathodes.</p>
+        <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>≈70%</b></div><div class="bar"><i style="width:70%"></i></div></div>
+      </article>
+      <article class="el">
+        <div class="el-top"><span>3</span><span>6.94</span></div>
+        <div class="el-sym">Li</div>
+        <div class="el-name">Lithium</div>
+        <p class="el-use">Battery cathodes and electrolytes, specialty glass.</p>
+        <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>&gt;25%</b></div><div class="bar"><i style="width:25%"></i></div></div>
+      </article>
+    </div>
+    <p class="footnote mono">Approximate net import reliance, from USGS Mineral Commodity Summaries. Check against the current edition before launch.</p>
+  </section>
+
+  <section class="band" aria-labelledby="refine-h">
+    <div class="wrap">
+      <div class="big-num">90<sup>%</sup></div>
+      <div>
+        <h3 id="refine-h">The bottleneck is the refinery, not the mine.</h3>
+        <p>About nine in ten tonnes of the world's rare earths are processed in China, and gallium is almost entirely refined there. A U.S. mine with no U.S. refinery ships its concentrate overseas. We build both.</p>
+        <span class="mono">Share of global rare earth processing, International Energy Agency.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap block" id="process">
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">How we work</p>
+        <h2>Mine to manufacturer.</h2>
+      </div>
+      <p>A deposit becomes supply only after five stages, and most projects stall at one of them. We run all five under one company so nothing gets stranded halfway.</p>
+    </div>
+    <ol class="steps" role="list">
+      <li class="step"><h3>Explore</h3><p>Field mapping, geophysics and core drilling on federal, state and private land.</p></li>
+      <li class="step"><h3>Permit</h3><p>Baseline water and habitat studies, tribal consultation and agreements with the towns nearby.</p></li>
+      <li class="step"><h3>Mine</h3><p>Small footprints, modern equipment, reclamation bonded before the first blast.</p></li>
+      <li class="step key"><h3>Refine</h3><p>Concentrate to oxide to metal, in plants built in the United States.</p></li>
+      <li class="step"><h3>Deliver</h3><p>Long-term offtake with American makers of magnets, chips, batteries and defense systems.</p></li>
+    </ol>
+  </section>
+
+  <section class="wrap block" id="principles" style="padding-top:0">
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">Principles</p>
+        <h2>How we mean to do it.</h2>
+      </div>
+    </div>
+    <div class="principles">
+      <div class="principle">
+        <div class="swatch" style="background:var(--hematite)" aria-hidden="true"></div>
+        <h3>Under U.S. law</h3>
+        <p>Every tonne is mined under American environmental, labor and safety rules. That costs more, and we price it in.</p>
+      </div>
+      <div class="principle">
+        <div class="swatch" style="background:var(--paper);border:1.5px solid var(--ink)" aria-hidden="true"></div>
+        <h3>Good neighbors</h3>
+        <p>We hire locally, publish our water data, and leave land in better shape than we found it.</p>
+      </div>
+      <div class="principle">
+        <div class="swatch" style="background:var(--azurite)" aria-hidden="true"></div>
+        <h3>Built to last</h3>
+        <p>Deposits take decades to develop. We plan and finance on that timescale, not on the commodity cycle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact block" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Let's get it out of the ground.</h2>
+        <p style="color:var(--muted);max-width:44ch">One address reaches the whole team. Tell us who you are and what you have in mind.</p>
+        <div class="email">
+          <code id="addr">hello@americanminerals.company</code>
+          <button class="btn" id="copy" type="button">Copy address</button>
+        </div>
+      </div>
+      <ul class="who">
+        <li><div><strong>Landowners &amp; claim holders</strong><span>Mineral rights, unpatented claims, old mine sites.</span></div><span class="mono">Land</span></li>
+        <li><div><strong>Offtake partners</strong><span>Magnet, semiconductor, battery and defense manufacturers.</span></div><span class="mono">Supply</span></li>
+        <li><div><strong>Investors</strong><span>Project finance, strategic equity, public programs.</span></div><span class="mono">Capital</span></li>
+        <li><div><strong>Careers</strong><span>Geologists, metallurgists, operators, engineers.</span></div><span class="mono">People</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap mono">
+    <span>American Minerals Company</span>
+    <span>americanminerals.company</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const canvas = document.getElementById('xsec');
+  const ctx = canvas.getContext('2d');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let drillT = reduce ? 1 : 0, started = false;
+
+  // seeded random so the section looks the same on every visit
+  function rng(seed){ return function(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+
+  function draw(){
+    const box = canvas.parentElement.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const W = Math.max(1, Math.round(box.width)), H = Math.max(1, Math.round(box.height));
+    if (canvas.width !== W*dpr || canvas.height !== H*dpr){ canvas.width = W*dpr; canvas.height = H*dpr; }
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+
+    const cs = getComputedStyle(document.documentElement);
+    const v = n => cs.getPropertyValue(n).trim();
+    const strata = ['--s0','--s1','--s2','--s3','--s4','--s5','--s6','--s7'].map(v);
+    const paper = v('--paper'), ink = v('--ink'), muted = v('--muted'), pyrite = v('--pyrite'), hem = v('--hematite');
+
+    ctx.fillStyle = paper; ctx.fillRect(0,0,W,H);
+
+    const r = rng(1776);
+    const surf = H*0.16;
+    // layer boundaries: gently folded, dipping to the right
+    const layers = strata.map((_,i) => ({
+      base: surf + (i===0 ? 0 : H*0.035 + (i-1) * H*0.11 + (i>3?H*0.02:0)),
+      a1: (i===0?10:14 + r()*16), f1: 0.8 + r()*1.4, p1: r()*6.28,
+      a2: 4 + r()*6, f2: 3 + r()*4, p2: r()*6.28,
+      dip: i===0 ? 0 : 0.06 + i*0.004
+    }));
+    const B = (i, x) => {
+      const L = layers[i], u = x / W;
+      return L.base + L.a1*Math.sin(u*L.f1*Math.PI*2 + L.p1) + L.a2*Math.sin(u*L.f2*Math.PI*2 + L.p2) + L.dip*x*(H/460) ;
+    };
+    // normal fault: down-dropped block to the right of the line x = fx0 + y*k
+    const fx0 = W*0.40, k = 0.42, throwD = H*0.07;
+
+    for (let x = 0; x < W; x += 1){
+      const yF = (x - fx0) / k; // pixels with y < yF lie in the hanging wall
+      for (let i = 0; i < layers.length; i++){
+        const top0 = i===0 ? B(0,x) : B(i,x);
+        const bot0 = i+1 < layers.length ? B(i+1,x) : H+throwD;
+        // footwall (unshifted), below the fault line
+        let a = Math.max(top0, yF), b = bot0;
+        if (b > a){ ctx.fillStyle = strata[i]; ctx.fillRect(x, a, 1.2, b-a); }
+        // hanging wall (shifted down), above the fault line
+        if (i === 0){ a = B(0,x); } else { a = top0 + throwD; }
+        b = Math.min(bot0 + throwD, yF);
+        if (i === 0) a = Math.max(B(0,x), 0);
+        if (b > a){ ctx.fillStyle = strata[i]; ctx.fillRect(x, a, 1.2, b-a); }
+      }
+    }
+    // fix surface: ground surface follows layer 0 regardless of fault
+    ctx.fillStyle = paper;
+    ctx.beginPath(); ctx.moveTo(0,0);
+    for (let x = 0; x <= W; x += 4) ctx.lineTo(x, B(0,x));
+    ctx.lineTo(W,0); ctx.closePath(); ctx.fill();
+
+    // speckle texture
+    const r2 = rng(42);
+    ctx.globalAlpha = 0.18; ctx.fillStyle = ink;
+    for (let n = 0; n < W*H/260; n++){
+      const x = r2()*W, y = B(0,x) + r2()*(H - B(0,x));
+      ctx.fillRect(x, y, 1, 1);
+    }
+    ctx.globalAlpha = 1;
+
+    // mineralized lens: pyrite speckle in the hematite band near the drill hole
+    const dx = W*0.70;
+    const lensY = B(3,dx) + throwD*((dx - fx0)/k > B(3,dx) ? 1 : 0);
+    const r3 = rng(7);
+    ctx.fillStyle = pyrite;
+    for (let n = 0; n < 700; n++){
+      const ang = r3()*Math.PI*2, rad = Math.sqrt(r3());
+      const x = dx + Math.cos(ang)*rad*W*0.16, y = lensY + H*0.05 + Math.sin(ang)*rad*H*0.045;
+      ctx.globalAlpha = 0.5 + r3()*0.5;
+      ctx.fillRect(x, y, 1.6, 1.6);
+    }
+    ctx.globalAlpha = 1;
+
+    // fault trace
+    ctx.strokeStyle = ink; ctx.lineWidth = 1.25; ctx.setLineDash([6,4]);
+    ctx.beginPath(); ctx.moveTo(fx0 + B(0,fx0)*k, B(0,fx0)); ctx.lineTo(fx0 + H*k, H); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = ink; ctx.font = '500 11px "IBM Plex Mono", monospace';
+    ctx.fillText('F1', fx0 + H*0.62*k + 8, H*0.62);
+
+    // surface line
+    ctx.strokeStyle = ink; ctx.lineWidth = 1.5;
+    ctx.beginPath(); for (let x = 0; x <= W; x += 3){ const y = B(0,x); x ? ctx.lineTo(x,y) : ctx.moveTo(x,y); } ctx.stroke();
+
+    // depth scale (0–400 m over surface..bottom)
+    const top = surf - 6, span = H - top - 8;
+    ctx.fillStyle = muted; ctx.strokeStyle = muted; ctx.lineWidth = 1;
+    ctx.font = '400 11px "IBM Plex Mono", monospace';
+    for (let m = 0; m <= 400; m += 100){
+      const y = top + span * (m/400);
+      ctx.beginPath(); ctx.moveTo(12, y); ctx.lineTo(22, y); ctx.stroke();
+      ctx.fillText(m + ' m', 26, y + 4);
+    }
+
+    // drill hole
+    const sy = B(0,dx), ey = sy + (H - sy - 14) * easeOut(drillT);
+    ctx.strokeStyle = ink; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(dx, sy); ctx.lineTo(dx, ey); ctx.stroke();
+    // headframe
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(dx-12, sy); ctx.lineTo(dx, sy-30); ctx.lineTo(dx+12, sy); ctx.moveTo(dx-6, sy-15); ctx.lineTo(dx+6, sy-15); ctx.stroke();
+    ctx.fillStyle = ink; ctx.font = '500 11px "IBM Plex Mono", monospace';
+    ctx.fillText('AMC-001', dx + 16, sy - 18);
+
+    // intercept label, once the bit reaches the lens
+    const hitY = lensY + H*0.05;
+    if (ey >= hitY){
+      ctx.fillStyle = hem;
+      ctx.fillRect(dx-4, hitY - H*0.035, 8, H*0.07);
+      const lx = Math.min(dx + 22, W - 190);
+      ctx.strokeStyle = ink; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(dx+5, hitY); ctx.lineTo(lx + (lx > dx ? 0 : 0), hitY); ctx.stroke();
+      ctx.fillStyle = paper; ctx.fillRect(lx, hitY - 26, 176, 40);
+      ctx.strokeStyle = ink; ctx.strokeRect(lx + .5, hitY - 25.5, 175, 39);
+      ctx.fillStyle = ink; ctx.font = '500 11px "IBM Plex Mono", monospace';
+      ctx.fillText('Mineralized interval', lx + 9, hitY - 9);
+      ctx.fillStyle = muted; ctx.font = '400 11px "IBM Plex Mono", monospace';
+      ctx.fillText('target horizon · illustrative', lx + 9, hitY + 7);
+    }
+  }
+  function easeOut(t){ return 1 - Math.pow(1 - t, 3); }
+
+  function animate(){
+    if (started) return; started = true;
+    const t0 = performance.now(), dur = 1800;
+    (function step(now){
+      drillT = Math.min(1, (now - t0) / dur);
+      draw();
+      if (drillT < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  draw();
+  if (!reduce) setTimeout(animate, 350);
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(draw, 80); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+  // redraw when the theme changes
+  new MutationObserver(draw).observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', draw);
+
+  // copy email
+  const btn = document.getElementById('copy'), addr = document.getElementById('addr');
+  btn.addEventListener('click', () => {
+    const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy address', 1600); };
+    const select = () => { const s = window.getSelection(), rg = document.createRange(); rg.selectNodeContents(addr); s.removeAllRanges(); s.addRange(rg); btn.textContent = 'Selected, press ⌘C'; setTimeout(() => btn.textContent = 'Copy address', 2400); };
+    try { navigator.clipboard.writeText(addr.textContent).then(done, select); } catch(e){ select(); }
+  });
+})();
+</script>
+</body>
+</html>
