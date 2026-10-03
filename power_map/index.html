@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" data-mode="static">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>U.S. Power Price Explorer</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css?v=20261003" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 28 28" role="img">
+            <path d="M4 18h4l3-10 5 15 3-9h5" />
+          </svg>
+        </div>
+        <div>
+          <h1>U.S. Power Price Explorer</h1>
+          <p>Actual wholesale power prices from your Rose market catalog</p>
+        </div>
+      </div>
+      <div class="sync-state" id="syncState" aria-live="polite">
+        <span class="sync-dot is-loading"></span>
+        <div>
+          <strong id="syncLabel">Connecting to Rose</strong>
+          <span id="syncDetail">Loading notebook and market map…</span>
+        </div>
+        <button class="icon-button" id="refreshButton" type="button" aria-label="Refresh Rose data">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="dashboard-shell">
+      <section class="panel chart-panel" aria-labelledby="chartTitle">
+        <div class="chart-toolbar">
+          <div class="section-heading">
+            <div class="eyebrow">PRICE COMPARISON</div>
+            <h2 id="chartTitle">Actual power price</h2>
+            <p>Daily Rose observations shown in USD per megawatt-hour.</p>
+          </div>
+          <div class="window-controls">
+            <div class="axis-controls" aria-label="Y-axis bounds">
+              <span class="control-label">Y axis ($/MWh)</span>
+              <label>
+                <span>Min</span>
+                <input id="yAxisMin" type="number" step="any" placeholder="Auto" inputmode="decimal" />
+              </label>
+              <label>
+                <span>Max</span>
+                <input id="yAxisMax" type="number" step="any" placeholder="Auto" inputmode="decimal" />
+              </label>
+              <button id="resetYAxis" type="button">Auto</button>
+            </div>
+            <div class="preset-group" aria-label="Time window presets">
+              <button type="button" data-days="7">7D</button>
+              <button type="button" data-days="30">30D</button>
+              <button type="button" class="is-active" data-days="90">90D</button>
+              <button type="button" data-days="365">1Y</button>
+              <button type="button" data-days="all">ALL</button>
+            </div>
+            <div class="date-range">
+              <label>
+                <span>From</span>
+                <input id="startDate" type="date" />
+              </label>
+              <span class="date-separator">–</span>
+              <label>
+                <span>To</span>
+                <input id="endDate" type="date" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="series-legend" id="seriesLegend" aria-label="Selected price series"></div>
+        <div class="chart-frame">
+          <div id="priceChart" role="img" aria-label="Actual power price comparison chart"></div>
+          <div class="empty-chart" id="emptyChart">
+            <div class="empty-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M4 25V8m0 17h24M8 20l5-6 5 3 8-10" /></svg>
+            </div>
+            <strong>Choose a market below</strong>
+            <span>Click the map to add its nearest available price series.</span>
+          </div>
+        </div>
+        <div class="chart-footnote">
+          <span><i class="footnote-line"></i> Drag the handles below the chart to expand or contract time.</span>
+          <span id="observationSummary">No series selected</span>
+        </div>
+      </section>
+
+      <section class="panel map-panel" aria-labelledby="mapTitle">
+        <div class="map-layout">
+          <div class="map-column">
+            <div class="map-heading">
+            <div>
+              <div class="eyebrow">GEOGRAPHIC SELECTOR</div>
+              <h2 id="mapTitle">Choose a market</h2>
+                <p>Click approximately anywhere in the continental U.S. to add the closest matching location and series.</p>
+              </div>
+              <div class="map-key" aria-label="Map marker key">
+                <span><i class="key-dot available"></i> Available</span>
+                <span><i class="key-dot selected"></i> On chart</span>
+              </div>
+            </div>
+            <div id="marketMap" aria-label="Map of approximate U.S. power market locations"></div>
+            <div class="nearest-banner" id="nearestBanner" hidden>
+              <div>
+                <span>Nearest series added</span>
+                <strong id="nearestLabel"></strong>
+              </div>
+              <button id="undoNearest" type="button">Undo</button>
+            </div>
+          </div>
+
+          <aside class="selection-sidebar" aria-labelledby="selectedTitle">
+            <div class="sidebar-heading">
+              <div>
+                <div class="eyebrow">ACTIVE COMPARISON</div>
+                <h3 id="selectedTitle">Selected markets</h3>
+              </div>
+              <span class="selection-count" id="selectionCount">0 of 8</span>
+            </div>
+
+            <div class="filter-grid">
+              <label>
+                <span>Market</span>
+                <select id="marketFilter"><option value="">All markets</option></select>
+              </label>
+              <label>
+                <span>Delivery</span>
+                <select id="deliveryFilter"><option value="">All delivery</option></select>
+              </label>
+              <label>
+                <span>Period</span>
+                <select id="periodFilter"><option value="">All periods</option></select>
+              </label>
+            </div>
+            <p class="filter-help">Map clicks find the nearest series matching these filters.</p>
+
+            <label class="direct-add">
+              <span>Add directly from market catalog</span>
+              <select id="seriesPicker">
+                <option value="">Choose a series…</option>
+              </select>
+            </label>
+
+            <div class="selected-list" id="selectedList"></div>
+
+            <div class="sidebar-actions">
+              <button class="secondary-button" id="clearButton" type="button" disabled>Clear all</button>
+              <p><strong id="seriesAvailable">—</strong> price series across <strong id="locationAvailable">—</strong> locations</p>
+            </div>
+
+            <div class="source-card">
+              <div class="source-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5" /></svg>
+              </div>
+              <div>
+                <strong>Rose sources</strong>
+                <span id="sourceNotebook">usa.power.price.exploration.20260815</span>
+                <small id="sourceMap">Market map loading…</small>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="snapshot-gate" id="snapshotGate" hidden>
+      <form class="gate-card" id="gateForm">
+        <div class="eyebrow">PROTECTED SNAPSHOT</div>
+        <h2>U.S. Power Price Explorer</h2>
+        <p>Enter the password to decrypt the price data.</p>
+        <input id="gatePassword" type="password" autocomplete="current-password" aria-label="Password" />
+        <button type="submit">Unlock</button>
+        <span class="gate-message" id="gateMessage" aria-live="polite"></span>
+      </form>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    <script src="app.js?v=20261003"></script>
+  </body>
+</html>
