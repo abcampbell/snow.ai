@@ -50,7 +50,7 @@ p{margin:0}
 .top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
 .mark{display:flex;flex-wrap:wrap;align-items:baseline;gap:0;min-width:0;text-decoration:none;font-family:var(--display);font-weight:900;font-size:clamp(20px,5.4vw,26px);letter-spacing:.04em;text-transform:uppercase;line-height:1}
 .mark .dot{color:var(--hematite)}
-.mark .tld{font-weight:500;letter-spacing:.02em;text-transform:none;color:var(--muted)}
+.mark .tld{font-weight:500;color:var(--hematite);margin-left:.28em}
 .nav{display:flex;gap:clamp(14px,2.4vw,28px);flex-wrap:wrap}
 .nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
@@ -153,7 +153,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <body>
 
 <header class="wrap top">
-  <a class="mark" href="#top" aria-label="American Minerals Company, home">American Minerals<span class="dot">.</span><span class="tld">company</span></a>
+  <a class="mark" href="#top" aria-label="American Minerals Company, home">American Minerals <span class="tld">Company</span></a>
   <nav class="nav" aria-label="Primary">
     <a href="#minerals">Minerals</a>
     <a href="#process">How we work</a>
@@ -300,7 +300,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
         <h2>Let's get it out of the ground.</h2>
         <p style="color:var(--muted);max-width:44ch">One address reaches the whole team. Tell us who you are and what you have in mind.</p>
         <div class="email">
-          <code id="addr">hello@americanminerals.company</code>
+          <code id="addr">hello@theamericanmineralscompany.com</code>
           <button class="btn" id="copy" type="button">Copy address</button>
         </div>
       </div>
@@ -317,7 +317,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <footer>
   <div class="wrap mono">
     <span>American Minerals Company</span>
-    <span>americanminerals.company</span>
+    <span>theamericanmineralscompany.com</span>
   </div>
 </footer>
 
