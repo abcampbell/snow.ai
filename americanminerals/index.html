@@ -8,147 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-:root{
-  color-scheme: light;
-  /* limestone, basalt ink, and the three mineral pigments: hematite, quartz, azurite */
-  --ground:#ECEDE8; --paper:#F7F7F3; --ink:#18212B; --muted:#56616C; --line:#CBCEC6;
-  --hematite:#A33A24; --azurite:#2A5698; --pyrite:#A9862A;
-  --s0:#D9CDB4; --s1:#BCA88A; --s2:#8E9A86; --s3:#B0623F; --s4:#6A7580; --s5:#8B819B; --s6:#4A5663; --s7:#394552;
-  --display:"Big Shoulders Display","Oswald","Arial Narrow",sans-serif;
-  --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    color-scheme: dark;
-    --ground:#101317; --paper:#171B20; --ink:#E7E8E2; --muted:#98A1AA; --line:#2B3139;
-    --hematite:#D86A50; --azurite:#7FA3DE; --pyrite:#D1AE52;
-    --s0:#5B5345; --s1:#4E4536; --s2:#3E4A40; --s3:#7A3F29; --s4:#343C45; --s5:#433D50; --s6:#262D35; --s7:#1D232A;
-  }
-}
-:root[data-theme="dark"]{
-  color-scheme: dark;
-  --ground:#101317; --paper:#171B20; --ink:#E7E8E2; --muted:#98A1AA; --line:#2B3139;
-  --hematite:#D86A50; --azurite:#7FA3DE; --pyrite:#D1AE52;
-  --s0:#5B5345; --s1:#4E4536; --s2:#3E4A40; --s3:#7A3F29; --s4:#343C45; --s5:#433D50; --s6:#262D35; --s7:#1D232A;
-}
-
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;overflow-x:clip;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--azurite);outline-offset:3px}
-.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
-.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
-h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.95;text-wrap:balance;margin:0;letter-spacing:.005em}
-h2{font-size:clamp(40px,6vw,72px);text-transform:uppercase}
-p{margin:0}
-
-/* ---------- header ---------- */
-.top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-.mark{display:flex;flex-wrap:wrap;align-items:baseline;gap:0;min-width:0;text-decoration:none;font-family:var(--display);font-weight:900;font-size:clamp(20px,5.4vw,26px);letter-spacing:.04em;text-transform:uppercase;line-height:1}
-.mark .dot{color:var(--hematite)}
-.mark .tld{font-weight:500;color:var(--hematite);margin-left:.28em}
-.nav{display:flex;gap:clamp(14px,2.4vw,28px);flex-wrap:wrap}
-.nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--muted)}
-.nav a:hover{color:var(--ink)}
-
-/* ---------- hero ---------- */
-.hero{padding-block:clamp(40px,7vw,88px) 28px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end}
-.hero h1{font-size:clamp(50px,9vw,132px);overflow-wrap:break-word;text-transform:uppercase;font-weight:900;line-height:.86}
-.hero h1 .red{color:var(--hematite)}
-.hero h1 .blue{color:var(--azurite)}
-.hero-side{display:grid;gap:22px;padding-bottom:8px}
-.hero-side p.lede{font-size:clamp(18px,1.6vw,21px);line-height:1.5;max-width:34ch}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;font:600 15px/1 var(--body);text-decoration:none;border:1.5px solid var(--ink);border-radius:2px;cursor:pointer;background:transparent;color:var(--ink);transition:background .15s,color .15s}
-.btn.solid{background:var(--ink);color:var(--paper)}
-.btn:hover{background:var(--ink);color:var(--paper)}
-.btn.solid:hover{background:var(--hematite);border-color:var(--hematite)}
-
-/* ---------- cross-section ---------- */
-.section-fig{margin:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
-.section-fig .canvas-box{position:relative;height:clamp(300px,38vw,470px)}
-.section-fig canvas{display:block;width:100%;height:100%}
-.section-fig figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:12px;color:var(--muted)}
-
-/* ---------- elements ---------- */
-.block{padding-block:clamp(64px,9vw,120px)}
-.block-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:44px}
-.block-head p{max-width:52ch;color:var(--muted)}
-.elements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
-.el{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 22px 22px;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:6px;background:var(--paper)}
-.el-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-.el-sym{font-family:var(--display);font-weight:900;font-size:96px;line-height:.9;letter-spacing:-.01em}
-.el-name{font-weight:600;font-size:18px}
-.el-use{color:var(--muted);font-size:15px;line-height:1.45}
-.reliance{margin-top:14px;display:grid;gap:6px}
-.reliance-row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-.reliance-row b{color:var(--hematite);font-weight:500}
-.bar{height:8px;background:var(--line);position:relative}
-.bar i{position:absolute;inset:0 auto 0 0;background:var(--hematite)}
-.footnote{margin-top:18px;color:var(--muted);max-width:80ch}
-
-/* ---------- refine band ---------- */
-.band{background:var(--ink);color:var(--paper)}
-.band .wrap{padding-block:clamp(56px,8vw,104px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
-.big-num{font-family:var(--display);font-weight:900;font-size:clamp(120px,20vw,260px);line-height:.8;color:var(--pyrite)}
-.big-num sup{font-size:.35em;vertical-align:.95em;margin-left:4px}
-.band h3{font-size:clamp(32px,4vw,52px);text-transform:uppercase;margin-bottom:18px}
-.band p{max-width:56ch;opacity:.82}
-.band .mono{opacity:.6;margin-top:18px;display:block}
-
-/* ---------- process ---------- */
-.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:step;position:relative}
-.step{padding:22px 20px 0 0;border-top:1.5px solid var(--ink);position:relative;display:grid;gap:10px;align-content:start}
-.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
-.step::after{content:"";position:absolute;top:-6px;left:0;width:10px;height:10px;background:var(--ground);border:1.5px solid var(--ink);border-radius:50%}
-.step h3{font-size:34px;text-transform:uppercase}
-.step p{font-size:15px;color:var(--muted);line-height:1.5}
-.step.key::after{background:var(--hematite);border-color:var(--hematite)}
-.step.key h3{color:var(--hematite)}
-
-/* ---------- principles ---------- */
-.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
-.principle{display:grid;gap:12px;align-content:start}
-.principle h3{font-size:30px;text-transform:uppercase}
-.principle p{color:var(--muted)}
-.swatch{width:44px;height:44px;border-radius:50%}
-
-/* ---------- contact ---------- */
-.contact{background:var(--paper);border-top:1px solid var(--line)}
-.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px)}
-.contact h2{margin-bottom:22px}
-.who{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
-.who li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);align-items:baseline}
-.who strong{font-weight:600;font-size:18px;display:block}
-.who span{color:var(--muted);font-size:15px}
-.who .mono{color:var(--muted);white-space:nowrap}
-.email{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:24px}
-.email code{font-family:var(--mono);font-size:clamp(15px,1.8vw,19px);padding:12px 14px;border:1px solid var(--line);background:var(--ground);user-select:all;overflow-wrap:anywhere}
-
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line)}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px;color:var(--muted)}
-
-/* ---------- responsive ---------- */
-@media (max-width:900px){
-  .hero,.block-head,.contact-grid{grid-template-columns:minmax(0,1fr)}
-  .elements{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .steps{grid-template-columns:minmax(0,1fr);gap:0}
-  .step{padding:18px 0 24px 28px;border-top:0;border-left:1.5px solid var(--ink)}
-  .step::after{top:22px;left:-6px}
-  .principles{grid-template-columns:minmax(0,1fr)}
-  .band .wrap{grid-template-columns:minmax(0,1fr)}
-}
-@media (max-width:540px){
-  .elements{grid-template-columns:minmax(0,1fr)}
-  .el-sym{font-size:80px}
-  .who li{grid-template-columns:minmax(0,1fr)}
-}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -193,48 +53,48 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     </div>
 
     <div class="elements">
-      <article class="el">
+      <a class="el" href="antimony/">
         <div class="el-top"><span>51</span><span>121.760</span></div>
         <div class="el-sym">Sb</div>
         <div class="el-name">Antimony</div>
         <p class="el-use">Flame retardants, primers and munitions, lead-acid batteries.</p>
         <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>≈85%</b></div><div class="bar"><i style="width:85%"></i></div></div>
-      </article>
-      <article class="el">
+      </a>
+      <a class="el" href="gallium/">
         <div class="el-top"><span>31</span><span>69.723</span></div>
         <div class="el-sym">Ga</div>
         <div class="el-name">Gallium</div>
         <p class="el-use">Radar, power electronics, LEDs and solar cells.</p>
         <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>100%</b></div><div class="bar"><i style="width:100%"></i></div></div>
-      </article>
-      <article class="el">
+      </a>
+      <a class="el" href="graphite/">
         <div class="el-top"><span>6</span><span>12.011</span></div>
         <div class="el-sym">C</div>
         <div class="el-name">Natural graphite</div>
         <p class="el-use">Battery anodes, refractories and lubricants.</p>
         <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>100%</b></div><div class="bar"><i style="width:100%"></i></div></div>
-      </article>
-      <article class="el">
+      </a>
+      <a class="el" href="rare-earths/">
         <div class="el-top"><span>60</span><span>144.242</span></div>
         <div class="el-sym">Nd</div>
         <div class="el-name">Neodymium &amp; rare earths</div>
         <p class="el-use">Permanent magnets for EV motors, wind turbines and guidance systems.</p>
         <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>80%+</b></div><div class="bar"><i style="width:80%"></i></div></div>
-      </article>
-      <article class="el">
+      </a>
+      <a class="el" href="cobalt/">
         <div class="el-top"><span>27</span><span>58.933</span></div>
         <div class="el-sym">Co</div>
         <div class="el-name">Cobalt</div>
         <p class="el-use">Superalloys for jet engines, battery cathodes.</p>
         <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>≈70%</b></div><div class="bar"><i style="width:70%"></i></div></div>
-      </article>
-      <article class="el">
+      </a>
+      <a class="el" href="lithium/">
         <div class="el-top"><span>3</span><span>6.94</span></div>
         <div class="el-sym">Li</div>
         <div class="el-name">Lithium</div>
         <p class="el-use">Battery cathodes and electrolytes, specialty glass.</p>
         <div class="reliance"><div class="reliance-row"><span>Net import reliance</span><b>&gt;25%</b></div><div class="bar"><i style="width:25%"></i></div></div>
-      </article>
+      </a>
     </div>
     <p class="footnote mono">Approximate net import reliance, from USGS Mineral Commodity Summaries. Check against the current edition before launch.</p>
   </section>
