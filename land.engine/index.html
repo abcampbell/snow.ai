@@ -265,7 +265,7 @@
       <button class="chip jump-metro" type="button" data-metro="13740">Billings</button>
       <button class="chip jump-metro" type="button" data-metro="29820">Las Vegas (base)</button>
     </div>
-    <iframe class="map-frame" id="mapFrame" src="surface.html?m=34980&v=20261020" title="Land price surfaces" loading="lazy"></iframe>
+    <iframe class="map-frame" id="mapFrame" src="surface.html?m=34980&v=20261024" title="Land price surfaces" loading="lazy"></iframe>
     <p class="note">Explorer data: <a href="https://www.fhfa.gov/research/papers/wp1901" target="_blank" rel="noopener">FHFA Working Paper 19-01, land prices v4.0 (June 2024)</a>, built from millions of appraisals of single-family properties. These are residential lot values, so raw acreage outside town trades far lower. About a third of tracts have their own yearly series; the rest are scaled from their county's index. The long-view maps cover 2000–2026 using calibrated zone estimates back-cast with each metro's home-price index. New York land prices by buildable square foot, so its per-acre figures are conversions.</p>
   </div>
 </section>
@@ -397,7 +397,7 @@
   }));
   // tabs: maps
   const setMap = (id, metro) => {
-    document.getElementById('mapFrame').src = id === 'explorer' ? `surface.html?m=${metro || 34980}&v=20261020` : `maps/${id}.html`;
+    document.getElementById('mapFrame').src = id === 'explorer' ? `surface.html?m=${metro || 34980}&v=20261024` : `maps/${id}.html`;
     document.querySelectorAll('[data-tabs="maps"] .tab').forEach((x) => x.classList.toggle('is-active', x.dataset.map === id));
   };
   document.querySelectorAll('[data-tabs="maps"] .tab').forEach((t) => t.addEventListener('click', () => setMap(t.dataset.map)));
