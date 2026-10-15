@@ -303,6 +303,7 @@
       cell: `~${fmt(mSwl)} ft (${near.length} wells)`, num: mSwl };
   }
   // Mineral history: regional pack (with assay grades) when inside a region, else the national USGS MRDS state pack.
+  const METAL = /\b(?:gold|silver|copper|lithium|uranium|tungsten|antimony|molybdenum|cobalt|nickel|platinum|palladium|rare.?earth|REE|vanadium|zinc|lead|mercury|manganese|beryllium|tellurium|gallium|germanium|graphite|tin|chromium|titanium|niobium|tantalum|bismuth)\b/i;
   async function chkMines(p, region) {
     const st = stateOf(p);
     const radiusKm = region ? region.mineRadiusKm : 10;
@@ -319,21 +320,23 @@
     p._mines = near;
     if (!near.length) return { status: "info", headline: `No recorded mines within ${radiusKm} km`, cell: "0", num: 0 };
     const producers = near.filter((m) => m.stat === "P" || m.stat === "PP").length;
+    const metal = near.filter((m) => METAL.test(m.comm || "")).length;
+    const metalNote = metal ? ` ${metal} of them metallic or critical minerals.` : " None are metallic or critical minerals (stone, gravel, and clay pits carry no claim upside).";
     if (national) {
       const comm = {};
       near.forEach((m) => (m.comm || "").split(/,\s*/).filter(Boolean).forEach((c) => (comm[c] = (comm[c] || 0) + 1)));
       const ranked = Object.entries(comm).sort((a, b) => b[1] - a[1]);
       return { status: "info", headline: `${near.length} recorded deposits within ${radiusKm} km${producers ? ` · ${producers} produced` : ""}`,
-        detail: `Nearest: ${esc(near[0].name || "unnamed")} (${MRDS_STAT[near[0].stat] || "site"}) at ${fmt(near[0].d / 1000, 1)} km. Commodities: ${esc(ranked.slice(0, 4).map(([c, n]) => `${c} (${n})`).join(", "))}. Mineral upside only counts if the deed includes mineral rights. Check for severance.`,
-        cell: `${near.length}${ranked[0] ? " · " + ranked[0][0].toLowerCase() : ""}`, num: near.length };
+        detail: `Nearest: ${esc(near[0].name || "unnamed")} (${MRDS_STAT[near[0].stat] || "site"}) at ${fmt(near[0].d / 1000, 1)} km. Commodities: ${esc(ranked.slice(0, 4).map(([c, n]) => `${c} (${n})`).join(", "))}. ${metalNote} Mineral upside only counts if the deed includes mineral rights. Check for severance.`,
+        cell: `${near.length}${ranked[0] ? " · " + ranked[0][0].toLowerCase() : ""}`, num: near.length, metal };
     }
     const comm = {};
     near.forEach((m) => (m.comm || "").split(/[,;]\s*/).filter(Boolean).forEach((c) => (comm[c.trim()] = (comm[c.trim()] || 0) + 1)));
     const ranked = Object.entries(comm).sort((a, b) => b[1] - a[1]);
     const top = ranked.slice(0, 4).map(([c, n]) => `${c} (${n})`).join(", ");
     return { status: "info", headline: `${near.length} recorded mines within ${region.mineRadiusKm} km`,
-      detail: `Nearest: ${esc(near[0].name || "unnamed")} at ${fmt(near[0].d / 1000, 1)} km. Commodities: ${esc(top)}. Mineral upside only counts if the deed includes mineral rights. Check for severance.`,
-      cell: `${near.length}${ranked[0] ? " · " + ranked[0][0].toLowerCase() : ""}`, num: near.length };
+      detail: `Nearest: ${esc(near[0].name || "unnamed")} at ${fmt(near[0].d / 1000, 1)} km. Commodities: ${esc(top)}.${metalNote} Mineral upside only counts if the deed includes mineral rights. Check for severance.`,
+      cell: `${near.length}${ranked[0] ? " · " + ranked[0][0].toLowerCase() : ""}`, num: near.length, metal };
   }
   // Land value: nearest FHFA census tract (238 metros) -> region raw-land band -> county -> hand-built zone tables.
   async function chkMarket(p, region) {
@@ -354,7 +357,7 @@
         const rel = best.m.median_ppa ? ppa / best.m.median_ppa : null;
         return { status: "info", rel, headline: `~${money(ppa)}/acre residential land (${yr})`,
           detail: `FHFA single-family land value for the nearest census tract (${fmt(best.d)} m away, ${esc(best.m.name)}). Land is ${share != null ? fmt(share * 100) + "%" : "–"} of property value; the structure prices at ~$${fmt(spsf)}/sqft on a typical ${fmt(lot)} sqft lot with ${fmt(sqft)} sqft interior. ${chg != null ? `${chg >= 0 ? "+" : ""}${fmt(chg)}% since ${y0}. ` : ""}Metro median ${money(best.m.median_ppa)}/acre.${direct ? "" : " Tract trend scaled from its county index."}`,
-          cell: `~${money(ppa)}${rel != null ? ` · ${fmt(rel, 1)}× metro` : ""}`, num: ppa, share, spsf, surface: { fhfa: true, id: best.m.code, label: best.m.name } };
+          cell: `~${money(ppa)}${rel != null ? ` · ${fmt(rel, 1)}× metro` : ""}`, num: ppa, share, spsf, growth: chg != null ? chg / 100 : null, surface: { fhfa: true, id: best.m.code, label: best.m.name } };
       }
       if (!region) {
         const cs = await loadPack("data/surfaces/counties.json");
@@ -429,7 +432,7 @@
     if (r.status !== "info") return "neutral";
     if (id === "market" && r.rel != null) return r.rel <= 0.8 ? "good" : r.rel >= 1.5 ? "warn" : "neutral";
     if (id === "walk" && r.num != null) return r.num >= 10.51 ? "good" : "neutral";
-    if (id === "mines") return r.num > 0 ? "good" : "neutral";
+    if (id === "mines") return r.metal > 0 ? "good" : "neutral";
     if (id === "drain") return /perennial/i.test(r.headline || "") ? "good" : "neutral";
     return "neutral";
   }

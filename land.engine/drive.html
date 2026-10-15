@@ -6,7 +6,7 @@
 <title>The Drive</title>
 <meta name="description" content="The route actually driven, Dollywood to Ely: 27 stops scored by the Region Engine, ranked your way.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="style.css?v=20261021">
+<link rel="stylesheet" href="style.css?v=20261022">
 <style>
   .dv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 6px 0 12px; font-size: 13px; color: var(--muted); }
   .dv-bar select { background: var(--panel); border: 1px solid var(--line-2); color: var(--text); border-radius: 8px; padding: 8px 10px; font: 13px var(--mono); }
@@ -118,9 +118,9 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
-<script src="layers.js?v=20261021"></script>
-<script src="regions.js?v=20261021"></script>
-<script src="region.js?v=20261021"></script>
+<script src="layers.js?v=20261022"></script>
+<script src="regions.js?v=20261022"></script>
+<script src="region.js?v=20261022"></script>
 <script>
 (async () => {
   const E = window.RegionEngine, $ = (id) => document.getElementById(id);
@@ -135,7 +135,7 @@
     return `rgb(${p.map((x, i) => Math.round(x + (q[i] - x) * u)).join(",")})`;
   };
   const USES = Object.keys(E.PROFILES), FK = Object.keys(E.F);
-  const doc = await fetch("data/drive.json?v=20261021").then((r) => r.json());
+  const doc = await fetch("data/drive.json?v=20261022").then((r) => r.json());
   const stops = doc.stops.filter((s) => s.d);
   stops.forEach((s, i) => { s.i = i; s.sc = {}; USES.forEach((u) => (s.sc[u] = E.score(s.d, u))); s.f = {}; FK.forEach((k) => { const v = E.F[k].score(s.d); s.f[k] = v == null ? null : v; }); });
   $("dvBuilt").textContent = `scored ${doc.built} · ${doc.radius_mi}-mile radius · ${stops.length} stops`;

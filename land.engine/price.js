@@ -58,7 +58,10 @@
     $("psDerived").innerHTML = (k.length ? `<div class="kpis">${k.map(([a, b, c]) => `<div class="kpi ${c || ""}"><span>${a}</span><b>${b}</b></div>`).join("")}</div>` : "") +
       (notes.length ? `<p class="note">${notes.join(" ")}</p>` : "");
     $("psSend").disabled = !value;
-    return { value, acres, sqft, last, yearsHeld, dom, land };
+    const out = { value, acres, sqft, last, yearsHeld, dom, land, structure, ppa: rate?.ppa, tractPsf };
+    window.LE_PRICED = out;
+    document.dispatchEvent(new CustomEvent("le:priced", { detail: out }));
+    return out;
   }
 
   function lookupLinks(p) {
@@ -162,6 +165,15 @@
       $("psStatus").textContent = getKey() ? "Key saved in this browser only. Click Auto-fill." : "Key cleared."; $("psStatus").className = "uw-status";
     });
   });
-  document.addEventListener("le:reset", () => { const el = $("priceStep"); if (el) el.hidden = true; });
+  document.addEventListener("le:reset", () => {
+    const el = $("priceStep"); if (el) el.hidden = true;
+    if ($("psForm")) $("psForm").reset();
+    window.LE_PRICED = null;
+    if ($("psSend")) $("psSend").disabled = true;
+    if ($("calcFrom") && !$("calcFrom").hidden) { // a previous deal was loaded: put the calculators back to their defaults
+      $("calcFrom").hidden = true; $("calcFrom").innerHTML = "";
+      document.querySelectorAll("form.calc[data-calc]").forEach((f) => { f.reset(); f.dispatchEvent(new Event("input", { bubbles: true })); });
+    }
+  });
   document.addEventListener("le:screened", (e) => { ctx = e.detail; render(); });
 })();

@@ -6,7 +6,7 @@
 <title>Land Engine</title>
 <meta name="description" content="Parcel and region intelligence for any US land: underwriter, region engine, deal calculators, and land price surfaces.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="style.css?v=20261021">
+<link rel="stylesheet" href="style.css?v=20261022">
 </head>
 <body>
 
@@ -90,6 +90,7 @@
       <div class="verdict" id="uwVerdict"></div>
       <div class="pcard" id="uwCard"></div>
       <div class="pcard-key"><span class="k-good">good</span><span class="k-warn">check</span><span class="k-bad">bad</span><span class="k-neutral">neutral</span> · hover a tile for detail; full write-ups below</div>
+      <div id="uwSystems"></div>
       <div class="uw-grid">
         <div>
           <div id="uwMap"></div>
@@ -299,7 +300,8 @@
     <div class="sec-head">
       <div class="eyebrow">05 · Systems</div>
       <h2>Twelve systems, each a repeatable decision</h2>
-      <p>The intellectual property is the decision method; the code is just how it currently runs. Each system works at any scale and in any region.</p>
+      <p>The intellectual property is the decision method; the code is just how it currently runs. Each system works at any scale and in any region. Screen a parcel above and each card shows its 1–10 score for that place (log scale, 5 = middle of the road).</p>
+      <p class="note" id="sysFor"></p>
     </div>
     <div class="systems">
       <div class="sys"><div class="n">01</div><h4>Water intelligence</h4><p>Whether land can support its use. Well logs and basin data become a go/no-go screen. Water is the gating resource in the Great Basin.</p><span class="live">live · NDWR logs + USGS wells nationwide</span></div>
@@ -381,11 +383,12 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
-<script src="layers.js?v=20261021"></script>
-<script src="regions.js?v=20261021"></script>
-<script src="engine.js?v=20261021"></script>
-<script src="calc.js?v=20261021"></script>
-<script src="price.js?v=20261021"></script>
+<script src="layers.js?v=20261022"></script>
+<script src="regions.js?v=20261022"></script>
+<script src="engine.js?v=20261022"></script>
+<script src="calc.js?v=20261022"></script>
+<script src="price.js?v=20261022"></script>
+<script src="systems.js?v=20261022"></script>
 <script>
   // tabs: calculators
   document.querySelectorAll('[data-tabs="calc"] .tab').forEach((t) => t.addEventListener('click', () => {
