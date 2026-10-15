@@ -24,6 +24,12 @@
   .yr input { flex:1; accent-color:var(--accent); }
   .yr b { font:600 16px ui-monospace, monospace; min-width:42px; text-align:right; }
   .yr.off { opacity:.35; pointer-events:none; }
+  .acc { display:flex; align-items:center; gap:6px; margin-top:6px; font-size:11px; color:var(--faint); }
+  .acc select { background:#0b0d10; border:1px solid var(--line); color:var(--text); border-radius:5px; padding:2px 4px; font-size:11px; max-width:120px; }
+  .acc input { flex:1; min-width:40px; accent-color:var(--accent); }
+  .acc b { font:600 11px ui-monospace, monospace; color:var(--text); min-width:38px; text-align:right; }
+  .acc.on b { color:var(--accent); }
+  .ctl.min .acc { display:none; }
   .stats { display:grid; grid-template-columns:1fr 1fr; gap:3px 10px; margin-top:8px; padding-top:6px; border-top:1px solid var(--line); }
   .stats span { display:block; color:var(--faint); font-size:10px; }
   .stats b { font:600 12px ui-monospace, monospace; }
@@ -97,6 +103,13 @@
     <button data-k="share" title="Land share of home value">Land %</button>
     <button data-k="spsf" title="Structure-only $ per sqft">Bldg $/sf</button>
     <button data-k="pv" title="Single-family home value">Home $</button>
+    <button data-k="tt" title="Estimated drive time to the chosen hub">Drive</button>
+  </div>
+  <div class="acc" id="acc">
+    <span>to</span><select id="hubSel">
+      <option value="intl">major intl airport</option><option value="reg">regional airport</option><option value="air">any airline airport</option>
+      <option value="jet">private-jet runway</option><option value="port">port</option></select>
+    <span>within</span><input type="range" id="ttMax" min="15" max="241" step="5" value="241"><b id="ttMaxV">any</b>
   </div>
   <div class="yr" id="yrBox"><button class="play" id="play" type="button" title="Play 2012 → 2022">▶</button><input type="range" id="yr" min="0" max="10" step="1"><b id="yrLabel">2022</b></div>
   <div class="stats" id="stats"></div>
@@ -130,17 +143,49 @@
   map.attributionControl.addAttribution("Data: FHFA WP 19-01 v4.0");
   layer = L.layerGroup().addTo(map);
 
-  const val = (t, k, y) => k === "ppa" ? t[2][y] : k === "share" ? t[3] : k === "spsf" ? t[4] : t[7];
-  const fmtV = (k, v) => k === "share" ? pct(v) : k === "spsf" ? (v == null ? "–" : `$${Math.round(v)}`) : money(v);
+  // Drive time, estimated from straight-line distance and calibrated against OSRM road routes
+  // (nevada/region_data/calibrate_drive.py): <=100 km: 11 + 1.0 min/km; beyond: +0.78 min/km.
+  function hav(a, b, c, d) { const R = 6371008.8, r = Math.PI / 180, x = Math.sin((c - a) * r / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin((d - b) * r / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); }
+  const driveMin = (km) => km <= 100 ? 11 + km : 111 + 0.778 * (km - 100);
+  const HUBDEF = { intl: { label: "major international airport", f: (a) => a[4] & 1 }, reg: { label: "regional airport", f: (a) => a[4] & 2 },
+    air: { label: "airline airport", f: (a) => a[4] & 3 }, jet: { label: "private-jet runway", f: (a) => a[4] & 4 }, port: { label: "port" } };
+  let hubPts = null, hubKey = "intl", ttMax = null;
+  const accessReady = Promise.all([fetch("data/airports.json").then((r) => r.json()), fetch("data/ports.json").then((r) => r.json())]).then(([ap, pr]) => {
+    hubPts = {};
+    for (const [k, d] of Object.entries(HUBDEF)) hubPts[k] = k === "port" ? pr.p.map((r) => [r[0], r[1], r[2]]) : ap.a.filter(d.f).map((a) => [a[0], a[1], `${a[3]} ${a[2]}`]);
+  });
+  // Nearest hub per tract via a 1-degree grid; cached on the tract row.
+  function nearestHub(t, k) {
+    t._h ||= {};
+    if (t._h[k]) return t._h[k];
+    const pts = hubPts[k]; if (!pts) return null;
+    if (!pts._g) { pts._g = new Map(); pts.forEach((h, i) => { const key = `${Math.floor(h[0])},${Math.floor(h[1])}`; if (!pts._g.has(key)) pts._g.set(key, []); pts._g.get(key).push(i); }); }
+    const la = Math.floor(t[0]), lo = Math.floor(t[1]), kx = Math.cos(t[0] * Math.PI / 180);
+    let best = null, bd = Infinity;
+    for (let r = 0; r < 40; r++) {
+      for (let i = -r; i <= r; i++) for (let j = -r; j <= r; j++) {
+        if (Math.max(Math.abs(i), Math.abs(j)) !== r) continue;
+        for (const idx of pts._g.get(`${la + i},${lo + j}`) || []) { const h = pts[idx], d = ((h[0] - t[0]) * 111.2) ** 2 + ((h[1] - t[1]) * 111.2 * kx) ** 2; if (d < bd) { bd = d; best = h; } }
+      }
+      if (best && Math.sqrt(bd) < (r - 1) * 111.2 * kx) break;
+    }
+    if (!best) return null;
+    const km = hav(t[0], t[1], best[0], best[1]) / 1000;
+    return (t._h[k] = { min: driveMin(km), name: best[2], km });
+  }
+  const val = (t, k, y) => k === "tt" ? nearestHub(t, hubKey)?.min ?? null : k === "ppa" ? t[2][y] : k === "share" ? t[3] : k === "spsf" ? t[4] : t[7];
+  const fmtMin = (m) => m == null ? "–" : m >= 60 ? `${Math.floor(m / 60)} h ${String(Math.round(m % 60)).padStart(2, "0")}` : `${Math.round(m)} min`;
+  const fmtV = (k, v) => k === "tt" ? fmtMin(v) : k === "share" ? pct(v) : k === "spsf" ? (v == null ? "–" : `$${Math.round(v)}`) : money(v);
   // One fixed, log-spaced scale per metro and metric, spanning every year (5th–95th pct),
   // so sliding the year shows the metro heating up rather than re-centering each year.
   // Scale = blue end (lo) and red end (hi); share is linear, money metrics log-spaced.
   // custom[k] holds a user override from the sliders until Auto or a metro change.
   let custom = {};
-  const isLog = (k) => k !== "share";
+  const isLog = (k) => k !== "share" && k !== "tt";
   const allVals = (k) => k === "ppa" ? doc.t.flatMap((t) => t[2]) : doc.t.map((t) => val(t, k, 0));
   function autoRange(k) {
     if (k === "share") return { lo: 0.12, hi: 0.6 };
+    if (k === "tt") return { lo: 20, hi: 180 };
     const all = allVals(k);
     const lo = Math.max(1, q(all, 0.05));
     return { lo, hi: Math.max(lo * 1.5, q(all, 0.95)) };
@@ -155,6 +200,7 @@
     const to = (v) => isLog(k) ? Math.log10(v) : v;
     let a, b;
     if (k === "share") { a = 0; b = 0.9; }
+    else if (k === "tt") { a = 5; b = 480; }
     else { const all = allVals(k); a = to(Math.max(1, q(all, 0.005))); b = to(q(all, 0.995)); }
     for (const s of [lo, hi]) { s.min = a; s.max = b; s.step = (b - a) / 400; }
     lo.value = to(r.lo); hi.value = to(r.hi);
@@ -169,7 +215,7 @@
     return COLORS[i < 0 ? 6 : i];
   }
   function legend(k, edges) {
-    const titles = { ppa: "Land $/acre", share: "Land share of value", spsf: "Structure-only $/sqft", pv: "Single-family home value" };
+    const titles = { ppa: "Land $/acre", share: "Land share of value", spsf: "Structure-only $/sqft", pv: "Single-family home value", tt: `Drive to ${HUBDEF[hubKey].label}` };
     document.getElementById("legTitle").textContent = titles[k];
     const f = (v) => k === "share" ? pct(v) : fmtV(k, v);
     const rows = COLORS.map((c, i) => [c, i === 0 ? `< ${f(edges[0])}` : i < 6 ? `${f(edges[i - 1])} – ${f(edges[i])}` : `> ${f(edges[5])}`]);
@@ -177,23 +223,32 @@
     document.getElementById("leg").innerHTML = rows.map(([c, t]) => `<div class="lr"><i class="sw" style="background:${c}"></i>${t}</div>`).join("");
     document.getElementById("legNote").textContent = k === "ppa"
       ? `Blue = cheap, red = expensive. One scale for ${doc.years[0]}–${doc.years.at(-1)}, so the map reddens as land appreciates.`
-      : k === "share" ? "Fixed scale; the US average is about 36%." : "Blue = cheaper, red = pricier within this metro.";
+      : k === "share" ? "Fixed scale; the US average is about 36%."
+      : k === "tt" ? "Blue = close, red = far. Estimated from straight-line distance, calibrated to road routes (median error ~4 min under an hour, ~10% beyond). Pin a spot for the exact route."
+      : "Blue = cheaper, red = pricier within this metro.";
   }
 
   function render() {
     if (!doc) return;
+    if (!hubPts && (metric === "tt" || ttMax != null)) { accessReady.then(render); return; }
     const k = metric, y = yi ?? doc.years.length - 1;
+    const keep = (t) => ttMax == null || (nearestHub(t, hubKey)?.min ?? Infinity) <= ttMax;
     const vals = doc.t.map((t) => val(t, k, y));
-    const med = median(vals);
+    const kv = ttMax == null ? vals : vals.filter((_, i) => keep(doc.t[i]));
+    const med = median(kv);
     const edges = buildScale(k);
     legend(k, edges);
     syncSliders(k);
     document.getElementById("yrLabel").textContent = doc.years[y];
     document.getElementById("yrBox").classList.toggle("off", k !== "ppa");
+    $("acc").classList.toggle("on", ttMax != null || k === "tt");
     const z = map.getZoom(), rad = radius(z);
     layer.clearLayers(); markers = [];
+    let shown = 0;
     doc.t.forEach((t, i) => {
+      if (!keep(t)) return;
       const c = binColor(vals[i], edges); if (!c) return;
+      shown++;
       const m = L.circleMarker([t[0], t[1]], { radius: rad, stroke: false, fillColor: c, fillOpacity: 0.78 }).addTo(layer);
       m.on("click", () => m.bindPopup(popup(t), { maxWidth: 280 }).openPopup());
       markers.push(m);
@@ -202,8 +257,8 @@
     const chg = median(ppaNow) && median(ppa0) ? (median(ppaNow) / median(ppa0) - 1) : null;
     document.getElementById("stats").innerHTML = `
       <div><span>Median ${k === "ppa" ? doc.years[y] : ""}</span><b>${fmtV(k, med)}</b></div>
-      <div><span>Middle half</span><b>${fmtV(k, q(vals, 0.25))} – ${fmtV(k, q(vals, 0.75))}</b></div>
-      <div><span>Tracts</span><b>${doc.t.length.toLocaleString()}</b></div>
+      <div><span>Middle half</span><b>${fmtV(k, q(kv, 0.25))} – ${fmtV(k, q(kv, 0.75))}</b></div>
+      <div><span>Tracts${ttMax != null ? ` ≤ ${fmtMin(ttMax)} of ${HUBDEF[hubKey].label}` : ""}</span><b>${ttMax != null ? `${shown.toLocaleString()} of ` : ""}${doc.t.length.toLocaleString()}</b></div>
       <div><span>Land $/ac, ${doc.years[0]}→${doc.years.at(-1)}</span><b>${chg == null ? "–" : (chg >= 0 ? "+" : "") + Math.round(chg * 100) + "%"}</b></div>`;
   }
   function spark(ser) {
@@ -219,6 +274,7 @@
       <div class="row"><span class="k">Land share of value</span><b>${pct(share)}</b></div>
       <div class="row"><span class="k">Structure-only $/sqft</span><b>${spsf == null ? "–" : "$" + spsf}</b></div>
       <div class="row"><span class="k">Typical home / lot</span><b>${money(pv)} · ${lot ? Math.round(lot).toLocaleString() + " sqft" : "–"}</b></div>
+      ${hubPts ? ["intl", "reg", "jet", "port"].map((h) => { const n = nearestHub(t, h); return n ? `<div class="row"><span class="k">~Drive to ${HUBDEF[h].label}</span><b title="${esc(n.name)}">${fmtMin(n.min)}</b></div>` : ""; }).join("") : ""}
       ${spark(ser)}<div class="k" style="font-size:11px">${doc.years[0]}–${doc.years.at(-1)} land $/acre${direct ? "" : " (scaled from county index)"}</div></div>`;
   }
 
@@ -275,6 +331,8 @@
       $("yr").value = yi; render();
     }, 750);
   }
+  $("hubSel").addEventListener("change", () => { hubKey = $("hubSel").value; delete custom.tt; render(); });
+  $("ttMax").addEventListener("input", () => { const v = +$("ttMax").value; ttMax = v > 240 ? null : v; $("ttMaxV").textContent = ttMax == null ? "any" : fmtMin(ttMax); render(); });
   $("play").addEventListener("click", () => (timer ? stopPlay() : startPlay()));
   document.getElementById("metric").addEventListener("click", stopPlay, true);
   // shrink / expand panels; remembered per browser
@@ -307,7 +365,7 @@
   window.addEventListener("message", (e) => { if (e.data && e.data.metro) load(e.data.metro); });
 
   // ---------- pin: address or dropped point -> local land estimate + drive time to airports ----------
-  const MI = 1609.34, hav = (a, b, c, d) => { const R = 6371008.8, r = Math.PI / 180, x = Math.sin((c - a) * r / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin((d - b) * r / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); };
+  const MI = 1609.34;
   const escH = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const cache = {}, getPack = (u) => (cache[u] ||= fetch(u).then((r) => { if (!r.ok) throw new Error(u); return r.json(); }));
   const pinLayer = L.layerGroup().addTo(map);
