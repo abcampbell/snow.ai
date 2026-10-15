@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Drive</title>
+<meta name="description" content="Twenty stops from Virginia to Nevada, each scored by the Region Engine for nine land uses.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="style.css?v=20261020">
+<style>
+  .dv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 6px 0 12px; font-size: 13px; color: var(--muted); }
+  .dv-bar select { background: var(--panel); border: 1px solid var(--line-2); color: var(--text); border-radius: 8px; padding: 8px 10px; font: 13px var(--mono); }
+  #dvMap { height: 540px; border-radius: 12px; border: 1px solid var(--line); background: #111; }
+  .dv-table { min-width: 1150px; }
+  .dv-table th.use { cursor: pointer; }
+  .dv-table th.use.on { color: var(--accent); }
+  .dv-table td.st { color: var(--faint); font-size: 11px; }
+  .dv-table tr.newst td { border-top: 2px solid var(--line-2); }
+  .dv-table td a { color: inherit; text-decoration: none; display: block; }
+  .dv-table td.best { outline: 1px solid currentColor; outline-offset: -3px; }
+  .dv-best { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; margin-top: 14px; }
+  .dv-best div { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 13px; color: var(--muted); }
+  .dv-best b { display: block; color: var(--text); font-weight: 500; margin-bottom: 4px; }
+  .dv-lbl { background: transparent; border: 0; box-shadow: none; color: #e9ecef; font: 600 11px var(--mono); text-shadow: 0 0 3px #000, 0 0 3px #000; }
+  .dv-lbl::before { display: none; }
+</style>
+</head>
+<body>
+<header class="topnav">
+  <div class="wrap">
+    <a class="brand" href="./">LAND<span>.</span>ENGINE</a>
+    <nav>
+      <a href="./#underwriter">Parcels</a>
+      <a href="region.html">Regions</a>
+      <a href="#map" style="color:var(--text)">The drive</a>
+      <a href="#table">Scores</a>
+      <a href="#facts">Facts</a>
+      <a href="./#surfaces">Price surfaces</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Region Engine · Virginia → Nevada</div>
+    <h1>The <em>Drive</em></h1>
+    <p class="lede">Twenty stops across ten states, from the Blue Ridge to the Mojave, each scored by the Region Engine for nine land uses within 25 miles. Pick a use to color the route. Click any score to open that stop live in the engine, where you can change the radius or move the point.</p>
+  </div>
+</section>
+
+<section class="block" id="map">
+  <div class="wrap">
+    <div class="dv-bar"><span>Color the route by</span><select id="dvUse"></select><span id="dvBuilt"></span></div>
+    <div id="dvMap"></div>
+    <div class="pcard-key"><span class="k-good">A–B · 68+</span><span class="k-warn">C–D · 42–67</span><span class="k-bad">F · under 42</span> · Layers menu (top right): elevation, roads, waterways, ownership, transmission, pipelines, plants</div>
+    <div class="dv-best" id="dvBest"></div>
+  </div>
+</section>
+
+<section class="block" id="table">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Scores</div>
+      <h2>Every stop, every use</h2>
+      <p>Each cell is the weighted 0–100 score for that use. The best stop for each use is outlined. Click a column header to color the map by that use; click a cell to run that stop live.</p>
+    </div>
+    <div class="b-scroll"><table class="b-table dv-table" id="dvTable"></table></div>
+  </div>
+</section>
+
+<section class="block" id="facts">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Facts</div>
+      <h2>What drives the scores</h2>
+      <p>The raw inputs behind the grades, colored by how good each one is on its own: green is favorable, red unfavorable. Land cost is FHFA residential lots inside a metro and county lots discounted by 75% more than 30 miles from one, so treat it as relative.</p>
+    </div>
+    <div class="b-scroll"><table class="b-table dv-table" id="dvFacts"></table></div>
+    <ul class="limits">
+      <li>Built from one pull of each public source (see the Region Engine method). Climate is the last full calendar year, not a 30-year normal.</li>
+      <li>Each stop is a 25-mile circle around the town center, not the whole state. Rural land between stops is often far cheaper than the circle's median.</li>
+      <li>Screening only: interconnection queues, water rights, zoning, incentives, and fiber need direct confirmation.</li>
+      <li>Rebuild: <code>nevada/region_data/build_drive.py</code> (edit the stop list and rerun).</li>
+    </ul>
+  </div>
+</section>
+
+<footer><div class="wrap">Land Engine · The Drive · public data, no warranty · <a href="region.html">region engine →</a></div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
+<script src="layers.js?v=20261020"></script>
+<script src="regions.js?v=20261020"></script>
+<script src="region.js?v=20261020"></script>
+<script>
+(async () => {
+  const E = window.RegionEngine, $ = (id) => document.getElementById(id);
+  const fmt = (n, d = 0) => n == null || !isFinite(n) ? "–" : Number(n).toLocaleString("en-US", { maximumFractionDigits: d, minimumFractionDigits: d });
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const tone = (s) => s == null ? "neutral" : s >= 68 ? "good" : s >= 42 ? "warn" : "bad";
+  const COL = { good: "#3ecf8e", warn: "#f5b83d", bad: "#ff5d5d", neutral: "#888" };
+  const USES = Object.keys(E.PROFILES);
+  const doc = await fetch("data/drive.json?v=20261020").then((r) => r.json());
+  const stops = doc.stops.filter((s) => s.d);
+  stops.forEach((s) => { s.sc = {}; USES.forEach((u) => (s.sc[u] = E.score(s.d, u))); });
+  $("dvBuilt").textContent = `scored ${doc.built} · ${doc.radius_mi}-mile radius`;
+  const best = {}; USES.forEach((u) => (best[u] = stops.reduce((a, s) => (s.sc[u].total ?? -1) > (a.sc[u].total ?? -1) ? s : a)));
+  const link = (s, u) => `region.html#idea=${encodeURIComponent(`${E.PROFILES[u].label} near ${s.where}`)}&r=${doc.radius_mi}&use=${u}`;
+  let use = new URLSearchParams(location.hash.slice(1)).get("use") || "homestead";
+
+  $("dvUse").innerHTML = USES.map((u) => `<option value="${u}">${esc(E.PROFILES[u].label)}</option>`).join("");
+
+  const map = L.map("dvMap", { preferCanvas: true });
+  window.LE_LAYERS(map, { position: "topright" });
+  L.polyline(stops.map((s) => [s.lat, s.lon]), { color: "#ff7a45", weight: 2, opacity: 0.55, dashArray: "6 6" }).addTo(map);
+  map.fitBounds(stops.map((s) => [s.lat, s.lon]), { padding: [30, 30] });
+  const dots = L.layerGroup().addTo(map);
+
+  function paint() {
+    $("dvUse").value = use;
+    history.replaceState(null, "", `#use=${use}`);
+    dots.clearLayers();
+    stops.forEach((s, i) => {
+      const sc = s.sc[use], dir = /Pocatello|Idaho Falls|Las Vegas/.test(s.where) ? "left" : i % 2 ? "top" : "bottom";
+      L.circleMarker([s.lat, s.lon], { radius: 9, color: "#111", weight: 1.5, fillColor: COL[tone(sc.total)], fillOpacity: 0.95 })
+        .bindTooltip(`${esc(s.where.split(",")[0])} ${sc.grade} ${fmt(sc.total)}`, { permanent: true, direction: dir, className: "dv-lbl", offset: dir === "left" ? [-8, 0] : [0, dir === "top" ? -8 : 8] })
+        .bindPopup(`<b>${esc(s.where)}</b><br>${esc(E.PROFILES[use].label)}: ${sc.grade} ${fmt(sc.total)}<br>` +
+          sc.rows.slice(0, 6).map((r) => `${esc(r.label)}: ${r.value}`).join("<br>") + `<br><a href="${link(s, use)}">open live →</a>`)
+        .addTo(dots);
+    });
+    // scores table
+    let prev = null;
+    $("dvTable").innerHTML = `<thead><tr><th>Stop</th><th>St</th>${USES.map((u) => `<th class="use${u === use ? " on" : ""}" data-u="${u}">${esc(E.PROFILES[u].label.split(/ [\/(]/)[0])}</th>`).join("")}<th>Best use</th></tr></thead><tbody>` +
+      stops.map((s) => {
+        const top = USES.slice().sort((a, b) => (s.sc[b].total ?? -1) - (s.sc[a].total ?? -1))[0];
+        const row = `<tr class="${prev && prev !== s.st ? "newst" : ""}"><td class="place"><b>${esc(s.where)}</b></td><td class="st">${s.st}</td>` +
+          USES.map((u) => { const t = s.sc[u].total; return `<td class="c-${tone(t)}${best[u] === s ? " best" : ""}"><a href="${link(s, u)}" title="open live">${s.sc[u].grade} ${fmt(t)}</a></td>`; }).join("") +
+          `<td class="place"><span>${esc(E.PROFILES[top].label)}</span></td></tr>`;
+        prev = s.st; return row;
+      }).join("") + "</tbody>";
+    document.querySelectorAll("#dvTable th.use").forEach((th) => th.addEventListener("click", () => { use = th.dataset.u; paint(); }));
+    // best-per-use cards
+    const ranked = stops.slice().sort((a, b) => (b.sc[use].total ?? -1) - (a.sc[use].total ?? -1));
+    $("dvBest").innerHTML = `<div><b>Best for ${esc(E.PROFILES[use].label)}</b>${ranked.slice(0, 3).map((s) => `${esc(s.where)} · ${s.sc[use].grade} ${fmt(s.sc[use].total)}`).join("<br>")}</div>` +
+      `<div><b>Weakest</b>${ranked.slice(-3).reverse().map((s) => `${esc(s.where)} · ${s.sc[use].grade} ${fmt(s.sc[use].total)}`).join("<br>")}</div>` +
+      `<div><b>Why the leader leads</b>${ranked[0].sc[use].rows.filter((r) => r.s != null).sort((a, b) => b.w * b.s - a.w * a.s).slice(0, 3).map((r) => `${esc(r.label)}: ${r.value}`).join("<br>")}</div>`;
+  }
+
+  // facts table: raw values, toned by the factor's own score
+  const FACTS = ["landcost", "growth", "price", "grid", "gas", "water", "surface", "fire", "flood", "cool", "sun", "flat", "private", "labor", "highway"];
+  $("dvFacts").innerHTML = `<thead><tr><th>Stop</th><th>St</th>${FACTS.map((k) => `<th>${esc(E.F[k].label)}</th>`).join("")}</tr></thead><tbody>` +
+    stops.map((s) => `<tr><td class="place"><b>${esc(s.where)}</b></td><td class="st">${s.st}</td>${FACTS.map((k) => { const sc = E.F[k].score(s.d); return `<td class="c-${sc == null ? "neutral" : sc >= 70 ? "good" : sc >= 40 ? "warn" : "bad"}">${E.F[k].show(s.d)}</td>`; }).join("")}</tr>`).join("") + "</tbody>";
+
+  $("dvUse").addEventListener("change", () => { use = $("dvUse").value; paint(); });
+  paint();
+})();
+</script>
+</body>
+</html>

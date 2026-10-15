@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Land Engine</title>
-<meta name="description" content="Parcel intelligence for the Great Basin, built to run anywhere: underwriter, deal calculators, and land price surfaces.">
+<meta name="description" content="Parcel and region intelligence for any US land: underwriter, region engine, deal calculators, and land price surfaces.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="style.css?v=20261019">
+<link rel="stylesheet" href="style.css?v=20261020">
 </head>
 <body>
 
@@ -16,6 +16,7 @@
     <nav>
       <a href="#underwriter">Underwriter</a>
       <a href="region.html" style="color:var(--accent)">Region engine</a>
+      <a href="drive.html" style="color:var(--accent)">The drive</a>
       <a href="#calculators">Calculators</a>
       <a href="#surfaces">Price surfaces</a>
       <a href="#machine">The machine</a>
@@ -28,15 +29,15 @@
 
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="eyebrow">Great Basin Land Company · snow.ai</div>
+    <div class="eyebrow">snow.ai · Virginia to the Mountain West</div>
     <h1>Land <em>Engine</em></h1>
-    <p class="lede">Paste an address, coordinates, or a listing link, or a whole list of them. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, traffic noise, mineral history, walkability, and land value) and returns a go, check, or kill screen in seconds. Then it prices the place, splits land from structure, and loads the deal calculators. It is built deep for the Great Basin and runs on any US parcel.</p>
+    <p class="lede">Paste an address, coordinates, or a listing link, or a whole list of them. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, traffic noise, mineral history, walkability, and land value) and returns a go, check, or kill screen in seconds. Then it prices the place, splits land from structure, and loads the deal calculators. It runs on any US parcel; the <a href="region.html">region engine</a> scores whole towns and regions, and <a href="drive.html">the drive</a> pre-scores twenty stops from Virginia to Nevada.</p>
     <div class="stats">
       <div class="stat"><b>11</b><span>checks per parcel, any US point</span></div>
       <div class="stat"><b>37,349</b><span>census tracts priced, land vs. structure</span></div>
       <div class="stat"><b>238</b><span>metro land surfaces, 2012–2022</span></div>
       <div class="stat"><b>265,825</b><span>USGS mines and deposits, all 50 states</span></div>
-      <div class="stat"><b>15,539</b><span>Nevada well logs, plus USGS wells nationwide</span></div>
+      <div class="stat"><b>20</b><span>stops, VA → NV, scored for 9 uses</span></div>
     </div>
   </div>
 </section>
@@ -47,7 +48,7 @@
     <div class="sec-head">
       <div class="eyebrow">01 · Parcel underwriter</div>
       <h2>Screen any parcel before you spend a dollar on it</h2>
-      <p>Each check queries a public federal or state service live from your browser. The Great Basin plug-in adds local well logs and the mines database. Listings conceal defects; public records reveal them.</p>
+      <p>Each check queries a public federal or state service live from your browser, anywhere in the US. Regional plug-ins (Nevada well logs so far) add depth where they exist. Listings conceal defects; public records reveal them.</p>
     </div>
     <div class="tabs">
       <button class="tab is-active" type="button" data-uwmode="single">Single parcel</button>
@@ -56,10 +57,10 @@
 
     <div id="modeBatch" hidden>
       <p class="calc-intro">Paste up to 50 addresses, coordinates, or listing links, one per line. Each place gets the full screen, and the results land in one table: a row per place, a column per check. Sort by any column, click a row for its full report, or export the table as CSV.</p>
-      <textarea id="bInput" class="b-input" rows="7" placeholder="5203 Blue Desert Trail, Caliente, NV&#10;40.9209, -114.2092&#10;https://www.homes.com/property/1775-dude-dr-moapa-nv/5dvengs7415ry/&#10;…"></textarea>
+      <textarea id="bInput" class="b-input" rows="7" placeholder="Wytheville, VA&#10;36.0, -85.0&#10;https://www.zillow.com/homedetails/...&#10;…"></textarea>
       <div class="b-actions">
         <button class="btn" type="button" id="bRun">Screen all</button>
-        <button class="chip" type="button" id="bExample" data-list="5203 Blue Desert Trail, Caliente, NV|40.9209, -114.2092|https://www.homes.com/property/1775-dude-dr-moapa-nv/5dvengs7415ry/|Pioche, NV|92 Cold Creek Rd, Las Vegas, NV|3600 S Las Vegas Blvd, Las Vegas, NV|Pahrump, NV|Wells, NV">Load a Great Basin sample (8 places)</button>
+        <button class="chip" type="button" id="bExample" data-list="Floyd, VA|Sparta, TN|Hermann, MO|Decorah, IA|Spearfish, SD|Livingston, MT|Ten Sleep, WY|Driggs, ID|Kanab, UT|Pioche, NV">Load a drive sample (10 towns, VA → NV)</button>
         <button class="chip" type="button" id="bCsv" disabled>Export CSV</button>
         <span class="uw-status" id="bStatus"></span>
       </div>
@@ -74,11 +75,13 @@
     </form>
     <div class="examples">
       <span>try:</span>
-      <button class="chip" type="button" data-example="40.9209, -114.2092">Pilot Valley rural 160 ac</button>
-      <button class="chip" type="button" data-example="5203 Blue Desert Trail, Caliente, NV">Caliente custom</button>
-      <button class="chip" type="button" data-example="https://www.homes.com/property/1775-dude-dr-moapa-nv/5dvengs7415ry/">Listing link (Moapa)</button>
-      <button class="chip" type="button" data-example="3600 S Las Vegas Blvd, Las Vegas, NV">Strip corridor</button>
-      <button class="chip" type="button" data-example="1 Infinite Loop, Cupertino, CA">Outside the Great Basin</button>
+      <button class="chip" type="button" data-example="Floyd, VA">Blue Ridge, VA</button>
+      <button class="chip" type="button" data-example="Sparta, TN">Cumberland Plateau, TN</button>
+      <button class="chip" type="button" data-example="Hermann, MO">Missouri River, MO</button>
+      <button class="chip" type="button" data-example="Spearfish, SD">Black Hills, SD</button>
+      <button class="chip" type="button" data-example="Livingston, MT">Paradise Valley, MT</button>
+      <button class="chip" type="button" data-example="Driggs, ID">Teton Valley, ID</button>
+      <button class="chip" type="button" data-example="40.9209, -114.2092">Rural NV 160 ac</button>
     </div>
     <div class="uw-status" id="uwStatus" aria-live="polite"></div>
 
@@ -251,7 +254,22 @@
       <button class="tab" data-map="la">Long view: LA</button>
       <button class="tab" data-map="nyc">Long view: NYC</button>
     </div>
-    <iframe class="map-frame" id="mapFrame" src="surface.html?m=29820&v=20261018" title="Land price surfaces" loading="lazy"></iframe>
+    <div class="examples"><span>along the drive:</span>
+      <button class="chip jump-metro" type="button" data-metro="16820">Charlottesville</button>
+      <button class="chip jump-metro" type="button" data-metro="40060">Richmond</button>
+      <button class="chip jump-metro" type="button" data-metro="28940">Knoxville</button>
+      <button class="chip jump-metro" type="button" data-metro="34980">Nashville</button>
+      <button class="chip jump-metro" type="button" data-metro="41180">St. Louis</button>
+      <button class="chip jump-metro" type="button" data-metro="28140">Kansas City</button>
+      <button class="chip jump-metro" type="button" data-metro="19780">Des Moines</button>
+      <button class="chip jump-metro" type="button" data-metro="36540">Omaha–Council Bluffs</button>
+      <button class="chip jump-metro" type="button" data-metro="43620">Sioux Falls</button>
+      <button class="chip jump-metro" type="button" data-metro="13740">Billings</button>
+      <button class="chip jump-metro" type="button" data-metro="14260">Boise</button>
+      <button class="chip jump-metro" type="button" data-metro="41620">Salt Lake City</button>
+      <button class="chip jump-metro" type="button" data-metro="29820">Las Vegas</button>
+    </div>
+    <iframe class="map-frame" id="mapFrame" src="surface.html?m=34980&v=20261020" title="Land price surfaces" loading="lazy"></iframe>
     <p class="note">Explorer data: <a href="https://www.fhfa.gov/research/papers/wp1901" target="_blank" rel="noopener">FHFA Working Paper 19-01, land prices v4.0 (June 2024)</a>, built from millions of appraisals of single-family properties. These are residential lot values, so raw acreage outside town trades far lower. About a third of tracts have their own yearly series; the rest are scaled from their county's index. The long-view maps cover 2000–2026 using calibrated zone estimates back-cast with each metro's home-price index. New York land prices by buildable square foot, so its per-acre figures are conversions.</p>
   </div>
 </section>
@@ -275,7 +293,7 @@
     <div class="scales">
       <div class="scale"><div class="tag">SCALE 1 · PROVEN</div><h3>Single asset</h3><p>One house or parcel taken through sourcing, verification, valuation, negotiation, financing, and close. Plays: seller-financed notes, raw-to-improved flips, curated resale.</p></div>
       <div class="scale"><div class="tag">SCALE 2</div><h3>Block and corridor</h3><p>Multi-family, commercial, office, and industrial. The same tools aimed at assemblage: ownership mapping across a block, permit velocity as a leading indicator, anchor analysis, and FAR arbitrage.</p></div>
-      <div class="scale"><div class="tag">SCALE 3</div><h3>Region and town</h3><p>100 to 10,000 acres. In the Great Basin a town project is a water project with buildings on it, so basin capacity is computed before land is priced. Overlays: mineral patents, solar adjacency, conservation easements.</p></div>
+      <div class="scale"><div class="tag">SCALE 3</div><h3>Region and town</h3><p>100 to 10,000 acres. Grid, water, labor, and land cost decide the use before any parcel is priced: east of the 100th meridian the binding constraint is usually power and zoning, west of it water. Overlays: mineral patents, solar adjacency, conservation easements. <a href="region.html">Region engine →</a></p></div>
     </div>
   </div>
 </section>
@@ -363,16 +381,16 @@
 </section>
 
 <footer>
-  <div class="wrap">Great Basin Land Company · Land Engine v0.1 · 2026-10-14 · public data, no warranty</div>
+  <div class="wrap">Land Engine v0.2 · 2026-10-15 · public data, no warranty</div>
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
-<script src="layers.js?v=20261019"></script>
-<script src="regions.js?v=20261019"></script>
-<script src="engine.js?v=20261019"></script>
-<script src="calc.js?v=20261019"></script>
-<script src="price.js?v=20261019"></script>
+<script src="layers.js?v=20261020"></script>
+<script src="regions.js?v=20261020"></script>
+<script src="engine.js?v=20261020"></script>
+<script src="calc.js?v=20261020"></script>
+<script src="price.js?v=20261020"></script>
 <script>
   // tabs: calculators
   document.querySelectorAll('[data-tabs="calc"] .tab').forEach((t) => t.addEventListener('click', () => {
@@ -381,7 +399,7 @@
   }));
   // tabs: maps
   const setMap = (id, metro) => {
-    document.getElementById('mapFrame').src = id === 'explorer' ? `surface.html?m=${metro || 29820}&v=20261018` : `maps/${id}.html`;
+    document.getElementById('mapFrame').src = id === 'explorer' ? `surface.html?m=${metro || 34980}&v=20261020` : `maps/${id}.html`;
     document.querySelectorAll('[data-tabs="maps"] .tab').forEach((x) => x.classList.toggle('is-active', x.dataset.map === id));
   };
   document.querySelectorAll('[data-tabs="maps"] .tab').forEach((t) => t.addEventListener('click', () => setMap(t.dataset.map)));

@@ -74,10 +74,10 @@
     agriculture: { label: "Agriculture / ranch", kw: /farm|agricult|ranch|cattle|crop|orchard|vineyard|hemp|alfalfa|greenhouse/i,
       w: { water: 18, surface: 12, drought: 15, flat: 10, landcost: 15, climate: 10, flood: 5, private: 10, hazard: 5 } },
     mining: { label: "Mining / mineral claims", kw: /mine|mining|gold|silver|lithium|mineral|claim|copper|antimony|uranium/i,
-      w: { minerals: 35, public: 15, highway: 10, grid: 8, water: 14, landcost: 5, hazard: 5, labor: 8 } },
+      w: { minerals: 35, public: 25, highway: 8, grid: 6, water: 12, landcost: 4, hazard: 4, labor: 6 } },
     conservation: { label: "Conservation / recreation", kw: /conserv|recreat|preserv|park|hunting|wildlife|eco|trail|camp/i,
       w: { publicadj: 22, surface: 18, relief: 15, landcost: 15, fire: 10, metro: 12, water: 8 } },
-    homestead: { label: "Homestead / retreat (GBLC)", kw: /homestead|retreat|cabin|off.?grid|bug.?out|ranchette|land bank/i,
+    homestead: { label: "Homestead / retreat", kw: /homestead|retreat|cabin|off.?grid|bug.?out|ranchette|land bank/i,
       w: { water: 22, private: 10, landcost: 18, fire: 10, flood: 8, metro: 10, relief: 10, climate: 12 } },
     multifamily: { label: "Multifamily / mixed-use (block)", kw: /multi.?family|mixed.?use|block|infill|apartments|condo|retail|commercial|office/i,
       w: { walk: 18, density: 15, growth: 15, metro: 10, landcost: 10, flood: 8, hazard: 7, highway: 7, labor: 10 } }
@@ -85,6 +85,8 @@
   const DEFAULT_PROFILE = "datacenter";
 
   // ---------- factor definitions: id -> { label, fmt(v), score(v, ctx) } ----------
+  // Commodities that make a claim or mineral right worth owning; stone, gravel, clay, and coal are excluded.
+  const METAL = /\b(?:gold|silver|copper|lithium|uranium|tungsten|antimony|molybdenum|cobalt|nickel|platinum|palladium|rare.?earth|REE|vanadium|zinc|lead|mercury|manganese|beryllium|tellurium|gallium|germanium|graphite|tin|chromium|titanium|niobium|tantalum|bismuth)\b/i;
   const RATING = { "Very High": 5, "Relatively High": 4, "Relatively Moderate": 3, "Relatively Low": 2, "Very Low": 1 };
   const ratingScore = (r) => r == null ? null : clamp(100 - (r - 1) * 25);
   const ratingWord = (r) => r == null ? "–" : ["", "very low", "rel. low", "moderate", "rel. high", "very high"][Math.round(r)];
@@ -115,7 +117,7 @@
     highway: { label: "Interstate / highway", show: (d) => d.hwyDist == null ? "none ≤50 mi" : `${fmt(d.hwyDist / MI, 1)} mi · ${esc(d.hwyName || "")}`, score: (d) => d.hwyDist == null ? 0 : lin(d.hwyDist / MI, 50, 2) },
     growth: { label: "Land appreciation", show: (d) => d.growth == null ? "–" : `${d.growth >= 0 ? "+" : ""}${fmt(d.growth * 100)}% 2012–22`, score: (d) => lin(d.growth, 0, 2.2) },
     walk: { label: "Walkability", show: (d) => d.walk == null ? "–" : `${fmt(d.walk, 1)} / 20`, score: (d) => lin(d.walk, 4, 17) },
-    minerals: { label: "Mineral occurrences", show: (d) => d.mines == null ? "–" : `${fmt(d.mines)} sites · ${d.minesProd} produced`, score: (d) => d.mines == null ? null : clamp(Math.sqrt(d.mines) * 9 + d.minesProd * 2) }
+    minerals: { label: "Metallic / critical minerals", show: (d) => d.metal == null ? "–" : `${fmt(d.metal)} sites · ${fmt(d.metalProd)} produced (${fmt(d.mines)} incl. stone, gravel, clay)`, score: (d) => d.metal == null ? null : d.metal === 0 ? 0 : logs(d.metal + 2 * d.metalProd, 4, 800) }
   };
 
   // ---------- data gathering (once per area; profiles rescore instantly) ----------
@@ -267,7 +269,10 @@
         const st = c.stateAbbr; if (!st) return;
         const ms = await pack(`data/mrds/${st}.json`);
         const inR = ms.filter((x) => hav(c.lat, c.lon, x[0], x[1]) <= R);
-        d.mines = inR.length; d.minesProd = inR.filter((x) => x[4] === "P" || x[4] === "PP").length; d.mineList = inR;
+        const prod = (x) => x[4] === "P" || x[4] === "PP";
+        const metal = inR.filter((x) => METAL.test(x[3] || ""));
+        d.mines = inR.length; d.minesProd = inR.filter(prod).length; d.mineList = inR;
+        d.metal = metal.length; d.metalProd = metal.filter(prod).length;
       }),
       step("power price", async () => {
         const s = await pack("data/states.json"); const p = s.states[c.stateAbbr];
@@ -302,6 +307,7 @@
     if (pid === "datacenter" && (d.txNear230 == null || d.txNear230 > 20 * MI)) breakers.push("No ≥230 kV transmission within 20 miles: interconnection is a multi-year, nine-figure question.");
     if (["datacenter", "housing", "industrial", "agriculture"].includes(pid) && d.privShare != null && d.privShare < 0.35) breakers.push(`Only ${fmt(d.privShare * 100)}% of sampled land is private; assembling acreage means BLM land sales or exchanges.`);
     if (["agriculture", "homestead", "housing"].includes(pid) && d.gwDepth != null && d.gwDepth > 500) breakers.push(`Groundwater sits around ${fmt(d.gwDepth)} ft: wells are expensive and basins may be closed to new appropriations.`);
+    if (pid === "mining" && d.privShare != null && d.privShare > 0.8) breakers.push(`${fmt(d.privShare * 100)}% of sampled land is private: lode claims can only be staked on federal land, so the play here is buying private mineral rights.`);
     if (pid === "solar" && d.ghi != null && d.ghi < 1350) breakers.push("Solar resource is weak for utility-scale PV.");
     if (d.hz.WFIR != null && d.hz.WFIR >= 4) breakers.push("Wildfire risk is relatively high across the area: insurance and defensible-space costs.");
     const li = (r) => `<li><b>${esc(r.label)}</b> · ${r.value} <span class="sc">${fmt(r.s)}</span></li>`;
@@ -424,6 +430,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    if (!$("rxForm")) return;
     $("rxProfile").innerHTML = Object.entries(PROFILES).map(([k, p]) => `<option value="${k}">${p.label}</option>`).join("");
     $("rxForm").addEventListener("submit", (e) => { e.preventDefault(); const t = $("rxIdea").value.trim(); if (t) analyze(t, null, +$("rxRadius").value); });
     $("rxRerun").addEventListener("click", () => { const t = $("rxIdea").value.trim() || $("rxWhere").value; analyze(t, $("rxWhere").value.trim(), +$("rxRadius").value, $("rxProfile").value); });
@@ -433,5 +440,5 @@
     const h = new URLSearchParams(location.hash.slice(1));
     if (h.get("idea")) { $("rxIdea").value = h.get("idea"); $("rxRadius").value = h.get("r") || "25"; analyze(h.get("idea"), null, +$("rxRadius").value, h.get("use")); }
   });
-  window.RegionEngine = { analyze, compare, PROFILES, F };
+  window.RegionEngine = { analyze, compare, gather, locate, score, PROFILES, F };
 })();
