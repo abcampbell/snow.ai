@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Region Engine</title>
+<meta name="description" content="Score any US region for a land-use thesis: data centers, solar, housing, industrial, agriculture, mining, conservation.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="style.css?v=20261019">
+<style>
+  .rx-form { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+  .rx-form input { background: var(--panel); border: 1px solid var(--line-2); color: var(--text); border-radius: 10px; padding: 15px 16px; font: 15px var(--mono); outline: none; min-width: 0; }
+  .rx-form input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+  .rx-tune { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 12px; font-size: 13px; color: var(--muted); }
+  .rx-tune select, .rx-tune input { background: var(--panel); border: 1px solid var(--line-2); color: var(--text); border-radius: 8px; padding: 8px 10px; font: 13px var(--mono); outline: none; }
+  .rx-tune input#rxWhere { min-width: 260px; flex: 1; }
+  .rx-head { display: flex; gap: 16px; align-items: center; margin-top: 10px; }
+  .rx-head h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.1; }
+  .rx-grade { width: 78px; height: 78px; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; font: 600 38px/1 var(--mono); flex-shrink: 0; border: 2px solid var(--line-2); }
+  .rx-grade small { font: 500 12px var(--mono); margin-top: 4px; opacity: 0.85; }
+  .g-A { color: var(--go); border-color: var(--go); background: var(--go-dim); }
+  .g-B { color: #9ae6b4; border-color: #9ae6b4; background: rgba(154, 230, 180, 0.08); }
+  .g-C { color: var(--caution); border-color: var(--caution); background: var(--caution-dim); }
+  .g-D { color: #ff9f43; border-color: #ff9f43; background: rgba(255, 159, 67, 0.1); }
+  .g-F { color: var(--kill); border-color: var(--kill); background: var(--kill-dim); }
+  .vchip.g-A, .vchip.g-B, .vchip.g-C, .vchip.g-D, .vchip.g-F { border: 1px solid; }
+  .rx-steps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .stp { font: 11px var(--mono); padding: 3px 8px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--faint); }
+  .stp.ok { color: var(--go); border-color: rgba(62, 207, 142, 0.4); }
+  .stp.bad { color: var(--kill); border-color: rgba(255, 93, 93, 0.45); }
+  .tile em { font-style: normal; color: var(--faint); float: right; }
+  .tile small { display: block; font: 11px var(--mono); color: var(--faint); margin-top: 4px; }
+  .tile .bar { display: block; height: 4px; border-radius: 3px; background: var(--line); margin-top: 7px; overflow: hidden; }
+  .tile .bar i { display: block; height: 100%; background: currentColor; }
+  .tile.t-good .bar i { background: var(--go); } .tile.t-warn .bar i { background: var(--caution); } .tile.t-bad .bar i { background: var(--kill); } .tile.t-neutral .bar i { background: var(--line-2); }
+  #rxCard { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+  #rxMap { height: 520px; border-radius: 12px; border: 1px solid var(--line); margin-top: 16px; background: #111; }
+  .rx-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+  .rx-cols h5 { font: 500 11.5px var(--mono); color: var(--faint); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .rx-cols ul { list-style: none; } .rx-cols li { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+  .rx-cols li b { color: var(--text); font-weight: 500; } .rx-cols .sc { float: right; font: 600 12px var(--mono); color: var(--text); }
+  .rx-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; font: 11.5px var(--mono); color: var(--faint); }
+  .rx-legend i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 5px; }
+  textarea.b-input { margin-top: 8px; }
+  @media (max-width: 900px) { .rx-cols { grid-template-columns: 1fr; } .rx-form { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="topnav">
+  <div class="wrap">
+    <a class="brand" href="./">LAND<span>.</span>ENGINE</a>
+    <nav>
+      <a href="./#underwriter">Parcels</a>
+      <a href="#engine" style="color:var(--text)">Regions</a>
+      <a href="#compare">Compare</a>
+      <a href="./#surfaces">Price surfaces</a>
+      <a href="#method">Method</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Great Basin Land Company · Scale 2 &amp; 3</div>
+    <h1>Region <em>Engine</em></h1>
+    <p class="lede">Type a place and an idea in plain English, like "buy southern Idaho and turn it into data centers". The engine detects the use, samples the area, and pulls power lines, generation, gas, hazards, water, climate, terrain, land ownership, land cost, labor, and access from public sources. It then scores the area for that use, so you can switch the use and rescore instantly or rank several areas side by side.</p>
+  </div>
+</section>
+
+<section class="block" id="engine">
+  <div class="wrap">
+    <form class="rx-form" id="rxForm" autocomplete="off">
+      <input id="rxIdea" type="text" placeholder="e.g. buy southern Idaho and turn it into data centers" aria-label="Place and idea">
+      <button class="btn" type="submit">Score it</button>
+    </form>
+    <div class="examples">
+      <span>try:</span>
+      <button class="chip" type="button" data-idea="buy southern Idaho and turn it into data centers" data-r="40">Idaho data centers</button>
+      <button class="chip" type="button" data-idea="solar farm near Tonopah, Nevada" data-r="25">Tonopah solar</button>
+      <button class="chip" type="button" data-idea="logistics hub near Fernley, NV" data-r="15">Fernley logistics</button>
+      <button class="chip" type="button" data-idea="master-planned community outside Boise, ID" data-r="15">Boise housing</button>
+      <button class="chip" type="button" data-idea="mining claims near Tonopah, NV" data-r="25">Tonopah mining</button>
+      <button class="chip" type="button" data-idea="homestead retreat near Pioche, NV" data-r="10">Pioche homestead</button>
+      <button class="chip" type="button" data-idea="multifamily block in downtown Las Vegas, NV" data-r="1">LV infill block</button>
+    </div>
+    <div class="rx-tune">
+      <span>Use</span><select id="rxProfile"></select>
+      <span>Radius</span><select id="rxRadius">
+        <option value="1">1 mi · block</option><option value="3">3 mi · district</option><option value="10">10 mi · corridor</option>
+        <option value="25" selected>25 mi · region</option><option value="40">40 mi</option><option value="75">75 mi · basin</option></select>
+      <span>Place</span><input id="rxWhere" type="text" placeholder="place (auto-filled)">
+      <button class="chip" type="button" id="rxRerun">Re-run with these settings</button>
+    </div>
+    <div class="uw-status" id="rxStatus"></div>
+
+    <div id="rxOut" hidden>
+      <div class="rx-head" id="rxHead"></div>
+      <div class="rx-steps" id="rxSteps"></div>
+      <div class="pcard" id="rxCard"></div>
+      <div id="rxNarr"></div>
+      <div id="rxMap"></div>
+      <div class="rx-legend">
+        <span><i style="background:#ff3d71"></i>500 kV</span><span><i style="background:#ff9f43"></i>345 kV</span><span><i style="background:#ffd166"></i>230 kV</span><span><i style="background:#7bdff2"></i>115–138 kV</span>
+        <span><i style="background:#e9ecef;height:9px;width:9px;border-radius:50%"></i>power plant (size = MW)</span>
+        <span><i style="background:#3ecf8e;height:8px;width:8px;border-radius:50%"></i>private sample</span><span><i style="background:#f5b83d;height:8px;width:8px;border-radius:50%"></i>public sample</span>
+        <span>Layers menu (top right): elevation, topo, roads, waterways, ownership, flood, pipelines</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Compare</div>
+      <h2>Rank areas for the same idea</h2>
+      <p>One area per line. Add "| idea" to set a use per line; otherwise the use selected above applies. Uses the radius above. Up to 12 areas.</p>
+    </div>
+    <textarea id="rxCmpIn" class="b-input" rows="6">Mountain Home, ID | data centers
+Twin Falls, ID | data centers
+Idaho Falls, ID | data centers
+Boise, ID | data centers
+Reno, NV | data centers
+Elko, NV | data centers</textarea>
+    <div class="b-actions"><button class="btn" type="button" id="rxCmpRun">Rank them</button></div>
+    <div id="rxCmp"></div>
+  </div>
+</section>
+
+<section class="block" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Method</div>
+      <h2>How a region gets its grade</h2>
+      <p>Every factor is scored 0–100 from its raw value, and each use weights the factors differently; the grade is the weighted average. A data center leans on grid access, power price, and cooling; a homestead leans on water, land cost, and climate. Switch the use to see the same data scored differently.</p>
+    </div>
+    <div class="sources">
+      <div class="src"><b>HIFLD transmission lines</b><span>Distance to ≥230 kV, max voltage in reach</span></div>
+      <div class="src"><b>EIA power plants</b><span>Generation MW and fuel mix within the radius + 25 mi</span></div>
+      <div class="src"><b>EIA Electric Power Monthly 5.6.A</b><span>State industrial electricity price</span></div>
+      <div class="src"><b>EIA natural gas pipelines</b><span>Distance to pipeline</span></div>
+      <div class="src"><b>FEMA National Risk Index</b><span>Tract wildfire, earthquake, flood, drought, all-hazard ratings, population-weighted; population</span></div>
+      <div class="src"><b>USGS Water Data API · NDWR logs</b><span>Median depth to groundwater</span></div>
+      <div class="src"><b>USGS NHD</b><span>Perennial stream segments</span></div>
+      <div class="src"><b>Open-Meteo (ERA5)</b><span>Last full year: mean temp, cooling degree-days, solar radiation, rain; elevation grid</span></div>
+      <div class="src"><b>BLM surface management</b><span>Private vs. public share across a sample grid</span></div>
+      <div class="src"><b>FHFA land prices · county lots</b><span>Land $/acre and 2012–22 appreciation</span></div>
+      <div class="src"><b>Census TIGER</b><span>Nearest interstate / US highway</span></div>
+      <div class="src"><b>EPA walkability · USGS MRDS</b><span>Walkability; mineral occurrences and past producers</span></div>
+    </div>
+    <ul class="limits">
+      <li>Screening-grade, not a site study. Interconnection capacity, water-right availability, zoning, tax incentives, and fiber routes need direct confirmation.</li>
+      <li>Rail is not scored yet; the Census rail layer refused queries during the build.</li>
+      <li>"Southern Idaho"-style places shift the state's center toward that direction. For precision, type a town or "lat, lon" in the Place box and re-run.</li>
+    </ul>
+  </div>
+</section>
+
+<footer><div class="wrap">Great Basin Land Company · Region Engine v0.1 · public data, no warranty · <a href="./">parcel engine →</a></div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
+<script src="layers.js?v=20261019"></script>
+<script src="regions.js?v=20261019"></script>
+<script src="region.js?v=20261019"></script>
+</body>
+</html>

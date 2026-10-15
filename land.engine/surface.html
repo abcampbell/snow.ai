@@ -34,6 +34,8 @@
   .sugg { max-height:180px; overflow:auto; margin-top:4px; }
   .sugg div { padding:5px 8px; cursor:pointer; border-radius:5px; color:var(--muted); }
   .sugg div:hover { background:#161b21; color:var(--text); }
+  .leaflet-control-layers { background:var(--panel) !important; color:var(--text) !important; border:1px solid var(--line) !important; }
+  .leaflet-control-layers-expanded { max-height:60vh; overflow:auto; font-size:12px; }
   .leaflet-popup-content-wrapper, .leaflet-popup-tip { background:#151a20; color:var(--text); }
   .pop b { font-weight:600; } .pop .k { color:var(--faint); } .pop .row { display:flex; justify-content:space-between; gap:14px; }
   .spark { margin-top:6px; }
@@ -75,6 +77,8 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
+<script src="layers.js?v=20261018"></script>
 <script>
 (() => {
   const BASE = "data/surfaces/";
@@ -89,7 +93,8 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   const map = L.map("map", { preferCanvas: true, zoomControl: true });
-  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, attribution: "Basemap © Esri · Data: FHFA WP 19-01 v4.0" }).addTo(map);
+  LE_LAYERS(map, { position: "bottomleft" });
+  map.attributionControl.addAttribution("Data: FHFA WP 19-01 v4.0");
   layer = L.layerGroup().addTo(map);
 
   const val = (t, k, y) => k === "ppa" ? t[2][y] : k === "share" ? t[3] : k === "spsf" ? t[4] : t[7];

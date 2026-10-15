@@ -456,9 +456,7 @@
     if (!window.L) return;
     if (!map) {
       map = L.map("uwMap", { zoomControl: true, attributionControl: true });
-      const img = L.tileLayer(SVC.imagery, { maxZoom: 19, attribution: "Imagery © Esri" }).addTo(map);
-      const sma = L.tileLayer(SVC.smaTiles, { maxZoom: 16, opacity: 0.45, attribution: "Land status © BLM" });
-      L.control.layers({ "Satellite": img }, { "Public land (BLM SMA)": sma }, { collapsed: false }).addTo(map);
+      window.LE_LAYERS(map, { base: "satellite" });
       layers = L.layerGroup().addTo(map);
     }
     setTimeout(() => map.invalidateSize(), 50);
