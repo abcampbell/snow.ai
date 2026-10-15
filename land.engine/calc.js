@@ -130,7 +130,7 @@
 
   const CALCS = { note: calcNote, flip: calcFlip, offer: calcOffer, carry: calcCarry };
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("form.calc").forEach((form) => {
+    document.querySelectorAll("form.calc[data-calc]").forEach((form) => {
       const out = form.parentElement.querySelector(".calc-out"), fn = CALCS[form.dataset.calc];
       const go = () => fn(form, out);
       form.addEventListener("input", go); form.addEventListener("submit", (e) => e.preventDefault());

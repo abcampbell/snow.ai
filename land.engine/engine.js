@@ -344,6 +344,7 @@
   async function run(raw) {
     const out = $("uwOut"), status = $("uwStatus");
     out.hidden = true; status.textContent = "Locating…"; status.className = "uw-status";
+    document.dispatchEvent(new CustomEvent("le:reset"));
     let p;
     try { p = await locate(raw); } catch (e) { status.textContent = e.message || "Geocoding failed."; status.className = "uw-status is-err"; return; }
     const region = regionFor(p);
@@ -372,6 +373,8 @@
     const mk = results.market?.surface;
     $("uwSurface").innerHTML = mk ? `<a href="#surfaces" data-map="${mk.id}" class="jump-map">Open the ${esc(mk.label)} heat map ↓</a>` : "";
     history.replaceState(null, "", `#q=${encodeURIComponent(raw)}`);
+    window.LandEngine.last = { p, region, results, verdict: s, raw };
+    document.dispatchEvent(new CustomEvent("le:screened", { detail: window.LandEngine.last }));
   }
 
   // ---------- batch: N places x M checks ----------
@@ -471,7 +474,7 @@
     if (mode === "single" && map) setTimeout(() => map.invalidateSize(), 50);
   }
 
-  window.LandEngine = { run, runBatch };
+  window.LandEngine = { run, runBatch, last: null };
   document.addEventListener("DOMContentLoaded", () => {
     $("uwForm").addEventListener("submit", (e) => { e.preventDefault(); const v = $("uwInput").value; if (v.trim()) run(v); });
     document.querySelectorAll("[data-example]").forEach((b) => b.addEventListener("click", () => { $("uwInput").value = b.dataset.example; run(b.dataset.example); }));

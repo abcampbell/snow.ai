@@ -106,6 +106,24 @@ section.block { padding: 64px 0; border-bottom: 1px solid var(--line); }
 .legend-row { display: flex; gap: 16px; margin-top: 10px; font-size: 12px; color: var(--muted); font-family: var(--mono); flex-wrap: wrap; }
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
 
+/* ---------- step 2: price it ---------- */
+.price-step { margin-top: 28px; border: 1px solid var(--line-2); border-radius: 14px; padding: 20px; background: linear-gradient(180deg, rgba(255, 122, 69, 0.05), transparent 120px), var(--panel); }
+.ps-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 12px; }
+.ps-head .eyebrow { margin-bottom: 6px; }
+.ps-head h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.15; max-width: 760px; }
+.ps-actions { display: flex; gap: 8px; align-items: center; }
+.ps-actions .btn { padding: 10px 16px; }
+.ps-key { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+.ps-key input { flex: 1; min-width: 260px; background: var(--bg); border: 1px solid var(--line-2); color: var(--text); border-radius: 8px; padding: 9px 12px; font-family: var(--mono); font-size: 13px; outline: none; }
+.ps-key span { color: var(--faint); font-size: 12px; }
+.ps-links { display: flex; gap: 6px 14px; flex-wrap: wrap; font-size: 13px; margin-bottom: 16px; }
+.ps-links > span:first-child { color: var(--faint); font-family: var(--mono); font-size: 12px; }
+.ps-links #psLinks { display: inline-flex; gap: 6px 14px; flex-wrap: wrap; }
+.calc select { background: var(--bg); border: 1px solid var(--line-2); color: var(--text); border-radius: 7px; padding: 8px 10px; font-family: var(--mono); font-size: 13.5px; outline: none; width: 100%; }
+.ps-send { margin-top: 14px; padding: 11px 18px; }
+.ps-send:disabled { opacity: 0.4; cursor: default; }
+.calc-from { margin: -8px 0 16px; padding: 10px 14px; border: 1px solid var(--accent); background: var(--accent-dim); border-radius: 10px; font-size: 13.5px; color: var(--text); }
+
 /* ---------- batch ---------- */
 .b-input { width: 100%; background: var(--panel); border: 1px solid var(--line-2); color: var(--text); border-radius: 10px; padding: 12px 14px; font-family: var(--mono); font-size: 13.5px; outline: none; resize: vertical; }
 .b-input:focus { border-color: var(--accent); }
