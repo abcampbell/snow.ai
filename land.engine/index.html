@@ -18,7 +18,7 @@
       <a href="region.html" style="color:var(--accent)">Region engine</a>
       <a href="drive.html" style="color:var(--accent)">The drive</a>
       <a href="#calculators">Calculators</a>
-      <a href="#surfaces">Price surfaces</a>
+      <a href="#surfaces">Explorer</a>
       <a href="#machine">The machine</a>
       <a href="#systems">Systems</a>
       <a href="#book">Price book</a>
@@ -244,12 +244,12 @@
 <section class="block" id="surfaces">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">03 · Price surfaces</div>
-      <h2>Land $/acre for 238 metros, tract by tract</h2>
-      <p>Every census tract in 238 US metros, priced on four axes: land $/acre, the land share of home value, structure-only $/sqft, and home value. Search any metro, slide through 2012–2022, and switch metrics. Grey marks the metro median, so mispricing within a city shows at a glance. The underwriter reads these same tracts for its land-value check.</p>
+      <div class="eyebrow">03 · Explorer · <a href="explorer.html" target="_blank" rel="noopener">open full screen ↗</a></div>
+      <h2>Every US metro, tract by tract</h2>
+      <p>Every census tract in 238 US metros, priced on four axes: land $/acre, the land share of home value, structure-only $/sqft, and home value. It opens on the whole country. Search a metro, or type an address (or drop a pin) to get a local land estimate and drive times to the nearest freeway, major and regional airports, private-jet runway, and port. Press play to watch 2012–2022. Grey marks the metro median, so mispricing within a city shows at a glance. The underwriter reads these same tracts for its land-value check.</p>
     </div>
     <div class="tabs" data-tabs="maps">
-      <button class="tab is-active" data-map="explorer">Explorer · 238 metros</button>
+      <button class="tab is-active" data-map="explorer">Explorer · all US</button>
       <button class="tab" data-map="lv">Long view: Las Vegas</button>
       <button class="tab" data-map="sf">Long view: SF Bay</button>
       <button class="tab" data-map="la">Long view: LA</button>
@@ -265,7 +265,7 @@
       <button class="chip jump-metro" type="button" data-metro="13740">Billings</button>
       <button class="chip jump-metro" type="button" data-metro="29820">Las Vegas (base)</button>
     </div>
-    <iframe class="map-frame" id="mapFrame" src="surface.html?m=34980&v=20261024" title="Land price surfaces" loading="lazy"></iframe>
+    <iframe class="map-frame" id="mapFrame" src="explorer.html?v=20261025" title="Land explorer" loading="lazy"></iframe>
     <p class="note">Explorer data: <a href="https://www.fhfa.gov/research/papers/wp1901" target="_blank" rel="noopener">FHFA Working Paper 19-01, land prices v4.0 (June 2024)</a>, built from millions of appraisals of single-family properties. These are residential lot values, so raw acreage outside town trades far lower. About a third of tracts have their own yearly series; the rest are scaled from their county's index. The long-view maps cover 2000–2026 using calibrated zone estimates back-cast with each metro's home-price index. New York land prices by buildable square foot, so its per-acre figures are conversions.</p>
   </div>
 </section>
@@ -397,7 +397,7 @@
   }));
   // tabs: maps
   const setMap = (id, metro) => {
-    document.getElementById('mapFrame').src = id === 'explorer' ? `surface.html?m=${metro || 34980}&v=20261024` : `maps/${id}.html`;
+    document.getElementById('mapFrame').src = id === 'explorer' ? (metro ? `explorer.html?m=${metro}&v=20261025` : 'explorer.html?v=20261025') : `maps/${id}.html`;
     document.querySelectorAll('[data-tabs="maps"] .tab').forEach((x) => x.classList.toggle('is-active', x.dataset.map === id));
   };
   document.querySelectorAll('[data-tabs="maps"] .tab').forEach((t) => t.addEventListener('click', () => setMap(t.dataset.map)));

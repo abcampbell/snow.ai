@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Land Explorer</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+  :root { --bg:#0b0d10; --panel:rgba(14,18,23,.94); --line:#2a323c; --text:#e9ecef; --muted:#9aa4b1; --faint:#6b7583; --accent:#ff7a45; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { height:100%; background:var(--bg); color:var(--text); font:13px/1.45 Inter, system-ui, sans-serif; }
+  #map { position:absolute; inset:0; background:#0e1013; }
+  .panel { position:absolute; z-index:1000; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; backdrop-filter:blur(6px); }
+  .ctl { top:10px; left:56px; width:min(300px, calc(100% - 70px)); padding:10px 12px; }
+  .ctl h1 { font:600 13.5px/1.25 Inter, system-ui, sans-serif; }
+  .ctl .sub { color:var(--faint); font-size:10.5px; margin-top:2px; }
+  .us-link { background:none; border:0; color:var(--accent); font-size:10.5px; cursor:pointer; padding:0; }
+  .ctl input[type=search] { width:100%; margin-top:10px; background:#0b0d10; border:1px solid var(--line); color:var(--text); border-radius:7px; padding:8px 10px; font:13px ui-monospace, monospace; outline:none; }
+  .ctl input[type=search]:focus { border-color:var(--accent); }
+  .seg { display:flex; gap:3px; margin-top:8px; }
+  .seg button { flex:1 1 0; white-space:nowrap; background:#0b0d10; border:1px solid var(--line); color:var(--muted); border-radius:6px; padding:4px 4px; font-size:11px; cursor:pointer; }
+  .seg button.on { border-color:var(--accent); color:var(--text); background:rgba(255,122,69,.14); }
+  .yr { display:flex; align-items:center; gap:8px; margin-top:8px; }
+  .yr input { flex:1; accent-color:var(--accent); }
+  .yr b { font:600 16px ui-monospace, monospace; min-width:42px; text-align:right; }
+  .yr.off { opacity:.35; pointer-events:none; }
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:3px 10px; margin-top:8px; padding-top:6px; border-top:1px solid var(--line); }
+  .stats span { display:block; color:var(--faint); font-size:10px; }
+  .stats b { font:600 12px ui-monospace, monospace; }
+  .legend { bottom:22px; right:10px; width:210px; }
+  .legend h3 { font:600 11px/1.3 ui-monospace, monospace; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px; }
+  .lr { display:flex; align-items:center; gap:8px; margin:2px 0; font:12px ui-monospace, monospace; }
+  .sw { width:14px; height:10px; border-radius:2px; flex-shrink:0; }
+  .note { margin-top:8px; color:var(--faint); font-size:11px; }
+  .sugg { max-height:180px; overflow:auto; margin-top:4px; }
+  .sugg div { padding:5px 8px; cursor:pointer; border-radius:5px; color:var(--muted); }
+  .sugg div:hover { background:#161b21; color:var(--text); }
+  .leaflet-control-layers { background:var(--panel) !important; color:var(--text) !important; border:1px solid var(--line) !important; }
+  .leaflet-control-layers-expanded { max-height:60vh; overflow:auto; font-size:12px; }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background:#151a20; color:var(--text); }
+  .pop b { font-weight:600; } .pop .k { color:var(--faint); } .pop .row { display:flex; justify-content:space-between; gap:14px; }
+  .spark { margin-top:6px; }
+  .us-btn { margin-top:8px; width:100%; background:#0b0d10; border:1px solid var(--line); color:var(--muted); border-radius:6px; padding:6px 8px; font-size:12px; cursor:pointer; }
+  .us-btn.on { border-color:var(--accent); color:var(--text); background:rgba(255,122,69,.14); }
+  .scl { margin-top:10px; padding-top:8px; border-top:1px solid var(--line); }
+  .scl label { display:flex; align-items:center; gap:8px; font:11px ui-monospace, monospace; color:var(--faint); margin:4px 0; }
+  .scl label i { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
+  .scl input { flex:1; min-width:0; accent-color:var(--accent); }
+  .scl b { min-width:52px; text-align:right; color:var(--text); font-weight:600; }
+  .scl button { margin-top:4px; background:#0b0d10; border:1px solid var(--line); color:var(--muted); border-radius:5px; padding:3px 10px; font-size:11px; cursor:pointer; }
+  .scl button.custom { border-color:var(--accent); color:var(--text); }
+  .tog { position:absolute; top:8px; right:8px; width:22px; height:22px; border-radius:5px; border:1px solid var(--line); background:#0b0d10; color:var(--muted); font:13px/1 ui-monospace, monospace; cursor:pointer; }
+  .tog:hover { color:var(--text); border-color:var(--accent); }
+  .ctl h1 { padding-right:26px; }
+  .ctl.min { width:auto; min-width:230px; }
+  .ctl.min .sub, .ctl.min .sugg, .ctl.min .seg, .ctl.min .stats { display:none; }
+  .ctl.min .yr { margin-top:6px; }
+  .play { width:30px; height:26px; flex:0 0 30px; border-radius:6px; border:1px solid var(--accent); background:rgba(255,122,69,.14); color:var(--text); font-size:12px; cursor:pointer; }
+  .legend h3 { padding-right:24px; }
+  .legend.min { width:auto; }
+  .legend.min #leg, .legend.min .note, .legend.min .scl { display:none; }
+  .mini { display:none; margin-top:2px; }
+  .legend.min .mini { display:flex; align-items:center; gap:6px; font:11px ui-monospace, monospace; color:var(--muted); }
+  .mini i { display:inline-block; width:12px; height:10px; }
+  .mini span.r { display:flex; border-radius:2px; overflow:hidden; }
+  .pinrow { display:flex; gap:6px; margin-top:8px; }
+  .pinrow input { flex:1; min-width:0; margin-top:0 !important; padding:6px 9px !important; font-size:12px !important; }
+  .pinrow button { width:32px; border:1px solid var(--line); background:#0b0d10; border-radius:7px; cursor:pointer; font-size:15px; }
+  .pinrow button.on { border-color:var(--accent); background:rgba(255,122,69,.2); }
+  .pin { margin-top:8px; padding:10px; border:1px solid rgba(255,122,69,.45); border-radius:8px; background:rgba(255,122,69,.06); }
+  .pin-h { font-weight:600; font-size:12.5px; }
+  .pin-est { margin-top:4px; font-size:12.5px; color:var(--muted); } .pin-est b { font:600 18px ui-monospace, monospace; color:var(--text); } .pin-est span { font-size:11.5px; }
+  .pin-sub { margin-top:4px; font-size:11px; color:var(--faint); line-height:1.4; }
+  .hub { display:grid; grid-template-columns:1fr auto; column-gap:8px; padding:5px 6px; margin-top:3px; border:1px solid var(--line); border-radius:6px; cursor:pointer; font-size:11.5px; color:var(--muted); }
+  .hub:hover, .hub.on { border-color:var(--accent); }
+  .hub b { color:var(--text); font:600 12px ui-monospace, monospace; text-align:right; }
+  .hub-l { color:var(--text); }
+  .hub-n { grid-column:1 / -1; font-size:10.5px; color:var(--faint); }
+  .hub-wait { color:var(--faint); text-align:right; }
+  .hub-note { margin-top:5px; font-size:10px; color:var(--faint); }
+  .ctl.min .pinrow { display:none; }
+  .ctl.min .pin { display:none; }
+  .ctl { max-height:calc(100% - 20px); overflow:auto; }
+  @media (max-width:640px) { .legend { display:none; } .ctl { left:10px; width:calc(100% - 20px); } }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="panel ctl" id="ctl"><button class="tog" type="button" data-t="ctl" title="Shrink / expand">–</button>
+  <h1 id="metroName">Loading…</h1>
+  <div class="sub"><span id="metroSub"></span> <button class="us-link" id="usBtn" type="button" hidden>← all US</button></div>
+  <form class="pinrow" id="pinForm" autocomplete="off"><input type="search" id="q" placeholder="Metro, address, or lat, lon…"><button type="button" id="pinBtn" title="Drop a pin: click this, then the map">📍</button></form>
+  <div class="sugg" id="sugg"></div>
+  <div class="pin" id="pinOut" hidden></div>
+  <div class="seg" id="metric">
+    <button data-k="ppa" class="on" title="Land $ per acre">Land $/ac</button>
+    <button data-k="share" title="Land share of home value">Land %</button>
+    <button data-k="spsf" title="Structure-only $ per sqft">Bldg $/sf</button>
+    <button data-k="pv" title="Single-family home value">Home $</button>
+  </div>
+  <div class="yr" id="yrBox"><button class="play" id="play" type="button" title="Play 2012 → 2022">▶</button><input type="range" id="yr" min="0" max="10" step="1"><b id="yrLabel">2022</b></div>
+  <div class="stats" id="stats"></div>
+</div>
+<div class="panel legend" id="lgd"><button class="tog" type="button" data-t="lgd" title="Shrink / expand">–</button><h3 id="legTitle">Land $/acre</h3><div class="mini" id="legMini"></div><div id="leg"></div><div class="note" id="legNote"></div>
+  <div class="scl">
+    <label><i style="background:#1c3f95"></i>Blue ≤<input type="range" id="sLo" step="0.005"><b id="sLoV"></b></label>
+    <label><i style="background:#c3212b"></i>Red ≥<input type="range" id="sHi" step="0.005"><b id="sHiV"></b></label>
+    <button type="button" id="sAuto">Auto</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
+<script src="layers.js?v=20261018"></script>
+<script>
+(() => {
+  const BASE = "data/surfaces/";
+  const COLORS = ["#1c3f95", "#2f6fd0", "#6aa8e8", "#b9c3cc", "#f2b36a", "#e8673c", "#c3212b"]; // cheap (blue) -> expensive (red)
+  const SHARE_EDGES = [0.12, 0.2, 0.28, 0.36, 0.48, 0.6];
+  const qs = new URLSearchParams(location.search);
+  let index, doc, metric = qs.get("metric") || "ppa", yi = null, layer, markers = [];
+  const money = (v) => v == null ? "–" : v >= 1e6 ? `$${(v / 1e6).toFixed(v >= 1e7 ? 0 : 1)}M` : v >= 1e3 ? `$${Math.round(v / 1e3)}K` : `$${Math.round(v)}`;
+  const pct = (v) => v == null ? "–" : `${Math.round(v * 100)}%`;
+  const median = (a) => { const s = a.filter((x) => x != null).sort((x, y) => x - y); if (!s.length) return null; const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const q = (a, p) => { const s = a.filter((x) => x != null).sort((x, y) => x - y); return s.length ? s[Math.min(s.length - 1, Math.floor(p * s.length))] : null; };
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  const map = L.map("map", { preferCanvas: true, zoomControl: true });
+  LE_LAYERS(map, { position: "bottomleft" });
+  map.attributionControl.addAttribution("Data: FHFA WP 19-01 v4.0");
+  layer = L.layerGroup().addTo(map);
+
+  const val = (t, k, y) => k === "ppa" ? t[2][y] : k === "share" ? t[3] : k === "spsf" ? t[4] : t[7];
+  const fmtV = (k, v) => k === "share" ? pct(v) : k === "spsf" ? (v == null ? "–" : `$${Math.round(v)}`) : money(v);
+  // One fixed, log-spaced scale per metro and metric, spanning every year (5th–95th pct),
+  // so sliding the year shows the metro heating up rather than re-centering each year.
+  // Scale = blue end (lo) and red end (hi); share is linear, money metrics log-spaced.
+  // custom[k] holds a user override from the sliders until Auto or a metro change.
+  let custom = {};
+  const isLog = (k) => k !== "share";
+  const allVals = (k) => k === "ppa" ? doc.t.flatMap((t) => t[2]) : doc.t.map((t) => val(t, k, 0));
+  function autoRange(k) {
+    if (k === "share") return { lo: 0.12, hi: 0.6 };
+    const all = allVals(k);
+    const lo = Math.max(1, q(all, 0.05));
+    return { lo, hi: Math.max(lo * 1.5, q(all, 0.95)) };
+  }
+  function buildScale(k) {
+    const { lo, hi } = custom[k] || autoRange(k);
+    return [0, 1, 2, 3, 4, 5].map((i) => isLog(k) ? lo * Math.pow(hi / lo, i / 5) : lo + (hi - lo) * i / 5);
+  }
+  // Slider position <-> value (log10 for money, raw for share), bounded by the data's 0.5–99.5 pct.
+  function syncSliders(k) {
+    const lo = $("sLo"), hi = $("sHi"), r = custom[k] || autoRange(k);
+    const to = (v) => isLog(k) ? Math.log10(v) : v;
+    let a, b;
+    if (k === "share") { a = 0; b = 0.9; }
+    else { const all = allVals(k); a = to(Math.max(1, q(all, 0.005))); b = to(q(all, 0.995)); }
+    for (const s of [lo, hi]) { s.min = a; s.max = b; s.step = (b - a) / 400; }
+    lo.value = to(r.lo); hi.value = to(r.hi);
+    const f = (v) => k === "share" ? pct(v) : fmtV(k, v);
+    $("sLoV").textContent = f(r.lo); $("sHiV").textContent = f(r.hi);
+    $("sAuto").classList.toggle("custom", !!custom[k]);
+  }
+  const $ = (id) => document.getElementById(id);
+  function binColor(v, edges) {
+    if (v == null) return null;
+    const i = edges.findIndex((e) => v < e);
+    return COLORS[i < 0 ? 6 : i];
+  }
+  function legend(k, edges) {
+    const titles = { ppa: "Land $/acre", share: "Land share of value", spsf: "Structure-only $/sqft", pv: "Single-family home value" };
+    document.getElementById("legTitle").textContent = titles[k];
+    const f = (v) => k === "share" ? pct(v) : fmtV(k, v);
+    const rows = COLORS.map((c, i) => [c, i === 0 ? `< ${f(edges[0])}` : i < 6 ? `${f(edges[i - 1])} – ${f(edges[i])}` : `> ${f(edges[5])}`]);
+    document.getElementById("legMini").innerHTML = `<span>${f(edges[0])}</span><span class="r">${COLORS.map((c) => `<i style="background:${c}"></i>`).join("")}</span><span>${f(edges[5])}</span>`;
+    document.getElementById("leg").innerHTML = rows.map(([c, t]) => `<div class="lr"><i class="sw" style="background:${c}"></i>${t}</div>`).join("");
+    document.getElementById("legNote").textContent = k === "ppa"
+      ? `Blue = cheap, red = expensive. One scale for ${doc.years[0]}–${doc.years.at(-1)}, so the map reddens as land appreciates.`
+      : k === "share" ? "Fixed scale; the US average is about 36%." : "Blue = cheaper, red = pricier within this metro.";
+  }
+
+  function render() {
+    if (!doc) return;
+    const k = metric, y = yi ?? doc.years.length - 1;
+    const vals = doc.t.map((t) => val(t, k, y));
+    const med = median(vals);
+    const edges = buildScale(k);
+    legend(k, edges);
+    syncSliders(k);
+    document.getElementById("yrLabel").textContent = doc.years[y];
+    document.getElementById("yrBox").classList.toggle("off", k !== "ppa");
+    const z = map.getZoom(), rad = radius(z);
+    layer.clearLayers(); markers = [];
+    doc.t.forEach((t, i) => {
+      const c = binColor(vals[i], edges); if (!c) return;
+      const m = L.circleMarker([t[0], t[1]], { radius: rad, stroke: false, fillColor: c, fillOpacity: 0.78 }).addTo(layer);
+      m.on("click", () => m.bindPopup(popup(t), { maxWidth: 280 }).openPopup());
+      markers.push(m);
+    });
+    const ppaNow = doc.t.map((t) => t[2][doc.years.length - 1]), ppa0 = doc.t.map((t) => t[2][0]);
+    const chg = median(ppaNow) && median(ppa0) ? (median(ppaNow) / median(ppa0) - 1) : null;
+    document.getElementById("stats").innerHTML = `
+      <div><span>Median ${k === "ppa" ? doc.years[y] : ""}</span><b>${fmtV(k, med)}</b></div>
+      <div><span>Middle half</span><b>${fmtV(k, q(vals, 0.25))} – ${fmtV(k, q(vals, 0.75))}</b></div>
+      <div><span>Tracts</span><b>${doc.t.length.toLocaleString()}</b></div>
+      <div><span>Land $/ac, ${doc.years[0]}→${doc.years.at(-1)}</span><b>${chg == null ? "–" : (chg >= 0 ? "+" : "") + Math.round(chg * 100) + "%"}</b></div>`;
+  }
+  function spark(ser) {
+    const v = ser.filter((x) => x != null); if (v.length < 2) return "";
+    const lo = Math.min(...v), hi = Math.max(...v), w = 240, h = 40;
+    const pts = ser.map((x, i) => x == null ? null : `${(i / (ser.length - 1)) * w},${h - ((x - lo) / (hi - lo || 1)) * (h - 4) - 2}`).filter(Boolean).join(" ");
+    return `<svg class="spark" width="${w}" height="${h}"><polyline points="${pts}" fill="none" stroke="#ff7a45" stroke-width="1.6"/></svg>`;
+  }
+  function popup(t) {
+    const [lat, lon, ser, share, spsf, lot, sqft, pv, direct, geoid] = t;
+    return `<div class="pop"><b>Tract ${esc(geoid)}</b>
+      <div class="row"><span class="k">Land $/acre ${doc.years.at(-1)}</span><b>${money(ser.at(-1))}</b></div>
+      <div class="row"><span class="k">Land share of value</span><b>${pct(share)}</b></div>
+      <div class="row"><span class="k">Structure-only $/sqft</span><b>${spsf == null ? "–" : "$" + spsf}</b></div>
+      <div class="row"><span class="k">Typical home / lot</span><b>${money(pv)} · ${lot ? Math.round(lot).toLocaleString() + " sqft" : "–"}</b></div>
+      ${spark(ser)}<div class="k" style="font-size:11px">${doc.years[0]}–${doc.years.at(-1)} land $/acre${direct ? "" : " (scaled from county index)"}</div></div>`;
+  }
+
+  async function load(code) {
+    stopPlay();
+    custom = {};
+    const us = code === "us" || !code;
+    $("usBtn").hidden = us;
+    if (us) {
+      $("metroName").textContent = "United States · 238 metros";
+      $("metroSub").textContent = "Loading 37,349 tracts…";
+      doc = await fetch(`${BASE}national.json`).then((r) => r.json());
+      $("metroSub").textContent = `${doc.t.length.toLocaleString()} census tracts on one national scale · FHFA ${index.years[0]}–${index.years.at(-1)}`;
+      if (yi == null || yi > doc.years.length - 1) yi = doc.years.length - 1;
+      $("yr").max = doc.years.length - 1; $("yr").value = yi;
+      map.fitBounds([[24.5, -124.8], [49.4, -66.9]], { padding: [10, 10] });
+      const u = new URL(location); u.searchParams.set("m", "us"); u.searchParams.set("metric", metric); history.replaceState(null, "", u);
+      render();
+      return;
+    }
+    const m = index.metros.find((x) => x.code === +code) || index.metros.find((x) => /Las Vegas/.test(x.name)) || index.metros[0];
+    $("metroName").textContent = m.name;
+    $("metroSub").textContent = `${m.n.toLocaleString()} census tracts · FHFA single-family land values ${index.years[0]}–${index.years.at(-1)}`;
+    doc = await fetch(`${BASE}m/${m.code}.json`).then((r) => r.json());
+    const yr = document.getElementById("yr"); yr.max = doc.years.length - 1;
+    if (yi == null || yi > doc.years.length - 1) yi = doc.years.length - 1;
+    yr.value = yi;
+    // Fit to the dense core (5th–95th percentile of tracts), not the county-wide bounding box.
+    const la = doc.t.map((t) => t[0]), lo = doc.t.map((t) => t[1]);
+    map.fitBounds([[q(la, 0.05), q(lo, 0.05)], [q(la, 0.95), q(lo, 0.95)]], { padding: [30, 30] });
+    const u = new URL(location); u.searchParams.set("m", m.code); u.searchParams.set("metric", metric); history.replaceState(null, "", u);
+    render();
+  }
+
+  document.getElementById("metric").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    metric = b.dataset.k;
+    document.querySelectorAll("#metric button").forEach((x) => x.classList.toggle("on", x === b));
+    const u = new URL(location); u.searchParams.set("metric", metric); history.replaceState(null, "", u);
+    render();
+  });
+  document.getElementById("yr").addEventListener("input", (e) => { stopPlay(); yi = +e.target.value; render(); });
+  // play: step through the years on the fixed scale (land $/acre only; the other metrics are a single year)
+  var timer = null;
+  function stopPlay() { if (timer) { clearInterval(timer); timer = null; } $("play").textContent = "▶"; }
+  function startPlay() {
+    if (!doc || metric !== "ppa") return;
+    const last = doc.years.length - 1;
+    if ((yi ?? last) >= last) { yi = 0; $("yr").value = 0; render(); }
+    $("play").textContent = "❚❚";
+    timer = setInterval(() => {
+      yi = (yi ?? last) + 1;
+      if (yi > last) { yi = last; stopPlay(); return; }
+      $("yr").value = yi; render();
+    }, 750);
+  }
+  $("play").addEventListener("click", () => (timer ? stopPlay() : startPlay()));
+  document.getElementById("metric").addEventListener("click", stopPlay, true);
+  // shrink / expand panels; remembered per browser
+  const setMin = (id, on) => { const el = $(id); el.classList.toggle("min", on); el.querySelector(".tog").textContent = on ? "+" : "–"; try { localStorage.setItem("le_min_" + id, on ? "1" : ""); } catch {} };
+  document.querySelectorAll(".tog").forEach((b) => b.addEventListener("click", () => setMin(b.dataset.t, !$(b.dataset.t).classList.contains("min"))));
+  ["ctl", "lgd"].forEach((id) => { let on = false; try { on = !!localStorage.getItem("le_min_" + id); } catch {} if (on) setMin(id, true); });
+  const radius = (z) => doc && doc.code === "us" ? Math.max(1.6, Math.min(8, (z - 2.5) * 1.1)) : Math.max(3, Math.min(9, (z - 7) * 1.6));
+  map.on("zoomend", () => { const r = radius(map.getZoom()); markers.forEach((m) => m.setRadius(r)); });
+  $("usBtn").addEventListener("click", () => load("us"));
+  const onScale = () => {
+    const k = metric, from = (v) => isLog(k) ? Math.pow(10, +v) : +v;
+    let lo = from($("sLo").value), hi = from($("sHi").value);
+    if (hi <= lo) hi = isLog(k) ? lo * 1.05 : lo + 0.01;
+    custom[k] = { lo, hi };
+    render();
+  };
+  $("sLo").addEventListener("input", onScale);
+  $("sHi").addEventListener("input", onScale);
+  $("sAuto").addEventListener("click", () => { delete custom[metric]; render(); });
+  const qi = document.getElementById("q"), sg = document.getElementById("sugg");
+  qi.addEventListener("input", () => {
+    const s = qi.value.trim().toLowerCase();
+    sg.innerHTML = !s ? "" : index.metros.filter((m) => m.name.toLowerCase().includes(s)).slice(0, 12)
+      .map((m) => `<div data-c="${m.code}">${esc(m.name)} <span style="color:#6b7583">· ${m.n} tracts</span></div>`).join("") + (s.length > 2 ? `<div data-addr="1">📍 Look up "${esc(qi.value.trim())}" as an address <span style="color:#6b7583">(Enter)</span></div>` : "");
+  });
+  sg.addEventListener("click", (e) => {
+    if (e.target.closest("[data-addr]")) { $("pinForm").requestSubmit(); return; }
+    const d = e.target.closest("[data-c]"); if (!d) return; qi.value = ""; sg.innerHTML = ""; load(d.dataset.c);
+  });
+  window.addEventListener("message", (e) => { if (e.data && e.data.metro) load(e.data.metro); });
+
+  // ---------- pin: address or dropped point -> local land estimate + drive time to airports ----------
+  const MI = 1609.34, hav = (a, b, c, d) => { const R = 6371008.8, r = Math.PI / 180, x = Math.sin((c - a) * r / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin((d - b) * r / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); };
+  const escH = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const cache = {}, getPack = (u) => (cache[u] ||= fetch(u).then((r) => { if (!r.ok) throw new Error(u); return r.json(); }));
+  const pinLayer = L.layerGroup().addTo(map);
+  let pin = null, routeLayer = null, pinMode = false, pinSeq = 0;
+  const yval = (ser, y) => { for (let i = Math.min(y, ser.length - 1); i >= 0; i--) if (ser[i] != null) return ser[i]; return null; };
+  async function estimate(lat, lon) {
+    const y = yi ?? index.years.length - 1;
+    const ms = index.metros.map((m) => ({ m, d: hav(lat, lon, m.lat, m.lon), inside: lon >= m.bbox[0] - 0.2 && lon <= m.bbox[2] + 0.2 && lat >= m.bbox[1] - 0.2 && lat <= m.bbox[3] + 0.2 })).sort((a, b) => a.d - b.d);
+    const use = ms.filter((x) => x.inside).slice(0, 2);
+    const tr = [];
+    for (const { m } of use) { const dd = await getPack(`${BASE}m/${m.code}.json`); dd.t.forEach((t) => tr.push({ t, d: hav(lat, lon, t[0], t[1]) })); }
+    tr.sort((a, b) => a.d - b.d);
+    const k = tr.slice(0, 8).filter((x) => x.d <= 15000);
+    const out = { year: index.years[y], metro: ms[0].m, metroDist: ms[0].d };
+    if (k.length >= 3) {
+      const w = k.map((x) => 1 / Math.max(x.d, 400) ** 2), sw = w.reduce((a, b) => a + b, 0);
+      const vals = k.map((x) => yval(x.t[2], y));
+      out.ppa = k.reduce((a, x, i) => a + (vals[i] || 0) * w[i], 0) / sw;
+      out.lo = q(vals, 0.25); out.hi = q(vals, 0.75); out.near = k[0].d; out.far = k.at(-1).d;
+      const sh = k.filter((x) => x.t[3] != null), ps = k.filter((x) => x.t[4] != null);
+      out.share = sh.length ? sh.reduce((a, x) => a + x.t[3], 0) / sh.length : null;
+      out.spsf = ps.length ? ps.reduce((a, x) => a + x.t[4], 0) / ps.length : null;
+      const g = k.map((x) => { const s = x.t[2], f = s.find((v) => v != null), l = yval(s, s.length - 1); return f ? l / f - 1 : null; }).filter((v) => v != null);
+      out.growth = g.length ? q(g, 0.5) : null;
+      out.src = `Inverse-distance blend of the ${k.length} nearest FHFA tracts (${(out.near / 1000).toFixed(1)}–${(out.far / 1000).toFixed(1)} km away, circled)`;
+      out.tracts = k;
+    } else {
+      const cs = await getPack(`${BASE}counties.json`);
+      const c = cs.c.map((r) => ({ r, d: hav(lat, lon, r[0], r[1]) })).sort((a, b) => a.d - b.d)[0];
+      const rural = ms[0].d > 30 * MI;
+      out.ppa = c.r[4] * (rural ? 0.25 : 1); out.share = c.r[5]; out.spsf = c.r[6];
+      out.src = `No FHFA tract within 15 km, so ${escH(c.r[3])} county residential lots${rural ? `, discounted 75% because the nearest metro is ${Math.round(ms[0].d / MI)} mi away` : ""}`;
+    }
+    return out;
+  }
+  async function placePin(lat, lon, label) {
+    const seq = ++pinSeq;
+    pin = { lat, lon, label: label || `${lat.toFixed(4)}, ${lon.toFixed(4)}` };
+    pinLayer.clearLayers(); if (routeLayer) { routeLayer.remove(); routeLayer = null; }
+    L.circleMarker([lat, lon], { radius: 8, color: "#ff7a45", weight: 3, fillColor: "#fff", fillOpacity: 1 }).bindTooltip("pin").addTo(pinLayer);
+    if (map.getZoom() < 9) map.setView([lat, lon], 10);
+    $("pinOut").hidden = false;
+    $("pinOut").innerHTML = `<div class="pin-h">${escH(pin.label)}</div><div class="pin-est">Estimating…</div>`;
+    let e;
+    try { e = await estimate(lat, lon); } catch (err) { if (seq === pinSeq) $("pinOut").querySelector(".pin-est").textContent = "Couldn't estimate here."; return; }
+    if (seq !== pinSeq) return;
+    (e.tracts || []).forEach((x) => L.circleMarker([x.t[0], x.t[1]], { radius: 10, color: "#ff7a45", weight: 2, fill: false, interactive: false }).addTo(pinLayer));
+    const extra = [e.share != null ? `land is ~${Math.round(e.share * 100)}% of home value` : "", e.spsf != null ? `structures ~$${Math.round(e.spsf)}/sqft` : "",
+      e.growth != null ? `land ${e.growth >= 0 ? "+" : ""}${Math.round(e.growth * 100)}% ${index.years[0]}–${index.years.at(-1)}` : ""].filter(Boolean).join("; ");
+    $("pinOut").innerHTML = `<div class="pin-h">${escH(pin.label)}</div>
+      <div class="pin-est"><b>~${money(e.ppa)}</b>/acre land · ${e.year}${e.lo != null ? ` <span>(nearby ${money(e.lo)}–${money(e.hi)})</span>` : ""}</div>
+      <div class="pin-sub">${e.src}.${extra ? " " + extra[0].toUpperCase() + extra.slice(1) + "." : ""} Nearest metro: ${escH(e.metro.name)} (${Math.round(e.metroDist / MI)} mi). Residential-lot values; raw acreage trades lower.</div>
+      <div class="hubs" id="hubs"></div>`;
+    hubs();
+    const u = new URL(location); u.searchParams.set("pin", `${lat.toFixed(5)},${lon.toFixed(5)}`); history.replaceState(null, "", u);
+  }
+  const hm = (s) => { const m = Math.round(s / 60); return m >= 60 ? `${Math.floor(m / 60)} h ${m % 60} min` : `${m} min`; };
+  // Nearest point on a set of polylines (lon/lat paths), in meters.
+  function nearestOnPaths(lat, lon, paths) {
+    const kx = Math.cos(lat * Math.PI / 180) * 111320, ky = 110540; let best = { d: Infinity };
+    for (const path of paths) for (let i = 1; i < path.length; i++) {
+      const ax = (path[i - 1][0] - lon) * kx, ay = (path[i - 1][1] - lat) * ky, bx = (path[i][0] - lon) * kx, by = (path[i][1] - lat) * ky;
+      const dx = bx - ax, dy = by - ay, L2 = dx * dx + dy * dy, t = L2 ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / L2)) : 0;
+      const px = ax + t * dx, py = ay + t * dy, d = Math.hypot(px, py);
+      if (d < best.d) best = { d, lat: lat + py / ky, lon: lon + px / kx };
+    }
+    return best;
+  }
+  const HUBS = [
+    { k: "hwy", label: "Interstate / freeway" },
+    { k: "intl", label: "Major international airport", tier: 1 },
+    { k: "reg", label: "Regional airport", tier: 2 },
+    { k: "jet", label: "Private jet runway (5,000 ft+)", tier: 4 },
+    { k: "port", label: "Port (top 150 by tonnage)" }
+  ];
+  const OSRM = "https://router.project-osrm.org";
+  let hubRes = {};
+  async function hubCandidates(p) {
+    const out = {};
+    const [ap, ports, roads] = await Promise.all([
+      getPack("data/airports.json"), getPack("data/ports.json"),
+      fetch("https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer/2/query?" + new URLSearchParams({
+        geometry: `${p.lon},${p.lat}`, geometryType: "esriGeometryPoint", inSR: 4326, distance: 80000, units: "esriSRUnit_Meter",
+        spatialRel: "esriSpatialRelIntersects", outFields: "NAME", returnGeometry: true, outSR: 4326, maxAllowableOffset: 0.002,
+        geometryPrecision: 5, resultRecordCount: 60, f: "json" })).then((r) => r.json()).catch(() => ({ features: [] }))
+    ]);
+    const seen = new Set();
+    out.hwy = (roads.features || []).filter((f) => f.geometry?.paths).map((f) => ({ name: (f.attributes.NAME || "freeway").replace(/^I- /, "I-"), ...nearestOnPaths(p.lat, p.lon, f.geometry.paths) }))
+      .sort((a, b) => a.d - b.d).filter((h) => !seen.has(h.name) && seen.add(h.name))
+      .filter((h, _, all) => all.some((x) => /^I-/.test(x.name)) ? /^I-/.test(h.name) : true).slice(0, 3)
+      .map((h) => ({ name: h.name, sub: "nearest point on the freeway", lat: h.lat, lon: h.lon, d: h.d }));
+    for (const h of HUBS.filter((x) => x.tier)) {
+      out[h.k] = ap.a.filter((a) => a[4] & h.tier).map((a) => ({ name: `${a[3]} · ${a[2]}`, sub: a[5] ? `longest runway ${a[5].toLocaleString()} ft` : "", lat: a[0], lon: a[1], d: hav(p.lat, p.lon, a[0], a[1]) }))
+        .sort((x, y) => x.d - y.d).slice(0, 3);
+    }
+    out.port = ports.p.map((r) => ({ name: r[2], sub: `${r[3].toLowerCase()} port · #${r[4]} by tonnage`, lat: r[0], lon: r[1], d: hav(p.lat, p.lon, r[0], r[1]) }))
+      .sort((x, y) => x.d - y.d).slice(0, 3);
+    return out;
+  }
+  function drawHubs() {
+    const box = $("hubs"); if (!box) return;
+    box.innerHTML = HUBS.map((h) => {
+      const r = hubRes[h.k];
+      const body = r === undefined ? `<span class="hub-wait">routing…</span>` : !r ? `<span class="hub-wait">none within reach</span>`
+        : `<b>${r.dur != null ? `${hm(r.dur)} · ${Math.round(r.dist / MI)} mi` : `~${Math.round(r.d / MI)} mi straight`}</b><div class="hub-n">${escH(r.name)}${r.sub ? ` · ${escH(r.sub)}` : ""}</div>`;
+      return `<div class="hub${hubSel === h.k ? " on" : ""}" data-hub="${h.k}"><span class="hub-l">${h.label}</span>${body}</div>`;
+    }).join("") + `<div class="hub-note">Fastest drive by road (OSRM, OpenStreetMap). Click a row to draw the route.</div>`;
+  }
+  let hubSel = null;
+  async function hubs() {
+    const seq = pinSeq, p = pin; hubRes = {}; hubSel = null; drawHubs();
+    let cands;
+    try { cands = await hubCandidates(p); } catch (e) { cands = {}; }
+    if (seq !== pinSeq) return;
+    const flat = []; HUBS.forEach((h) => (cands[h.k] || []).forEach((c) => flat.push({ ...c, k: h.k })));
+    try {
+      const coords = [[p.lon, p.lat], ...flat.map((c) => [c.lon, c.lat])].map((c) => c.map((v) => v.toFixed(5)).join(",")).join(";");
+      const t = await fetch(`${OSRM}/table/v1/driving/${coords}?sources=0&annotations=duration,distance`).then((r) => r.json());
+      flat.forEach((c, i) => { c.dur = t.durations?.[0]?.[i + 1] ?? null; c.dist = t.distances?.[0]?.[i + 1] ?? null; });
+    } catch (e) { /* straight-line fallback */ }
+    if (seq !== pinSeq) return;
+    HUBS.forEach((h) => {
+      const cs = flat.filter((c) => c.k === h.k);
+      hubRes[h.k] = cs.length ? cs.slice().sort((a, b) => (a.dur ?? a.d * 0.06) - (b.dur ?? b.d * 0.06))[0] : null;
+      const r = hubRes[h.k];
+      if (r) L.circleMarker([r.lat, r.lon], { radius: 6, color: "#111", weight: 1.5, fillColor: "#ffd166", fillOpacity: 1 }).bindTooltip(`${h.label}: ${escH(r.name)}`).addTo(pinLayer);
+    });
+    drawHubs();
+  }
+  async function route(k) {
+    const r = hubRes[k]; if (!r || !pin) return;
+    hubSel = k; drawHubs();
+    if (routeLayer) { routeLayer.remove(); routeLayer = null; }
+    try {
+      const j = await fetch(`${OSRM}/route/v1/driving/${pin.lon},${pin.lat};${r.lon},${r.lat}?overview=simplified&geometries=geojson`).then((x) => x.json());
+      const g = j.routes?.[0]?.geometry?.coordinates;
+      if (hubSel !== k) return;
+      routeLayer = g ? L.polyline(g.map(([x, y]) => [y, x]), { color: "#ff7a45", weight: 3, opacity: 0.9 }) : L.polyline([[pin.lat, pin.lon], [r.lat, r.lon]], { color: "#ff7a45", dashArray: "6 6", weight: 2 });
+    } catch (e) { routeLayer = L.polyline([[pin.lat, pin.lon], [r.lat, r.lon]], { color: "#ff7a45", dashArray: "6 6", weight: 2 }); }
+    routeLayer.addTo(map); map.fitBounds(routeLayer.getBounds(), { padding: [40, 40] });
+  }
+  $("pinOut").addEventListener("click", (e) => { const b = e.target.closest("[data-hub]"); if (b) route(b.dataset.hub); });
+  $("pinBtn").addEventListener("click", () => { pinMode = !pinMode; $("pinBtn").classList.toggle("on", pinMode); map.getContainer().style.cursor = pinMode ? "crosshair" : ""; });
+  map.on("click", (e) => { if (!pinMode) return; pinMode = false; $("pinBtn").classList.remove("on"); map.getContainer().style.cursor = ""; placePin(e.latlng.lat, e.latlng.lng); });
+  $("pinForm").addEventListener("submit", async (e) => {
+    e.preventDefault(); const v = $("q").value.trim(); if (!v) return; $("sugg").innerHTML = "";
+    const m = v.match(/^(-?\d{1,2}\.\d+)\s*[, ]\s*(-?\d{1,3}\.\d+)$/);
+    if (m) return placePin(+m[1], +m[2]);
+    try {
+      const j = await fetch(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?${new URLSearchParams({ SingleLine: v, f: "json", maxLocations: 1, countryCode: "USA", outFields: "Match_addr" })}`).then((r) => r.json());
+      const c = j.candidates?.[0]; if (!c) throw new Error("none");
+      placePin(c.location.y, c.location.x, c.attributes?.Match_addr || c.address);
+    } catch (err) { $("pinOut").hidden = false; $("pinOut").innerHTML = `<div class="pin-est">Couldn't find "${escH(v)}".</div>`; }
+  });
+
+  fetch(`${BASE}index.json`).then((r) => r.json()).then((ix) => {
+    index = ix;
+    document.querySelectorAll("#metric button").forEach((x) => x.classList.toggle("on", x.dataset.k === metric));
+    load(qs.get("m")).then(() => { const pp = qs.get("pin"); if (pp) { const [a, b] = pp.split(",").map(Number); if (isFinite(a) && isFinite(b)) placePin(a, b); } });
+  });
+})();
+</script>
+</body>
+</html>
