@@ -4,25 +4,44 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Drive</title>
-<meta name="description" content="Twenty stops from Virginia to Nevada, each scored by the Region Engine for nine land uses.">
+<meta name="description" content="The route actually driven, Dollywood to Ely: 27 stops scored by the Region Engine, ranked your way.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="style.css?v=20261020">
+<link rel="stylesheet" href="style.css?v=20261021">
 <style>
   .dv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 6px 0 12px; font-size: 13px; color: var(--muted); }
   .dv-bar select { background: var(--panel); border: 1px solid var(--line-2); color: var(--text); border-radius: 8px; padding: 8px 10px; font: 13px var(--mono); }
-  #dvMap { height: 540px; border-radius: 12px; border: 1px solid var(--line); background: #111; }
-  .dv-table { min-width: 1150px; }
-  .dv-table th.use { cursor: pointer; }
-  .dv-table th.use.on { color: var(--accent); }
-  .dv-table td.st { color: var(--faint); font-size: 11px; }
-  .dv-table tr.newst td { border-top: 2px solid var(--line-2); }
-  .dv-table td a { color: inherit; text-decoration: none; display: block; }
-  .dv-table td.best { outline: 1px solid currentColor; outline-offset: -3px; }
-  .dv-best { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; margin-top: 14px; }
-  .dv-best div { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 13px; color: var(--muted); }
-  .dv-best b { display: block; color: var(--text); font-weight: 500; margin-bottom: 4px; }
+  #dvMap { height: 560px; border-radius: 12px; border: 1px solid var(--line); background: #111; }
   .dv-lbl { background: transparent; border: 0; box-shadow: none; color: #e9ecef; font: 600 11px var(--mono); text-shadow: 0 0 3px #000, 0 0 3px #000; }
   .dv-lbl::before { display: none; }
+  .dv-num { color: #0b0d10; text-shadow: none; font-size: 9.5px; }
+  /* big grid */
+  .gscroll { overflow: auto; max-height: 78vh; border: 1px solid var(--line); border-radius: 12px; }
+  table.grid { border-collapse: separate; border-spacing: 0; font: 12px var(--mono); }
+  .grid th, .grid td { padding: 6px 8px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); white-space: nowrap; text-align: center; }
+  .grid thead th { position: sticky; top: 0; z-index: 2; background: var(--panel-2); color: var(--faint); font-weight: 500; font-size: 10.5px; letter-spacing: 0.04em; cursor: pointer; vertical-align: bottom; }
+  .grid thead th.v { writing-mode: vertical-rl; transform: rotate(180deg); height: 150px; text-align: left; padding: 8px 4px; }
+  .grid th.sorted { color: var(--accent); }
+  .grid td.stop, .grid th.stop { position: sticky; left: 0; z-index: 1; background: var(--bg, #0b0d10); text-align: left; min-width: 140px; font-family: var(--sans); font-size: 13px; }
+  .grid thead th.stop { z-index: 3; background: var(--panel-2); }
+  .grid td.stop small { display: block; color: var(--faint); font: 10.5px var(--mono); }
+  .grid td.num { color: #0b0d10; font-weight: 600; min-width: 34px; }
+  .grid td.idx { color: var(--faint); }
+  .grid td.sep, .grid th.sep { border-left: 2px solid var(--line-2); }
+  .stars { display: inline-flex; gap: 1px; cursor: pointer; font-size: 15px; line-height: 1; }
+  .stars i { font-style: normal; color: var(--line-2); } .stars i.on { color: #ffd166; }
+  .grid input.note { background: transparent; border: 1px solid var(--line); color: var(--text); border-radius: 6px; padding: 3px 6px; font: 11.5px var(--sans); width: 130px; }
+  /* weights */
+  .wts { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px 18px; margin-top: 10px; }
+  .wts label { display: grid; grid-template-columns: 1fr 110px 26px; gap: 8px; align-items: center; font-size: 12.5px; color: var(--muted); }
+  .wts label b { font: 600 12px var(--mono); color: var(--text); text-align: right; }
+  .wts input[type=range] { width: 110px; accent-color: var(--accent); }
+  .panel2 { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+  .panel2 h4 { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 6px; }
+  .panel2 p { color: var(--muted); font-size: 13.5px; }
+  .learn { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .learn span { font: 11.5px var(--mono); padding: 3px 8px; border-radius: 999px; border: 1px solid var(--line-2); }
+  .learn span.pos { color: var(--go); border-color: rgba(62,207,142,.45); } .learn span.neg { color: var(--kill); border-color: rgba(255,93,93,.45); }
+  .acts { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 12.5px; color: var(--faint); }
 </style>
 </head>
 <body>
@@ -33,8 +52,8 @@
       <a href="./#underwriter">Parcels</a>
       <a href="region.html">Regions</a>
       <a href="#map" style="color:var(--text)">The drive</a>
-      <a href="#table">Scores</a>
-      <a href="#facts">Facts</a>
+      <a href="#rank">Rank</a>
+      <a href="#grid">Grid</a>
       <a href="./#surfaces">Price surfaces</a>
     </nav>
   </div>
@@ -42,9 +61,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">Region Engine · Virginia → Nevada</div>
+    <div class="eyebrow">Region Engine · the route actually driven</div>
     <h1>The <em>Drive</em></h1>
-    <p class="lede">Twenty stops across ten states, from the Blue Ridge to the Mojave, each scored by the Region Engine for nine land uses within 25 miles. Pick a use to color the route. Click any score to open that stop live in the engine, where you can change the radius or move the point.</p>
+    <p class="lede">Dollywood to Ely: 27 stops across Tennessee, Missouri, Nebraska, Iowa, South Dakota, Wyoming, Montana, Idaho, and Nevada, in the order driven. Each stop is scored by the Region Engine within 25 miles for nine land uses and 27 factors. Star the places you liked, set your own weights, and the grid ranks everything your way. The engine also learns which factors your stars line up with.</p>
   </div>
 </section>
 
@@ -52,35 +71,45 @@
   <div class="wrap">
     <div class="dv-bar"><span>Color the route by</span><select id="dvUse"></select><span id="dvBuilt"></span></div>
     <div id="dvMap"></div>
-    <div class="pcard-key"><span class="k-good">A–B · 68+</span><span class="k-warn">C–D · 42–67</span><span class="k-bad">F · under 42</span> · Layers menu (top right): elevation, roads, waterways, ownership, transmission, pipelines, plants</div>
-    <div class="dv-best" id="dvBest"></div>
+    <div class="pcard-key"><span class="k-good">68+</span><span class="k-warn">42–67</span><span class="k-bad">under 42</span> · numbers = order driven; zoom in for names; click a dot for all nine uses · Layers menu (top right): elevation, roads, waterways, ownership, transmission, pipelines, plants</div>
   </div>
 </section>
 
-<section class="block" id="table">
+<section class="block" id="rank">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Scores</div>
-      <h2>Every stop, every use</h2>
-      <p>Each cell is the weighted 0–100 score for that use. The best stop for each use is outlined. Click a column header to color the map by that use; click a cell to run that stop live.</p>
+      <div class="eyebrow">Rank</div>
+      <h2>Rank them your way</h2>
+      <p>Three ways to rank, all feeding the grid below. <b>Your stars</b>: rate each stop 1–5 from having been there. <b>My score</b>: set a weight on any factor. <b>Learned</b>: the engine compares your stars with the factor scores and builds a weighting from whatever your stars correlate with.</p>
     </div>
-    <div class="b-scroll"><table class="b-table dv-table" id="dvTable"></table></div>
+    <div class="panel2">
+      <h4>My score · factor weights</h4>
+      <div class="acts"><span>Start from</span><select id="wPreset" class="chip"></select><button class="chip" type="button" id="wZero">Clear all</button><button class="chip" type="button" id="wLearn">Use learned weights</button></div>
+      <div class="wts" id="wts"></div>
+    </div>
+    <div class="panel2">
+      <h4>Learned from your stars</h4>
+      <p id="learnTxt">Star at least 5 stops in the grid to see what your ratings correlate with.</p>
+      <div class="learn" id="learn"></div>
+    </div>
+    <div class="acts"><button class="btn" type="button" id="share">Copy share link</button><span id="shareMsg">Stars, notes, and weights save in this browser automatically. The share link carries them, so paste it anywhere (including to Claude) to hand off your ranking.</span></div>
   </div>
 </section>
 
-<section class="block" id="facts">
+<section class="block" id="grid">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Facts</div>
-      <h2>What drives the scores</h2>
-      <p>The raw inputs behind the grades, colored by how good each one is on its own: green is favorable, red unfavorable. Land cost is FHFA residential lots inside a metro and county lots discounted by 75% more than 30 miles from one, so treat it as relative.</p>
+      <div class="eyebrow">Grid</div>
+      <h2>Every stop × every score</h2>
+      <p>27 stops by your stars, your weighted score, the learned score, nine land uses, and all 27 factors, each 0–100 and colored red to green. Click any column header to sort; click again to reverse. Hover a factor cell for the raw value; click a use score to open that stop live in the engine.</p>
     </div>
-    <div class="b-scroll"><table class="b-table dv-table" id="dvFacts"></table></div>
+    <div class="acts" style="margin:0 0 10px"><span>sort:</span><span id="sortLbl">route order</span><button class="chip" type="button" id="sortRoute">Back to route order</button><button class="chip" type="button" id="csv">Export CSV</button></div>
+    <div class="gscroll"><table class="grid" id="G"></table></div>
     <ul class="limits">
       <li>Built from one pull of each public source (see the Region Engine method). Climate is the last full calendar year, not a 30-year normal.</li>
-      <li>Each stop is a 25-mile circle around the town center, not the whole state. Rural land between stops is often far cheaper than the circle's median.</li>
-      <li>Screening only: interconnection queues, water rights, zoning, incentives, and fiber need direct confirmation.</li>
-      <li>Rebuild: <code>nevada/region_data/build_drive.py</code> (edit the stop list and rerun).</li>
+      <li>Each stop is a 25-mile circle around the town center. Land cost is FHFA residential lots inside a metro, and county lots otherwise (discounted 75% more than 30 miles from a metro, or the raw-land band in the Great Basin), so treat it as relative. Carey and Craters of the Moon read high because the nearest county record is Blaine County (Sun Valley).</li>
+      <li>"Learned" is a correlation across at most 27 places: a pointer to what you value, not a fitted model.</li>
+      <li>Rebuild the data with <code>nevada/region_data/build_drive.py</code>.</li>
     </ul>
   </div>
 </section>
@@ -89,70 +118,140 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
-<script src="layers.js?v=20261020"></script>
-<script src="regions.js?v=20261020"></script>
-<script src="region.js?v=20261020"></script>
+<script src="layers.js?v=20261021"></script>
+<script src="regions.js?v=20261021"></script>
+<script src="region.js?v=20261021"></script>
 <script>
 (async () => {
   const E = window.RegionEngine, $ = (id) => document.getElementById(id);
   const fmt = (n, d = 0) => n == null || !isFinite(n) ? "–" : Number(n).toLocaleString("en-US", { maximumFractionDigits: d, minimumFractionDigits: d });
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const tone = (s) => s == null ? "neutral" : s >= 68 ? "good" : s >= 42 ? "warn" : "bad";
-  const COL = { good: "#3ecf8e", warn: "#f5b83d", bad: "#ff5d5d", neutral: "#888" };
-  const USES = Object.keys(E.PROFILES);
-  const doc = await fetch("data/drive.json?v=20261020").then((r) => r.json());
+  const strip = (s) => String(s).replace(/<[^>]+>/g, "");
+  // red (0) -> amber (50) -> green (100)
+  const heat = (s) => {
+    if (s == null || !isFinite(s)) return "transparent";
+    const t = Math.max(0, Math.min(1, s / 100)), a = [255, 93, 93], b = [245, 184, 61], c = [62, 207, 142];
+    const [p, q, u] = t < 0.5 ? [a, b, t * 2] : [b, c, (t - 0.5) * 2];
+    return `rgb(${p.map((x, i) => Math.round(x + (q[i] - x) * u)).join(",")})`;
+  };
+  const USES = Object.keys(E.PROFILES), FK = Object.keys(E.F);
+  const doc = await fetch("data/drive.json?v=20261021").then((r) => r.json());
   const stops = doc.stops.filter((s) => s.d);
-  stops.forEach((s) => { s.sc = {}; USES.forEach((u) => (s.sc[u] = E.score(s.d, u))); });
-  $("dvBuilt").textContent = `scored ${doc.built} · ${doc.radius_mi}-mile radius`;
-  const best = {}; USES.forEach((u) => (best[u] = stops.reduce((a, s) => (s.sc[u].total ?? -1) > (a.sc[u].total ?? -1) ? s : a)));
-  const link = (s, u) => `region.html#idea=${encodeURIComponent(`${E.PROFILES[u].label} near ${s.where}`)}&r=${doc.radius_mi}&use=${u}`;
-  let use = new URLSearchParams(location.hash.slice(1)).get("use") || "homestead";
+  stops.forEach((s, i) => { s.i = i; s.sc = {}; USES.forEach((u) => (s.sc[u] = E.score(s.d, u))); s.f = {}; FK.forEach((k) => { const v = E.F[k].score(s.d); s.f[k] = v == null ? null : v; }); });
+  $("dvBuilt").textContent = `scored ${doc.built} · ${doc.radius_mi}-mile radius · ${stops.length} stops`;
+  const link = (s, u) => `region.html#idea=${encodeURIComponent(`${E.PROFILES[u].label} near ${s.q || s.where}`)}&r=${doc.radius_mi}&use=${u}`;
 
-  $("dvUse").innerHTML = USES.map((u) => `<option value="${u}">${esc(E.PROFILES[u].label)}</option>`).join("");
+  // ---------- state: stars, notes, weights (localStorage + share hash) ----------
+  const KEY = "le_drive_v1";
+  let st = { stars: {}, notes: {}, w: { ...E.PROFILES.homestead.w } };
+  try { const j = JSON.parse(localStorage.getItem(KEY) || "null"); if (j) st = { ...st, ...j }; } catch {}
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.get("s")) try { st = { ...st, ...JSON.parse(decodeURIComponent(escape(atob(h.get("s"))))) }; } catch {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch {} };
 
+  // ---------- scoring your way ----------
+  const wscore = (s, w) => { let a = 0, b = 0; for (const [k, x] of Object.entries(w)) { const v = s.f[k]; if (x > 0 && v != null) { a += v * x; b += x; } } return b ? a / b : null; };
+  const corr = (xs, ys) => { const n = xs.length; if (n < 3) return null; const mx = xs.reduce((a, b) => a + b) / n, my = ys.reduce((a, b) => a + b) / n;
+    let sxy = 0, sxx = 0, syy = 0; for (let i = 0; i < n; i++) { sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) ** 2; syy += (ys[i] - my) ** 2; } return sxx && syy ? sxy / Math.sqrt(sxx * syy) : null; };
+  let learnedW = null;
+  function learn() {
+    const rated = stops.filter((s) => st.stars[s.where]);
+    learnedW = null;
+    if (rated.length < 5) { $("learnTxt").textContent = `Star at least 5 stops in the grid to see what your ratings correlate with (${rated.length} so far).`; $("learn").innerHTML = ""; return; }
+    const rs = FK.map((k) => { const pts = rated.filter((s) => s.f[k] != null); return { k, r: corr(pts.map((s) => s.f[k]), pts.map((s) => st.stars[s.where])) }; }).filter((x) => x.r != null).sort((a, b) => b.r - a.r);
+    learnedW = Object.fromEntries(rs.filter((x) => x.r > 0.15).map((x) => [x.k, Math.round(x.r * 30)]));
+    $("learnTxt").textContent = `From ${rated.length} starred stops: your stars go up with the green factors and down with the red ones. Learned score weights each positive factor by its correlation.`;
+    $("learn").innerHTML = rs.filter((x) => Math.abs(x.r) >= 0.15).map((x) => `<span class="${x.r > 0 ? "pos" : "neg"}">${esc(E.F[x.k].label)} ${x.r > 0 ? "+" : ""}${x.r.toFixed(2)}</span>`).join("") || "<span>No factor correlates above 0.15 yet.</span>";
+  }
+  const val = (s, col) => col === "stars" ? (st.stars[s.where] || null) : col === "mine" ? wscore(s, st.w) : col === "learned" ? (learnedW ? wscore(s, learnedW) : null)
+    : col.startsWith("u:") ? s.sc[col.slice(2)].total : col.startsWith("f:") ? s.f[col.slice(2)] : s.i;
+
+  // ---------- weights panel ----------
+  $("wPreset").innerHTML = `<option value="">— preset —</option>` + USES.map((u) => `<option value="${u}">${esc(E.PROFILES[u].label)}</option>`).join("");
+  function drawW() {
+    $("wts").innerHTML = FK.map((k) => `<label>${esc(E.F[k].label)}<input type="range" min="0" max="30" value="${st.w[k] || 0}" data-k="${k}"><b>${st.w[k] || 0}</b></label>`).join("");
+    $("wts").querySelectorAll("input").forEach((r) => r.addEventListener("input", () => { st.w[r.dataset.k] = +r.value; r.nextElementSibling.textContent = r.value; save(); refresh(); }));
+  }
+  $("wPreset").addEventListener("change", () => { const u = $("wPreset").value; if (!u) return; st.w = { ...E.PROFILES[u].w }; save(); drawW(); refresh(); });
+  $("wZero").addEventListener("click", () => { st.w = {}; save(); drawW(); refresh(); });
+  $("wLearn").addEventListener("click", () => { if (!learnedW) { $("learnTxt").textContent = "Star at least 5 stops first."; return; } st.w = { ...learnedW }; save(); drawW(); refresh(); });
+
+  // ---------- big grid ----------
+  let sortCol = null, sortDir = -1;
+  const COLS = [
+    { id: "stars", label: "★ Your stars", grp: "You" }, { id: "mine", label: "★ My score", grp: "You" }, { id: "learned", label: "★ Learned", grp: "You" },
+    ...USES.map((u) => ({ id: "u:" + u, label: "USE · " + E.PROFILES[u].label.split(/ [\/(]/)[0], grp: "Uses" })),
+    ...FK.map((k) => ({ id: "f:" + k, label: E.F[k].label, grp: "Factors" }))
+  ];
+  function drawGrid() {
+    const rows = stops.slice();
+    if (sortCol) rows.sort((a, b) => { const x = val(a, sortCol), y = val(b, sortCol); if (x == null && y == null) return a.i - b.i; if (x == null) return 1; if (y == null) return -1; return (x - y) * sortDir || a.i - b.i; });
+    const grp = (g) => COLS.filter((c) => c.grp === g).length;
+    let html = `<thead><tr class="cols"><th class="stop" data-c="">Stop</th><th data-c="">#</th><th>Notes</th>${COLS.map((c, j) => `<th class="v${c.id === sortCol ? " sorted" : ""}${j === 0 || c.id === "u:" + USES[0] || c.id === "f:" + FK[0] ? " sep" : ""}" data-c="${c.id}">${esc(c.label)}</th>`).join("")}</tr></thead><tbody>`;
+    for (const s of rows) {
+      const n = st.stars[s.where] || 0;
+      html += `<tr><td class="stop">${esc(s.where)}<small>${s.st}${s.note ? " · " + esc(s.note) : ""}</small></td><td class="idx">${s.i + 1}</td>
+        <td><input class="note" data-w="${esc(s.where)}" value="${esc(st.notes[s.where] || "")}" placeholder="note"></td>
+        <td class="sep"><span class="stars" data-w="${esc(s.where)}">${[1, 2, 3, 4, 5].map((k) => `<i data-k="${k}" class="${k <= n ? "on" : ""}">★</i>`).join("")}</span></td>`;
+      for (const c of COLS.slice(1)) {
+        const v = val(s, c.id), first = c.id === "u:" + USES[0] || c.id === "f:" + FK[0] ? " sep" : "";
+        if (c.id.startsWith("u:")) { const u = c.id.slice(2); html += `<td class="num${first}" style="background:${heat(v)}" title="${esc(E.PROFILES[u].label)} · ${s.sc[u].grade}"><a href="${link(s, u)}" style="color:inherit;text-decoration:none">${fmt(v)}</a></td>`; }
+        else if (c.id.startsWith("f:")) { const k = c.id.slice(2); html += `<td class="num${first}" style="background:${heat(v)}" title="${esc(E.F[k].label)}: ${esc(strip(E.F[k].show(s.d)))}">${fmt(v)}</td>`; }
+        else html += `<td class="num" style="background:${heat(v)}">${fmt(v)}</td>`;
+      }
+      html += "</tr>";
+    }
+    $("G").innerHTML = html + "</tbody>";
+    $("G").querySelectorAll("thead tr.cols th").forEach((th) => th.addEventListener("click", () => {
+      const c = th.dataset.c; if (c === undefined) return;
+      if (!c) { sortCol = null; } else if (sortCol === c) sortDir = -sortDir; else { sortCol = c; sortDir = -1; }
+      $("sortLbl").textContent = sortCol ? `${COLS.find((x) => x.id === sortCol).label}, ${sortDir === -1 ? "high to low" : "low to high"}` : "route order";
+      drawGrid();
+    }));
+    $("G").querySelectorAll(".stars").forEach((el) => el.addEventListener("click", (e) => {
+      const k = +e.target.dataset.k; if (!k) return; const w = el.dataset.w;
+      st.stars[w] = st.stars[w] === k ? 0 : k; if (!st.stars[w]) delete st.stars[w]; save(); refresh();
+    }));
+    $("G").querySelectorAll("input.note").forEach((el) => el.addEventListener("change", () => { st.notes[el.dataset.w] = el.value; if (!el.value) delete st.notes[el.dataset.w]; save(); }));
+  }
+  $("sortRoute").addEventListener("click", () => { sortCol = null; $("sortLbl").textContent = "route order"; drawGrid(); });
+  $("csv").addEventListener("click", () => {
+    const head = ["order", "stop", "state", "note", "my_note", ...COLS.map((c) => c.label)];
+    const lines = stops.map((s) => [s.i + 1, s.where, s.st, s.note || "", st.notes[s.where] || "", ...COLS.map((c) => { const v = val(s, c.id); return v == null ? "" : Math.round(v * 10) / 10; })]);
+    const csv = [head, ...lines].map((r) => r.map((x) => `"${String(x).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); a.download = "drive_grid.csv"; a.click();
+  });
+  $("share").addEventListener("click", async () => {
+    const url = `${location.origin}${location.pathname}#s=${btoa(unescape(encodeURIComponent(JSON.stringify(st))))}`;
+    try { await navigator.clipboard.writeText(url); $("shareMsg").textContent = "Link copied. It carries your stars, notes, and weights."; } catch { prompt("Copy this link:", url); }
+  });
+
+  // ---------- map ----------
   const map = L.map("dvMap", { preferCanvas: true });
   window.LE_LAYERS(map, { position: "topright" });
   L.polyline(stops.map((s) => [s.lat, s.lon]), { color: "#ff7a45", weight: 2, opacity: 0.55, dashArray: "6 6" }).addTo(map);
   map.fitBounds(stops.map((s) => [s.lat, s.lon]), { padding: [30, 30] });
   const dots = L.layerGroup().addTo(map);
-
-  function paint() {
-    $("dvUse").value = use;
-    history.replaceState(null, "", `#use=${use}`);
-    dots.clearLayers();
+  $("dvUse").innerHTML = `<option value="mine">My score</option><option value="learned">Learned from my stars</option><option value="stars">My stars</option>` +
+    USES.map((u) => `<option value="u:${u}">${esc(E.PROFILES[u].label)}</option>`).join("");
+  $("dvUse").value = "u:homestead";
+  function paintMap() {
+    const col = $("dvUse").value; dots.clearLayers();
     stops.forEach((s, i) => {
-      const sc = s.sc[use], dir = /Pocatello|Idaho Falls|Las Vegas/.test(s.where) ? "left" : i % 2 ? "top" : "bottom";
-      L.circleMarker([s.lat, s.lon], { radius: 9, color: "#111", weight: 1.5, fillColor: COL[tone(sc.total)], fillOpacity: 0.95 })
-        .bindTooltip(`${esc(s.where.split(",")[0])} ${sc.grade} ${fmt(sc.total)}`, { permanent: true, direction: dir, className: "dv-lbl", offset: dir === "left" ? [-8, 0] : [0, dir === "top" ? -8 : 8] })
-        .bindPopup(`<b>${esc(s.where)}</b><br>${esc(E.PROFILES[use].label)}: ${sc.grade} ${fmt(sc.total)}<br>` +
-          sc.rows.slice(0, 6).map((r) => `${esc(r.label)}: ${r.value}`).join("<br>") + `<br><a href="${link(s, use)}">open live →</a>`)
+      let v = val(s, col); const show = col === "stars" ? (v ? "★".repeat(v) : "") : fmt(v);
+      if (col === "stars" && v) v = v * 20;
+      const dir = i % 2 ? "top" : "bottom", near = map.getZoom() >= 6;
+      L.circleMarker([s.lat, s.lon], { radius: 8, color: "#111", weight: 1.5, fillColor: v == null ? "#666" : heat(v), fillOpacity: 0.95 })
+        .bindTooltip(near ? `${esc(s.where)} ${show}` : `${s.i + 1}`, near ? { permanent: true, direction: dir, className: "dv-lbl", offset: [0, dir === "top" ? -7 : 7] } : { permanent: true, direction: "center", className: "dv-lbl dv-num" })
+        .bindPopup(`<b>${s.i + 1}. ${esc(s.where)}</b>${s.note ? ` · ${esc(s.note)}` : ""}<br>` + USES.map((u) => `${esc(E.PROFILES[u].label)}: ${s.sc[u].grade} ${fmt(s.sc[u].total)}`).join("<br>"))
         .addTo(dots);
     });
-    // scores table
-    let prev = null;
-    $("dvTable").innerHTML = `<thead><tr><th>Stop</th><th>St</th>${USES.map((u) => `<th class="use${u === use ? " on" : ""}" data-u="${u}">${esc(E.PROFILES[u].label.split(/ [\/(]/)[0])}</th>`).join("")}<th>Best use</th></tr></thead><tbody>` +
-      stops.map((s) => {
-        const top = USES.slice().sort((a, b) => (s.sc[b].total ?? -1) - (s.sc[a].total ?? -1))[0];
-        const row = `<tr class="${prev && prev !== s.st ? "newst" : ""}"><td class="place"><b>${esc(s.where)}</b></td><td class="st">${s.st}</td>` +
-          USES.map((u) => { const t = s.sc[u].total; return `<td class="c-${tone(t)}${best[u] === s ? " best" : ""}"><a href="${link(s, u)}" title="open live">${s.sc[u].grade} ${fmt(t)}</a></td>`; }).join("") +
-          `<td class="place"><span>${esc(E.PROFILES[top].label)}</span></td></tr>`;
-        prev = s.st; return row;
-      }).join("") + "</tbody>";
-    document.querySelectorAll("#dvTable th.use").forEach((th) => th.addEventListener("click", () => { use = th.dataset.u; paint(); }));
-    // best-per-use cards
-    const ranked = stops.slice().sort((a, b) => (b.sc[use].total ?? -1) - (a.sc[use].total ?? -1));
-    $("dvBest").innerHTML = `<div><b>Best for ${esc(E.PROFILES[use].label)}</b>${ranked.slice(0, 3).map((s) => `${esc(s.where)} · ${s.sc[use].grade} ${fmt(s.sc[use].total)}`).join("<br>")}</div>` +
-      `<div><b>Weakest</b>${ranked.slice(-3).reverse().map((s) => `${esc(s.where)} · ${s.sc[use].grade} ${fmt(s.sc[use].total)}`).join("<br>")}</div>` +
-      `<div><b>Why the leader leads</b>${ranked[0].sc[use].rows.filter((r) => r.s != null).sort((a, b) => b.w * b.s - a.w * a.s).slice(0, 3).map((r) => `${esc(r.label)}: ${r.value}`).join("<br>")}</div>`;
   }
+  $("dvUse").addEventListener("change", paintMap);
+  map.on("zoomend", paintMap);
 
-  // facts table: raw values, toned by the factor's own score
-  const FACTS = ["landcost", "growth", "price", "grid", "gas", "water", "surface", "fire", "flood", "cool", "sun", "flat", "private", "labor", "highway"];
-  $("dvFacts").innerHTML = `<thead><tr><th>Stop</th><th>St</th>${FACTS.map((k) => `<th>${esc(E.F[k].label)}</th>`).join("")}</tr></thead><tbody>` +
-    stops.map((s) => `<tr><td class="place"><b>${esc(s.where)}</b></td><td class="st">${s.st}</td>${FACTS.map((k) => { const sc = E.F[k].score(s.d); return `<td class="c-${sc == null ? "neutral" : sc >= 70 ? "good" : sc >= 40 ? "warn" : "bad"}">${E.F[k].show(s.d)}</td>`; }).join("")}</tr>`).join("") + "</tbody>";
-
-  $("dvUse").addEventListener("change", () => { use = $("dvUse").value; paint(); });
-  paint();
+  function refresh() { learn(); drawGrid(); paintMap(); }
+  drawW(); refresh();
 })();
 </script>
 </body>

@@ -6,7 +6,7 @@
 <title>Land Engine</title>
 <meta name="description" content="Parcel and region intelligence for any US land: underwriter, region engine, deal calculators, and land price surfaces.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="style.css?v=20261020">
+<link rel="stylesheet" href="style.css?v=20261021">
 </head>
 <body>
 
@@ -29,15 +29,15 @@
 
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="eyebrow">snow.ai · Virginia to the Mountain West</div>
+    <div class="eyebrow">snow.ai · Tennessee to the Mountain West</div>
     <h1>Land <em>Engine</em></h1>
-    <p class="lede">Paste an address, coordinates, or a listing link, or a whole list of them. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, traffic noise, mineral history, walkability, and land value) and returns a go, check, or kill screen in seconds. Then it prices the place, splits land from structure, and loads the deal calculators. It runs on any US parcel; the <a href="region.html">region engine</a> scores whole towns and regions, and <a href="drive.html">the drive</a> pre-scores twenty stops from Virginia to Nevada.</p>
+    <p class="lede">Paste an address, coordinates, or a listing link, or a whole list of them. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, traffic noise, mineral history, walkability, and land value) and returns a go, check, or kill screen in seconds. Then it prices the place, splits land from structure, and loads the deal calculators. It runs on any US parcel; the <a href="region.html">region engine</a> scores whole towns and regions, and <a href="drive.html">the drive</a> ranks the 27 stops of the actual drive, Dollywood to Ely.</p>
     <div class="stats">
       <div class="stat"><b>11</b><span>checks per parcel, any US point</span></div>
       <div class="stat"><b>37,349</b><span>census tracts priced, land vs. structure</span></div>
       <div class="stat"><b>238</b><span>metro land surfaces, 2012–2022</span></div>
       <div class="stat"><b>265,825</b><span>USGS mines and deposits, all 50 states</span></div>
-      <div class="stat"><b>20</b><span>stops, VA → NV, scored for 9 uses</span></div>
+      <div class="stat"><b>27</b><span>stops on the drive, Dollywood → Ely, ranked your way</span></div>
     </div>
   </div>
 </section>
@@ -57,10 +57,10 @@
 
     <div id="modeBatch" hidden>
       <p class="calc-intro">Paste up to 50 addresses, coordinates, or listing links, one per line. Each place gets the full screen, and the results land in one table: a row per place, a column per check. Sort by any column, click a row for its full report, or export the table as CSV.</p>
-      <textarea id="bInput" class="b-input" rows="7" placeholder="Wytheville, VA&#10;36.0, -85.0&#10;https://www.zillow.com/homedetails/...&#10;…"></textarea>
+      <textarea id="bInput" class="b-input" rows="7" placeholder="Deadwood, SD&#10;36.0, -85.0&#10;https://www.zillow.com/homedetails/...&#10;…"></textarea>
       <div class="b-actions">
         <button class="btn" type="button" id="bRun">Screen all</button>
-        <button class="chip" type="button" id="bExample" data-list="Floyd, VA|Sparta, TN|Hermann, MO|Decorah, IA|Spearfish, SD|Livingston, MT|Ten Sleep, WY|Driggs, ID|Kanab, UT|Pioche, NV">Load a drive sample (10 towns, VA → NV)</button>
+        <button class="chip" type="button" id="bExample" data-list="Pigeon Forge, TN|Deadwood, SD|Sheridan, WY|Three Forks, MT|Townsend, MT|Big Sky, MT|Ashton, ID|Carey, ID|Wells, NV|Ely, NV">Load a drive sample (10 stops)</button>
         <button class="chip" type="button" id="bCsv" disabled>Export CSV</button>
         <span class="uw-status" id="bStatus"></span>
       </div>
@@ -75,13 +75,13 @@
     </form>
     <div class="examples">
       <span>try:</span>
-      <button class="chip" type="button" data-example="Floyd, VA">Blue Ridge, VA</button>
-      <button class="chip" type="button" data-example="Sparta, TN">Cumberland Plateau, TN</button>
-      <button class="chip" type="button" data-example="Hermann, MO">Missouri River, MO</button>
-      <button class="chip" type="button" data-example="Spearfish, SD">Black Hills, SD</button>
-      <button class="chip" type="button" data-example="Livingston, MT">Paradise Valley, MT</button>
-      <button class="chip" type="button" data-example="Driggs, ID">Teton Valley, ID</button>
-      <button class="chip" type="button" data-example="40.9209, -114.2092">Rural NV 160 ac</button>
+      <button class="chip" type="button" data-example="Pigeon Forge, TN">Dollywood, TN</button>
+      <button class="chip" type="button" data-example="Deadwood, SD">Deadwood, SD</button>
+      <button class="chip" type="button" data-example="Sheridan, WY">Sheridan, WY</button>
+      <button class="chip" type="button" data-example="Townsend, MT">Townsend, MT</button>
+      <button class="chip" type="button" data-example="Ashton, ID">Ashton, ID</button>
+      <button class="chip" type="button" data-example="Carey, ID">Carey, ID</button>
+      <button class="chip" type="button" data-example="Ely, NV">Ely, NV</button>
     </div>
     <div class="uw-status" id="uwStatus" aria-live="polite"></div>
 
@@ -255,19 +255,14 @@
       <button class="tab" data-map="nyc">Long view: NYC</button>
     </div>
     <div class="examples"><span>along the drive:</span>
-      <button class="chip jump-metro" type="button" data-metro="16820">Charlottesville</button>
-      <button class="chip jump-metro" type="button" data-metro="40060">Richmond</button>
       <button class="chip jump-metro" type="button" data-metro="28940">Knoxville</button>
       <button class="chip jump-metro" type="button" data-metro="34980">Nashville</button>
       <button class="chip jump-metro" type="button" data-metro="41180">St. Louis</button>
       <button class="chip jump-metro" type="button" data-metro="28140">Kansas City</button>
-      <button class="chip jump-metro" type="button" data-metro="19780">Des Moines</button>
-      <button class="chip jump-metro" type="button" data-metro="36540">Omaha–Council Bluffs</button>
+      <button class="chip jump-metro" type="button" data-metro="36540">Omaha</button>
       <button class="chip jump-metro" type="button" data-metro="43620">Sioux Falls</button>
       <button class="chip jump-metro" type="button" data-metro="13740">Billings</button>
-      <button class="chip jump-metro" type="button" data-metro="14260">Boise</button>
-      <button class="chip jump-metro" type="button" data-metro="41620">Salt Lake City</button>
-      <button class="chip jump-metro" type="button" data-metro="29820">Las Vegas</button>
+      <button class="chip jump-metro" type="button" data-metro="29820">Las Vegas (base)</button>
     </div>
     <iframe class="map-frame" id="mapFrame" src="surface.html?m=34980&v=20261020" title="Land price surfaces" loading="lazy"></iframe>
     <p class="note">Explorer data: <a href="https://www.fhfa.gov/research/papers/wp1901" target="_blank" rel="noopener">FHFA Working Paper 19-01, land prices v4.0 (June 2024)</a>, built from millions of appraisals of single-family properties. These are residential lot values, so raw acreage outside town trades far lower. About a third of tracts have their own yearly series; the rest are scaled from their county's index. The long-view maps cover 2000–2026 using calibrated zone estimates back-cast with each metro's home-price index. New York land prices by buildable square foot, so its per-acre figures are conversions.</p>
@@ -386,11 +381,11 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
-<script src="layers.js?v=20261020"></script>
-<script src="regions.js?v=20261020"></script>
-<script src="engine.js?v=20261020"></script>
-<script src="calc.js?v=20261020"></script>
-<script src="price.js?v=20261020"></script>
+<script src="layers.js?v=20261021"></script>
+<script src="regions.js?v=20261021"></script>
+<script src="engine.js?v=20261021"></script>
+<script src="calc.js?v=20261021"></script>
+<script src="price.js?v=20261021"></script>
 <script>
   // tabs: calculators
   document.querySelectorAll('[data-tabs="calc"] .tab').forEach((t) => t.addEventListener('click', () => {
