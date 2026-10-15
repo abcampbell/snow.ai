@@ -2,6 +2,7 @@
 // Input: address, "lat, lon", map link, or listing link -> go / check / kill screen.
 (() => {
   const SVC = {
+    nvParcels: "https://arcgis.water.nv.gov/arcgis/rest/services/BaseLayers/County_Parcels_in_Nevada/MapServer/0",
     geocode: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates",
     reverse: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode",
     elev: "https://epqs.nationalmap.gov/v1/json",
@@ -107,6 +108,8 @@
     m = s.match(/@(-?\d{1,2}\.\d+),(-?\d{1,3}\.\d+)/) || s.match(/!3d(-?\d{1,2}\.\d+)!4d(-?\d{1,3}\.\d+)/) ||
         s.match(/[?&](?:q|ll|query)=(-?\d{1,2}\.\d+),\s*(-?\d{1,3}\.\d+)/);
     if (m) return { lat: +m[1], lon: +m[2], how: "map link" };
+    m = s.match(/^(?:APN|parcel)?[\s#:]*((?:\d[\s-]?){7,11}\d)$/i);
+    if (m) return { apn: m[1].replace(/\D/g, ""), how: "parcel number" };
     if (/^https?:\/\//i.test(s)) {
       let slug = null;
       try {
@@ -142,6 +145,14 @@
   async function locate(raw) {
     const parsed = parseInput(raw);
     if (parsed.error) throw new Error(parsed.error);
+    if (parsed.apn) {
+      const j = await getJSON(`${SVC.nvParcels}/query`, { where: `APN='${parsed.apn}'`, outFields: "APN,Acres,County,Website", returnGeometry: true, outSR: 4326, f: "json" });
+      const f = j.features?.[0];
+      if (!f) throw new Error(`No Nevada parcel with APN ${parsed.apn}. (Parcel lookup covers Nevada for now; elsewhere paste the address or coordinates.)`);
+      const pts = (f.geometry?.rings || []).flat(), lon = pts.reduce((a, q) => a + q[0], 0) / pts.length, lat = pts.reduce((a, q) => a + q[1], 0) / pts.length;
+      const r = await reverse(lat, lon);
+      return { ...r, lat, lon, how: parsed.how, query: raw, label: `APN ${fmtApn(f.attributes.APN)} · ${r.label}` };
+    }
     if (parsed.address) return { ...(await geocode(parsed.address)), how: parsed.how, query: raw };
     return { lat: parsed.lat, lon: parsed.lon, how: parsed.how, query: raw, ...(await reverse(parsed.lat, parsed.lon)) };
   }
@@ -191,6 +202,19 @@
     const undetermined = h && String(h.ADMIN_AGENCY_CODE).toUpperCase() === "UND";
     return { status, headline: `Private${undetermined ? " (ownership unclassified)" : ""}${pub ? ` · public land on ${pub}/${known} sides` : ""}`, detail,
       cell: pub ? `private · ${pub}/${known} public` : "private", num: pub };
+  }
+  const fmtApn = (a) => /^\d{11}$/.test(a) ? `${a.slice(0, 3)}-${a.slice(3, 5)}-${a.slice(5, 8)}-${a.slice(8)}` : a;
+  async function chkParcel(p) {
+    if (stateOf(p) !== "NV") return { status: "na", headline: "Parcel lookup covers Nevada so far", detail: "Other states: use the county assessor's map (link below).", cell: "–" };
+    const j = await getJSON(`${SVC.nvParcels}/query`, { geometry: `${p.lon},${p.lat}`, geometryType: "esriGeometryPoint", inSR: 4326, spatialRel: "esriSpatialRelIntersects",
+      outFields: "APN,Acres,County,Website,SiteCity", returnGeometry: true, outSR: 4326, f: "json" });
+    const f = j.features?.[0];
+    if (!f) return { status: "caution", headline: "No parcel under this point", detail: "Likely a road, right-of-way, or unparceled public land. Move the point onto the lot.", cell: "none" };
+    const a = f.attributes;
+    p._parcel = f.geometry?.rings || null; p._acres = a.Acres;
+    return { status: "info", headline: `APN ${fmtApn(a.APN)} · ${fmt(a.Acres, 2)} acres · ${esc(a.County)} County`,
+      detail: `Parcel boundary from the Nevada statewide parcel layer (outlined on the map). ${a.Website ? `<a href="${esc(a.Website)}" target="_blank" rel="noopener">County assessor record ↗</a> for owner, assessed land value, and sale history.` : "Look up the APN on the county assessor's site for owner and sale history."}`,
+      cell: fmtApn(a.APN), num: a.Acres, apn: a.APN, acres: a.Acres, url: a.Website };
   }
   async function chkPLSS(p) {
     const j = await getJSON(SVC.plss, esriPoint(p.lat, p.lon, { outFields: "PLSSID,FRSTDIVLAB,FRSTDIVNO" }));
@@ -393,6 +417,7 @@
   // Ordered check list for a located point (id, title, source, fn).
   function checkList(p, region) {
     const list = [
+      ["parcel", "Parcel", "NV statewide parcels", () => chkParcel(p)],
       ["flood", "Flood zone", "FEMA NFHL", () => chkFlood(p)],
       ["access", "Road access", "Census TIGER roads", () => chkAccess(p)],
       ["land", "Land status", "BLM surface management", () => chkLandStatus(p)],
@@ -470,6 +495,10 @@
   }
   function drawOverlays(p, region) {
     if (!map || !layers) return;
+    if (p._parcel) {
+      const poly = L.polygon(p._parcel.map((ring) => ring.map(([x, y]) => [y, x])), { color: "#ff7a45", weight: 2.5, fillOpacity: 0.08 }).addTo(layers).bindTooltip(`parcel · ${fmt(p._acres, 2)} ac`);
+      map.fitBounds(poly.getBounds().pad(1.5), { maxZoom: 18 });
+    }
     (p._wells || []).forEach((w) => L.circleMarker([w.lat, w.lon], { radius: 4, color: "#0b2340", weight: 1, fillColor: "#59b8ff", fillOpacity: 0.9 })
       .addTo(layers).bindPopup(`Well ·${w.depth != null ? ` depth ${fmt(w.depth)} ft ·` : ""} water ${fmt(w.swl)} ft${w.year ? " · " + w.year : ""}`));
     (p._mines || []).slice(0, 300).forEach((m) => L.circleMarker([m.lat, m.lon], { radius: 4, color: "#3a2a00", weight: 1, fillColor: "#ffc93c", fillOpacity: 0.9 })
@@ -520,7 +549,7 @@
   // ---------- batch: N places x M checks ----------
   const COLS = [
     ["flood", "Flood"], ["access", "Road"], ["land", "Land status"], ["drain", "Drainage"], ["wells", "Water depth"],
-    ["traffic", "Traffic"], ["market", "Land $/ac"], ["mines", "Mines ≤10 km"], ["walk", "Walk /20"], ["elev", "Elevation"], ["plss", "Survey grid"]
+    ["parcel", "APN"], ["traffic", "Traffic"], ["market", "Land $/ac"], ["mines", "Mines ≤10 km"], ["walk", "Walk /20"], ["elev", "Elevation"], ["plss", "Survey grid"]
   ];
   let batchRows = [], batchSort = { key: null, dir: 1 };
 

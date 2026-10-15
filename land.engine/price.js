@@ -76,7 +76,9 @@
     const p = ctx.p;
     assessor = null;
     $("psForm").reset();
-    $("psLinks").innerHTML = lookupLinks(p);
+    const pa = ctx.results?.parcel;
+    if (pa?.acres) $("psForm").elements.acres.value = Math.round(pa.acres * 100) / 100;
+    $("psLinks").innerHTML = lookupLinks(p) + (pa?.url ? ` <a href="${pa.url}" target="_blank" rel="noopener">County assessor (APN ${pa.cell}) ↗</a>` : "");
     $("psStatus").textContent = getKey() ? "RentCast key set in this browser." : "Paste the list price or estimate from any site, or add a RentCast key to auto-fill.";
     $("psStatus").className = "uw-status";
     $("psAddr").textContent = p.label || p.query;
