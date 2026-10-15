@@ -62,8 +62,7 @@
 <script>
 (() => {
   const BASE = "data/surfaces/";
-  const COLORS = ["#d7191c", "#ef6f5a", "#f4a582", "#8f969c", "#a6dba0", "#4dac26", "#0ee07a"]; // cheap -> rich around the metro median
-  const EDGES = [0.25, 0.5, 0.8, 1.25, 2, 4];                                                  // ratio-to-median bin edges
+  const COLORS = ["#1c3f95", "#2f6fd0", "#6aa8e8", "#b9c3cc", "#f2b36a", "#e8673c", "#c3212b"]; // cheap (blue) -> expensive (red)
   const SHARE_EDGES = [0.12, 0.2, 0.28, 0.36, 0.48, 0.6];
   const qs = new URLSearchParams(location.search);
   let index, doc, metric = qs.get("metric") || "ppa", yi = null, layer, markers = [];
@@ -79,24 +78,28 @@
 
   const val = (t, k, y) => k === "ppa" ? t[2][y] : k === "share" ? t[3] : k === "spsf" ? t[4] : t[7];
   const fmtV = (k, v) => k === "share" ? pct(v) : k === "spsf" ? (v == null ? "–" : `$${Math.round(v)}`) : money(v);
-  function binColor(k, v, med) {
-    if (v == null) return null;
-    if (k === "share") { let i = SHARE_EDGES.findIndex((e) => v < e); return COLORS[i < 0 ? 6 : i]; }
-    const r = v / med; let i = EDGES.findIndex((e) => r < e); return COLORS[i < 0 ? 6 : i];
+  // One fixed, log-spaced scale per metro and metric, spanning every year (5th–95th pct),
+  // so sliding the year shows the metro heating up rather than re-centering each year.
+  function buildScale(k) {
+    if (k === "share") return SHARE_EDGES;
+    const all = k === "ppa" ? doc.t.flatMap((t) => t[2]) : doc.t.map((t) => val(t, k, 0));
+    const lo = Math.max(1, q(all, 0.05)), hi = Math.max(lo * 1.5, q(all, 0.95));
+    return [0, 1, 2, 3, 4, 5].map((i) => lo * Math.pow(hi / lo, i / 5));
   }
-  function legend(k, med) {
+  function binColor(v, edges) {
+    if (v == null) return null;
+    const i = edges.findIndex((e) => v < e);
+    return COLORS[i < 0 ? 6 : i];
+  }
+  function legend(k, edges) {
     const titles = { ppa: "Land $/acre", share: "Land share of value", spsf: "Structure-only $/sqft", pv: "Single-family home value" };
     document.getElementById("legTitle").textContent = titles[k];
-    let rows;
-    if (k === "share") {
-      const e = [0, ...SHARE_EDGES];
-      rows = COLORS.map((c, i) => [c, i < 6 ? `${pct(e[i])} – ${pct(e[i + 1])}` : `> ${pct(SHARE_EDGES[5])}`]);
-    } else {
-      const e = [0, ...EDGES].map((x) => x * med);
-      rows = COLORS.map((c, i) => [c, i === 0 ? `< ${fmtV(k, EDGES[0] * med)}` : i < 6 ? `${fmtV(k, e[i])} – ${fmtV(k, e[i + 1])}` : `> ${fmtV(k, EDGES[5] * med)}`]);
-    }
+    const f = (v) => k === "share" ? pct(v) : fmtV(k, v);
+    const rows = COLORS.map((c, i) => [c, i === 0 ? `< ${f(edges[0])}` : i < 6 ? `${f(edges[i - 1])} – ${f(edges[i])}` : `> ${f(edges[5])}`]);
     document.getElementById("leg").innerHTML = rows.map(([c, t]) => `<div class="lr"><i class="sw" style="background:${c}"></i>${t}</div>`).join("");
-    document.getElementById("legNote").textContent = k === "share" ? "Fixed scale; the US average is about 36%." : `Grey = within ±25% of the metro median (${fmtV(k, med)}).`;
+    document.getElementById("legNote").textContent = k === "ppa"
+      ? `Blue = cheap, red = expensive. One scale for ${doc.years[0]}–${doc.years.at(-1)}, so the map reddens as land appreciates.`
+      : k === "share" ? "Fixed scale; the US average is about 36%." : "Blue = cheaper, red = pricier within this metro.";
   }
 
   function render() {
@@ -104,13 +107,14 @@
     const k = metric, y = yi ?? doc.years.length - 1;
     const vals = doc.t.map((t) => val(t, k, y));
     const med = median(vals);
-    legend(k, med);
+    const edges = buildScale(k);
+    legend(k, edges);
     document.getElementById("yrLabel").textContent = doc.years[y];
     document.getElementById("yrBox").classList.toggle("off", k !== "ppa");
     const z = map.getZoom(), rad = Math.max(3, Math.min(9, (z - 7) * 1.6));
     layer.clearLayers(); markers = [];
     doc.t.forEach((t, i) => {
-      const c = binColor(k, vals[i], med); if (!c) return;
+      const c = binColor(vals[i], edges); if (!c) return;
       const m = L.circleMarker([t[0], t[1]], { radius: rad, stroke: false, fillColor: c, fillOpacity: 0.78 }).addTo(layer);
       m.on("click", () => m.bindPopup(popup(t), { maxWidth: 280 }).openPopup());
       markers.push(m);

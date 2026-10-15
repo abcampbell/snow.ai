@@ -106,6 +106,19 @@ section.block { padding: 64px 0; border-bottom: 1px solid var(--line); }
 .legend-row { display: flex; gap: 16px; margin-top: 10px; font-size: 12px; color: var(--muted); font-family: var(--mono); flex-wrap: wrap; }
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
 
+/* ---------- parcel card ---------- */
+.pcard { display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 8px; margin-top: 14px; }
+.tile { border: 1px solid var(--line); border-top: 3px solid var(--line-2); border-radius: 10px; padding: 9px 12px 10px; background: var(--panel); min-width: 0; cursor: default; }
+.tile span { display: block; font: 500 10.5px var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+.tile b { display: block; margin-top: 3px; font: 600 14.5px/1.25 var(--mono); color: var(--text); overflow-wrap: anywhere; }
+.tile.is-loading b { color: var(--faint); font-weight: 400; }
+.tile.t-good { border-top-color: var(--go); background: var(--go-dim); } .tile.t-good b { color: var(--go); }
+.tile.t-warn { border-top-color: var(--caution); background: var(--caution-dim); } .tile.t-warn b { color: var(--caution); }
+.tile.t-bad { border-top-color: var(--kill); background: var(--kill-dim); } .tile.t-bad b { color: var(--kill); }
+.pcard-key { margin-top: 8px; font: 11.5px var(--mono); color: var(--faint); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pcard-key span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+.k-good::before { background: var(--go); } .k-warn::before { background: var(--caution); } .k-bad::before { background: var(--kill); } .k-neutral::before { background: var(--line-2); }
+
 /* ---------- step 2: price it ---------- */
 .price-step { margin-top: 28px; border: 1px solid var(--line-2); border-radius: 14px; padding: 20px; background: linear-gradient(180deg, rgba(255, 122, 69, 0.05), transparent 120px), var(--panel); }
 .ps-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 12px; }
@@ -145,10 +158,10 @@ section.block { padding: 64px 0; border-bottom: 1px solid var(--line); }
 .b-table td.place span { color: var(--faint); font-size: 12px; }
 .b-table td.place span.err { color: var(--kill); }
 .b-table td.pending, .b-table td.na { color: var(--faint); }
-.b-table td.c-go { color: var(--go); }
-.b-table td.c-caution { color: var(--caution); }
-.b-table td.c-kill { color: var(--kill); font-weight: 600; }
-.b-table td.c-info { color: var(--text); }
+.b-table td.c-good { color: var(--go); background: var(--go-dim); }
+.b-table td.c-warn { color: var(--caution); background: var(--caution-dim); }
+.b-table td.c-bad { color: var(--kill); background: var(--kill-dim); font-weight: 600; }
+.b-table td.c-neutral { color: var(--text); }
 .b-table td.c-err { color: var(--faint); }
 .vchip { font-family: var(--mono); font-size: 10.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.06em; }
 .vchip.is-go { background: var(--go); color: #06200f; }

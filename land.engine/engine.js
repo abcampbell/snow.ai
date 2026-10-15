@@ -351,9 +351,10 @@
         const yi = ser.length - 1 - [...ser].reverse().findIndex((v) => v != null), ppa = ser[yi], yr = best.years[yi];
         const first = ser.find((v) => v != null), y0 = best.years[ser.indexOf(first)];
         const chg = first ? (ppa / first - 1) * 100 : null;
-        return { status: "info", headline: `~${money(ppa)}/acre residential land (${yr})`,
+        const rel = best.m.median_ppa ? ppa / best.m.median_ppa : null;
+        return { status: "info", rel, headline: `~${money(ppa)}/acre residential land (${yr})`,
           detail: `FHFA single-family land value for the nearest census tract (${fmt(best.d)} m away, ${esc(best.m.name)}). Land is ${share != null ? fmt(share * 100) + "%" : "–"} of property value; the structure prices at ~$${fmt(spsf)}/sqft on a typical ${fmt(lot)} sqft lot with ${fmt(sqft)} sqft interior. ${chg != null ? `${chg >= 0 ? "+" : ""}${fmt(chg)}% since ${y0}. ` : ""}Metro median ${money(best.m.median_ppa)}/acre.${direct ? "" : " Tract trend scaled from its county index."}`,
-          cell: `~${money(ppa)}`, num: ppa, share, spsf, surface: { fhfa: true, id: best.m.code, label: best.m.name } };
+          cell: `~${money(ppa)}${rel != null ? ` · ${fmt(rel, 1)}× metro` : ""}`, num: ppa, share, spsf, surface: { fhfa: true, id: best.m.code, label: best.m.name } };
       }
       if (!region) {
         const cs = await loadPack("data/surfaces/counties.json");
@@ -419,6 +420,27 @@
 
   // ---------- single-parcel rendering ----------
   const BADGE = { go: "GO", caution: "CHECK", kill: "KILL", info: "INFO", na: "N/A", err: "ERROR" };
+  // Good/bad tone for the card and batch table; info checks get a judgment where one exists.
+  function tone(id, r) {
+    if (!r) return "neutral";
+    if (r.status === "go") return "good";
+    if (r.status === "caution") return "warn";
+    if (r.status === "kill") return "bad";
+    if (r.status !== "info") return "neutral";
+    if (id === "market" && r.rel != null) return r.rel <= 0.8 ? "good" : r.rel >= 1.5 ? "warn" : "neutral";
+    if (id === "walk" && r.num != null) return r.num >= 10.51 ? "good" : "neutral";
+    if (id === "mines") return r.num > 0 ? "good" : "neutral";
+    if (id === "drain") return /perennial/i.test(r.headline || "") ? "good" : "neutral";
+    return "neutral";
+  }
+  const strip = (s) => String(s ?? "").replace(/<[^>]+>/g, "");
+  const tile = (id, title) => `<div class="tile is-loading" id="tile-${id}"><span>${title}</span><b>…</b></div>`;
+  function fillTile(id, res) {
+    const el = $(`tile-${id}`); if (!el) return;
+    el.className = `tile t-${tone(id, res)}`;
+    el.querySelector("b").textContent = res.status === "err" ? "error" : (res.cell ?? strip(res.headline));
+    el.title = strip(res.headline) + (res.detail ? " — " + strip(res.detail) : "");
+  }
   const card = (id, title, src) => `<div class="chk is-loading" id="chk-${id}"><div class="chk-head"><span class="badge">…</span><h4>${title}</h4></div>
       <div class="chk-headline">Querying ${src}…</div><div class="chk-detail"></div></div>`;
   function fill(id, res) {
@@ -470,8 +492,9 @@
     $("uwVerdict").className = "verdict is-loading"; $("uwVerdict").innerHTML = "<div>Running checks…</div>";
     const list = checkList(p, region);
     $("uwChecks").innerHTML = list.map(([id, t, s]) => card(id, t, s)).join("");
+    $("uwCard").innerHTML = list.map(([id, t]) => tile(id, t)).join("");
     drawMap(p);
-    const results = await runChecks(list, fill);
+    const results = await runChecks(list, (id, res) => { fill(id, res); fillTile(id, res); });
     drawOverlays(p, region);
     const s = scoreVerdict(results);
     $("uwVerdict").className = `verdict is-${s.v}`;
@@ -511,7 +534,7 @@
       if (r.state !== "done") return `<td class="pending">${r.state === "error" ? "–" : "·"}</td>`;
       const x = r.results[k];
       if (!x) return `<td class="na">n/a</td>`;
-      return `<td class="c-${x.status}" title="${esc((x.headline || "").replace(/<[^>]+>/g, ""))}">${esc(x.cell ?? "")}</td>`;
+      return `<td class="c-${x.status === "err" ? "err" : tone(k, x)}" title="${esc((x.headline || "").replace(/<[^>]+>/g, ""))}">${esc(x.cell ?? "")}</td>`;
     };
     $("bOut").innerHTML = `<div class="b-scroll"><table class="b-table"><thead><tr><th>#</th>${th("place", "Place")}${th("verdict", "Verdict")}${COLS.map(([k, t]) => th(k, t)).join("")}</tr></thead><tbody>
       ${rows.map((r) => `<tr data-raw="${esc(r.raw)}"><td class="idx">${r.i + 1}</td>
