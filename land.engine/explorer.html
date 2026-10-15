@@ -29,6 +29,7 @@
   .acc input { flex:1; min-width:40px; accent-color:var(--accent); }
   .acc b { font:600 11px ui-monospace, monospace; color:var(--text); min-width:38px; text-align:right; }
   .acc.on b { color:var(--accent); }
+  .rur { display:flex; align-items:center; gap:3px; cursor:pointer; } .rur input { flex:none; min-width:0; }
   .ctl.min .acc { display:none; }
   .stats { display:grid; grid-template-columns:1fr 1fr; gap:3px 10px; margin-top:8px; padding-top:6px; border-top:1px solid var(--line); }
   .stats span { display:block; color:var(--faint); font-size:10px; }
@@ -109,6 +110,7 @@
     <span>to</span><select id="hubSel">
       <option value="intl">major intl airport</option><option value="reg">regional airport</option><option value="air">any airline airport</option>
       <option value="jet">private-jet runway</option><option value="port">port</option></select>
+    <label class="rur" title="Fill the gaps between metros with USDA county farmland $/acre"><input type="checkbox" id="rural" checked>rural</label>
     <span>within</span><input type="range" id="ttMax" min="15" max="241" step="5" value="241"><b id="ttMaxV">any</b>
   </div>
   <div class="yr" id="yrBox"><button class="play" id="play" type="button" title="Play 2012 → 2022">▶</button><input type="range" id="yr" min="0" max="10" step="1"><b id="yrLabel">2022</b></div>
@@ -140,6 +142,8 @@
 
   const map = L.map("map", { preferCanvas: true, zoomControl: true });
   LE_LAYERS(map, { position: "bottomleft" });
+  map.createPane("rural"); map.getPane("rural").style.zIndex = 390;
+  const ruralLayer = L.layerGroup().addTo(map);
   map.attributionControl.addAttribution("Data: FHFA WP 19-01 v4.0");
   layer = L.layerGroup().addTo(map);
 
@@ -173,6 +177,26 @@
     const km = hav(t[0], t[1], best[0], best[1]) / 1000;
     return (t._h[k] = { min: driveMin(km), name: best[2], km });
   }
+  // Rural fill: USDA Census of Agriculture farm real estate $/acre by county (2012, 2017, 2022).
+  let ag = null, ruralOn = true;
+  const agReady = fetch(`${BASE}agland.json`).then((r) => r.json()).then((j) => { ag = j.c; }).catch(() => { ag = []; });
+  const agVal = (r, yr) => yr <= 2014 ? (r[5] ?? r[6]) : yr <= 2019 ? (r[6] ?? r[7] ?? r[5]) : (r[7] ?? r[6]);
+  const agTrend = (r) => r[5] && r[7] ? r[7] / r[5] - 1 : null;
+  let coverKey = null;
+  function markCovered() { // a county dot is skipped where FHFA tracts already cover it (any tract within 15 km)
+    if (!ag || coverKey === doc.code) return; coverKey = doc.code;
+    const g = new Set(doc.t.map((t) => `${Math.round(t[0] * 5)},${Math.round(t[1] * 5)}`));
+    ag.forEach((r) => { const a = Math.round(r[0] * 5), b = Math.round(r[1] * 5); let hit = false;
+      for (let i = -1; i <= 1 && !hit; i++) for (let j = -1; j <= 1 && !hit; j++) hit = g.has(`${a + i},${b + j}`); r._cov = hit; });
+  }
+  function agPopup(r) {
+    const tr = agTrend(r);
+    return `<div class="pop"><b>${esc(r[3])}, ${esc(r[4])}</b><div class="k" style="font-size:11px">USDA Census of Agriculture · farm real estate (land + buildings)</div>
+      <div class="row"><span class="k">$/acre 2012 · 2017 · 2022</span><b>${money(r[5])} · ${money(r[6])} · ${money(r[7])}</b></div>
+      ${tr != null ? `<div class="row"><span class="k">Change 2012→2022</span><b>${tr >= 0 ? "+" : ""}${Math.round(tr * 100)}%</b></div>` : ""}
+      ${hubPts ? ["intl", "reg", "jet", "port"].map((h) => { const n = nearestHub(r, h); return n ? `<div class="row"><span class="k">~Drive to ${HUBDEF[h].label}</span><b>${fmtMin(n.min)}</b></div>` : ""; }).join("") : ""}
+      <div class="k" style="font-size:11px">County-wide average; drive times from the county's center.</div></div>`;
+  }
   const val = (t, k, y) => k === "tt" ? nearestHub(t, hubKey)?.min ?? null : k === "ppa" ? t[2][y] : k === "share" ? t[3] : k === "spsf" ? t[4] : t[7];
   const fmtMin = (m) => m == null ? "–" : m >= 60 ? `${Math.floor(m / 60)} h ${String(Math.round(m % 60)).padStart(2, "0")}` : `${Math.round(m)} min`;
   const fmtV = (k, v) => k === "tt" ? fmtMin(v) : k === "share" ? pct(v) : k === "spsf" ? (v == null ? "–" : `$${Math.round(v)}`) : money(v);
@@ -187,7 +211,8 @@
     if (k === "share") return { lo: 0.12, hi: 0.6 };
     if (k === "tt") return { lo: 20, hi: 180 };
     const all = allVals(k);
-    const lo = Math.max(1, q(all, 0.05));
+    let lo = Math.max(1, q(all, 0.05));
+    if (k === "ppa" && ruralOn && ag && ag.length) lo = Math.min(lo, q(ag.map((r) => r[7] ?? r[6]), 0.1)); // stretch down so rural counties separate
     return { lo, hi: Math.max(lo * 1.5, q(all, 0.95)) };
   }
   function buildScale(k) {
@@ -201,7 +226,7 @@
     let a, b;
     if (k === "share") { a = 0; b = 0.9; }
     else if (k === "tt") { a = 5; b = 480; }
-    else { const all = allVals(k); a = to(Math.max(1, q(all, 0.005))); b = to(q(all, 0.995)); }
+    else { const all = allVals(k); let mn = Math.max(1, q(all, 0.005)); if (k === "ppa" && ruralOn && ag && ag.length) mn = Math.min(mn, q(ag.map((r) => r[5] ?? r[6]), 0.005)); a = to(mn); b = to(q(all, 0.995)); }
     for (const s of [lo, hi]) { s.min = a; s.max = b; s.step = (b - a) / 400; }
     lo.value = to(r.lo); hi.value = to(r.hi);
     const f = (v) => k === "share" ? pct(v) : fmtV(k, v);
@@ -222,7 +247,7 @@
     document.getElementById("legMini").innerHTML = `<span>${f(edges[0])}</span><span class="r">${COLORS.map((c) => `<i style="background:${c}"></i>`).join("")}</span><span>${f(edges[5])}</span>`;
     document.getElementById("leg").innerHTML = rows.map(([c, t]) => `<div class="lr"><i class="sw" style="background:${c}"></i>${t}</div>`).join("");
     document.getElementById("legNote").textContent = k === "ppa"
-      ? `Blue = cheap, red = expensive. One scale for ${doc.years[0]}–${doc.years.at(-1)}, so the map reddens as land appreciates.`
+      ? `Blue = cheap, red = expensive. One scale for ${doc.years[0]}–${doc.years.at(-1)}, so the map reddens as land appreciates.${ruralOn ? " Small dots: metro tracts (FHFA residential lots). Large faint dots: rural counties (USDA farmland $/acre, census years 2012 · 2017 · 2022)." : ""}`
       : k === "share" ? "Fixed scale; the US average is about 36%."
       : k === "tt" ? "Blue = close, red = far. Estimated from straight-line distance, calibrated to road routes (median error ~4 min under an hour, ~10% beyond). Pin a spot for the exact route."
       : "Blue = cheaper, red = pricier within this metro.";
@@ -231,6 +256,7 @@
   function render() {
     if (!doc) return;
     if (!hubPts && (metric === "tt" || ttMax != null)) { accessReady.then(render); return; }
+    if (ruralOn && !ag && (metric === "ppa" || metric === "tt")) { agReady.then(render); return; }
     const k = metric, y = yi ?? doc.years.length - 1;
     const keep = (t) => ttMax == null || (nearestHub(t, hubKey)?.min ?? Infinity) <= ttMax;
     const vals = doc.t.map((t) => val(t, k, y));
@@ -253,12 +279,25 @@
       m.on("click", () => m.bindPopup(popup(t), { maxWidth: 280 }).openPopup());
       markers.push(m);
     });
+    ruralLayer.clearLayers();
+    let ruralShown = 0;
+    if (ruralOn && ag && (k === "ppa" || k === "tt")) {
+      markCovered();
+      ag.forEach((r) => {
+        if (r._cov || !keep(r)) return;
+        const v = k === "ppa" ? agVal(r, doc.years[y]) : nearestHub(r, hubKey)?.min;
+        const c = binColor(v, edges); if (!c) return;
+        ruralShown++;
+        const m = L.circleMarker([r[0], r[1]], { pane: "rural", radius: Math.max(4, rad * 2.2), stroke: false, fillColor: c, fillOpacity: 0.5 }).addTo(ruralLayer);
+        m.on("click", () => m.bindPopup(agPopup(r), { maxWidth: 300 }).openPopup());
+      });
+    }
     const ppaNow = doc.t.map((t) => t[2][doc.years.length - 1]), ppa0 = doc.t.map((t) => t[2][0]);
     const chg = median(ppaNow) && median(ppa0) ? (median(ppaNow) / median(ppa0) - 1) : null;
     document.getElementById("stats").innerHTML = `
       <div><span>Median ${k === "ppa" ? doc.years[y] : ""}</span><b>${fmtV(k, med)}</b></div>
       <div><span>Middle half</span><b>${fmtV(k, q(kv, 0.25))} – ${fmtV(k, q(kv, 0.75))}</b></div>
-      <div><span>Tracts${ttMax != null ? ` ≤ ${fmtMin(ttMax)} of ${HUBDEF[hubKey].label}` : ""}</span><b>${ttMax != null ? `${shown.toLocaleString()} of ` : ""}${doc.t.length.toLocaleString()}</b></div>
+      <div><span>Tracts${ttMax != null ? ` ≤ ${fmtMin(ttMax)} of ${HUBDEF[hubKey].label}` : ""}</span><b>${ttMax != null ? `${shown.toLocaleString()} of ` : ""}${doc.t.length.toLocaleString()}</b>${ruralShown ? `<span>+ ${ruralShown.toLocaleString()} rural counties</span>` : ""}</div>
       <div><span>Land $/ac, ${doc.years[0]}→${doc.years.at(-1)}</span><b>${chg == null ? "–" : (chg >= 0 ? "+" : "") + Math.round(chg * 100) + "%"}</b></div>`;
   }
   function spark(ser) {
@@ -331,6 +370,7 @@
       $("yr").value = yi; render();
     }, 750);
   }
+  $("rural").addEventListener("change", () => { ruralOn = $("rural").checked; delete custom.ppa; render(); });
   $("hubSel").addEventListener("change", () => { hubKey = $("hubSel").value; delete custom.tt; render(); });
   $("ttMax").addEventListener("input", () => { const v = +$("ttMax").value; ttMax = v > 240 ? null : v; $("ttMaxV").textContent = ttMax == null ? "any" : fmtMin(ttMax); render(); });
   $("play").addEventListener("click", () => (timer ? stopPlay() : startPlay()));
@@ -353,13 +393,39 @@
   $("sHi").addEventListener("input", onScale);
   $("sAuto").addEventListener("click", () => { delete custom[metric]; render(); });
   const qi = document.getElementById("q"), sg = document.getElementById("sugg");
+  // Metro matches first, then place/address suggestions (Esri suggest, biased to the current map view).
+  const GEO = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
+  let sugSeq = 0, sugTimer = null, firstSug = null;
   qi.addEventListener("input", () => {
-    const s = qi.value.trim().toLowerCase();
-    sg.innerHTML = !s ? "" : index.metros.filter((m) => m.name.toLowerCase().includes(s)).slice(0, 12)
-      .map((m) => `<div data-c="${m.code}">${esc(m.name)} <span style="color:#6b7583">· ${m.n} tracts</span></div>`).join("") + (s.length > 2 ? `<div data-addr="1">📍 Look up "${esc(qi.value.trim())}" as an address <span style="color:#6b7583">(Enter)</span></div>` : "");
+    const raw = qi.value.trim(), s = raw.toLowerCase();
+    const metros = !s ? "" : index.metros.filter((m) => m.name.toLowerCase().includes(s)).slice(0, 6)
+      .map((m) => `<div data-c="${m.code}">${esc(m.name)} <span style="color:#6b7583">· metro · ${m.n} tracts</span></div>`).join("");
+    sg.innerHTML = metros; firstSug = null;
+    clearTimeout(sugTimer);
+    if (s.length < 3 || /^-?\d/.test(s)) return;
+    const my = ++sugSeq;
+    sugTimer = setTimeout(async () => {
+      try {
+        const c = map.getCenter();
+        const j = await fetch(`${GEO}/suggest?${new URLSearchParams({ text: raw, f: "json", countryCode: "USA", maxSuggestions: 6, location: `${c.lng},${c.lat}` })}`).then((r) => r.json());
+        if (my !== sugSeq) return;
+        const list = (j.suggestions || []).filter((x) => !x.isCollection);
+        firstSug = list[0] || null;
+        sg.innerHTML = metros + list.map((x) => `<div data-mk="${esc(x.magicKey)}" data-t="${esc(x.text)}">📍 ${esc(x.text.replace(/, USA$/, ""))}</div>`).join("");
+      } catch (e) { /* metro list still shown */ }
+    }, 220);
   });
+  async function geocode(text, magicKey) {
+    const c = map.getCenter();
+    const j = await fetch(`${GEO}/findAddressCandidates?${new URLSearchParams({ SingleLine: text, f: "json", maxLocations: 1, countryCode: "USA", outFields: "Match_addr,Region",
+      location: `${c.lng},${c.lat}`, ...(magicKey ? { magicKey } : {}) })}`).then((r) => r.json());
+    const k = j.candidates?.[0]; if (!k) throw new Error("none");
+    const a = k.attributes || {}, lbl = a.Match_addr || k.address;
+    return { lat: k.location.y, lon: k.location.x, label: a.Region && !lbl.includes(a.Region) ? `${lbl}, ${a.Region}` : lbl };
+  }
   sg.addEventListener("click", (e) => {
-    if (e.target.closest("[data-addr]")) { $("pinForm").requestSubmit(); return; }
+    const mk = e.target.closest("[data-mk]");
+    if (mk) { sg.innerHTML = ""; qi.value = mk.dataset.t.replace(/, USA$/, ""); geocode(mk.dataset.t, mk.dataset.mk).then((g) => placePin(g.lat, g.lon, g.label)).catch(() => {}); return; }
     const d = e.target.closest("[data-c]"); if (!d) return; qi.value = ""; sg.innerHTML = ""; load(d.dataset.c);
   });
   window.addEventListener("message", (e) => { if (e.data && e.data.metro) load(e.data.metro); });
@@ -393,11 +459,25 @@
       out.src = `Inverse-distance blend of the ${k.length} nearest FHFA tracts (${(out.near / 1000).toFixed(1)}–${(out.far / 1000).toFixed(1)} km away, circled)`;
       out.tracts = k;
     } else {
+      await agReady;
       const cs = await getPack(`${BASE}counties.json`);
-      const c = cs.c.map((r) => ({ r, d: hav(lat, lon, r[0], r[1]) })).sort((a, b) => a.d - b.d)[0];
-      const rural = ms[0].d > 30 * MI;
-      out.ppa = c.r[4] * (rural ? 0.25 : 1); out.share = c.r[5]; out.spsf = c.r[6];
-      out.src = `No FHFA tract within 15 km, so ${escH(c.r[3])} county residential lots${rural ? `, discounted 75% because the nearest metro is ${Math.round(ms[0].d / MI)} mi away` : ""}`;
+      // The county that contains the point (big western counties make nearest-centroid unreliable).
+      let fips = null;
+      try {
+        const j = await fetch("https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1/query?" + new URLSearchParams({ geometry: `${lon},${lat}`, geometryType: "esriGeometryPoint",
+          inSR: 4326, spatialRel: "esriSpatialRelIntersects", outFields: "GEOID", returnGeometry: false, f: "json" })).then((r) => r.json());
+        fips = j.features?.[0]?.attributes?.GEOID || null;
+      } catch (err) { fips = null; }
+      const near = (rows) => rows.map((r) => ({ r, d: hav(lat, lon, r[0], r[1]) })).sort((x, z) => x.d - z.d)[0];
+      const c = (fips && cs.c.find((r) => r[2] === fips) && { r: cs.c.find((r) => r[2] === fips) }) || near(cs.c);
+      const a = (fips && (ag || []).find((r) => r[2] === fips) && { r: ag.find((r) => r[2] === fips) }) || near(ag || []);
+      out.share = c?.r[5]; out.spsf = c?.r[6];
+      if (a && agVal(a.r, out.year) != null) {
+        out.ppa = agVal(a.r, out.year); out.growth = agTrend(a.r); out.rural = true;
+        out.src = `No FHFA tract within 15 km, so rural land: ${escH(a.r[3])}, ${escH(a.r[4])} farm real estate (USDA Census of Agriculture)${c ? `. Residential lots in ${escH(c.r[3])} run ~${money(c.r[4])}/acre for comparison` : ""}`;
+      } else {
+        out.ppa = c.r[4]; out.src = `No FHFA tract within 15 km and no USDA county value, so ${escH(c.r[3])} county residential lots`;
+      }
     }
     return out;
   }
@@ -414,10 +494,10 @@
     if (seq !== pinSeq) return;
     (e.tracts || []).forEach((x) => L.circleMarker([x.t[0], x.t[1]], { radius: 10, color: "#ff7a45", weight: 2, fill: false, interactive: false }).addTo(pinLayer));
     const extra = [e.share != null ? `land is ~${Math.round(e.share * 100)}% of home value` : "", e.spsf != null ? `structures ~$${Math.round(e.spsf)}/sqft` : "",
-      e.growth != null ? `land ${e.growth >= 0 ? "+" : ""}${Math.round(e.growth * 100)}% ${index.years[0]}–${index.years.at(-1)}` : ""].filter(Boolean).join("; ");
+      e.growth != null ? `land ${e.growth >= 0 ? "+" : ""}${Math.round(e.growth * 100)}% ${e.rural ? "2012–2022" : `${index.years[0]}–${index.years.at(-1)}`}` : ""].filter(Boolean).join("; ");
     $("pinOut").innerHTML = `<div class="pin-h">${escH(pin.label)}</div>
       <div class="pin-est"><b>~${money(e.ppa)}</b>/acre land · ${e.year}${e.lo != null ? ` <span>(nearby ${money(e.lo)}–${money(e.hi)})</span>` : ""}</div>
-      <div class="pin-sub">${e.src}.${extra ? " " + extra[0].toUpperCase() + extra.slice(1) + "." : ""} Nearest metro: ${escH(e.metro.name)} (${Math.round(e.metroDist / MI)} mi). Residential-lot values; raw acreage trades lower.</div>
+      <div class="pin-sub">${e.src}.${extra ? " " + extra[0].toUpperCase() + extra.slice(1) + "." : ""} Nearest metro: ${escH(e.metro.name)} (${Math.round(e.metroDist / MI)} mi). ${e.rural ? "County-wide farm average: a parcel's own price depends on water, access, and use." : "Residential-lot values; raw acreage trades lower."}</div>
       <div class="hubs" id="hubs"></div>`;
     hubs();
     const u = new URL(location); u.searchParams.set("pin", `${lat.toFixed(5)},${lon.toFixed(5)}`); history.replaceState(null, "", u);
@@ -515,9 +595,8 @@
     const m = v.match(/^(-?\d{1,2}\.\d+)\s*[, ]\s*(-?\d{1,3}\.\d+)$/);
     if (m) return placePin(+m[1], +m[2]);
     try {
-      const j = await fetch(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?${new URLSearchParams({ SingleLine: v, f: "json", maxLocations: 1, countryCode: "USA", outFields: "Match_addr" })}`).then((r) => r.json());
-      const c = j.candidates?.[0]; if (!c) throw new Error("none");
-      placePin(c.location.y, c.location.x, c.attributes?.Match_addr || c.address);
+      const g = firstSug ? await geocode(firstSug.text, firstSug.magicKey) : await geocode(v);
+      placePin(g.lat, g.lon, g.label);
     } catch (err) { $("pinOut").hidden = false; $("pinOut").innerHTML = `<div class="pin-est">Couldn't find "${escH(v)}".</div>`; }
   });
 
