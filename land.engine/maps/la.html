@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Los Angeles Land $/Acre - Heat Map 2000-2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif}
+#map{width:100%;height:100vh;background:#0a0f0a}
+.panel{position:absolute;z-index:1000;background:rgba(8,16,10,.95);border:1px solid #2c5;
+  border-radius:10px;color:#cde;font-size:11px;padding:12px 15px}
+.info{top:10px;left:55px;max-width:340px}
+.info h2{font-size:14px;color:#5ee87a;margin-bottom:3px}
+.info .yr{font-size:30px;font-weight:800;color:#fff;line-height:1.1}
+.legend{bottom:15px;right:10px;max-width:210px}
+.legend h3{font-size:11px;color:#fff;margin-bottom:4px}
+.lr{display:flex;align-items:center;margin:2px 0}
+.sw{width:16px;height:11px;border-radius:2px;margin-right:7px;flex-shrink:0}
+.years{top:10px;right:10px;display:flex;flex-wrap:wrap;gap:4px;max-width:230px;justify-content:flex-end}
+.yb{background:rgba(8,16,10,.95);border:1px solid #2c5;color:#9eb;border-radius:6px;
+  padding:5px 9px;font-size:12px;font-weight:700;cursor:pointer}
+.yb:hover{background:#173}
+.yb.on{background:#2bed79;color:#042;border-color:#2bed79}
+.zlabel{background:none!important;border:none!important;box-shadow:none!important;
+  font-weight:700;font-size:10px;white-space:nowrap;color:#dfe;
+  text-shadow:0 0 4px #000,0 0 4px #000,1px 1px 3px #000}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head><body>
+<div id="map"></div>
+<div class="panel info">
+  <h2>Los Angeles Land - Price per Acre</h2>
+  <div class="yr" id="yr">2026</div>
+  <p id="note">Approximate developable-land $/acre by sub-market across LA County.
+  2026 = approx estimate; earlier years scaled by the LA County home-price index.
+  Click a year, top right.</p>
+</div>
+<div class="panel years" id="years"></div>
+<div class="panel legend">
+  <h3>$ / ACRE - red cheap / grey ~$2.25M / green $$$</h3>
+  <div class="lr"><div class="sw" style="background:#e01e25"></div>&lt; $500K</div>
+  <div class="lr"><div class="sw" style="background:#ef6f5a"></div>$500K - $1M</div>
+  <div class="lr"><div class="sw" style="background:#f0a98f"></div>$1M - $1.5M</div>
+  <div class="lr"><div class="sw" style="background:#9aa0a4"></div>$1.5M - $3M  (~$2.25M pivot)</div>
+  <div class="lr"><div class="sw" style="background:#7ed98f"></div>$3M - $6M</div>
+  <div class="lr"><div class="sw" style="background:#38b85a"></div>$6M - $12M</div>
+  <div class="lr"><div class="sw" style="background:#12e06a"></div>&gt; $12M</div>
+</div>
+<script>
+const DATA = {"2000":[{"name":"Beverly Hills / Bel Air","lat":34.1,"lon":-118.41,"ppa":4207000.0},{"name":"Pacific Palisades","lat":34.045,"lon":-118.53,"ppa":2804000.0},{"name":"Malibu","lat":34.03,"lon":-118.69,"ppa":2337000.0},{"name":"Santa Monica","lat":34.02,"lon":-118.49,"ppa":2337000.0},{"name":"Manhattan / Hermosa Bch","lat":33.89,"lon":-118.4,"ppa":2337000.0},{"name":"Brentwood / West LA","lat":34.05,"lon":-118.47,"ppa":2103000.0},{"name":"Hollywood Hills / WeHo","lat":34.09,"lon":-118.36,"ppa":1636000.0},{"name":"Sherman Oaks / Studio City","lat":34.15,"lon":-118.43,"ppa":1052000.0},{"name":"Hollywood / Silver Lake","lat":34.1,"lon":-118.29,"ppa":935000.0},{"name":"Pasadena / San Marino","lat":34.14,"lon":-118.13,"ppa":935000.0},{"name":"Downtown LA","lat":34.05,"lon":-118.245,"ppa":818000.0},{"name":"Torrance / Redondo","lat":33.84,"lon":-118.36,"ppa":818000.0},{"name":"Burbank / Glendale","lat":34.16,"lon":-118.31,"ppa":701000.0},{"name":"Central LA / Koreatown","lat":34.055,"lon":-118.31,"ppa":701000.0},{"name":"SGV central (Alhambra)","lat":34.08,"lon":-118.13,"ppa":514000.0},{"name":"Van Nuys / mid Valley","lat":34.19,"lon":-118.45,"ppa":421000.0},{"name":"Long Beach","lat":33.785,"lon":-118.15,"ppa":421000.0},{"name":"Northridge / NW Valley","lat":34.23,"lon":-118.53,"ppa":374000.0},{"name":"San Pedro / Harbor","lat":33.74,"lon":-118.295,"ppa":351000.0},{"name":"East SGV (West Covina)","lat":34.05,"lon":-117.92,"ppa":304000.0},{"name":"South LA","lat":33.99,"lon":-118.3,"ppa":280000.0},{"name":"Santa Clarita","lat":34.42,"lon":-118.54,"ppa":280000.0},{"name":"Pomona / far east county","lat":34.06,"lon":-117.75,"ppa":187000.0},{"name":"Antelope Valley (Lancaster)","lat":34.69,"lon":-118.15,"ppa":47000.0}],"2005":[{"name":"Beverly Hills / Bel Air","lat":34.1,"lon":-118.41,"ppa":9978000.0},{"name":"Pacific Palisades","lat":34.045,"lon":-118.53,"ppa":6652000.0},{"name":"Malibu","lat":34.03,"lon":-118.69,"ppa":5543000.0},{"name":"Santa Monica","lat":34.02,"lon":-118.49,"ppa":5543000.0},{"name":"Manhattan / Hermosa Bch","lat":33.89,"lon":-118.4,"ppa":5543000.0},{"name":"Brentwood / West LA","lat":34.05,"lon":-118.47,"ppa":4989000.0},{"name":"Hollywood Hills / WeHo","lat":34.09,"lon":-118.36,"ppa":3880000.0},{"name":"Sherman Oaks / Studio City","lat":34.15,"lon":-118.43,"ppa":2495000.0},{"name":"Hollywood / Silver Lake","lat":34.1,"lon":-118.29,"ppa":2217000.0},{"name":"Pasadena / San Marino","lat":34.14,"lon":-118.13,"ppa":2217000.0},{"name":"Downtown LA","lat":34.05,"lon":-118.245,"ppa":1940000.0},{"name":"Torrance / Redondo","lat":33.84,"lon":-118.36,"ppa":1940000.0},{"name":"Burbank / Glendale","lat":34.16,"lon":-118.31,"ppa":1663000.0},{"name":"Central LA / Koreatown","lat":34.055,"lon":-118.31,"ppa":1663000.0},{"name":"SGV central (Alhambra)","lat":34.08,"lon":-118.13,"ppa":1220000.0},{"name":"Van Nuys / mid Valley","lat":34.19,"lon":-118.45,"ppa":998000.0},{"name":"Long Beach","lat":33.785,"lon":-118.15,"ppa":998000.0},{"name":"Northridge / NW Valley","lat":34.23,"lon":-118.53,"ppa":887000.0},{"name":"San Pedro / Harbor","lat":33.74,"lon":-118.295,"ppa":832000.0},{"name":"East SGV (West Covina)","lat":34.05,"lon":-117.92,"ppa":721000.0},{"name":"South LA","lat":33.99,"lon":-118.3,"ppa":665000.0},{"name":"Santa Clarita","lat":34.42,"lon":-118.54,"ppa":665000.0},{"name":"Pomona / far east county","lat":34.06,"lon":-117.75,"ppa":443000.0},{"name":"Antelope Valley (Lancaster)","lat":34.69,"lon":-118.15,"ppa":111000.0}],"2010":[{"name":"Beverly Hills / Bel Air","lat":34.1,"lon":-118.41,"ppa":6457000.0},{"name":"Pacific Palisades","lat":34.045,"lon":-118.53,"ppa":4304000.0},{"name":"Malibu","lat":34.03,"lon":-118.69,"ppa":3587000.0},{"name":"Santa Monica","lat":34.02,"lon":-118.49,"ppa":3587000.0},{"name":"Manhattan / Hermosa Bch","lat":33.89,"lon":-118.4,"ppa":3587000.0},{"name":"Brentwood / West LA","lat":34.05,"lon":-118.47,"ppa":3228000.0},{"name":"Hollywood Hills / WeHo","lat":34.09,"lon":-118.36,"ppa":2511000.0},{"name":"Sherman Oaks / Studio City","lat":34.15,"lon":-118.43,"ppa":1614000.0},{"name":"Hollywood / Silver Lake","lat":34.1,"lon":-118.29,"ppa":1435000.0},{"name":"Pasadena / San Marino","lat":34.14,"lon":-118.13,"ppa":1435000.0},{"name":"Downtown LA","lat":34.05,"lon":-118.245,"ppa":1255000.0},{"name":"Torrance / Redondo","lat":33.84,"lon":-118.36,"ppa":1255000.0},{"name":"Burbank / Glendale","lat":34.16,"lon":-118.31,"ppa":1076000.0},{"name":"Central LA / Koreatown","lat":34.055,"lon":-118.31,"ppa":1076000.0},{"name":"SGV central (Alhambra)","lat":34.08,"lon":-118.13,"ppa":789000.0},{"name":"Van Nuys / mid Valley","lat":34.19,"lon":-118.45,"ppa":646000.0},{"name":"Long Beach","lat":33.785,"lon":-118.15,"ppa":646000.0},{"name":"Northridge / NW Valley","lat":34.23,"lon":-118.53,"ppa":574000.0},{"name":"San Pedro / Harbor","lat":33.74,"lon":-118.295,"ppa":538000.0},{"name":"East SGV (West Covina)","lat":34.05,"lon":-117.92,"ppa":466000.0},{"name":"South LA","lat":33.99,"lon":-118.3,"ppa":430000.0},{"name":"Santa Clarita","lat":34.42,"lon":-118.54,"ppa":430000.0},{"name":"Pomona / far east county","lat":34.06,"lon":-117.75,"ppa":287000.0},{"name":"Antelope Valley (Lancaster)","lat":34.69,"lon":-118.15,"ppa":72000.0}],"2015":[{"name":"Beverly Hills / Bel Air","lat":34.1,"lon":-118.41,"ppa":9587000.0},{"name":"Pacific Palisades","lat":34.045,"lon":-118.53,"ppa":6391000.0},{"name":"Malibu","lat":34.03,"lon":-118.69,"ppa":5326000.0},{"name":"Santa Monica","lat":34.02,"lon":-118.49,"ppa":5326000.0},{"name":"Manhattan / Hermosa Bch","lat":33.89,"lon":-118.4,"ppa":5326000.0},{"name":"Brentwood / West LA","lat":34.05,"lon":-118.47,"ppa":4793000.0},{"name":"Hollywood Hills / WeHo","lat":34.09,"lon":-118.36,"ppa":3728000.0},{"name":"Sherman Oaks / Studio City","lat":34.15,"lon":-118.43,"ppa":2397000.0},{"name":"Hollywood / Silver Lake","lat":34.1,"lon":-118.29,"ppa":2130000.0},{"name":"Pasadena / San Marino","lat":34.14,"lon":-118.13,"ppa":2130000.0},{"name":"Downtown LA","lat":34.05,"lon":-118.245,"ppa":1864000.0},{"name":"Torrance / Redondo","lat":33.84,"lon":-118.36,"ppa":1864000.0},{"name":"Burbank / Glendale","lat":34.16,"lon":-118.31,"ppa":1598000.0},{"name":"Central LA / Koreatown","lat":34.055,"lon":-118.31,"ppa":1598000.0},{"name":"SGV central (Alhambra)","lat":34.08,"lon":-118.13,"ppa":1172000.0},{"name":"Van Nuys / mid Valley","lat":34.19,"lon":-118.45,"ppa":959000.0},{"name":"Long Beach","lat":33.785,"lon":-118.15,"ppa":959000.0},{"name":"Northridge / NW Valley","lat":34.23,"lon":-118.53,"ppa":852000.0},{"name":"San Pedro / Harbor","lat":33.74,"lon":-118.295,"ppa":799000.0},{"name":"East SGV (West Covina)","lat":34.05,"lon":-117.92,"ppa":692000.0},{"name":"South LA","lat":33.99,"lon":-118.3,"ppa":639000.0},{"name":"Santa Clarita","lat":34.42,"lon":-118.54,"ppa":639000.0},{"name":"Pomona / far east county","lat":34.06,"lon":-117.75,"ppa":426000.0},{"name":"Antelope Valley (Lancaster)","lat":34.69,"lon":-118.15,"ppa":107000.0}],"2020":[{"name":"Beverly Hills / Bel Air","lat":34.1,"lon":-118.41,"ppa":13304000.0},{"name":"Pacific Palisades","lat":34.045,"lon":-118.53,"ppa":8870000.0},{"name":"Malibu","lat":34.03,"lon":-118.69,"ppa":7391000.0},{"name":"Santa Monica","lat":34.02,"lon":-118.49,"ppa":7391000.0},{"name":"Manhattan / Hermosa Bch","lat":33.89,"lon":-118.4,"ppa":7391000.0},{"name":"Brentwood / West LA","lat":34.05,"lon":-118.47,"ppa":6652000.0},{"name":"Hollywood Hills / WeHo","lat":34.09,"lon":-118.36,"ppa":5174000.0},{"name":"Sherman Oaks / Studio City","lat":34.15,"lon":-118.43,"ppa":3326000.0},{"name":"Hollywood / Silver Lake","lat":34.1,"lon":-118.29,"ppa":2957000.0},{"name":"Pasadena / San Marino","lat":34.14,"lon":-118.13,"ppa":2957000.0},{"name":"Downtown LA","lat":34.05,"lon":-118.245,"ppa":2587000.0},{"name":"Torrance / Redondo","lat":33.84,"lon":-118.36,"ppa":2587000.0},{"name":"Burbank / Glendale","lat":34.16,"lon":-118.31,"ppa":2217000.0},{"name":"Central LA / Koreatown","lat":34.055,"lon":-118.31,"ppa":2217000.0},{"name":"SGV central (Alhambra)","lat":34.08,"lon":-118.13,"ppa":1626000.0},{"name":"Van Nuys / mid Valley","lat":34.19,"lon":-118.45,"ppa":1330000.0},{"name":"Long Beach","lat":33.785,"lon":-118.15,"ppa":1330000.0},{"name":"Northridge / NW Valley","lat":34.23,"lon":-118.53,"ppa":1183000.0},{"name":"San Pedro / Harbor","lat":33.74,"lon":-118.295,"ppa":1109000.0},{"name":"East SGV (West Covina)","lat":34.05,"lon":-117.92,"ppa":961000.0},{"name":"South LA","lat":33.99,"lon":-118.3,"ppa":887000.0},{"name":"Santa Clarita","lat":34.42,"lon":-118.54,"ppa":887000.0},{"name":"Pomona / far east county","lat":34.06,"lon":-117.75,"ppa":591000.0},{"name":"Antelope Valley (Lancaster)","lat":34.69,"lon":-118.15,"ppa":148000.0}],"2025":[{"name":"Beverly Hills / Bel Air","lat":34.1,"lon":-118.41,"ppa":17609000.0},{"name":"Pacific Palisades","lat":34.045,"lon":-118.53,"ppa":11739000.0},{"name":"Malibu","lat":34.03,"lon":-118.69,"ppa":9783000.0},{"name":"Santa Monica","lat":34.02,"lon":-118.49,"ppa":9783000.0},{"name":"Manhattan / Hermosa Bch","lat":33.89,"lon":-118.4,"ppa":9783000.0},{"name":"Brentwood / West LA","lat":34.05,"lon":-118.47,"ppa":8804000.0},{"name":"Hollywood Hills / WeHo","lat":34.09,"lon":-118.36,"ppa":6848000.0},{"name":"Sherman Oaks / Studio City","lat":34.15,"lon":-118.43,"ppa":4402000.0},{"name":"Hollywood / Silver Lake","lat":34.1,"lon":-118.29,"ppa":3913000.0},{"name":"Pasadena / San Marino","lat":34.14,"lon":-118.13,"ppa":3913000.0},{"name":"Downtown LA","lat":34.05,"lon":-118.245,"ppa":3424000.0},{"name":"Torrance / Redondo","lat":33.84,"lon":-118.36,"ppa":3424000.0},{"name":"Burbank / Glendale","lat":34.16,"lon":-118.31,"ppa":2935000.0},{"name":"Central LA / Koreatown","lat":34.055,"lon":-118.31,"ppa":2935000.0},{"name":"SGV central (Alhambra)","lat":34.08,"lon":-118.13,"ppa":2152000.0},{"name":"Van Nuys / mid Valley","lat":34.19,"lon":-118.45,"ppa":1761000.0},{"name":"Long Beach","lat":33.785,"lon":-118.15,"ppa":1761000.0},{"name":"Northridge / NW Valley","lat":34.23,"lon":-118.53,"ppa":1565000.0},{"name":"San Pedro / Harbor","lat":33.74,"lon":-118.295,"ppa":1467000.0},{"name":"East SGV (West Covina)","lat":34.05,"lon":-117.92,"ppa":1272000.0},{"name":"South LA","lat":33.99,"lon":-118.3,"ppa":1174000.0},{"name":"Santa Clarita","lat":34.42,"lon":-118.54,"ppa":1174000.0},{"name":"Pomona / far east county","lat":34.06,"lon":-117.75,"ppa":783000.0},{"name":"Antelope Valley (Lancaster)","lat":34.69,"lon":-118.15,"ppa":196000.0}],"2026":[{"name":"Beverly Hills / Bel Air","lat":34.1,"lon":-118.41,"ppa":18000000.0},{"name":"Pacific Palisades","lat":34.045,"lon":-118.53,"ppa":12000000.0},{"name":"Malibu","lat":34.03,"lon":-118.69,"ppa":10000000.0},{"name":"Santa Monica","lat":34.02,"lon":-118.49,"ppa":10000000.0},{"name":"Manhattan / Hermosa Bch","lat":33.89,"lon":-118.4,"ppa":10000000.0},{"name":"Brentwood / West LA","lat":34.05,"lon":-118.47,"ppa":9000000.0},{"name":"Hollywood Hills / WeHo","lat":34.09,"lon":-118.36,"ppa":7000000.0},{"name":"Sherman Oaks / Studio City","lat":34.15,"lon":-118.43,"ppa":4500000.0},{"name":"Hollywood / Silver Lake","lat":34.1,"lon":-118.29,"ppa":4000000.0},{"name":"Pasadena / San Marino","lat":34.14,"lon":-118.13,"ppa":4000000.0},{"name":"Downtown LA","lat":34.05,"lon":-118.245,"ppa":3500000.0},{"name":"Torrance / Redondo","lat":33.84,"lon":-118.36,"ppa":3500000.0},{"name":"Burbank / Glendale","lat":34.16,"lon":-118.31,"ppa":3000000.0},{"name":"Central LA / Koreatown","lat":34.055,"lon":-118.31,"ppa":3000000.0},{"name":"SGV central (Alhambra)","lat":34.08,"lon":-118.13,"ppa":2200000.0},{"name":"Van Nuys / mid Valley","lat":34.19,"lon":-118.45,"ppa":1800000.0},{"name":"Long Beach","lat":33.785,"lon":-118.15,"ppa":1800000.0},{"name":"Northridge / NW Valley","lat":34.23,"lon":-118.53,"ppa":1600000.0},{"name":"San Pedro / Harbor","lat":33.74,"lon":-118.295,"ppa":1500000.0},{"name":"East SGV (West Covina)","lat":34.05,"lon":-117.92,"ppa":1300000.0},{"name":"South LA","lat":33.99,"lon":-118.3,"ppa":1200000.0},{"name":"Santa Clarita","lat":34.42,"lon":-118.54,"ppa":1200000.0},{"name":"Pomona / far east county","lat":34.06,"lon":-117.75,"ppa":800000.0},{"name":"Antelope Valley (Lancaster)","lat":34.69,"lon":-118.15,"ppa":200000.0}]};
+const YEARS = [2000, 2005, 2010, 2015, 2020, 2025, 2026];
+const map = L.map('map',{center:[34.15,-118.30],zoom:9,preferCanvas:true});
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+  {attribution:'Basemap © Esri',maxZoom:16}).addTo(map);
+
+function col(v){
+  if(v<500000)   return '#e01e25';
+  if(v<1000000)  return '#ef6f5a';
+  if(v<1500000)  return '#f0a98f';
+  if(v<3000000)  return '#9aa0a4';
+  if(v<6000000)  return '#7ed98f';
+  if(v<12000000) return '#38b85a';
+  return '#12e06a';
+}
+const money=v=> v>=1e6 ? '$'+(v/1e6).toFixed(2)+'M' : '$'+Math.round(v/1000)+'K';
+let layer=L.layerGroup().addTo(map);
+
+function render(yr){
+  layer.clearLayers();
+  document.getElementById('yr').textContent=yr;
+  DATA[yr].forEach(z=>{
+    const c=col(z.ppa);
+    L.circle([z.lat,z.lon],{radius:6000,fillColor:c,fillOpacity:.55,
+      color:c,weight:1,opacity:.9}).addTo(layer)
+      .bindPopup('<b>'+z.name+'</b><br>'+yr+' approx land value:<br>'
+        +'<b style="font-size:14px">'+money(z.ppa)+' / acre</b>');
+    L.marker([z.lat,z.lon],{icon:L.divIcon({className:'zlabel',
+      html:z.name+'<br>'+money(z.ppa),iconAnchor:[-9,8]})}).addTo(layer);
+  });
+  document.querySelectorAll('.yb').forEach(b=>
+    b.classList.toggle('on', b.dataset.y==yr));
+}
+const yc=document.getElementById('years');
+YEARS.forEach(y=>{
+  const b=document.createElement('div'); b.className='yb'; b.textContent=y; b.dataset.y=y;
+  b.onclick=()=>render(''+y); yc.appendChild(b);
+});
+render('2026');
+</script>
+</body></html>

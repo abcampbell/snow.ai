@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>NYC Land $/Acre - Heat Map 2000-2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif}
+#map{width:100%;height:100vh;background:#0a0f0a}
+.panel{position:absolute;z-index:1000;background:rgba(8,16,10,.95);border:1px solid #2c5;
+  border-radius:10px;color:#cde;font-size:11px;padding:12px 15px}
+.info{top:10px;left:55px;max-width:345px}
+.info h2{font-size:14px;color:#5ee87a;margin-bottom:3px}
+.info .yr{font-size:30px;font-weight:800;color:#fff;line-height:1.1}
+.legend{bottom:15px;right:10px;max-width:215px}
+.legend h3{font-size:11px;color:#fff;margin-bottom:4px}
+.lr{display:flex;align-items:center;margin:2px 0}
+.sw{width:16px;height:11px;border-radius:2px;margin-right:7px;flex-shrink:0}
+.years{top:10px;right:10px;display:flex;flex-wrap:wrap;gap:4px;max-width:230px;justify-content:flex-end}
+.yb{background:rgba(8,16,10,.95);border:1px solid #2c5;color:#9eb;border-radius:6px;
+  padding:5px 9px;font-size:12px;font-weight:700;cursor:pointer}
+.yb:hover{background:#173}
+.yb.on{background:#2bed79;color:#042;border-color:#2bed79}
+.zlabel{background:none!important;border:none!important;box-shadow:none!important;
+  font-weight:700;font-size:10px;white-space:nowrap;color:#dfe;
+  text-shadow:0 0 4px #000,0 0 4px #000,1px 1px 3px #000}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head><body>
+<div id="map"></div>
+<div class="panel info">
+  <h2>New York City Land - Price per Acre</h2>
+  <div class="yr" id="yr">2026</div>
+  <p id="note">Approximate land $/acre by sub-market. NOTE: NYC land really prices
+  per BUILDABLE sqft (FAR / zoning), so these per-acre figures are conversions and
+  Manhattan runs 1-2 orders above LA/SF. Earlier years scaled by the NY-metro
+  home-price index. Click a year, top right.</p>
+</div>
+<div class="panel years" id="years"></div>
+<div class="panel legend">
+  <h3>$ / ACRE - red cheap / grey ~$18M / green $$$</h3>
+  <div class="lr"><div class="sw" style="background:#e01e25"></div>&lt; $2M</div>
+  <div class="lr"><div class="sw" style="background:#ef6f5a"></div>$2M - $5M</div>
+  <div class="lr"><div class="sw" style="background:#f0a98f"></div>$5M - $12M</div>
+  <div class="lr"><div class="sw" style="background:#9aa0a4"></div>$12M - $30M  (~$18M pivot)</div>
+  <div class="lr"><div class="sw" style="background:#7ed98f"></div>$30M - $70M</div>
+  <div class="lr"><div class="sw" style="background:#38b85a"></div>$70M - $140M</div>
+  <div class="lr"><div class="sw" style="background:#12e06a"></div>&gt; $140M</div>
+</div>
+<script>
+const DATA = {"2000":[{"name":"Midtown Manhattan","lat":40.755,"lon":-73.98,"ppa":105263000.0},{"name":"Downtown / FiDi","lat":40.71,"lon":-74.008,"ppa":70175000.0},{"name":"Upper East / West Side","lat":40.778,"lon":-73.962,"ppa":56140000.0},{"name":"Williamsburg / DUMBO","lat":40.712,"lon":-73.963,"ppa":15789000.0},{"name":"Harlem / Upper Manhattan","lat":40.815,"lon":-73.945,"ppa":14035000.0},{"name":"Park Slope / brownstone Bklyn","lat":40.674,"lon":-73.978,"ppa":11228000.0},{"name":"Jersey City / Hoboken","lat":40.722,"lon":-74.047,"ppa":10526000.0},{"name":"Long Island City / Astoria","lat":40.752,"lon":-73.93,"ppa":9825000.0},{"name":"Flushing","lat":40.76,"lon":-73.833,"ppa":5614000.0},{"name":"Bushwick / Bed-Stuy","lat":40.69,"lon":-73.92,"ppa":4561000.0},{"name":"Western Queens","lat":40.745,"lon":-73.89,"ppa":4211000.0},{"name":"Central / East Queens","lat":40.73,"lon":-73.8,"ppa":2105000.0},{"name":"South Bronx","lat":40.815,"lon":-73.915,"ppa":2105000.0},{"name":"South / East Brooklyn","lat":40.635,"lon":-73.905,"ppa":1754000.0},{"name":"SE Queens (Jamaica)","lat":40.69,"lon":-73.8,"ppa":1228000.0},{"name":"North Bronx (Riverdale)","lat":40.88,"lon":-73.87,"ppa":1228000.0},{"name":"Yonkers / lower Westchester","lat":40.94,"lon":-73.87,"ppa":1053000.0},{"name":"Staten Island - North","lat":40.635,"lon":-74.1,"ppa":877000.0},{"name":"Nassau / inner Long Island","lat":40.73,"lon":-73.58,"ppa":877000.0},{"name":"Newark / inner NJ","lat":40.73,"lon":-74.17,"ppa":702000.0},{"name":"Staten Island - South","lat":40.55,"lon":-74.18,"ppa":491000.0},{"name":"Suffolk / outer Long Island","lat":40.8,"lon":-73.25,"ppa":246000.0}],"2005":[{"name":"Midtown Manhattan","lat":40.755,"lon":-73.98,"ppa":205263000.0},{"name":"Downtown / FiDi","lat":40.71,"lon":-74.008,"ppa":136842000.0},{"name":"Upper East / West Side","lat":40.778,"lon":-73.962,"ppa":109474000.0},{"name":"Williamsburg / DUMBO","lat":40.712,"lon":-73.963,"ppa":30789000.0},{"name":"Harlem / Upper Manhattan","lat":40.815,"lon":-73.945,"ppa":27368000.0},{"name":"Park Slope / brownstone Bklyn","lat":40.674,"lon":-73.978,"ppa":21895000.0},{"name":"Jersey City / Hoboken","lat":40.722,"lon":-74.047,"ppa":20526000.0},{"name":"Long Island City / Astoria","lat":40.752,"lon":-73.93,"ppa":19158000.0},{"name":"Flushing","lat":40.76,"lon":-73.833,"ppa":10947000.0},{"name":"Bushwick / Bed-Stuy","lat":40.69,"lon":-73.92,"ppa":8895000.0},{"name":"Western Queens","lat":40.745,"lon":-73.89,"ppa":8211000.0},{"name":"Central / East Queens","lat":40.73,"lon":-73.8,"ppa":4105000.0},{"name":"South Bronx","lat":40.815,"lon":-73.915,"ppa":4105000.0},{"name":"South / East Brooklyn","lat":40.635,"lon":-73.905,"ppa":3421000.0},{"name":"SE Queens (Jamaica)","lat":40.69,"lon":-73.8,"ppa":2395000.0},{"name":"North Bronx (Riverdale)","lat":40.88,"lon":-73.87,"ppa":2395000.0},{"name":"Yonkers / lower Westchester","lat":40.94,"lon":-73.87,"ppa":2053000.0},{"name":"Staten Island - North","lat":40.635,"lon":-74.1,"ppa":1711000.0},{"name":"Nassau / inner Long Island","lat":40.73,"lon":-73.58,"ppa":1711000.0},{"name":"Newark / inner NJ","lat":40.73,"lon":-74.17,"ppa":1368000.0},{"name":"Staten Island - South","lat":40.55,"lon":-74.18,"ppa":958000.0},{"name":"Suffolk / outer Long Island","lat":40.8,"lon":-73.25,"ppa":479000.0}],"2010":[{"name":"Midtown Manhattan","lat":40.755,"lon":-73.98,"ppa":178947000.0},{"name":"Downtown / FiDi","lat":40.71,"lon":-74.008,"ppa":119298000.0},{"name":"Upper East / West Side","lat":40.778,"lon":-73.962,"ppa":95439000.0},{"name":"Williamsburg / DUMBO","lat":40.712,"lon":-73.963,"ppa":26842000.0},{"name":"Harlem / Upper Manhattan","lat":40.815,"lon":-73.945,"ppa":23860000.0},{"name":"Park Slope / brownstone Bklyn","lat":40.674,"lon":-73.978,"ppa":19088000.0},{"name":"Jersey City / Hoboken","lat":40.722,"lon":-74.047,"ppa":17895000.0},{"name":"Long Island City / Astoria","lat":40.752,"lon":-73.93,"ppa":16702000.0},{"name":"Flushing","lat":40.76,"lon":-73.833,"ppa":9544000.0},{"name":"Bushwick / Bed-Stuy","lat":40.69,"lon":-73.92,"ppa":7754000.0},{"name":"Western Queens","lat":40.745,"lon":-73.89,"ppa":7158000.0},{"name":"Central / East Queens","lat":40.73,"lon":-73.8,"ppa":3579000.0},{"name":"South Bronx","lat":40.815,"lon":-73.915,"ppa":3579000.0},{"name":"South / East Brooklyn","lat":40.635,"lon":-73.905,"ppa":2982000.0},{"name":"SE Queens (Jamaica)","lat":40.69,"lon":-73.8,"ppa":2088000.0},{"name":"North Bronx (Riverdale)","lat":40.88,"lon":-73.87,"ppa":2088000.0},{"name":"Yonkers / lower Westchester","lat":40.94,"lon":-73.87,"ppa":1789000.0},{"name":"Staten Island - North","lat":40.635,"lon":-74.1,"ppa":1491000.0},{"name":"Nassau / inner Long Island","lat":40.73,"lon":-73.58,"ppa":1491000.0},{"name":"Newark / inner NJ","lat":40.73,"lon":-74.17,"ppa":1193000.0},{"name":"Staten Island - South","lat":40.55,"lon":-74.18,"ppa":835000.0},{"name":"Suffolk / outer Long Island","lat":40.8,"lon":-73.25,"ppa":418000.0}],"2015":[{"name":"Midtown Manhattan","lat":40.755,"lon":-73.98,"ppa":184211000.0},{"name":"Downtown / FiDi","lat":40.71,"lon":-74.008,"ppa":122807000.0},{"name":"Upper East / West Side","lat":40.778,"lon":-73.962,"ppa":98246000.0},{"name":"Williamsburg / DUMBO","lat":40.712,"lon":-73.963,"ppa":27632000.0},{"name":"Harlem / Upper Manhattan","lat":40.815,"lon":-73.945,"ppa":24561000.0},{"name":"Park Slope / brownstone Bklyn","lat":40.674,"lon":-73.978,"ppa":19649000.0},{"name":"Jersey City / Hoboken","lat":40.722,"lon":-74.047,"ppa":18421000.0},{"name":"Long Island City / Astoria","lat":40.752,"lon":-73.93,"ppa":17193000.0},{"name":"Flushing","lat":40.76,"lon":-73.833,"ppa":9825000.0},{"name":"Bushwick / Bed-Stuy","lat":40.69,"lon":-73.92,"ppa":7982000.0},{"name":"Western Queens","lat":40.745,"lon":-73.89,"ppa":7368000.0},{"name":"Central / East Queens","lat":40.73,"lon":-73.8,"ppa":3684000.0},{"name":"South Bronx","lat":40.815,"lon":-73.915,"ppa":3684000.0},{"name":"South / East Brooklyn","lat":40.635,"lon":-73.905,"ppa":3070000.0},{"name":"SE Queens (Jamaica)","lat":40.69,"lon":-73.8,"ppa":2149000.0},{"name":"North Bronx (Riverdale)","lat":40.88,"lon":-73.87,"ppa":2149000.0},{"name":"Yonkers / lower Westchester","lat":40.94,"lon":-73.87,"ppa":1842000.0},{"name":"Staten Island - North","lat":40.635,"lon":-74.1,"ppa":1535000.0},{"name":"Nassau / inner Long Island","lat":40.73,"lon":-73.58,"ppa":1535000.0},{"name":"Newark / inner NJ","lat":40.73,"lon":-74.17,"ppa":1228000.0},{"name":"Staten Island - South","lat":40.55,"lon":-74.18,"ppa":860000.0},{"name":"Suffolk / outer Long Island","lat":40.8,"lon":-73.25,"ppa":430000.0}],"2020":[{"name":"Midtown Manhattan","lat":40.755,"lon":-73.98,"ppa":215789000.0},{"name":"Downtown / FiDi","lat":40.71,"lon":-74.008,"ppa":143860000.0},{"name":"Upper East / West Side","lat":40.778,"lon":-73.962,"ppa":115088000.0},{"name":"Williamsburg / DUMBO","lat":40.712,"lon":-73.963,"ppa":32368000.0},{"name":"Harlem / Upper Manhattan","lat":40.815,"lon":-73.945,"ppa":28772000.0},{"name":"Park Slope / brownstone Bklyn","lat":40.674,"lon":-73.978,"ppa":23018000.0},{"name":"Jersey City / Hoboken","lat":40.722,"lon":-74.047,"ppa":21579000.0},{"name":"Long Island City / Astoria","lat":40.752,"lon":-73.93,"ppa":20140000.0},{"name":"Flushing","lat":40.76,"lon":-73.833,"ppa":11509000.0},{"name":"Bushwick / Bed-Stuy","lat":40.69,"lon":-73.92,"ppa":9351000.0},{"name":"Western Queens","lat":40.745,"lon":-73.89,"ppa":8632000.0},{"name":"Central / East Queens","lat":40.73,"lon":-73.8,"ppa":4316000.0},{"name":"South Bronx","lat":40.815,"lon":-73.915,"ppa":4316000.0},{"name":"South / East Brooklyn","lat":40.635,"lon":-73.905,"ppa":3596000.0},{"name":"SE Queens (Jamaica)","lat":40.69,"lon":-73.8,"ppa":2518000.0},{"name":"North Bronx (Riverdale)","lat":40.88,"lon":-73.87,"ppa":2518000.0},{"name":"Yonkers / lower Westchester","lat":40.94,"lon":-73.87,"ppa":2158000.0},{"name":"Staten Island - North","lat":40.635,"lon":-74.1,"ppa":1798000.0},{"name":"Nassau / inner Long Island","lat":40.73,"lon":-73.58,"ppa":1798000.0},{"name":"Newark / inner NJ","lat":40.73,"lon":-74.17,"ppa":1439000.0},{"name":"Staten Island - South","lat":40.55,"lon":-74.18,"ppa":1007000.0},{"name":"Suffolk / outer Long Island","lat":40.8,"lon":-73.25,"ppa":504000.0}],"2025":[{"name":"Midtown Manhattan","lat":40.755,"lon":-73.98,"ppa":284211000.0},{"name":"Downtown / FiDi","lat":40.71,"lon":-74.008,"ppa":189474000.0},{"name":"Upper East / West Side","lat":40.778,"lon":-73.962,"ppa":151579000.0},{"name":"Williamsburg / DUMBO","lat":40.712,"lon":-73.963,"ppa":42632000.0},{"name":"Harlem / Upper Manhattan","lat":40.815,"lon":-73.945,"ppa":37895000.0},{"name":"Park Slope / brownstone Bklyn","lat":40.674,"lon":-73.978,"ppa":30316000.0},{"name":"Jersey City / Hoboken","lat":40.722,"lon":-74.047,"ppa":28421000.0},{"name":"Long Island City / Astoria","lat":40.752,"lon":-73.93,"ppa":26526000.0},{"name":"Flushing","lat":40.76,"lon":-73.833,"ppa":15158000.0},{"name":"Bushwick / Bed-Stuy","lat":40.69,"lon":-73.92,"ppa":12316000.0},{"name":"Western Queens","lat":40.745,"lon":-73.89,"ppa":11368000.0},{"name":"Central / East Queens","lat":40.73,"lon":-73.8,"ppa":5684000.0},{"name":"South Bronx","lat":40.815,"lon":-73.915,"ppa":5684000.0},{"name":"South / East Brooklyn","lat":40.635,"lon":-73.905,"ppa":4737000.0},{"name":"SE Queens (Jamaica)","lat":40.69,"lon":-73.8,"ppa":3316000.0},{"name":"North Bronx (Riverdale)","lat":40.88,"lon":-73.87,"ppa":3316000.0},{"name":"Yonkers / lower Westchester","lat":40.94,"lon":-73.87,"ppa":2842000.0},{"name":"Staten Island - North","lat":40.635,"lon":-74.1,"ppa":2368000.0},{"name":"Nassau / inner Long Island","lat":40.73,"lon":-73.58,"ppa":2368000.0},{"name":"Newark / inner NJ","lat":40.73,"lon":-74.17,"ppa":1895000.0},{"name":"Staten Island - South","lat":40.55,"lon":-74.18,"ppa":1326000.0},{"name":"Suffolk / outer Long Island","lat":40.8,"lon":-73.25,"ppa":663000.0}],"2026":[{"name":"Midtown Manhattan","lat":40.755,"lon":-73.98,"ppa":300000000.0},{"name":"Downtown / FiDi","lat":40.71,"lon":-74.008,"ppa":200000000.0},{"name":"Upper East / West Side","lat":40.778,"lon":-73.962,"ppa":160000000.0},{"name":"Williamsburg / DUMBO","lat":40.712,"lon":-73.963,"ppa":45000000.0},{"name":"Harlem / Upper Manhattan","lat":40.815,"lon":-73.945,"ppa":40000000.0},{"name":"Park Slope / brownstone Bklyn","lat":40.674,"lon":-73.978,"ppa":32000000.0},{"name":"Jersey City / Hoboken","lat":40.722,"lon":-74.047,"ppa":30000000.0},{"name":"Long Island City / Astoria","lat":40.752,"lon":-73.93,"ppa":28000000.0},{"name":"Flushing","lat":40.76,"lon":-73.833,"ppa":16000000.0},{"name":"Bushwick / Bed-Stuy","lat":40.69,"lon":-73.92,"ppa":13000000.0},{"name":"Western Queens","lat":40.745,"lon":-73.89,"ppa":12000000.0},{"name":"Central / East Queens","lat":40.73,"lon":-73.8,"ppa":6000000.0},{"name":"South Bronx","lat":40.815,"lon":-73.915,"ppa":6000000.0},{"name":"South / East Brooklyn","lat":40.635,"lon":-73.905,"ppa":5000000.0},{"name":"SE Queens (Jamaica)","lat":40.69,"lon":-73.8,"ppa":3500000.0},{"name":"North Bronx (Riverdale)","lat":40.88,"lon":-73.87,"ppa":3500000.0},{"name":"Yonkers / lower Westchester","lat":40.94,"lon":-73.87,"ppa":3000000.0},{"name":"Staten Island - North","lat":40.635,"lon":-74.1,"ppa":2500000.0},{"name":"Nassau / inner Long Island","lat":40.73,"lon":-73.58,"ppa":2500000.0},{"name":"Newark / inner NJ","lat":40.73,"lon":-74.17,"ppa":2000000.0},{"name":"Staten Island - South","lat":40.55,"lon":-74.18,"ppa":1400000.0},{"name":"Suffolk / outer Long Island","lat":40.8,"lon":-73.25,"ppa":700000.0}]};
+const YEARS = [2000, 2005, 2010, 2015, 2020, 2025, 2026];
+const map = L.map('map',{center:[40.72,-73.92],zoom:10,preferCanvas:true});
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+  {attribution:'Basemap © Esri',maxZoom:16}).addTo(map);
+
+function col(v){
+  if(v<2000000)   return '#e01e25';
+  if(v<5000000)   return '#ef6f5a';
+  if(v<12000000)  return '#f0a98f';
+  if(v<30000000)  return '#9aa0a4';
+  if(v<70000000)  return '#7ed98f';
+  if(v<140000000) return '#38b85a';
+  return '#12e06a';
+}
+const money=v=> v>=1e6 ? '$'+(v/1e6).toFixed(v>=1e8?0:1)+'M' : '$'+Math.round(v/1000)+'K';
+let layer=L.layerGroup().addTo(map);
+
+function render(yr){
+  layer.clearLayers();
+  document.getElementById('yr').textContent=yr;
+  DATA[yr].forEach(z=>{
+    const c=col(z.ppa);
+    L.circle([z.lat,z.lon],{radius:3900,fillColor:c,fillOpacity:.55,
+      color:c,weight:1,opacity:.9}).addTo(layer)
+      .bindPopup('<b>'+z.name+'</b><br>'+yr+' approx land value:<br>'
+        +'<b style="font-size:14px">'+money(z.ppa)+' / acre</b>');
+    L.marker([z.lat,z.lon],{icon:L.divIcon({className:'zlabel',
+      html:z.name+'<br>'+money(z.ppa),iconAnchor:[-9,8]})}).addTo(layer);
+  });
+  document.querySelectorAll('.yb').forEach(b=>
+    b.classList.toggle('on', b.dataset.y==yr));
+}
+const yc=document.getElementById('years');
+YEARS.forEach(y=>{
+  const b=document.createElement('div'); b.className='yb'; b.textContent=y; b.dataset.y=y;
+  b.onclick=()=>render(''+y); yc.appendChild(b);
+});
+render('2026');
+</script>
+</body></html>

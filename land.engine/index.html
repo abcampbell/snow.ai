@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Land Engine</title>
+<meta name="description" content="Parcel intelligence for the Great Basin, built to run anywhere: underwriter, deal calculators, and land price surfaces.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="style.css?v=20261014">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="wrap">
+    <a class="brand" href="#top">LAND<span>.</span>ENGINE</a>
+    <nav>
+      <a href="#underwriter">Underwriter</a>
+      <a href="#calculators">Calculators</a>
+      <a href="#surfaces">Price surfaces</a>
+      <a href="#machine">The machine</a>
+      <a href="#systems">Systems</a>
+      <a href="#book">Price book</a>
+      <a href="#data">Data</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Great Basin Land Company · snow.ai</div>
+    <h1>Land <em>Engine</em></h1>
+    <p class="lede">Paste an address, coordinates, or a listing link. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, mineral history, land value) and returns a go, check, or kill screen in seconds. It is built deep for the Great Basin and runs on any US parcel.</p>
+    <div class="stats">
+      <div class="stat"><b>7</b><span>national checks, any US point</span></div>
+      <div class="stat"><b>15,539</b><span>Nevada well logs in the regional pack</span></div>
+      <div class="stat"><b>12,511</b><span>USGS-recorded mines and prospects</span></div>
+      <div class="stat"><b>4</b><span>metro $/acre surfaces, 2000–2026</span></div>
+      <div class="stat"><b>4</b><span>deal calculators</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNDERWRITER ============ -->
+<section class="block" id="underwriter">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">01 · Parcel underwriter</div>
+      <h2>Screen any parcel before you spend a dollar on it</h2>
+      <p>Each check queries a public federal or state service live from your browser. The Great Basin plug-in adds local well logs and the mines database. Listings conceal defects; public records reveal them.</p>
+    </div>
+    <div class="tabs">
+      <button class="tab is-active" type="button" data-uwmode="single">Single parcel</button>
+      <button class="tab" type="button" data-uwmode="batch">Batch · compare a list</button>
+    </div>
+
+    <div id="modeBatch" hidden>
+      <p class="calc-intro">Paste up to 50 addresses, coordinates, or listing links, one per line. Each place gets the full screen, and the results land in one table: a row per place, a column per check. Sort by any column, click a row for its full report, or export the table as CSV.</p>
+      <textarea id="bInput" class="b-input" rows="7" placeholder="5203 Blue Desert Trail, Caliente, NV&#10;40.9209, -114.2092&#10;https://www.homes.com/property/1775-dude-dr-moapa-nv/5dvengs7415ry/&#10;…"></textarea>
+      <div class="b-actions">
+        <button class="btn" type="button" id="bRun">Screen all</button>
+        <button class="chip" type="button" id="bExample" data-list="5203 Blue Desert Trail, Caliente, NV|40.9209, -114.2092|https://www.homes.com/property/1775-dude-dr-moapa-nv/5dvengs7415ry/|Pioche, NV|92 Cold Creek Rd, Las Vegas, NV|3600 S Las Vegas Blvd, Las Vegas, NV|Pahrump, NV|Wells, NV">Load a Great Basin sample (8 places)</button>
+        <button class="chip" type="button" id="bCsv" disabled>Export CSV</button>
+        <span class="uw-status" id="bStatus"></span>
+      </div>
+      <div id="bSummary"></div>
+      <div id="bOut"></div>
+    </div>
+
+    <div id="modeSingle">
+    <form class="uw-form" id="uwForm" autocomplete="off">
+      <input id="uwInput" type="text" placeholder="Address, 'lat, lon', a Google Maps link, or a Zillow / Redfin / homes.com listing" aria-label="Parcel address, coordinates, or link">
+      <button class="btn" type="submit">Underwrite</button>
+    </form>
+    <div class="examples">
+      <span>try:</span>
+      <button class="chip" type="button" data-example="40.9209, -114.2092">Pilot Valley rural 160 ac</button>
+      <button class="chip" type="button" data-example="5203 Blue Desert Trail, Caliente, NV">Caliente custom</button>
+      <button class="chip" type="button" data-example="https://www.homes.com/property/1775-dude-dr-moapa-nv/5dvengs7415ry/">Listing link (Moapa)</button>
+      <button class="chip" type="button" data-example="3600 S Las Vegas Blvd, Las Vegas, NV">Strip corridor</button>
+      <button class="chip" type="button" data-example="1 Infinite Loop, Cupertino, CA">Outside the Great Basin</button>
+    </div>
+    <div class="uw-status" id="uwStatus" aria-live="polite"></div>
+
+    <div class="uw-out" id="uwOut" hidden>
+      <div class="uw-place" id="uwPlace"></div>
+      <div class="verdict" id="uwVerdict"></div>
+      <div class="uw-grid">
+        <div>
+          <div id="uwMap"></div>
+          <div class="legend-row">
+            <span><i class="dot" style="background:#ff5a3c"></i>parcel</span>
+            <span><i class="dot" style="background:#59b8ff"></i>logged wells</span>
+            <span><i class="dot" style="background:#ffc93c"></i>recorded mines</span>
+            <span>dashed ring = 400 m drainage and land-status scan</span>
+          </div>
+        </div>
+        <div>
+          <div class="checks" id="uwChecks"></div>
+          <div class="uw-links" id="uwLinks"></div>
+          <div class="uw-surface" id="uwSurface"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULATORS ============ -->
+<section class="block" id="calculators">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">02 · Deal calculators</div>
+      <h2>Price the deal, not just the dirt</h2>
+      <p>The four calculations behind every acquisition decision. They update as you type.</p>
+    </div>
+    <div class="tabs" data-tabs="calc">
+      <button class="tab is-active" data-pane="p-note">Note machine</button>
+      <button class="tab" data-pane="p-flip">Improvement flip</button>
+      <button class="tab" data-pane="p-offer">Offer pricer</button>
+      <button class="tab" data-pane="p-carry">Carry &amp; DTI</button>
+    </div>
+
+    <div class="pane is-active" id="p-note">
+      <p class="calc-intro">Buy land at wholesale (tax auction or an absentee owner), then sell it at retail on seller-financed terms. The down payment recovers part of the basis immediately, and the note carries the return.</p>
+      <div class="calc-grid">
+        <form class="calc" data-calc="note">
+          <h5>Acquisition</h5>
+          <label>All-in basis ($)<input name="basis" type="number" value="10000"></label>
+          <label>Months to sell<input name="sellMonth" type="number" value="4"></label>
+          <label class="full">Annual property tax while held ($)<input name="tax" type="number" value="150"></label>
+          <h5>Retail sale on terms</h5>
+          <label>Sale price ($)<input name="sale" type="number" value="25000"></label>
+          <label>Down payment ($)<input name="down" type="number" value="2500"></label>
+          <label>Interest rate (%)<input name="rate" type="number" step="0.25" value="9"></label>
+          <label>Term (months)<input name="term" type="number" value="84"></label>
+          <h5>Default scenario</h5>
+          <label>Buyer stops after (mo)<input name="defaultMonth" type="number" value="18"></label>
+          <label>Months to relist<input name="relist" type="number" value="3"></label>
+          <label class="full">Share of notes that default (%)<input name="defaultRate" type="number" value="30"></label>
+        </form>
+        <div class="calc-out"></div>
+      </div>
+    </div>
+
+    <div class="pane" id="p-flip">
+      <p class="calc-intro">Take a raw parcel to off-grid-ready with a well, septic, graded access, and power, then sell it to the homestead market. The improvements cost a fraction of the price uplift.</p>
+      <div class="calc-grid">
+        <form class="calc" data-calc="flip">
+          <h5>Land</h5>
+          <label>Raw parcel ($)<input name="raw" type="number" value="40000"></label>
+          <label>Closing ($)<input name="closing" type="number" value="1500"></label>
+          <h5>Improvements</h5>
+          <label>Well ($)<input name="well" type="number" value="15000"></label>
+          <label>Septic ($)<input name="septic" type="number" value="15000"></label>
+          <label>Road / grading ($)<input name="road" type="number" value="8000"></label>
+          <label>Solar / power ($)<input name="power" type="number" value="12000"></label>
+          <label class="full">Other ($)<input name="other" type="number" value="3000"></label>
+          <h5>Exit</h5>
+          <label>Exit price ($)<input name="exit" type="number" value="200000"></label>
+          <label>Selling cost (%)<input name="sellCost" type="number" value="8"></label>
+          <label>Hold (months)<input name="hold" type="number" value="24"></label>
+          <label>Annual tax ($)<input name="tax" type="number" value="300"></label>
+        </form>
+        <div class="calc-out"></div>
+      </div>
+    </div>
+
+    <div class="pane" id="p-offer">
+      <p class="calc-intro">Read the seller before you write the offer. County records show their purchase date and price; the listing shows days on market and cuts. A recent flipper paying carry negotiates very differently from a ten-year owner with a large equity cushion.</p>
+      <div class="calc-grid">
+        <form class="calc" data-calc="offer">
+          <label>List price ($)<input name="list" type="number" value="500000"></label>
+          <label>Seller's purchase price ($)<input name="basis" type="number" value="410000"></label>
+          <label>Years seller has held<input name="years" type="number" step="0.1" value="1.3"></label>
+          <label>Days on market<input name="dom" type="number" value="150"></label>
+          <label class="full">Price cuts so far (% of original list)<input name="cuts" type="number" step="0.5" value="4"></label>
+        </form>
+        <div class="calc-out"></div>
+      </div>
+    </div>
+
+    <div class="pane" id="p-carry">
+      <p class="calc-intro">The monthly cost of owning improved property and the debt-to-income check lenders run. Use it to size the down payment against how much cash you want to keep liquid.</p>
+      <div class="calc-grid">
+        <form class="calc" data-calc="carry">
+          <label>Price ($)<input name="price" type="number" value="500000"></label>
+          <label>Down (%)<input name="down" type="number" step="1" value="10"></label>
+          <label>Rate (%)<input name="rate" type="number" step="0.125" value="6.5"></label>
+          <label>Property tax (% / yr)<input name="taxRate" type="number" step="0.05" value="0.55"></label>
+          <label>Insurance ($ / yr)<input name="ins" type="number" value="1800"></label>
+          <label>PMI (% / yr)<input name="pmi" type="number" step="0.05" value="0.5"></label>
+          <label class="full">Gross household income ($ / yr)<input name="income" type="number" value="200000"></label>
+        </form>
+        <div class="calc-out"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SURFACES ============ -->
+<section class="block" id="surfaces">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">03 · Price surfaces</div>
+      <h2>Land $/acre across four metros, 2000–2026</h2>
+      <p>The same dirt prices two to three orders of magnitude apart. The grey band marks each metro's pivot: about $200K/acre in Las Vegas, $2.25M in the Bay Area and LA, and $18M in New York. Pick a year on each map. The underwriter uses these zone tables for its land-value check.</p>
+    </div>
+    <div class="tabs" data-tabs="maps">
+      <button class="tab is-active" data-map="lv">Las Vegas</button>
+      <button class="tab" data-map="sf">SF Bay Area</button>
+      <button class="tab" data-map="la">Los Angeles</button>
+      <button class="tab" data-map="nyc">New York</button>
+    </div>
+    <iframe class="map-frame" id="mapFrame" src="maps/lv.html" title="Land price heat map" loading="lazy"></iframe>
+    <p class="note">Method: 2026 zone values are calibrated estimates, and earlier years are back-cast with each metro's home-price index. That makes them zone-level approximations, not recorded sales. Moving them onto county recorder transactions is next on the roadmap. New York land prices by buildable square foot, so its per-acre figures are conversions.</p>
+  </div>
+</section>
+
+<!-- ============ MACHINE ============ -->
+<section class="block" id="machine">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">04 · The machine</div>
+      <h2>One loop, three scales</h2>
+      <p>Source below retail, verify, underwrite, transform, distribute, and recycle the proceeds. The stages stay the same from a single 40-acre parcel to a whole valley; only the data feeding them changes.</p>
+    </div>
+    <div class="machine">
+      <div class="stage"><b>Sourcing</b><span>tax rolls, county auctions, absentee owners</span></div>
+      <div class="stage"><b>Verification</b><span>water, access, flood, washes, permits</span></div>
+      <div class="stage"><b>Underwriting</b><span>seller basis, price book, calculators</span></div>
+      <div class="stage hot"><b>Transformation</b><span>well, septic, access, entitlement</span></div>
+      <div class="stage"><b>Distribution</b><span>notes, retail, institutional buyers</span></div>
+    </div>
+    <div class="loop">↺ proceeds recycle into the next acquisition</div>
+    <div class="scales">
+      <div class="scale"><div class="tag">SCALE 1 · PROVEN</div><h3>Single asset</h3><p>One house or parcel taken through sourcing, verification, valuation, negotiation, financing, and close. Plays: seller-financed notes, raw-to-improved flips, curated resale.</p></div>
+      <div class="scale"><div class="tag">SCALE 2</div><h3>Block and corridor</h3><p>Multi-family, commercial, office, and industrial. The same tools aimed at assemblage: ownership mapping across a block, permit velocity as a leading indicator, anchor analysis, and FAR arbitrage.</p></div>
+      <div class="scale"><div class="tag">SCALE 3</div><h3>Region and town</h3><p>100 to 10,000 acres. In the Great Basin a town project is a water project with buildings on it, so basin capacity is computed before land is priced. Overlays: mineral patents, solar adjacency, conservation easements.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYSTEMS ============ -->
+<section class="block" id="systems">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">05 · Systems</div>
+      <h2>Ten systems, each a repeatable decision</h2>
+      <p>The intellectual property is the decision method; the code is just how it currently runs. Each system works at any scale and in any region.</p>
+    </div>
+    <div class="systems">
+      <div class="sys"><div class="n">01</div><h4>Water intelligence</h4><p>Whether land can support its use. Well logs and basin data become a go/no-go screen. Water is the gating resource in the Great Basin.</p><span class="live">live · groundwater check</span></div>
+      <div class="sys"><div class="n">02</div><h4>Value decomposition</h4><p>Land and improvements priced on separate axes, so premiums (view, water, access) show up as measurable residuals instead of one blended $/sqft.</p><span class="live">live · land value check</span></div>
+      <div class="sys"><div class="n">03</div><h4>Improvement underwriting</h4><p>Whether transforming a property beats acquiring an improved one: itemized raw-to-improved cost against the uplift spread.</p><span class="live">live · flip calculator</span></div>
+      <div class="sys"><div class="n">04</div><h4>Market surfaces</h4><p>$/area rendered over space and time at any resolution, so mispricing is visible at a glance.</p><span class="live">live · 4 metros</span></div>
+      <div class="sys"><div class="n">05</div><h4>Counterparty intelligence</h4><p>Seller basis, hold period, and distress read from public records before negotiation opens. These set the whole posture.</p><span class="live">live · offer pricer</span></div>
+      <div class="sys"><div class="n">06</div><h4>Verification doctrine</h4><p>Ten checks that turn concealed defects into kills or priced concessions: flood, access, washes, land status, permits, sqft, disclosure, insurance, water law, and a field walk.</p><span class="live">live · underwriter</span></div>
+      <div class="sys"><div class="n">07</div><h4>Wholesale sourcing</h4><p>Below-retail inventory from tax rolls, auction calendars, and absentee-owner outreach, plus a ledger of dead-end channels so none is chased twice.</p><span class="live soon">internal pipeline</span></div>
+      <div class="sys"><div class="n">08</div><h4>The price book</h4><p>Standing spreads (wholesale to retail, raw to improved, access and water multipliers) used as underwriting constants and re-measured each year.</p><span class="live">live · below</span></div>
+      <div class="sys"><div class="n">09</div><h4>Distribution flywheel</h4><p>An owned audience serves as a zero-acquisition-cost buyer pipeline. Customer acquisition is the largest cost line in land retail.</p><span class="live soon">building</span></div>
+      <div class="sys"><div class="n">10</div><h4>Financing doctrine</h4><p>Seller carry on land, qualification discipline on improved product, and clean credit files. Bank debt is the wrong tool for raw land.</p><span class="live">live · carry calculator</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICE BOOK ============ -->
+<section class="block" id="book">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">06 · Price book</div>
+      <h2>The spreads that make land a business</h2>
+      <p>Calibrated in the field during 2026 against county auction results and live listings. These are underwriting constants, not forecasts.</p>
+    </div>
+    <table class="book">
+      <thead><tr><th>Spread</th><th>Magnitude</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td>Wholesale to retail, raw rural land</td><td class="v">2–2.5×</td><td class="s">County tax-auction clearing prices against live retail listings for the same product. 40-acre rural parcels clear near $250/acre at auction and list at $500–650/acre.</td></tr>
+        <tr><td>Raw to improved (well, septic, access)</td><td class="v">4–5× on cost</td><td class="s">A raw parcel near $600/acre becomes off-grid-ready near $5,000/acre; the improvements are a fraction of the uplift.</td></tr>
+        <tr><td>Landlocked (no legal access)</td><td class="v">−30 to −50%</td><td class="s">A permanent discount. Lenders won't finance the parcel, which shrinks the buyer pool at resale.</td></tr>
+        <tr><td>Existing cased well</td><td class="v">&gt; drilling cost</td><td class="s">It removes the risk of not hitting water, which is the biggest unknown on rural land.</td></tr>
+        <tr><td>Non-standard structure (dome, unusual build)</td><td class="v">−15 to −30%</td><td class="s">A resale discount plus scarce insurance carriers. Online carriers auto-decline these.</td></tr>
+        <tr><td>View premium on trophy product</td><td class="v">up to ⅓ of ask</td><td class="s">It is worth nothing if the view misses the living spaces.</td></tr>
+        <tr><td>Metro pivot, land $/acre</td><td class="v">~$200K · ~$2.25M · ~$18M</td><td class="s">Las Vegas · Bay Area / LA · NYC. The same land sits two to three orders of magnitude apart.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ DATA ============ -->
+<section class="block" id="data">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">07 · Data &amp; coverage</div>
+      <h2>Public sources, queried live</h2>
+      <p>National layers run for any US point. Regional plug-ins add local depth, and a new region is one more data pack in the registry.</p>
+    </div>
+    <div class="sources">
+      <div class="src"><b><a href="https://msc.fema.gov/" target="_blank" rel="noopener">FEMA National Flood Hazard Layer</a></b><span>Flood zone and floodplain status · national</span></div>
+      <div class="src"><b><a href="https://gis.blm.gov/" target="_blank" rel="noopener">BLM Surface Management Agency</a></b><span>Public vs. private land at the point and around it · national</span></div>
+      <div class="src"><b><a href="https://gis.blm.gov/" target="_blank" rel="noopener">BLM PLSS (CadNSDI)</a></b><span>Township, range, section · public-land states</span></div>
+      <div class="src"><b><a href="https://www.usgs.gov/national-hydrography" target="_blank" rel="noopener">USGS National Hydrography Dataset</a></b><span>Streams, washes, ephemeral drainage · national</span></div>
+      <div class="src"><b><a href="https://tigerweb.geo.census.gov/" target="_blank" rel="noopener">Census TIGER roads</a></b><span>Road frontage and access distance · national</span></div>
+      <div class="src"><b><a href="https://www.usgs.gov/3d-elevation-program" target="_blank" rel="noopener">USGS 3D Elevation Program</a></b><span>Elevation · national</span></div>
+      <div class="src"><b><a href="https://water.nv.gov/" target="_blank" rel="noopener">Nevada Division of Water Resources well logs</a></b><span>15,539 wells: depth and static water level · Great Basin pack</span></div>
+      <div class="src"><b><a href="https://mrdata.usgs.gov/mrds/" target="_blank" rel="noopener">USGS Mineral Resources Data System</a></b><span>12,511 mines and prospects with commodities · Great Basin pack</span></div>
+      <div class="src"><b>Esri World Geocoder &amp; Imagery</b><span>Address matching and satellite basemap · national</span></div>
+    </div>
+    <ul class="limits">
+      <li>Parcel ownership, seller basis, and permits are not live yet. County assessor and permit systems vary by jurisdiction and are often not public APIs, so the report links out to them. Per-county adapters are on the roadmap, and building them is part of the moat.</li>
+      <li>The well-log pack covers the Nevada basins downloaded so far, not the whole state.</li>
+      <li>Zillow, Redfin, and homes.com block automated reading of their pages, so listing links are resolved from the address in the URL.</li>
+      <li>A screen is not a survey, title search, or appraisal. Every GO still needs a field walk.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Great Basin Land Company · Land Engine v0.1 · 2026-10-14 · public data, no warranty</div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="regions.js?v=20261014"></script>
+<script src="engine.js?v=20261014"></script>
+<script src="calc.js?v=20261014"></script>
+<script>
+  // tabs: calculators
+  document.querySelectorAll('[data-tabs="calc"] .tab').forEach((t) => t.addEventListener('click', () => {
+    document.querySelectorAll('[data-tabs="calc"] .tab').forEach((x) => x.classList.toggle('is-active', x === t));
+    document.querySelectorAll('#calculators .pane').forEach((p) => p.classList.toggle('is-active', p.id === t.dataset.pane));
+  }));
+  // tabs: maps
+  const setMap = (id) => {
+    document.getElementById('mapFrame').src = `maps/${id}.html`;
+    document.querySelectorAll('[data-tabs="maps"] .tab').forEach((x) => x.classList.toggle('is-active', x.dataset.map === id));
+  };
+  document.querySelectorAll('[data-tabs="maps"] .tab').forEach((t) => t.addEventListener('click', () => setMap(t.dataset.map)));
+  document.addEventListener('click', (e) => { const a = e.target.closest('.jump-map'); if (a) setMap(a.dataset.map); });
+</script>
+</body>
+</html>

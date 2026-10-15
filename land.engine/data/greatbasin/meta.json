@@ -1,0 +1,1 @@
+{"region":"greatbasin","label":"Great Basin (Nevada)","bbox":[-120.1,35.0,-114.0,42.0],"wells":{"count":15539,"source":"Nevada Division of Water Resources well logs","fields":["lat","lon","drill_depth_ft","static_water_ft","basin","year"]},"mines":{"count":12511,"source":"USGS Mineral Resources Data System (MRDS)","fields":["lat","lon","name","commodities","au_oz_t","ag_oz_t"]}}

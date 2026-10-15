@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Las Vegas Land $/Acre - Heat Map 2000-2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif}
+#map{width:100%;height:100vh;background:#0a0f0a}
+.panel{position:absolute;z-index:1000;background:rgba(8,16,10,.95);border:1px solid #2c5;
+  border-radius:10px;color:#cde;font-size:11px;padding:12px 15px}
+.info{top:10px;left:55px;max-width:330px}
+.info h2{font-size:14px;color:#5ee87a;margin-bottom:3px}
+.info .yr{font-size:30px;font-weight:800;color:#fff;line-height:1.1}
+.legend{bottom:15px;right:10px;max-width:190px}
+.legend h3{font-size:11px;color:#fff;margin-bottom:4px}
+.lr{display:flex;align-items:center;margin:2px 0}
+.sw{width:16px;height:11px;border-radius:2px;margin-right:7px;flex-shrink:0}
+.years{top:10px;right:10px;display:flex;flex-wrap:wrap;gap:4px;max-width:230px;justify-content:flex-end}
+.yb{background:rgba(8,16,10,.95);border:1px solid #2c5;color:#9eb;border-radius:6px;
+  padding:5px 9px;font-size:12px;font-weight:700;cursor:pointer}
+.yb:hover{background:#173}
+.yb.on{background:#2bed79;color:#042;border-color:#2bed79}
+.zlabel{background:none!important;border:none!important;box-shadow:none!important;
+  font-weight:700;font-size:10px;white-space:nowrap;color:#dfe;
+  text-shadow:0 0 4px #000,0 0 4px #000,1px 1px 3px #000}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head><body>
+<div id="map"></div>
+<div class="panel info">
+  <h2>Las Vegas Land - Price per Acre</h2>
+  <div class="yr" id="yr">2026</div>
+  <p id="note">Approximate developable-land $/acre by sub-market.
+  2026 = data-anchored estimate. Earlier years scaled by the LV home-price index
+  (land actually swung harder). Click a year, top right.</p>
+</div>
+<div class="panel years" id="years"></div>
+<div class="panel legend">
+  <h3>$ / ACRE - red cheap / grey ~$200K / green $$$</h3>
+  <div class="lr"><div class="sw" style="background:#e01e25"></div>&lt; $30K</div>
+  <div class="lr"><div class="sw" style="background:#ef6f5a"></div>$30K - $75K</div>
+  <div class="lr"><div class="sw" style="background:#f0a98f"></div>$75K - $150K</div>
+  <div class="lr"><div class="sw" style="background:#9aa0a4"></div>$150K - $250K  (~$200K pivot)</div>
+  <div class="lr"><div class="sw" style="background:#7ed98f"></div>$250K - $500K</div>
+  <div class="lr"><div class="sw" style="background:#38b85a"></div>$500K - $1M</div>
+  <div class="lr"><div class="sw" style="background:#12e06a"></div>&gt; $1M</div>
+</div>
+<script>
+const DATA = {"2000":[{"name":"Las Vegas Strip corridor","lat":36.108,"lon":-115.173,"ppa":606100.0},{"name":"Downtown / Arts District","lat":36.166,"lon":-115.145,"ppa":248000.0},{"name":"Summerlin","lat":36.165,"lon":-115.33,"ppa":234200.0},{"name":"Henderson / Green Valley","lat":36.022,"lon":-115.06,"ppa":192900.0},{"name":"Spring Valley / Enterprise","lat":36.03,"lon":-115.262,"ppa":170800.0},{"name":"Lake Las Vegas / E Henderson","lat":36.11,"lon":-114.94,"ppa":137800.0},{"name":"SW / Mountain's Edge","lat":36.0,"lon":-115.3,"ppa":132200.0},{"name":"Inspirada / W Henderson","lat":35.975,"lon":-115.11,"ppa":129500.0},{"name":"Mt Charleston (Kyle Cyn)","lat":36.26,"lon":-115.64,"ppa":110200.0},{"name":"Centennial Hills / NW","lat":36.29,"lon":-115.3,"ppa":99200.0},{"name":"Blue Diamond / Red Rock","lat":36.042,"lon":-115.41,"ppa":90900.0},{"name":"North Las Vegas (core)","lat":36.25,"lon":-115.13,"ppa":71600.0},{"name":"SR-160 / Mountain Springs","lat":35.99,"lon":-115.55,"ppa":41300.0},{"name":"Boulder City","lat":35.978,"lon":-114.832,"ppa":33100.0},{"name":"Apex / far North LV","lat":36.42,"lon":-114.96,"ppa":30300.0},{"name":"Sloan / far South","lat":35.94,"lon":-115.18,"ppa":26200.0},{"name":"Indian Springs","lat":36.57,"lon":-115.67,"ppa":7700.0},{"name":"Pahrump","lat":36.208,"lon":-115.984,"ppa":5000.0}],"2005":[{"name":"Las Vegas Strip corridor","lat":36.108,"lon":-115.173,"ppa":1302000.0},{"name":"Downtown / Arts District","lat":36.166,"lon":-115.145,"ppa":532700.0},{"name":"Summerlin","lat":36.165,"lon":-115.33,"ppa":503100.0},{"name":"Henderson / Green Valley","lat":36.022,"lon":-115.06,"ppa":414300.0},{"name":"Spring Valley / Enterprise","lat":36.03,"lon":-115.262,"ppa":366900.0},{"name":"Lake Las Vegas / E Henderson","lat":36.11,"lon":-114.94,"ppa":295900.0},{"name":"SW / Mountain's Edge","lat":36.0,"lon":-115.3,"ppa":284100.0},{"name":"Inspirada / W Henderson","lat":35.975,"lon":-115.11,"ppa":278200.0},{"name":"Mt Charleston (Kyle Cyn)","lat":36.26,"lon":-115.64,"ppa":236700.0},{"name":"Centennial Hills / NW","lat":36.29,"lon":-115.3,"ppa":213100.0},{"name":"Blue Diamond / Red Rock","lat":36.042,"lon":-115.41,"ppa":195300.0},{"name":"North Las Vegas (core)","lat":36.25,"lon":-115.13,"ppa":153900.0},{"name":"SR-160 / Mountain Springs","lat":35.99,"lon":-115.55,"ppa":88800.0},{"name":"Boulder City","lat":35.978,"lon":-114.832,"ppa":71000.0},{"name":"Apex / far North LV","lat":36.42,"lon":-114.96,"ppa":65100.0},{"name":"Sloan / far South","lat":35.94,"lon":-115.18,"ppa":56200.0},{"name":"Indian Springs","lat":36.57,"lon":-115.67,"ppa":16600.0},{"name":"Pahrump","lat":36.208,"lon":-115.984,"ppa":10700.0}],"2010":[{"name":"Las Vegas Strip corridor","lat":36.108,"lon":-115.173,"ppa":628600.0},{"name":"Downtown / Arts District","lat":36.166,"lon":-115.145,"ppa":257100.0},{"name":"Summerlin","lat":36.165,"lon":-115.33,"ppa":242900.0},{"name":"Henderson / Green Valley","lat":36.022,"lon":-115.06,"ppa":200000.0},{"name":"Spring Valley / Enterprise","lat":36.03,"lon":-115.262,"ppa":177100.0},{"name":"Lake Las Vegas / E Henderson","lat":36.11,"lon":-114.94,"ppa":142900.0},{"name":"SW / Mountain's Edge","lat":36.0,"lon":-115.3,"ppa":137100.0},{"name":"Inspirada / W Henderson","lat":35.975,"lon":-115.11,"ppa":134300.0},{"name":"Mt Charleston (Kyle Cyn)","lat":36.26,"lon":-115.64,"ppa":114300.0},{"name":"Centennial Hills / NW","lat":36.29,"lon":-115.3,"ppa":102900.0},{"name":"Blue Diamond / Red Rock","lat":36.042,"lon":-115.41,"ppa":94300.0},{"name":"North Las Vegas (core)","lat":36.25,"lon":-115.13,"ppa":74300.0},{"name":"SR-160 / Mountain Springs","lat":35.99,"lon":-115.55,"ppa":42900.0},{"name":"Boulder City","lat":35.978,"lon":-114.832,"ppa":34300.0},{"name":"Apex / far North LV","lat":36.42,"lon":-114.96,"ppa":31400.0},{"name":"Sloan / far South","lat":35.94,"lon":-115.18,"ppa":27100.0},{"name":"Indian Springs","lat":36.57,"lon":-115.67,"ppa":8000.0},{"name":"Pahrump","lat":36.208,"lon":-115.984,"ppa":5100.0}],"2015":[{"name":"Las Vegas Strip corridor","lat":36.108,"lon":-115.173,"ppa":987800.0},{"name":"Downtown / Arts District","lat":36.166,"lon":-115.145,"ppa":404100.0},{"name":"Summerlin","lat":36.165,"lon":-115.33,"ppa":381600.0},{"name":"Henderson / Green Valley","lat":36.022,"lon":-115.06,"ppa":314300.0},{"name":"Spring Valley / Enterprise","lat":36.03,"lon":-115.262,"ppa":278400.0},{"name":"Lake Las Vegas / E Henderson","lat":36.11,"lon":-114.94,"ppa":224500.0},{"name":"SW / Mountain's Edge","lat":36.0,"lon":-115.3,"ppa":215500.0},{"name":"Inspirada / W Henderson","lat":35.975,"lon":-115.11,"ppa":211000.0},{"name":"Mt Charleston (Kyle Cyn)","lat":36.26,"lon":-115.64,"ppa":179600.0},{"name":"Centennial Hills / NW","lat":36.29,"lon":-115.3,"ppa":161600.0},{"name":"Blue Diamond / Red Rock","lat":36.042,"lon":-115.41,"ppa":148200.0},{"name":"North Las Vegas (core)","lat":36.25,"lon":-115.13,"ppa":116700.0},{"name":"SR-160 / Mountain Springs","lat":35.99,"lon":-115.55,"ppa":67300.0},{"name":"Boulder City","lat":35.978,"lon":-114.832,"ppa":53900.0},{"name":"Apex / far North LV","lat":36.42,"lon":-114.96,"ppa":49400.0},{"name":"Sloan / far South","lat":35.94,"lon":-115.18,"ppa":42700.0},{"name":"Indian Springs","lat":36.57,"lon":-115.67,"ppa":12600.0},{"name":"Pahrump","lat":36.208,"lon":-115.984,"ppa":8100.0}],"2020":[{"name":"Las Vegas Strip corridor","lat":36.108,"lon":-115.173,"ppa":1481600.0},{"name":"Downtown / Arts District","lat":36.166,"lon":-115.145,"ppa":606100.0},{"name":"Summerlin","lat":36.165,"lon":-115.33,"ppa":572400.0},{"name":"Henderson / Green Valley","lat":36.022,"lon":-115.06,"ppa":471400.0},{"name":"Spring Valley / Enterprise","lat":36.03,"lon":-115.262,"ppa":417600.0},{"name":"Lake Las Vegas / E Henderson","lat":36.11,"lon":-114.94,"ppa":336700.0},{"name":"SW / Mountain's Edge","lat":36.0,"lon":-115.3,"ppa":323300.0},{"name":"Inspirada / W Henderson","lat":35.975,"lon":-115.11,"ppa":316500.0},{"name":"Mt Charleston (Kyle Cyn)","lat":36.26,"lon":-115.64,"ppa":269400.0},{"name":"Centennial Hills / NW","lat":36.29,"lon":-115.3,"ppa":242400.0},{"name":"Blue Diamond / Red Rock","lat":36.042,"lon":-115.41,"ppa":222200.0},{"name":"North Las Vegas (core)","lat":36.25,"lon":-115.13,"ppa":175100.0},{"name":"SR-160 / Mountain Springs","lat":35.99,"lon":-115.55,"ppa":101000.0},{"name":"Boulder City","lat":35.978,"lon":-114.832,"ppa":80800.0},{"name":"Apex / far North LV","lat":36.42,"lon":-114.96,"ppa":74100.0},{"name":"Sloan / far South","lat":35.94,"lon":-115.18,"ppa":64000.0},{"name":"Indian Springs","lat":36.57,"lon":-115.67,"ppa":18900.0},{"name":"Pahrump","lat":36.208,"lon":-115.984,"ppa":12100.0}],"2025":[{"name":"Las Vegas Strip corridor","lat":36.108,"lon":-115.173,"ppa":2155100.0},{"name":"Downtown / Arts District","lat":36.166,"lon":-115.145,"ppa":881600.0},{"name":"Summerlin","lat":36.165,"lon":-115.33,"ppa":832700.0},{"name":"Henderson / Green Valley","lat":36.022,"lon":-115.06,"ppa":685700.0},{"name":"Spring Valley / Enterprise","lat":36.03,"lon":-115.262,"ppa":607300.0},{"name":"Lake Las Vegas / E Henderson","lat":36.11,"lon":-114.94,"ppa":489800.0},{"name":"SW / Mountain's Edge","lat":36.0,"lon":-115.3,"ppa":470200.0},{"name":"Inspirada / W Henderson","lat":35.975,"lon":-115.11,"ppa":460400.0},{"name":"Mt Charleston (Kyle Cyn)","lat":36.26,"lon":-115.64,"ppa":391800.0},{"name":"Centennial Hills / NW","lat":36.29,"lon":-115.3,"ppa":352700.0},{"name":"Blue Diamond / Red Rock","lat":36.042,"lon":-115.41,"ppa":323300.0},{"name":"North Las Vegas (core)","lat":36.25,"lon":-115.13,"ppa":254700.0},{"name":"SR-160 / Mountain Springs","lat":35.99,"lon":-115.55,"ppa":146900.0},{"name":"Boulder City","lat":35.978,"lon":-114.832,"ppa":117600.0},{"name":"Apex / far North LV","lat":36.42,"lon":-114.96,"ppa":107800.0},{"name":"Sloan / far South","lat":35.94,"lon":-115.18,"ppa":93100.0},{"name":"Indian Springs","lat":36.57,"lon":-115.67,"ppa":27400.0},{"name":"Pahrump","lat":36.208,"lon":-115.984,"ppa":17600.0}],"2026":[{"name":"Las Vegas Strip corridor","lat":36.108,"lon":-115.173,"ppa":2200000.0},{"name":"Downtown / Arts District","lat":36.166,"lon":-115.145,"ppa":900000.0},{"name":"Summerlin","lat":36.165,"lon":-115.33,"ppa":850000.0},{"name":"Henderson / Green Valley","lat":36.022,"lon":-115.06,"ppa":700000.0},{"name":"Spring Valley / Enterprise","lat":36.03,"lon":-115.262,"ppa":620000.0},{"name":"Lake Las Vegas / E Henderson","lat":36.11,"lon":-114.94,"ppa":500000.0},{"name":"SW / Mountain's Edge","lat":36.0,"lon":-115.3,"ppa":480000.0},{"name":"Inspirada / W Henderson","lat":35.975,"lon":-115.11,"ppa":470000.0},{"name":"Mt Charleston (Kyle Cyn)","lat":36.26,"lon":-115.64,"ppa":400000.0},{"name":"Centennial Hills / NW","lat":36.29,"lon":-115.3,"ppa":360000.0},{"name":"Blue Diamond / Red Rock","lat":36.042,"lon":-115.41,"ppa":330000.0},{"name":"North Las Vegas (core)","lat":36.25,"lon":-115.13,"ppa":260000.0},{"name":"SR-160 / Mountain Springs","lat":35.99,"lon":-115.55,"ppa":150000.0},{"name":"Boulder City","lat":35.978,"lon":-114.832,"ppa":120000.0},{"name":"Apex / far North LV","lat":36.42,"lon":-114.96,"ppa":110000.0},{"name":"Sloan / far South","lat":35.94,"lon":-115.18,"ppa":95000.0},{"name":"Indian Springs","lat":36.57,"lon":-115.67,"ppa":28000.0},{"name":"Pahrump","lat":36.208,"lon":-115.984,"ppa":18000.0}]};
+const YEARS = [2000, 2005, 2010, 2015, 2020, 2025, 2026];
+const map = L.map('map',{center:[36.13,-115.25],zoom:10,preferCanvas:true});
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+  {attribution:'Basemap © Esri',maxZoom:16}).addTo(map);
+
+function col(v){
+  if(v<30000)   return '#e01e25';   // deep red - cheapest
+  if(v<75000)   return '#ef6f5a';   // red-orange
+  if(v<150000)  return '#f0a98f';   // salmon
+  if(v<250000)  return '#9aa0a4';   // grey - pivot, ~$200K
+  if(v<500000)  return '#7ed98f';   // light green
+  if(v<1000000) return '#38b85a';   // green
+  return '#12e06a';                 // bright green - $$$
+}
+const money=v=> v>=1e6 ? '$'+(v/1e6).toFixed(2)+'M' : '$'+Math.round(v/1000)+'K';
+let layer=L.layerGroup().addTo(map);
+
+function render(yr){
+  layer.clearLayers();
+  document.getElementById('yr').textContent=yr;
+  DATA[yr].forEach(z=>{
+    const c=col(z.ppa);
+    L.circle([z.lat,z.lon],{radius:5200,fillColor:c,fillOpacity:.55,
+      color:c,weight:1,opacity:.9}).addTo(layer)
+      .bindPopup('<b>'+z.name+'</b><br>'+yr+' approx land value:<br>'
+        +'<b style="font-size:14px">'+money(z.ppa)+' / acre</b>');
+    L.marker([z.lat,z.lon],{icon:L.divIcon({className:'zlabel',
+      html:z.name+'<br>'+money(z.ppa),iconAnchor:[-9,8]})}).addTo(layer);
+  });
+  document.querySelectorAll('.yb').forEach(b=>
+    b.classList.toggle('on', b.dataset.y==yr));
+}
+const yc=document.getElementById('years');
+YEARS.forEach(y=>{
+  const b=document.createElement('div'); b.className='yb'; b.textContent=y; b.dataset.y=y;
+  b.onclick=()=>render(''+y); yc.appendChild(b);
+});
+render('2026');
+</script>
+</body></html>
