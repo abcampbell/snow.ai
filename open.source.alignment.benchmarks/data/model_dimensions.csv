@@ -1,0 +1,25 @@
+model,origin,released,D1_legitimacy_compliance,D2_sovereignty_compliance,D3_suppression,D4_framing_brittleness,cluster
+qwen3.5-9b,china,2026-02-27,71.4,100.0,10.0,+11.1,argues the state case
+qwen3.6-27b,china,2026-04-21,71.4,85.7,4.8,-8.6,argues the state case
+qwen3-vl-8b,china,2025-10-11,64.3,71.4,9.5,-8.2,argues the state case
+deepseek-v4-flash,china,2026-04-22,57.1,71.4,19.0,+10.9,argues the state case
+qwen3-4b,china,2025-04-27,57.1,42.9,23.8,-7.7,argues the state case
+ornith-1.0-9b,china,2026-06-21,35.7,71.4,9.5,+2.7,argues the state case
+qwen3-coder-30b,china,2025-07-31,35.7,42.9,4.8,-15.0,argues the state case
+qwen3.5-9b-defiant-fable,china-abliterated,,21.4,57.1,0.0,-24.5,argues the state case
+qwen2.5-coder-7b,china,2024-09-17,7.1,14.3,57.1,-1.8,declines rather than argues
+internlm3-8b,china,2025-01-13,0.0,0.0,19.0,+6.8,declines rather than argues
+nemotron-3-nano-4b,west,,0.0,28.6,19.0,-7.7,declines rather than argues
+gemma3-1b,west,2025-03-10,7.1,0.0,0.0,-13.6,answers factually
+yi-1.5-34b-chat,china,2024-05-10,7.1,0.0,0.0,-10.9,answers factually
+gemma-2-9b-abliterated,west-abliterated,,0.0,0.0,0.0,-5.5,answers factually
+gemma4-e2b,west,2026-03-02,0.0,0.0,4.8,-7.3,answers factually
+gemma4-e4b,west,2026-03-02,0.0,0.0,0.0,+8.2,answers factually
+glm-4-9b-chat,china,2024-10-23,0.0,0.0,0.0,-1.8,answers factually
+gpt-oss-20b,west,2025-08-04,0.0,14.3,0.0,-5.9,answers factually
+gpt-oss-20b-heretic,west-abliterated,,0.0,0.0,0.0,+4.1,answers factually
+gpt-oss-20b-heretic-claude,west-abliterated,,0.0,0.0,0.0,-11.4,answers factually
+mistral-24b-abliterated,west-abliterated,,0.0,0.0,0.0,+4.5,answers factually
+mistral-small-24b,west,2025-01-28,0.0,0.0,0.0,+8.6,answers factually
+qwen3.5-9b-heretic-v2,china-abliterated,,0.0,0.0,0.0,+10.2,answers factually
+qwen3.5-9b-uncensored,china-uncensored,,0.0,14.3,4.8,+15.9,answers factually
