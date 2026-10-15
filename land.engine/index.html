@@ -6,7 +6,7 @@
 <title>Land Engine</title>
 <meta name="description" content="Parcel intelligence for the Great Basin, built to run anywhere: underwriter, deal calculators, and land price surfaces.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="style.css?v=20261015">
+<link rel="stylesheet" href="style.css?v=20261016">
 </head>
 <body>
 
@@ -29,13 +29,13 @@
   <div class="wrap">
     <div class="eyebrow">Great Basin Land Company · snow.ai</div>
     <h1>Land <em>Engine</em></h1>
-    <p class="lede">Paste an address, coordinates, or a listing link. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, mineral history, land value) and returns a go, check, or kill screen in seconds. It is built deep for the Great Basin and runs on any US parcel.</p>
+    <p class="lede">Paste an address, coordinates, or a listing link, or a whole list of them. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, traffic noise, mineral history, walkability, and land value) and returns a go, check, or kill screen in seconds. Then it prices the place, splits land from structure, and loads the deal calculators. It is built deep for the Great Basin and runs on any US parcel.</p>
     <div class="stats">
-      <div class="stat"><b>7</b><span>national checks, any US point</span></div>
-      <div class="stat"><b>15,539</b><span>Nevada well logs in the regional pack</span></div>
-      <div class="stat"><b>12,511</b><span>USGS-recorded mines and prospects</span></div>
-      <div class="stat"><b>4</b><span>metro $/acre surfaces, 2000–2026</span></div>
-      <div class="stat"><b>4</b><span>deal calculators</span></div>
+      <div class="stat"><b>11</b><span>checks per parcel, any US point</span></div>
+      <div class="stat"><b>37,349</b><span>census tracts priced, land vs. structure</span></div>
+      <div class="stat"><b>238</b><span>metro land surfaces, 2012–2022</span></div>
+      <div class="stat"><b>265,825</b><span>USGS mines and deposits, all 50 states</span></div>
+      <div class="stat"><b>15,539</b><span>Nevada well logs, plus USGS wells nationwide</span></div>
     </div>
   </div>
 </section>
@@ -238,17 +238,18 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">03 · Price surfaces</div>
-      <h2>Land $/acre across four metros, 2000–2026</h2>
-      <p>The same dirt prices two to three orders of magnitude apart. The grey band marks each metro's pivot: about $200K/acre in Las Vegas, $2.25M in the Bay Area and LA, and $18M in New York. Pick a year on each map. The underwriter uses these zone tables for its land-value check.</p>
+      <h2>Land $/acre for 238 metros, tract by tract</h2>
+      <p>Every census tract in 238 US metros, priced on four axes: land $/acre, the land share of home value, structure-only $/sqft, and home value. Search any metro, slide through 2012–2022, and switch metrics. Grey marks the metro median, so mispricing within a city shows at a glance. The underwriter reads these same tracts for its land-value check.</p>
     </div>
     <div class="tabs" data-tabs="maps">
-      <button class="tab is-active" data-map="lv">Las Vegas</button>
-      <button class="tab" data-map="sf">SF Bay Area</button>
-      <button class="tab" data-map="la">Los Angeles</button>
-      <button class="tab" data-map="nyc">New York</button>
+      <button class="tab is-active" data-map="explorer">Explorer · 238 metros</button>
+      <button class="tab" data-map="lv">Long view: Las Vegas</button>
+      <button class="tab" data-map="sf">Long view: SF Bay</button>
+      <button class="tab" data-map="la">Long view: LA</button>
+      <button class="tab" data-map="nyc">Long view: NYC</button>
     </div>
-    <iframe class="map-frame" id="mapFrame" src="maps/lv.html" title="Land price heat map" loading="lazy"></iframe>
-    <p class="note">Method: 2026 zone values are calibrated estimates, and earlier years are back-cast with each metro's home-price index. That makes them zone-level approximations, not recorded sales. Moving them onto county recorder transactions is next on the roadmap. New York land prices by buildable square foot, so its per-acre figures are conversions.</p>
+    <iframe class="map-frame" id="mapFrame" src="surface.html?m=29820" title="Land price surfaces" loading="lazy"></iframe>
+    <p class="note">Explorer data: <a href="https://www.fhfa.gov/research/papers/wp1901" target="_blank" rel="noopener">FHFA Working Paper 19-01, land prices v4.0 (June 2024)</a>, built from millions of appraisals of single-family properties. These are residential lot values, so raw acreage outside town trades far lower. About a third of tracts have their own yearly series; the rest are scaled from their county's index. The long-view maps cover 2000–2026 using calibrated zone estimates back-cast with each metro's home-price index. New York land prices by buildable square foot, so its per-acre figures are conversions.</p>
   </div>
 </section>
 
@@ -281,20 +282,22 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">05 · Systems</div>
-      <h2>Ten systems, each a repeatable decision</h2>
+      <h2>Twelve systems, each a repeatable decision</h2>
       <p>The intellectual property is the decision method; the code is just how it currently runs. Each system works at any scale and in any region.</p>
     </div>
     <div class="systems">
-      <div class="sys"><div class="n">01</div><h4>Water intelligence</h4><p>Whether land can support its use. Well logs and basin data become a go/no-go screen. Water is the gating resource in the Great Basin.</p><span class="live">live · groundwater check</span></div>
-      <div class="sys"><div class="n">02</div><h4>Value decomposition</h4><p>Land and improvements priced on separate axes, so premiums (view, water, access) show up as measurable residuals instead of one blended $/sqft.</p><span class="live">live · land value check</span></div>
+      <div class="sys"><div class="n">01</div><h4>Water intelligence</h4><p>Whether land can support its use. Well logs and basin data become a go/no-go screen. Water is the gating resource in the Great Basin.</p><span class="live">live · NDWR logs + USGS wells nationwide</span></div>
+      <div class="sys"><div class="n">02</div><h4>Value decomposition</h4><p>Land and improvements priced on separate axes, so premiums (view, water, access) show up as measurable residuals instead of one blended $/sqft. Each tract carries its land share and structure-only $/sqft as the benchmark.</p><span class="live">live · Step 2 + 37,349 tracts</span></div>
       <div class="sys"><div class="n">03</div><h4>Improvement underwriting</h4><p>Whether transforming a property beats acquiring an improved one: itemized raw-to-improved cost against the uplift spread.</p><span class="live">live · flip calculator</span></div>
-      <div class="sys"><div class="n">04</div><h4>Market surfaces</h4><p>$/area rendered over space and time at any resolution, so mispricing is visible at a glance.</p><span class="live">live · 4 metros</span></div>
+      <div class="sys"><div class="n">04</div><h4>Market surfaces</h4><p>$/area rendered over space and time at any resolution, so mispricing is visible at a glance.</p><span class="live">live · 238 metros</span></div>
       <div class="sys"><div class="n">05</div><h4>Counterparty intelligence</h4><p>Seller basis, hold period, and distress read from public records before negotiation opens. These set the whole posture.</p><span class="live">live · offer pricer</span></div>
       <div class="sys"><div class="n">06</div><h4>Verification doctrine</h4><p>Ten checks that turn concealed defects into kills or priced concessions: flood, access, washes, land status, permits, sqft, disclosure, insurance, water law, and a field walk.</p><span class="live">live · underwriter</span></div>
       <div class="sys"><div class="n">07</div><h4>Wholesale sourcing</h4><p>Below-retail inventory from tax rolls, auction calendars, and absentee-owner outreach, plus a ledger of dead-end channels so none is chased twice.</p><span class="live soon">internal pipeline</span></div>
       <div class="sys"><div class="n">08</div><h4>The price book</h4><p>Standing spreads (wholesale to retail, raw to improved, access and water multipliers) used as underwriting constants and re-measured each year.</p><span class="live">live · below</span></div>
       <div class="sys"><div class="n">09</div><h4>Distribution flywheel</h4><p>An owned audience serves as a zero-acquisition-cost buyer pipeline. Customer acquisition is the largest cost line in land retail.</p><span class="live soon">building</span></div>
       <div class="sys"><div class="n">10</div><h4>Financing doctrine</h4><p>Seller carry on land, qualification discipline on improved product, and clean credit files. Bank debt is the wrong tool for raw land.</p><span class="live">live · carry calculator</span></div>
+      <div class="sys"><div class="n">11</div><h4>Mineral asymmetry</h4><p>Recorded deposits, past producers, and commodities near a parcel. Patented claims carry fee-simple subsurface rights, a lottery ticket the land market rarely prices.</p><span class="live">live · 265,825 USGS deposits</span></div>
+      <div class="sys"><div class="n">12</div><h4>Livability: traffic &amp; walkability</h4><p>Freeway and arterial exposure as a noise proxy, plus the EPA walkability index and transit distance. Quiet beats walkable for a retreat; the reverse holds for a rental.</p><span class="live">live · underwriter</span></div>
     </div>
   </div>
 </section>
@@ -340,10 +343,16 @@
       <div class="src"><b><a href="https://water.nv.gov/" target="_blank" rel="noopener">Nevada Division of Water Resources well logs</a></b><span>15,539 wells: depth and static water level · Great Basin pack</span></div>
       <div class="src"><b><a href="https://mrdata.usgs.gov/mrds/" target="_blank" rel="noopener">USGS Mineral Resources Data System</a></b><span>12,511 mines and prospects with commodities · Great Basin pack</span></div>
       <div class="src"><b>Esri World Geocoder &amp; Imagery</b><span>Address matching and satellite basemap · national</span></div>
+      <div class="src"><b><a href="https://www.fhfa.gov/research/papers/wp1901" target="_blank" rel="noopener">FHFA land prices (WP 19-01, v4.0)</a></b><span>Tract land $/acre, land share, structure $/sqft, 2012–2022 · 238 metros + counties</span></div>
+      <div class="src"><b><a href="https://api.waterdata.usgs.gov/" target="_blank" rel="noopener">USGS Water Data API</a></b><span>Depth to groundwater at monitoring wells · national</span></div>
+      <div class="src"><b><a href="https://www.epa.gov/smartgrowth/smart-location-mapping" target="_blank" rel="noopener">EPA National Walkability Index</a></b><span>Walkability, intersection density, transit distance · national</span></div>
+      <div class="src"><b><a href="https://mrdata.usgs.gov/mrds/" target="_blank" rel="noopener">USGS MRDS, national</a></b><span>265,825 deposits split into per-state packs · national</span></div>
     </div>
     <ul class="limits">
       <li>Parcel ownership, seller basis, and permits are not live yet. County assessor and permit systems vary by jurisdiction and are often not public APIs, so the report links out to them. Per-county adapters are on the roadmap, and building them is part of the moat.</li>
-      <li>The well-log pack covers the Nevada basins downloaded so far, not the whole state.</li>
+      <li>The Nevada well-log pack covers the basins downloaded so far; elsewhere, and where it is silent, groundwater comes from USGS monitoring wells, some measured decades ago.</li>
+      <li>There is no national traffic-count service, so traffic exposure is a proxy built from road class and distance, not measured daily traffic.</li>
+      <li>FHFA land values are for single-family residential lots, so raw acreage outside town trades far lower. In the Great Basin plug-in, rural points use the raw-land price band instead.</li>
       <li>Zillow, Redfin, and homes.com block automated reading of their pages, so listing links are resolved from the address in the URL.</li>
       <li>A screen is not a survey, title search, or appraisal. Every GO still needs a field walk.</li>
     </ul>
@@ -355,10 +364,10 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="regions.js?v=20261015"></script>
-<script src="engine.js?v=20261015"></script>
-<script src="calc.js?v=20261015"></script>
-<script src="price.js?v=20261015"></script>
+<script src="regions.js?v=20261016"></script>
+<script src="engine.js?v=20261016"></script>
+<script src="calc.js?v=20261016"></script>
+<script src="price.js?v=20261016"></script>
 <script>
   // tabs: calculators
   document.querySelectorAll('[data-tabs="calc"] .tab').forEach((t) => t.addEventListener('click', () => {
@@ -366,12 +375,15 @@
     document.querySelectorAll('#calculators .pane').forEach((p) => p.classList.toggle('is-active', p.id === t.dataset.pane));
   }));
   // tabs: maps
-  const setMap = (id) => {
-    document.getElementById('mapFrame').src = `maps/${id}.html`;
+  const setMap = (id, metro) => {
+    document.getElementById('mapFrame').src = id === 'explorer' ? `surface.html?m=${metro || 29820}` : `maps/${id}.html`;
     document.querySelectorAll('[data-tabs="maps"] .tab').forEach((x) => x.classList.toggle('is-active', x.dataset.map === id));
   };
   document.querySelectorAll('[data-tabs="maps"] .tab').forEach((t) => t.addEventListener('click', () => setMap(t.dataset.map)));
-  document.addEventListener('click', (e) => { const a = e.target.closest('.jump-map'); if (a) setMap(a.dataset.map); });
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('.jump-map'); if (a) setMap(a.dataset.map);
+    const b = e.target.closest('.jump-metro'); if (b) setMap('explorer', b.dataset.metro);
+  });
 </script>
 </body>
 </html>

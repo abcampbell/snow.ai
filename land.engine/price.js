@@ -22,7 +22,7 @@
   function landRate() {
     const m = ctx?.results?.market;
     if (!m || m.num == null) return null;
-    return { ppa: m.num, label: m.surface ? `${m.surface.label} zone estimate` : "regional band midpoint" };
+    return { ppa: m.num, label: m.surface?.fhfa ? `FHFA tract, ${m.surface.label}` : m.surface ? `${m.surface.label} zone estimate` : /\(cty\)/.test(m.cell || "") ? "FHFA county residential" : "regional band midpoint" };
   }
 
   function derive() {
@@ -33,12 +33,15 @@
     const landBySurface = rate && acres ? rate.ppa * acres : null;
     const landShareAssessor = assessor && assessor.value ? assessor.land / assessor.value : null;
     const landByAssessor = landShareAssessor != null && value ? value * landShareAssessor : null;
-    const land = landByAssessor ?? landBySurface;
+    const tractShare = ctx.results?.market?.share;
+    const landByTract = landByAssessor == null && tractShare != null && value && sqft ? value * tractShare : null;
+    const land = landByAssessor ?? landByTract ?? landBySurface;
+    const landLabel = landByAssessor != null ? "Land (assessor split)" : landByTract != null ? "Land (FHFA tract share)" : "Land (acres × $/ac)";
     const structure = value != null && land != null && sqft ? value - land : null;
     const k = [];
     if (value) k.push(["Value", usd(value), "accent"]);
     if (value && sqft) k.push(["Blended $/sqft", usd(value / sqft)]);
-    if (land != null && sqft) k.push([landByAssessor != null ? "Land (assessor split)" : "Land (acres × $/ac)", `${usd(land)}${value ? ` · ${fmt((land / value) * 100)}%` : ""}`]);
+    if (land != null && sqft) k.push([landLabel, `${usd(land)}${value ? ` · ${fmt((land / value) * 100)}%` : ""}`]);
     if (structure != null) k.push(["Structure-only $/sqft", structure > 0 ? usd(structure / sqft) : "land ≥ value", structure > 0 ? "" : "bad"]);
     if (value && acres) k.push(["Price per acre", usd(value / acres)]);
     if (rate && value && acres && !sqft) {
@@ -48,6 +51,8 @@
     if (last && value) k.push(["Seller cushion", `${usd(value - last)}${yearsHeld != null ? ` · ${fmt(yearsHeld, 1)} yrs held` : ""}`, yearsHeld != null && yearsHeld < 2 ? "good" : ""]);
     const notes = [];
     if (rate) notes.push(`Land rate: ~${usd(rate.ppa)}/acre (${rate.label}).`);
+    const tractPsf = ctx.results?.market?.spsf;
+    if (tractPsf && structure != null && structure > 0 && sqft) notes.push(`Tract benchmark: structures here price at ~${usd(tractPsf)}/sqft, so this one is ${(structure / sqft / tractPsf).toFixed(2)}× the neighborhood.`);
     if (assessor) notes.push(`County assessor ${assessor.year}: land ${usd(assessor.land)}, improvements ${usd(assessor.improvements)}. The assessor's land share is the primary decomposition; acres × $/acre is the cross-check.`);
     if (!sqft && value && acres) notes.push(`Vacant land: the note-machine basis assumes wholesale acquisition near 1/${WHOLESALE_SPREAD} of this retail value.`);
     $("psDerived").innerHTML = (k.length ? `<div class="kpis">${k.map(([a, b, c]) => `<div class="kpi ${c || ""}"><span>${a}</span><b>${b}</b></div>`).join("")}</div>` : "") +

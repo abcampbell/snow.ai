@@ -11,6 +11,10 @@
     nhd: "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query",
     roads: "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer/8/query",
     majorRoads: "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer/3/query",
+    primaryRoads: "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer/2/query",
+    secondaryRoads: "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer/6/query",
+    walk: "https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0/query",
+    gw: "https://api.waterdata.usgs.gov/ogcapi/v0/collections/field-measurements/items",
     smaTiles: "https://gis.blm.gov/arcgis/rest/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/tile/{z}/{y}/{x}",
     imagery: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
   };
@@ -21,6 +25,15 @@
   const isPublic = (code) => !!code && !NOT_PUBLIC.has(String(code).toUpperCase());
   const NHD_KIND = { 46003: "intermittent stream", 46006: "perennial stream", 46007: "ephemeral wash", 33600: "canal/ditch", 33601: "aqueduct", 46000: "stream", 55800: "artificial path", 42800: "pipeline", 42801: "pipeline", 42802: "pipeline" };
   const CHECK_CAP_MS = 80000;
+  const STATE_ABBR = { Alabama: "AL", Alaska: "AK", Arizona: "AZ", Arkansas: "AR", California: "CA", Colorado: "CO", Connecticut: "CT", Delaware: "DE",
+    "District of Columbia": "DC", Florida: "FL", Georgia: "GA", Hawaii: "HI", Idaho: "ID", Illinois: "IL", Indiana: "IN", Iowa: "IA", Kansas: "KS",
+    Kentucky: "KY", Louisiana: "LA", Maine: "ME", Maryland: "MD", Massachusetts: "MA", Michigan: "MI", Minnesota: "MN", Mississippi: "MS",
+    Missouri: "MO", Montana: "MT", Nebraska: "NE", Nevada: "NV", "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+    "North Carolina": "NC", "North Dakota": "ND", Ohio: "OH", Oklahoma: "OK", Oregon: "OR", Pennsylvania: "PA", "Rhode Island": "RI",
+    "South Carolina": "SC", "South Dakota": "SD", Tennessee: "TN", Texas: "TX", Utah: "UT", Vermont: "VT", Virginia: "VA", Washington: "WA",
+    "West Virginia": "WV", Wisconsin: "WI", Wyoming: "WY" };
+  const stateOf = (p) => (p.state && p.state.length === 2 ? p.state.toUpperCase() : STATE_ABBR[p.state]) || null;
+  const MRDS_STAT = { P: "producer", PP: "past producer", PR: "prospect", O: "occurrence", PL: "plant", U: "unknown" };
 
   const packCache = {};
   const $ = (id) => document.getElementById(id);
@@ -219,6 +232,56 @@
     const detail = l.d <= 60 ? "Fronts a mapped road." : l.d <= 400 ? "A mapped road is nearby but not adjacent (common on private drives and campuses). Confirm a recorded easement." : "Far from any mapped road. Treat it as landlocked until a recorded easement is confirmed.";
     return { status, headline: `${esc(l.name || "Unnamed road")} · ${fmt(l.d)} m`, detail: detail + majorTxt, cell: `${fmt(l.d)} m`, num: l.d };
   }
+  // Groundwater: regional well-log pack first; USGS monitoring wells (national) where the pack is silent.
+  async function chkGroundwater(p, region) {
+    if (region) {
+      const r = await chkWells(p, region);
+      if (p._wells && p._wells.length) return r;
+    }
+    return chkGroundwaterUSGS(p);
+  }
+  async function chkGroundwaterUSGS(p) {
+    const dLat = 0.13, dLon = 0.13 / Math.cos(p.lat * Math.PI / 180);
+    const j = await getJSON(SVC.gw, { bbox: `${p.lon - dLon},${p.lat - dLat},${p.lon + dLon},${p.lat + dLat}`, parameter_code: "72019", limit: 2000, f: "json" }, 30000, 2);
+    const latest = new Map();
+    for (const f of j.features || []) {
+      const pr = f.properties || {}, v = parseFloat(pr.value), c = f.geometry && f.geometry.coordinates;
+      if (!c || !isFinite(v) || v < 0) continue;
+      const prev = latest.get(pr.monitoring_location_id);
+      if (!prev || pr.time > prev.time) latest.set(pr.monitoring_location_id, { lat: c[1], lon: c[0], swl: v, time: pr.time, year: pr.year, d: hav(p.lat, p.lon, c[1], c[0]) });
+    }
+    const near = [...latest.values()].filter((w) => w.d <= 14500).sort((a, b) => a.d - b.d);
+    p._wells = near.map((w) => ({ ...w, depth: null }));
+    if (!near.length) return { status: "caution", headline: "No USGS monitoring wells within ~9 mi", detail: "No public water-level record nearby. Budget a test well, or ask neighbors and local drillers for well depths.", cell: "no data" };
+    const mSwl = median(near.map((w) => w.swl)), recent = near.filter((w) => w.year >= 2010);
+    const status = mSwl <= 300 ? "go" : mSwl <= 600 ? "caution" : "kill";
+    return { status, headline: `${near.length} USGS wells within ~9 mi · water at ~${fmt(mSwl)} ft`,
+      detail: `Latest depth-to-water per monitoring well; median ${fmt(mSwl)} ft, nearest ${fmt(near[0].d / 1609.34, 1)} mi away (${fmt(near[0].swl)} ft, ${near[0].year}). ${recent.length} of ${near.length} measured since 2010; older readings can lag today's water table.`,
+      cell: `~${fmt(mSwl)} ft (${near.length} USGS)`, num: mSwl };
+  }
+  async function chkWalk(p) {
+    const j = await getJSON(SVC.walk, esriPoint(p.lat, p.lon, { outFields: "NatWalkInd,D3B,D4A" }));
+    const a = j.features?.[0]?.attributes;
+    if (!a || a.NatWalkInd == null) return { status: "na", headline: "No walkability score here", cell: "–" };
+    const s = a.NatWalkInd, cls = s >= 15.26 ? "most walkable" : s >= 10.51 ? "above average" : s >= 5.76 ? "below average" : "least walkable";
+    const transit = a.D4A > 0 ? `Transit stop about ${fmt(a.D4A)} m away.` : "No fixed-route transit within reach.";
+    return { status: "info", headline: `${fmt(s, 1)} / 20 · ${cls}`,
+      detail: `EPA National Walkability Index for this block group. ${fmt(a.D3B)} street intersections per square mile. ${transit} Low scores are normal, and often the point, for rural land.`,
+      cell: `${fmt(s, 1)}`, num: s };
+  }
+  // Traffic & noise proxy from road class and distance (no national traffic-count service exists).
+  async function chkTraffic(p) {
+    const q = (url, dist) => getJSON(url, { geometry: `${p.lon},${p.lat}`, geometryType: "esriGeometryPoint", inSR: 4326, outSR: 4326,
+      distance: dist, units: "esriSRUnit_Meter", spatialRel: "esriSpatialRelIntersects", outFields: "NAME,MTFCC",
+      returnGeometry: true, f: "json", resultRecordCount: 25 }).catch(() => ({ features: [] }));
+    const [pri, sec] = await Promise.all([q(SVC.primaryRoads, 1500), q(SVC.secondaryRoads, 600)]);
+    const near = (j) => (j.features || []).map((f) => ({ name: f.attributes.NAME, d: f.geometry?.paths ? distToPaths(p.lat, p.lon, f.geometry.paths) : Infinity })).sort((a, b) => a.d - b.d)[0];
+    const P = near(pri), S = near(sec);
+    if (P && P.d < 150) return { status: "kill", headline: `Freeway ${fmt(P.d)} m away · ${esc(P.name || "primary road")}`, detail: "Constant traffic noise, dust, and night light. Expect a resale discount, and verify the noise in person at rush hour.", cell: `freeway ${fmt(P.d)} m`, num: P.d };
+    if (P && P.d < 600) return { status: "caution", headline: `Freeway ${fmt(P.d)} m away · ${esc(P.name || "primary road")}`, detail: "Audible highway hum is likely outdoors. Check a noise score and stand on the lot.", cell: `freeway ${fmt(P.d)} m`, num: P.d };
+    if (S && S.d < 80) return { status: "caution", headline: `Fronts a highway/arterial · ${esc(S.name || "secondary road")}`, detail: "Busy-road frontage: traffic noise and access-turn safety. Interiors with good glazing or shutters can still be quiet.", cell: `arterial ${fmt(S.d)} m`, num: S.d };
+    return { status: "go", headline: "No freeway within 600 m or arterial frontage", detail: `Quiet road context by class.${P ? ` Nearest freeway ${fmt(P.d / 1609.34, 1)} mi.` : ""} This is a proxy from road type and distance, not measured traffic counts.`, cell: "quiet", num: P ? P.d : 1500 };
+  }
   async function chkWells(p, region) {
     const wells = await loadPack(region.packs.wells);
     const rM = region.wellRadiusMi * 1609.34;
@@ -239,13 +302,31 @@
       detail: `Median static water level ${fmt(mSwl)} ft; nearest well ${fmt(nearest.d / 1609.34, 1)} mi away (basin ${esc(nearest.basin)}). ${cost} Domestic wells need no water-right purchase in Nevada (NRS 534.180, 2 acre-ft/yr).`,
       cell: `~${fmt(mSwl)} ft (${near.length} wells)`, num: mSwl };
   }
+  // Mineral history: regional pack (with assay grades) when inside a region, else the national USGS MRDS state pack.
   async function chkMines(p, region) {
-    const mines = await loadPack(region.packs.mines);
-    const r = region.mineRadiusKm * 1000, near = [];
-    for (const m of mines) { const d = hav(p.lat, p.lon, m[0], m[1]); if (d <= r) near.push({ lat: m[0], lon: m[1], name: m[2], comm: m[3], au: m[4], ag: m[5], d }); }
+    const st = stateOf(p);
+    const radiusKm = region ? region.mineRadiusKm : 10;
+    let mines, national = false;
+    if (region) mines = await loadPack(region.packs.mines);
+    else if (st) { mines = await loadPack(`data/mrds/${st}.json`).catch(() => null); national = true; }
+    if (!mines) return { status: "na", headline: "No mineral database for this location", cell: "–" };
+    const r = radiusKm * 1000, near = [];
+    for (const m of mines) {
+      const d = hav(p.lat, p.lon, m[0], m[1]);
+      if (d <= r) near.push(national ? { lat: m[0], lon: m[1], name: m[2], comm: m[3], stat: m[4], d } : { lat: m[0], lon: m[1], name: m[2], comm: m[3], au: m[4], ag: m[5], d });
+    }
     near.sort((a, b) => a.d - b.d);
     p._mines = near;
-    if (!near.length) return { status: "info", headline: `No recorded mines within ${region.mineRadiusKm} km`, cell: "0", num: 0 };
+    if (!near.length) return { status: "info", headline: `No recorded mines within ${radiusKm} km`, cell: "0", num: 0 };
+    const producers = near.filter((m) => m.stat === "P" || m.stat === "PP").length;
+    if (national) {
+      const comm = {};
+      near.forEach((m) => (m.comm || "").split(/,\s*/).filter(Boolean).forEach((c) => (comm[c] = (comm[c] || 0) + 1)));
+      const ranked = Object.entries(comm).sort((a, b) => b[1] - a[1]);
+      return { status: "info", headline: `${near.length} recorded deposits within ${radiusKm} km${producers ? ` · ${producers} produced` : ""}`,
+        detail: `Nearest: ${esc(near[0].name || "unnamed")} (${MRDS_STAT[near[0].stat] || "site"}) at ${fmt(near[0].d / 1000, 1)} km. Commodities: ${esc(ranked.slice(0, 4).map(([c, n]) => `${c} (${n})`).join(", "))}. Mineral upside only counts if the deed includes mineral rights. Check for severance.`,
+        cell: `${near.length}${ranked[0] ? " · " + ranked[0][0].toLowerCase() : ""}`, num: near.length };
+    }
     const comm = {};
     near.forEach((m) => (m.comm || "").split(/[,;]\s*/).filter(Boolean).forEach((c) => (comm[c.trim()] = (comm[c.trim()] || 0) + 1)));
     const ranked = Object.entries(comm).sort((a, b) => b[1] - a[1]);
@@ -254,7 +335,40 @@
       detail: `Nearest: ${esc(near[0].name || "unnamed")} at ${fmt(near[0].d / 1000, 1)} km. Commodities: ${esc(top)}. Mineral upside only counts if the deed includes mineral rights. Check for severance.`,
       cell: `${near.length}${ranked[0] ? " · " + ranked[0][0].toLowerCase() : ""}`, num: near.length };
   }
-  function chkMarket(p, region) {
+  // Land value: nearest FHFA census tract (238 metros) -> region raw-land band -> county -> hand-built zone tables.
+  async function chkMarket(p, region) {
+    try {
+      const idx = await loadPack("data/surfaces/index.json");
+      const cands = idx.metros.filter((m) => p.lon >= m.bbox[0] - 0.05 && p.lon <= m.bbox[2] + 0.05 && p.lat >= m.bbox[1] - 0.05 && p.lat <= m.bbox[3] + 0.05)
+        .sort((a, b) => hav(p.lat, p.lon, a.lat, a.lon) - hav(p.lat, p.lon, b.lat, b.lon)).slice(0, 2);
+      let best = null;
+      for (const m of cands) {
+        const doc = await loadPack(`data/surfaces/m/${m.code}.json`);
+        for (const t of doc.t) { const d = hav(p.lat, p.lon, t[0], t[1]); if (!best || d < best.d) best = { t, d, m, years: doc.years }; }
+      }
+      if (best && best.d <= 4000) {
+        const [, , ser, share, spsf, lot, sqft, pv, direct] = best.t;
+        const yi = ser.length - 1 - [...ser].reverse().findIndex((v) => v != null), ppa = ser[yi], yr = best.years[yi];
+        const first = ser.find((v) => v != null), y0 = best.years[ser.indexOf(first)];
+        const chg = first ? (ppa / first - 1) * 100 : null;
+        return { status: "info", headline: `~${money(ppa)}/acre residential land (${yr})`,
+          detail: `FHFA single-family land value for the nearest census tract (${fmt(best.d)} m away, ${esc(best.m.name)}). Land is ${share != null ? fmt(share * 100) + "%" : "–"} of property value; the structure prices at ~$${fmt(spsf)}/sqft on a typical ${fmt(lot)} sqft lot with ${fmt(sqft)} sqft interior. ${chg != null ? `${chg >= 0 ? "+" : ""}${fmt(chg)}% since ${y0}. ` : ""}Metro median ${money(best.m.median_ppa)}/acre.${direct ? "" : " Tract trend scaled from its county index."}`,
+          cell: `~${money(ppa)}`, num: ppa, share, spsf, surface: { fhfa: true, id: best.m.code, label: best.m.name } };
+      }
+      if (!region) {
+        const cs = await loadPack("data/surfaces/counties.json");
+        const c = cs.c.map((r) => ({ r, d: hav(p.lat, p.lon, r[0], r[1]) })).sort((a, b) => a.d - b.d)[0];
+        if (c && c.d <= 80000) {
+          const [, , , name, ppa, share, spsf] = c.r;
+          return { status: "info", headline: `~${money(ppa)}/acre residential land (county)`,
+            detail: `FHFA single-family land value for ${esc(name)}, the nearest county with data. Residential lots only: raw acreage outside town trades far lower.${share != null ? ` Land share ${fmt(share * 100)}%; structure ~$${fmt(spsf)}/sqft.` : ""}`,
+            cell: `~${money(ppa)} (cty)`, num: ppa, share, spsf };
+        }
+      }
+    } catch (e) { /* fall through to static tables */ }
+    return chkMarketStatic(p, region);
+  }
+  function chkMarketStatic(p, region) {
     for (const s of window.LE_SURFACES) {
       const ds = s.zones.map((z) => ({ z, d: hav(p.lat, p.lon, z[1], z[2]) })).sort((a, b) => a.d - b.d);
       if (ds[0].d / 1000 > s.radiusKm) continue;
@@ -279,14 +393,14 @@
       ["access", "Road access", "Census TIGER roads", () => chkAccess(p)],
       ["land", "Land status", "BLM surface management", () => chkLandStatus(p)],
       ["drain", "Drainage & washes", "USGS NHD", () => chkWater(p)],
+      ["wells", "Groundwater", region ? "regional well logs + USGS" : "USGS monitoring wells", () => chkGroundwater(p, region)],
+      ["traffic", "Traffic & noise", "Census road classes", () => chkTraffic(p)],
+      ["market", "Land value", "FHFA tract surfaces", () => chkMarket(p, region)],
+      ["mines", "Mineral history", "USGS MRDS", () => chkMines(p, region)],
+      ["walk", "Walkability", "EPA walkability index", () => chkWalk(p)],
       ["elev", "Elevation", "USGS 3DEP", () => chkElevation(p)],
-      ["plss", "Survey grid", "BLM PLSS", () => chkPLSS(p)],
-      ["market", "Land value", "price surfaces", async () => chkMarket(p, region)]
+      ["plss", "Survey grid", "BLM PLSS", () => chkPLSS(p)]
     ];
-    if (region) {
-      list.splice(4, 0, ["wells", "Groundwater", "regional well logs", () => chkWells(p, region)]);
-      list.splice(5, 0, ["mines", "Mineral history", "USGS MRDS", () => chkMines(p, region)]);
-    }
     return list;
   }
   async function runChecks(list, onEach) {
@@ -334,9 +448,9 @@
   function drawOverlays(p, region) {
     if (!map || !layers) return;
     (p._wells || []).forEach((w) => L.circleMarker([w.lat, w.lon], { radius: 4, color: "#0b2340", weight: 1, fillColor: "#59b8ff", fillOpacity: 0.9 })
-      .addTo(layers).bindPopup(`Well · depth ${fmt(w.depth)} ft · water ${fmt(w.swl)} ft${w.year ? " · " + w.year : ""}`));
+      .addTo(layers).bindPopup(`Well ·${w.depth != null ? ` depth ${fmt(w.depth)} ft ·` : ""} water ${fmt(w.swl)} ft${w.year ? " · " + w.year : ""}`));
     (p._mines || []).slice(0, 300).forEach((m) => L.circleMarker([m.lat, m.lon], { radius: 4, color: "#3a2a00", weight: 1, fillColor: "#ffc93c", fillOpacity: 0.9 })
-      .addTo(layers).bindPopup(`${esc(m.name || "Mine")} · ${esc(m.comm || "")}`));
+      .addTo(layers).bindPopup(`${esc(m.name || "Mine")} · ${esc(m.comm || "")}${m.stat ? " · " + (MRDS_STAT[m.stat] || "") : ""}`));
     if (region && p._wells?.length) L.circle([p.lat, p.lon], { radius: region.wellRadiusMi * 1609.34, color: "#59b8ff", weight: 1, fill: false }).addTo(layers);
   }
   const VERDICT_WORDS = { go: "Clean screen. Proceed to permits, title, and a field walk.", caution: "Proceed with eyes open. Resolve the flagged checks before you write an offer.", kill: "Hard flag. Walk away, or price the defect in heavily." };
@@ -371,7 +485,9 @@
     ];
     $("uwLinks").innerHTML = links.map((l) => `<a href="${l.url}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("");
     const mk = results.market?.surface;
-    $("uwSurface").innerHTML = mk ? `<a href="#surfaces" data-map="${mk.id}" class="jump-map">Open the ${esc(mk.label)} heat map ↓</a>` : "";
+    $("uwSurface").innerHTML = !mk ? "" : mk.fhfa
+      ? `<a href="#surfaces" data-metro="${mk.id}" class="jump-metro">Open the ${esc(mk.label)} land surface ↓</a>`
+      : `<a href="#surfaces" data-map="${mk.id}" class="jump-map">Open the ${esc(mk.label)} heat map ↓</a>`;
     history.replaceState(null, "", `#q=${encodeURIComponent(raw)}`);
     window.LandEngine.last = { p, region, results, verdict: s, raw };
     document.dispatchEvent(new CustomEvent("le:screened", { detail: window.LandEngine.last }));
@@ -379,8 +495,8 @@
 
   // ---------- batch: N places x M checks ----------
   const COLS = [
-    ["flood", "Flood"], ["access", "Road"], ["land", "Land status"], ["drain", "Drainage"],
-    ["wells", "Water depth"], ["mines", "Mines ≤10 km"], ["elev", "Elevation"], ["market", "Land $/ac"], ["plss", "Survey grid"]
+    ["flood", "Flood"], ["access", "Road"], ["land", "Land status"], ["drain", "Drainage"], ["wells", "Water depth"],
+    ["traffic", "Traffic"], ["market", "Land $/ac"], ["mines", "Mines ≤10 km"], ["walk", "Walk /20"], ["elev", "Elevation"], ["plss", "Survey grid"]
   ];
   let batchRows = [], batchSort = { key: null, dir: 1 };
 

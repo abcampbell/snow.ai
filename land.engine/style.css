@@ -133,7 +133,7 @@ section.block { padding: 64px 0; border-bottom: 1px solid var(--line); }
 .chip:disabled { opacity: 0.4; cursor: default; }
 #bSummary .kpis { margin-bottom: 14px; }
 .b-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
-.b-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 1100px; }
+.b-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 1450px; }
 .b-table th { position: sticky; top: 0; background: var(--panel-2); text-align: left; font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--faint); letter-spacing: 0.06em; text-transform: uppercase; padding: 10px; border-bottom: 1px solid var(--line); cursor: pointer; white-space: nowrap; user-select: none; }
 .b-table th.sorted { color: var(--accent); }
 .b-table td { padding: 9px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; font-family: var(--mono); font-size: 12.5px; }
