@@ -9,44 +9,43 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: one wide aggregate chart with scenario switch, then a grid of per-commodity small multiples, then the data table. */
+/* Layout: primary market-value aggregate chart, smaller equal-weight chart, sortable ranking table, then per-mineral small multiples and the data table. */
 :root {
   --bg: #fbfbf9; --surface: #ffffff; --ink: #141413; --ink-2: #52514e; --ink-3: #8a8983;
-  --rule: #e6e5e0; --grid: #efeee9; --band: rgba(42,120,214,.10);
-  --s1: #2a78d6; --s2: #eb6834; --proj: #6b6a65; --now: #b5b4ad;
+  --rule: #e6e5e0; --grid: #efeee9; --band: rgba(120,118,110,.13); --shade: rgba(120,118,110,.06);
+  --hist: #3b3a36; --sch: #e34948; --lik: #2a78d6; --now: #b5b4ad; --hl: #f3f2ed;
   --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #161615; --surface: #1d1d1c; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
-  --rule: #33332f; --grid: #2a2a27; --band: rgba(57,135,229,.16);
-  --s1: #3987e5; --s2: #d95926; --proj: #a3a29b; --now: #55554f; color-scheme: dark } }
+  --rule: #33332f; --grid: #2a2a27; --band: rgba(200,198,190,.11); --shade: rgba(200,198,190,.04);
+  --hist: #e4e3dd; --sch: #e66767; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #161615; --surface: #1d1d1c; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
-  --rule: #33332f; --grid: #2a2a27; --band: rgba(57,135,229,.16);
-  --s1: #3987e5; --s2: #d95926; --proj: #a3a29b; --now: #55554f; color-scheme: dark }
+  --rule: #33332f; --grid: #2a2a27; --band: rgba(200,198,190,.11); --shade: rgba(200,198,190,.04);
+  --hist: #e4e3dd; --sch: #e66767; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
-.wrap { max-width: 1120px; margin: 0 auto; padding-block: 28px 56px;
+.wrap { max-width: 1160px; margin: 0 auto; padding-block: 28px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
   display: grid; gap: 28px; }
 h1 { font-size: 1.75rem; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
 h2 { font-size: 1.05rem; margin: 0; text-wrap: balance; }
-.lede { color: var(--ink-2); max-width: 68ch; margin: 6px 0 0; }
+h3 { font-size: .9rem; margin: 0; color: var(--ink-2); font-weight: 600; }
+.lede { color: var(--ink-2); max-width: 70ch; margin: 6px 0 0; }
 .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 18px; display: grid; gap: 12px; min-width: 0; }
 .row { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
-.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
-.seg button { font: 600 13px var(--font-body); color: var(--ink-2); background: transparent; border: 0; padding: 7px 12px; cursor: pointer; }
-.seg button + button { border-left: 1px solid var(--rule); }
-.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-.seg button:focus-visible { outline: 2px solid var(--s1); outline-offset: -2px; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
-.sw { width: 18px; height: 0; border-top: 2px solid; display: inline-block; }
+.sw { width: 20px; height: 0; border-top: 2px solid; display: inline-block; }
 .sw.dash { border-top-style: dashed; }
 .sw.dot { border-top-style: dotted; border-top-width: 3px; }
 .sw.band { height: 10px; border: 0; background: var(--band); }
 svg { display: block; width: 100%; height: auto; overflow: visible; }
 svg text { font-family: var(--font-data); fill: var(--ink-3); font-size: 11px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; }
+@media (max-width: 520px) { .two { grid-template-columns: 1fr; } }
+.two > div { min-width: 0; display: grid; gap: 6px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
 .mini { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 12px 8px; min-width: 0; }
 .mini .hd { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
@@ -54,20 +53,30 @@ svg text { font-family: var(--font-data); fill: var(--ink-3); font-size: 11px; }
 .mini .val { font-family: var(--font-data); font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .mini .note { font-size: 12px; color: var(--ink-3); margin: 2px 0 4px; min-height: 2.6em; }
 .tip { position: fixed; pointer-events: none; z-index: 10; background: var(--surface); color: var(--ink); border: 1px solid var(--rule);
-  border-radius: 6px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12); max-width: 280px; }
+  border-radius: 6px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12); max-width: 300px; }
 .tip b { font-family: var(--font-data); }
 .tip .k { color: var(--ink-2); }
 .scale { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 13px; color: var(--ink-2); max-width: 760px; }
 .scale b { font-family: var(--font-data); color: var(--ink); text-align: right; }
-.notes { font-size: 13px; color: var(--ink-2); display: grid; gap: 6px; max-width: 80ch; }
-.notes p { margin: 0; }
+.notes { font-size: 13px; color: var(--ink-2); display: grid; gap: 6px; max-width: 82ch; }
+.notes p, .notes ul { margin: 0; }
 details summary { cursor: pointer; font-weight: 600; }
 .tbl { overflow-x: auto; }
 table { border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; }
-th, td { padding: 4px 8px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
-th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--surface); }
+th, td { padding: 5px 8px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; vertical-align: top; }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--surface); z-index: 1; }
 td { font-family: var(--font-data); }
 td.p { color: var(--ink-3); }
+#rank th { vertical-align: bottom; }
+#rank th button { all: unset; cursor: pointer; font: 600 12px var(--font-body); color: var(--ink-2); display: inline-flex; gap: 4px; align-items: center; white-space: normal; text-align: inherit; }
+#rank th button:focus-visible { outline: 2px solid var(--lik); outline-offset: 2px; border-radius: 2px; }
+#rank th[aria-sort] button { color: var(--ink); }
+#rank th .ar { font-family: var(--font-data); width: 1ch; }
+#rank td.txt { font-family: var(--font-body); text-align: left; white-space: normal; min-width: 260px; max-width: 380px; color: var(--ink-2); }
+#rank td.nm { font-family: var(--font-body); font-weight: 600; }
+#rank td.sub { color: var(--ink-3); font-size: 11px; display: block; font-weight: 400; }
+#rank tr:hover td { background: var(--hl); }
+.bar { display: inline-block; height: 6px; border-radius: 0 3px 3px 0; background: var(--ink-3); vertical-align: middle; margin-right: 6px; opacity: .55; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -76,21 +85,45 @@ td.p { color: var(--ink-3); }
 <div class="wrap">
   <header>
     <h1>China mineral export gates, 2006–2028</h1>
-    <p class="lede">How shut China's export gate is for US-bound supply of each critical mineral, scored 0–10 by month. History runs to October 2026. The dashed lines are projections from the November 2026 truce deadlines.</p>
+    <p class="lede">How shut China's export gate is for US-bound supply of each critical mineral, scored 0–10 by month. History runs to October 2026. The two projections are what the rules as written schedule, and what we think is likely.</p>
   </header>
 
   <section class="panel" aria-labelledby="agg-h">
     <div class="row">
       <h2 id="agg-h">Aggregate gate, 14 gated minerals</h2>
+      <div class="legend">
+        <span><i class="sw" style="border-color:var(--hist)"></i>History</span>
+        <span><i class="sw dot" style="border-color:var(--sch)"></i>Scheduled (rules as written)</span>
+        <span><i class="sw dash" style="border-color:var(--lik)"></i>Likely</span>
+        <span><i class="sw band"></i>Range: all suspensions renewed to scheduled</span>
+      </div>
     </div>
-    <div class="legend">
-      <span><i class="sw" style="border-color:var(--s1)"></i>Equal weight</span>
-      <span><i class="sw" style="border-color:var(--s2)"></i>Market-value weight</span>
-      <span><i class="sw dot" style="border-color:var(--proj)"></i>Scheduled (rules as written)</span>
-      <span><i class="sw dash" style="border-color:var(--proj)"></i>Likely</span>
-      <span><i class="sw band"></i>Range: all suspensions renewed to scheduled</span>
+    <div style="display:grid;gap:6px;min-width:0"><h3>Market-value weight · primary</h3><div id="agg-cw"></div></div>
+    <div style="display:grid;gap:6px;min-width:0;border-top:1px solid var(--rule);padding-top:12px"><h3>Equal weight · for comparison</h3><div id="agg-ew"></div></div>
+  </section>
+
+  <section class="panel" aria-labelledby="rk-h">
+    <div class="row">
+      <h2 id="rk-h">Ranking</h2>
+      <span style="font-size:13px;color:var(--ink-3)">Click a column header to sort. Click again to reverse.</span>
     </div>
-    <div id="agg"></div>
+    <div class="tbl"><table id="rank"></table></div>
+    <div class="notes">
+      <p><b>Columns.</b> Weight is the share of total market value (2025 world production × 2025 average price), the same weights the aggregate uses. Price is the current ex-China price per tonne of contained product where one exists, otherwise the China price (see basis). Annual market is 2025 world production × current price. Gate volatility is the standard deviation of 12-month changes in the gate score, 2006 to now. Political gate is our 0–10 judgment of how far the gate's moves have tracked US–China politics rather than resource management. 10 means the moves are retaliation timed to US actions.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="sm-h" style="display:grid;gap:12px">
+    <div class="row">
+      <h2 id="sm-h">By mineral</h2>
+      <div class="legend">
+        <span><i class="sw" style="border-color:var(--hist)"></i>History</span>
+        <span><i class="sw dot" style="border-color:var(--sch)"></i>Scheduled</span>
+        <span><i class="sw dash" style="border-color:var(--lik)"></i>Likely</span>
+        <span><i class="sw band"></i>Renewed–scheduled range</span>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
   </section>
 
   <section class="panel" aria-labelledby="sc-h">
@@ -106,19 +139,6 @@ td.p { color: var(--ink-3); }
     </div>
   </section>
 
-  <section aria-labelledby="sm-h" style="display:grid;gap:12px">
-    <div class="row">
-      <h2 id="sm-h">By mineral</h2>
-      <div class="legend">
-        <span><i class="sw" style="border-color:var(--s1)"></i>History</span>
-        <span><i class="sw dot" style="border-color:var(--proj)"></i>Scheduled</span>
-        <span><i class="sw dash" style="border-color:var(--proj)"></i>Likely</span>
-        <span><i class="sw band"></i>Renewed–scheduled range</span>
-      </div>
-    </div>
-    <div class="grid" id="grid"></div>
-  </section>
-
   <section class="panel">
     <details>
       <summary>Data table (December of each year)</summary>
@@ -129,15 +149,17 @@ td.p { color: var(--ink-3); }
   <section class="notes" aria-labelledby="n-h">
     <h2 id="n-h">How this is built</h2>
     <p><b>Scores are judgment, not data.</b> Each score translates a policy event into the scale above. Pre-2015 scores reflect China's export quotas and duties on rare earths, tungsten, antimony, indium and graphite. The WTO ruled against them in 2014, and China removed them in 2015.</p>
-    <p><b>Key events.</b> Sep 2010 rare-earth halt to Japan. Jan/May 2015 quotas and duties removed. Aug 2023 Ga/Ge licensing. Dec 2023 graphite licensing. Sep 2024 Sb licensing. Dec 2024 US ban on Ga/Ge/Sb. Feb 2025 W/Bi/In/Te licensing. Apr 2025 seven-rare-earth licensing (never suspended). Oct 2025 expansion. Nov 2025 truce suspends the US ban and the Oct 2025 package.</p>
-    <p><b>Scheduled (dotted).</b> What happens if every rule runs on its written dates and nothing new is agreed. Two suspensions roll off. On Nov 10, 2026 the Oct 2025 package returns (Dy/Tb/Sm/Y/Sc 9, NdPr 7, graphite 7). On Nov 27, 2026 the US ban returns (Ga/Ge/Sb 10). Nothing on the books is scheduled to come down. The Feb 2025 tungsten/bismuth/indium/tellurium licensing and the Apr 2025 rare-earth licensing have no end date. The tungsten and antimony exporter lists run to end-2027 and are expected to be renewed.</p>
-    <p><b>Likely (dashed).</b> My probability-weighted view, with renewal risk each year: score = renewed + p × (scheduled − renewed).</p>
-    <ul style="margin:0;padding-left:18px">
-      <li>Oct 2025 rare-earth and graphite package: p = 45% from Nov 2026, rising to 65% from Nov 2027. Rare earths are Beijing's strongest lever and the first it reuses.</li>
-      <li>US-specific Ga/Ge/Sb ban: p = 30% from Dec 2026, rising to 50% from Dec 2027. It is the most visible escalation, so the least likely to be restored first.</li>
-      <li>Everything else is held flat: licensing is now a permanent tool. These probabilities are judgment. The US-side DoD tungsten ban (Jan 1, 2027) is not scored here.</li>
+    <p><b>Nothing is scheduled to come down.</b> Every control in force (Ga/Ge 2023, graphite 2023, antimony 2024, tungsten/bismuth/indium/tellurium Feb 2025, seven rare earths Apr 2025) is a standing rule with no end date. Only the two Nov 2025 suspensions carry dates, and when they expire the gate goes up. Individual export licences expire, typically after 6–12 months, but that changes how much flows, not the gate.</p>
+    <p><b>Scheduled (red dotted).</b> Every rule runs on its written dates and nothing new is agreed. On Nov 10, 2026 the Oct 2025 package returns (Dy/Tb/Sm/Y/Sc 9, NdPr 7, graphite 7). On Nov 27, 2026 the US ban returns (Ga/Ge/Sb 10).</p>
+    <p><b>Likely (blue dashed).</b> Our probability-weighted view, with renewal risk each year: score = renewed + p × (scheduled − renewed).</p>
+    <ul style="padding-left:18px">
+      <li>Oct 2025 rare-earth and graphite package: p = 45% from Nov 2026, rising to 65% from Nov 2027.</li>
+      <li>US-specific Ga/Ge/Sb ban: p = 30% from Dec 2026, rising to 50% from Dec 2027.</li>
+      <li>Everything else is held flat.</li>
     </ul>
-    <p><b>Weights.</b> Market value = 2025 world production × 2025 average price, held constant: Sb $6.1B, W $5.9B, NdPr $5.4B, graphite $0.9B, Dy $0.9B, Bi $0.7B, Ge $0.6B, In $0.5B, Ga $0.5B, Tb $0.4B, Te $0.15B, Y $0.14B, Sc $0.05B, Sm $0.01B. Mostly China-side prices, so heavy rare earths are underweighted relative to ex-China value. Cobalt and titanium sponge have no Chinese export gate and are excluded.</p>
+    <p>The probabilities are judgment. The US-side ban on Chinese-origin tungsten in DoD supply chains (Jan 1, 2027) is a US gate and is not scored.</p>
+    <p><b>Key events.</b> Sep 2010 rare-earth halt to Japan. Jan/May 2015 quotas and duties removed. Aug 2023 Ga/Ge licensing. Dec 2023 graphite licensing. Sep 2024 Sb licensing. Dec 2024 US ban on Ga/Ge/Sb. Feb 2025 W/Bi/In/Te licensing. Apr 2025 seven-rare-earth licensing. Oct 2025 expansion. Nov 2025 truce.</p>
+    <p><b>Prices.</b> Fastmarkets, SMM and trade-press quotes, Sep–Oct 2026. Ex-China rare-earth and gallium prices are thin over-the-counter quotes. Cobalt and titanium sponge have no Chinese export gate and are excluded.</p>
   </section>
 </div>
 <div class="tip" id="tip" hidden></div>
@@ -152,21 +174,40 @@ td.p { color: var(--ink-3); }
 
   const REE = [[2006,1,3,"Export quotas and duties"],[2010,7,6,"H2 2010 quota cut ~70%"],[2010,9,7,"Shipments to Japan halted"],[2010,12,6,"Japan halt eases"],[2012,1,5,"Quotas loosen"],[2013,1,4,"Quotas largely unfilled"],[2015,1,2,"Quotas removed after WTO ruling"],[2015,5,1,"Export duties removed"],[2025,4,9,"Apr 2025 licensing; near halt"],[2025,7,8,"Some licences resume"],[2025,10,9,"Oct 2025 expansion announced"],[2025,11,8,"Truce suspends Oct package; Apr regime stays"]];
   const GAGE = [[2006,1,1,"No material control"],[2023,8,5,"Licensing from Aug 2023"],[2024,12,10,"Ban on exports to US"],[2025,11,6,"Truce: licensing, no military use"]];
+  const RE_LAP = [[2026,11,9,"Oct 2025 package returns Nov 10"]];
+  const US_LAP = [[2026,12,10,"US ban returns Nov 27"]];
+  const P_REE = "Fastmarkets Rotterdam vs China price ratio (Dy 4.9x); China customs magnet and oxide exports to US/Japan; MOFCOM licence and general-licence approvals; MOFCOM entity-list moves.";
+  const P_GAGE = "Rotterdam vs China price spread (Ga ~5x, Ge ~3x); China customs Ga/Ge exports by destination; timing of US BIS chip-control rules; summit calendar.";
+  // t = 2025 world tonnes; w = 2025 market value $B; px = current price $/t; pb = price basis; pol = political gate 0-10
   const C = [
-    { k:"Sb", n:"Antimony", w:6.1, ev:[[2006,1,4,"Export quotas and duties"],[2015,1,2,"Quotas removed; state trading remains"],[2024,9,6,"Licensing from Sep 2024"],[2024,12,10,"Ban on exports to US"],[2025,11,5,"Truce: licensing, no military use"]], lap:[[2026,12,10,"US ban returns Nov 27"]] },
-    { k:"W", n:"Tungsten", w:5.9, ev:[[2006,1,4,"Export quotas and duties"],[2015,1,2,"Quotas removed; state trading remains"],[2025,2,6,"Licensing from Feb 2025"]], lap:[] },
-    { k:"NdPr", n:"Neodymium / praseodymium", w:5.4, ev:[[2006,1,3,"Export quotas and duties"],[2010,7,6,"H2 2010 quota cut ~70%"],[2010,9,7,"Shipments to Japan halted"],[2010,12,6,"Japan halt eases"],[2012,1,5,"Quotas loosen"],[2013,1,4,"Quotas largely unfilled"],[2015,1,2,"Quotas removed after WTO ruling"],[2015,5,1,"Export duties removed"],[2025,4,2,"Dy/Tb magnets controlled; NdPr oxide not"],[2025,10,5,"Extraterritorial magnet rules announced"],[2025,11,3,"Truce suspends Oct package"]], lap:[[2026,11,7,"Oct 2025 package returns Nov 10"]] },
-    { k:"C", n:"Graphite", w:0.9, ev:[[2006,1,2,"Export duty and licences"],[2015,5,1,"Duty removed"],[2023,12,4,"Licensing from Dec 2023"],[2024,12,5,"Tighter end-user review for US"],[2025,10,7,"Anode controls announced"],[2025,11,5,"Truce suspends anode controls"]], lap:[[2026,11,7,"Anode controls return Nov 10"]] },
-    { k:"Dy", n:"Dysprosium", w:0.9, ev:REE, lap:[[2026,11,9,"Oct 2025 package returns Nov 10"]] },
-    { k:"Bi", n:"Bismuth", w:0.7, ev:[[2006,1,1,"No material control"],[2025,2,6,"Licensing from Feb 2025"],[2026,1,5,"Prices ease; licences flowing"]], lap:[] },
-    { k:"Ge", n:"Germanium", w:0.57, ev:GAGE, lap:[[2026,12,10,"US ban returns Nov 27"]] },
-    { k:"In", n:"Indium", w:0.53, ev:[[2006,1,3,"Export quotas and duties"],[2015,1,1,"Quotas removed"],[2025,2,6,"Licensing from Feb 2025"],[2026,1,5,"Licences flowing"]], lap:[] },
-    { k:"Ga", n:"Gallium", w:0.52, ev:GAGE, lap:[[2026,12,10,"US ban returns Nov 27"]] },
-    { k:"Tb", n:"Terbium", w:0.43, ev:REE, lap:[[2026,11,9,"Oct 2025 package returns Nov 10"]] },
-    { k:"Te", n:"Tellurium", w:0.15, ev:[[2006,1,1,"No material control"],[2025,2,5,"Licensing from Feb 2025"]], lap:[] },
-    { k:"Y", n:"Yttrium", w:0.14, ev:REE, lap:[[2026,11,9,"Oct 2025 package returns Nov 10"]] },
-    { k:"Sc", n:"Scandium", w:0.05, ev:REE, lap:[[2026,11,9,"Oct 2025 package returns Nov 10"]] },
-    { k:"Sm", n:"Samarium", w:0.008, ev:REE, lap:[[2026,11,9,"Oct 2025 package returns Nov 10"]] },
+    { k:"Sb", n:"Antimony", w:6.1, t:110000, px:18650, pb:"Rotterdam metal, Oct 2026", pol:8,
+      px_t:"Rotterdam vs China spread; China customs Sb exports; UAMY/DLA order flow. Sep 2024 licensing had a depletion motive; the Dec 2024 US ban was retaliation for US chip rules.",
+      ev:[[2006,1,4,"Export quotas and duties"],[2015,1,2,"Quotas removed; state trading remains"],[2024,9,6,"Licensing from Sep 2024"],[2024,12,10,"Ban on exports to US"],[2025,11,5,"Truce: licensing, no military use"]], lap:US_LAP },
+    { k:"W", n:"Tungsten", w:5.9, t:85000, px:353000, pb:"APT ~$2,800/mtu Rotterdam, per t W", pol:6,
+      px_t:"APT Rotterdam vs China domestic; MIIT mining-quota announcements (twice a year); state exporter list. Feb 2025 licensing answered US tariffs, on top of decades of resource-management quotas.",
+      ev:[[2006,1,4,"Export quotas and duties"],[2015,1,2,"Quotas removed; state trading remains"],[2025,2,6,"Licensing from Feb 2025"]], lap:[] },
+    { k:"NdPr", n:"Neodymium / praseodymium", w:5.4, t:78000, px:147000, pb:"NdPr oxide, China FOB", pol:7,
+      px_t:"China customs magnet exports (monthly); ex-China NdPr premium vs MP's $110/kg DoD floor; any revival of the Oct 2025 extraterritorial rules.",
+      ev:[[2006,1,3,"Export quotas and duties"],[2010,7,6,"H2 2010 quota cut ~70%"],[2010,9,7,"Shipments to Japan halted"],[2010,12,6,"Japan halt eases"],[2012,1,5,"Quotas loosen"],[2013,1,4,"Quotas largely unfilled"],[2015,1,2,"Quotas removed after WTO ruling"],[2015,5,1,"Export duties removed"],[2025,4,2,"Dy/Tb magnets controlled; NdPr oxide not"],[2025,10,5,"Extraterritorial magnet rules announced"],[2025,11,3,"Truce suspends Oct package"]], lap:[[2026,11,7,"Oct 2025 package returns Nov 10"]] },
+    { k:"C", n:"Graphite", w:0.9, t:1800000, px:480, pb:"Flake 94–97% C", pol:6,
+      px_t:"China graphite/anode exports to US; US AD/CVD rulings on anode material; battery-supply-chain rules. Dec 2023 licensing followed US chip rules, but also protects anode dominance.",
+      ev:[[2006,1,2,"Export duty and licences"],[2015,5,1,"Duty removed"],[2023,12,4,"Licensing from Dec 2023"],[2024,12,5,"Tighter end-user review for US"],[2025,10,7,"Anode controls announced"],[2025,11,5,"Truce suspends anode controls"]], lap:[[2026,11,7,"Anode controls return Nov 10"]] },
+    { k:"Dy", n:"Dysprosium", w:0.9, t:2350, px:1460000, pb:"Oxide, Rotterdam (Sep 2026)", pol:9, px_t:P_REE, ev:REE, lap:RE_LAP },
+    { k:"Bi", n:"Bismuth", w:0.7, t:16000, px:34200, pb:"Metal, Rotterdam", pol:7,
+      px_t:"Rotterdam price (a 500% spike in 2025 with no new supply); China customs exports. Part of the Feb 2025 tariff-retaliation package.",
+      ev:[[2006,1,1,"No material control"],[2025,2,6,"Licensing from Feb 2025"],[2026,1,5,"Prices ease; licences flowing"]], lap:[] },
+    { k:"Ge", n:"Germanium", w:0.57, t:140, px:9000000, pb:"Metal, Rotterdam ($8–10k/kg)", pol:9, px_t:P_GAGE, ev:GAGE, lap:US_LAP },
+    { k:"In", n:"Indium", w:0.53, t:1100, px:650000, pb:"Refined, Western spot", pol:7,
+      px_t:"Western spot vs China; China customs exports. Part of the Feb 2025 tariff-retaliation package.",
+      ev:[[2006,1,3,"Export quotas and duties"],[2015,1,1,"Quotas removed"],[2025,2,6,"Licensing from Feb 2025"],[2026,1,5,"Licences flowing"]], lap:[] },
+    { k:"Ga", n:"Gallium", w:0.52, t:900, px:2100000, pb:"4N, Rotterdam (Mar 2026)", pol:9, px_t:P_GAGE, ev:GAGE, lap:US_LAP },
+    { k:"Tb", n:"Terbium", w:0.43, t:390, px:3800000, pb:"Oxide, Europe ~3.8x China", pol:9, px_t:P_REE, ev:REE, lap:RE_LAP },
+    { k:"Te", n:"Tellurium", w:0.15, t:1000, px:240000, pb:"Metal, Argus", pol:6,
+      px_t:"Argus price; China customs exports. Gate binds less: the US is a net exporter via copper refining.",
+      ev:[[2006,1,1,"No material control"],[2025,2,5,"Licensing from Feb 2025"]], lap:[] },
+    { k:"Y", n:"Yttrium", w:0.14, t:12500, px:32000, pb:"Oxide, China FOB (ex-China far higher)", pol:9, px_t:P_REE + " Ex-China yttrium quotes are sporadic.", ev:REE, lap:RE_LAP },
+    { k:"Sc", n:"Scandium", w:0.05, t:80, px:700000, pb:"Oxide, indicative", pol:8, px_t:P_REE + " Tiny market: watch Rio Tinto Sorel-Tracy offtakes.", ev:REE, lap:RE_LAP },
+    { k:"Sm", n:"Samarium", w:0.008, t:2750, px:100000, pb:"Oxide, ex-China high-purity", pol:9, px_t:P_REE + " SmCo magnet makers' inventory and lead times.", ev:REE, lap:RE_LAP },
   ];
 
   function steps(ev) {
@@ -174,22 +215,27 @@ td.p { color: var(--ink-3); }
     ev.forEach(([y, m, s, t]) => { const i = mi(y, m); for (let j = i; j < N; j++) { v[j] = s; note[j] = t; } });
     return { v, note };
   }
-  C.forEach(c => {
-    const h = steps(c.ev);
-    const lp = steps(c.ev.concat(c.lap));
-    c.ext = h.v; c.lapV = lp.v; c.noteH = h.note; c.noteL = lp.note;
-    const g = c.lap.length ? (c.lap[0][1] === 11 ? "re" : "us") : null;
-    c.lik = h.v.map((x, i) => i <= NOW || !g ? x : x + pr(g, i) * (lp.v[i] - x));
-  });
   function pr(g, i) {
     if (g === "re") return i >= mi(2027, 11) ? 0.65 : i >= mi(2026, 11) ? 0.45 : 0;
     return i >= mi(2027, 12) ? 0.5 : i >= mi(2026, 12) ? 0.3 : 0;
   }
+  C.forEach(c => {
+    const h = steps(c.ev), lp = steps(c.ev.concat(c.lap));
+    c.ext = h.v; c.sch = lp.v; c.noteH = h.note; c.noteL = lp.note;
+    const g = c.lap.length ? (c.lap[0][1] === 11 ? "re" : "us") : null;
+    c.lik = h.v.map((x, i) => i <= NOW || !g ? x : x + pr(g, i) * (lp.v[i] - x));
+    const ch = []; for (let i = 12; i <= NOW; i++) ch.push(c.ext[i] - c.ext[i - 12]);
+    const mu = ch.reduce((a, b) => a + b, 0) / ch.length;
+    c.vol = Math.sqrt(ch.reduce((a, b) => a + (b - mu) ** 2, 0) / ch.length);
+    c.mkt = c.t * c.px / 1e9;
+  });
+  const WT = C.reduce((a, c) => a + c.w, 0);
+  C.forEach(c => c.wp = c.w / WT);
   const agg = (key, wfn) => { const out = new Array(N).fill(0); let W = 0;
     C.forEach(c => { const w = wfn(c); W += w; for (let i = 0; i < N; i++) out[i] += w * c[key][i]; });
     return out.map(x => x / W); };
   const A = {};
-  ["ext", "lapV", "lik"].forEach(k => { A["ew_" + k] = agg(k, () => 1); A["cw_" + k] = agg(k, c => c.w); });
+  ["ext", "sch", "lik"].forEach(k => { A["ew_" + k] = agg(k, () => 1); A["cw_" + k] = agg(k, c => c.w); });
 
   const NS = "http://www.w3.org/2000/svg";
   const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
@@ -200,8 +246,8 @@ td.p { color: var(--ink-3); }
   }
   function bandPath(lo, hi, i0, i1, x, y) {
     let top = "", bot = "";
-    for (let i = i0; i <= i1; i++) { top += (i === i0 ? "M" : "L") + x(i).toFixed(1) + "," + y(hi[i]).toFixed(1) + "L" + x(i + 1).toFixed(1) + "," + y(hi[i]).toFixed(1); }
-    for (let i = i1; i >= i0; i--) { bot += "L" + x(i + 1).toFixed(1) + "," + y(lo[i]).toFixed(1) + "L" + x(i).toFixed(1) + "," + y(lo[i]).toFixed(1); }
+    for (let i = i0; i <= i1; i++) top += (i === i0 ? "M" : "L") + x(i).toFixed(1) + "," + y(hi[i]).toFixed(1) + "L" + x(i + 1).toFixed(1) + "," + y(hi[i]).toFixed(1);
+    for (let i = i1; i >= i0; i--) bot += "L" + x(i + 1).toFixed(1) + "," + y(lo[i]).toFixed(1) + "L" + x(i).toFixed(1) + "," + y(lo[i]).toFixed(1);
     return top + bot + "Z";
   }
 
@@ -218,76 +264,70 @@ td.p { color: var(--ink-3); }
     const W = o.w, H = o.h, m = o.m;
     const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": o.aria }, host);
     const x = i => m.l + (i / N) * (W - m.l - m.r), y = v => m.t + (1 - v / 10) * (H - m.t - m.b);
-    [0, 5, 10].concat(o.minor ? [2.5, 7.5] : []).forEach(v => {
+    el("rect", { x: x(NOW + 1), y: m.t, width: W - m.r - x(NOW + 1), height: H - m.t - m.b, fill: "var(--shade)" }, svg);
+    [0, 2.5, 5, 7.5, 10].forEach(v => {
+      if (!o.minor && v % 5) return;
       el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: "var(--grid)", "stroke-width": 1 }, svg);
-      if ([0, 5, 10].includes(v)) { const t = el("text", { x: m.l - 6, y: y(v) + 4, "text-anchor": "end" }, svg); t.textContent = v; }
+      if (v % 5 === 0) { const t = el("text", { x: m.l - 6, y: y(v) + 4, "text-anchor": "end" }, svg); t.textContent = v; }
     });
     for (let yr = Y0; yr <= Y1 + 1; yr += o.xstep) {
       const i = Math.min(mi(yr, 1), N); el("line", { x1: x(i), x2: x(i), y1: H - m.b, y2: H - m.b + 4, stroke: "var(--ink-3)" }, svg);
-      if (yr <= Y1) { const t = el("text", { x: x(i), y: H - m.b + 16, "text-anchor": "middle" }, svg); t.textContent = o.short ? "'" + String(yr).slice(2) : yr; }
+      if (yr <= Y1) { const t = el("text", { x: x(i), y: H - m.b + 16, "text-anchor": "middle" }, svg); t.textContent = "'" + String(yr).slice(2); }
     }
-    el("rect", { x: x(NOW + 1), y: m.t, width: W - m.r - x(NOW + 1), height: H - m.t - m.b, fill: "var(--grid)", opacity: .45 }, svg);
     el("line", { x1: x(NOW + 1), x2: x(NOW + 1), y1: m.t - 4, y2: H - m.b, stroke: "var(--now)", "stroke-width": 1 }, svg);
-    if (o.nowLabel) { const t = el("text", { x: x(NOW + 1) + 4, y: m.t + 8 }, svg); t.textContent = "Oct 2026"; }
-    (o.annots || []).forEach(([i, txt, row]) => {
-      el("line", { x1: x(i), x2: x(i), y1: H - m.b, y2: m.t + 12 + row * 13, stroke: "var(--rule)", "stroke-dasharray": "2 3" }, svg);
-      const t = el("text", { x: x(i) + 3, y: m.t + 10 + row * 13, "font-size": 10 }, svg); t.textContent = txt;
+    (o.annots || []).forEach(([i, txt, row, anchor]) => {
+      const yy = m.t + 10 + row * 13;
+      el("line", { x1: x(i), x2: x(i), y1: H - m.b, y2: yy + 3, stroke: "var(--rule)", "stroke-dasharray": "2 3" }, svg);
+      const t = el("text", { x: anchor === "end" ? x(i) - 3 : x(i) + 3, y: yy, "font-size": 10, "text-anchor": anchor || "start" }, svg); t.textContent = txt;
     });
     o.series.forEach(s => {
-      if (s.lo) el("path", { d: bandPath(s.lo, s.hi, NOW, N - 1, x, y), fill: "var(--band)", stroke: "none" }, svg);
-      el("path", { d: stepPath(s.hist, 0, NOW, x, y), fill: "none", stroke: s.color, "stroke-width": 2, "stroke-linejoin": "round" }, svg);
-      el("path", { d: stepPath(s.sched, NOW, N - 1, x, y), fill: "none", stroke: s.color, "stroke-width": 2.5, "stroke-dasharray": "1 4", "stroke-linecap": "round", opacity: .9 }, svg);
-      el("path", { d: stepPath(s.lik, NOW, N - 1, x, y), fill: "none", stroke: s.color, "stroke-width": 2, "stroke-dasharray": "6 4", opacity: .9 }, svg);
+      el("path", { d: bandPath(s.lo, s.hi, NOW, N - 1, x, y), fill: "var(--band)", stroke: "none" }, svg);
+      el("path", { d: stepPath(s.hist, 0, NOW, x, y), fill: "none", stroke: "var(--hist)", "stroke-width": 2, "stroke-linejoin": "round" }, svg);
+      el("path", { d: stepPath(s.sch, NOW, N - 1, x, y), fill: "none", stroke: "var(--sch)", "stroke-width": 2.5, "stroke-dasharray": "0.5 4.5", "stroke-linecap": "round" }, svg);
+      el("path", { d: stepPath(s.lik, NOW, N - 1, x, y), fill: "none", stroke: "var(--lik)", "stroke-width": 2, "stroke-dasharray": "6 4" }, svg);
     });
     const cross = el("line", { y1: m.t, y2: H - m.b, stroke: "var(--ink-3)", "stroke-width": 1, visibility: "hidden" }, svg);
-    const dots = o.series.map(s => el("circle", { r: 4, fill: s.color, stroke: "var(--surface)", "stroke-width": 2, visibility: "hidden" }, svg));
+    const dot = el("circle", { r: 4, fill: "var(--hist)", stroke: "var(--surface)", "stroke-width": 2, visibility: "hidden" }, svg);
     const hit = el("rect", { x: m.l, y: 0, width: W - m.l - m.r, height: H, fill: "transparent" }, svg);
+    const s0 = o.series[0];
     hit.addEventListener("pointermove", e => {
       const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
       const p = pt.matrixTransform(svg.getScreenCTM().inverse());
       const i = Math.max(0, Math.min(N - 1, Math.floor((p.x - m.l) / (W - m.l - m.r) * N)));
       const cx = x(i + .5); cross.setAttribute("x1", cx); cross.setAttribute("x2", cx); cross.setAttribute("visibility", "visible");
-      o.series.forEach((s, j) => { const v = i <= NOW ? s.hist[i] : s.lik[i]; dots[j].setAttribute("cx", cx); dots[j].setAttribute("cy", y(v)); dots[j].setAttribute("visibility", "visible"); });
+      const fut = i > NOW;
+      dot.setAttribute("cx", cx); dot.setAttribute("cy", y(fut ? s0.lik[i] : s0.hist[i]));
+      dot.setAttribute("fill", fut ? "var(--lik)" : "var(--hist)"); dot.setAttribute("visibility", "visible");
       showTip(e, o.tip(i));
     });
-    hit.addEventListener("pointerleave", () => { cross.setAttribute("visibility", "hidden"); dots.forEach(d => d.setAttribute("visibility", "hidden")); hideTip(); });
+    hit.addEventListener("pointerleave", () => { cross.setAttribute("visibility", "hidden"); dot.setAttribute("visibility", "hidden"); hideTip(); });
   }
 
   const f1 = v => v.toFixed(1);
-  const RENEW = "All suspensions renewed";
-  function drawAgg() {
-    chart(document.getElementById("agg"), {
-      w: 1000, h: 380, m: { l: 30, r: 12, t: 22, b: 26 }, xstep: 2, minor: true, nowLabel: true,
-      aria: "Aggregate China export gate score 2006 to 2028, equal and market-value weighted, with scheduled and likely projections",
-      annots: [[mi(2010,9),"Japan halt",0],[mi(2015,1),"WTO: quotas end",0],[mi(2023,8),"Ga/Ge",1],[mi(2024,12),"US ban",0],[mi(2025,4),"REE",2],[mi(2025,11),"Truce",3],[mi(2026,11),"Roll-offs",4],[mi(2027,11),"Renewal",4]],
-      series: [
-        { color: "var(--s1)", hist: A.ew_ext, sched: A.ew_lapV, lik: A.ew_lik, lo: A.ew_ext, hi: A.ew_lapV },
-        { color: "var(--s2)", hist: A.cw_ext, sched: A.cw_lapV, lik: A.cw_lik, lo: A.cw_ext, hi: A.cw_lapV },
-      ],
-      tip: i => {
-        const fut = i > NOW;
-        let h = `<div><b>${lab(i)}</b>${fut ? ' <span class="k">· projected</span>' : ""}</div>`;
-        if (!fut) return h + `<div><span class="k">Equal weight</span> <b>${f1(A.ew_ext[i])}</b></div><div><span class="k">Market-value weight</span> <b>${f1(A.cw_ext[i])}</b></div>`;
-        h += `<div><span class="k">Equal weight</span> likely <b>${f1(A.ew_lik[i])}</b> · scheduled <b>${f1(A.ew_lapV[i])}</b></div>`;
-        h += `<div><span class="k">Market-value weight</span> likely <b>${f1(A.cw_lik[i])}</b> · scheduled <b>${f1(A.cw_lapV[i])}</b></div>`;
-        h += `<div class="k">${RENEW}: ${f1(A.ew_ext[i])} / ${f1(A.cw_ext[i])}</div>`;
-        return h;
-      }
+  const tipFut = (i, lik, sch, ren) => `<div><span class="k">Likely</span> <b>${f1(lik)}</b> · <span class="k">scheduled</span> <b>${f1(sch)}</b> · <span class="k">all renewed</span> <b>${f1(ren)}</b></div>`;
+  function drawAgg(id, p, title, h) {
+    chart(document.getElementById(id), {
+      w: 1000, h: h, m: { l: 26, r: 10, t: 22, b: 24 }, xstep: 2, minor: true,
+      aria: `${title} aggregate China export gate score 2006 to 2028 with scheduled and likely projections`,
+      annots: [[mi(2010,9),"Japan halt",0],[mi(2015,1),"WTO",0],[mi(2023,8),"Ga/Ge",1,"end"],[mi(2024,12),"US ban",0,"end"],[mi(2025,4),"REE",2,"end"],[mi(2026,11),"Roll-offs",3,"start"],[mi(2027,11),"Renewal",4,"start"]],
+      series: [{ hist: A[p + "_ext"], sch: A[p + "_sch"], lik: A[p + "_lik"], lo: A[p + "_ext"], hi: A[p + "_sch"] }],
+      tip: i => `<div><b>${title}</b> · ${lab(i)}</div>` + (i > NOW ? tipFut(i, A[p + "_lik"][i], A[p + "_sch"][i], A[p + "_ext"][i]) : `<div><span class="k">Gate</span> <b>${f1(A[p + "_ext"][i])}</b></div>`)
     });
   }
   function drawGrid() {
     const g = document.getElementById("grid"); g.innerHTML = "";
     C.forEach(c => {
       const card = document.createElement("div"); card.className = "mini";
-      card.innerHTML = `<div class="hd"><span class="nm">${c.n}</span><span class="val">now ${c.ext[NOW]} · '27 ${f1(c.lik[mi(2027,6)])}/${c.lapV[mi(2027,6)]}</span></div><div class="note">${c.noteH[NOW]}</div><div class="ch"></div>`;
+      const j = mi(2027, 6);
+      card.innerHTML = `<div class="hd"><span class="nm">${c.n}</span><span class="val">now ${c.ext[NOW]} · mid-'27 ${f1(c.lik[j])} / ${c.sch[j]}</span></div><div class="note">${c.noteH[NOW]}</div><div class="ch"></div>`;
       g.appendChild(card);
       chart(card.querySelector(".ch"), {
-        w: 300, h: 130, m: { l: 22, r: 6, t: 8, b: 20 }, xstep: 4, short: true,
+        w: 300, h: 130, m: { l: 22, r: 6, t: 8, b: 20 }, xstep: 4,
         aria: `${c.n} China export gate score 2006 to 2028`,
-        series: [{ color: "var(--s1)", hist: c.ext, sched: c.lapV, lik: c.lik, lo: c.ext, hi: c.lapV }],
-        tip: i => { const fut = i > NOW;
-          if (!fut) return `<div><b>${c.n}</b> · ${lab(i)}</div><div><span class="k">Gate</span> <b>${f1(c.ext[i])}</b></div><div class="k">${c.noteH[i]}</div>`;
-          return `<div><b>${c.n}</b> · ${lab(i)}</div><div><span class="k">Likely</span> <b>${f1(c.lik[i])}</b> · <span class="k">scheduled</span> <b>${f1(c.lapV[i])}</b></div><div class="k">Scheduled: ${c.noteL[i]}</div>`; }
+        series: [{ hist: c.ext, sch: c.sch, lik: c.lik, lo: c.ext, hi: c.sch }],
+        tip: i => i > NOW
+          ? `<div><b>${c.n}</b> · ${lab(i)}</div>${tipFut(i, c.lik[i], c.sch[i], c.ext[i])}<div class="k">Scheduled: ${c.noteL[i]}</div>`
+          : `<div><b>${c.n}</b> · ${lab(i)}</div><div><span class="k">Gate</span> <b>${f1(c.ext[i])}</b></div><div class="k">${c.noteH[i]}</div>`
       });
     });
   }
@@ -296,12 +336,48 @@ td.p { color: var(--ink-3); }
     for (let yr = Y0; yr <= Y1; yr++) h += `<th>${yr}</th>`;
     h += "</tr></thead><tbody>";
     const row = (name, hist, lik, sch) => { let r = `<tr><td>${name}</td>`; for (let yr = Y0; yr <= Y1; yr++) { const i = Math.min(mi(yr, 12), N - 1); r += i > NOW ? `<td class="p">${f1(lik[i])} / ${f1(sch[i])}</td>` : `<td>${f1(hist[i])}</td>`; } return r + "</tr>"; };
-    C.forEach(c => { h += row(c.n, c.ext, c.lik, c.lapV); });
-    h += row("Equal weight", A.ew_ext, A.ew_lik, A.ew_lapV) + row("Market-value weight", A.cw_ext, A.cw_lik, A.cw_lapV);
-    h += "</tbody></table>";
-    document.getElementById("tbl").innerHTML = h + '<p class="k" style="font-size:12px;margin:8px 0 0">Grey = projected, shown as likely / scheduled. Each year shows December, so 2026 is after the November roll-offs.</p>';
+    C.forEach(c => { h += row(c.n, c.ext, c.lik, c.sch); });
+    h += row("Equal weight", A.ew_ext, A.ew_lik, A.ew_sch) + row("Market-value weight", A.cw_ext, A.cw_lik, A.cw_sch);
+    document.getElementById("tbl").innerHTML = h + '</tbody></table><p style="font-size:12px;margin:8px 0 0;color:var(--ink-3)">Grey = projected, shown as likely / scheduled. Each year shows December, so 2026 is after the November roll-offs.</p>';
   }
-  drawAgg(); drawGrid(); drawTable();
+
+  // Ranking table
+  const fmtMoney = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(v >= 1e7 ? 0 : 2) + "M" : v >= 1e3 ? "$" + Math.round(v / 1e3).toLocaleString() + "k" : "$" + Math.round(v);
+  const fmtB = v => v >= 1 ? "$" + v.toFixed(1) + "B" : "$" + Math.round(v * 1000) + "M";
+  const COLS = [
+    { id:"n", h:"Mineral", get:c => c.n, num:false, cell:c => `<td class="nm">${c.n}<span class="sub">${c.k}</span></td>` },
+    { id:"wp", h:"Weight", get:c => c.wp, num:true, cell:c => `<td><span class="bar" style="width:${Math.max(1, c.wp * 120)}px"></span>${(c.wp * 100).toFixed(1)}%</td>` },
+    { id:"px", h:"Price / t", get:c => c.px, num:true, cell:c => `<td>${fmtMoney(c.px)}<span class="sub">${c.pb}</span></td>` },
+    { id:"mkt", h:"Annual market", get:c => c.mkt, num:true, cell:c => `<td>${fmtB(c.mkt)}</td>` },
+    { id:"vol", h:"Gate volatility", get:c => c.vol, num:true, cell:c => `<td>${c.vol.toFixed(2)}</td>` },
+    { id:"cur", h:"Current gate", get:c => c.ext[NOW], num:true, cell:c => `<td>${c.ext[NOW]}<span class="sub">likely '27: ${f1(c.lik[mi(2027,6)])}</span></td>` },
+    { id:"pol", h:"Political gate", get:c => c.pol, num:true, cell:c => `<td>${c.pol}</td>` },
+    { id:"px_t", h:"Proxies for marginal sentiment", get:null, num:false, cell:c => `<td class="txt">${c.px_t}</td>` },
+  ];
+  let sortId = "mkt", sortDir = -1;
+  function drawRank() {
+    const t = document.getElementById("rank");
+    const col = COLS.find(c => c.id === sortId);
+    const rows = C.slice().sort((a, b) => { const va = col.get(a), vb = col.get(b);
+      return (col.num ? va - vb : String(va).localeCompare(String(vb))) * sortDir || b.mkt - a.mkt; });
+    let h = "<thead><tr>" + COLS.map(c => {
+      const on = c.id === sortId, as = on ? (sortDir > 0 ? "ascending" : "descending") : null;
+      const inner = c.get ? `<button type="button" data-id="${c.id}">${c.h}<span class="ar">${on ? (sortDir > 0 ? "▲" : "▼") : ""}</span></button>` : `<span style="font:600 12px var(--font-body);color:var(--ink-2)">${c.h}</span>`;
+      return `<th${as ? ` aria-sort="${as}"` : ""} style="${c.id === "px_t" ? "text-align:left" : ""}">${inner}</th>`;
+    }).join("") + "</tr></thead><tbody>";
+    h += rows.map(r => "<tr>" + COLS.map(c => c.cell(r)).join("") + "</tr>").join("") + "</tbody>";
+    t.innerHTML = h;
+    t.querySelectorAll("th button").forEach(b => b.addEventListener("click", () => {
+      const id = b.dataset.id;
+      if (id === sortId) sortDir = -sortDir; else { sortId = id; sortDir = id === "n" ? 1 : -1; }
+      drawRank();
+      const nb = document.querySelector(`#rank th button[data-id="${id}"]`); if (nb) nb.focus();
+    }));
+  }
+
+  drawAgg("agg-cw", "cw", "Market-value weight", 340);
+  drawAgg("agg-ew", "ew", "Equal weight", 220);
+  drawRank(); drawGrid(); drawTable();
 })();
 </script>
 </body>
