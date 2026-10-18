@@ -13,18 +13,18 @@
 :root {
   --bg: #fbfbf9; --surface: #ffffff; --ink: #141413; --ink-2: #52514e; --ink-3: #8a8983;
   --rule: #e6e5e0; --grid: #efeee9; --band: rgba(120,118,110,.13); --shade: rgba(120,118,110,.06);
-  --hist: #3b3a36; --sch: #e34948; --lik: #2a78d6; --now: #b5b4ad; --hl: #f3f2ed;
+  --hist: #3b3a36; --sch: #141413; --lik: #2a78d6; --now: #b5b4ad; --hl: #f3f2ed;
   --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #161615; --surface: #1d1d1c; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
   --rule: #33332f; --grid: #2a2a27; --band: rgba(200,198,190,.11); --shade: rgba(200,198,190,.04);
-  --hist: #e4e3dd; --sch: #e66767; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark } }
+  --hist: #e4e3dd; --sch: #ffffff; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #161615; --surface: #1d1d1c; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
   --rule: #33332f; --grid: #2a2a27; --band: rgba(200,198,190,.11); --shade: rgba(200,198,190,.04);
-  --hist: #e4e3dd; --sch: #e66767; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark }
+  --hist: #e4e3dd; --sch: #ffffff; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
 .wrap { max-width: 1160px; margin: 0 auto; padding-block: 28px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
@@ -85,7 +85,7 @@ td.p { color: var(--ink-3); }
 <div class="wrap">
   <header>
     <h1>China mineral export gates, 2006–2028</h1>
-    <p class="lede">How shut China's export gate is for US-bound supply of each critical mineral, scored 0–10 by month. History runs to October 2026. The two projections are what the rules as written schedule, and what we think is likely.</p>
+    <p class="lede">How shut China's export gate is for US-bound supply of each critical mineral, scored 0–10 by month. History runs to October 2026. The two projections are what the rules as written schedule, and an optimistic path in which some suspensions are renewed.</p>
   </header>
 
   <section class="panel" aria-labelledby="agg-h">
@@ -94,7 +94,7 @@ td.p { color: var(--ink-3); }
       <div class="legend">
         <span><i class="sw" style="border-color:var(--hist)"></i>History</span>
         <span><i class="sw dot" style="border-color:var(--sch)"></i>Scheduled (rules as written)</span>
-        <span><i class="sw dash" style="border-color:var(--lik)"></i>Likely</span>
+        <span><i class="sw dash" style="border-color:var(--lik)"></i>Optimistic</span>
         <span><i class="sw band"></i>Range: all suspensions renewed to scheduled</span>
       </div>
     </div>
@@ -119,7 +119,7 @@ td.p { color: var(--ink-3); }
       <div class="legend">
         <span><i class="sw" style="border-color:var(--hist)"></i>History</span>
         <span><i class="sw dot" style="border-color:var(--sch)"></i>Scheduled</span>
-        <span><i class="sw dash" style="border-color:var(--lik)"></i>Likely</span>
+        <span><i class="sw dash" style="border-color:var(--lik)"></i>Optimistic</span>
         <span><i class="sw band"></i>Renewed–scheduled range</span>
       </div>
     </div>
@@ -150,8 +150,8 @@ td.p { color: var(--ink-3); }
     <h2 id="n-h">How this is built</h2>
     <p><b>Scores are judgment, not data.</b> Each score translates a policy event into the scale above. Pre-2015 scores reflect China's export quotas and duties on rare earths, tungsten, antimony, indium and graphite. The WTO ruled against them in 2014, and China removed them in 2015.</p>
     <p><b>Nothing is scheduled to come down.</b> Every control in force (Ga/Ge 2023, graphite 2023, antimony 2024, tungsten/bismuth/indium/tellurium Feb 2025, seven rare earths Apr 2025) is a standing rule with no end date. Only the two Nov 2025 suspensions carry dates, and when they expire the gate goes up. Individual export licences expire, typically after 6–12 months, but that changes how much flows, not the gate.</p>
-    <p><b>Scheduled (red dotted).</b> Every rule runs on its written dates and nothing new is agreed. On Nov 10, 2026 the Oct 2025 package returns (Dy/Tb/Sm/Y/Sc 9, NdPr 7, graphite 7). On Nov 27, 2026 the US ban returns (Ga/Ge/Sb 10).</p>
-    <p><b>Likely (blue dashed).</b> Our probability-weighted view, with renewal risk each year: score = renewed + p × (scheduled − renewed).</p>
+    <p><b>Scheduled (dotted, the default).</b> Every rule runs on its written dates and nothing new is agreed. On Nov 10, 2026 the Oct 2025 package returns (Dy/Tb/Sm/Y/Sc 9, NdPr 7, graphite 7). On Nov 27, 2026 the US ban returns (Ga/Ge/Sb 10).</p>
+    <p><b>Optimistic (blue dashed).</b> A probability-weighted path that assumes renewal is more likely than not for the US ban, and roughly a coin flip for the rare-earth package, with the risk compounding each year: score = renewed + p × (scheduled − renewed).</p>
     <ul style="padding-left:18px">
       <li>Oct 2025 rare-earth and graphite package: p = 45% from Nov 2026, rising to 65% from Nov 2027.</li>
       <li>US-specific Ga/Ge/Sb ban: p = 30% from Dec 2026, rising to 50% from Dec 2027.</li>
@@ -276,8 +276,9 @@ td.p { color: var(--ink-3); }
     }
     el("line", { x1: x(NOW + 1), x2: x(NOW + 1), y1: m.t - 4, y2: H - m.b, stroke: "var(--now)", "stroke-width": 1 }, svg);
     (o.annots || []).forEach(([i, txt, row, anchor]) => {
-      const yy = m.t + 10 + row * 13;
-      el("line", { x1: x(i), x2: x(i), y1: H - m.b, y2: yy + 3, stroke: "var(--rule)", "stroke-dasharray": "2 3" }, svg);
+      // row < 0: label sits at the bottom of the plot (projection zone is empty there); line runs full height
+      const bottom = row < 0, yy = bottom ? H - m.b - 6 + (row + 1) * 13 : m.t + 10 + row * 13;
+      el("line", { x1: x(i), x2: x(i), y1: bottom ? yy - 11 : H - m.b, y2: bottom ? m.t : yy + 3, stroke: "var(--rule)", "stroke-dasharray": "2 3" }, svg);
       const t = el("text", { x: anchor === "end" ? x(i) - 3 : x(i) + 3, y: yy, "font-size": 10, "text-anchor": anchor || "start" }, svg); t.textContent = txt;
     });
     o.series.forEach(s => {
@@ -304,12 +305,12 @@ td.p { color: var(--ink-3); }
   }
 
   const f1 = v => v.toFixed(1);
-  const tipFut = (i, lik, sch, ren) => `<div><span class="k">Likely</span> <b>${f1(lik)}</b> · <span class="k">scheduled</span> <b>${f1(sch)}</b> · <span class="k">all renewed</span> <b>${f1(ren)}</b></div>`;
+  const tipFut = (i, lik, sch, ren) => `<div><span class="k">Optimistic</span> <b>${f1(lik)}</b> · <span class="k">scheduled</span> <b>${f1(sch)}</b> · <span class="k">all renewed</span> <b>${f1(ren)}</b></div>`;
   function drawAgg(id, p, title, h) {
     chart(document.getElementById(id), {
       w: 1000, h: h, m: { l: 26, r: 10, t: 22, b: 24 }, xstep: 2, minor: true,
-      aria: `${title} aggregate China export gate score 2006 to 2028 with scheduled and likely projections`,
-      annots: [[mi(2010,9),"Japan halt",0],[mi(2015,1),"WTO",0],[mi(2023,8),"Ga/Ge",1,"end"],[mi(2024,12),"US ban",0,"end"],[mi(2025,4),"REE",2,"end"],[mi(2026,11),"Roll-offs",3,"start"],[mi(2027,11),"Renewal",4,"start"]],
+      aria: `${title} aggregate China export gate score 2006 to 2028 with scheduled and optimistic projections`,
+      annots: [[mi(2010,9),"Japan halt",0],[mi(2015,1),"WTO",0],[mi(2023,8),"Ga/Ge",1,"end"],[mi(2024,12),"US ban",0,"end"],[mi(2025,4),"REE",2,"end"],[mi(2026,11),"Roll-offs",-2],[mi(2027,11),"Renewal",-1]],
       series: [{ hist: A[p + "_ext"], sch: A[p + "_sch"], lik: A[p + "_lik"], lo: A[p + "_ext"], hi: A[p + "_sch"] }],
       tip: i => `<div><b>${title}</b> · ${lab(i)}</div>` + (i > NOW ? tipFut(i, A[p + "_lik"][i], A[p + "_sch"][i], A[p + "_ext"][i]) : `<div><span class="k">Gate</span> <b>${f1(A[p + "_ext"][i])}</b></div>`)
     });
@@ -338,7 +339,7 @@ td.p { color: var(--ink-3); }
     const row = (name, hist, lik, sch) => { let r = `<tr><td>${name}</td>`; for (let yr = Y0; yr <= Y1; yr++) { const i = Math.min(mi(yr, 12), N - 1); r += i > NOW ? `<td class="p">${f1(lik[i])} / ${f1(sch[i])}</td>` : `<td>${f1(hist[i])}</td>`; } return r + "</tr>"; };
     C.forEach(c => { h += row(c.n, c.ext, c.lik, c.sch); });
     h += row("Equal weight", A.ew_ext, A.ew_lik, A.ew_sch) + row("Market-value weight", A.cw_ext, A.cw_lik, A.cw_sch);
-    document.getElementById("tbl").innerHTML = h + '</tbody></table><p style="font-size:12px;margin:8px 0 0;color:var(--ink-3)">Grey = projected, shown as likely / scheduled. Each year shows December, so 2026 is after the November roll-offs.</p>';
+    document.getElementById("tbl").innerHTML = h + '</tbody></table><p style="font-size:12px;margin:8px 0 0;color:var(--ink-3)">Grey = projected, shown as optimistic / scheduled. Each year shows December, so 2026 is after the November roll-offs.</p>';
   }
 
   // Ranking table
@@ -350,7 +351,7 @@ td.p { color: var(--ink-3); }
     { id:"px", h:"Price / t", get:c => c.px, num:true, cell:c => `<td>${fmtMoney(c.px)}<span class="sub">${c.pb}</span></td>` },
     { id:"mkt", h:"Annual market", get:c => c.mkt, num:true, cell:c => `<td>${fmtB(c.mkt)}</td>` },
     { id:"vol", h:"Gate volatility", get:c => c.vol, num:true, cell:c => `<td>${c.vol.toFixed(2)}</td>` },
-    { id:"cur", h:"Current gate", get:c => c.ext[NOW], num:true, cell:c => `<td>${c.ext[NOW]}<span class="sub">likely '27: ${f1(c.lik[mi(2027,6)])}</span></td>` },
+    { id:"cur", h:"Current gate", get:c => c.ext[NOW], num:true, cell:c => `<td>${c.ext[NOW]}<span class="sub">optimistic '27: ${f1(c.lik[mi(2027,6)])}</span></td>` },
     { id:"pol", h:"Political gate", get:c => c.pol, num:true, cell:c => `<td>${c.pol}</td>` },
     { id:"px_t", h:"Proxies for marginal sentiment", get:null, num:false, cell:c => `<td class="txt">${c.px_t}</td>` },
   ];
