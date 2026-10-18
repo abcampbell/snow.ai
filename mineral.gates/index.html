@@ -13,18 +13,18 @@
 :root {
   --bg: #fbfbf9; --surface: #ffffff; --ink: #141413; --ink-2: #52514e; --ink-3: #8a8983;
   --rule: #e6e5e0; --grid: #efeee9; --band: rgba(120,118,110,.13); --shade: rgba(120,118,110,.06);
-  --hist: #3b3a36; --sch: #141413; --lik: #2a78d6; --now: #b5b4ad; --hl: #f3f2ed;
+  --hist: #3b3a36; --sch: #2a78d6; --lik: #008300; --now: #b5b4ad; --hl: #f3f2ed;
   --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #161615; --surface: #1d1d1c; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
   --rule: #33332f; --grid: #2a2a27; --band: rgba(200,198,190,.11); --shade: rgba(200,198,190,.04);
-  --hist: #e4e3dd; --sch: #ffffff; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark } }
+  --hist: #e4e3dd; --sch: #3987e5; --lik: #2ea82e; --now: #55554f; --hl: #262624; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #161615; --surface: #1d1d1c; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8e86;
   --rule: #33332f; --grid: #2a2a27; --band: rgba(200,198,190,.11); --shade: rgba(200,198,190,.04);
-  --hist: #e4e3dd; --sch: #ffffff; --lik: #3987e5; --now: #55554f; --hl: #262624; color-scheme: dark }
+  --hist: #e4e3dd; --sch: #3987e5; --lik: #2ea82e; --now: #55554f; --hl: #262624; color-scheme: dark }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
 .wrap { max-width: 1160px; margin: 0 auto; padding-block: 28px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
@@ -150,8 +150,8 @@ td.p { color: var(--ink-3); }
     <h2 id="n-h">How this is built</h2>
     <p><b>Scores are judgment, not data.</b> Each score translates a policy event into the scale above. Pre-2015 scores reflect China's export quotas and duties on rare earths, tungsten, antimony, indium and graphite. The WTO ruled against them in 2014, and China removed them in 2015.</p>
     <p><b>Nothing is scheduled to come down.</b> Every control in force (Ga/Ge 2023, graphite 2023, antimony 2024, tungsten/bismuth/indium/tellurium Feb 2025, seven rare earths Apr 2025) is a standing rule with no end date. Only the two Nov 2025 suspensions carry dates, and when they expire the gate goes up. Individual export licences expire, typically after 6–12 months, but that changes how much flows, not the gate.</p>
-    <p><b>Scheduled (dotted, the default).</b> Every rule runs on its written dates and nothing new is agreed. On Nov 10, 2026 the Oct 2025 package returns (Dy/Tb/Sm/Y/Sc 9, NdPr 7, graphite 7). On Nov 27, 2026 the US ban returns (Ga/Ge/Sb 10).</p>
-    <p><b>Optimistic (blue dashed).</b> A probability-weighted path that assumes renewal is more likely than not for the US ban, and roughly a coin flip for the rare-earth package, with the risk compounding each year: score = renewed + p × (scheduled − renewed).</p>
+    <p><b>Scheduled (blue dotted, the default).</b> Every rule runs on its written dates and nothing new is agreed. On Nov 10, 2026 the Oct 2025 package returns (Dy/Tb/Sm/Y/Sc 9, NdPr 7, graphite 7). On Nov 27, 2026 the US ban returns (Ga/Ge/Sb 10).</p>
+    <p><b>Optimistic (green dashed).</b> A probability-weighted path that assumes renewal is more likely than not for the US ban, and roughly a coin flip for the rare-earth package, with the risk compounding each year: score = renewed + p × (scheduled − renewed).</p>
     <ul style="padding-left:18px">
       <li>Oct 2025 rare-earth and graphite package: p = 45% from Nov 2026, rising to 65% from Nov 2027.</li>
       <li>US-specific Ga/Ge/Sb ban: p = 30% from Dec 2026, rising to 50% from Dec 2027.</li>
