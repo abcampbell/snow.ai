@@ -72,9 +72,11 @@ td.p { color: var(--ink-3); }
 #rank th button:focus-visible { outline: 2px solid var(--lik); outline-offset: 2px; border-radius: 2px; }
 #rank th[aria-sort] button { color: var(--ink); }
 #rank th .ar { font-family: var(--font-data); width: 1ch; }
-#rank td.txt { font-family: var(--font-body); text-align: left; white-space: normal; min-width: 260px; max-width: 380px; color: var(--ink-2); }
+#rank { width: 100%; }
+#rank td.txt { font-family: var(--font-body); text-align: left; white-space: normal; min-width: 240px; max-width: 360px; color: var(--ink-2); line-height: 1.45; }
+#rank td.px { white-space: normal; min-width: 130px; max-width: 170px; }
 #rank td.nm { font-family: var(--font-body); font-weight: 600; }
-#rank td.sub { color: var(--ink-3); font-size: 11px; display: block; font-weight: 400; }
+#rank .sub { display: block; margin-top: 2px; color: var(--ink-3); font: 400 11px/1.35 var(--font-body); white-space: normal; }
 #rank tr:hover td { background: var(--hl); }
 .bar { display: inline-block; height: 6px; border-radius: 0 3px 3px 0; background: var(--ink-3); vertical-align: middle; margin-right: 6px; opacity: .55; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -419,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const COLS = [
     { id:"n", h:"Mineral", get:c => c.n, num:false, cell:c => `<td class="nm">${c.n}<span class="sub">${c.k}</span></td>` },
     { id:"wp", h:"Weight", get:c => c.wp, num:true, cell:c => `<td><span class="bar" style="width:${Math.max(1, c.wp * 120)}px"></span>${(c.wp * 100).toFixed(1)}%</td>` },
-    { id:"px", h:"Price / t", get:c => c.px, num:true, cell:c => `<td>${fmtMoney(c.px)}<span class="sub">${c.pb}</span></td>` },
+    { id:"px", h:"Price / t", get:c => c.px, num:true, cell:c => `<td class="px">${fmtMoney(c.px)}<span class="sub">${c.pb}</span></td>` },
     { id:"mkt", h:"Annual market", get:c => c.mkt, num:true, cell:c => `<td>${fmtB(c.mkt)}</td>` },
     { id:"vol", h:"Gate volatility", get:c => c.vol, num:true, cell:c => `<td>${c.vol.toFixed(2)}</td>` },
     { id:"cur", h:"Current gate", get:c => c.ext[NOW], num:true, cell:c => `<td>${c.ext[NOW]}<span class="sub">optimistic '27: ${f1(c.lik[mi(2027,6)])}</span></td>` },
