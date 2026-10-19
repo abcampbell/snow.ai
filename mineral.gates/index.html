@@ -199,6 +199,90 @@ document.addEventListener("DOMContentLoaded", function () {
     series: [{ v: ratio, c: "var(--ink-2)", dots: true, w: 1.5 }] });
 });
 </script>
+  <section class="panel" aria-labelledby="wvc-h">
+    <div class="row">
+      <h2 id="wvc-h">West vs China price, all 14 minerals</h2>
+      <div class="legend">
+        <span><i class="sw" style="border-color:var(--west)"></i>West</span>
+        <span><i class="sw" style="border-color:var(--china)"></i>China</span>
+      </div>
+    </div>
+    <div style="display:grid;gap:6px;min-width:0"><h3>Today: Western price ÷ China price, Sep–Oct 2026 (log scale)</h3><div id="wvc-bars"></div></div>
+    <div class="tbl"><table id="wvc-tbl"></table></div>
+    <div style="display:grid;gap:6px;min-width:0;border-top:1px solid var(--rule);padding-top:12px">
+      <h3>History: US import vs China export value per tonne, 2010–2025 (annual customs data)</h3>
+      <div class="grid" id="wvc-grid"></div>
+    </div>
+    <div class="notes">
+      <p><b>How to read it.</b> The gap tracks the gate. Where China rations exports the most (gallium, yttrium, dysprosium, terbium), Western buyers pay 7–130x the Chinese domestic price. Where the gate is softer or the West has its own supply (tellurium, NdPr, indium, antimony), the premium is 1.2–1.6x. The customs history shows the same thing over time. Antimony, tungsten and bismuth traded near parity for 15 years. The rare-earth metals basket jumped to 4–5x in 2024–25.</p>
+      <p><b>Sources and caveats.</b> Today's prices are public trade-press quotes of Fastmarkets, Argus, SMM, S&amp;P, Benchmark, CREIA and Trading Economics. Chinese domestic prices are converted to USD with 13% VAT removed. Dates vary from Jun to Oct 2026, and several Western quotes are secondary. Scandium has no public Western quote. Samarium's "West" figure is China's export (FOB) price. The graphite Western quote is from mid-2025. History comes from UN Comtrade (HS6 value ÷ net weight; years under 20 t dropped). Customs values mix grades and lag spot prices, and the two rare-earth baskets mix elements, so read the history for direction, not level. Bismuth's code was split in 2022, so its series ends in 2021. Gallium, germanium, indium and tellurium share mixed customs codes and have no usable trade history.</p>
+    </div>
+  </section>
+<script type="application/json" id="wvc-data">{"hist":[{"hs":"811010","n":"Antimony (unwrought)","w":[7611,12576,12053,9921,8271,7853,null,7964,8331,6926,5913,9226,13257,11686,18184,44541],"c":[7715,13100,12348,9793,8930,7296,6534,6704,8189,6485,5579,9788,12740,11890,18740,32327]},{"hs":"284180","n":"Tungstates incl. APT","w":[19825,27677,25600,29224,25801,25896,20900,21413,28825,18924,24192,27337,34879,34602,26597,29340],"c":[20244,36103,35453,34153,31979,20928,17484,20219,28007,22358,20612,25326,29361,29546,30830,36232]},{"hs":"810110","n":"Tungsten powder","w":[36124,56107,63350,54622,52970,44755,34452,37858,50036,38360,32839,36451,46013,53442,47137,53456],"c":[31387,54286,55526,52679,49198,35617,35592,32568,44461,35201,30441,35444,42439,39225,41305,50348]},{"hs":"810600","n":"Bismuth","w":[18688,23646,22739,19866,23428,18377,10084,10504,10464,7079,6589,8341,null,null,null,null],"c":[17895,23875,21000,18647,22436,16120,11521,10055,10320,8075,6274,7583,null,null,null,null]},{"hs":"250410","n":"Natural graphite flake","w":[933,1303,1389,1333,1157,1347,null,1226,954,1186,null,null,2183,2215,null,1866],"c":[435,1139,1502,1439,1401,1402,1311,1075,1458,1558,1868,1530,1935,1549,1420,1120]},{"hs":"850511","n":"Permanent magnets (NdFeB proxy)","w":[23815,null,null,null,null,40610,34980,38899,43468,38167,38930,51042,14464,18582,50826,48996],"c":[10675,23294,26261,19235,18850,18288,45567,17130,18632,19082,19287,25384,37539,30855,24753,27535]},{"hs":"280530","n":"Rare-earth metals (basket)","w":[35202,183473,116902,29792,19692,13963,11802,12496,18046,15972,29621,35801,44125,55217,58506,58147],"c":[28532,186293,67964,35903,20769,14769,40634,14478,20477,16940,13047,16476,43028,24838,10786,14420]},{"hs":"284690","n":"Rare-earth compounds (basket)","w":[11666,83110,81038,19931,11969,11671,6375,7614,8850,6763,21794,28156,12169,13361,13840,13474],"c":[25731,170409,71788,27888,14950,11821,45609,8558,9481,9983,11269,16582,21223,15330,10679,8817]}],"snap":[{"mineral":"Antimony","west_price":18650.0,"west_unit":"USD/t","west_basis":"Rotterdam 99.65%, Fastmarkets $18,300-19,000","west_date":"2026-10-14","china_price_usd":11820.0,"china_unit":"USD/t","china_basis":"100ppi Shanghai 1# ingot 93,500 CNY/t incl VAT, ex-VAT","china_date":"2026-10-16","ratio":1.58,"ratio_note":null,"confidence":"High"},{"mineral":"Tungsten (APT)","west_price":2800.0,"west_unit":"USD/mtu WO3","west_basis":"Rotterdam APT, SMM $2,500-3,100","west_date":"2026-10-15","china_price_usd":671.0,"china_unit":"USD/mtu WO3","china_basis":"SMM China APT 470,000 CNY/t","china_date":"2026-10-15","ratio":4.2,"ratio_note":"range 3.7-4.6x; overseas APT falling, ratio may be overstated","confidence":"Med"},{"mineral":"NdPr oxide","west_price":115.0,"west_unit":"USD/kg","west_basis":"SMM CIF Rotterdam $108-122","west_date":"2026-10-16","china_price_usd":93.5,"china_unit":"USD/kg","china_basis":"CREIA index 729.8-749.8 CNY/kg ex-VAT","china_date":"2026-10-09","ratio":1.23,"ratio_note":"1.30x on FOB","confidence":"High"},{"mineral":"Dysprosium oxide","west_price":1463.0,"west_unit":"USD/kg","west_basis":"Fastmarkets Rotterdam $1,250-1,675","west_date":"2026-09-10","china_price_usd":215.0,"china_unit":"USD/kg","china_basis":"China domestic","china_date":"2026-09-15","ratio":6.8,"ratio_note":"4.9x vs FOB China; 12.8x on Argus CIF Europe $2,500-3,000","confidence":"Med"},{"mineral":"Terbium oxide","west_price":7500.0,"west_unit":"USD/kg","west_basis":"S&P CIF North America","west_date":"2026-10-02","china_price_usd":996.0,"china_unit":"USD/kg","china_basis":"China domestic","china_date":"2026-09-15","ratio":7.5,"ratio_note":"Europe ~3.8x","confidence":"Med"},{"mineral":"Samarium oxide","west_price":7.0,"west_unit":"USD/kg","west_basis":"FOB China export (no Western quote found)","west_date":"2026-06-30","china_price_usd":2.17,"china_unit":"USD/kg","china_basis":"SMM domestic ex-VAT","china_date":"2026-09-30","ratio":3.2,"ratio_note":"export vs domestic, not a true Western price","confidence":"Low"},{"mineral":"Yttrium oxide","west_price":1000.0,"west_unit":"USD/kg","west_basis":"Argus Atlantic delivered 5N","west_date":"2026-09-29","china_price_usd":7.8,"china_unit":"USD/kg","china_basis":"SMM domestic","china_date":"2026-09-10","ratio":129.0,"ratio_note":"~24x vs FOB China; Fastmarkets Rotterdam $457.50 in Jun","confidence":"Med"},{"mineral":"Scandium oxide","west_price":null,"west_unit":"USD/kg","west_basis":"No public ex-China quote","west_date":null,"china_price_usd":592.0,"china_unit":"USD/kg","china_basis":"SMM domestic","china_date":"2026-09-30","ratio":null,"ratio_note":"not found","confidence":null},{"mineral":"Gallium","west_price":3050.0,"west_unit":"USD/kg","west_basis":"Argus Western 4N (secondary source)","west_date":"2026-07-30","china_price_usd":220.0,"china_unit":"USD/kg","china_basis":"Trading Economics China 1,740 CNY/kg","china_date":"2026-10-13","ratio":13.9,"ratio_note":"8.5x on Mar Rotterdam $2,101.60; 7.0x vs FOB China $433","confidence":"Med"},{"mineral":"Germanium","west_price":6355.0,"west_unit":"USD/kg","west_basis":"SMM Europe warehouse $6,330-6,380","west_date":"2026-10-04","china_price_usd":3445.0,"china_unit":"USD/kg","china_basis":"Trading Economics China 27,250 CNY/kg","china_date":"2026-10-13","ratio":1.84,"ratio_note":"2.6x on Apr Rotterdam $8-10k","confidence":"Med"},{"mineral":"Indium","west_price":880.0,"west_unit":"USD/kg","west_basis":"SMM Europe/US ingot","west_date":"2026-10-04","china_price_usd":645.0,"china_unit":"USD/kg","china_basis":"SMM refined 5,100 CNY/kg","china_date":"2026-10-16","ratio":1.36,"ratio_note":null,"confidence":"Med"},{"mineral":"Bismuth","west_price":46850.0,"west_unit":"USD/t","west_basis":"SMM Europe 4N $21.2-21.3/lb","west_date":"2026-10-08","china_price_usd":16974.0,"china_unit":"USD/t","china_basis":"SMM China","china_date":"2026-09-30","ratio":2.76,"ratio_note":"~3.1x if China figure incl VAT","confidence":"Med"},{"mineral":"Tellurium","west_price":120.59,"west_unit":"USD/kg","west_basis":"Rotterdam 99.99% (ScrapMonster/ISE)","west_date":"2026-08-24","china_price_usd":101.0,"china_unit":"USD/kg","china_basis":"SMM 798.5 CNY/kg","china_date":"2026-10-16","ratio":1.19,"ratio_note":null,"confidence":"Med-low"},{"mineral":"Graphite flake -100 mesh","west_price":527.0,"west_unit":"USD/t","west_basis":"Benchmark FOB East Africa (mid-2025, stale)","west_date":"2025-06-30","china_price_usd":386.0,"china_unit":"USD/t","china_basis":"Benchmark delivered China 3,050 CNY/t","china_date":"2026-09-23","ratio":1.4,"ratio_note":"stale; African flake down sharply in Q3 2026","confidence":"Low"}]}</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const D = JSON.parse(document.getElementById("wvc-data").textContent);
+  const NS = "http://www.w3.org/2000/svg", tip = document.getElementById("tip");
+  const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+  const show = (e, h) => { tip.innerHTML = h; tip.hidden = false; const b = tip.getBoundingClientRect(); let lx = e.clientX + 14, ly = e.clientY + 14;
+    if (lx + b.width > innerWidth - 8) lx = e.clientX - b.width - 14; if (ly + b.height > innerHeight - 8) ly = e.clientY - b.height - 14; tip.style.left = lx + "px"; tip.style.top = ly + "px"; };
+  const hide = () => { tip.hidden = true; };
+  const num = (v, u) => v == null ? "–" : "$" + (v >= 100 ? Math.round(v).toLocaleString() : v.toFixed(2)) + " " + u.replace("USD", "");
+  const S = D.snap.slice().sort((a, b) => (b.ratio || 0) - (a.ratio || 0));
+
+  (function () {
+    const host = document.getElementById("wvc-bars"), rowH = 26, m = { l: 170, r: 60, t: 8, b: 26 };
+    const W = 1000, H = m.t + m.b + rowH * S.length;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Western to China price ratio by mineral, log scale" }, host);
+    const hi = Math.log10(200), x = v => m.l + Math.log10(v) / hi * (W - m.l - m.r);
+    [1, 2, 5, 10, 20, 50, 100, 200].forEach(v => { el("line", { x1: x(v), x2: x(v), y1: m.t, y2: H - m.b, stroke: v === 1 ? "var(--ink-3)" : "var(--grid)" }, svg);
+      const t = el("text", { x: x(v), y: H - 8, "text-anchor": "middle" }, svg); t.textContent = v + "x"; });
+    S.forEach((s, i) => {
+      const y = m.t + i * rowH + rowH / 2;
+      const lab = el("text", { x: m.l - 10, y: y + 4, "text-anchor": "end", "font-size": 12, style: "fill:var(--ink);font-family:var(--font-body)" }, svg); lab.textContent = s.mineral;
+      if (s.ratio == null) { const t = el("text", { x: x(1) + 6, y: y + 4, "font-size": 11 }, svg); t.textContent = "no Western quote"; return; }
+      const op = s.confidence === "Low" ? .45 : (s.confidence || "").startsWith("Med-") ? .7 : 1;
+      el("rect", { x: x(1), y: y - 8, width: Math.max(2, x(s.ratio) - x(1) - 2), height: 16, fill: "var(--west)", opacity: op }, svg);
+      el("rect", { x: x(s.ratio) - 4, y: y - 8, width: 4, height: 16, rx: 2, fill: "var(--west)", opacity: op }, svg);
+      const t = el("text", { x: x(s.ratio) + 6, y: y + 4, "font-size": 12, style: "fill:var(--ink-2)" }, svg); t.textContent = (s.ratio >= 10 ? Math.round(s.ratio) : s.ratio.toFixed(1)) + "x";
+      const hit = el("rect", { x: 0, y: y - rowH / 2, width: W, height: rowH, fill: "transparent" }, svg);
+      hit.addEventListener("pointermove", e => show(e, `<div><b>${s.mineral}</b> · <b>${s.ratio}x</b></div><div><span class="k">West</span> ${num(s.west_price, s.west_unit)} · ${s.west_basis} (${s.west_date || "–"})</div><div><span class="k">China</span> ${num(s.china_price_usd, s.china_unit)} · ${s.china_basis} (${s.china_date || "–"})</div>${s.ratio_note ? `<div class="k">${s.ratio_note}</div>` : ""}<div class="k">Confidence: ${s.confidence || "–"}${s.confidence === "Low" ? " (faded bar)" : ""}</div>`));
+      hit.addEventListener("pointerleave", hide);
+    });
+  })();
+
+  document.getElementById("wvc-tbl").innerHTML = "<thead><tr><th>Mineral</th><th>West</th><th>China (USD, ex-VAT)</th><th>West ÷ China</th><th>Confidence</th><th style='text-align:left'>Basis</th></tr></thead><tbody>" +
+    S.map(s => `<tr><td style="font-family:var(--font-body);font-weight:600">${s.mineral}</td><td>${num(s.west_price, s.west_unit)}<span style="display:block;color:var(--ink-3);font-size:11px">${s.west_date || ""}</span></td><td>${num(s.china_price_usd, s.china_unit)}<span style="display:block;color:var(--ink-3);font-size:11px">${s.china_date || ""}</span></td><td>${s.ratio == null ? "–" : s.ratio + "x"}</td><td style="font-family:var(--font-body)">${s.confidence || "–"}</td><td style="font-family:var(--font-body);text-align:left;white-space:normal;min-width:260px;max-width:420px;color:var(--ink-2)">West: ${s.west_basis}. China: ${s.china_basis}.${s.ratio_note ? " " + s.ratio_note + "." : ""}</td></tr>`).join("") + "</tbody>";
+
+  const g = document.getElementById("wvc-grid"), Y0 = 2010, NY = 16;
+  D.hist.forEach(h => {
+    const card = document.createElement("div"); card.className = "mini";
+    const last = a => { for (let i = a.length - 1; i >= 0; i--) if (a[i] != null) return [i, a[i]]; return null; };
+    const lw = last(h.w), lc = last(h.c);
+    const rat = lw && lc && lw[0] === lc[0] ? (lw[1] / lc[1]).toFixed(2) + "x in " + (Y0 + lw[0]) : "";
+    card.innerHTML = `<div class="hd"><span class="nm">${h.n}</span><span class="val">${rat}</span></div><div class="note">HS ${h.hs}</div><div class="ch"></div>`;
+    g.appendChild(card);
+    const W = 300, H = 140, m = { l: 40, r: 6, t: 8, b: 20 };
+    const vals = h.w.concat(h.c).filter(v => v != null), max = Math.max(...vals) * 1.1;
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": h.n + " US import vs China export value per tonne" }, card.querySelector(".ch"));
+    const x = i => m.l + i / (NY - 1) * (W - m.l - m.r), y = v => m.t + (1 - v / max) * (H - m.t - m.b);
+    [0, max / 2, max].forEach(v => { el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: "var(--grid)" }, svg);
+      const t = el("text", { x: m.l - 4, y: y(v) + 4, "text-anchor": "end" }, svg); t.textContent = v >= 1000 ? "$" + Math.round(v / 1000) + "k" : "$" + Math.round(v); });
+    [2010, 2014, 2018, 2022, 2025].forEach(yr => { const t = el("text", { x: x(yr - Y0), y: H - 4, "text-anchor": "middle" }, svg); t.textContent = "'" + String(yr).slice(2); });
+    [[h.w, "var(--west)"], [h.c, "var(--china)"]].forEach(([a, c]) => {
+      let d = "", pen = false; a.forEach((v, i) => { if (v == null) { pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); pen = true; });
+      el("path", { d, fill: "none", stroke: c, "stroke-width": 2 }, svg);
+      a.forEach((v, i) => { if (v != null && a[i - 1] == null && a[i + 1] == null) el("circle", { cx: x(i), cy: y(v), r: 3, fill: c }, svg); });
+    });
+    const hit = el("rect", { x: m.l, y: 0, width: W - m.l - m.r, height: H, fill: "transparent" }, svg);
+    hit.addEventListener("pointermove", e => { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+      const i = Math.max(0, Math.min(NY - 1, Math.round((p.x - m.l) / (W - m.l - m.r) * (NY - 1))));
+      const w = h.w[i], c = h.c[i];
+      show(e, `<div><b>${h.n}</b> · ${Y0 + i}</div><div><span class="k">US import</span> <b>${w == null ? "–" : "$" + w.toLocaleString() + "/t"}</b></div><div><span class="k">China export</span> <b>${c == null ? "–" : "$" + c.toLocaleString() + "/t"}</b></div><div><span class="k">Ratio</span> <b>${w && c ? (w / c).toFixed(2) + "x" : "–"}</b></div>`); });
+    hit.addEventListener("pointerleave", hide);
+  });
+});
+</script>
   <section class="panel" aria-labelledby="sc-h">
     <h2 id="sc-h">Scale</h2>
     <div class="scale">
