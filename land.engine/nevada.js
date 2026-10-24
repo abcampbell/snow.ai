@@ -1,6 +1,7 @@
 // Nevada Land Finder: every parcel of 10+ acres, filterable, drawn true to scale on the map.
 (() => {
-  const $ = (id) => document.getElementById(id);
+  const STUB = { value: "", checked: false, addEventListener() {}, insertAdjacentHTML() {}, set textContent(v) {}, set innerHTML(v) {}, querySelector() { return null; } };
+  const $ = (id) => document.getElementById(id) || STUB; // a page from an older version can lack newer controls
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const fmt = (n, d = 0) => n == null || !isFinite(n) ? "–" : Number(n).toLocaleString("en-US", { maximumFractionDigits: d, minimumFractionDigits: d });
   const money = (v) => v == null || !isFinite(v) ? "–" : v >= 1e6 ? `$${(v / 1e6).toFixed(v >= 1e7 ? 0 : 1)}M` : v >= 1e3 ? `$${Math.round(v / 1e3)}K` : `$${Math.round(v)}`;
@@ -121,7 +122,21 @@
   const listingLayer = L.layerGroup().addTo(map);
 
   // ---------- data ----------
-  fetch("data/nevada/parcels10.json?v=20261024").then((r) => r.json()).then((doc) => {
+  async function loadParcels(url) {
+    const r = await fetch(url);
+    if (!r.ok || !r.body) return r.json();
+    const total = +r.headers.get("content-length") || 0, reader = r.body.getReader(), parts = []; let got = 0;
+    for (;;) {
+      const { done, value } = await reader.read(); if (done) break;
+      parts.push(value); got += value.length;
+      $("nvLoad").textContent = `Loading parcels… ${(got / 1e6).toFixed(1)}${total ? ` of ${(total / 1e6).toFixed(1)}` : ""} MB`;
+    }
+    const buf = new Uint8Array(got); let o = 0; for (const p of parts) { buf.set(p, o); o += p.length; }
+    return JSON.parse(new TextDecoder().decode(buf));
+  }
+  const stall = setTimeout(() => { if (!D) $("nvLoad").textContent += " (slow connection: still downloading; a hard refresh, Ctrl+Shift+R, also clears an old cached copy)"; }, 20000);
+  loadParcels("data/nevada/parcels10.json?v=20261026").then((doc) => {
+    clearTimeout(stall);
     D = doc; C = Object.fromEntries(doc.cols.map((c, i) => [c, i]));
     rows = doc.rows.map((r) => {
       const it = Object.fromEntries(doc.cols.map((c, i) => [c, r[i]]));
