@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nevada Land Finder</title>
+<meta name="description" content="Every Nevada parcel of 10 acres or more on one map: filter by size, estimated price, water, power, roads, airports, minerals, water rights and hunt units.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="style.css?v=20261027">
+<style>
+  .nvx { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; height: calc(100vh - 57px); }
+  .nvx-side { overflow-y: auto; border-right: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; min-width: 0; }
+  .nvx-sec { padding: 12px 14px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; }
+  .nvx-sec h2 { font: 600 15px/1.25 var(--sans); margin: 0; }
+  .nvx-sec h3 { font: 500 10.5px var(--mono); color: var(--faint); letter-spacing: .08em; text-transform: uppercase; margin: 0; }
+  .nvx-sub { font-size: 12px; color: var(--muted); margin: 0; }
+  .nvx-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .nvx label { display: grid; gap: 3px; font: 11px var(--mono); color: var(--faint); }
+  .nvx label.ck { display: flex; align-items: center; gap: 6px; color: var(--muted); font: 12px var(--sans); }
+  .nvx input[type=number], .nvx input[type=search], .nvx select { background: var(--bg); border: 1px solid var(--line-2); color: var(--text); border-radius: 6px; padding: 6px 8px; font: 12px var(--mono); min-width: 0; width: 100%; }
+  .nvx input:focus, .nvx select:focus { outline: none; border-color: var(--accent); }
+  .nvx-btn { background: var(--bg); border: 1px solid var(--line-2); color: var(--muted); border-radius: 6px; padding: 6px 10px; font: 12px var(--sans); cursor: pointer; }
+  .nvx-btn:hover, .nvx-btn.on { border-color: var(--accent); color: var(--text); }
+  .nvx-count { font: 12px var(--mono); color: var(--muted); }
+  .nvx-count b { color: var(--text); font-weight: 600; }
+  .nvx-list { overflow-y: auto; flex: 1; min-height: 160px; }
+  .nvx-list table { width: 100%; border-collapse: collapse; font: 11.5px var(--mono); }
+  .nvx-list th { position: sticky; top: 0; background: var(--panel-2); color: var(--faint); font-weight: 500; text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  .nvx-list th:first-child, .nvx-list td:first-child { text-align: left; }
+  .nvx-list td { padding: 5px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; cursor: pointer; }
+  .nvx-list tr:hover td, .nvx-list tr.sel td { background: var(--panel-2); }
+  .nvx-list td .av { color: var(--go); font-weight: 600; }
+  .nvx-main { position: relative; min-width: 0; }
+  #nvMap { position: absolute; inset: 0; background: #111; }
+  .nvx-card { position: absolute; z-index: 1000; right: 12px; bottom: 24px; width: min(360px, calc(100% - 24px)); max-height: calc(100% - 90px); overflow-y: auto;
+    background: var(--panel); border: 1px solid var(--line-2); border-radius: 10px; padding: 12px 14px; font-size: 12.5px; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+  .nvx-card h4 { margin: 0 0 2px; font: 600 14px var(--sans); padding-right: 24px; }
+  .nvx-card .x { position: absolute; top: 8px; right: 8px; background: none; border: 0; color: var(--muted); font-size: 16px; cursor: pointer; }
+  .nvx-card dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; margin: 8px 0; }
+  .nvx-card dt { color: var(--faint); font: 11px var(--mono); padding-top: 1px; }
+  .nvx-card dd { margin: 0; }
+  .nvx-card .grp { font: 500 10px var(--mono); color: var(--faint); letter-spacing: .08em; text-transform: uppercase; grid-column: 1 / -1; margin-top: 6px; }
+  .nvx-card .acts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .nvx-card a.nvx-btn { text-decoration: none; }
+  .nvx-legend { position: absolute; z-index: 999; left: 12px; bottom: 24px; background: var(--panel); border: 1px solid var(--line-2); border-radius: 8px; padding: 8px 10px; font: 11px var(--mono); color: var(--muted); }
+  .nvx-legend .ramp { display: flex; height: 8px; border-radius: 2px; overflow: hidden; margin: 4px 0 2px; width: 180px; }
+  .nvx-legend .ramp i { flex: 1; }
+  .nvx-legend .ends { display: flex; justify-content: space-between; }
+  .good { color: var(--go); } .warn { color: var(--caution); } .bad { color: var(--kill); }
+  .nvx-status { font: 11.5px var(--mono); color: var(--muted); }
+  @media (max-width: 860px) {
+    .nvx { grid-template-columns: 1fr; height: auto; }
+    .nvx-main { height: 70vh; order: -1; }
+    .nvx-side { border-right: 0; }
+    .nvx-list { max-height: 50vh; }
+  }
+</style>
+</head>
+<body>
+<header class="topnav">
+  <div class="wrap">
+    <a class="brand" href="./">LAND<span>.</span>ENGINE</a>
+    <nav>
+      <a href="./#underwriter">Parcels</a>
+      <a href="region.html">Regions</a>
+      <a href="drive.html">The drive</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="nevada.html" style="color:var(--text)">Nevada</a>
+    </nav>
+  </div>
+</header>
+
+<div class="nvx">
+  <aside class="nvx-side">
+    <div class="nvx-sec">
+      <h2>Nevada parcels of 10+ acres</h2>
+      <p class="nvx-sub" id="nvLoad">Loading parcels…</p>
+      <input type="search" id="fQ" placeholder="Search APN or county" aria-label="Search APN or county">
+    </div>
+    <div class="nvx-sec">
+      <h3>Size and price</h3>
+      <div class="nvx-row">
+        <label>Min acres<input type="number" id="fMinAc" min="0" step="10" value="10"></label>
+        <label>Max acres<input type="number" id="fMaxAc" min="0" step="10" placeholder="any"></label>
+      </div>
+      <div class="nvx-row">
+        <label>Max $/acre (est. or ask)<input type="number" id="fMaxPpa" min="0" step="100" placeholder="any"></label>
+        <label>County<select id="fCounty"><option value="">All counties</option></select></label>
+      </div>
+      <label class="ck"><input type="checkbox" id="fAvail"> Available only (tax-sale leads, your listings, loaded listings)</label>
+      <label class="ck"><input type="checkbox" id="fPrivate" checked> Private land only (hide BLM, Forest Service and other public "parcels")</label>
+      <label>Public land next door<select id="fPub"><option value="">Any</option><option value="0.01">Some public land around it</option><option value="0.25">At least a quarter of the edge</option><option value="0.5">At least half of the edge</option><option value="0.75">Mostly surrounded by public land</option></select></label>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <button class="nvx-btn" type="button" id="bListings">Load land for sale (RentCast)</button>
+        <span class="nvx-status" id="lStatus"></span>
+      </div>
+      <details id="addBox"><summary class="nvx-sub" style="cursor:pointer">Add a listing you found (APXN, LandWatch, a county sale…)</summary>
+        <div style="display:grid;gap:6px;margin-top:6px">
+          <div class="nvx-row"><label>APN<input type="search" id="aApn" placeholder="010-78A-011"></label><label>Asking price ($)<input type="number" id="aPrice" min="0" step="100"></label></div>
+          <label>Link<input type="search" id="aLink" placeholder="https://…"></label>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><button class="nvx-btn" type="button" id="aAdd">Mark available</button><span class="nvx-status" id="aStatus"></span></div>
+          <div class="nvx-sub" id="aList"></div>
+        </div>
+      </details>
+    </div>
+    <div class="nvx-sec">
+      <h3>Water, power, access</h3>
+      <div class="nvx-row">
+        <label>Max depth to water (ft)<input type="number" id="fSwl" min="0" step="25" placeholder="any"></label>
+        <label>Max km to power line<input type="number" id="fTx" min="0" step="1" placeholder="any"></label>
+      </div>
+      <div class="nvx-row">
+        <label>Max km to state hwy<input type="number" id="fHwy" min="0" step="1" placeholder="any"></label>
+        <label>Max drive to airport (min)<input type="number" id="fAir" min="0" step="5" placeholder="any"></label>
+      </div>
+      <label>Airport type<select id="fAirT"><option value="reg">Regional (airline service)</option><option value="jet">Private jet runway</option><option value="intl">Major international</option></select></label>
+      <label class="ck"><input type="checkbox" id="fCity"> Inside a public water system (city water)</label>
+      <label class="ck"><input type="checkbox" id="fPou"> On land with an active water right</label>
+      <label class="ck"><input type="checkbox" id="fNoDesig"> Skip designated (restricted) groundwater basins</label>
+    </div>
+    <div class="nvx-sec">
+      <h3>Minerals and hunting</h3>
+      <label class="ck"><input type="checkbox" id="fMines"> Metallic mineral sites within 5 km</label>
+      <label>Hunt unit carries<select id="fHunt"><option value="">Any species</option><option value="3">Mule deer</option><option value="4">Elk</option><option value="5">Antelope</option><option value="6">Bighorn sheep</option><option value="7">Mountain goat</option><option value="8">Mountain lion</option><option value="9">Black bear</option></select></label>
+    </div>
+    <div class="nvx-sec">
+      <div class="nvx-row">
+        <label>Sort by<select id="fSort">
+          <option value="acres">Largest first</option><option value="ppa">Lowest $/acre</option><option value="value">Lowest total price</option>
+          <option value="swl">Shallowest water</option><option value="tx">Closest to power</option><option value="air">Closest airport</option></select></label>
+        <label>Color map by<select id="fColor"><option value="ppa">$/acre</option><option value="swl">Depth to water</option><option value="avail">Available</option></select></label>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button class="nvx-btn" type="button" id="bReset">Reset filters</button>
+        <button class="nvx-btn" type="button" id="bFit">Zoom to results</button>
+      </div>
+      <div class="nvx-count" id="nvCount"></div>
+    </div>
+    <div class="nvx-list"><table><thead><tr><th>APN · county</th><th>Acres</th><th>$/ac</th><th>Water</th></tr></thead><tbody id="nvList"></tbody></table></div>
+  </aside>
+  <main class="nvx-main">
+    <div id="nvMap"></div>
+    <div class="nvx-legend" id="nvLegend"></div>
+    <div class="nvx-card" id="nvCard" hidden></div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
+<script src="layers.js?v=20261024"></script>
+<script src="nevada.js?v=20261025"></script>
+</body>
+</html>

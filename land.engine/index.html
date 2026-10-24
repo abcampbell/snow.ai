@@ -6,7 +6,7 @@
 <title>Land Engine</title>
 <meta name="description" content="Parcel and region intelligence for any US land: underwriter, region engine, deal calculators, and land price surfaces.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="style.css?v=20261025">
+<link rel="stylesheet" href="style.css?v=20261027">
 </head>
 <body>
 
@@ -19,9 +19,9 @@
       <a href="drive.html" style="color:var(--accent)">The drive</a>
       <a href="#calculators">Calculators</a>
       <a href="#surfaces">Explorer</a>
-      <a href="#machine">The machine</a>
+      <a href="#census">Parcel census</a>
+      <a href="nevada.html" style="color:var(--accent)">Nevada finder</a>
       <a href="#systems">Systems</a>
-      <a href="#book">Price book</a>
       <a href="#data">Data</a>
     </nav>
   </div>
@@ -31,13 +31,13 @@
   <div class="wrap">
     <div class="eyebrow">snow.ai · Tennessee to the Mountain West</div>
     <h1>Land <em>Engine</em></h1>
-    <p class="lede">Paste an address, coordinates, or a listing link, or a whole list of them. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, traffic noise, mineral history, walkability, and land value) and returns a go, check, or kill screen in seconds. Then it prices the place, splits land from structure, and loads the deal calculators. It runs on any US parcel; the <a href="region.html">region engine</a> scores whole towns and regions, and <a href="drive.html">the drive</a> ranks the 27 stops of the actual drive, Dollywood to Ely.</p>
+    <p class="lede">Paste an address, coordinates, or a listing link, or a whole list of them. The engine runs the checks a careful buyer does by hand (flood zone, legal access, land status, washes, groundwater, traffic noise, mineral history, walkability, and land value) and returns a go, check, or kill screen in seconds. Then it prices the place, splits land from structure, and loads the deal calculators. It runs on any US parcel; the <a href="region.html">region engine</a> scores whole towns and regions, and <a href="drive.html">the drive</a> ranks the 27 stops of the actual drive, Dollywood to Ely. The <a href="#census">parcel census</a> counts every US parcel by size, and the <a href="nevada.html">Nevada finder</a> maps every Nevada parcel of 10+ acres with water, power, access, minerals, water rights and hunt units.</p>
     <div class="stats">
       <div class="stat"><b>11</b><span>checks per parcel, any US point</span></div>
-      <div class="stat"><b>37,349</b><span>census tracts priced, land vs. structure</span></div>
+      <div class="stat"><b>142.6M</b><span>US parcels counted by size, all 50 states</span></div>
       <div class="stat"><b>238</b><span>metro land surfaces, 2012–2022</span></div>
       <div class="stat"><b>265,825</b><span>USGS mines and deposits, all 50 states</span></div>
-      <div class="stat"><b>27</b><span>stops on the drive, Dollywood → Ely, ranked your way</span></div>
+      <div class="stat"><b>74K</b><span>Nevada parcels of 10+ acres, mapped and filterable</span></div>
     </div>
   </div>
 </section>
@@ -270,11 +270,30 @@
   </div>
 </section>
 
+<!-- ============ PARCEL CENSUS ============ -->
+<section class="block" id="census">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">04 · US parcel census · <a href="nevada.html">Nevada finder ↗</a></div>
+      <h2>Every parcel in the country, by size</h2>
+      <p>Most parcels are house lots; most land sits in a thin slice of big parcels. Counted by asking every public county and state parcel service how many parcels fall in each size class, then pricing the acreage.</p>
+    </div>
+    <div class="stats cz-kpis" id="czKpis"></div>
+    <div class="cz-grid">
+      <div class="cz-card"><h3>Share of parcels vs. share of land</h3><p class="note">Each size class as a share of all parcels and of all parceled acres.</p><div id="czShare"></div></div>
+      <div class="cz-card"><h3>How many big lots there are</h3><p class="note">Parcels at or above each size.</p><div id="czExceed"></div></div>
+      <div class="cz-card"><h3>What the land is worth</h3><p class="note">Estimated value and average $/acre by parcel size.</p><div id="czValue"></div></div>
+      <div class="cz-card"><h3>Where the big parcels are</h3><p class="note">Top 15 states by <select id="czSort" aria-label="Rank states by"><option value="share_ge10">share of parcels 10+ acres</option><option value="ge40">parcels 40+ acres</option><option value="ge640">parcels 640+ acres</option><option value="value">estimated land value</option></select></p><div id="czStates"></div></div>
+    </div>
+    <p class="note" id="czCover"></p>
+  </div>
+</section>
+
 <!-- ============ MACHINE ============ -->
 <section class="block" id="machine">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">04 · The machine</div>
+      <div class="eyebrow">05 · The machine</div>
       <h2>One loop, three scales</h2>
       <p>Source below retail, verify, underwrite, transform, distribute, and recycle the proceeds. The stages stay the same from a single 40-acre parcel to a whole valley; only the data feeding them changes.</p>
     </div>
@@ -298,7 +317,7 @@
 <section class="block" id="systems">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">05 · Systems</div>
+      <div class="eyebrow">06 · Systems</div>
       <h2>Twelve systems, each a repeatable decision</h2>
       <p>The intellectual property is the decision method; the code is just how it currently runs. Each system works at any scale and in any region. Screen a parcel above and each card shows its 1–10 score for that place (log scale, 5 = middle of the road).</p>
       <p class="note" id="sysFor"></p>
@@ -324,7 +343,7 @@
 <section class="block" id="book">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">06 · Price book</div>
+      <div class="eyebrow">07 · Price book</div>
       <h2>The spreads that make land a business</h2>
       <p>Calibrated in the field during 2026 against county auction results and live listings. These are underwriting constants, not forecasts.</p>
     </div>
@@ -347,7 +366,7 @@
 <section class="block" id="data">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">07 · Data &amp; coverage</div>
+      <div class="eyebrow">08 · Data &amp; coverage</div>
       <h2>Public sources, queried live</h2>
       <p>National layers run for any US point. Regional plug-ins add local depth, and a new region is one more data pack in the registry.</p>
     </div>
@@ -389,6 +408,7 @@
 <script src="calc.js?v=20261025"></script>
 <script src="price.js?v=20261025"></script>
 <script src="systems.js?v=20261025"></script>
+<script src="census.js?v=20261024"></script>
 <script>
   // tabs: calculators
   document.querySelectorAll('[data-tabs="calc"] .tab').forEach((t) => t.addEventListener('click', () => {
