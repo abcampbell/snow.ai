@@ -1,0 +1,814 @@
+<title>The Sun Yat-sen Ledger</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: a ledger. Header → the text, with page numbers → scorecard list → era split → composite z → one filter row → 2-up grid of small-multiple charts (1-up on phones) → notes. */
+:root{
+  --bg:#f3f4f1; --surface:#fcfcfb; --fg:#121311; --fg2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --band:rgba(18,19,17,.065);
+  --good:#0ca30c; --warn:#fab219; --crit:#d03b3b;
+  --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f100f; --surface:#1a1a19; --fg:#f0efec; --fg2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+    --band:rgba(255,255,255,.07);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f100f; --surface:#1a1a19; --fg:#f0efec; --fg2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --band:rgba(255,255,255,.07);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--fg); font-family:var(--sans); font-size:15px; line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:28px 56px;
+}
+.wrap{max-width:1040px; margin:0 auto}
+.eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-size:clamp(28px,5vw,40px); line-height:1.05; margin:6px 0 10px; font-weight:700; letter-spacing:-.01em; text-wrap:balance}
+.stand{max-width:62ch; color:var(--fg2); font-size:16px; margin:0 0 28px}
+h2{font-size:13px; font-family:var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:500; margin:34px 0 12px; padding-top:14px; border-top:1px solid var(--border)}
+/* the text */
+.quotes{display:grid; gap:10px}
+.q{background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:12px 14px; display:grid; grid-template-columns:auto 1fr; gap:4px 14px; align-items:start}
+.q .pg{font-family:var(--mono); font-size:11px; color:var(--muted); white-space:nowrap; padding-top:3px; letter-spacing:.04em}
+.q blockquote{margin:0; font-size:14.5px; color:var(--fg); min-width:0}
+.q .why{grid-column:2; font-size:12.5px; color:var(--muted)}
+/* scorecard */
+.score{list-style:none; margin:0; padding:0; display:grid; gap:0; border:1px solid var(--border); border-radius:6px; background:var(--surface); overflow:hidden}
+.score li{display:grid; grid-template-columns:1fr auto; gap:6px 14px; padding:10px 14px; border-top:1px solid var(--grid); align-items:start}
+.score li:first-child{border-top:0}
+.score .t{font-weight:600; font-size:14.5px}
+.score .r{color:var(--fg2); font-size:13.5px; grid-column:1}
+.score .hz{font-size:12.5px; color:var(--muted)}
+.score .hzk{font-family:var(--mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; margin-right:4px}
+.score .right{display:flex; flex-direction:column; align-items:flex-end; gap:4px; grid-row:1 / span 3}
+.chip{display:inline-flex; align-items:center; gap:5px; font-family:var(--mono); font-size:10.5px; letter-spacing:.04em; text-transform:uppercase; padding:3px 7px; border-radius:3px; border:1px solid var(--border); color:var(--fg); white-space:nowrap}
+.chip i{width:8px; height:8px; border-radius:50%; display:inline-block}
+.chip.done i{background:var(--good)} .chip.partial i{background:var(--warn)} .chip.never i{background:var(--crit)}
+.yrs{font-family:var(--mono); font-size:11.5px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums}
+/* controls */
+.key{font-size:12.5px; color:var(--fg2); margin:-6px 0 14px}
+.key span{display:inline-block; vertical-align:middle; width:22px; height:0; border-top:2px dashed var(--fg2); margin-right:4px}
+.key .k-inf{border-top:2px dotted var(--muted)}
+.key .k-band{height:12px; border:0; background:var(--band)}
+.controls{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; margin:0 0 16px}
+.seg{display:inline-flex; border:1px solid var(--border); border-radius:5px; overflow:hidden; background:var(--surface)}
+.seg button{appearance:none; border:0; background:transparent; color:var(--fg2); font:inherit; font-size:13px; padding:6px 12px; cursor:pointer}
+.seg button+button{border-left:1px solid var(--border)}
+.seg button[aria-pressed="true"]{background:var(--fg); color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--s1); outline-offset:-2px}
+.ctl-label{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-right:6px}
+/* grid + cards */
+.grid{display:grid; grid-template-columns:1fr; gap:16px}
+@media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:14px 14px 10px; position:relative; min-width:0}
+.card .eyebrow{font-size:10.5px}
+.card h3{margin:4px 0 2px; font-size:16px; font-weight:600; line-height:1.2}
+.card .unit{color:var(--fg2); font-size:13px; margin:0 0 6px}
+.legend{display:flex; flex-wrap:wrap; gap:4px 14px; font-size:12.5px; color:var(--fg2); margin:2px 0 4px}
+.legend span{display:inline-flex; align-items:center; gap:6px}
+.legend b{display:inline-block; width:14px; height:2px; border-radius:1px}
+.legend b.dash{background:none; border-top:2px dashed var(--fg2); height:0}
+.card svg{display:block; width:100%; height:auto; font-family:var(--mono)}
+#era-svg,#z-svg{max-width:560px}
+.card svg text{fill:var(--muted); font-size:10px}
+.card svg .lbl{fill:var(--fg2); font-size:10.5px}
+.card svg .tgt{fill:var(--fg2); font-size:9.5px; paint-order:stroke; stroke:var(--surface); stroke-width:3px; stroke-linejoin:round}
+.card svg .band-l{fill:var(--muted); font-size:9px}
+.card svg .cat{fill:var(--muted); font-size:9px}
+.cap{font-size:13px; color:var(--fg2); margin:8px 0 2px; line-height:1.4}
+details{margin-top:4px}
+summary{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); cursor:pointer; padding:4px 0}
+summary:focus-visible{outline:2px solid var(--s1)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse; font-family:var(--mono); font-size:11.5px; font-variant-numeric:tabular-nums; width:100%}
+th,td{text-align:right; padding:3px 8px; border-bottom:1px solid var(--grid); white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted); font-weight:500}
+.tip{position:absolute; pointer-events:none; display:none; background:var(--fg); color:var(--bg); font-family:var(--mono); font-size:11px; line-height:1.35; padding:6px 8px; border-radius:4px; white-space:nowrap; z-index:5; box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.notes{max-width:70ch; color:var(--fg2); font-size:14px}
+.notes p{margin:0 0 10px}
+.notes b{color:var(--fg)}
+a{color:var(--s1)}
+.src-text{color:var(--fg)} .src-inferred{color:var(--fg2)} .src-imputed{color:var(--muted)}
+@media (prefers-reduced-motion: no-preference){.seg button{transition:background .12s}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Sun Yat-sen · The International Development of China · Canton, April 1921 · v009</div>
+  <h1>The Sun Yat-sen Ledger</h1>
+  <p class="stand">Every physical target in the 1921 plan, scored against what China built, 1900–2025: the text with page numbers, 18 targets scored, who built what by era, a composite z-score against Sun’s own bar, the United States run through the same bar, and the sixteen series behind it.</p>
+
+  <h2>The program, in his words</h2>
+  <div class="quotes" id="quotes"></div>
+
+  <h2>Targets, scored</h2>
+  <ul class="score" id="score"></ul>
+
+  <h2>Who built it</h2>
+  <div class="card" id="era-card">
+    <div class="eyebrow">Share of today’s level reached in each era</div>
+    <h3>Before Mao, under Mao, after Mao</h3>
+    <p class="unit">percent of the 2024–25 level accumulated 1900–49, 1949–76 and 1976–today</p>
+    <div class="legend"><span><b style="background:var(--s3)"></b>Before 1949</span><span><b style="background:var(--s2)"></b>Mao, 1949–76</span><span><b style="background:var(--s1)"></b>After 1976</span></div>
+    <svg id="era-svg" role="img" aria-label="Share of today's level reached before 1949, under Mao, and after 1976, by measure"></svg>
+    <div class="tip"></div>
+    <p class="cap">Mao’s quarter-century laid the plan’s geography and institutions (Lanzhou–Xinjiang railway 1962, the Bingtuan 1954, Harness-the-Huai 1950–53, the Wuhan bridge 1957, Gezhouba begun 1970) and most of the plain road mileage, but almost none of its tonnage: steel, power, ports and income are 95–99% post-1976. Measured against Sun’s own yardsticks rather than today’s, though, his era reached most of them: see the composite below.</p>
+    <details><summary>Data</summary><div class="tbl" id="era-tbl"></div></details>
+  </div>
+
+  <h2>Composite: China against Sun’s bar</h2>
+  <div class="card" id="z-card">
+    <div class="eyebrow">Sixteen series, each standardized, averaged</div>
+    <h3>Composite z-score, 1875–2025</h3>
+    <p class="unit">each series in log10, z-scored over 1875–2025 and winsorized at ±3; held at the −3 floor before the thing existed and carried forward after the last data year; the dashed line is the average z of Sun’s sixteen targets</p>
+    <div class="legend"><span><b style="background:var(--s1)"></b>China, mean z of all sixteen series</span><span><b class="dash"></b>Sun bar, mean z of his targets</span></div>
+    <svg id="z-svg" role="img" aria-label="Composite z-score of sixteen development series, 1875 to 2025, against the average z-score of Sun Yat-sen's targets"></svg>
+    <div class="tip"></div>
+    <p class="cap" id="z-cap"></p>
+    <details open><summary>Per-series z, targets and sources</summary><div class="tbl" id="z-tbl"></div></details>
+  </div>
+
+  <h2>The United States against the same bar</h2>
+  <div class="card" id="us-card">
+    <div class="eyebrow">Sixteen paired measures · comparison definitions differ</div>
+    <h3>US and China composite z-scores, 1875–2025</h3>
+    <p class="unit">same sixteen measures from 1875, winsorized at ±3; held at the floor before the thing existed, carried forward after the last data year</p>
+    <div class="controls" style="margin:4px 0 8px"><span><span class="ctl-label">Scale</span><span class="seg" role="group" aria-label="Standardization"><button id="own" aria-pressed="true">Own distributions</button><button id="pool" aria-pressed="false">Pooled</button></span></span></div>
+    <div class="legend"><span><b style="background:var(--s2)"></b>United States</span><span><b style="background:var(--s1)"></b>China</span><span><b class="dash"></b>Sun bar</span></div>
+    <svg id="us-svg" role="img" aria-label="United States and China composite z-scores, 1875 to 2025"></svg>
+    <div class="tip"></div>
+    <p class="cap" id="us-cap"></p>
+    <details open><summary>Per-series: US series, target, crossing years, z now</summary><div class="tbl" id="us-tbl"></div></details>
+  </div>
+
+  <h2>How much depends on the assumptions?</h2>
+  <div class="card" id="sensitivity-card">
+    <div class="eyebrow">Validation · v009</div>
+    <h3>Target and comparison sensitivity</h3>
+    <p class="cap"><b>The 2012 result depends on the basket:</b> with all three port measures removed, China remains just below the US through 2025 in the modeled record. The full-index result should be read alongside the alternative baskets below.</p>
+    <p class="cap">The all-sixteen result depends on the measures selected, the target proxies and the estimated early record. Each row recomputes both countries with a constant set of measures over 1875–2025, the same log transform and ±3 winsorization. Removing imputed targets removes their measures from both the line and the bar.</p>
+    <div class="tbl" id="sensitivity-tbl"></div>
+    <p class="cap">* First year at or above the US after 1950, using pooled z. A positive 2025 gap puts China ahead within that row’s selected index. These scenarios express alternative assumptions; their dates depend on interpolation between sparse observations. The four-series row narrows the question to national rail, steel, cement and hydro, with remaining source and capacity-definition limitations.</p>
+    <details><summary>What the cross-country comparison can support</summary>
+      <p class="cap">Bohai adds Tangshan and Tianjin against a changing single US port; the delta adds Shanghai and Ningbo against LA and Long Beach; Shenzhen and Guangzhou are compared with NY/NJ. Port boundaries and handling counts differ. USACE tonnage is commonly in short tons, while this ledger labels metric tonnes; the inherited conversions require source-level verification.</p>
+      <p class="cap">China’s road series changes coverage in 2005 and is spliced as an index, whereas the US series counts surfaced roads. Total network length also differs from Sun’s macadam specification. Tianjin municipality and LA County have different boundaries. Xinjiang Han and Northeast population stocks are proxies for settlement flows, and the same ten-million Northwestern proposal is reused twice; Xinjiang cotton is compared with the whole US crop. River freight coverage and counting also require harmonization. The official 2000 road census reports 1,679,800 km, against 1,402,700 km in the inherited series; the road target date remains provisional until that coverage change is reconciled.</p>
+      <p class="cap">The sediment-halving target is imputed. Sun described two parts of flood prevention; he gave no numerical sediment-reduction target. Lower sediment is treated as better in this index, with ecological effects outside its scope. The 1924 hydro target supplements the 1921 plan. Pooled results describe this selected index; source harmonization remains necessary before broader claims about national development.</p>
+    </details>
+  </div>
+
+  <h2>Time series</h2>
+  <div class="controls">
+    <span><span class="ctl-label">Scale</span><span class="seg" role="group" aria-label="Y scale"><button id="log" aria-pressed="true">Log</button><button id="lin" aria-pressed="false">Linear</button></span></span>
+    <span><span class="ctl-label">Shading</span><span class="seg" role="group" aria-label="War bands"><button id="shade-on" aria-pressed="true">Wars on</button><button id="shade-off" aria-pressed="false">Off</button></span></span>
+  </div>
+  <p class="key"><span class="k-text"></span> figure in Sun’s own text &nbsp; <span class="k-inf"></span> inferred from his capital sums or comparators, at 1920 prices and sizes, or imputed where he gave none &nbsp; <span class="k-band"></span> war or campaign years</p>
+  <div class="grid" id="grid"></div>
+
+  <h2>Sources and caveats</h2>
+  <div class="notes">
+    <p>Series are stitched from the National Bureau of Statistics yearbooks (rail, roads, steel, cement, hydro), the China Railway and Ministry of Transport year-end releases, port authority releases (Tangshan, Tianjin, Shanghai, Ningbo-Zhoushan, Hong Kong, Shenzhen, Guangzhou), the Yellow River Conservancy Commission’s Tongguan decadal sediment record, the national forest inventories, census returns for Xinjiang, the Northeast and the port cities, and Maddison’s 1990 international-dollar GDP series (extended past 2008 with real growth). Points before 1949, and especially before 1920, are scholarly estimates with wide error bars; they are marked ≈ in the data tables.</p>
+    <p><b>Sun’s targets.</b> Dashed lines are figures in his own text, page numbers from the 1922 Putnam edition: 100,000 miles of rail and 1,000,000 miles of road (p. 6), three ports with the capacity of New York Harbor (p. 7), ten million settlers in ten years (p. 24), a port city the size of Philadelphia within forty years, “not to say New York” (p. 16), $500 M–1 B Mex for iron and steel (p. 29), $100–200 M Mex for cement (p. 75), $300 M Mex for the Yangtze (p. 54), and 30 million horsepower from the gorges, his 1924 lecture figure, about 22 GW. Dotted lines and bands are inferred: at 1920 exchange rates (about 2 Mex to the gold dollar) and 1920 US plant costs (roughly $60–100 gold per annual tonne of steel, $12–18 per tonne of cement) his capital sums buy about 5–10 Mt and 3–8 Mt a year; New York Harbor moved about 45 million tons by steamship in 1921; Suez carried about 20 million tons. Treat the inferred figures as order-of-magnitude.</p>
+    <p><b>The composite.</b> Each series is interpolated to annual values in log10 between its data points, then z-scored against its own mean and standard deviation over the years it covers. Lower-is-better series (Yellow River silt) are sign-flipped. Every series is carried back to 1875 and held at the −3 floor before the thing existed (railways before 1876, containers before 1956, Xinjiang cotton and Han population before recorded coverage in 1949, where the early values are unknown), and carried forward at its last value to 2025 where the latest figure is a 2020 census or a 2024 release, so the composite always averages all sixteen and its shape is movement rather than composition; floor and carried-forward years are excluded from each series’ mean and standard deviation; interpolated annual values inside the observation span are included. Port sums end in the last year covered by every component, then the aggregate is carried forward. Sun’s bar is the mean of the z-scores his sixteen targets would have, computed the same way. Where he gave no figure at all the target is <em>imputed</em>, labeled so in the table, and the bar is also shown without those. All z-scores are winsorized at ±3; this is an index, not a measurement.</p>
+    <p><b>The American run</b> uses the same sixteen measures with US series (BTS and ICC route-miles, FHWA surfaced mileage, USGS steel and cement, EIA hydro, Army Corps waterborne commerce, census regional populations, Maddison), standardized over 1875–2025 exactly as China’s. “Pooled” standardizes each measure against both countries’ combined record, which puts the paired measures on a shared numerical scale; their definitions and geographic coverage still differ. Absolute target proxies are applied unchanged. The ten-million Northwestern settlement proposal is adapted to two population stocks and to American 1920 baselines. Sediment halving is an imputed target applied to each river’s historical baseline; the text gives no numerical reduction target. Pre-1900 US port and river tonnages are rough.</p>
+    <p><b>Definition checks (v009).</b> The <a href="https://www.stats.gov.cn/sj/tjgb/qttjgb/qgqttjgb/202302/t20230218_1913243.html">official 2000 road census</a> conflicts with the inherited road point. <a href="https://www.fhwa.dot.gov/policyinformation/statistics/2024/hm12.cfm">FHWA separates surface types</a>; <a href="https://www.iwr.usace.army.mil/About/Technical-Centers/WCSC-Waterborne-Commerce-Statistics-Center/WCSC-Navigation-Infrastructure/">USACE defines port areas</a> and <a href="https://www.iwr.usace.army.mil/Missions/Value-to-the-Nation/Fast-Facts/Coastal-Navigation-Fast-Facts/">reports short tons</a>. See <a href="https://www.gutenberg.org/files/45188/45188-h/45188-h.htm">Sun’s 1922 text</a> for the Northwestern settlement proposal and the two parts of flood prevention. Other inherited anchors still need point-level source verification.</p>
+    <p><b>The era split</b> attributes each measure’s increase to the era in which it occurred; 1949 rail is the nominal 13,500 miles (about 6,800 ran). <b>Road statistics break in 2005</b>, when village roads were added; the two calibers are plotted separately and the composite carries the old caliber forward at the new caliber’s growth rate.</p>
+  </div>
+</div>
+
+<script>
+const PLAN_YEAR = 1921, MI = 0.621371;
+const km2mi = d => d.map(p => [p[0], +(p[1]*MI).toFixed(0)]);
+
+const QUOTES = [
+  ['p. vi', 'Preface, signed “Canton, April 25, 1921.”', 'The whole scheme was drafted between the Armistice and this date, to redeploy the war industries.'],
+  ['p. 6', '“I, therefore, propose a scheme to develop a new market in China big enough both for her own products and for products from foreign countries. The scheme will be along the following lines: I. The Development of a Communications System. (a) 100,000 miles of Railways. (b) 1,000,000 miles of Macadam Roads. (c) Improvement of Existing Canals … (d) Construction of New Canals … (e) River Conservancy …”', 'The two numbers the rail and road charts are drawn against.'],
+  ['p. 7', '“II. The Development of Commercial Harbors. (a) Three largest Ocean Ports with future capacity equalling New York Harbor to be constructed in North, Central and South China. (b) Various small Commercial and Fishing Harbors … III. Modern Cities with public utilities to be constructed in all Railway Centers, Termini and alongside Harbors. IV. Water Power Development. V. Iron and Steel Works and Cement Works on the largest scale in order to supply the above needs.”', 'The port yardstick: New York Harbor, about 45 million tons by steamship in 1921.'],
+  ['p. 8', '“VI. Mineral Development. VII. Agricultural Development. VIII. Irrigational Work on the largest scale in Mongolia and Sinkiang. IX. Reforestation in Central and North China. X. Colonization in Manchuria, Mongolia, Sinkiang, Kokonor, and Thibaut.”', 'Items VI–X of the ten-point program.'],
+  ['p. 16', '“If within forty years we could develop a city as large as Philadelphia, not to say New York, the land value alone will be sufficient to pay off the capital invested in its development.”', 'The Great Northern Port city. Philadelphia was 1.82 M and New York 5.62 M at the 1920 census.'],
+  ['p. 19', '“For most of the seven thousand miles of lines under this project are on perfectly level land.”', 'The Northwestern railway system radiating from Dolon Nor.'],
+  ['p. 24', '“If within ten years we can transport, let us say, ten millions of the people, from the congested provinces of China, to the Northwestern territory to develop its natural resources, the benefit to the commercial world at large will be enormous.”', 'The one target with a date: ten million by 1931.'],
+  ['p. 27', '“The entire reforestation of its watershed to prevent the washing off of loess is another half of the work in the prevention of flood.”', 'The Yellow River: dikes are half the job, trees the other half.'],
+  ['p. 29', '“Let us say a capital of from five hundred to a thousand million dollars Mex. should be invested in this project.”', 'Shanxi–Hebei iron and coal and a steel works. No tonnage given.'],
+  ['p. 54–55', '“… $300,000,000 for the completion of the entire project for the regulating of the Yangtze River … this project will be more profitable than either the Suez or Panama Canal.”', 'Ocean ships to Hankou; Suez carried about 20 million tons in 1921.'],
+  ['p. 74', '“To improve the Upper Yangtze, the rapids should be dammed up to form locks to enable crafts to ascend the river as well as to generate water power.”', 'Three Gorges. The 30-million-horsepower figure is from his 1924 lectures.'],
+  ['p. 75', '“… a capital of one to two hundred million dollars should be invested for the supply.”', 'Cement works along the Yangtze limestone.'],
+];
+
+const SCORE = [
+  ['100,000 miles of railway (p. 6)','100,000 mi reached 2024; 102,500 mi at end-2025, 31,000 mi of it high-speed','done',2024,'10 yrs for 200,000 li (~62,000 mi), his 1912 pledge as Director of Railways; no horizon in the 1921 text'],
+  ['1,000,000 miles of road (p. 6)','Embedded series crosses in 2002; the official 2000 road census already exceeds 1 M mi under its coverage. Definitions require reconciliation; macadam specification unverified','partial',2000,'network-length proxy; census coverage differs'],
+  ['Great Northern Port on the Qinghe–Luanhe cape (pp. 13–17)','Jingtang 1992, Caofeidian 2005: together Tangshan Port, 884 Mt in 2025, second in the world by tonnage','done',2005,'a city as large as Philadelphia within 40 years (1961); as large as New York in a reasonable time (p. 16)'],
+  ['Great Eastern Port in Hangzhou Bay (pp. 31–35)','Yangshan Deep-Water Port phase 1, 2005; Shanghai the busiest container port on earth since 2010','done',2005,'land values up 10- to 1,000-fold within 10 years; a city equal to New York (pp. 34–35)'],
+  ['Canton as a world port beside Hong Kong (pp. 78–82)','Shenzhen passed Hong Kong 2013, Guangzhou 2018; Pearl River estuary is the largest port cluster anywhere','done',2013,null],
+  ['Dam the Yangtze gorges for power and locks (p. 74)','Gezhouba 1988; Three Gorges 2003–12, 22.5 GW, 10,000-t barges to Chongqing','done',2012,'30 million horsepower, about 22 GW, his figure in the 1924 lectures; Three Gorges is 22.5 GW'],
+  ['Ocean-going ships 630 miles inland to Hankou (pp. 39–56)','12.5 m channel to Nanjing (2018); Wuhan takes river-sea vessels, not liners','partial',2018,'$300 M Mex for the whole river; 450 sq mi of estuary reclaimed within 20 years (1941)'],
+  ['Yellow River: flood-proof dikes, reforest the loess (pp. 26–27)','No levee breach since 1949; sediment load down about 90% since the 1950s','done',1949,null],
+  ['Yellow River navigable to Lanzhou (p. 26)','Never; the lower river ran dry most years 1972–99','never',null,null],
+  ['Huai outlets to the sea and the Yangtze (pp. 67–69)','Harness-the-Huai 1950–53, on the Jameson alignment Sun endorsed','done',1952,null],
+  ['Grand Canal rebuilt end to end (p. 27)','South half a freight artery; north half re-watered 2022, no shipping','partial',2022,null],
+  ['Move 10 million people to the Northwest in ten years (p. 24)','Bingtuan formed 1954 from demobilized soldiers, his mechanism; Xinjiang Han population +10.6 M over 71 years; Manchuria took 10 M migrants in the 1920s instead','partial',null,'10 years (1931)'],
+  ['Iron and steel works in Shanxi–Hebei, $0.5–1 B Mex (p. 29)','At 1920 US capital costs that sum buys 5–10 Mt/yr: reached 1957–65. China passed Japan 1996; ~961 Mt in 2025, about half the world; Hebei alone ~20%','done',1957,'no horizon; capital sum implies 5–10 Mt/yr (inferred)'],
+  ['Cement works along the Yangtze, $100–200 M Mex (p. 75)','That sum buys 3–8 Mt/yr at 1920 costs: reached 1957–65. Peak 2.5 Gt in 2014, roughly half of world output','done',1957,'no horizon; capital sum implies 3–8 Mt/yr (inferred)'],
+  ['Nanjing–Pukou and Wuhan river crossings (pp. 60, 66)','Wuhan bridge 1957, Nanjing 1968; through trains Beijing–Shanghai','done',1957,null],
+  ['Reforest North and Central China (pp. 8, 27)','Forest cover 8.6% (1949) to 24% (2021)','done',2021,null],
+  ['Telegraph, telephone and wireless across the country (p. 7)','1.8 billion mobile subscriptions','done',2000,null],
+  ['Financed by an international consortium, foreign-managed until repaid (pp. 9–12)','Never. Built by the Chinese state: Soviet aid 1953–60, domestic savings, FDI after 1978','never',null,null],
+];
+
+const BANDS = [
+  {from:1916,to:1928,label:'Warlords'},
+  {from:1937,to:1945,label:'Japan'},
+  {from:1945,to:1949,label:'Civil war'},
+  {from:1958,to:1962,label:'Great Leap'},
+  {from:1966,to:1976,label:'Cultural Rev.'},
+];
+
+const XMIN=1900, XMAX=2026;
+const CHARTS = [
+ {id:'rail', prog:'Program I · Part II / summary · p. 6', title:'Railway in operation', unit:'miles, national network',
+  targets:[{value:100000,label:'Sun: 100,000 mi (p. 6)',src:'text'}],
+  series:[{name:'All lines',data:km2mi([[1900,1100],[1905,4500],[1911,9600],[1916,10500],[1921,11000],[1927,13000],[1931,15000],[1937,21000],[1945,27000],[1949,21800],[1952,24500],[1957,29900],[1962,34600],[1965,38000],[1970,41000],[1975,46000],[1978,51700],[1985,55200],[1990,57800],[1995,62400],[2000,68700],[2005,75400],[2008,79700],[2010,91200],[2012,97600],[2015,121000],[2018,131700],[2020,146300],[2022,155000],[2024,162000],[2025,165000]])},
+          {name:'High-speed',data:km2mi([[2008,672],[2010,5133],[2012,9356],[2015,19838],[2018,29000],[2020,37900],[2022,42000],[2024,48000],[2025,50000]])}],
+  cap:'1921 to 1949 added 6,700 miles on paper, over half of it Japanese-built in the Northeast; in 1949 only about 6,800 miles actually ran, less than when Sun wrote. Half of today’s network was laid after 2008.'},
+ {id:'road', prog:'Program summary · I (b) · p. 6', title:'Road network', unit:'miles',
+  targets:[{value:1000000,label:'Sun: 1,000,000 mi (p. 6)',src:'text'}],
+  series:[{name:'Highways, pre-2005 count',data:km2mi([[1921,1200],[1927,29000],[1931,60000],[1937,110000],[1949,80700],[1952,126700],[1957,254600],[1965,514500],[1978,890200],[1985,942400],[1990,1028300],[1995,1157000],[2000,1402700],[2004,1870700]])},
+          {name:'All roads incl. village, 2005 count',data:km2mi([[2005,3345200],[2010,4008200],[2015,4577300],[2020,5198100],[2024,5490000]])},
+          {name:'Expressways',data:km2mi([[1988,147],[1995,2141],[2000,16300],[2005,41000],[2010,74100],[2015,123500],[2020,161000],[2024,190700]])}],
+  cap:'The one line the Nanjing decade actually built: roughly 18,000 to 68,000 miles between 1927 and 1937. The embedded road series reaches Sun’s million miles in 2002 by log interpolation; total network mileage does not establish that all those roads were macadam. Expressways, which he could not have imagined, went from zero in 1988 to 118,000 miles.'},
+ {id:'bohai', prog:'Program I · Part I · Great Northern Port · pp. 7, 13', title:'Bohai Gulf ports, cargo', unit:'million tonnes a year',
+  targets:[{value:45,label:'“equalling New York Harbor” (p. 7): NY 1921 ≈ 45 Mt',src:'inferred'}],
+  series:[{name:'Tangshan (Jingtang + Caofeidian)',data:[[1992,1],[1995,2],[2000,10],[2005,25],[2008,95],[2010,175],[2012,365],[2015,493],[2017,573],[2019,657],[2020,702],[2022,769],[2023,842],[2024,862],[2025,884]]},
+          {name:'Tianjin',data:[[1900,0.3],[1920,0.9],[1936,1.6],[1952,0.7],[1965,5],[1978,10.7],[1990,20.6],[2000,95.7],[2005,241],[2010,413],[2015,541],[2020,503],[2024,583]]}],
+  cap:'Jingtang opened 1992 and Caofeidian’s first ore berth 2005, on the cape between the Qinghe and Luanhe that Map I marks. Tianjin, which Sun said would have to route its world trade through the new port, became a 580 Mt port in its own right and passed 1921 New York around 1996.'},
+ {id:'east', prog:'Program II · Part I · Great Eastern Port · pp. 7, 31', title:'Yangtze delta container ports', unit:'million TEU a year',
+  targets:[{value:4.5,label:'Imputed: NY Harbor 1921 at 10 t per TEU ≈ 4.5 M',src:'imputed'}],
+  series:[{name:'Shanghai',data:[[1978,0.008],[1985,0.2],[1990,0.456],[1995,1.53],[2000,5.61],[2003,11.3],[2005,18.1],[2007,26.2],[2010,29.1],[2013,33.6],[2015,36.5],[2018,42.0],[2020,43.5],[2022,47.3],[2024,51.5],[2025,55.06]]},
+          {name:'Ningbo-Zhoushan',data:[[1995,0.16],[2000,0.9],[2005,5.2],[2010,13.1],[2015,20.6],[2020,28.7],[2024,39.3]]}],
+  cap:'Sun said Yangtze silt doomed Shanghai as a deep-water port and the answer was Hangzhou Bay. Yangshan (2005) is in Hangzhou Bay and now handles 52% of Shanghai’s boxes. Ningbo-Zhoushan, across the bay, is first in the world by tonnage. Containers did not exist in 1921; the target is a unit conversion and is marked imputed.'},
+ {id:'pearl', prog:'Program III · Part I · Canton as a world port · pp. 7, 78', title:'Pearl River container ports', unit:'million TEU a year',
+  targets:[{value:4.5,label:'Imputed: NY Harbor 1921 ≈ 4.5 M TEU',src:'imputed'}],
+  series:[{name:'Hong Kong',data:[[1980,1.46],[1985,2.29],[1990,5.1],[1995,12.6],[2000,18.1],[2004,22.0],[2007,23.9],[2010,23.7],[2015,20.1],[2020,18.0],[2024,13.7]]},
+          {name:'Shenzhen',data:[[1990,0.03],[1995,0.28],[2000,3.99],[2005,16.2],[2010,22.5],[2015,24.2],[2020,26.5],[2024,33.4]]},
+          {name:'Guangzhou',data:[[1995,0.5],[2000,1.43],[2005,4.68],[2010,12.6],[2015,17.6],[2020,23.5],[2024,25.4]]}],
+  cap:'His argument to the Hong Kong authorities, Victoria versus Vancouver and Seattle: a developed hinterland enriches the colony, then rival ports take its shipping. Both happened. Shenzhen passed Hong Kong in 2013.'},
+ {id:'steel', prog:'Program I · Part V · p. 29', title:'Crude steel output', unit:'million tonnes a year',
+  targets:[{lo:5,hi:10,label:'Inferred: $0.5–1 B Mex (p. 29) ≈ 5–10 Mt/yr',src:'inferred'}],
+  series:[{name:'China',data:[[1900,0.02],[1910,0.05],[1921,0.07],[1930,0.1],[1936,0.41],[1943,0.92],[1949,0.16],[1952,1.35],[1957,5.35],[1958,8.0],[1960,18.66],[1962,6.67],[1965,12.2],[1970,17.8],[1975,23.9],[1978,31.8],[1985,46.8],[1990,66.4],[1996,101.2],[2000,128.5],[2005,353],[2010,639],[2015,804],[2020,1053],[2024,1005],[2025,961]]}],
+  cap:'1900 is Hanyang alone. The 1943 bump is Showa Steel at Anshan, built by Japan; 1949 is back to 0.16 Mt. The 1960 spike is the Great Leap, much of it unusable. China passed Japan in 1996 and makes about half the world’s steel; Hebei alone out-produces the United States and Japan together.'},
+ {id:'cement', prog:'Program II · Part V · p. 75', title:'Cement output', unit:'million tonnes a year',
+  targets:[{lo:3,hi:8,label:'Inferred: $100–200 M Mex (p. 75) ≈ 3–8 Mt/yr',src:'inferred'}],
+  series:[{name:'China',data:[[1910,0.06],[1925,0.2],[1936,0.6],[1949,0.66],[1957,6.86],[1960,15.6],[1962,6.0],[1965,16.3],[1970,25.8],[1978,65.2],[1985,146],[1990,210],[1995,476],[2000,597],[2005,1069],[2010,1882],[2014,2492],[2020,2377],[2022,2118],[2024,1825]]}],
+  cap:'Chee Hsin at Tangshan (1906) was the whole industry in 1910. Output peaked at 2.5 Gt in 2014, about half of world production, and has fallen with the property bust.'},
+ {id:'yz', prog:'Program II · Parts II–IV · pp. 39–74', title:'Yangtze trunk line freight', unit:'million tonnes a year',
+  targets:[{value:20,label:'“more profitable than Suez” (p. 55): Suez 1921 ≈ 20 Mt',src:'inferred'}],
+  series:[{name:'Main stem, Yibin to the sea',data:[[1980,120],[1990,200],[2000,400],[2005,795],[2010,1500],[2015,2180],[2018,2690],[2020,3060],[2022,3550],[2024,3900]]}],
+  cap:'Deep-water channel 1998–2018 (12.5 m to Nanjing), Three Gorges locks 2003. The busiest inland waterway on earth; pre-2005 points are approximate and nothing comparable was counted before 1980.'},
+ {id:'hydro', prog:'Program summary · IV · Water power · pp. 7, 74', title:'Hydropower installed', unit:'gigawatts',
+  targets:[{value:22.4,label:'Sun 1924: 30 M hp ≈ 22 GW',src:'text'}],
+  series:[{name:'China',data:[[1912,0.0005],[1937,0.02],[1945,0.15],[1949,0.16],[1957,1.0],[1965,3.0],[1978,17.3],[1985,26],[1990,36],[1995,52],[2000,79],[2005,117],[2010,216],[2015,320],[2020,370],[2024,436]]}],
+  cap:'Shilongba (1912) was the first plant; the 1945 figure is mostly Japan’s Fengman dam in Manchuria. The embedded national series reaches his 30-million-horsepower figure in 1983 by log interpolation; Three Gorges alone (22.5 GW, 2003–12) matched it in 2012. China holds about a third of the world’s hydro capacity.'},
+ {id:'yr', prog:'Program I · Part IV · Yellow River · pp. 26–27', title:'Yellow River sediment load at Tongguan', unit:'gigatonnes a year, decadal average', type:'bar',
+  cats:[['1919–49',1.6],['1950s',1.62],['1960s',1.52],['1970s',1.33],['1980s',0.80],['1990s',0.81],['2000s',0.30],['2010s',0.19],['2020–24',0.20]],
+  cap:'He said dikes were half the job and reforesting the loess watershed the other half. Sanmenxia (1960), Xiaolangdi (2001) and Grain-for-Green (1999) are why the 2010s bar is an eighth of the 1950s. No levee breach since 1949; the last, in 1938, was deliberate.'},
+ {id:'forest', prog:'Program summary · IX · Reforestation · pp. 8, 27', title:'Forest cover', unit:'percent of land area, national inventories', fmt:'pct',
+  targets:[{value:20,label:'Imputed: 20%, China’s own later goal; he gave none',src:'imputed'}],
+  series:[{name:'China',data:[[1949,8.6],[1976,12.7],[1981,12.0],[1988,13.0],[1993,13.9],[1998,16.6],[2003,18.2],[2008,20.4],[2013,21.6],[2018,23.0],[2021,24.0]]}],
+  cap:'Three-North Shelterbelt from 1978, Grain-for-Green from 1999. The dip to 1981 is the Great Leap’s backyard furnaces and Cultural Revolution clearing showing up in the second inventory. No reliable national figure exists before 1949.'},
+ {id:'xj', prog:'Program I · Part III · Colonization · pp. 23–25', title:'Xinjiang population', unit:'millions, census years', fmt:'dec1',
+  targets:[{value:10.3,label:'Sun: +10 M settlers by 1931 (p. 24)',src:'text'}],
+  series:[{name:'Total',data:[[1912,2.1],[1928,2.6],[1949,4.33],[1953,4.87],[1964,7.27],[1982,13.08],[1990,15.16],[2000,18.46],[2010,21.81],[2020,25.85]]},
+          {name:'Han',data:[[1949,0.29],[1953,0.30],[1964,2.32],[1982,5.28],[1990,5.70],[2000,7.49],[2010,8.75],[2020,10.92]]}],
+  cap:'State-organized settlement by disbanded soldiers was his mechanism; the Bingtuan (1954) was formed from 175,000 demobilized troops. His pace, ten million in ten years, was never met: the Han population rose 10.6 million over 71 years and crossed this population proxy in 2018 by log interpolation.'},
+ {id:'cotton', prog:'Program summary · VIII · Irrigation in Sinkiang · p. 8', title:'Xinjiang cotton output', unit:'million tonnes a year', fmt:'dec2',
+  targets:[{value:1.0,label:'Imputed: all of China’s 1921 crop ≈ 1 Mt',src:'imputed'}],
+  series:[{name:'Xinjiang',data:[[1949,0.005],[1978,0.055],[1990,0.47],[2000,1.5],[2010,2.48],[2015,3.5],[2020,5.16],[2024,5.69]]}],
+  cap:'Irrigated out of the Tarim and Ili systems by the Bingtuan. Xinjiang now grows about nine-tenths of China’s cotton, a fifth of the world’s. He gave no figure; the imputed bar is the whole country’s crop in his day. The cost is the Tarim’s lower reaches and Lop Nur, dry since the 1970s.'},
+ {id:'ne', prog:'Program summary · X · Colonization of Manchuria · pp. 8, 24', title:'Northeast population', unit:'millions, Liaoning + Jilin + Heilongjiang', fmt:'dec1',
+  targets:[{value:33,label:'Sun: +10 M by 1931 (p. 24)',src:'text'}],
+  series:[{name:'Northeast',data:[[1900,14],[1908,17],[1920,23],[1931,30],[1940,43],[1953,41.7],[1964,62.7],[1982,91.0],[1990,99.4],[2000,104.8],[2010,109.5],[2020,98.5]]}],
+  cap:'His ten-million target was aimed at Mongolia and Xinjiang; it was met here instead, at his pace and mostly before 1949: some 25 million people walked or sailed north between the 1890s and the 1940s, the largest migration of its era. The region has been losing people since 2010.'},
+ {id:'cities', prog:'Programs I–III · the three port cities · pp. 7, 16', title:'Port-city population', unit:'millions, municipality at census', fmt:'dec1',
+  targets:[{value:5.62,label:'“as large as New York” (p. 16): 5.6 M in 1920',src:'text'},{value:1.82,label:'“Philadelphia within 40 years”: 1.8 M',src:'text'}],
+  series:[{name:'Shanghai',data:[[1900,1.0],[1920,2.4],[1930,3.1],[1949,5.0],[1953,6.2],[1964,10.8],[1982,11.9],[1990,13.3],[2000,16.4],[2010,23.0],[2020,24.9]]},
+          {name:'Tianjin',data:[[1900,0.5],[1920,0.8],[1930,1.3],[1949,1.9],[1953,2.7],[1964,7.2],[1982,7.8],[1990,8.8],[2000,10.0],[2010,12.9],[2020,13.9]]},
+          {name:'Guangzhou',data:[[1900,0.9],[1920,0.9],[1930,1.1],[1949,1.5],[1953,1.6],[1964,2.5],[1982,5.2],[1990,6.3],[2000,9.9],[2010,12.7],[2020,18.7]]}],
+  cap:'He sized each port city against 1920 New York and Philadelphia. Tianjin passed Philadelphia around 1949 and New York in the 1958 boundary expansion; Guangzhou passed New York by 1982. Municipal boundaries grew, so these flatter the later years; the Caofeidian city itself has about 300,000 people.'},
+ {id:'gdp', prog:'What it was for · pp. 8–9', title:'GDP per person', unit:'1990 international dollars (Maddison)',
+  targets:[{value:5552,label:'Imputed: “another New World” (p. 8) = US 1920, $5,552',src:'imputed'}],
+  series:[{name:'China',data:[[1900,545],[1913,552],[1929,562],[1938,562],[1950,448],[1957,577],[1960,662],[1962,552],[1970,783],[1978,978],[1985,1519],[1990,1871],[1995,2653],[2000,3421],[2005,5575],[2008,6725],[2015,10800],[2024,14500]]}],
+  cap:'Flat for forty years, down a fifth across the war decade, then a 15-fold rise after 1978. He set no income target; the imputed bar reads his “another New World” as 1920 American income, which China reached around 2005. Post-2008 values are extended from Maddison’s 2008 figure using real growth.'},
+];
+
+// Composite z: one series per chart, Sun's target for each, and where the target comes from.
+const ZSET = [
+  {id:'rail',   name:'Railway, mi',             pick:c=>c.series[0].data, target:100000, src:'text',     ref:'p. 6'},
+  {id:'road',   name:'Roads, mi',               pick:c=>{ const a=c.series[0].data, b=c.series[1].data; const base=a[a.length-1][1], b0=b[0][1]; return a.concat(b.map(p=>[p[0], base*p[1]/b0])); }, target:1000000, src:'text', ref:'p. 6'},
+  {id:'bohai',  name:'Bohai ports, Mt',         pick:c=>sumSeries(c.series), target:45, src:'inferred', ref:'p. 7 · NY Harbor 1921'},
+  {id:'east',   name:'Yangtze delta, M TEU',    pick:c=>sumSeries(c.series), target:4.5, src:'imputed', ref:'NY 1921 ÷ 10 t/TEU'},
+  {id:'pearl',  name:'Pearl River (SZ+GZ), M TEU', pick:c=>sumSeries(c.series.slice(1)), target:4.5, src:'imputed', ref:'NY 1921 ÷ 10 t/TEU'},
+  {id:'steel',  name:'Crude steel, Mt',         pick:c=>c.series[0].data, target:7.1, src:'inferred', ref:'p. 29 · mid of 5–10'},
+  {id:'cement', name:'Cement, Mt',              pick:c=>c.series[0].data, target:4.9, src:'inferred', ref:'p. 75 · mid of 3–8'},
+  {id:'yz',     name:'Yangtze freight, Mt',     pick:c=>c.series[0].data, target:20, src:'inferred', ref:'p. 55 · Suez 1921'},
+  {id:'hydro',  name:'Hydropower, GW',          pick:c=>c.series[0].data, target:22.4, src:'text', ref:'1924 lecture'},
+  {id:'yr',     name:'Yellow River silt, Gt (lower is better)', pick:c=>[[1934,1.6],[1955,1.62],[1965,1.52],[1975,1.33],[1985,0.80],[1995,0.81],[2005,0.30],[2015,0.19],[2022,0.20]], target:0.8, src:'imputed', ref:'half of 1919–49 (p. 27 gives none)', lower:true},
+  {id:'forest', name:'Forest cover, %',         pick:c=>c.series[0].data, target:20, src:'imputed', ref:'none given; China’s 2010 goal'},
+  {id:'xj',     name:'Xinjiang Han, M',         pick:c=>c.series[1].data, target:10.3, src:'text', ref:'p. 24'},
+  {id:'cotton', name:'Xinjiang cotton, Mt',     pick:c=>c.series[0].data, target:1.0, src:'imputed', ref:'none given; all China 1921'},
+  {id:'ne',     name:'Northeast population, M', pick:c=>c.series[0].data, target:33, src:'text', ref:'p. 24'},
+  {id:'cities', name:'Tianjin population, M',   pick:c=>c.series[1].data, target:5.62, src:'text', ref:'p. 16 · NY 1920'},
+  {id:'gdp',    name:'GDP per person, 1990 $',  pick:c=>c.series[0].data, target:5552, src:'imputed', ref:'p. 8 · “another New World” = US 1920'},
+];
+
+let LOG=true, SHADE=true;
+
+function fmt(v, kind){
+  if(kind==='pct') return v.toFixed(1)+'%';
+  if(kind==='dec2') return v>=10? v.toFixed(1) : v.toFixed(2);
+  if(kind==='dec1') return v>=100? Math.round(v).toLocaleString('en-US') : v.toFixed(1);
+  const a=Math.abs(v);
+  if(a>=1e6) return (v/1e6).toFixed(a>=1e7?1:2)+'M';
+  if(a>=1e4) return Math.round(v/1e3).toLocaleString('en-US')+'K';
+  if(a>=100) return Math.round(v).toLocaleString('en-US');
+  if(a>=10) return v.toFixed(1).replace(/\.0$/,'');
+  if(a>=1) return v.toFixed(2).replace(/\.?0+$/,'');
+  return parseFloat(v.toPrecision(2)).toString();
+}
+function niceStep(max){
+  const raw=max/4, p=Math.pow(10,Math.floor(Math.log10(raw))), n=raw/p;
+  return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p;
+}
+function el(tag, attrs, parent){
+  const e=document.createElementNS('http://www.w3.org/2000/svg',tag);
+  for(const k in attrs) e.setAttribute(k, attrs[k]);
+  if(parent) parent.appendChild(e);
+  return e;
+}
+function text(svg, x, y, str, attrs){
+  const t=el('text', Object.assign({x,y}, attrs||{}), svg); t.textContent=str; return t;
+}
+// log-linear interpolation of a [year,value] series onto integer years within its range
+function interp(data){
+  const out=new Map(); const d=data.filter(p=>p[1]>0).sort((a,b)=>a[0]-b[0]);
+  for(let i=0;i<d.length-1;i++){
+    const [y0,v0]=d[i],[y1,v1]=d[i+1];
+    for(let y=y0;y<y1;y++){ const f=(y-y0)/(y1-y0); out.set(y, f===0 ? v0 : Math.pow(10, Math.log10(v0)+(Math.log10(v1)-Math.log10(v0))*f)); }
+  }
+  if(d.length) out.set(d[d.length-1][0], d[d.length-1][1]);
+  return out;
+}
+function sumSeries(series){
+  const maps=series.map(s=>interp(s.data)); const years=new Set(); maps.forEach(m=>m.forEach((v,y)=>years.add(y)));
+  // A missing component after its last observation is unknown, not zero.
+  // End the aggregate at common coverage; zRows carries that aggregate forward.
+  const last=Math.min(...maps.map(m=>Math.max(...m.keys())));
+  return [...years].filter(y=>y<=last).sort((a,b)=>a-b).map(y=>[y, maps.reduce((t,m)=>t+(m.get(y)||0),0)]);
+}
+
+const W=360, mL=46, mR=60, mT=22, ph=184, mB=60, H=mT+ph+mB, pw=W-mL-mR;
+const COLORS=['var(--s1)','var(--s2)','var(--s3)'];
+const x = yr => mL + (yr-XMIN)/(XMAX-XMIN)*pw;
+
+function drawBandsBelow(svg){
+  if(!SHADE) return;
+  let row=0;
+  BANDS.forEach(b=>{
+    const x0=x(b.from), x1=x(b.to);
+    el('rect',{x:x0,y:mT,width:x1-x0,height:ph,fill:'var(--band)'},svg);
+    const ry=mT+ph+32+[0,11,22][row%3];
+    el('line',{x1:(x0+x1)/2,x2:(x0+x1)/2,y1:mT+ph+22,y2:ry-8,stroke:'var(--axis)','stroke-width':1},svg);
+    text(svg,(x0+x1)/2, ry, b.label,{'text-anchor':'middle',class:'band-l'});
+    row++;
+  });
+}
+function drawXAxis(svg){
+  el('line',{x1:mL,x2:mL+pw,y1:mT+ph,y2:mT+ph,stroke:'var(--axis)','stroke-width':1},svg);
+  for(let yr=1900; yr<=2025; yr+=25){
+    text(svg,x(yr),mT+ph+16,String(yr),{'text-anchor':'middle'});
+    el('line',{x1:x(yr),x2:x(yr),y1:mT+ph,y2:mT+ph+3,stroke:'var(--axis)'},svg);
+  }
+}
+function placeLabel(svg, labelY, str, pointsPx){
+  // choose the side where the series stay clear of the label
+  const cands=[{x:mL+pw-10,a:'end',lo:0.5,hi:1},{x:mL+10,a:'start',lo:0,hi:0.5}];
+  let best=null;
+  cands.forEach(cd=>{
+    const hits=pointsPx.filter(p=>{const f=(p[0]-mL)/pw; return f>=cd.lo&&f<=cd.hi&&Math.abs(p[1]-labelY)<10;}).length;
+    if(!best||hits<best.hits) best={cd,hits};
+  });
+  text(svg,best.cd.x,labelY-4,str,{class:'tgt','text-anchor':best.cd.a});
+}
+
+function drawLine(card, c){
+  const svg=card.querySelector('svg'); svg.innerHTML=''; svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const kind=c.fmt||'num';
+  const all=c.series.flatMap(s=>s.data.map(d=>d[1]));
+  const tgts=(c.targets||[]).flatMap(t=>t.value!=null?[t.value]:[t.hi]);
+  const max=Math.max(...all, ...tgts);
+  const useLog = LOG && c.log!==false;
+  let y, yticks, ytop;
+  if(useLog){
+    const minPos=Math.min(...all.filter(v=>v>0), ...(c.targets||[]).filter(t=>t.lo).map(t=>t.lo));
+    const lo=Math.floor(Math.log10(minPos)), hiL=Math.log10(max)+0.25;
+    y = v => mT + ph - (Math.log10(v)-lo)/(hiL-lo)*ph;
+    yticks=[]; for(let e=lo;e<=Math.floor(hiL);e++){ yticks.push(Math.pow(10,e)); }
+    if(yticks.length<=3){ const extra=[]; for(let e=lo;e<=Math.floor(hiL);e++){ const v=3*Math.pow(10,e); if(Math.log10(v)<=hiL) extra.push(v); } yticks=yticks.concat(extra).sort((a,b)=>a-b); }
+  } else {
+    const step=niceStep(max*1.04), top=Math.ceil(max*1.04/step)*step; ytop=top;
+    y = v => mT + ph - v/top*ph;
+    yticks=[]; for(let t=0;t<=top+1e-9;t+=step) yticks.push(+t.toFixed(10));
+  }
+  drawBandsBelow(svg);
+  yticks.forEach(t=>{
+    const yy=y(t); if(yy<mT-1||yy>mT+ph+1) return;
+    el('line',{x1:mL,x2:mL+pw,y1:yy,y2:yy,stroke:'var(--grid)','stroke-width':1},svg);
+    text(svg,mL-6,yy+3.5,fmt(t,kind),{'text-anchor':'end'});
+  });
+  drawXAxis(svg);
+  // series
+  const ptsPx=[];
+  c.series.forEach((s,i)=>{
+    const pts=s.data.filter(d=>!useLog||d[1]>0);
+    pts.forEach(p=>ptsPx.push([x(p[0]),y(p[1])]));
+    const d=pts.map((p,j)=>(j?'L':'M')+x(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1)).join(' ');
+    el('path',{d,fill:'none',stroke:COLORS[i],'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+  });
+  // targets: dashed = in Sun's text, dotted = inferred; bands for ranges
+  (c.targets||[]).forEach(t=>{
+    const dash = t.src==='text' ? '4 3' : '1.5 3';
+    const col = t.src==='text' ? 'var(--fg2)' : 'var(--muted)';
+    if(t.lo!=null){
+      if(!useLog && t.hi < ytop*0.03){ text(svg,mL+pw-10,mT+ph-6,t.label+' (see log)',{class:'tgt','text-anchor':'end'}); return; }
+      const y1=y(t.hi), y2=y(t.lo);
+      el('rect',{x:mL,y:y1,width:pw,height:Math.max(1,y2-y1),fill:col,opacity:.12},svg);
+      el('line',{x1:mL,x2:mL+pw,y1:y1,y2:y1,stroke:col,'stroke-width':1,'stroke-dasharray':dash},svg);
+      el('line',{x1:mL,x2:mL+pw,y1:y2,y2:y2,stroke:col,'stroke-width':1,'stroke-dasharray':dash},svg);
+      placeLabel(svg,y1,t.label,ptsPx);
+    } else {
+      const ty=y(t.value); if(ty<mT||ty>mT+ph) return;
+      el('line',{x1:mL,x2:mL+pw,y1:ty,y2:ty,stroke:col,'stroke-width':1,'stroke-dasharray':dash},svg);
+      placeLabel(svg,ty,t.label,ptsPx);
+    }
+  });
+  // end markers + labels
+  c.series.forEach((s,i)=>{
+    const pts=s.data.filter(d=>!useLog||d[1]>0); const last=pts[pts.length-1];
+    el('circle',{cx:x(last[0]),cy:y(last[1]),r:4,fill:COLORS[i],stroke:'var(--surface)','stroke-width':2},svg);
+    text(svg,x(last[0])+8,y(last[1])+3.5,fmt(last[1],kind),{class:'lbl'});
+  });
+  // hover
+  const cross=el('line',{x1:0,x2:0,y1:mT,y2:mT+ph,stroke:'var(--fg2)','stroke-width':1,opacity:0},svg);
+  const dots=c.series.map((s,i)=>el('circle',{r:4.5,fill:COLORS[i],stroke:'var(--surface)','stroke-width':2,opacity:0},svg));
+  const hit=el('rect',{x:mL,y:mT,width:pw,height:ph,fill:'transparent'},svg);
+  const tip=card.querySelector('.tip');
+  const move=(ev)=>{
+    const r=svg.getBoundingClientRect(); const px=(ev.clientX-r.left)/r.width*W;
+    const yr=XMIN+(px-mL)/pw*(XMAX-XMIN);
+    let best=null;
+    c.series.forEach(s=>s.data.forEach(p=>{ const d=Math.abs(p[0]-yr); if(!best||d<best.d) best={d,yr:p[0]}; }));
+    if(!best) return;
+    cross.setAttribute('x1',x(best.yr)); cross.setAttribute('x2',x(best.yr)); cross.setAttribute('opacity',.6);
+    let lines=['<b>'+best.yr+'</b>'];
+    c.series.forEach((s,i)=>{
+      const p=s.data.find(q=>q[0]===best.yr);
+      if(p && (!useLog||p[1]>0)){ dots[i].setAttribute('cx',x(p[0])); dots[i].setAttribute('cy',y(p[1])); dots[i].setAttribute('opacity',1); lines.push(s.name+': '+fmt(p[1],kind)); }
+      else dots[i].setAttribute('opacity',0);
+    });
+    tip.innerHTML=lines.join('<br>'); tip.style.display='block';
+    const cr=card.getBoundingClientRect();
+    let left=ev.clientX-cr.left+12; const tw=tip.offsetWidth; if(left+tw>cr.width-8) left=ev.clientX-cr.left-tw-12;
+    tip.style.left=left+'px'; tip.style.top=(ev.clientY-cr.top-10)+'px';
+  };
+  hit.addEventListener('pointermove',move); hit.addEventListener('pointerdown',move);
+  hit.addEventListener('pointerleave',()=>{ tip.style.display='none'; cross.setAttribute('opacity',0); dots.forEach(d=>d.setAttribute('opacity',0)); });
+}
+
+function drawBar(card, c){
+  const svg=card.querySelector('svg'); svg.innerHTML=''; const Hb=mT+ph+40; svg.setAttribute('viewBox',`0 0 ${W} ${Hb}`);
+  const n=c.cats.length, slot=pw/n, bw=Math.min(24, slot*0.6);
+  const max=Math.max(...c.cats.map(k=>k[1]));
+  const step=niceStep(max*1.04), top=Math.ceil(max*1.04/step)*step;
+  const y=v=>mT+ph-v/top*ph;
+  for(let t=0;t<=top+1e-9;t+=step){
+    const yy=y(t); el('line',{x1:mL,x2:mL+pw,y1:yy,y2:yy,stroke:'var(--grid)','stroke-width':1},svg);
+    text(svg,mL-6,yy+3.5,fmt(t,'dec1'),{'text-anchor':'end'});
+  }
+  el('line',{x1:mL,x2:mL+pw,y1:mT+ph,y2:mT+ph,stroke:'var(--axis)'},svg);
+  const tip=card.querySelector('.tip');
+  c.cats.forEach((k,i)=>{
+    const cx=mL+slot*(i+0.5), x0=cx-bw/2, y0=y(k[1]), base=mT+ph, r=4;
+    const d=`M${x0} ${base} V${y0+r} Q${x0} ${y0} ${x0+r} ${y0} H${x0+bw-r} Q${x0+bw} ${y0} ${x0+bw} ${y0+r} V${base} Z`;
+    const p=el('path',{d,fill:'var(--s1)'},svg);
+    text(svg,cx,mT+ph+16+(i%2?11:0),k[0],{'text-anchor':'middle',class:'cat'});
+    el('line',{x1:cx,x2:cx,y1:mT+ph,y2:mT+ph+4+(i%2?11:0),stroke:'var(--axis)'},svg);
+    if(i===0||i===1||i===n-1) text(svg,cx,y0-5,fmt(k[1],'dec2'),{'text-anchor':'middle',class:'lbl'});
+    const hit=el('rect',{x:mL+slot*i,y:mT,width:slot,height:ph,fill:'transparent'},svg);
+    const show=(ev)=>{ tip.innerHTML='<b>'+k[0]+'</b><br>'+fmt(k[1],'dec2')+' Gt/yr'; tip.style.display='block';
+      const cr=card.getBoundingClientRect(); let left=ev.clientX-cr.left+12; const tw=tip.offsetWidth; if(left+tw>cr.width-8) left=ev.clientX-cr.left-tw-12;
+      tip.style.left=left+'px'; tip.style.top=(ev.clientY-cr.top-10)+'px'; p.setAttribute('opacity',.8); };
+    hit.addEventListener('pointermove',show); hit.addEventListener('pointerdown',show);
+    hit.addEventListener('pointerleave',()=>{ tip.style.display='none'; p.setAttribute('opacity',1); });
+  });
+}
+
+// Era split: level at 1949, 1976, latest. Share of the latest level accumulated in each era.
+const ERA = [
+  ['Railway, mi',           13546,   29826,   102526, 'mi'],
+  ['Roads, mi (pre-2005 count, to 2004)', 50145, 511388, 1162400, 'mi'],
+  ['Expressways, mi',       0,       0,       118495, 'mi'],
+  ['Crude steel, Mt/yr',    0.16,    20.5,    961,    'Mt'],
+  ['Hydropower, GW',        0.16,    14,      436,    'GW'],
+  ['Bohai ports, Mt/yr',    0.7,     10,      1467,   'Mt'],
+  ['Xinjiang Han population, M', 0.29, 4.5,   10.92,  'M'],
+  ['GDP per person, 1990 $', 448,    853,     14500,  '$'],
+];
+function drawEra(){
+  const svg=document.getElementById('era-svg'); svg.innerHTML='';
+  const rowH=36, top=6, width=W, bar=14;
+  const h=top+ERA.length*rowH+4;
+  svg.setAttribute('viewBox',`0 0 ${width} ${h}`);
+  const tip=document.querySelector('#era-card .tip'), card=document.getElementById('era-card');
+  const cols=['var(--s3)','var(--s2)','var(--s1)'], names=['Before 1949','Mao, 1949–76','After 1976'];
+  ERA.forEach((r,i)=>{
+    const y0=top+i*rowH;
+    text(svg,0,y0+9,r[0],{class:'lbl'});
+    const total=r[3]; const parts=[r[1], r[2]-r[1], r[3]-r[2]].map(v=>Math.max(0,v)/total);
+    let xx=0; const by=y0+15;
+    parts.forEach((p,j)=>{
+      const w=p*width; if(w<=0) return;
+      const gap = (j<2 && parts.slice(j+1).some(q=>q>0)) ? 2 : 0;
+      const ww=Math.max(0,w-gap);
+      const seg=el('rect',{x:xx,y:by,width:ww,height:bar,fill:cols[j],rx:j===2?3:0},svg);
+      if(ww>=26) text(svg,xx+ww/2,by+10,Math.round(p*100)+'%',{'text-anchor':'middle','font-size':'9.5px',style:'fill:#fff'});
+      const levels=[r[1],r[2],r[3]];
+      const show=(ev)=>{ tip.innerHTML='<b>'+r[0]+'</b><br>'+names[j]+': '+(p*100).toFixed(1)+'% of today’s level<br>1949: '+levels[0].toLocaleString('en-US')+' · 1976: '+levels[1].toLocaleString('en-US')+' · now: '+levels[2].toLocaleString('en-US');
+        tip.style.display='block'; const cr=card.getBoundingClientRect(); let lx=ev.clientX-cr.left+12; const tw=tip.offsetWidth; if(lx+tw>cr.width-8) lx=ev.clientX-cr.left-tw-12; tip.style.left=lx+'px'; tip.style.top=(ev.clientY-cr.top-10)+'px'; seg.setAttribute('opacity',.8); };
+      seg.addEventListener('pointermove',show); seg.addEventListener('pointerdown',show);
+      seg.addEventListener('pointerleave',()=>{ tip.style.display='none'; seg.setAttribute('opacity',1); });
+      xx+=w;
+    });
+  });
+  document.getElementById('era-tbl').innerHTML='<table><thead><tr><th>Measure</th><th>1949</th><th>1976</th><th>Now</th><th>Pre-49</th><th>Mao</th><th>Post-76</th></tr></thead><tbody>'+
+    ERA.map(r=>{const t=r[3]; const s=[r[1]/t, (r[2]-r[1])/t, (r[3]-r[2])/t].map(v=>(Math.max(0,v)*100).toFixed(1)+'%'); return `<tr><td>${r[0]}</td><td>${r[1].toLocaleString('en-US')}</td><td>${r[2].toLocaleString('en-US')}</td><td>${r[3].toLocaleString('en-US')}</td><td>${s[0]}</td><td>${s[1]}</td><td>${s[2]}</td></tr>`;}).join('')+'</tbody></table>';
+}
+
+// ---- Composite z ----
+// Every series is carried back to 1875. Where the thing did not yet exist (railways before 1876, containers before 1956, …)
+// the series is held at a floor and scores z = −3 (the winsor limit); floor years are excluded from each series' mean and sd.
+const Z0=1875, Z1=2025;
+// early points for the Chinese z-series that the 1900–2025 charts do not show
+const PRE = {
+  bohai:[[1875,0.2]], yz:[[1875,2],[1900,5],[1936,12],[1949,6],[1957,20],[1965,35],[1978,100]],
+  forest:[[1875,14],[1900,12],[1920,10]], ne:[[1875,9]], cities:[[1875,0.3]], gdp:[[1875,530]],
+  yr:[[1875,1.6]],
+};
+function zRows(items, pooled){
+  return items.map(z=>{
+    const data=(z.pre||[]).concat(z.data).sort((a,b)=>a[0]-b[0]);
+    const m=interp(data); const yrs=[...m.keys()].sort((a,b)=>a-b);
+    const real=yrs.filter(y=>y>=Z0&&y<=Z1); const logs=real.map(y=>Math.log10(m.get(y)));
+    let mu, sd;
+    if(pooled && pooled[z.key]){ mu=pooled[z.key].mu; sd=pooled[z.key].sd; }
+    else { mu=logs.reduce((a,b)=>a+b,0)/logs.length; sd=Math.sqrt(logs.reduce((a,b)=>a+(b-mu)*(b-mu),0)/logs.length)||1e-9; }
+    const sign=z.lower?-1:1, clamp=v=>Math.max(-3,Math.min(3,v));
+    const zmap=new Map();
+    for(let y=Z0;y<yrs[0];y++) zmap.set(y,-3);                       // floor: did not exist yet
+    yrs.forEach(y=>{ if(y>=Z0) zmap.set(y, clamp(sign*(Math.log10(m.get(y))-mu)/sd)); });
+    const lastY=yrs[yrs.length-1]; for(let y=lastY+1;y<=Z1;y++) zmap.set(y, zmap.get(lastY));   // carry the last value forward to 2025
+    const zt=clamp(sign*(Math.log10(z.target)-mu)/sd);
+    let cross=null; for(const y of yrs){ const v=m.get(y); if(z.lower? v<=z.target : v>=z.target){ cross=y; break; } }
+    return Object.assign({}, z, {zmap, zt, cross, before: cross!==null&&cross===yrs[0], first:yrs[0], now:zmap.get(Z1), lastY:yrs[yrs.length-1], logs});
+  });
+}
+function composite(rows, from, to, filter){
+  const out=[]; for(let y=from;y<=to;y++){ const v=rows.filter(r=>r.zmap.has(y)&&(!filter||filter(r))); if(v.length>=3) out.push([y, v.reduce((a,r)=>a+r.zmap.get(y),0)/v.length, v.length]); } return out;
+}
+function chinaItems(){ return ZSET.map(z=>Object.assign({}, z, {key:z.id, data:z.pick(CHARTS.find(k=>k.id===z.id)), pre:PRE[z.id]||[]})); }
+function axisFor(svg, X0, X1){
+  const xf = yr => mL + (yr-X0)/(X1-X0)*pw;
+  el('line',{x1:mL,x2:mL+pw,y1:mT+ph,y2:mT+ph,stroke:'var(--axis)','stroke-width':1},svg);
+  for(let yr=Math.ceil(X0/25)*25; yr<=2025; yr+=25){ text(svg,xf(yr),mT+ph+16,String(yr),{'text-anchor':'middle'}); el('line',{x1:xf(yr),x2:xf(yr),y1:mT+ph,y2:mT+ph+3,stroke:'var(--axis)'},svg); }
+  return xf;
+}
+function bandsFor(svg, xf){
+  if(!SHADE) return; let row=0;
+  BANDS.forEach(b=>{ const x0=xf(b.from), x1=xf(b.to); el('rect',{x:x0,y:mT,width:x1-x0,height:ph,fill:'var(--band)'},svg);
+    const ry=mT+ph+32+[0,11,22][row%3]; el('line',{x1:(x0+x1)/2,x2:(x0+x1)/2,y1:mT+ph+22,y2:ry-8,stroke:'var(--axis)','stroke-width':1},svg);
+    text(svg,(x0+x1)/2, ry, b.label,{'text-anchor':'middle',class:'band-l'}); row++; });
+}
+function hoverFor(svg, card, xf, X0, X1, lines){ // lines: [{name, comp}]
+  const tip=card.querySelector('.tip');
+  const cross=el('line',{x1:0,x2:0,y1:mT,y2:mT+ph,stroke:'var(--fg2)','stroke-width':1,opacity:0},svg);
+  const hit=el('rect',{x:mL,y:mT,width:pw,height:ph,fill:'transparent'},svg);
+  const move=(ev)=>{ const r=svg.getBoundingClientRect(); const px=(ev.clientX-r.left)/r.width*W; const yr=Math.round(X0+(px-mL)/pw*(X1-X0));
+    const hits=lines.map(l=>({name:l.name,p:l.comp.find(q=>q[0]===yr)})).filter(h=>h.p); if(!hits.length) return;
+    cross.setAttribute('x1',xf(yr)); cross.setAttribute('x2',xf(yr)); cross.setAttribute('opacity',.6);
+    tip.innerHTML='<b>'+yr+'</b>'+hits.map(h=>'<br>'+h.name+': '+(h.p[1]>0?'+':'')+h.p[1].toFixed(2)+' ('+h.p[2]+' series)').join('');
+    tip.style.display='block'; const cr=card.getBoundingClientRect(); let lx=ev.clientX-cr.left+12; const tw=tip.offsetWidth; if(lx+tw>cr.width-8) lx=ev.clientX-cr.left-tw-12; tip.style.left=lx+'px'; tip.style.top=(ev.clientY-cr.top-10)+'px'; };
+  hit.addEventListener('pointermove',move); hit.addEventListener('pointerdown',move);
+  hit.addEventListener('pointerleave',()=>{ tip.style.display='none'; cross.setAttribute('opacity',0); });
+}
+function drawZ(){
+  const rows=zRows(chinaItems());
+  const comp=composite(rows,Z0,Z1), compNo=composite(rows,Z0,Z1,r=>r.src!=='imputed');
+  const sunAll=rows.reduce((a,r)=>a+r.zt,0)/rows.length; const ni=rows.filter(r=>r.src!=='imputed'); const sunNo=ni.reduce((a,r)=>a+r.zt,0)/ni.length;
+  const svg=document.getElementById('z-svg'); svg.innerHTML=''; svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const card=document.getElementById('z-card');
+  const vals=comp.map(p=>p[1]).concat([sunAll,sunNo]);
+  const lo=Math.floor(Math.min(...vals)*2)/2-0.25, hi=Math.ceil(Math.max(...vals)*2)/2+0.25;
+  const y=v=>mT+ph-(v-lo)/(hi-lo)*ph;
+  const xf = yr => mL + (yr-Z0)/(2026-Z0)*pw;
+  bandsFor(svg,xf);
+  for(let t=Math.ceil(lo);t<=Math.floor(hi);t+=0.5){ const yy=y(t); el('line',{x1:mL,x2:mL+pw,y1:yy,y2:yy,stroke: t===0?'var(--axis)':'var(--grid)','stroke-width':1},svg); text(svg,mL-6,yy+3.5,(t>0?'+':'')+t.toFixed(1),{'text-anchor':'end'}); }
+  axisFor(svg,Z0,2026);
+  [[sunAll,'var(--fg2)','4 3','Sun bar, all 16: z = '+sunAll.toFixed(2),mL+10,'start',-4],[sunNo,'var(--muted)','1.5 3','without imputed: '+sunNo.toFixed(2),mL+10,'start',11]].forEach(([v,col,dash,lab,lx,anc,dy])=>{
+    const ty=y(v); el('line',{x1:mL,x2:mL+pw,y1:ty,y2:ty,stroke:col,'stroke-width':1,'stroke-dasharray':dash},svg); text(svg,lx,ty+dy,lab,{class:'tgt','text-anchor':anc}); });
+  const d=comp.map((p,j)=>(j?'L':'M')+xf(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1)).join(' ');
+  el('path',{d,fill:'none',stroke:'var(--s1)','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+  const last=comp[comp.length-1]; el('circle',{cx:xf(last[0]),cy:y(last[1]),r:4,fill:'var(--s1)',stroke:'var(--surface)','stroke-width':2},svg); text(svg,xf(last[0])+8,y(last[1])+3.5,(last[1]>0?'+':'')+last[1].toFixed(2),{class:'lbl'});
+  let crossAll=null, crossNo=null; for(const p of comp){ if(p[1]>=sunAll){ crossAll=p[0]; break; } } for(const p of compNo){ if(p[1]>=sunNo){ crossNo=p[0]; break; } }
+  if(crossAll){ el('circle',{cx:xf(crossAll),cy:y(sunAll),r:4,fill:'var(--surface)',stroke:'var(--s1)','stroke-width':2},svg); text(svg,xf(crossAll)+7,y(sunAll)+14,String(crossAll),{class:'lbl'}); }
+  hoverFor(svg,card,xf,Z0,2026,[{name:'composite z',comp}]);
+  const nText=rows.filter(r=>r.src==='text').length, nInf=rows.filter(r=>r.src==='inferred').length, nImp=rows.filter(r=>r.src==='imputed').length;
+  document.getElementById('z-cap').textContent=`Sun’s targets average z = ${sunAll.toFixed(2)} across the sixteen series (${nText} from his text, ${nInf} inferred from his capital sums and comparators, ${nImp} imputed). All sixteen series run from 1875, held at the −3 floor where the thing did not yet exist, so the composite’s shape is movement and not composition. China’s composite crossed the Sun bar in ${crossAll||'—'}; dropping the imputed targets, the bar is ${sunNo.toFixed(2)} and the crossing ${crossNo||'—'}. Today the composite stands at ${last[1].toFixed(2)}.`;
+  document.getElementById('z-tbl').innerHTML='<table><thead><tr><th>Series</th><th>Sun’s target</th><th>Source</th><th>Basis</th><th>Sun z</th><th>Crossed</th><th>z now</th></tr></thead><tbody>'+
+    rows.map(r=>`<tr><td>${r.name}</td><td>${r.target.toLocaleString('en-US')}</td><td class="src-${r.src}">${r.src}</td><td>${r.ref}</td><td>${(r.zt>0?'+':'')+r.zt.toFixed(2)}</td><td>${r.cross||'—'}</td><td>${(r.now>0?'+':'')+r.now.toFixed(2)}</td></tr>`).join('')+
+    `<tr><td><b>Mean</b></td><td></td><td></td><td></td><td><b>${sunAll.toFixed(2)}</b></td><td>${crossAll||'—'}</td><td><b>${last[1].toFixed(2)}</b></td></tr></tbody></table>`;
+}
+
+// ---- United States, same sixteen measures ----
+// Settlement targets adapt the Northwestern +10 M proposal to regional population stocks.
+// Sediment halving is imputed and applied to each river baseline.
+const USSET = [
+  {key:'rail',   name:'Railway, mi (route-miles, all railroads)', target:100000, src:'text', ref:'p. 6',
+   data:[[1870,52922],[1880,93262],[1890,163597],[1900,193346],[1910,240293],[1916,254037],[1920,252845],[1930,249052],[1940,233670],[1950,223779],[1960,217552],[1970,206265],[1980,179000],[1990,146000],[2000,144000],[2010,139000],[2020,137000],[2024,136000]]},
+  {key:'road',   name:'Surfaced roads, mi (FHWA)', target:1000000, src:'text', ref:'p. 6',
+   data:[[1875,10000],[1890,60000],[1904,154000],[1914,257000],[1921,387000],[1930,694000],[1940,1367000],[1950,1679000],[1960,2170000],[1970,2500000],[1980,2650000],[1990,2700000],[2000,2700000],[2010,2750000],[2020,2770000]]},
+  {key:'bohai',  name:'Largest US port, Mt (NY, later S. Louisiana / Houston)', target:45, src:'inferred', ref:'p. 7 · NY Harbor 1921',
+   data:[[1870,10],[1900,25],[1921,45],[1929,60],[1950,120],[1972,179],[1990,200],[2010,220],[2023,250]]},
+  {key:'east',   name:'Los Angeles + Long Beach, M TEU', target:4.5, src:'imputed', ref:'NY 1921 ÷ 10 t/TEU',
+   data:[[1965,0.1],[1970,0.4],[1980,1.45],[1990,3.6],[2000,9.5],[2010,14.1],[2020,17.3],[2024,19.8]]},
+  {key:'pearl',  name:'New York / New Jersey, M TEU', target:4.5, src:'imputed', ref:'NY 1921 ÷ 10 t/TEU',
+   data:[[1965,0.1],[1970,0.4],[1980,1.95],[1990,1.87],[2000,3.0],[2010,5.3],[2020,7.6],[2024,8.7]]},
+  {key:'steel',  name:'Crude steel, Mt', target:7.1, src:'inferred', ref:'p. 29 · mid of 5–10',
+   data:[[1870,0.07],[1880,1.25],[1890,4.3],[1900,10.2],[1910,26.1],[1920,42.1],[1929,56.4],[1932,13.7],[1940,60.8],[1944,81.3],[1950,87.8],[1960,90.1],[1970,119.3],[1973,136.8],[1980,101.5],[1990,89.7],[2000,101.8],[2010,80.5],[2020,72.7],[2024,79.5]]},
+  {key:'cement', name:'Cement, Mt', target:4.9, src:'inferred', ref:'p. 75 · mid of 3–8',
+   data:[[1875,0.03],[1880,0.07],[1890,0.06],[1900,1.5],[1910,13],[1920,17],[1929,29],[1933,11],[1940,22],[1950,39],[1960,56],[1970,67],[1980,68],[1990,70],[2000,88],[2010,66],[2020,90],[2024,91]]},
+  {key:'yz',     name:'Mississippi River system freight, Mt', target:20, src:'inferred', ref:'p. 55 · Suez 1921',
+   data:[[1875,20],[1890,30],[1920,30],[1940,60],[1960,150],[1980,450],[2000,545],[2020,450]]},
+  {key:'hydro',  name:'Hydropower, GW', target:22.4, src:'text', ref:'1924 lecture',
+   data:[[1882,0.0001],[1890,0.02],[1900,0.3],[1910,1.0],[1920,3.1],[1930,6.8],[1940,11.4],[1950,18.7],[1960,33.2],[1970,55.6],[1980,81.7],[1990,93],[2000,99],[2020,102],[2024,103]]},
+  {key:'yr',     name:'Mississippi sediment load, Gt (lower is better)', target:0.2, src:'imputed', ref:'half of pre-dam load, as for the Yellow River', lower:true,
+   data:[[1870,0.40],[1950,0.40],[1960,0.30],[1970,0.21],[1980,0.20],[1990,0.18],[2000,0.16],[2010,0.145],[2020,0.14]]},
+  {key:'forest', name:'Forest cover, %', target:20, src:'imputed', ref:'none given; China’s 2010 goal',
+   data:[[1870,36],[1900,34],[1920,33],[1950,33],[2000,33],[2020,33.5]]},
+  {key:'xj',     name:'Mountain + Pacific West population, M', target:19.2, src:'text', ref:'p. 24 · +10 M on the 1920 level',
+   data:[[1870,1.0],[1880,1.8],[1890,3.1],[1900,4.3],[1910,7.1],[1920,9.2],[1930,12.3],[1940,14.4],[1950,20.2],[1960,28.1],[1970,34.8],[1980,43.2],[1990,52.8],[2000,63.2],[2010,71.9],[2020,78.6]]},
+  {key:'cotton', name:'US cotton, Mt', target:1.0, src:'imputed', ref:'none given; all China 1921',
+   data:[[1870,0.95],[1880,1.43],[1890,1.88],[1900,2.2],[1910,2.5],[1920,2.9],[1930,3.0],[1940,2.7],[1950,2.2],[1960,3.1],[1970,2.2],[1980,2.4],[1990,3.4],[2000,3.7],[2010,3.9],[2020,3.2],[2024,3.1]]},
+  {key:'ne',     name:'Population west of the Mississippi, M', target:43.3, src:'text', ref:'p. 24 · +10 M on the 1920 level',
+   data:[[1870,7.0],[1880,11.2],[1890,16.2],[1900,21.0],[1910,28.6],[1920,33.3],[1930,38.6],[1940,41.5],[1950,50.0],[1960,61.0],[1970,69.0],[1980,84.0],[1990,98.0],[2000,115],[2010,130],[2020,140]]},
+  {key:'cities', name:'Los Angeles County population, M', target:5.62, src:'text', ref:'p. 16 · NY 1920',
+   data:[[1870,0.015],[1880,0.033],[1890,0.10],[1900,0.17],[1910,0.50],[1920,0.94],[1930,2.21],[1940,2.79],[1950,4.15],[1960,6.04],[1970,7.03],[1980,7.48],[1990,8.86],[2000,9.52],[2010,9.82],[2020,10.0]]},
+  {key:'gdp',    name:'GDP per person, 1990 $', target:5552, src:'imputed', ref:'p. 8 · “another New World” = US 1920',
+   data:[[1870,2445],[1880,3184],[1890,3392],[1900,4091],[1910,4964],[1913,5301],[1920,5552],[1929,6899],[1933,4777],[1940,7010],[1950,9561],[1960,11328],[1970,15030],[1980,18577],[1990,23201],[2000,28467],[2008,31178],[2015,34000],[2024,38000]]},
+];
+let POOLED=false;
+function pooledStats(usItems=USSET, cnItems=chinaItems()){
+  // per measure: mean and sd of log10 over the union of both countries' real 1875–2025 values
+  const us=zRows(usItems), cn=zRows(cnItems); const out={};
+  us.forEach((u,i)=>{ const logs=u.logs.concat(cn[i].logs); const mu=logs.reduce((a,b)=>a+b,0)/logs.length; const sd=Math.sqrt(logs.reduce((a,b)=>a+(b-mu)*(b-mu),0)/logs.length)||1e-9; out[u.key]={mu,sd}; });
+  return out;
+}
+const SENSITIVITY_CASES = [
+  {id:'baseline', label:'All sixteen (baseline)'},
+  {id:'no_imputed', label:'Without imputed targets', keep:z=>z.src!=='imputed'},
+  {id:'text_only', label:'Text-tagged targets only (includes 1924 hydro)', keep:z=>z.src==='text'},
+  {id:'no_ports', label:'Without the three port measures', keep:z=>!['bohai','east','pearl'].includes(z.key)},
+  {id:'national_physical', label:'Rail, steel, cement and hydro only', keep:z=>['rail','steel','cement','hydro'].includes(z.key)},
+  {id:'no_backfill', label:'Without Chinese PRE backfill estimates', noPre:true},
+  {id:'low_inferred', label:'Steel/cement targets at lower bounds', targets:{steel:5,cement:3}},
+  {id:'high_inferred', label:'Steel/cement targets at upper bounds', targets:{steel:10,cement:8}},
+];
+function sensitivityRun(spec){
+  const keep=spec.keep||(()=>true);
+  const prepare=items=>items.filter(keep).map(z=>Object.assign({},z,{target:(spec.targets||{})[z.key]??z.target}));
+  const usItems=prepare(USSET), cnItems=prepare(chinaItems()).map(z=>spec.noPre?Object.assign({},z,{pre:[]}):z);
+  const stats=pooledStats(usItems,cnItems), mean=rows=>rows.reduce((a,r)=>a+r.zt,0)/rows.length;
+  const cross=(comp,bar)=>(comp.find(p=>p[1]>=bar)||[null])[0];
+  const ownCN=zRows(cnItems), ownUS=zRows(usItems), poolCN=zRows(cnItems,stats), poolUS=zRows(usItems,stats);
+  const co=composite(ownCN,Z0,Z1), uo=composite(ownUS,Z0,Z1), cp=composite(poolCN,Z0,Z1), up=composite(poolUS,Z0,Z1);
+  const ahead=cp.find((p,i)=>p[0]>1950&&p[1]>=up[i][1]);
+  return {id:spec.id,label:spec.label,keys:cnItems.map(z=>z.key),n:cnItems.length,
+    china_own_bar:mean(ownCN),us_own_bar:mean(ownUS),china_own_cross:cross(co,mean(ownCN)),us_own_cross:cross(uo,mean(ownUS)),
+    china_pooled_bar:mean(poolCN),us_pooled_bar:mean(poolUS),china_pooled_cross:cross(cp,mean(poolCN)),us_pooled_cross:cross(up,mean(poolUS)),
+    china_own_now:co.at(-1)[1],us_own_now:uo.at(-1)[1],china_pooled_now:cp.at(-1)[1],us_pooled_now:up.at(-1)[1],
+    cn_us_first_ge_after1950:ahead?ahead[0]:null,pooled_gap_now:cp.at(-1)[1]-up.at(-1)[1]};
+}
+function sensitivityRuns(){ return SENSITIVITY_CASES.map(sensitivityRun); }
+function drawSensitivity(){
+  document.getElementById('sensitivity-tbl').innerHTML='<table><thead><tr><th>Assumption</th><th>Series</th><th>China / Sun, own</th><th>China / US, pooled*</th><th>Pooled gap, 2025</th></tr></thead><tbody>'+
+    sensitivityRuns().map(r=>`<tr><td>${r.label}</td><td>${r.n}</td><td>${r.china_own_cross??'—'}</td><td>${r.cn_us_first_ge_after1950??'Not reached'}</td><td>${r.pooled_gap_now>0?'+':''}${r.pooled_gap_now.toFixed(3)}</td></tr>`).join('')+'</tbody></table>';
+}
+function drawUS(){
+  const X0=1875, X1=2026;
+  const pooled = POOLED ? pooledStats() : null;
+  const us=zRows(USSET,pooled), cn=zRows(chinaItems(),pooled);
+  const cUS=composite(us,X0,Z1), cCN=composite(cn,X0,Z1);
+  const barUS=us.reduce((a,r)=>a+r.zt,0)/us.length, barCN=cn.reduce((a,r)=>a+r.zt,0)/cn.length;
+  const svg=document.getElementById('us-svg'); svg.innerHTML=''; svg.setAttribute('viewBox',`0 0 ${W} ${mT+ph+26}`);
+  const card=document.getElementById('us-card');
+  const vals=cUS.map(p=>p[1]).concat(cCN.map(p=>p[1]),[barUS,barCN]);
+  const lo=Math.floor(Math.min(...vals)*2)/2-0.25, hi=Math.ceil(Math.max(...vals)*2)/2+0.25;
+  const y=v=>mT+ph-(v-lo)/(hi-lo)*ph;
+  for(let t=Math.ceil(lo);t<=Math.floor(hi);t+=0.5){ const yy=y(t); el('line',{x1:mL,x2:mL+pw,y1:yy,y2:yy,stroke: t===0?'var(--axis)':'var(--grid)','stroke-width':1},svg); text(svg,mL-6,yy+3.5,(t>0?'+':'')+t.toFixed(1),{'text-anchor':'end'}); }
+  const xf=axisFor(svg,X0,X1);
+  el('line',{x1:xf(1921),x2:xf(1921),y1:mT,y2:mT+ph,stroke:'var(--axis)','stroke-width':1},svg); text(svg,xf(1921)+3,mT+9,'1921 plan',{class:'band-l'});
+  const bars = POOLED ? (Math.abs(barUS-barCN)<0.02 ? [[barUS,'Sun bar (pooled): z = '+barUS.toFixed(2),'start',mL+10,-4]] : [[barUS,'Sun bar, US targets: z = '+barUS.toFixed(2),'start',mL+10,-4],[barCN,'Sun bar, China targets: z = '+barCN.toFixed(2),'start',mL+10,11]]) : [[barUS,'Sun bar (US): z = '+barUS.toFixed(2),'end',mL+pw-10,11],[barCN,'Sun bar (China): z = '+barCN.toFixed(2),'start',mL+10,-4]];
+  bars.forEach(([v,lab,anc,lx,dy])=>{ const ty=y(v); el('line',{x1:mL,x2:mL+pw,y1:ty,y2:ty,stroke:'var(--fg2)','stroke-width':1,'stroke-dasharray':'4 3'},svg); text(svg,lx,ty+dy,lab,{class:'tgt','text-anchor':anc}); });
+  [[cUS,'var(--s2)'],[cCN,'var(--s1)']].forEach(([c,col])=>{ const d=c.map((p,j)=>(j?'L':'M')+xf(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1)).join(' '); el('path',{d,fill:'none',stroke:col,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg); const last=c[c.length-1]; el('circle',{cx:xf(last[0]),cy:y(last[1]),r:4,fill:col,stroke:'var(--surface)','stroke-width':2},svg); text(svg,xf(last[0])+8,y(last[1])+3.5,(last[1]>0?'+':'')+last[1].toFixed(2),{class:'lbl'}); });
+  let crossUS=null, crossCN=null, crossCNUS=null; for(const p of cUS){ if(p[1]>=barUS){ crossUS=p[0]; break; } } for(const p of cCN){ if(p[1]>=barCN){ crossCN=p[0]; break; } }
+  for(const p of cCN){ const u=cUS.find(q=>q[0]===p[0]); if(u && p[1]>=u[1] && p[0]>1950){ crossCNUS=p[0]; break; } }
+  [[crossUS,barUS,'var(--s2)'],[crossCN,barCN,'var(--s1)']].forEach(([cy,bar,col])=>{ if(!cy) return; el('circle',{cx:xf(cy),cy:y(bar),r:4,fill:'var(--surface)',stroke:col,'stroke-width':2},svg); text(svg,xf(cy)+7,y(bar)+14,String(cy),{class:'lbl'}); });
+  hoverFor(svg,card,xf,X0,X1,[{name:'US',comp:cUS},{name:'China',comp:cCN}]);
+  const usNow=cUS[cUS.length-1][1], cnNow=cCN[cCN.length-1][1];
+  const n21=us.filter(r=>r.cross&&r.cross<=1921).length;
+  const short=r=>r.name.split(',')[0].replace(' (lower is better)','');
+  const aboveL=cn.filter((c,i)=>c.now>us[i].now).map(short), belowL=cn.filter((c,i)=>c.now<=us[i].now).map(short); const above=aboveL.length;
+  document.getElementById('us-cap').textContent = POOLED
+    ? `Pooled: each measure uses both countries’ combined 1875–2025 record on a shared z scale. With the selected definitions, China’s composite first reaches or exceeds the US after 1950 in ${crossCNUS||'—'}. This is an index-specific result: geographic coverage, road definitions and freight counting differ. The Sun bar is z = ${barUS.toFixed(2)} for the American targets and ${barCN.toFixed(2)} for the Chinese targets; the two settlement proxies and the imputed sediment-halving target use different baselines. The US passed its bar in ${crossUS||'before 1875'}, China in ${crossCN||'—'}. China scores above the US on ${above} of the sixteen paired measures (${aboveL.join(', ')}) and below on ${belowL.length} (${belowL.join(', ')}). US ${usNow.toFixed(2)}, China ${cnNow.toFixed(2)}. See the sensitivity table and comparison limits below.`
+    : `Own distributions: each country is scored against its own 1875–2025 record, showing position in its own history. The US target bar is ${barUS.toFixed(2)}; the US crossed it in ${crossUS||'before 1875'}, and China crossed its own bar in ${crossCN||'—'}. By 1921, ${n21} American series met their assigned targets, including later imputed targets and population proxies. The lines meet${crossCNUS?' in '+crossCNUS:''} on this relative scale. The endpoint reflects the shape of each history: US rail peaked in 1916 and scores ${us[0].now.toFixed(2)} today; US steel peaked in 1973 and scores ${us[5].now.toFixed(2)}. US ${usNow.toFixed(2)}, China ${cnNow.toFixed(2)}. Pooled uses a shared scale; the sensitivity table explains the limits of those comparisons.`;
+  document.getElementById('us-tbl').innerHTML='<table><thead><tr><th>US series</th><th>Target</th><th>US crossed</th><th>China crossed</th><th>Sun z (US)</th><th>US z now</th><th>China z now</th></tr></thead><tbody>'+
+    us.map((r,i)=>`<tr><td>${r.name}</td><td>${r.target.toLocaleString('en-US')}</td><td>${r.before?'≤ '+r.first:(r.cross||'—')}</td><td>${cn[i].cross||'—'}</td><td>${(r.zt>0?'+':'')+r.zt.toFixed(2)}</td><td>${(r.now>0?'+':'')+r.now.toFixed(2)}</td><td>${(cn[i].now>0?'+':'')+cn[i].now.toFixed(2)}</td></tr>`).join('')+
+    `<tr><td><b>Mean / composite</b></td><td></td><td><b>${crossUS||'≤ 1875'}</b></td><td><b>${crossCN||'—'}</b></td><td><b>${barUS.toFixed(2)}</b></td><td><b>${usNow.toFixed(2)}</b></td><td><b>${cnNow.toFixed(2)}</b></td></tr></tbody></table>`;
+}
+
+function buildTable(c){
+  const kind=c.fmt||'num';
+  if(c.type==='bar'){
+    return '<table><thead><tr><th>Period</th><th>Gt/yr</th></tr></thead><tbody>'+c.cats.map(k=>`<tr><td>${k[0]}</td><td>${k[1].toFixed(2)}</td></tr>`).join('')+'</tbody></table>';
+  }
+  const years=[...new Set(c.series.flatMap(s=>s.data.map(d=>d[0])))].sort((a,b)=>a-b);
+  const head='<tr><th>Year</th>'+c.series.map(s=>`<th>${s.name}</th>`).join('')+'</tr>';
+  const rows=years.map(yr=>'<tr><td>'+yr+(yr<1949?' ≈':'')+'</td>'+c.series.map(s=>{const p=s.data.find(q=>q[0]===yr); return '<td>'+(p? (kind==='num'? p[1].toLocaleString('en-US') : fmt(p[1],kind)) : '')+'</td>';}).join('')+'</tr>').join('');
+  return '<table><thead>'+head+'</thead><tbody>'+rows+'</tbody></table>';
+}
+
+function build(){
+  const qs=document.getElementById('quotes');
+  QUOTES.forEach(q=>{ const d=document.createElement('div'); d.className='q'; d.innerHTML=`<div class="pg">${q[0]}</div><blockquote>${q[1]}</blockquote><div class="why">${q[2]}</div>`; qs.appendChild(d); });
+  const grid=document.getElementById('grid');
+  CHARTS.forEach(c=>{
+    const card=document.createElement('div'); card.className='card'; card.dataset.id=c.id;
+    const legend = (!c.type && c.series.length>=2) ? '<div class="legend">'+c.series.map((s,i)=>`<span><b style="background:${COLORS[i]}"></b>${s.name}</span>`).join('')+'</div>' : '';
+    card.innerHTML=`<div class="eyebrow">${c.prog}</div><h3>${c.title}</h3><p class="unit">${c.unit}</p>${legend}
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${c.title}, ${c.unit}"></svg>
+      <div class="tip"></div>
+      <p class="cap">${c.cap}</p>
+      <details><summary>Data</summary><div class="tbl">${buildTable(c)}</div></details>`;
+    grid.appendChild(card);
+  });
+  const sc=document.getElementById('score');
+  SCORE.forEach(r=>{
+    const li=document.createElement('li');
+    const yrs = r[3]? '+'+(r[3]-PLAN_YEAR)+' yrs' : '—';
+    const word = r[2]==='done'?'Built':r[2]==='partial'?'Partial':'Never';
+    const hz = r[4] ? `<div class="r hz"><span class="hzk">Sun’s own horizon</span> ${r[4]}</div>` : '';
+    li.innerHTML=`<div class="t">${r[0]}</div><div class="right"><span class="chip ${r[2]}"><i></i>${word}</span><span class="yrs">${yrs}</span></div><div class="r">${r[1]}</div>${hz}`;
+    sc.appendChild(li);
+  });
+  drawEra();
+  render();
+  drawUS();
+  drawSensitivity();
+}
+function render(){
+  document.querySelectorAll('.card[data-id]').forEach(card=>{
+    const c=CHARTS.find(k=>k.id===card.dataset.id);
+    if(!c) return;
+    if(c.type==='bar') drawBar(card,c); else drawLine(card,c);
+  });
+  drawZ();
+}
+function setSeg(onId, offId){ document.getElementById(onId).setAttribute('aria-pressed','true'); document.getElementById(offId).setAttribute('aria-pressed','false'); }
+document.getElementById('lin').addEventListener('click',()=>{LOG=false; setSeg('lin','log'); render();});
+document.getElementById('log').addEventListener('click',()=>{LOG=true; setSeg('log','lin'); render();});
+document.getElementById('shade-on').addEventListener('click',()=>{SHADE=true; setSeg('shade-on','shade-off'); render();});
+document.getElementById('shade-off').addEventListener('click',()=>{SHADE=false; setSeg('shade-off','shade-on'); render();});
+document.getElementById('own').addEventListener('click',()=>{POOLED=false; setSeg('own','pool'); drawUS();});
+document.getElementById('pool').addEventListener('click',()=>{POOLED=true; setSeg('pool','own'); drawUS();});
+build();
+</script>
