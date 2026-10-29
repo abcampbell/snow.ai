@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>French Bank OAT Breakevens</title>
+<meta name="description" content="Capital after a given loss on French sovereign claims vs each bank's regulatory minimum, and the loss that wipes each bank out. Editable assumptions.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column. Controls → chart 1 (capital after a chosen loss vs regulatory lines) → chart 2 (loss that wipes CET1) → table → notes. Tool treatment. */
+:root{
+  --bg:#f7f7f4; --surface:#fcfcfb; --fg:#15161a; --fg2:#53555c; --muted:#86888f;
+  --line:#e2e1da; --axis:#c3c2b7; --accent:#2a78d6; --accent-soft:#cde2fb; --ghost:#e4e3dc;
+  --ok:#0ca30c; --warn:#fab219; --serious:#ec835a; --crit:#d03b3b; --est:#eda100;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1012; --surface:#1a1a19; --fg:#f0efec; --fg2:#c3c2b7; --muted:#898781;
+  --line:#2c2c2a; --axis:#383835; --accent:#3987e5; --accent-soft:#184f95; --ghost:#2a2a28;
+  --ok:#0ca30c; --warn:#fab219; --serious:#ec835a; --crit:#d03b3b; --est:#c98500; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1012; --surface:#1a1a19; --fg:#f0efec; --fg2:#c3c2b7; --muted:#898781;
+  --line:#2c2c2a; --axis:#383835; --accent:#3987e5; --accent-soft:#184f95; --ghost:#2a2a28;
+  --ok:#0ca30c; --warn:#fab219; --serious:#ec835a; --crit:#d03b3b; --est:#c98500; color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 var(--sans);
+  padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:22px}
+.wrap>*{min-width:0}
+h1{font-size:22px;font-weight:600;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:15px;font-weight:600;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--fg2);max-width:68ch;margin:4px 0 0}
+.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+header{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:flex-end;justify-content:space-between}
+.stat{display:grid;gap:2px}
+.stat b{font:500 26px/1 var(--mono);letter-spacing:-.02em}
+.stat small{color:var(--muted)}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 18px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.ctl{display:grid;gap:4px;align-content:start}
+.ctl label{font-size:12px;color:var(--fg2)}
+.ctl.big label{font-size:13px;color:var(--fg);font-weight:500}
+.ctl input[type=number]{font:500 14px var(--mono);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);width:100%}
+.ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.toggle{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--fg);cursor:pointer}
+.toggle input{accent-color:var(--accent);width:16px;height:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px 10px;min-width:0}
+.card p{margin:0 0 8px;color:var(--fg2);font-size:12.5px;max-width:80ch}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:11.5px;color:var(--fg2);margin:6px 0 2px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:2px;display:inline-block}
+.sw.ghost{background:var(--ghost)}
+.sw.ok{background:var(--ok)} .sw.warn{background:var(--warn)} .sw.serious{background:var(--serious)} .sw.crit{background:var(--crit)}
+.sw.tick{width:2px;height:14px;background:var(--fg);border-radius:0}
+.sw.tick2{width:0;height:14px;border-left:2px dashed var(--fg2);border-radius:0}
+.sw.hollow{background:none;border:1.5px dashed var(--muted)}
+svg{width:100%;height:auto;display:block;font-family:var(--sans)}
+.axis text{fill:var(--muted);font-size:11px}
+.axis line{stroke:var(--axis)}
+.lbl{fill:var(--fg);font-size:12px}
+.val{fill:var(--fg2);font-size:11.5px;font-family:var(--mono)}
+.stt{fill:var(--fg2);font-size:11px}
+.bar{transition:width .2s ease}
+.ref line{stroke:var(--fg2);stroke-dasharray:3 3}
+.ref text{fill:var(--fg2);font-size:10.5px}
+.tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);padding:6px 9px;border-radius:6px;font-size:12px;line-height:1.35;max-width:280px;z-index:5;transform:translate(-50%,calc(-100% - 10px))}
+.tip[hidden]{display:none}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:900px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;vertical-align:bottom}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
+td.name{font-weight:600}
+td.name small{display:block;font-weight:400;color:var(--muted);font-size:11px;white-space:normal;max-width:190px}
+td input{width:64px;font:500 13px var(--mono);text-align:right;padding:3px 5px;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--fg)}
+td input.assumed{border-style:dashed;border-color:var(--est)}
+tr:last-child td{border-bottom:0}
+.grp{border-left:1px solid var(--line)}
+.mono{font-family:var(--mono)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:1px 6px;border-radius:999px;border:1px solid var(--est);color:var(--est);margin-left:6px;vertical-align:middle}
+.notes{display:grid;gap:10px;color:var(--fg2);font-size:13px;max-width:78ch}
+.notes p{margin:0}
+.notes b{color:var(--fg);font-weight:600}
+.src{font-size:12px;color:var(--muted)}
+.src a{color:var(--fg2)}
+footer{font-size:11px;color:var(--muted)}
+input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">French banks · French sovereign book · Oct 2026</div>
+      <h1>What loss on French sovereign claims breaks each bank?</h1>
+      <p class="sub">Pick a loss. The first chart shows where each bank's CET1 lands against its own regulatory lines; the second shows the loss that empties it. Spread widening alone cannot get there: only the fair-value slice marks, and that costs 3–17bp of CET1 per +100bp.</p>
+    </div>
+    <div class="stat"><span class="eyebrow" id="mktlabel"></span><b id="mktspread"></b><small id="mktsmall"></small></div>
+  </header>
+
+  <section class="controls" aria-label="Assumptions">
+    <div class="ctl big"><label for="hc">Loss on French sovereign claims (haircut) <span class="mono" id="hcv"></span>%</label><input id="hc" type="range" min="0" max="100" step="1"></div>
+    <div class="ctl"><label>Loss base</label>
+      <label class="toggle"><input id="cdc" type="checkbox"> Include CDC-centralised savings</label>
+      <label class="toggle"><input id="ins" type="checkbox"> Include insurer book (<span id="pt"></span>% pass-through)</label>
+    </div>
+    <div class="ctl"><label for="dfv">Duration, fair-value book (yrs) <span class="mono" id="dfvv"></span></label><input id="dfv" type="range" min="1" max="10" step="0.5"></div>
+    <div class="ctl"><label for="dac">Duration, amortised-cost book (yrs) <span class="mono" id="dacv"></span></label><input id="dac" type="range" min="1" max="12" step="0.5"></div>
+    <div class="ctl"><label for="tax">Tax shield on spread marks (%)</label><input id="tax" type="number" min="0" max="35" step="0.1"></div>
+  </section>
+
+  <section class="card">
+    <h2 id="h1t">Capital after the loss vs regulatory lines</h2>
+    <p>CET1 ratio after writing down French sovereign claims by the chosen haircut, pre-tax. RWA unchanged (0% risk weight on own-currency EU sovereign). Grey = starting CET1.</p>
+    <div class="legend">
+      <span><i class="sw ghost"></i>starting CET1</span>
+      <span><i class="sw ok"></i>above MDA trigger</span>
+      <span><i class="sw warn"></i>MDA breached (distributions restricted)</span>
+      <span><i class="sw serious"></i>below SREP minimum (TSCR)</span>
+      <span><i class="sw crit"></i>CET1 exhausted</span>
+      <span><i class="sw tick"></i>MDA trigger</span>
+      <span><i class="sw tick2"></i>SREP minimum</span>
+    </div>
+    <div id="c1"></div>
+  </section>
+
+  <section class="card">
+    <h2>Loss that wipes CET1</h2>
+    <p>Haircut on the same base that takes CET1 to zero. Ticks mark the smaller haircuts that breach the MDA trigger and the SREP minimum. A bank whose bar is hollow cannot be emptied by French sovereign losses alone — it would take more than 100% of the claims. Greek PSI (2012) ≈ 53–65% NPV loss; typical sovereign restructurings 30–50%.</p>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--accent)"></i>loss that empties CET1</span>
+      <span><i class="sw tick"></i>MDA breached</span>
+      <span><i class="sw tick2"></i>SREP minimum breached</span>
+      <span><i class="sw hollow"></i>not reachable (&gt;100%)</span>
+    </div>
+    <div id="c2"></div>
+  </section>
+
+  <section>
+    <h2>Per bank <span class="src">— capital 30 Jun 2026; sovereign books Dec 2025–Mar 2026. Dashed cells are estimates, not disclosures. Loss columns follow the slider.</span></h2>
+    <div class="tablewrap"><table id="tbl">
+      <thead><tr>
+        <th>Bank</th>
+        <th>CET1 €bn</th><th>RWA €bn</th><th>CET1 %</th><th>MDA %</th><th>TSCR %</th>
+        <th class="grp">FV €bn</th><th>AC €bn</th><th>PS loans €bn</th><th>CDC €bn</th><th>Insurer €bn</th>
+        <th class="grp">Loss €bn @ slider</th><th>CET1 % after</th>
+        <th class="grp">Haircut → MDA</th><th>Haircut → TSCR</th><th>Haircut → zero</th>
+        <th class="grp">bp CET1 per +100bp</th><th>+bp to MDA (FV only)</th><th>+bp to MDA (mark all)</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <section class="notes">
+    <p><b>Loss channel.</b> Haircut applied to fair-value + amortised-cost French sovereign securities + public-sector loans, pre-tax (a loss-making bank cannot recognise the deferred tax). The CDC toggle adds the Livret A/LDDS/LEP balances centralised at the Caisse des Dépôts, a state-guaranteed claim that the EBA books as central-government exposure (LBP ≈ €65bn, BPCE ≈ €100bn est., Crédit Mutuel ≈ €25bn est.). The insurer toggle adds the group life insurer's French sovereign book at an assumed shareholder pass-through after policyholder participation (CNP €54bn for LBP; CAA €51bn for Crédit Agricole; Cardif, Sogecap and BPCE Assurances not disclosed, set to 0).</p>
+    <p><b>Spread channel (table only).</b> ΔCET1 = −D × fair-value exposure × Δspread × (1 − tax). Amortised-cost holdings are not marked; rate risk is swap-hedged, spread vs Bund is not, so OAT–Bund is the right shock variable.</p>
+    <p><b>Thresholds.</b> MDA = CET1 SREP requirement incl. buffers (dividend/coupon restrictions). TSCR = Pillar 1 4.5% + CET1 share of P2R (binding minimum; breach ⇒ failing-or-likely-to-fail territory).</p>
+    <p class="src" id="srcline"></p>
+  </section>
+  <footer id="foot"></footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script src="banks_v002.js"></script>
+<script>
+const DATA = window.OAT_DATA, BANKS = DATA.banks, D = DATA.defaults, PAGE_VERSION = 'v003';
+const $=s=>document.querySelector(s);
+const fmt=(x,d=0)=>isFinite(x)?x.toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d}):'∞';
+const fmtbp=x=>isFinite(x)?(x>=10000?'>10,000':fmt(x)):'∞';
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+
+function params(){return {h:+$('#hc').value/100, dfv:+$('#dfv').value, dac:+$('#dac').value, tax:+$('#tax').value, cdc:$('#cdc').checked, ins:$('#ins').checked};}
+function base(b,p){return b.fv+b.ac+b.loans+(p.cdc?b.cdc:0)+(p.ins?D.insurer_passthrough*b.ins:0);}
+function compute(b,p){
+  const C=b.cet1, R=b.rwa, t=p.tax/100, mda=b.mda, tscr=4.5+b.p2r, bs=base(b,p);
+  const fvD=p.dfv*b.fv*(1-t), allD=(p.dfv*b.fv+p.dac*b.ac)*(1-t);
+  const loss=p.h*bs, after=(C-loss)/R*100;
+  const o={ratio:C/R*100, tscr, mda, base:bs, loss, after,
+    status: after>=mda?'ok': after>=tscr?'warn': after>0?'serious':'crit',
+    per100:fvD*0.01/R*1e4};
+  for(const [k,th] of Object.entries({mda:mda/100, tscr:tscr/100, zero:0})){
+    const buf=C-th*R;
+    o['sfv_'+k]=fvD>0?buf/fvD*1e4:Infinity; o['sall_'+k]=allD>0?buf/allD*1e4:Infinity; o['h_'+k]=bs>0?buf/bs*100:Infinity;
+  }
+  return o;
+}
+const STATUS_TXT={ok:'above MDA',warn:'MDA breached',serious:'below minimum',crit:'CET1 exhausted'};
+
+/* ---------- charts ---------- */
+const CH={W:640,rowH:36,padL:150,padR:165,padT:14,padB:26};
+function frame(rows){const H=CH.padT+CH.padB+rows.length*CH.rowH;return {H,plotW:CH.W-CH.padL-CH.padR};}
+function niceTicks(max,n){const raw=max/n,pow=Math.pow(10,Math.floor(Math.log10(raw))),m=raw/pow,step=(m<1.5?1:m<3.5?2.5:m<7.5?5:10)*pow,out=[];for(let v=0;v<=max+1e-9;v+=step)out.push(+v.toFixed(6));return out;}
+function axis(x,ticks,H,fmtT){return '<g class="axis">'+`<line x1="${CH.padL}" x2="${CH.padL}" y1="${CH.padT}" y2="${H-CH.padB}"/>`+ticks.map(t=>`<text x="${x(t)}" y="${H-CH.padB+16}" text-anchor="middle">${fmtT(t)}</text>`).join('')+'</g>';}
+function attachTips(el){el.querySelectorAll('[data-tip]').forEach(n=>{n.addEventListener('mousemove',e=>{const tip=$('#tip');tip.textContent=n.dataset.tip;tip.hidden=false;tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';});n.addEventListener('mouseleave',()=>$('#tip').hidden=true);});}
+
+function chart1(p){
+  const rows=BANKS.map(b=>({b,o:compute(b,p)})).sort((a,c)=>a.o.after-c.o.after);
+  const {H,plotW}=frame(rows);
+  const maxv=Math.max(...rows.map(r=>r.o.ratio))*1.06;
+  const x=v=>CH.padL+Math.max(0,Math.min(v,maxv))/maxv*plotW;
+  let s=`<svg viewBox="0 0 ${CH.W} ${H}" role="img" aria-label="CET1 ratio after the chosen loss vs MDA trigger and SREP minimum, by bank">`;
+  s+=axis(x,niceTicks(maxv,5),H,t=>fmt(t)+'%');
+  rows.forEach((r,i)=>{const {b,o}=r; const y=CH.padT+i*CH.rowH+7, h=CH.rowH-16;
+    const tip=`${b.name}: ${fmt(p.h*100)}% haircut on €${fmt(o.base,1)}bn = €${fmt(o.loss,1)}bn loss → CET1 ${fmt(o.after,1)}% (from ${fmt(o.ratio,1)}%) vs MDA ${fmt(o.mda,2)}% and minimum ${fmt(o.tscr,2)}%. ${STATUS_TXT[o.status]}.`;
+    s+=`<text class="lbl" x="${CH.padL-8}" y="${y+h/2+4}" text-anchor="end">${esc(b.name.replace(' (group)',''))}</text>`;
+    s+=`<rect x="${CH.padL}" y="${y}" width="${x(o.ratio)-CH.padL}" height="${h}" fill="var(--ghost)" data-tip="${esc(tip)}"/>`;
+    s+=`<rect class="bar" x="${CH.padL}" y="${y}" width="${Math.max(0,x(o.after)-CH.padL)}" height="${h}" fill="var(--${o.status})" data-tip="${esc(tip)}"/>`;
+    s+=`<line x1="${x(o.mda)}" x2="${x(o.mda)}" y1="${y-3}" y2="${y+h+3}" stroke="var(--fg)" stroke-width="2"/>`;
+    s+=`<line x1="${x(o.tscr)}" x2="${x(o.tscr)}" y1="${y-3}" y2="${y+h+3}" stroke="var(--fg2)" stroke-width="2" stroke-dasharray="3 2"/>`;
+    const lx=x(Math.max(o.ratio,o.mda))+8;
+    s+=`<text class="val" x="${lx}" y="${y+h/2+4}">${o.after>0?fmt(o.after,1)+'%':'−'+fmt(-o.after,1)+'%'}</text>`;
+    s+=`<text class="stt" x="${lx+52}" y="${y+h/2+4}">${STATUS_TXT[o.status]}</text>`;});
+  s+='</svg>'; $('#c1').innerHTML=s; attachTips($('#c1'));
+  $('#h1t').textContent=`Capital after a ${fmt(p.h*100)}% loss vs regulatory lines`;
+}
+function chart2(p){
+  const rows=BANKS.map(b=>({b,o:compute(b,p)})).sort((a,c)=>a.o.h_zero-c.o.h_zero);
+  const {H,plotW}=frame(rows);
+  const maxv=100; const x=v=>CH.padL+Math.max(0,Math.min(v,maxv))/maxv*plotW;
+  let s=`<svg viewBox="0 0 ${CH.W} ${H}" role="img" aria-label="Haircut on French sovereign claims that exhausts CET1, by bank">`;
+  s+=axis(x,[0,25,50,75,100],H,t=>t+'%');
+  rows.forEach((r,i)=>{const {b,o}=r; const y=CH.padT+i*CH.rowH+7, h=CH.rowH-16, reach=o.h_zero<=100;
+    const tip=`${b.name}: CET1 (€${b.cet1}bn) is exhausted by a ${fmt(o.h_zero,0)}% haircut on €${fmt(o.base,1)}bn of French sovereign claims${p.cdc?' incl. CDC':''}${p.ins?' incl. insurer':''}. MDA breached at ${fmt(o.h_mda,0)}%, SREP minimum at ${fmt(o.h_tscr,0)}%.`;
+    s+=`<text class="lbl" x="${CH.padL-8}" y="${y+h/2+4}" text-anchor="end">${esc(b.name.replace(' (group)',''))}</text>`;
+    if(reach) s+=`<rect class="bar" x="${CH.padL}" y="${y}" width="${x(o.h_zero)-CH.padL}" height="${h}" fill="var(--accent)" data-tip="${esc(tip)}"/>`;
+    else s+=`<rect class="bar" x="${CH.padL+1}" y="${y+1}" width="${plotW-2}" height="${h-2}" fill="none" stroke="var(--muted)" stroke-dasharray="4 3" data-tip="${esc(tip)}"/>`;
+    if(o.h_mda<=100) s+=`<line x1="${x(o.h_mda)}" x2="${x(o.h_mda)}" y1="${y-3}" y2="${y+h+3}" stroke="var(--fg)" stroke-width="2"/>`;
+    if(o.h_tscr<=100) s+=`<line x1="${x(o.h_tscr)}" x2="${x(o.h_tscr)}" y1="${y-3}" y2="${y+h+3}" stroke="var(--fg2)" stroke-width="2" stroke-dasharray="3 2"/>`;
+    s+=`<text class="val" x="${x(reach?o.h_zero:100)+8}" y="${y+h/2+4}">${reach?fmt(o.h_zero,0)+'%':'>100% · '+fmt(o.h_zero,0)+'%'}</text>`;});
+  s+=`<g class="ref"><line x1="${x(53)}" x2="${x(53)}" y1="${CH.padT-2}" y2="${H-CH.padB}"/><text x="${x(53)+4}" y="${CH.padT+8}">Greek PSI 53%</text></g>`;
+  s+='</svg>'; $('#c2').innerHTML=s; attachTips($('#c2'));
+}
+
+/* ---------- table ---------- */
+function cell(b,f,step){const a=b.est.includes(f)?' class="assumed" title="Estimate, not a disclosure"':'';return `<td><input type="number" step="${step}" data-k="${b.k}" data-f="${f}" value="${b[f]}"${a}></td>`;}
+function outCells(o){return [fmt(o.ratio,1),fmt(o.tscr,2),fmt(o.loss,1),fmt(o.after,1),fmt(o.h_mda,0)+'%',fmt(o.h_tscr,0)+'%',fmt(o.h_zero,0)+'%',fmt(o.per100,0),fmtbp(o.sfv_mda),fmtbp(o.sall_mda)];}
+function renderTable(p){
+  const tb=$('#tbl tbody'); let h='';
+  for(const b of BANKS){const o=compute(b,p), c=outCells(o);
+    h+=`<tr><td class="name">${b.name}${b.est.length?'<span class="tag">est.</span>':''}<small>${b.note}</small></td>
+    ${cell(b,'cet1',0.1)}${cell(b,'rwa',1)}<td class="mono">${c[0]}</td>${cell(b,'mda',0.01)}<td class="mono">${c[1]}</td>
+    <td class="grp">${cell(b,'fv',0.1).slice(4)}${cell(b,'ac',0.1)}${cell(b,'loans',0.1)}${cell(b,'cdc',1)}${cell(b,'ins',1)}
+    <td class="grp mono">${c[2]}</td><td class="mono">${c[3]}</td>
+    <td class="grp mono">${c[4]}</td><td class="mono">${c[5]}</td><td class="mono">${c[6]}</td>
+    <td class="grp mono">${c[7]}</td><td class="mono">${c[8]}</td><td class="mono">${c[9]}</td></tr>`;}
+  tb.innerHTML=h;
+  tb.querySelectorAll('input').forEach(i=>i.addEventListener('input',e=>{const b=BANKS.find(x=>x.k===e.target.dataset.k); const v=parseFloat(e.target.value); if(isFinite(v)){b[e.target.dataset.f]=v; refresh(false);} }));
+}
+function updateTable(p){ document.querySelectorAll('#tbl tbody tr').forEach((tr,i)=>{const c=outCells(compute(BANKS[i],p)); tr.querySelectorAll('td.mono').forEach((td,j)=>td.textContent=c[j]);}); }
+
+function refresh(full){
+  const p=params();
+  $('#hcv').textContent=fmt(p.h*100); $('#dfvv').textContent=p.dfv.toFixed(1); $('#dacv').textContent=p.dac.toFixed(1);
+  chart1(p); chart2(p); if(full) renderTable(p); else updateTable(p);
+}
+function init(){
+  const M=DATA.market;
+  $('#mktlabel').textContent=M.label; $('#mktspread').textContent=`${M.spread_bp} bp`;
+  $('#mktsmall').textContent=`record ${M.record_bp} bp (${M.record_date}) · 5y CDS ≈ ${M.cds_5y_bp} bp`;
+  $('#hc').value=D.haircut_pct ?? 50; $('#dfv').value=D.dur_fv; $('#dac').value=D.dur_ac; $('#tax').value=D.tax_pct; $('#pt').textContent=Math.round(D.insurer_passthrough*100);
+  const srcs=[...new Set(BANKS.flatMap(b=>b.src))];
+  $('#srcline').innerHTML='Sources: '+srcs.map((u,i)=>`<a href="${u}" target="_blank" rel="noopener">[${i+1}]</a>`).join(' ')+` · ACPR Analyses &amp; Synthèses n°182 (Jul 2026) · <a href="${M.source}" target="_blank" rel="noopener">spread series</a>`;
+  $('#foot').textContent=`Page ${PAGE_VERSION} · data ${DATA.version}, as of ${DATA.as_of}. Loss channel pre-tax on the chosen base; spread channel ΔCET1 = −D·E·Δs·(1−t).`;
+  ['hc','dfv','dac','tax','cdc','ins'].forEach(id=>$('#'+id).addEventListener('input',()=>refresh(false)));
+  refresh(true);
+}
+init();
+</script>
+</body>
+</html>
