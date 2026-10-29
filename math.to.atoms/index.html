@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Explore where mathematical breakthroughs could change the physical world. Edit the assumptions, follow the connections, and compare scenarios.">
+  <meta name="theme-color" content="#0b1019">
+  <title>Math to Atoms · Ledger v007</title>
+  <link rel="stylesheet" href="./math_to_atoms_v007.css">
+  <script type="module" src="./math_to_atoms_app_v007.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#workspace">Skip to workspace</a>
+<div class="shell">
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="Math to Atoms home"><span class="brand-mark" aria-hidden="true">∴</span><span>SNOW<span class="brand-divider">/</span>EXPLORATIONS</span></a>
+    <span class="version">INTERACTIVE LEDGER <b>007</b></span>
+  </header>
+  <section class="intro">
+    <div class="eyebrow">From a missing proof to a physical change</div>
+    <h1>Math <span class="title-arrow">→</span> Atoms</h1>
+    <p>Where would better math make the biggest difference?<br class="desktop-break"> Change the assumptions. See what moves.</p>
+    <div class="intro-meta"><span><i></i>18 math fields</span><span>60 physical problems</span><span>10 outcomes</span></div>
+  </section>
+  <main id="workspace">
+    <div id="loading" class="panel">Loading the ledger…</div>
+    <div id="app" hidden>
+      <div class="workspace-bar">
+        <div class="seg" role="group" aria-label="Dataset scope"><button data-scope="all" aria-pressed="true">All problems</button><button data-scope="core" aria-pressed="false">Original core</button></div>
+        <span class="save-status" id="save-status" role="status">Defaults</span>
+        <div class="actions"><button id="undo" disabled>↶ Undo</button><button id="export">Export JSON</button><button id="import">Import</button><input id="import-file" type="file" accept="application/json,.json" hidden></div>
+      </div>
+      <div class="scenario-bar">
+        <label class="scenario-name"><span class="sr-only">Scenario name</span><input id="scenario-name" placeholder="Name this scenario" maxlength="80" autocomplete="off"></label>
+        <button id="save-scenario">Save scenario</button>
+        <label class="scenario-load"><span class="sr-only">Load a saved scenario</span><select id="scenario-select"><option value="">Load a saved scenario…</option></select></label>
+        <span class="small" id="scenario-note">Browser saves · export to share</span>
+      </div>
+      <div class="playground">
+        <section class="panel weights-panel" aria-labelledby="weights-title">
+          <div class="panel-heading"><h2 id="weights-title">The assumptions</h2><button class="text-button" id="reset-weights">Reset weights</button></div>
+          <p class="small">Your log scale: each point multiplies by <b id="base-inline">3×</b>. Today’s math and capability = 3.</p>
+          <div id="weights"></div>
+          <div class="scale-example" id="scale-example"></div>
+          <details class="method"><summary>How scoring works</summary>
+            <p>Inputs stay on the 1–10 log scale. The computed ladder can extend beyond it. A ladder value of 3 means an index of 1.</p>
+            <code>w(s) = b^(s − 3)</code><code>Problem = w(I)^α / (w(M)^λ × w(C)^κ)</code>
+            <code>Math = [Σ (link/3) × w(I) × w(C)^−κ]^α / w(D)^λ</code>
+            <code>Outcome = Σ (link/3) × problem score</code><code>Ladder = 3 + log_b(index)</code>
+            <p>I = impact; M = math understanding required; C = physical capability required; D = difficulty of the math.</p>
+            <p>Math and outcome scores add contributions, so breadth earns points. Math difficulty is applied once to the field. The formulas are unchanged from v006.</p>
+            <p>Capability drag is a proxy for engineering and validation barriers. Feedback latency is not measured separately.</p>
+          </details>
+        </section>
+        <section class="panel results-panel" aria-labelledby="results-title">
+          <div class="panel-heading"><div><div class="eyebrow">Under these assumptions</div><h2 id="results-title">Where the leverage is</h2></div><span class="count" id="scope-count"></span></div>
+          <div class="tabs" role="tablist" aria-label="Rankings"><button role="tab" data-tab="problems" aria-selected="true" aria-controls="ranking">Physical problems</button><button role="tab" data-tab="math" aria-selected="false" aria-controls="ranking" tabindex="-1">Math fields</button><button role="tab" data-tab="outcomes" aria-selected="false" aria-controls="ranking" tabindex="-1">Outcomes</button></div>
+          <div class="ranking-tools"><label class="search"><span class="sr-only">Search ranked nodes</span><input id="search" type="search" placeholder="Find a problem, field, or outcome…"></label><label class="sort" id="sort-wrap">Sort<select id="sort"><option value="priority">Priority</option><option value="impact">Impact</option></select></label></div>
+          <div class="rank-head"><span>RANK / SELECT TO EDIT</span><span title="Range across one-at-a-time weight changes">RANK RANGE</span><span>LADDER</span></div>
+          <div id="ranking" role="tabpanel" aria-label="Ranked physical problems"></div>
+          <button class="show-more" id="show-more">Show all</button>
+          <p class="ranking-foot" id="ranking-foot"></p>
+        </section>
+      </div>
+      <section class="panel inspector" id="inspector" aria-labelledby="inspector-title"></section>
+      <details class="panel graph-panel" id="graph-details">
+        <summary><span><span class="eyebrow">Follow the mechanism</span><strong>The connection map</strong></span><span class="small">Math → problem → outcome</span></summary>
+        <div class="graph-tools"><span class="small">Select a node to open its editor and trace its connections.</span><div class="seg" role="group" aria-label="Map order"><button data-order="score" aria-pressed="true">By score</button><button data-order="fixed" aria-pressed="false">Structural</button></div><button id="clear-path">Clear path</button></div>
+        <div id="graph" class="graph"></div>
+        <div class="legend"><span><i class="ramp"></i>Low → high ladder within each column</span><span>Link: 1 weak · 2 plausible · 3 direct</span></div>
+      </details>
+      <details class="panel matrix-panel" id="matrix-details"><summary>Advanced: edit all connections</summary><p class="small">Tap a cell to cycle 0 → 1 → 2 → 3. Matrices follow the selected scope.</p><h3>Math → problem</h3><div class="matrix-scroll" tabindex="0" aria-label="Math to problem connection matrix"><table id="matrix-math"></table></div><h3>Problem → outcome</h3><div class="matrix-scroll" tabindex="0" aria-label="Problem to outcome connection matrix"><table id="matrix-outcomes"></table></div></details>
+      <footer><span>Math-to-Atoms Ledger · v007</span><span>Judgments to explore, not forecasts.</span><button class="text-button" id="restore-defaults">Restore all defaults</button></footer>
+    </div>
+  </main>
+</div>
+<div id="notice" role="status" aria-live="polite"></div>
+<dialog id="confirm-dialog"><form method="dialog"><h2 id="confirm-title"></h2><p id="confirm-message"></p><div class="dialog-actions"><button value="cancel">Cancel</button><button value="confirm" class="primary">Continue</button></div></form></dialog>
+<noscript><p class="panel">Enable JavaScript to edit and explore this ledger.</p></noscript>
+</body>
+</html>

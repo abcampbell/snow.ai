@@ -1,0 +1,1080 @@
+{
+ "schema_version": 1,
+ "scale": {
+  "kind": "exponential 1-10 (Campbell log scale)",
+  "today": 3,
+  "default_base": 3,
+  "note": "w(s)=b^(s-3); every point is one multiplicative step of b"
+ },
+ "weights_default": {
+  "b": 3,
+  "alpha": 1,
+  "lambda": 1,
+  "kappa": 0.5
+ },
+ "math": [
+  {
+   "id": "B1",
+   "src": "core",
+   "s": "Correlated electrons",
+   "name": "Quantum many-body, correlated electrons",
+   "diff": 8,
+   "links": {
+    "1": 3,
+    "3": 3,
+    "5": 1,
+    "8": 2,
+    "10": 1,
+    "18": 1,
+    "31": 1,
+    "45": 1
+   }
+  },
+  {
+   "id": "B2",
+   "src": "core",
+   "s": "Turbulence closure",
+   "name": "Turbulence closure, fluid and plasma",
+   "diff": 7,
+   "links": {
+    "2": 3,
+    "4": 3,
+    "6": 1,
+    "7": 2,
+    "16": 3,
+    "17": 2,
+    "24": 2,
+    "27": 1,
+    "33": 1,
+    "34": 3
+   }
+  },
+  {
+   "id": "B3",
+   "src": "core",
+   "s": "Nonlinear dynamics",
+   "name": "Nonlinear dynamics: predictability, stability",
+   "diff": 5,
+   "links": {
+    "6": 3,
+    "7": 2,
+    "9": 2,
+    "15": 3,
+    "36": 2,
+    "42": 3,
+    "44": 3,
+    "52": 2,
+    "53": 2,
+    "54": 2
+   }
+  },
+  {
+   "id": "B4",
+   "src": "core",
+   "s": "Solid mechanics",
+   "name": "Multiscale and stochastic solid mechanics",
+   "diff": 5,
+   "links": {
+    "8": 1,
+    "9": 2,
+    "11": 3,
+    "12": 3,
+    "17": 1,
+    "21": 2,
+    "22": 3,
+    "23": 2,
+    "28": 2
+   }
+  },
+  {
+   "id": "B5",
+   "src": "core",
+   "s": "Biomolecular free energy",
+   "name": "Biomolecular free energy and dynamics",
+   "diff": 6,
+   "links": {
+    "3": 1,
+    "5": 3,
+    "13": 3,
+    "14": 1,
+    "29": 1,
+    "32": 1,
+    "37": 1,
+    "38": 2
+   }
+  },
+  {
+   "id": "B6",
+   "src": "core",
+   "s": "Somatic evolution",
+   "name": "Stochastic theory of somatic evolution",
+   "diff": 7,
+   "links": {
+    "13": 2,
+    "14": 3
+   }
+  },
+  {
+   "id": "B7",
+   "src": "core",
+   "s": "Nuclear from QCD",
+   "name": "Nuclear many-body from QCD",
+   "diff": 6,
+   "links": {
+    "2": 1,
+    "10": 3,
+    "11": 1
+   }
+  },
+  {
+   "id": "B8",
+   "src": "core",
+   "s": "Codes & decoders",
+   "name": "Codes and decoders (qLDPC)",
+   "diff": 4,
+   "links": {
+    "18": 3,
+    "19": 1
+   }
+  },
+  {
+   "id": "B9",
+   "src": "core",
+   "s": "Lattice hardness",
+   "name": "Lattice problem hardness",
+   "diff": 7,
+   "links": {
+    "19": 3
+   }
+  },
+  {
+   "id": "B10",
+   "src": "core",
+   "s": "Structured NP-hard",
+   "name": "Guaranteed algorithms, structured NP-hard",
+   "diff": 5,
+   "links": {
+    "5": 1,
+    "12": 1,
+    "13": 1,
+    "15": 2,
+    "18": 1,
+    "20": 3,
+    "43": 3
+   }
+  },
+  {
+   "id": "B11",
+   "src": "+",
+   "s": "Extremes & tail dependence",
+   "name": "Extreme values and tail dependence (non-stationary, multivariate)",
+   "diff": 5,
+   "links": {
+    "6": 1,
+    "33": 3,
+    "35": 3,
+    "36": 2,
+    "51": 3,
+    "52": 2,
+    "56": 1
+   }
+  },
+  {
+   "id": "B12",
+   "src": "+",
+   "s": "Epidemic & network dynamics",
+   "name": "Epidemic and network dynamics (heterogeneity, escape, spillover)",
+   "diff": 5,
+   "links": {
+    "36": 1,
+    "37": 3,
+    "38": 3,
+    "39": 3,
+    "40": 3,
+    "42": 1
+   }
+  },
+  {
+   "id": "B13",
+   "src": "+",
+   "s": "Porous & granular media",
+   "name": "Porous, granular and fractured media transport",
+   "diff": 5,
+   "links": {
+    "22": 2,
+    "23": 3,
+    "24": 2,
+    "28": 2,
+    "29": 2,
+    "30": 3,
+    "41": 3,
+    "45": 2,
+    "49": 3
+   }
+  },
+  {
+   "id": "B14",
+   "src": "+",
+   "s": "Degradation kinetics",
+   "name": "Degradation and failure kinetics (materials, fouling, insulation)",
+   "diff": 4,
+   "links": {
+    "11": 1,
+    "21": 3,
+    "25": 3,
+    "26": 3,
+    "27": 2,
+    "31": 3,
+    "32": 2
+   }
+  },
+  {
+   "id": "B15",
+   "src": "+",
+   "s": "Causal & selection inference",
+   "name": "Causal and selection inference (confounding bounds, nonresponse)",
+   "diff": 5,
+   "links": {
+    "7": 1,
+    "13": 2,
+    "46": 3,
+    "47": 3,
+    "56": 2
+   }
+  },
+  {
+   "id": "B16",
+   "src": "+",
+   "s": "Queueing & network flow",
+   "name": "Queueing and network flow (re-entrant, blocking, multi-echelon)",
+   "diff": 4,
+   "links": {
+    "20": 1,
+    "44": 2,
+    "52": 1,
+    "57": 3,
+    "58": 3,
+    "59": 3
+   }
+  },
+  {
+   "id": "B17",
+   "src": "+",
+   "s": "Learning theory for physics",
+   "name": "Learning theory for physical systems (surrogates, learned control)",
+   "diff": 6,
+   "links": {
+    "12": 1,
+    "48": 3,
+    "53": 2,
+    "54": 3,
+    "60": 2
+   }
+  },
+  {
+   "id": "B18",
+   "src": "+",
+   "s": "Numerical analysis",
+   "name": "Numerical analysis (Helmholtz, meshing, solver scaling)",
+   "diff": 5,
+   "links": {
+    "2": 1,
+    "4": 1,
+    "17": 1,
+    "48": 1,
+    "50": 3,
+    "55": 3,
+    "60": 2
+   }
+  }
+ ],
+ "problems": [
+  {
+   "n": 1,
+   "src": "core",
+   "short": "RT superconductors",
+   "name": "Room-temp superconductors",
+   "real_world": "Lossless grid, helium-free MRI, compact fusion magnets",
+   "I": 9,
+   "M": 8,
+   "C": 4
+  },
+  {
+   "n": 2,
+   "src": "core",
+   "short": "Fusion confinement",
+   "name": "Fusion confinement",
+   "real_world": "Reactor designed from first principles",
+   "I": 8,
+   "M": 7,
+   "C": 7
+  },
+  {
+   "n": 3,
+   "src": "core",
+   "short": "Catalysts",
+   "name": "Catalysts to chemical accuracy",
+   "real_world": "Ambient ammonia, CO₂-to-fuel, cheap H₂",
+   "I": 8,
+   "M": 7,
+   "C": 4
+  },
+  {
+   "n": 4,
+   "src": "core",
+   "short": "Wall turbulence",
+   "name": "Wall turbulence",
+   "real_world": "10–20% fuel cut, ships/aircraft/pipelines",
+   "I": 6,
+   "M": 6,
+   "C": 4
+  },
+  {
+   "n": 5,
+   "src": "core",
+   "short": "Enzymes by design",
+   "name": "Enzymes by design",
+   "real_world": "Room-temp chemical manufacturing",
+   "I": 7,
+   "M": 6,
+   "C": 5
+  },
+  {
+   "n": 6,
+   "src": "core",
+   "short": "Weather 2–6 wk",
+   "name": "Weather past two weeks",
+   "real_world": "4–6 week forecasts",
+   "I": 6,
+   "M": 5,
+   "C": 5
+  },
+  {
+   "n": 7,
+   "src": "core",
+   "short": "Climate ±0.5 °C",
+   "name": "Climate sensitivity to ±0.5 °C",
+   "real_world": "Transition sized correctly",
+   "I": 6,
+   "M": 6,
+   "C": 4
+  },
+  {
+   "n": 8,
+   "src": "core",
+   "short": "Solid-state batteries",
+   "name": "Solid-state batteries",
+   "real_world": "2× EV range, $30/kWh storage",
+   "I": 7,
+   "M": 6,
+   "C": 5
+  },
+  {
+   "n": 9,
+   "src": "core",
+   "short": "Earthquakes",
+   "name": "Earthquake forecasting",
+   "real_world": "Evacuation windows, or proof of impossibility",
+   "I": 5,
+   "M": 7,
+   "C": 5
+  },
+  {
+   "n": 10,
+   "src": "core",
+   "short": "Nuclear data",
+   "name": "Nuclear data from theory",
+   "real_world": "Reactors and isotopes without test loops",
+   "I": 5,
+   "M": 6,
+   "C": 4
+  },
+  {
+   "n": 11,
+   "src": "core",
+   "short": "Rad-hard materials",
+   "name": "Radiation-hard materials",
+   "real_world": "Fusion first wall, 80-yr vessels",
+   "I": 6,
+   "M": 6,
+   "C": 6
+  },
+  {
+   "n": 12,
+   "src": "core",
+   "short": "Certify by analysis",
+   "name": "Certification by analysis",
+   "real_world": "Printed aerospace parts in weeks",
+   "I": 5,
+   "M": 5,
+   "C": 4
+  },
+  {
+   "n": 13,
+   "src": "core",
+   "short": "Drug trials",
+   "name": "Drugs without late-stage failure",
+   "real_world": "Drug cost ÷5, timeline ÷3",
+   "I": 8,
+   "M": 7,
+   "C": 5
+  },
+  {
+   "n": 14,
+   "src": "core",
+   "short": "Aging",
+   "name": "Aging intervention",
+   "real_world": "+10 years healthspan",
+   "I": 9,
+   "M": 8,
+   "C": 6
+  },
+  {
+   "n": 15,
+   "src": "core",
+   "short": "Inverter grids",
+   "name": "Inverter-only grids",
+   "real_world": "100% renewable, no spinning reserve",
+   "I": 6,
+   "M": 5,
+   "C": 5
+  },
+  {
+   "n": 16,
+   "src": "core",
+   "short": "Combustion",
+   "name": "Advanced combustion",
+   "real_world": "Detonation engines, +15–25% efficiency",
+   "I": 5,
+   "M": 6,
+   "C": 5
+  },
+  {
+   "n": 17,
+   "src": "core",
+   "short": "Hypersonics",
+   "name": "Hypersonics",
+   "real_world": "Mach 5+ designed without tunnels",
+   "I": 4,
+   "M": 6,
+   "C": 7
+  },
+  {
+   "n": 18,
+   "src": "core",
+   "short": "Quantum EC",
+   "name": "Quantum error correction",
+   "real_world": "Useful QC at 10⁴ qubits",
+   "I": 7,
+   "M": 4,
+   "C": 8
+  },
+  {
+   "n": 19,
+   "src": "core",
+   "short": "PQ lattices",
+   "name": "Post-quantum lattice hardness",
+   "real_world": "Key exchange settled, or broken",
+   "I": 6,
+   "M": 7,
+   "C": 3
+  },
+  {
+   "n": 20,
+   "src": "core",
+   "short": "NP-hard solving",
+   "name": "Structured NP-hard solving",
+   "real_world": "Dispatch, chip placement, logistics",
+   "I": 6,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 21,
+   "src": "A",
+   "short": "Water main breaks",
+   "name": "Water main break hazard",
+   "real_world": "Pipe replacement ranking; US backlog in the hundreds of $B",
+   "I": 6,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 22,
+   "src": "A",
+   "short": "Tailings liquefaction",
+   "name": "Tailings dam liquefaction threshold",
+   "real_world": "Dam design limits and monitoring triggers (Brumadinho)",
+   "I": 6,
+   "M": 6,
+   "C": 4
+  },
+  {
+   "n": 23,
+   "src": "A",
+   "short": "Levee piping",
+   "name": "Levee piping onset criterion",
+   "real_world": "Seepage design and inspection triggers (Katrina)",
+   "I": 6,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 24,
+   "src": "A",
+   "short": "Bridge scour",
+   "name": "Bridge pier scour depth",
+   "real_world": "Foundation design; leading cause of US bridge failure",
+   "I": 5,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 25,
+   "src": "A",
+   "short": "Transformer life",
+   "name": "Transformer paper life model",
+   "real_world": "Loading caps and replacement timing; 2–4 yr lead times",
+   "I": 6,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 26,
+   "src": "A",
+   "short": "PV degradation",
+   "name": "PV module degradation rate",
+   "real_world": "25-yr warranty and project cash-flow terms",
+   "I": 6,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 27,
+   "src": "A",
+   "short": "Hull biofouling",
+   "name": "Hull biofouling growth clock",
+   "real_world": "Cleaning and drydock timing; ~$100B/yr bunker bill",
+   "I": 5,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 28,
+   "src": "A",
+   "short": "Blast fragmentation",
+   "name": "Blast fragmentation energy law",
+   "real_world": "Powder factor → kWh/t; comminution ≈3% of world electricity",
+   "I": 5,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 29,
+   "src": "A",
+   "short": "Field nitrogen",
+   "name": "Field soil nitrogen balance",
+   "real_world": "Fertilizer rate per zone; nitrate and N₂O",
+   "I": 6,
+   "M": 6,
+   "C": 3
+  },
+  {
+   "n": 30,
+   "src": "A",
+   "short": "Grain bin spoilage",
+   "name": "Grain bin spoilage clock",
+   "real_world": "Storage and aeration rules; ~10% postharvest loss",
+   "I": 5,
+   "M": 4,
+   "C": 2
+  },
+  {
+   "n": 31,
+   "src": "A",
+   "short": "Refinery fouling",
+   "name": "Refinery crude fouling rate",
+   "real_world": "Preheat-train cleaning schedules and blend choice",
+   "I": 5,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 32,
+   "src": "A",
+   "short": "Sterilization kinetics",
+   "name": "Sterilization and pathogen-kill kinetics",
+   "real_world": "Pasteurizer and sterilizer cycles for food and devices",
+   "I": 5,
+   "M": 4,
+   "C": 3
+  },
+  {
+   "n": 33,
+   "src": "B",
+   "short": "Wildfire loss tail",
+   "name": "Wildfire aggregate loss tail",
+   "real_world": "Insurance pricing in fire states; LA 2025 ≈ $40B",
+   "I": 6,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 34,
+   "src": "B",
+   "short": "Ember spotting",
+   "name": "Ember-spotting closure",
+   "real_world": "Evacuation timelines and fuel-break placement",
+   "I": 5,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 35,
+   "src": "B",
+   "short": "Compound hazard pricing",
+   "name": "Compound-hazard parametric insurance",
+   "real_world": "Cat bonds priced for correlated flood, fire, heat",
+   "I": 5,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 36,
+   "src": "B",
+   "short": "Bank fire-sale threshold",
+   "name": "Fire-sale contagion threshold",
+   "real_world": "Capital buffers and interbank exposure caps",
+   "I": 6,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 37,
+   "src": "B",
+   "short": "Antibiotic dosing",
+   "name": "Resistance-proof antibiotic dosing",
+   "real_world": "Combination schedules that block resistant mutants",
+   "I": 7,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 38,
+   "src": "B",
+   "short": "Flu escape forecast",
+   "name": "Influenza antigenic escape forecast",
+   "real_world": "Vaccine strain selection months ahead",
+   "I": 6,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 39,
+   "src": "B",
+   "short": "Superspreading k",
+   "name": "Superspreading dispersion from first principles",
+   "real_world": "Ventilation and isolation policy by setting",
+   "I": 5,
+   "M": 4,
+   "C": 2
+  },
+  {
+   "n": 40,
+   "src": "B",
+   "short": "Zoonotic spillover",
+   "name": "Zoonotic spillover rate predictor",
+   "real_world": "Surveillance lists and pre-emptive vaccines",
+   "I": 6,
+   "M": 6,
+   "C": 3
+  },
+  {
+   "n": 41,
+   "src": "B",
+   "short": "Fractured-rock transport",
+   "name": "Fractured-rock effective transport",
+   "real_world": "Groundwater remediation and waste siting",
+   "I": 5,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 42,
+   "src": "B",
+   "short": "Fishery harvest control",
+   "name": "Harvest control under unobservable stock",
+   "real_world": "Quotas that stay safe under survey error",
+   "I": 5,
+   "M": 4,
+   "C": 2
+  },
+  {
+   "n": 43,
+   "src": "B",
+   "short": "Nonconvex grid auctions",
+   "name": "Incentive-compatible grid clearing",
+   "real_world": "Capacity and reserve auctions with storage and ramps",
+   "I": 5,
+   "M": 5,
+   "C": 2
+  },
+  {
+   "n": 44,
+   "src": "B",
+   "short": "Phantom-jam damping",
+   "name": "Stop-and-go wave damping threshold",
+   "real_world": "AV fleet mix and control rules that damp jams",
+   "I": 4,
+   "M": 4,
+   "C": 3
+  },
+  {
+   "n": 45,
+   "src": "B",
+   "short": "Rock weathering yield",
+   "name": "Enhanced rock weathering CO₂ yield",
+   "real_world": "Basalt on farmland priced per tonne removed",
+   "I": 5,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 46,
+   "src": "S",
+   "short": "Exposure limits",
+   "name": "Exposure limits from observational data",
+   "real_world": "PM2.5, PFAS, diet rules without waiting for RCTs",
+   "I": 7,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 47,
+   "src": "S",
+   "short": "Nonresponse statistics",
+   "name": "Nonresponse-proof official statistics",
+   "real_world": "Payrolls, CPI, census accurate at 5–20% response",
+   "I": 6,
+   "M": 4.5,
+   "C": 3
+  },
+  {
+   "n": 48,
+   "src": "S",
+   "short": "Surrogate certificate",
+   "name": "Simulation surrogate extrapolation certificate",
+   "real_world": "Neural surrogates replace CFD/FEA with certified error",
+   "I": 7,
+   "M": 6,
+   "C": 3
+  },
+  {
+   "n": 49,
+   "src": "S",
+   "short": "Granular jamming",
+   "name": "Granular jamming rheology closure",
+   "real_world": "Clog-free silos and ore passes; landslide runout maps",
+   "I": 6,
+   "M": 6,
+   "C": 3
+  },
+  {
+   "n": 50,
+   "src": "S",
+   "short": "Hex meshing",
+   "name": "Guaranteed hexahedral meshing",
+   "real_world": "Push-button simulation on arbitrary CAD",
+   "I": 6,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 51,
+   "src": "S",
+   "short": "Design-level extremes",
+   "name": "Multivariate extreme design levels",
+   "real_world": "10,000-yr flood, wind, surge with confidence band",
+   "I": 7,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 52,
+   "src": "S",
+   "short": "Cascading failure tails",
+   "name": "Cascading failure tail exponents",
+   "real_world": "Blackout-size risk standards beyond N-1",
+   "I": 7,
+   "M": 6,
+   "C": 3
+  },
+  {
+   "n": 53,
+   "src": "S",
+   "short": "Contact-rich manipulation",
+   "name": "Contact-rich manipulation reliability",
+   "real_world": "Robot hands at 99.99% on insertion and assembly",
+   "I": 7,
+   "M": 5.5,
+   "C": 4
+  },
+  {
+   "n": 54,
+   "src": "S",
+   "short": "Controller certification",
+   "name": "Learned controller certification",
+   "real_world": "NN controllers cleared for flight, driving, grid",
+   "I": 7,
+   "M": 6,
+   "C": 3.5
+  },
+  {
+   "n": 55,
+   "src": "S",
+   "short": "Helmholtz solver",
+   "name": "Wavenumber-robust Helmholtz solver",
+   "real_world": "Full-waveform seismic, radar, ultrasound imaging",
+   "I": 5.5,
+   "M": 5.5,
+   "C": 3
+  },
+  {
+   "n": 56,
+   "src": "S",
+   "short": "Subsurface posterior",
+   "name": "Subsurface posterior coverage bounds",
+   "real_world": "Drill spacing and resource classification with real intervals",
+   "I": 6.5,
+   "M": 5,
+   "C": 2.5
+  },
+  {
+   "n": 57,
+   "src": "S",
+   "short": "Fab flow stability",
+   "name": "Re-entrant fab flow stability",
+   "real_world": "Wafer-fab cycle time ÷2 without capex",
+   "I": 6.5,
+   "M": 5,
+   "C": 3
+  },
+  {
+   "n": 58,
+   "src": "S",
+   "short": "Rail & port throughput",
+   "name": "Rail and port throughput bound",
+   "real_world": "Trains/hr and TEU/hr at target delay",
+   "I": 6,
+   "M": 4.5,
+   "C": 4
+  },
+  {
+   "n": 59,
+   "src": "S",
+   "short": "Multi-echelon inventory",
+   "name": "Multi-echelon inventory optimality gap",
+   "real_world": "Safety stock with a guaranteed cost gap",
+   "I": 5.5,
+   "M": 4.5,
+   "C": 2.5
+  },
+  {
+   "n": 60,
+   "src": "S",
+   "short": "Minimal sensing",
+   "name": "Minimal-sensing phase transition",
+   "real_world": "Fewer sensors, shorter scans, sparser arrays",
+   "I": 5,
+   "M": 5,
+   "C": 3
+  }
+ ],
+ "outcomes": [
+  {
+   "id": "O1",
+   "s": "Lives saved",
+   "unit": "people / yr",
+   "today": "avoidable deaths run in the millions a year",
+   "links": {
+    "6": 1,
+    "9": 2,
+    "13": 3,
+    "14": 2,
+    "21": 1,
+    "22": 2,
+    "23": 3,
+    "24": 1,
+    "32": 2,
+    "33": 1,
+    "34": 2,
+    "37": 3,
+    "38": 3,
+    "39": 2,
+    "40": 3,
+    "46": 3,
+    "51": 2,
+    "52": 1,
+    "54": 1
+   }
+  },
+  {
+   "id": "O2",
+   "s": "Energy price",
+   "unit": "$ / MWh delivered",
+   "today": "US retail ≈ $120/MWh",
+   "links": {
+    "1": 3,
+    "2": 3,
+    "3": 1,
+    "7": 1,
+    "8": 2,
+    "10": 2,
+    "11": 1,
+    "15": 3,
+    "16": 1,
+    "20": 2,
+    "25": 2,
+    "26": 2,
+    "43": 2,
+    "52": 2
+   }
+  },
+  {
+   "id": "O3",
+   "s": "Food cost",
+   "unit": "$ / tonne",
+   "today": "urea ≈ $400/t, wheat ≈ $250/t",
+   "links": {
+    "3": 3,
+    "5": 2,
+    "6": 2,
+    "7": 1,
+    "29": 3,
+    "30": 3,
+    "32": 1,
+    "42": 2,
+    "45": 1
+   }
+  },
+  {
+   "id": "O4",
+   "s": "Freight & travel fuel",
+   "unit": "% of fuel burn",
+   "today": "marine + jet fuel ≈ $400B/yr",
+   "links": {
+    "4": 3,
+    "16": 2,
+    "17": 1,
+    "27": 3,
+    "44": 1,
+    "58": 2,
+    "59": 1
+   }
+  },
+  {
+   "id": "O5",
+   "s": "Infrastructure losses",
+   "unit": "$ / yr",
+   "today": "disaster losses ≈ $300B/yr",
+   "links": {
+    "9": 2,
+    "11": 1,
+    "21": 3,
+    "22": 2,
+    "23": 3,
+    "24": 3,
+    "25": 2,
+    "33": 2,
+    "41": 1,
+    "49": 1,
+    "51": 3,
+    "52": 3
+   }
+  },
+  {
+   "id": "O6",
+   "s": "Capital held against risk",
+   "unit": "$ of buffers & premiums",
+   "today": "reinsurance capital ≈ $700B",
+   "links": {
+    "19": 2,
+    "26": 1,
+    "33": 3,
+    "35": 3,
+    "36": 3,
+    "47": 2,
+    "51": 2,
+    "56": 2,
+    "59": 2
+   }
+  },
+  {
+   "id": "O7",
+   "s": "Time to build & certify",
+   "unit": "years",
+   "today": "airliner 8, reactor 12, drug 12",
+   "links": {
+    "2": 2,
+    "10": 1,
+    "11": 2,
+    "12": 3,
+    "13": 2,
+    "17": 1,
+    "48": 3,
+    "50": 3,
+    "53": 2,
+    "54": 3,
+    "55": 1,
+    "57": 2,
+    "60": 1
+   }
+  },
+  {
+   "id": "O8",
+   "s": "Compute & materials cost",
+   "unit": "$ / FLOP, kWh / t",
+   "today": "comminution ≈ 3% of world electricity",
+   "links": {
+    "1": 1,
+    "18": 3,
+    "19": 1,
+    "20": 2,
+    "28": 2,
+    "55": 1,
+    "56": 2,
+    "57": 3,
+    "60": 1
+   }
+  },
+  {
+   "id": "O9",
+   "s": "Healthy years",
+   "unit": "years of healthspan",
+   "today": "healthspan ≈ 63 yrs globally",
+   "links": {
+    "5": 1,
+    "13": 2,
+    "14": 3,
+    "37": 1,
+    "46": 2
+   }
+  },
+  {
+   "id": "O10",
+   "s": "CO₂ removed or avoided",
+   "unit": "Gt / yr",
+   "today": "emissions ≈ 40 Gt/yr",
+   "links": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 1,
+    "7": 2,
+    "27": 1,
+    "29": 1,
+    "45": 3
+   }
+  }
+ ]
+}
