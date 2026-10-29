@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-29",
+  "gdp_trillion_default": 120,
+  "energy_gdp_share_percent_default": 10,
+  "economic_note": "GDP and the energy spending share are Campbell's illustrative assumptions, not measured current-year estimates. Savings are gross expenditure reductions at unchanged useful output, not GDP growth or net social welfare. Markets can overlap; their savings are not automatically added.",
+  "health": {
+    "period": "2023",
+    "default_cut_percent": 10,
+    "groups": {
+      "cmnn": {"name": "Communicable, maternal, neonatal & nutritional", "dalysMillion": 681},
+      "ncd": {"name": "Non-communicable diseases", "dalysMillion": 1800},
+      "injury": {"name": "Injuries", "dalysMillion": 316}
+    },
+    "yll_share_percent": 64.6,
+    "births_million_per_year": 132,
+    "life_expectancy_years": 73.3,
+    "healthy_life_expectancy_years": 62.8,
+    "burden_source_name": "GBD 2023 disease and injury burden study, Lancet 2025",
+    "burden_source_url": "https://doi.org/10.1016/S0140-6736(25)01637-X",
+    "burden_open_copy": "https://eprints.whiterose.ac.uk/id/eprint/235795/1/1-s2.0-S014067362501637X-main.pdf",
+    "burden_note": "The study reports about 2.80 billion total DALYs: 1.80 billion from non-communicable diseases, 681 million from communicable/maternal/neonatal/nutritional conditions, and 316 million from injuries. Rounded groups sum to 2.797 billion. Its overall YLL fraction is 64.6%; using that fraction for the averted burden is an editable scenario assumption, not cause-specific evidence.",
+    "births_source_name": "UN DESA, World Fertility 2024",
+    "births_source_url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_wfr_2024_final.pdf",
+    "births_note": "Rounded global reference of about 132 million births per year. The scenario divides sustained annual gains by this annual birth cohort.",
+    "expectancy_source_name": "WHO Global Health Observatory, 2023 life tables",
+    "expectancy_source_url": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy",
+    "expectancy_note": "WHO estimates 73.3 years of life expectancy and 62.8 years of healthy life expectancy in 2023. These are calibration references; the scenario is not a recalculated life table.",
+    "definition_source_url": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/global-health-estimates-leading-causes-of-dalys",
+    "method_note": "DALYs averted = sum of disjoint cause-group burden times each group's reduction. YLL-equivalent gain = DALYs averted times the assumed YLL fraction. Life-years per newborn equivalent = YLL gain / annual births; healthy-years per newborn equivalent = total DALYs averted / annual births. Divide each gain by its reference expectancy to express a percentage. This stationary-cohort approximation is not an individual prognosis, a measured life-expectancy increase, or a life-table forecast. Do not add the health outcome boxes together."
+  }
+}
