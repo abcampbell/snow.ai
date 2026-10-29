@@ -1,0 +1,29 @@
+{
+  "note": "Asking-price comps J and Campbell have collected. Asking, not sold. Location is approximate where no APN is known.",
+  "comps": [
+    {
+      "name": "Lot 1-D Side Hill Pass", "county": "Lincoln", "place": "Sidehill Pass area north of Pioche (not in town)",
+      "apn": null, "lat": 38.3647, "lon": -114.8006, "approx": true, "acres": 11.3, "price": 282500,
+      "history": "Listed with a $57K price increase (homes.com badge): about $225,500 (~$20K/ac) before, $282,500 ($25K/ac) now.",
+      "features": ["road access", "power pole on the road (listing photos)", "pinyon-juniper trees", "mountain views"],
+      "match": "J's criteria: road, power, trees, mountains", "seen": "2026-10-28", "source": "homes.com",
+      "link": "https://www.homes.com/property/lot-1-d-side-hill-pass-pioche-nv/3r9s4mfhsd3dm/"
+    },
+    {
+      "name": "APXN Elko #2592", "county": "Elko", "place": "near Montello",
+      "apn": "010-78A-011", "lat": 41.11901, "lon": -114.07647, "approx": false, "acres": 42.44, "price": 22040, "cash_price": 15428,
+      "history": "$22,040 on terms ($206/mo, 180 months, $8,000 down) or $15,428 cash.",
+      "features": ["level", "30 ft access easement on all boundaries (seller)", "off-grid", "water by a future well"],
+      "match": "Road easement only; no power, no trees", "seen": "2026-10-24", "source": "apxnproperty.com",
+      "link": "https://apxnproperty.com/product/40-acres-nevada-elko-2592-your-nevada-adventure-starts-here/"
+    },
+    {
+      "name": "40 ac, T38N R69E Sec 35", "county": "Elko", "place": "east of Wells toward Montello",
+      "apn": null, "lat": 41.13172, "lon": -114.1306, "approx": true, "acres": 40, "price": 17497,
+      "history": "Also seen at $19,997 on another site.",
+      "features": ["paper subdivision (map 1057-R)", "no mapped road to the lot"],
+      "match": "Fails road access", "seen": "2026-10-21", "source": "LandWatch",
+      "link": null
+    }
+  ]
+}

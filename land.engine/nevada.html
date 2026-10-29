@@ -103,6 +103,23 @@
         </div>
       </details>
     </div>
+    <div class="nvx-sec" id="jSec">
+      <h3>J's criteria: road, power, mountains, trees</h3>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><button class="nvx-btn" type="button" id="bJ">Apply J's criteria</button><span class="nvx-sub" id="jNote"></span></div>
+      <div class="nvx-row">
+        <label>Public road<select id="fRoad"><option value="">Any</option><option value="50">Touching (within 50 m)</option><option value="200">Within 200 m</option><option value="1000">Within 1 km</option></select></label>
+        <label>Power line<select id="fPwr"><option value="">Any</option><option value="400">Within 400 m</option><option value="1000">Within 1 km</option><option value="3000">Within 3 km</option></select></label>
+      </div>
+      <div class="nvx-row">
+        <label>Mountains (relief)<select id="fRelief"><option value="">Any</option><option value="100">Rolling: 100 m+</option><option value="200">Hills: 200 m+</option><option value="400">Mountains: 400 m+</option></select></label>
+        <label>Trees (canopy)<select id="fCanopy"><option value="">Any</option><option value="1">Some trees</option><option value="10">10%+ canopy</option><option value="25">25%+ canopy</option></select></label>
+      </div>
+      <label>Min elevation (ft)<input type="number" id="fElev" min="0" step="250" placeholder="any"></label>
+    </div>
+    <div class="nvx-sec" id="compSec">
+      <h3>Price comps</h3>
+      <div class="nvx-sub" id="compList">Loading comps…</div>
+    </div>
     <div class="nvx-sec">
       <h3>Water, power, access</h3>
       <div class="nvx-row">
@@ -127,8 +144,8 @@
       <div class="nvx-row">
         <label>Sort by<select id="fSort">
           <option value="acres">Largest first</option><option value="ppa">Lowest $/acre</option><option value="value">Lowest total price</option>
-          <option value="swl">Shallowest water</option><option value="tx">Closest to power</option><option value="air">Closest airport</option></select></label>
-        <label>Color map by<select id="fColor"><option value="ppa">$/acre</option><option value="swl">Depth to water</option><option value="avail">Available</option></select></label>
+          <option value="j">Best J match</option><option value="swl">Shallowest water</option><option value="tx">Closest to power</option><option value="air">Closest airport</option></select></label>
+        <label>Color map by<select id="fColor"><option value="ppa">$/acre</option><option value="swl">Depth to water</option><option value="avail">Available</option><option value="canopy">Tree canopy</option><option value="j">J's criteria met (0-4)</option></select></label>
       </div>
       <div style="display:flex;gap:6px;flex-wrap:wrap">
         <button class="nvx-btn" type="button" id="bReset">Reset filters</button>
@@ -148,6 +165,6 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
 <script src="layers.js?v=20261024"></script>
-<script src="nevada.js?v=20261026"></script>
+<script src="nevada.js?v=20261028"></script>
 </body>
 </html>

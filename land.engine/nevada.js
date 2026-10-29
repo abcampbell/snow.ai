@@ -15,6 +15,13 @@
   // NDOW lists the biologist assigned to each species in a unit; a name means the unit manages that species.
   const has = (v) => String(v ?? "").trim() !== "";
   const DESIG = { D: "designated basin", PU: "designated, preferred uses ordered", PUID: "designated, preferred uses and irrigation limits", ID: "designated, irrigation limits" };
+  const ROADCLS = { 1: "primary highway", 2: "secondary highway", 4: "county or local road" };
+  let COMPS = [];
+  const compNote = (it) => {
+    const nice = COMPS.find((c) => /road/.test(c.match) && /trees/.test(c.match));
+    if (!nice || jScore(it) == null || jScore(it) < 3) return "";
+    return `<dt>Comp</dt><dd>${esc(nice.name)} (${esc(nice.county)}): ${fmt(nice.acres, 1)} ac asking ${money(nice.price)}, ${money(nice.price / nice.acres)}/ac. ${esc(nice.history)}</dd>`;
+  };
   const apnKey = (s) => String(s || "").toUpperCase().replace(/[^0-9A-Z]/g, "").replace(/^0+/, "");
 
   // ---------- map ----------
@@ -84,6 +91,8 @@
       const k = colorBy();
       if (k === "swl") return ramp(it.swl, 20, 800);
       if (k === "avail") return it.avail ? "#3ecf8e" : "#4a5260";
+      if (k === "canopy") return it.canopy == null ? "#5c6370" : ["#4a5260", "#9bc49a", "#58a35a", "#2f7d32", "#1b5e20"][it.canopy <= 0 ? 0 : it.canopy < 10 ? 1 : it.canopy < 25 ? 2 : it.canopy < 40 ? 3 : 4];
+      if (k === "j") { const j = jScore(it); return j == null ? "#5c6370" : ["#3b3f47", "#6b5e3a", "#a7832f", "#d9a93a", "#3ecf8e"][j]; }
       return ramp(it.ask_ppa ?? it.ppa, 300, 300000);
     },
     click: (it) => select(it, false)
@@ -148,17 +157,24 @@
     const counties = [...new Set(rows.map((r) => r.county))].sort();
     $("fCounty").insertAdjacentHTML("beforeend", counties.map((c) => `<option>${esc(c)}</option>`).join(""));
     $("nvLoad").textContent = `${fmt(rows.length)} parcels from the Nevada statewide parcel layer, built ${doc.built}. Squares are drawn at each parcel's true size.`;
-    mine = loadMine(); applyMine(); readHash(); apply();
+    mine = loadMine(); applyMine(); readHash();
+    $("jNote").textContent = rows.some(jHas) ? `${fmt(rows.filter((r) => jScore(r) === 4).length)} parcels meet all four` : "measurements still building";
+    apply();
   }).catch(() => { $("nvLoad").textContent = "The parcel file didn't load. Reload the page to try again."; });
 
   // ---------- filters ----------
-  const num = (id) => { const v = $(id).value.trim(); return v === "" ? null : Number(v); };
+  const num = (id) => { const v = String($(id).value ?? "").trim(); return v === "" ? null : Number(v); };
+  // J's criteria: a public road touching the parcel, a mapped power line within 1 km, 200 m+ of relief, 10%+ tree canopy.
+  const J = { road: 50, pwr: 1000, relief: 200, canopy: 10 };
+  const jHas = (r) => r.road_m != null || r.canopy != null;
+  const jScore = (r) => !jHas(r) ? null : (r.road_m != null && r.road_m <= J.road) + ((r.pwr_m ?? 9e9) <= J.pwr) + ((r.relief_m ?? 0) >= J.relief) + ((r.canopy ?? 0) >= J.canopy);
   const airKey = () => $("fAirT").value;
   function apply() {
     if (!D) return;
     const q = $("fQ").value.trim().toLowerCase(), minAc = num("fMinAc"), maxAc = num("fMaxAc"), maxPpa = num("fMaxPpa"), county = $("fCounty").value;
     const swl = num("fSwl"), tx = num("fTx"), hwy = num("fHwy"), air = num("fAir"), ak = airKey(), hunt = $("fHunt").value;
     const priv = $("fPrivate").checked, pubMin = num("fPub");
+    const road = num("fRoad"), pwr = num("fPwr"), relief = num("fRelief"), canopy = num("fCanopy"), elev = num("fElev");
     const avail = $("fAvail").checked, city = $("fCity").checked, pou = $("fPou").checked, nodes = $("fNoDesig").checked, mines = $("fMines").checked;
     shown = rows.filter((r) => {
       if (q && !(r.apn.toLowerCase().includes(q) || r.county.toLowerCase().includes(q))) return false;
@@ -169,6 +185,11 @@
       if (avail && !r.avail) return false;
       if (priv && r.own != null && !isPrivate(r.own)) return false;
       if (pubMin != null && !((r.pub_adj ?? 0) >= pubMin)) return false;
+      if (road != null && !(r.road_m != null && r.road_m <= road)) return false;
+      if (pwr != null && !((r.pwr_m ?? 9e9) <= pwr)) return false;
+      if (relief != null && !((r.relief_m ?? 0) >= relief)) return false;
+      if (canopy != null && !((r.canopy ?? 0) >= canopy)) return false;
+      if (elev != null && !((r.elev_ft ?? 0) >= elev)) return false;
       if (swl != null && (r.swl == null || r.swl > swl)) return false;
       if (tx != null && r.tx_km > tx) return false;
       if (hwy != null && r.hwy_km > hwy) return false;
@@ -181,30 +202,34 @@
       return true;
     });
     const s = $("fSort").value;
-    const key = { acres: (r) => -r.acres, ppa: (r) => r.ask_ppa ?? r.ppa, value: (r) => r.ask ?? r.value, swl: (r) => r.swl ?? 1e9, tx: (r) => r.tx_km, air: (r) => r[`${ak}_min`] }[s];
+    const key = { acres: (r) => -r.acres, ppa: (r) => r.ask_ppa ?? r.ppa, value: (r) => r.ask ?? r.value, swl: (r) => r.swl ?? 1e9, tx: (r) => r.tx_km, air: (r) => r[`${ak}_min`], j: (r) => -(jScore(r) ?? -1) * 1e9 + (r.ask_ppa ?? r.ppa) }[s];
     shown.sort((a, b) => key(a) - key(b));
     parcelLayer.set(shown);
     const ac = shown.reduce((t, r) => t + r.acres, 0), nav = shown.filter((r) => r.avail).length;
     $("nvCount").innerHTML = `<b>${fmt(shown.length)}</b> parcels · <b>${fmt(ac)}</b> acres${nav ? ` · <b class="good">${fmt(nav)}</b> available` : ""}`;
-    $("nvList").innerHTML = shown.slice(0, 300).map((r, i) => `<tr data-i="${i}"${r === sel ? ' class="sel"' : ""}><td>${r.avail ? '<span class="av">●</span> ' : ""}${esc(r.apn)}<br><span style="color:var(--faint)">${esc(r.county)}</span></td>
+    $("nvList").innerHTML = shown.slice(0, 300).map((r, i) => `<tr data-i="${i}"${r === sel ? ' class="sel"' : ""}><td>${r.avail ? '<span class="av">●</span> ' : ""}${esc(r.apn)}<br><span style="color:var(--faint)">${esc(r.county)}${jScore(r) != null ? ` · J ${jScore(r)}/4` : ""}</span></td>
       <td>${fmt(r.acres, r.acres < 100 ? 1 : 0)}</td><td>${money(r.ask_ppa ?? r.ppa)}${r.ask_ppa ? "" : "*"}</td><td>${r.swl == null ? "–" : fmt(r.swl) + " ft"}</td></tr>`).join("")
       + (shown.length > 300 ? `<tr><td colspan="4" style="color:var(--faint);cursor:default">Showing the first 300; narrow the filters or sort differently.</td></tr>` : "");
     legend(); writeHash();
   }
   $("nvList").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-i]"); if (tr) select(shown[+tr.dataset.i], true); });
-  ["fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fSwl", "fTx", "fHwy", "fAir"].forEach((id) => $(id).addEventListener("input", debounce(apply, 200)));
-  ["fPrivate", "fPub", "fCounty", "fAvail", "fAirT", "fCity", "fPou", "fNoDesig", "fMines", "fHunt", "fSort"].forEach((id) => $(id).addEventListener("change", apply));
+  ["fElev", "fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fSwl", "fTx", "fHwy", "fAir"].forEach((id) => $(id).addEventListener("input", debounce(apply, 200)));
+  ["fRoad", "fPwr", "fRelief", "fCanopy", "fPrivate", "fPub", "fCounty", "fAvail", "fAirT", "fCity", "fPou", "fNoDesig", "fMines", "fHunt", "fSort"].forEach((id) => $(id).addEventListener("change", apply));
   $("fColor").addEventListener("change", () => { parcelLayer._draw(); legend(); });
   $("bReset").addEventListener("click", () => {
     document.querySelectorAll(".nvx-side input[type=number], .nvx-side input[type=search]").forEach((i) => (i.value = ""));
     $("fMinAc").value = 10; document.querySelectorAll(".nvx-side input[type=checkbox]").forEach((i) => (i.checked = i.id === "fPrivate"));
-    ["fCounty", "fHunt", "fPub"].forEach((id) => ($(id).value = "")); $("fSort").value = "acres"; apply();
+    ["fCounty", "fHunt", "fPub", "fRoad", "fPwr", "fRelief", "fCanopy"].forEach((id) => ($(id).value = "")); $("fSort").value = "acres"; apply();
+  });
+  $("bJ").addEventListener("click", () => {
+    $("fRoad").value = String(J.road); $("fPwr").value = String(J.pwr); $("fRelief").value = String(J.relief); $("fCanopy").value = String(J.canopy);
+    $("fPrivate").checked = true; $("fColor").value = "canopy"; apply(); parcelLayer._draw();
   });
   $("bFit").addEventListener("click", () => { if (shown.length) map.fitBounds(L.latLngBounds(shown.map((r) => [r.lat, r.lon])).pad(0.1)); });
   function debounce(f, ms) { let t; return () => { clearTimeout(t); t = setTimeout(f, ms); }; }
 
   // shareable state in the hash (plain token pairs)
-  const HASH = ["fPub", "fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fCounty", "fSwl", "fTx", "fHwy", "fAir", "fAirT", "fHunt", "fSort", "fColor"];
+  const HASH = ["fRoad", "fPwr", "fRelief", "fCanopy", "fElev", "fPub", "fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fCounty", "fSwl", "fTx", "fHwy", "fAir", "fAirT", "fHunt", "fSort", "fColor"];
   const CHK = ["fAvail", "fCity", "fPou", "fNoDesig", "fMines"];
   function writeHash() {
     const p = new URLSearchParams();
@@ -223,6 +248,12 @@
   // ---------- legend ----------
   function legend() {
     const k = colorBy();
+    if (k === "canopy" || k === "j") {
+      const sw = k === "canopy" ? [["#4a5260", "none"], ["#9bc49a", "under 10%"], ["#58a35a", "10-25%"], ["#2f7d32", "25-40%"], ["#1b5e20", "40%+"]]
+        : [["#3b3f47", "0"], ["#6b5e3a", "1"], ["#a7832f", "2"], ["#d9a93a", "3"], ["#3ecf8e", "all 4"]];
+      $("nvLegend").innerHTML = `${k === "canopy" ? "Tree canopy (LANDFIRE)" : "J's criteria met"}<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">${sw.map(([c, t]) => `<span><span style="color:${c}">■</span> ${t}</span>`).join("")}</div>`;
+      return;
+    }
     const lab = k === "swl" ? ["Depth to water", "20 ft", "800+ ft"] : k === "avail" ? null : ["$/acre (estimate or asking)", "$300", "$300K+"];
     $("nvLegend").innerHTML = lab ? `${lab[0]}<div class="ramp">${PAL.map((c) => `<i style="background:${c}"></i>`).join("")}</div><div class="ends"><span>${lab[1]}</span><span>${lab[2]}</span></div>`
       : `<span style="color:#3ecf8e">■</span> available &nbsp; <span style="color:#4a5260">■</span> not listed`;
@@ -245,6 +276,12 @@
         ${av ? `<dt>Available</dt><dd class="good">${esc(av.kind === "lead" ? `${av.source || "lead"}${av.date ? " · " + av.date : ""}` : "listed for sale")} · asking ${money(av.price)} (${money(av.price / it.acres)}/ac)${av.link ? ` · <a href="${esc(av.link)}" target="_blank" rel="noopener">source ↗</a>` : ""}</dd>` : ""}
         <dt>Estimate</dt><dd>${money(it.ppa)}/ac · ${money(it.value)} total <span style="color:var(--faint)">(price book, ${fmt(it.metro_mi)} mi from a metro)</span></dd>
         <dt>Land status</dt><dd class="${it.own != null && !isPrivate(it.own) ? "bad" : ""}">${it.own == null ? "–" : esc(ownName(it.own))}${it.pub_adj != null ? ` · ${Math.round(it.pub_adj * 100)}% of the ground around it is public land` : ""}</dd>
+        <span class="grp">J's criteria ${jScore(it) != null ? `· ${jScore(it)} of 4 met` : "· not measured"}</span>
+        <dt>Road</dt><dd class="${it.road_m == null ? "" : it.road_m <= J.road ? "good" : it.road_m <= 1000 ? "warn" : "bad"}">${it.road_m == null ? "–" : it.road_m <= J.road ? `touches a ${ROADCLS[it.road_cls] || "public road"}` : `${fmt(it.road_m)} m to a ${ROADCLS[it.road_cls] || "public road"}`}${it.trail_m != null ? ` · 4WD trail ${it.trail_m <= 50 ? "touches it" : fmt(it.trail_m) + " m away"}` : ""}</dd>
+        <dt>Power</dt><dd class="${it.pwr_m == null ? "" : it.pwr_m <= J.pwr ? "good" : it.pwr_m <= 3000 ? "warn" : "bad"}">${it.pwr_m == null ? "–" : `${fmt(it.pwr_m)} m to a mapped power line`} <span style="color:var(--faint)">(OpenStreetMap; rural distribution lines are only partly mapped)</span></dd>
+        <dt>Terrain</dt><dd class="${(it.relief_m ?? 0) >= J.relief ? "good" : ""}">${it.elev_ft == null ? "–" : `${fmt(it.elev_ft)} ft`}${it.relief_m != null ? ` · ${fmt(it.relief_m)} m of relief within 3 km` : ""}</dd>
+        <dt>Trees</dt><dd class="${(it.canopy ?? 0) >= J.canopy ? "good" : ""}">${it.canopy == null ? "–" : it.canopy <= 0 ? "no tree canopy (shrub or open ground)" : `${fmt(it.canopy)}% canopy${it.trees != null ? `; trees on ${Math.round(it.trees * 100)}% of sample points` : ""}`}</dd>
+        ${compNote(it)}
         <span class="grp">Water</span>
         <dt>Depth</dt><dd class="${tone(it.swl, 150, 500)}">${it.swl == null ? "no well logs within 3 mi" : `~${fmt(it.swl)} ft to water (median of ${fmt(it.wells)} well logs within 3 mi)${it.depth ? `; wells drilled ~${fmt(it.depth)} ft` : ""}`}</dd>
         <dt>Water right</dt><dd>${it.pou ? '<span class="good">inside an active place of use</span>' : "none on the parcel"} · ${fmt(it.pods)} active diversions within 1 mi</dd>
@@ -268,6 +305,25 @@
     $("nvCard").querySelector(".x").addEventListener("click", () => { $("nvCard").hidden = true; sel = null; parcelLayer._draw(); });
   }
 
+
+  // ---------- price comps ----------
+  const compLayer = L.layerGroup().addTo(map);
+  fetch("data/nevada/comps.json?v=20261028").then((r) => r.json()).then((d) => {
+    COMPS = d.comps || [];
+    $("compList").innerHTML = COMPS.map((c, i) => `<div style="margin:4px 0"><a href="#" data-comp="${i}">${esc(c.name)}</a> · ${esc(c.county)} · ${fmt(c.acres, 1)} ac · <b>${money(c.price)}</b> (${money(c.price / c.acres)}/ac)${c.cash_price ? `, ${money(c.cash_price)} cash` : ""}<br><span style="color:var(--faint)">${esc(c.match)}${c.link ? ` · <a href="${esc(c.link)}" target="_blank" rel="noopener">listing ↗</a>` : ""}</span></div>`).join("")
+      + `<div style="color:var(--faint);margin-top:4px">Asking prices, not sales. A dashed ring on the map means the location is approximate.</div>`;
+    COMPS.forEach((c) => {
+      if (c.lat == null) return;
+      L.circleMarker([c.lat, c.lon], { radius: 9, color: "#ffd166", weight: 2, dashArray: c.approx ? "3 3" : null, fillColor: "#ffd166", fillOpacity: 0.35 })
+        .bindTooltip(`${esc(c.name)} · ${money(c.price)} · ${money(c.price / c.acres)}/ac${c.approx ? " (approximate location)" : ""}`).addTo(compLayer);
+    });
+    if (sel) select(sel, false);
+  }).catch(() => { $("compList").textContent = "Comps didn't load."; });
+  $("compList").addEventListener("click", (e) => {
+    const a = e.target.closest("[data-comp]"); if (!a) return; e.preventDefault();
+    const c = COMPS[+a.dataset.comp]; if (c.lat != null) map.setView([c.lat, c.lon], 12);
+    const r = c.apn && rows.find((x) => apnKey(x.apn) === apnKey(c.apn)); if (r) select(r, false);
+  });
 
   // ---------- listings the user adds by hand (kept in this browser) ----------
   let mine = [];
