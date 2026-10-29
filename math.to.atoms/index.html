@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Explore where mathematical breakthroughs could change the physical world. Edit the assumptions, follow the connections, and compare scenarios.">
   <meta name="theme-color" content="#0b1019">
-  <title>Math-to-Atoms Ledger v008</title>
-  <link rel="stylesheet" href="./math_to_atoms_v008.css">
-  <script type="module" src="./math_to_atoms_app_v008.mjs"></script>
+  <title>Math-to-Atoms Ledger v009</title>
+  <link rel="stylesheet" href="./math_to_atoms_v009.css">
+  <script type="module" src="./math_to_atoms_app_v009.mjs"></script>
 </head>
 <body>
 <a class="skip" href="#workspace">Skip to graph</a>
 <div class="wrap">
-<header class="top"><div class="eyebrow">v008 · Campbell log scale · today’s math = 3, today’s capability = 3</div><h1>Math-to-Atoms Ledger</h1><div class="sub">Three layers: math problems on the left, the physical problems they gate in the middle, and ten tangible outcomes on the right, each with its unit. Edge weight is link strength. The number at the end of each node is its score on the ladder and the node’s blue is that same number, dim to bright, scaled within its column. Tap a node to isolate its edges. Rows tagged <span class="tag">A</span> <span class="tag">B</span> <span class="tag">S</span> came from three models asked for what I’d dismiss; the eight math rows tagged <span class="tag">+</span> were added to carry them.</div></header>
+<header class="top"><div class="eyebrow">v009 · Campbell log scale · today’s math = 3, today’s capability = 3</div><h1>Math-to-Atoms Ledger</h1><div class="sub">Three layers: math problems on the left, the physical problems they gate in the middle, and ten tangible outcomes on the right, each with its unit. Edge weight is link strength. The number at the end of each node is its score on the ladder and the node’s blue is that same number, dim to bright, scaled within its column. Tap a node to isolate its edges. Rows tagged <span class="tag">A</span> <span class="tag">B</span> <span class="tag">S</span> came from three models asked for what I’d dismiss; the eight math rows tagged <span class="tag">+</span> were added to carry them.</div></header>
 <main id="workspace"><div id="loading" class="panel">Loading the ledger…</div><div id="app" hidden>
 <section class="graph" id="graph-details" aria-labelledby="graph-title">
 <div class="panel-h graph-heading"><h2 id="graph-title">The graph</h2><div class="graph-controls"><div class="seg" role="group" aria-label="Dataset scope"><button data-scope="core" aria-pressed="false">core 10 × 20 × 10</button><button data-scope="all" aria-pressed="true">all 18 × 60 × 10</button></div><div class="seg" role="group" aria-label="Map order"><button data-order="fixed" aria-pressed="true">structural order</button><button data-order="score" aria-pressed="false">by score</button></div></div></div>
 <div id="graph"></div>
+<p class="quantity-note">Outcome boxes show dated reference quantities and illustrative improvement cases (default: 10%). Tap an outcome to edit its baseline or percentage and see its source. Blue and ordering still follow the priority score.</p>
 <div class="legend"><span><i class="l1"></i>1 weak</span><span><i class="l2"></i>2 plausible</span><span><i></i>3 direct</span><span>score low<span class="ramp"></span>high</span><span id="pick-note"></span><button class="text-button" id="edit-selected" hidden>Edit selected node ↓</button><button class="text-button" id="clear-path">Clear selection</button></div>
 </section>
       <div class="workspace-bar">
@@ -62,7 +63,7 @@
           <p class="ranking-foot" id="ranking-foot"></p>
         </section>
 </details>      <details class="panel matrix-panel" id="matrix-details"><summary>Advanced: edit all connections</summary><p class="small">Tap a cell to cycle 0 → 1 → 2 → 3. Matrices follow the selected scope.</p><h3>Math → problem</h3><div class="matrix-scroll" tabindex="0" aria-label="Math to problem connection matrix"><table id="matrix-math"></table></div><h3>Problem → outcome</h3><div class="matrix-scroll" tabindex="0" aria-label="Problem to outcome connection matrix"><table id="matrix-outcomes"></table></div></details>
-      <footer><span>Math-to-Atoms Ledger · v008</span><span>Judgments to explore, not forecasts.</span><button class="text-button" id="restore-defaults">Restore all defaults</button></footer>
+      <footer><span>Math-to-Atoms Ledger · v009</span><span>Judgments to explore, not forecasts.</span><button class="text-button" id="restore-defaults">Restore all defaults</button></footer>
     </div>
   </main>
 </div>
