@@ -5,28 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Explore where mathematical breakthroughs could change the physical world. Edit the assumptions, follow the connections, and compare scenarios.">
   <meta name="theme-color" content="#0b1019">
-  <title>Math to Atoms · Ledger v007</title>
-  <link rel="stylesheet" href="./math_to_atoms_v007.css">
-  <script type="module" src="./math_to_atoms_app_v007.mjs"></script>
+  <title>Math-to-Atoms Ledger v008</title>
+  <link rel="stylesheet" href="./math_to_atoms_v008.css">
+  <script type="module" src="./math_to_atoms_app_v008.mjs"></script>
 </head>
 <body>
-<a class="skip" href="#workspace">Skip to workspace</a>
-<div class="shell">
-  <header class="masthead">
-    <a class="brand" href="./" aria-label="Math to Atoms home"><span class="brand-mark" aria-hidden="true">∴</span><span>SNOW<span class="brand-divider">/</span>EXPLORATIONS</span></a>
-    <span class="version">INTERACTIVE LEDGER <b>007</b></span>
-  </header>
-  <section class="intro">
-    <div class="eyebrow">From a missing proof to a physical change</div>
-    <h1>Math <span class="title-arrow">→</span> Atoms</h1>
-    <p>Where would better math make the biggest difference?<br class="desktop-break"> Change the assumptions. See what moves.</p>
-    <div class="intro-meta"><span><i></i>18 math fields</span><span>60 physical problems</span><span>10 outcomes</span></div>
-  </section>
-  <main id="workspace">
-    <div id="loading" class="panel">Loading the ledger…</div>
-    <div id="app" hidden>
+<a class="skip" href="#workspace">Skip to graph</a>
+<div class="wrap">
+<header class="top"><div class="eyebrow">v008 · Campbell log scale · today’s math = 3, today’s capability = 3</div><h1>Math-to-Atoms Ledger</h1><div class="sub">Three layers: math problems on the left, the physical problems they gate in the middle, and ten tangible outcomes on the right, each with its unit. Edge weight is link strength. The number at the end of each node is its score on the ladder and the node’s blue is that same number, dim to bright, scaled within its column. Tap a node to isolate its edges. Rows tagged <span class="tag">A</span> <span class="tag">B</span> <span class="tag">S</span> came from three models asked for what I’d dismiss; the eight math rows tagged <span class="tag">+</span> were added to carry them.</div></header>
+<main id="workspace"><div id="loading" class="panel">Loading the ledger…</div><div id="app" hidden>
+<section class="graph" id="graph-details" aria-labelledby="graph-title">
+<div class="panel-h graph-heading"><h2 id="graph-title">The graph</h2><div class="graph-controls"><div class="seg" role="group" aria-label="Dataset scope"><button data-scope="core" aria-pressed="false">core 10 × 20 × 10</button><button data-scope="all" aria-pressed="true">all 18 × 60 × 10</button></div><div class="seg" role="group" aria-label="Map order"><button data-order="fixed" aria-pressed="true">structural order</button><button data-order="score" aria-pressed="false">by score</button></div></div></div>
+<div id="graph"></div>
+<div class="legend"><span><i class="l1"></i>1 weak</span><span><i class="l2"></i>2 plausible</span><span><i></i>3 direct</span><span>score low<span class="ramp"></span>high</span><span id="pick-note"></span><button class="text-button" id="edit-selected" hidden>Edit selected node ↓</button><button class="text-button" id="clear-path">Clear selection</button></div>
+</section>
       <div class="workspace-bar">
-        <div class="seg" role="group" aria-label="Dataset scope"><button data-scope="all" aria-pressed="true">All problems</button><button data-scope="core" aria-pressed="false">Original core</button></div>
         <span class="save-status" id="save-status" role="status">Defaults</span>
         <div class="actions"><button id="undo" disabled>↶ Undo</button><button id="export">Export JSON</button><button id="import">Import</button><input id="import-file" type="file" accept="application/json,.json" hidden></div>
       </div>
@@ -36,10 +29,10 @@
         <label class="scenario-load"><span class="sr-only">Load a saved scenario</span><select id="scenario-select"><option value="">Load a saved scenario…</option></select></label>
         <span class="small" id="scenario-note">Browser saves · export to share</span>
       </div>
-      <div class="playground">
-        <section class="panel weights-panel" aria-labelledby="weights-title">
-          <div class="panel-heading"><h2 id="weights-title">The assumptions</h2><button class="text-button" id="reset-weights">Reset weights</button></div>
-          <p class="small">Your log scale: each point multiplies by <b id="base-inline">3×</b>. Today’s math and capability = 3.</p>
+<section class="panel inspector" id="inspector" aria-labelledby="inspector-title" hidden></section>
+<section class="bench"><div class="col">        <section class="panel weights-panel" aria-labelledby="weights-title">
+          <div class="panel-heading"><h2 id="weights-title">Weights</h2><button class="text-button" id="reset-weights">Reset weights</button></div>
+          <p class="small">Log scale: each point multiplies by <b id="base-inline">3×</b>. Today’s math and capability = 3.</p>
           <div id="weights"></div>
           <div class="scale-example" id="scale-example"></div>
           <details class="method"><summary>How scoring works</summary>
@@ -52,7 +45,14 @@
             <p>Capability drag is a proxy for engineering and validation barriers. Feedback latency is not measured separately.</p>
           </details>
         </section>
-        <section class="panel results-panel" aria-labelledby="results-title">
+
+<section class="panel"><div class="panel-h"><h2>Scores</h2><span class="muted">I impact · M math understanding · C physical capability · D math difficulty. All 1–10 log inputs.</span></div><div class="editors"><div class="ed" id="ed-apps"></div><div class="ed" id="ed-math"></div></div></section>
+</div><div class="col">
+<section class="panel"><div class="panel-h"><h2>Outcomes ranked</h2><span class="muted">Σ link/3 × problem score · priority indices, not physical forecasts</span></div><div class="rank-list" id="outrank"></div></section>
+<section class="panel"><div class="panel-h"><h2>Priority: problems by score</h2><span class="muted">impact ÷ (math gap · capability gap)</span></div><div class="rank-list" id="prio"></div></section>
+<section class="panel"><div class="panel-h"><h2>Problems by impact</h2><span class="muted">Δ = priority rank − impact rank</span></div><div class="tbl" id="impact"></div></section>
+</div></section>
+<details class="advanced-panel"><summary>Search & sensitivity</summary>        <section class="panel results-panel" aria-labelledby="results-title">
           <div class="panel-heading"><div><div class="eyebrow">Under these assumptions</div><h2 id="results-title">Where the leverage is</h2></div><span class="count" id="scope-count"></span></div>
           <div class="tabs" role="tablist" aria-label="Rankings"><button role="tab" data-tab="problems" aria-selected="true" aria-controls="ranking">Physical problems</button><button role="tab" data-tab="math" aria-selected="false" aria-controls="ranking" tabindex="-1">Math fields</button><button role="tab" data-tab="outcomes" aria-selected="false" aria-controls="ranking" tabindex="-1">Outcomes</button></div>
           <div class="ranking-tools"><label class="search"><span class="sr-only">Search ranked nodes</span><input id="search" type="search" placeholder="Find a problem, field, or outcome…"></label><label class="sort" id="sort-wrap">Sort<select id="sort"><option value="priority">Priority</option><option value="impact">Impact</option></select></label></div>
@@ -61,16 +61,8 @@
           <button class="show-more" id="show-more">Show all</button>
           <p class="ranking-foot" id="ranking-foot"></p>
         </section>
-      </div>
-      <section class="panel inspector" id="inspector" aria-labelledby="inspector-title"></section>
-      <details class="panel graph-panel" id="graph-details">
-        <summary><span><span class="eyebrow">Follow the mechanism</span><strong>The connection map</strong></span><span class="small">Math → problem → outcome</span></summary>
-        <div class="graph-tools"><span class="small">Select a node to open its editor and trace its connections.</span><div class="seg" role="group" aria-label="Map order"><button data-order="score" aria-pressed="true">By score</button><button data-order="fixed" aria-pressed="false">Structural</button></div><button id="clear-path">Clear path</button></div>
-        <div id="graph" class="graph"></div>
-        <div class="legend"><span><i class="ramp"></i>Low → high ladder within each column</span><span>Link: 1 weak · 2 plausible · 3 direct</span></div>
-      </details>
-      <details class="panel matrix-panel" id="matrix-details"><summary>Advanced: edit all connections</summary><p class="small">Tap a cell to cycle 0 → 1 → 2 → 3. Matrices follow the selected scope.</p><h3>Math → problem</h3><div class="matrix-scroll" tabindex="0" aria-label="Math to problem connection matrix"><table id="matrix-math"></table></div><h3>Problem → outcome</h3><div class="matrix-scroll" tabindex="0" aria-label="Problem to outcome connection matrix"><table id="matrix-outcomes"></table></div></details>
-      <footer><span>Math-to-Atoms Ledger · v007</span><span>Judgments to explore, not forecasts.</span><button class="text-button" id="restore-defaults">Restore all defaults</button></footer>
+</details>      <details class="panel matrix-panel" id="matrix-details"><summary>Advanced: edit all connections</summary><p class="small">Tap a cell to cycle 0 → 1 → 2 → 3. Matrices follow the selected scope.</p><h3>Math → problem</h3><div class="matrix-scroll" tabindex="0" aria-label="Math to problem connection matrix"><table id="matrix-math"></table></div><h3>Problem → outcome</h3><div class="matrix-scroll" tabindex="0" aria-label="Problem to outcome connection matrix"><table id="matrix-outcomes"></table></div></details>
+      <footer><span>Math-to-Atoms Ledger · v008</span><span>Judgments to explore, not forecasts.</span><button class="text-button" id="restore-defaults">Restore all defaults</button></footer>
     </div>
   </main>
 </div>
