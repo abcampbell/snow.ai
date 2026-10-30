@@ -1,0 +1,773 @@
+{
+  "refreshed_at": "2026-10-30T20:34:55.179548+00:00",
+  "universe_snapshot": "2026-05-21",
+  "source": "Yahoo Finance via yfinance",
+  "price_adjustment": "auto_adjust=True",
+  "observations": [
+    {
+      "ticker": "ANFGF",
+      "current_data_ticker": "ANFGF",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T14:24:21+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "BHP",
+      "current_data_ticker": "BHP",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "CSFFF",
+      "current_data_ticker": "CSFFF",
+      "before_live": false,
+      "after_live": false,
+      "status": "fundamentals_unavailable",
+      "price_end": null,
+      "quote_time": null,
+      "quarter_end": null,
+      "financial_currency": null,
+      "reason": "Vendor supplied no usable current fundamentals; no replacement ticker inferred."
+    },
+    {
+      "ticker": "ERO",
+      "current_data_ticker": "ERO",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "FCX",
+      "current_data_ticker": "FCX",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T20:03:24+00:00",
+      "quarter_end": "2026-09-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "FQVLF",
+      "current_data_ticker": "FQVLF",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T19:42:56+00:00",
+      "quarter_end": "2026-09-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "GLNCY",
+      "current_data_ticker": "GLNCY",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T19:59:13+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "GMBXF",
+      "current_data_ticker": "GMBXF",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T16:11:06+00:00",
+      "quarter_end": "2026-09-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "HBM",
+      "current_data_ticker": "HBM",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "IVPAF",
+      "current_data_ticker": "IVPAF",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T19:55:36+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "LUNMF",
+      "current_data_ticker": "LUNMF",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T19:58:25+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "NGLOY",
+      "current_data_ticker": "NGLOY",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T19:59:49+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "RIO",
+      "current_data_ticker": "RIO",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "SCCO",
+      "current_data_ticker": "SCCO",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T19:50:28+00:00",
+      "quarter_end": "2026-09-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "SLSR",
+      "current_data_ticker": "SLSR",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T19:50:30+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "USD",
+      "reason": null
+    },
+    {
+      "ticker": "TECK",
+      "current_data_ticker": "TECK",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "quarter_end": "2026-09-30T00:00:00+00:00",
+      "financial_currency": "CAD",
+      "reason": null
+    },
+    {
+      "ticker": "TGB",
+      "current_data_ticker": "TGB",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:01+00:00",
+      "quarter_end": "2026-06-30T00:00:00+00:00",
+      "financial_currency": "CAD",
+      "reason": null
+    },
+    {
+      "ticker": "ZIJMF",
+      "current_data_ticker": "ZIJMF",
+      "before_live": true,
+      "after_live": true,
+      "status": "refreshed",
+      "price_end": "2026-10-30",
+      "quote_time": "2026-10-30T15:01:11+00:00",
+      "quarter_end": "2026-09-30T00:00:00+00:00",
+      "financial_currency": "CNY",
+      "reason": null
+    }
+  ],
+  "fx": {
+    "USD": {
+      "usd_per_unit": 1.0,
+      "observation_date": null,
+      "symbol": null
+    },
+    "AUD": {
+      "usd_per_unit": 0.7036307454109192,
+      "observation_date": "2026-10-30",
+      "symbol": "AUDUSD=X"
+    },
+    "CAD": {
+      "usd_per_unit": 0.7162554264068604,
+      "observation_date": "2026-10-30",
+      "symbol": "CADUSD=X"
+    },
+    "CNY": {
+      "usd_per_unit": 0.15030135214328766,
+      "observation_date": "2026-10-30",
+      "symbol": "CNYUSD=X"
+    },
+    "ZAR": {
+      "usd_per_unit": 0.059863388538360596,
+      "observation_date": "2026-10-30",
+      "symbol": "ZARUSD=X"
+    }
+  },
+  "methodology": "Existing gen_miner_screens.py, enrich_miner_screens.py and fx_fix_miners.py formulas; no scoring or preset changes; observed FX only; original universe preserved; no Rose writes",
+  "publication_date_note": "Financial period endpoints are not publication dates; Yahoo publication vintage is not established.",
+  "source_dates": {
+    "ANFGF": {
+      "retrieved_at": "2026-10-30T20:31:22.228907+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T14:24:21+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "BHP": {
+      "retrieved_at": "2026-10-30T20:31:23.222515+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2026-06-30T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2026-06-30",
+          "2025-06-30",
+          "2024-06-30",
+          "2023-06-30",
+          "2022-06-30"
+        ],
+        "balance_sheet": [
+          "2026-06-30",
+          "2025-06-30",
+          "2024-06-30",
+          "2023-06-30",
+          "2022-06-30"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "CSFFF": {
+      "retrieved_at": "2026-10-30T20:31:24.106114+00:00",
+      "price_last_observation": null,
+      "quote_time": null,
+      "most_recent_quarter": null,
+      "last_fiscal_year_end": null,
+      "annual_statement_periods": {
+        "income_stmt": [],
+        "balance_sheet": []
+      },
+      "fx": null,
+      "fundamentals_publication_date": null
+    },
+    "ERO": {
+      "retrieved_at": "2026-10-30T20:31:24.605626+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "FCX": {
+      "retrieved_at": "2026-10-30T20:31:25.447069+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T20:03:24+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "FQVLF": {
+      "retrieved_at": "2026-10-30T20:31:26.346589+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T19:42:56+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "GLNCY": {
+      "retrieved_at": "2026-10-30T20:31:27.180420+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T19:59:13+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "GMBXF": {
+      "retrieved_at": "2026-10-30T20:31:28.064400+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T16:11:06+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "HBM": {
+      "retrieved_at": "2026-10-30T20:31:28.979244+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "IVPAF": {
+      "retrieved_at": "2026-10-30T20:31:29.926244+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T19:55:36+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "LUNMF": {
+      "retrieved_at": "2026-10-30T20:31:30.839102+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T19:58:25+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "NGLOY": {
+      "retrieved_at": "2026-10-30T20:31:31.883511+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T19:59:49+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "RIO": {
+      "retrieved_at": "2026-10-30T20:31:32.832075+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "SCCO": {
+      "retrieved_at": "2026-10-30T20:31:33.674358+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T19:50:28+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "SLSR": {
+      "retrieved_at": "2026-10-30T20:31:34.540947+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T19:50:30+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 1.0,
+        "observation_date": null,
+        "symbol": null
+      },
+      "fundamentals_publication_date": null
+    },
+    "TECK": {
+      "retrieved_at": "2026-10-30T20:31:35.438607+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 0.7162554264068604,
+        "observation_date": "2026-10-30",
+        "symbol": "CADUSD=X"
+      },
+      "fundamentals_publication_date": null
+    },
+    "TGB": {
+      "retrieved_at": "2026-10-30T20:31:36.308373+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T20:00:01+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 0.7162554264068604,
+        "observation_date": "2026-10-30",
+        "symbol": "CADUSD=X"
+      },
+      "fundamentals_publication_date": null
+    },
+    "ZIJMF": {
+      "retrieved_at": "2026-10-30T20:31:37.096232+00:00",
+      "price_last_observation": "2026-10-30",
+      "quote_time": "2026-10-30T15:01:11+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "annual_statement_periods": {
+        "income_stmt": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31"
+        ],
+        "balance_sheet": [
+          "2025-12-31",
+          "2024-12-31",
+          "2023-12-31",
+          "2022-12-31",
+          "2021-12-31"
+        ]
+      },
+      "fx": {
+        "usd_per_unit": 0.15030135214328766,
+        "observation_date": "2026-10-30",
+        "symbol": "CNYUSD=X"
+      },
+      "fundamentals_publication_date": null
+    }
+  },
+  "identity_mappings": {
+    "TGB": {
+      "current_data_ticker": "TGB",
+      "issuer": "Trekor Metals Limited",
+      "prior_name": "Taseko Mines",
+      "effective_date": "2026-06-25",
+      "source": "https://www.trekormetals.com/investors/news/taseko-annual-general-meeting-voting-results-and-change-of-name"
+    }
+  },
+  "price_retrieval_window_utc": {
+    "start": "2026-10-30T20:31:18.535726+00:00",
+    "end": "2026-10-30T20:32:06.185649+00:00",
+    "note": "Universe history captured during initial collection; Barrick B separately collected before final refreshed_at. Vendor date rows are latest available observations, not guaranteed final exchange settlement."
+  }
+}

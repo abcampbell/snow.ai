@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gold Miners Screen — GDX + GDXJ — 2026-05-21</title>
+<title>Gold Miners Screen — GDX + GDXJ — 2026-10-30</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--text-dim:#8b949e;--accent:#f59e0b;--good:#22c55e;--bad:#ef4444;--blue:#3b82f6;--purple:#a855f7}
@@ -65,12 +65,14 @@
 <body>
 <div class="header">
   <h1>Gold Miners Fundamentals Screen</h1>
-  <div class="sub">GDX + GDXJ | 30 Miners | 2026-05-21 | Prices on Rose</div>
+  <div class="sub">GDX + GDXJ | 28 Miners | 2026-10-30 | Yahoo data refreshed</div>
   <div class="concept">
     <strong>Universe:</strong> GDX (senior gold miners) + GDXJ (junior gold miners). Full fundamentals from yfinance.
-    All prices pushed to Rose as <code>gold.miner.{ticker}.px.close.adj.usd.d.yahoo</code>.
+    This refresh reads Yahoo Finance; legacy Rose price series were not updated.
   </div>
 </div>
+<div id="refresh-note" class="concept"><strong>Data refresh: 2026-10-30.</strong> Original May 21 universe, scoring formulas and presets preserved. Prices are latest observed vendor data; quarter/year endpoints are financial periods, not publication dates. Observed FX only; no estimated FX fallback. Barrick retains the legacy GOLD universe key; all current data and quote links use <a href="https://www.barrick.com/English/news/news-details/2025/barrick-Is-now-B-on-the-NYSE/default.aspx">NYSE B (effective May 9, 2025)</a>. No Gold.com data is used. <strong>Coverage:</strong> CXBMF: fundamentals unavailable; MGDPF: fundamentals unavailable; NESRF: price lag (2026-10-29); OCANF: fundamentals unavailable; ORLA: stale quote excluded (2026-07-30). Unavailable or over-31-day-old quotes are excluded from current ranks. <a href="refresh_metadata.json">Per-name source dates and methodology</a> · <a href="market_week_20261030.json">Oct 23–30 research returns (not portfolio P&amp;L)</a>.</div>
+<section id="cio-research-note" class="concept" style="margin:18px auto;padding:18px;border:1px solid var(--border);border-radius:8px;line-height:1.6"><h2 style="margin-top:0;font-size:18px;color:var(--text)">CIO research review - October 30, 2026</h2><p>The unchanged balanced score now ranks DPMLF, KNTNF, WDOFF, KGC and LUGDF first through fifth. DPMLF, WDOFF and KGC show vendor-derived free-cash-flow yields of 13.1%, 8.3% and 10.2%. Across the scored group, median cash-flow yield rises from 5.2% to 6.2% and ROIC from 19.38% to 20.72%, while median positive forward P/E edges up from 8.27 to 8.70. This is a selective valuation-and-quality screen, not a uniform cheapness signal.</p><p>WPM is the clearest review item: its rank moves from fourteenth to twenty-eighth, with refreshed cash-flow yield of -6.7% and ROIC of 13.93%. Those are changed vendor metrics under the original formula; they do not establish credit distress or explain the cause of the change.</p><p>GDX declined 3.88% in observed October 23-30 adjusted prices. Valuation appeal has not prevented a weak sector week. The current scoring cohort is 28 rather than 30 names, and Barrick&#x27;s legacy GOLD key now uses verified B data. Cohort and identity maintenance qualify comparisons with May ranks.</p><details><summary>Research qualifications and sources</summary><ul><li>The 32-name original universe is retained. ORLA is excluded from current scoring because its latest price is July 30; CXBMF, MGDPF and OCANF lack usable current fundamentals. NESRF is retained with an October 29 price lag.</li><li>Barrick changed its NYSE ticker from GOLD to B effective May 9, 2025. The old GOLD symbol now refers to another issuer; the retained May GOLD-labelled data is not a clean Barrick comparison.</li><li>Balanced formulas and presets are unchanged. Financial period endpoints are not publication dates; the cohort change affects relative ranks.</li><li>Weekly benchmark figures use the latest available vendor-adjusted observations retrieved at 4:35:55 p.m. ET; they are not guaranteed final exchange settlement.</li><li>Comparison medians use the conventional midpoint for even samples and positive forward P/Es; the sector header retains its original display convention.</li></ul><p><a href="./refresh_metadata.json">Refresh dates and methodology</a> | <a href="https://www.barrick.com/English/news/news-details/2025/barrick-Is-now-B-on-the-NYSE/default.aspx">Barrick ticker change announcement</a></p></details></section>
 <div id="content"><div class="loading" style="text-align:center;padding:60px;color:var(--text-dim)">Loading...</div></div>
 <div class="corner-mark"><a href="https://snow.ai/links/">snow.ai</a></div>
 
@@ -78,6 +80,7 @@
 Chart.defaults.color='#8b949e';Chart.defaults.borderColor='#30363d';
 Chart.defaults.font.family="'SF Mono','Cascadia Code','Consolas',monospace";Chart.defaults.font.size=10;
 
+function tickerCell(m){const t=m.current_data_ticker||m.ticker;return `<a href="https://finance.yahoo.com/quote/${encodeURIComponent(t)}/" target="_blank" rel="noopener noreferrer" style="color:inherit" title="Current data: ${t}">${m.ticker}${t!==m.ticker?" → "+t:""}</a>`}
 function fmt(v,s='',m=1,d=0){if(v==null||isNaN(v))return'—';return(v*m).toFixed(d)+s}
 function clr(v,g,b){if(v==null)return'var(--text-dim)';return v>=g?'var(--good)':v<=b?'var(--bad)':'var(--text)'}
 function clrInv(v,g,b){if(v==null)return'var(--text-dim)';return v<=g?'var(--good)':v>=b?'var(--bad)':'var(--text)'}
@@ -159,7 +162,7 @@ el.innerHTML=`
 </div>
 
 <div style="padding:24px 32px;color:var(--text-dim);font-size:11px;border-top:1px solid var(--border);margin-top:16px">
-  Data: yfinance | Prices: Rose (gold.miner.{ticker}.px.close.adj.usd.d.yahoo) | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
+  Data: yfinance | Prices: Yahoo Finance, adjusted close | <a href="https://snow.ai/links/" style="color:var(--text-dim)">snow.ai</a>
 </div>`;
 
 let tableMode=qs.get('view')==='z'?'z':'raw',scoreFilter=['all','positive','top10'].includes(qs.get('scoreFilter'))?qs.get('scoreFilter'):'all',currentFilter=qs.get('filter')||'all',sortKey='mktcap_mn',sortAsc=false,currentPreset='balanced',zRankMap=new Map();
@@ -220,7 +223,7 @@ function sortRows(data){if(tableMode==='raw'&&usesZRanking()&&zRankMap.size){ret
 function captureZRanking(data){zRankMap=new Map(data.map((m,i)=>[m.ticker,i]))}
 function applyUniverse(m){if(currentFilter==='all')return true;if(currentFilter==='gdx')return m.etf==='gdx';if(currentFilter==='gdxj')return m.etf==='gdxj';if(currentFilter==='both')return m.etf==='both';if(currentFilter==='value')return m.forward_pe&&m.forward_pe<12;if(currentFilter==='quality')return m.roic&&m.roic>0.15;if(currentFilter==='fcf')return m.fcf_yield&&m.fcf_yield>5&&m.fcf_yield<50;return true}
 function zcell(z){return`<td class="score-heat num-col" style="background:${hmap(z)};color:${zclr(z)}">${ztxt(z)}</td>`}
-function renderZTable(data){document.getElementById('tbl').innerHTML=data.map(m=>`<tr><td class="ticker-col" style="color:var(--accent);font-weight:700">${m.ticker}</td><td class="name-col">${(m.name||'').slice(0,24)}</td><td><span class="pill" style="color:${gclr(m.etf)}">${glbl(m.etf)}</span></td>${zcell(composite(m))}${zcell(m._score.value)}${zcell(m._score.quality)}${zcell(m._score.growth)}${zcell(m._score.balance)}${zcell(m._z.forward_pe)}${zcell(m._z.ps)}${zcell(m._z.fcf_yield)}${zcell(m._z.roic)}${zcell(m._z.ebitda_margin)}${zcell(m._z.rev_growth)}${zcell(m._z.net_cash)}${zcell(m._z.debt_ebitda)}${zcell(m._z.interest_coverage)}${zcell(m._z.current_ratio)}</tr>`).join('')}
+function renderZTable(data){document.getElementById('tbl').innerHTML=data.map(m=>`<tr><td class="ticker-col" style="color:var(--accent);font-weight:700">${tickerCell(m)}</td><td class="name-col">${(m.name||'').slice(0,24)}</td><td><span class="pill" style="color:${gclr(m.etf)}">${glbl(m.etf)}</span></td>${zcell(composite(m))}${zcell(m._score.value)}${zcell(m._score.quality)}${zcell(m._score.growth)}${zcell(m._score.balance)}${zcell(m._z.forward_pe)}${zcell(m._z.ps)}${zcell(m._z.fcf_yield)}${zcell(m._z.roic)}${zcell(m._z.ebitda_margin)}${zcell(m._z.rev_growth)}${zcell(m._z.net_cash)}${zcell(m._z.debt_ebitda)}${zcell(m._z.interest_coverage)}${zcell(m._z.current_ratio)}</tr>`).join('')}
 function renderCurrent(){let data=all.filter(applyUniverse);if(tableMode==='z'){data=applyZScoreSubset(data);data=sortRows(data);if(scoreFilter==='top10')data=data.slice(0,10);captureZRanking(data);renderZHead();document.getElementById('scoreControls').style.display='flex';renderSliderControls();renderZTable(data);document.getElementById('tableNote').textContent=`Signed sliders normalize by absolute weight to 100% | ${data.length} names | green = better, red = worse`;}else{if(usesZRanking())data=applyZScoreSubset(data);data=sortRows(data);if(usesZRanking()&&scoreFilter==='top10')data=data.slice(0,10);renderRawHead();document.getElementById('scoreControls').style.display='none';renderTable(data);document.getElementById('tableNote').textContent=usesZRanking()?`Raw fundamentals in current z-score ranking | ${data.length} names | same order as scored view | Mkt Cap = market capitalization`:`Raw fundamentals | ${data.length} names | Mkt Cap = market capitalization | click headers to sort`;}}
 function syncState(){const next=new URLSearchParams(window.location.search);next.set('view',tableMode);next.set('filter',currentFilter);if(tableMode==='z'){next.set('scoreFilter',scoreFilter);next.set('preset',currentPreset);}else{next.delete('scoreFilter');next.delete('preset');}if(document.body.classList.contains('screenshot-mode'))next.set('screenshot','1');else next.delete('screenshot');history.replaceState(null,'',`${window.location.pathname}?${next.toString()}`)}
 
@@ -229,7 +232,7 @@ function renderTable(data){
   document.getElementById('tbl').innerHTML=data.map(m=>{
     const nd=m.net_debt_mn!=null?(m.net_debt_mn>0?'+':'')+Math.round(m.net_debt_mn)+'M':'—';
     return`<tr>
-      <td class="ticker-col" style="color:var(--accent);font-weight:700">${m.ticker}</td>
+      <td class="ticker-col" style="color:var(--accent);font-weight:700">${tickerCell(m)}</td>
       <td class="name-col">${(m.name||'').slice(0,24)}</td>
       <td><span class="pill" style="color:${gclr(m.etf)}">${glbl(m.etf)}</span></td>
       <td class="num-col">${fmtCap(m.mktcap_mn)}</td>
