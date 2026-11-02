@@ -124,12 +124,14 @@
       <h3>Water, power, access</h3>
       <div class="nvx-row">
         <label>Max depth to water (ft)<input type="number" id="fSwl" min="0" step="25" placeholder="any"></label>
-        <label>Max km to power line<input type="number" id="fTx" min="0" step="1" placeholder="any"></label>
+        <label>Max well cost ($)<input type="number" id="fWell" min="0" step="2500" placeholder="any"></label>
       </div>
+      <label class="ck"><input type="checkbox" id="fNoDead"> Skip water dead zones (no well log within 5 mi)</label>
       <div class="nvx-row">
+        <label>Max km to power line<input type="number" id="fTx" min="0" step="1" placeholder="any"></label>
         <label>Max km to state hwy<input type="number" id="fHwy" min="0" step="1" placeholder="any"></label>
-        <label>Max drive to airport (min)<input type="number" id="fAir" min="0" step="5" placeholder="any"></label>
       </div>
+      <label>Max drive to airport (min)<input type="number" id="fAir" min="0" step="5" placeholder="any"></label>
       <label>Airport type<select id="fAirT"><option value="reg">Regional (airline service)</option><option value="jet">Private jet runway</option><option value="intl">Major international</option></select></label>
       <label class="ck"><input type="checkbox" id="fCity"> Inside a public water system (city water)</label>
       <label class="ck"><input type="checkbox" id="fPou"> On land with an active water right</label>
@@ -144,7 +146,7 @@
       <div class="nvx-row">
         <label>Sort by<select id="fSort">
           <option value="acres">Largest first</option><option value="ppa">Lowest $/acre</option><option value="value">Lowest total price</option>
-          <option value="j">Best J match</option><option value="swl">Shallowest water</option><option value="tx">Closest to power</option><option value="air">Closest airport</option></select></label>
+          <option value="j">Best J match</option><option value="swl">Shallowest water</option><option value="well">Cheapest well</option><option value="tx">Closest to power</option><option value="air">Closest airport</option></select></label>
         <label>Color map by<select id="fColor"><option value="ppa">$/acre</option><option value="swl">Depth to water</option><option value="avail">Available</option><option value="canopy">Tree canopy</option><option value="j">J's criteria met (0-4)</option></select></label>
       </div>
       <div style="display:flex;gap:6px;flex-wrap:wrap">
@@ -165,6 +167,6 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js" crossorigin=""></script>
 <script src="layers.js?v=20261024"></script>
-<script src="nevada.js?v=20261028"></script>
+<script src="nevada.js?v=20261102"></script>
 </body>
 </html>

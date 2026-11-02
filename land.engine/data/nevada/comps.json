@@ -10,6 +10,14 @@
       "link": "https://www.homes.com/property/lot-1-d-side-hill-pass-pioche-nv/3r9s4mfhsd3dm/"
     },
     {
+      "name": "40 ac Montello, T38N R68E Sec 35", "county": "Elko", "place": "about 9 mi south-southwest of Montello, 4 km off SR 233",
+      "apn": "010-35P-044", "lat": 41.1317, "lon": -114.23743, "approx": false, "acres": 39.48, "price": 49000,
+      "history": "Asking $49,000 (search copy of the listing; homes.com blocks automated reads, so confirm the price on the page).",
+      "features": ["county or local road touches the parcel (TIGER)", "about 6,000 ft with 487 m of relief within 3 km", "light trees: 3% canopy", "no mapped power within 7.6 km", "one well log within 3 mi: water at 410 ft, drilled 575 ft"],
+      "match": "J's criteria 2 of 4: road and mountains; no mapped power, little canopy", "seen": "2026-11-02", "source": "homes.com",
+      "link": "https://www.homes.com/property/0-010-35p-044-t38n-r68e-s35-montello-nv-unit-3627697/sr93pvn0xf2ep/"
+    },
+    {
       "name": "APXN Elko #2592", "county": "Elko", "place": "near Montello",
       "apn": "010-78A-011", "lat": 41.11901, "lon": -114.07647, "approx": false, "acres": 42.44, "price": 22040, "cash_price": 15428,
       "history": "$22,040 on terms ($206/mo, 180 months, $8,000 down) or $15,428 cash.",

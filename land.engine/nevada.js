@@ -23,6 +23,32 @@
     return `<dt>Comp</dt><dd>${esc(nice.name)} (${esc(nice.county)}): ${fmt(nice.acres, 1)} ac asking ${money(nice.price)}, ${money(nice.price / nice.acres)}/ac. ${esc(nice.history)}</dd>`;
   };
   const apnKey = (s) => String(s || "").toUpperCase().replace(/[^0-9A-Z]/g, "").replace(/^0+/, "");
+  // The statewide layer drops leading zeros; the assessor link template says how many to put back.
+  const apnFull = (it) => ((D?.counties[it.county] || "").match(/(0*)\{apn\}/) || [, ""])[1] + it.apn;
+  const apnDash = (s) => s.length === 8 || s.length === 9 ? `${s.slice(0, 3)}-${s.slice(3, 6)}-${s.slice(6)}`
+    : s.length === 11 ? `${s.slice(0, 3)}-${s.slice(3, 5)}-${s.slice(5, 8)}-${s.slice(8)}` : s.length === 12 ? `${s.slice(0, 4)}-${s.slice(4, 6)}-${s.slice(6, 9)}-${s.slice(9)}` : s;
+  const satUrl = (lat, lon) => `https://www.google.com/maps/@?api=1&map_action=map&center=${lat.toFixed(5)},${lon.toFixed(5)}&zoom=16&basemap=satellite`;
+  const findUrl = (it) => { const f = apnFull(it); return `https://www.google.com/search?q=${encodeURIComponent(`"${apnDash(f)}" OR "${f}" ${it.county} County Nevada`)}`; };
+  const linkBtn = (href, text) => `<a class="nvx-btn" href="${esc(href)}" target="_blank" rel="noopener">${text} ↗</a>`;
+
+  // Wells: drilling-cost model and water-risk score from the May 2026 Amargosa well work.
+  // Drill to the deeper of what neighbors drilled or 120 ft below water (at least 150 ft); $25/$30/$40 a foot plus a $5K/$8K/$12K pump.
+  const WELL = { ft: [25, 30, 40], pump: [5000, 8000, 12000] };
+  const drillFt = (r) => r.swl == null ? null : Math.max(r.depth ?? 0, r.swl + 120, 150);
+  const wellCost = (r, k = 1) => { const ft = drillFt(r); return ft == null ? null : ft * WELL.ft[k] + WELL.pump[k]; };
+  const deadZone = (r) => r.nw_mi !== undefined && (r.nw_mi == null || r.nw_mi > 5);
+  const wRisk = (r) => deadZone(r) ? 100 : r.swl == null ? null
+    : Math.round(Math.min(100, Math.max(0, Math.min(70, (r.swl - 30) / 3.5)) + (r.wells < 10 ? 12 : 0) + ((r.swl_rng ?? 0) > 130 ? 12 : 0)));
+  const USE = { D: "domestic", I: "irrigation", P: "public supply", S: "stock", T: "test hole", M: "mining", C: "commercial", O: "other" };
+  const pdfUrl = (log) => `https://images.water.nv.gov/images/well_logs/${String(Math.floor(log / 1000) * 1000).padStart(5, "0")}/${log}.pdf`;
+  const kmTo = (a, b) => Math.hypot(a.lat - b.lat, (a.lon - b.lon) * Math.cos(a.lat * Math.PI / 180)) * 111.2;
+  const wellLine = (w) => `${w.log ? `Log ${w.log}` : "Log"}${w.year ? ` · ${w.year}` : ""} · ${USE[w.use] || "well"}${w.dry ? ' · <span class="bad">dry hole</span>' : ""}`
+    + `${w.swl != null ? ` · water at ${fmt(w.swl)} ft` : ""}${w.depth != null ? ` · drilled ${fmt(w.depth)} ft` : ""}${w.yld ? ` · ${fmt(w.yld)} gpm` : ""}${w.bed != null ? ` · rock at ${fmt(w.bed)} ft` : ""}`;
+  let WELLS = null, wellsP = null;
+  const loadWells = () => wellsP ||= fetch("data/nevada/wells.json?v=20261102").then((r) => r.json()).then((w) => {
+    WELLS = w.w.map(([lat, lon, swl, depth, log, year, use, yld, bed, dry]) => ({ lat, lon, swl, depth, log, year, use, yld, bed, dry }));
+    return WELLS;
+  });
 
   // ---------- map ----------
   const map = L.map("nvMap", { preferCanvas: true, zoomControl: true }).setView([38.6, -116.9], 6);
@@ -99,14 +125,17 @@
   }).addTo(map);
 
   // depth-to-water wells (loaded on demand)
-  const wellLayer = new SquareLayer({ size: (it, z) => (z >= 11 ? 5 : 3), color: (it) => ramp(it.swl, 20, 800), alpha: () => 0.9 });
+  const wellLayer = new SquareLayer({
+    size: (it, z) => (z >= 11 ? 6 : 3), color: (it) => it.dry ? "#ff4fd8" : ramp(it.swl, 20, 800), alpha: () => 0.9,
+    click: (w) => L.popup().setLatLng([w.lat, w.lon]).setContent(`<b>Well driller's report</b><br>${wellLine(w)}<br>`
+      + `${w.log ? `<a href="${pdfUrl(w.log)}" target="_blank" rel="noopener">Open the report (PDF) ↗</a>` : ""}`).openOn(map)
+  });
   let wellsLoaded = false;
-  ctl.addOverlay(wellLayer, "Depth to water: well logs (NDWR)");
+  ctl.addOverlay(wellLayer, "Well logs: depth to water, click for the report (NDWR)");
   map.on("overlayadd", async (e) => {
     if (e.layer !== wellLayer || wellsLoaded) return;
     wellsLoaded = true;
-    const w = await fetch("data/nevada/wells.json?v=20261024").then((r) => r.json());
-    wellLayer.set(w.w.map(([lat, lon, swl, depth]) => ({ lat, lon, swl, depth })));
+    wellLayer.set(await loadWells());
     legend();
   });
   // airports and metallic mines from the existing packs
@@ -144,7 +173,7 @@
     return JSON.parse(new TextDecoder().decode(buf));
   }
   const stall = setTimeout(() => { if (!D) $("nvLoad").textContent += " (slow connection: still downloading; a hard refresh, Ctrl+Shift+R, also clears an old cached copy)"; }, 20000);
-  loadParcels("data/nevada/parcels10.json?v=20261026").then((doc) => {
+  loadParcels("data/nevada/parcels10.json?v=20261102").then((doc) => {
     clearTimeout(stall);
     D = doc; C = Object.fromEntries(doc.cols.map((c, i) => [c, i]));
     rows = doc.rows.map((r) => {
@@ -176,8 +205,11 @@
     const priv = $("fPrivate").checked, pubMin = num("fPub");
     const road = num("fRoad"), pwr = num("fPwr"), relief = num("fRelief"), canopy = num("fCanopy"), elev = num("fElev");
     const avail = $("fAvail").checked, city = $("fCity").checked, pou = $("fPou").checked, nodes = $("fNoDesig").checked, mines = $("fMines").checked;
+    const well = num("fWell"), nodead = $("fNoDead").checked, qk = apnKey(q);
     shown = rows.filter((r) => {
-      if (q && !(r.apn.toLowerCase().includes(q) || r.county.toLowerCase().includes(q))) return false;
+      if (q && !((qk && apnKey(r.apn).includes(qk)) || r.county.toLowerCase().includes(q))) return false;
+      if (well != null && !(wellCost(r) != null && wellCost(r) <= well)) return false;
+      if (nodead && deadZone(r)) return false;
       if (minAc != null && r.acres < minAc) return false;
       if (maxAc != null && r.acres > maxAc) return false;
       if (maxPpa != null && (r.ask_ppa ?? r.ppa) > maxPpa) return false;
@@ -202,7 +234,7 @@
       return true;
     });
     const s = $("fSort").value;
-    const key = { acres: (r) => -r.acres, ppa: (r) => r.ask_ppa ?? r.ppa, value: (r) => r.ask ?? r.value, swl: (r) => r.swl ?? 1e9, tx: (r) => r.tx_km, air: (r) => r[`${ak}_min`], j: (r) => -(jScore(r) ?? -1) * 1e9 + (r.ask_ppa ?? r.ppa) }[s];
+    const key = { acres: (r) => -r.acres, ppa: (r) => r.ask_ppa ?? r.ppa, value: (r) => r.ask ?? r.value, swl: (r) => r.swl ?? 1e9, well: (r) => wellCost(r) ?? 1e9, tx: (r) => r.tx_km, air: (r) => r[`${ak}_min`], j: (r) => -(jScore(r) ?? -1) * 1e9 + (r.ask_ppa ?? r.ppa) }[s];
     shown.sort((a, b) => key(a) - key(b));
     parcelLayer.set(shown);
     const ac = shown.reduce((t, r) => t + r.acres, 0), nav = shown.filter((r) => r.avail).length;
@@ -213,8 +245,8 @@
     legend(); writeHash();
   }
   $("nvList").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-i]"); if (tr) select(shown[+tr.dataset.i], true); });
-  ["fElev", "fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fSwl", "fTx", "fHwy", "fAir"].forEach((id) => $(id).addEventListener("input", debounce(apply, 200)));
-  ["fRoad", "fPwr", "fRelief", "fCanopy", "fPrivate", "fPub", "fCounty", "fAvail", "fAirT", "fCity", "fPou", "fNoDesig", "fMines", "fHunt", "fSort"].forEach((id) => $(id).addEventListener("change", apply));
+  ["fElev", "fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fSwl", "fWell", "fTx", "fHwy", "fAir"].forEach((id) => $(id).addEventListener("input", debounce(apply, 200)));
+  ["fRoad", "fPwr", "fRelief", "fCanopy", "fPrivate", "fPub", "fCounty", "fAvail", "fAirT", "fCity", "fPou", "fNoDesig", "fNoDead", "fMines", "fHunt", "fSort"].forEach((id) => $(id).addEventListener("change", apply));
   $("fColor").addEventListener("change", () => { parcelLayer._draw(); legend(); });
   $("bReset").addEventListener("click", () => {
     document.querySelectorAll(".nvx-side input[type=number], .nvx-side input[type=search]").forEach((i) => (i.value = ""));
@@ -229,8 +261,8 @@
   function debounce(f, ms) { let t; return () => { clearTimeout(t); t = setTimeout(f, ms); }; }
 
   // shareable state in the hash (plain token pairs)
-  const HASH = ["fRoad", "fPwr", "fRelief", "fCanopy", "fElev", "fPub", "fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fCounty", "fSwl", "fTx", "fHwy", "fAir", "fAirT", "fHunt", "fSort", "fColor"];
-  const CHK = ["fAvail", "fCity", "fPou", "fNoDesig", "fMines"];
+  const HASH = ["fRoad", "fPwr", "fRelief", "fCanopy", "fElev", "fPub", "fQ", "fMinAc", "fMaxAc", "fMaxPpa", "fCounty", "fSwl", "fWell", "fTx", "fHwy", "fAir", "fAirT", "fHunt", "fSort", "fColor"];
+  const CHK = ["fAvail", "fCity", "fPou", "fNoDesig", "fNoDead", "fMines"];
   function writeHash() {
     const p = new URLSearchParams();
     HASH.forEach((id) => { const v = $(id).value; if (v && !(id === "fMinAc" && v === "10") && !(id === "fSort" && v === "acres") && !(id === "fColor" && v === "ppa") && !(id === "fAirT" && v === "reg")) p.set(id, v); });
@@ -255,8 +287,9 @@
       return;
     }
     const lab = k === "swl" ? ["Depth to water", "20 ft", "800+ ft"] : k === "avail" ? null : ["$/acre (estimate or asking)", "$300", "$300K+"];
-    $("nvLegend").innerHTML = lab ? `${lab[0]}<div class="ramp">${PAL.map((c) => `<i style="background:${c}"></i>`).join("")}</div><div class="ends"><span>${lab[1]}</span><span>${lab[2]}</span></div>`
-      : `<span style="color:#3ecf8e">■</span> available &nbsp; <span style="color:#4a5260">■</span> not listed`;
+    $("nvLegend").innerHTML = (lab ? `${lab[0]}<div class="ramp">${PAL.map((c) => `<i style="background:${c}"></i>`).join("")}</div><div class="ends"><span>${lab[1]}</span><span>${lab[2]}</span></div>`
+      : `<span style="color:#3ecf8e">■</span> available &nbsp; <span style="color:#4a5260">■</span> not listed`)
+      + (map.hasLayer(wellLayer) ? `<div style="margin-top:4px">Well logs use the depth-to-water colors · <span style="color:#ff4fd8">■</span> dry hole</div>` : "");
   }
 
   // ---------- selection card ----------
@@ -270,7 +303,7 @@
     const tone = (v, good, bad) => v == null ? "" : v <= good ? "good" : v >= bad ? "bad" : "warn";
     const av = it.avail;
     $("nvCard").innerHTML = `<button class="x" type="button" aria-label="Close">×</button>
-      <h4>APN ${esc(it.apn)}</h4><div class="nvx-sub">${esc(it.county)} County · ${fmt(it.acres, 2)} acres · ${it.lat.toFixed(5)}, ${it.lon.toFixed(5)}</div>
+      <h4>APN ${esc(apnDash(apnFull(it)))}</h4><div class="nvx-sub">${esc(it.county)} County · ${fmt(it.acres, 2)} acres · ${it.lat.toFixed(5)}, ${it.lon.toFixed(5)}</div>
       <dl>
         <span class="grp">Price</span>
         ${av ? `<dt>Available</dt><dd class="good">${esc(av.kind === "lead" ? `${av.source || "lead"}${av.date ? " · " + av.date : ""}` : "listed for sale")} · asking ${money(av.price)} (${money(av.price / it.acres)}/ac)${av.link ? ` · <a href="${esc(av.link)}" target="_blank" rel="noopener">source ↗</a>` : ""}</dd>` : ""}
@@ -283,9 +316,14 @@
         <dt>Trees</dt><dd class="${(it.canopy ?? 0) >= J.canopy ? "good" : ""}">${it.canopy == null ? "–" : it.canopy <= 0 ? "no tree canopy (shrub or open ground)" : `${fmt(it.canopy)}% canopy${it.trees != null ? `; trees on ${Math.round(it.trees * 100)}% of sample points` : ""}`}</dd>
         ${compNote(it)}
         <span class="grp">Water</span>
-        <dt>Depth</dt><dd class="${tone(it.swl, 150, 500)}">${it.swl == null ? "no well logs within 3 mi" : `~${fmt(it.swl)} ft to water (median of ${fmt(it.wells)} well logs within 3 mi)${it.depth ? `; wells drilled ~${fmt(it.depth)} ft` : ""}`}</dd>
+        <dt>Depth</dt><dd class="${tone(it.swl, 150, 500)}">${it.swl == null ? `no water levels logged within 3 mi${it.nw_mi != null ? `; nearest well log ${fmt(it.nw_mi, 1)} mi` : ""}` : `~${fmt(it.swl)} ft to water (${it.wells === 1 ? "1 well log" : `median of ${fmt(it.wells)} well logs`} within 3 mi)${it.depth ? `; wells drilled ~${fmt(it.depth)} ft` : ""}`}</dd>
+        <dt>Well cost</dt><dd class="${tone(wellCost(it), 15000, 30000)}">${drillFt(it) == null ? "no estimate without a nearby water level" : `~${fmt(drillFt(it))} ft well: ${money(wellCost(it, 0))}–${money(wellCost(it, 2))}, mid ${money(wellCost(it))} <span style="color:var(--faint)">(drilling $25–40/ft plus pump)</span>`}</dd>
+        <dt>Water risk</dt><dd class="${deadZone(it) ? "bad" : tone(wRisk(it), 25, 50)}">${deadZone(it) ? `dead zone: no well log within 5 mi${it.nw_mi != null ? ` (nearest ${fmt(it.nw_mi, 1)} mi)` : ""}; plan to haul water or drill blind`
+          : wRisk(it) == null ? "–" : `${wRisk(it)}/100 ${wRisk(it) <= 25 ? "(low)" : wRisk(it) <= 50 ? "(moderate)" : "(high)"}${it.wells < 10 ? " · thin data" : ""}${(it.swl_rng ?? 0) > 130 ? ` · water levels vary ${fmt(it.swl_rng)} ft nearby` : ""}`}</dd>
+        ${it.yld != null || it.dry ? `<dt>Results</dt><dd>${it.yld != null ? `wells nearby yield a median ${fmt(it.yld)} gpm` : ""}${it.yld != null && it.dry ? " · " : ""}${it.dry ? `<span class="bad">${fmt(it.dry)} dry hole${it.dry > 1 ? "s" : ""} within 3 mi</span>` : ""}</dd>` : ""}
+        <dt>Nearest logs</dt><dd id="nvLogs"><span style="color:var(--faint)">loading driller's reports…</span></dd>
         <dt>Water right</dt><dd>${it.pou ? '<span class="good">inside an active place of use</span>' : "none on the parcel"} · ${fmt(it.pods)} active diversions within 1 mi</dd>
-        <dt>Basin</dt><dd class="${bas && /^y/i.test(String(bas[4] ?? "")) ? "warn" : ""}">${bas ? `${esc(bas[0])} ${esc(bas[1])}${bas[2] ? " · " + esc(bas[2]) : ""} · ${esc(DESIG[bas[3]] || (/^y/i.test(String(bas[4] ?? "")) ? "designated basin" : "not designated"))}` : "–"}</dd>
+        <dt>Basin</dt><dd class="${bas && /^y/i.test(String(bas[4] ?? "")) ? "warn" : ""}">${bas ? `${esc(bas[0])} ${esc(bas[1])}${has(bas[2]) ? " · " + esc(bas[2]) : ""} · ${esc(DESIG[bas[3]] || (/^y/i.test(String(bas[4] ?? "")) ? "designated basin" : "not designated"))}` : "–"}</dd>
         <dt>City water</dt><dd class="${cws ? "good" : ""}">${cws ? `${esc(cws[1])} (serves ${fmt(cws[2])})` : "outside public water systems: well or haul"}</dd>
         <span class="grp">Power and access</span>
         <dt>Power</dt><dd class="${tone(it.tx_km, 2, 15)}">${fmt(it.tx_km, 1)} km to a ${it.tx_kv > 0 ? fmt(it.tx_kv) + " kV" : ""} transmission line</dd>
@@ -296,33 +334,54 @@
         <dt>Hunt unit</dt><dd>${hu ? `Unit ${esc(String(hu[0]).trim() || hu[2])}${sp ? " · " + esc(sp) : " · no big game managed"}` : "–"}</dd>
       </dl>
       <div class="acts">
-        <a class="nvx-btn" href="./#q=${encodeURIComponent(it.lat.toFixed(5) + ", " + it.lon.toFixed(5))}" target="_blank" rel="noopener">Full screen ↗</a>
-        <a class="nvx-btn" href="explorer.html?pin=${it.lat.toFixed(5)},${it.lon.toFixed(5)}" target="_blank" rel="noopener">Drive times ↗</a>
-        ${web ? `<a class="nvx-btn" href="${esc(web)}" target="_blank" rel="noopener">Assessor record ↗</a>` : ""}
+        ${web ? linkBtn(web, "Assessor record") : ""}
+        ${linkBtn(findUrl(it), "Find listings for this APN")}
+        ${linkBtn(satUrl(it.lat, it.lon), "Satellite")}
+        ${linkBtn(`explorer.html?pin=${it.lat.toFixed(5)},${it.lon.toFixed(5)}`, "Drive times")}
+        ${linkBtn(`./#q=${encodeURIComponent(it.lat.toFixed(5) + ", " + it.lon.toFixed(5))}`, "Full screen")}
       </div>
       <p class="nvx-sub" style="margin-top:8px">Distances are straight-line; drive times are estimates. Legal access, the actual water right, and mineral ownership need the title and county records.</p>`;
     $("nvCard").hidden = false;
     $("nvCard").querySelector(".x").addEventListener("click", () => { $("nvCard").hidden = true; sel = null; parcelLayer._draw(); });
+    loadWells().then((ws) => {
+      if (sel !== it) return;
+      const near = ws.map((w) => [kmTo(it, w), w]).filter(([d]) => d <= 8).sort((a, b) => a[0] - b[0]).slice(0, 4);
+      $("nvLogs").innerHTML = near.length ? near.map(([d, w]) => `${fmt(d / 1.609, 1)} mi: ${w.log ? `<a href="${pdfUrl(w.log)}" target="_blank" rel="noopener">${wellLine(w)} ↗</a>` : wellLine(w)}`).join("<br>")
+        : "no water-supply well logs within 5 mi";
+    }).catch(() => { $("nvLogs").textContent = "well logs didn't load"; });
   }
 
 
   // ---------- price comps ----------
   const compLayer = L.layerGroup().addTo(map);
-  fetch("data/nevada/comps.json?v=20261028").then((r) => r.json()).then((d) => {
+  const compRow = (c) => c.apn && rows.find((x) => x.county === c.county && apnKey(x.apn) === apnKey(c.apn));
+  const compPopup = (c) => {
+    const r = compRow(c), tmpl = r && D.counties[r.county];
+    return `<b>${esc(c.name)}</b><br>${esc(c.county)} County · ${fmt(c.acres, 1)} ac · asking <b>${money(c.price)}</b> (${money(c.price / c.acres)}/ac)${c.cash_price ? ` · ${money(c.cash_price)} cash` : ""}`
+      + `<br><span style="color:#888">${esc(c.match)}${c.approx ? " · location approximate" : ""}</span>${c.history ? `<br>${esc(c.history)}` : ""}`
+      + `<div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:6px">${c.link ? linkBtn(c.link, "Listing") : ""}${tmpl ? linkBtn(tmpl.replace("{apn}", encodeURIComponent(r.apn)), "Assessor record") : ""}`
+      + `${r ? linkBtn(findUrl(r), "Find listings") : ""}${linkBtn(satUrl(c.lat, c.lon), "Satellite")}${linkBtn(`explorer.html?pin=${c.lat.toFixed(5)},${c.lon.toFixed(5)}`, "Drive times")}</div>`
+      + (r ? `<div style="margin-top:4px;color:#888">Parcel card open on the left.</div>` : "");
+  };
+  fetch("data/nevada/comps.json?v=20261102").then((r) => r.json()).then((d) => {
     COMPS = d.comps || [];
     $("compList").innerHTML = COMPS.map((c, i) => `<div style="margin:4px 0"><a href="#" data-comp="${i}">${esc(c.name)}</a> · ${esc(c.county)} · ${fmt(c.acres, 1)} ac · <b>${money(c.price)}</b> (${money(c.price / c.acres)}/ac)${c.cash_price ? `, ${money(c.cash_price)} cash` : ""}<br><span style="color:var(--faint)">${esc(c.match)}${c.link ? ` · <a href="${esc(c.link)}" target="_blank" rel="noopener">listing ↗</a>` : ""}</span></div>`).join("")
       + `<div style="color:var(--faint);margin-top:4px">Asking prices, not sales. A dashed ring on the map means the location is approximate.</div>`;
     COMPS.forEach((c) => {
       if (c.lat == null) return;
       L.circleMarker([c.lat, c.lon], { radius: 9, color: "#ffd166", weight: 2, dashArray: c.approx ? "3 3" : null, fillColor: "#ffd166", fillOpacity: 0.35 })
-        .bindTooltip(`${esc(c.name)} · ${money(c.price)} · ${money(c.price / c.acres)}/ac${c.approx ? " (approximate location)" : ""}`).addTo(compLayer);
+        .bindTooltip(`${esc(c.name)} · ${money(c.price)} · ${money(c.price / c.acres)}/ac${c.approx ? " (approximate location)" : ""} · click for links`)
+        .bindPopup(() => compPopup(c), { maxWidth: 340 })
+        .on("click", () => { const r = D && compRow(c); if (r) select(r, false); })
+        .addTo(compLayer);
     });
     if (sel) select(sel, false);
   }).catch(() => { $("compList").textContent = "Comps didn't load."; });
   $("compList").addEventListener("click", (e) => {
     const a = e.target.closest("[data-comp]"); if (!a) return; e.preventDefault();
     const c = COMPS[+a.dataset.comp]; if (c.lat != null) map.setView([c.lat, c.lon], 12);
-    const r = c.apn && rows.find((x) => apnKey(x.apn) === apnKey(c.apn)); if (r) select(r, false);
+    const r = D && compRow(c); if (r) select(r, false);
+    if (c.lat != null) L.popup({ maxWidth: 340 }).setLatLng([c.lat, c.lon]).setContent(compPopup(c)).openOn(map);
   });
 
   // ---------- listings the user adds by hand (kept in this browser) ----------
