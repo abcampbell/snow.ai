@@ -1,6 +1,6 @@
-# The Sun Yat-sen Ledger — bibliography v011
+# The Sun Yat-sen Ledger — bibliography v012
 
-Verified bibliographic records and access notes, 4 November 2026. Sources consulted only at abstract/metadata level are marked. Archival leads are not represented as inspected originals.
+Bibliographic records and access notes, updated 5 November 2026. Sources consulted only at abstract/metadata level are marked. Archival leads are not represented as inspected originals.
 
 ## [1] American, British, French and Japanese representatives in China. 1920. “Joint note to the Chinese Minister of Foreign Affairs, W. W. Yen, 28 September 1920.” Papers Relating to the Foreign Relations of the United States, 1920, vol. I, document 561, enclosure 2.
 
@@ -422,7 +422,31 @@ https://www.stats.gov.cn/sj/tjgb/qttjgb/qgqttjgb/202302/t20230218_1913243.html
 
 **Limit:** Coverage and road-surface reconciliation remain open; the communiqué alone does not establish Sun’s macadam specification.
 
-## [36] National Bureau of Statistics of China. 2010. “China Statistical Yearbook 2010, table 16-2: Length of Transport Routes.” China Statistics Press; online yearbook table.
+## [36] Ministry of Transport, China. 2025. “2024 port cargo and container throughput.” Published 26 March 2025.
+
+https://xxgk.mot.gov.cn/2020/jigou/zhghs/202503/t20250326_4165984.html
+
+**Access:** Full text consulted.
+
+**Locator:** Attached PDF, p. 1: Tangshan, Tianjin, Shanghai, Ningbo-Zhoushan, Shenzhen and Guangzhou rows
+
+**Use:** Official 2024 cargo and container totals for the three regional port comparisons.
+
+**Limit:** Regional sums are not individual ports. Small differences from fixed historical chart endpoints are disclosed in Appendix C; no wholesale revision of the composite was made.
+
+## [37] Ministry of Transport, China. 2025. “2024年交通运输行业发展统计公报 [Statistical communiqué on transport development in 2024].” Published 12 June 2025.
+
+https://xxgk.mot.gov.cn/jigou/zhghs/202506/t20250610_4170228.html
+
+**Access:** Full text consulted.
+
+**Locator:** Infrastructure sections: railways and roads
+
+**Use:** End-2024 railway operating length of 162,000 km and national road length of 5,490,400 km.
+
+**Limit:** Modern road coverage is broader than the historical macadam specification. Does not verify the entire earlier series.
+
+## [38] National Bureau of Statistics of China. 2010. “China Statistical Yearbook 2010, table 16-2: Length of Transport Routes.” China Statistics Press; online yearbook table.
 
 https://www.stats.gov.cn/sj/ndsj/2010/html/P1602C.HTM
 
@@ -434,7 +458,31 @@ https://www.stats.gov.cn/sj/ndsj/2010/html/P1602C.HTM
 
 **Limit:** Does not validate the inherited pre-2005 anchors or their splice.
 
-## [37] National Development and Reform Commission of China. 2024. “长江干线港口货物吞吐量首次突破40亿吨 [Main-stem Yangtze port throughput first exceeds four billion tonnes].” Yangtze Economic Belt report, 27 December 2024, reporting the Yangtze navigation authority.
+## [39] National Bureau of Statistics, China. 2024. “国家统计局关于2024年棉花产量的公告 [Announcement of cotton production in 2024].” Published 25 December 2024.
+
+https://www.stats.gov.cn/sj/zxfb/202412/t20241225_1957879.html
+
+**Access:** Full text consulted.
+
+**Locator:** Provincial table, total production in ten-thousand tonnes: Xinjiang 568.6; China 616.4
+
+**Use:** Xinjiang production of 5.686 million tonnes and national production of 6.164 million tonnes in 2024.
+
+**Limit:** Production alone does not measure irrigation efficiency, labor conditions or the distribution of benefits.
+
+## [40] National Bureau of Statistics, China. 2025. “中华人民共和国2024年国民经济和社会发展统计公报 [Statistical communiqué on national economic and social development in 2024].” Published 28 February 2025.
+
+https://www.stats.gov.cn/zwfwck/sjfb/202502/t20250228_1958817.html
+
+**Access:** Full text consulted.
+
+**Locator:** Table 3, output of major industrial products: crude steel and cement
+
+**Use:** 2024 crude steel output of 1,005.091 million tonnes and cement output of approximately 1.8 billion tonnes.
+
+**Limit:** Annual production measures differ from installed capacity; the source does not validate the historical capital-cost translation.
+
+## [41] National Development and Reform Commission of China. 2024. “长江干线港口货物吞吐量首次突破40亿吨 [Main-stem Yangtze port throughput first exceeds four billion tonnes].” Yangtze Economic Belt report, 27 December 2024, reporting the Yangtze navigation authority.
 
 https://cjjjd.ndrc.gov.cn/gongzuodongtai/bumendongtai/202412/t20241227_1395197.htm
 
@@ -446,7 +494,43 @@ https://cjjjd.ndrc.gov.cn/gongzuodongtai/bumendongtai/202412/t20241227_1395197.h
 
 **Limit:** The inherited 3.9-billion-tonne series requires accounting reconciliation; this report is not a replacement series.
 
-## [38] US Army Corps of Engineers, Institute for Water Resources. n.d.. “Coastal Navigation Fast Facts.” Value to the Nation.
+## [42] National Energy Administration, China. 2025. “2024年可再生能源并网运行情况 [Renewable-energy grid operation in 2024].” Published 27 January 2025; official web reproduction.
+
+https://www.nea.gov.cn/20250221/e10f363cabe3458aaf78ba4558970054/c.html
+
+**Access:** Full text consulted.
+
+**Locator:** Section I, hydropower construction and operation
+
+**Use:** End-2024 hydropower capacity of about 436 GW, including 377 GW conventional hydro and 58.69 GW pumped storage.
+
+**Limit:** National installed capacity is wider in geography and technology than Sun’s 1924 regional river-power estimate.
+
+## [43] National Railway Administration, China. 2026. “国家铁路局发布《2025年铁道统计公报》 [Release of the 2025 railway statistical communiqué].” Published 29 May 2026.
+
+https://www.nra.gov.cn/xwzx/xwxx/xwlb/202605/t20260529_351348.shtml
+
+**Access:** Full text consulted.
+
+**Locator:** Third numbered section: railway construction and operating mileage
+
+**Use:** End-2025 operating railway length of 165,000 km, including 50,000 km of high-speed railway.
+
+**Limit:** The release text was available through the search index; direct retrieval encountered a redirect loop. Confirms endpoint totals, not execution of each proposed route.
+
+## [44] Office of the National Greening Commission, China. 2026. “2025年中国国土绿化状况公报 [Communiqué on China’s land greening in 2025].” National Forestry and Grassland Administration website, 12 March 2026.
+
+https://www.forestry.gov.cn/lyj/1/lcdt/20260312/662822.html
+
+**Access:** Full text consulted.
+
+**Locator:** Opening national summary, forest cover 25.09 percent
+
+**Use:** Official forest cover reported for 2025, used as a narrative update beyond the plotted 2021 endpoint.
+
+**Limit:** National inventory cover does not establish restoration of a particular watershed. This observation is not added to the fixed v009 composite.
+
+## [45] US Army Corps of Engineers, Institute for Water Resources. n.d.. “Coastal Navigation Fast Facts.” Value to the Nation.
 
 https://www.iwr.usace.army.mil/Missions/Value-to-the-Nation/Fast-Facts/Coastal-Navigation-Fast-Facts/
 
@@ -458,7 +542,7 @@ https://www.iwr.usace.army.mil/Missions/Value-to-the-Nation/Fast-Facts/Coastal-N
 
 **Limit:** The original tables behind every inherited US port anchor remain to be recovered.
 
-## [39] US Army Corps of Engineers, Waterborne Commerce Statistics Center. n.d.. “WCSC Navigation Infrastructure.” Institute for Water Resources.
+## [46] US Army Corps of Engineers, Waterborne Commerce Statistics Center. n.d.. “WCSC Navigation Infrastructure.” Institute for Water Resources.
 
 https://www.iwr.usace.army.mil/About/Technical-Centers/WCSC-Waterborne-Commerce-Statistics-Center/WCSC-Navigation-Infrastructure/
 
@@ -470,7 +554,7 @@ https://www.iwr.usace.army.mil/About/Technical-Centers/WCSC-Waterborne-Commerce-
 
 **Limit:** Boundary definitions do not reconcile the grouped Chinese ports with the inherited changing single-US-port comparator.
 
-## [40] US Census Bureau. n.d.. “Geography Program Glossary.” Geography Program.
+## [47] US Census Bureau. n.d.. “Geography Program Glossary.” Geography Program.
 
 https://www.census.gov/programs-surveys/geography/about/glossary.html
 
@@ -482,7 +566,7 @@ https://www.census.gov/programs-surveys/geography/about/glossary.html
 
 **Limit:** Does not supply a harmonized Tianjin–Los Angeles population history.
 
-## [41] US Energy Information Administration. n.d.. “Hydropower explained.” Energy Explained.
+## [48] US Energy Information Administration. n.d.. “Hydropower explained.” Energy Explained.
 
 https://www.eia.gov/energyexplained/hydropower/
 
@@ -494,7 +578,7 @@ https://www.eia.gov/energyexplained/hydropower/
 
 **Limit:** A terminology check, not certification of all historical capacity anchors.
 
-## [42] US Federal Highway Administration. 2025. “Public Road Length—2024: Miles by Type of Surface and Ownership/Functional System, National Summary.” Highway Statistics 2024, table HM-12, November 2025.
+## [49] US Federal Highway Administration. 2025. “Public Road Length—2024: Miles by Type of Surface and Ownership/Functional System, National Summary.” Highway Statistics 2024, table HM-12, November 2025.
 
 https://www.fhwa.dot.gov/policyinformation/statistics/2024/hm12.cfm
 
@@ -506,7 +590,7 @@ https://www.fhwa.dot.gov/policyinformation/statistics/2024/hm12.cfm
 
 **Limit:** A definition check; this table does not certify the whole inherited American historical series.
 
-## [43] Elisabeth Köll. 2019. “Railroads and the Transformation of China.” Cambridge, MA: Harvard University Press. ISBN 9780674368170.
+## [50] Elisabeth Köll. 2019. “Railroads and the Transformation of China.” Cambridge, MA: Harvard University Press. ISBN 9780674368170.
 
 https://www.hup.harvard.edu/books/9780674368170
 
@@ -518,7 +602,7 @@ https://www.hup.harvard.edu/books/9780674368170
 
 **Limit:** Bibliographic record and publisher description verified; the complete book was not read for this edition.
 
-## [44] Margherita Zanasi. 2006. “Saving the Nation: Economic Modernity in Republican China.” Chicago: University of Chicago Press. ISBN 9780226978734. DOI: 10.7208/chicago/9780226978741.001.0001.
+## [51] Margherita Zanasi. 2006. “Saving the Nation: Economic Modernity in Republican China.” Chicago: University of Chicago Press. ISBN 9780226978734. DOI: 10.7208/chicago/9780226978741.001.0001.
 
 https://academic.oup.com/chicago-scholarship-online/book/18277
 
@@ -530,7 +614,7 @@ https://academic.oup.com/chicago-scholarship-online/book/18277
 
 **Limit:** Catalogued as further reading. Detailed claims from the full book are not represented as verified here.
 
-## [45] Chang Kia-ngau [Zhang Jia’ao]. 1943. “China’s Struggle for Railroad Development.” New York: John Day Company.
+## [52] Chang Kia-ngau [Zhang Jia’ao]. 1943. “China’s Struggle for Railroad Development.” New York: John Day Company.
 
 https://www.tandfonline.com/toc/rpaf20/17/3
 
@@ -542,7 +626,7 @@ https://www.tandfonline.com/toc/rpaf20/17/3
 
 **Limit:** Book body not consulted. The reference is a primary-source lead; specific content should remain attributed to Lippit/Edmonds until the original pages are read.
 
-## [46] Li Shutian [李书田]. 1929. “Beifang dagang zhi chubu jihua 北方大港之初步计划 [Preliminary plan for the Great Northern Port].” Huabei shuili yuekan 华北水利月刊 2, no. 9, pp. 122–23.
+## [53] Li Shutian [李书田]. 1929. “Beifang dagang zhi chubu jihua 北方大港之初步计划 [Preliminary plan for the Great Northern Port].” Huabei shuili yuekan 华北水利月刊 2, no. 9, pp. 122–23.
 
 https://openrivers.lib.umn.edu/article/river-conservancy-and-the-undetermined-future-of-the-port-of-tianjin/
 
@@ -554,7 +638,7 @@ https://openrivers.lib.umn.edu/article/river-conservancy-and-the-undetermined-fu
 
 **Limit:** Cite as cited in Li until primary pages are obtained. URL points to the consulted secondary source.
 
-## [47] Unsigned. 1932. “Beifang dagang gongzuo tingdun 北方大港工作的停顿 [Stoppage of Great Northern Port work].” Shen Bao 申报, 28 May 1932.
+## [54] Unsigned. 1932. “Beifang dagang gongzuo tingdun 北方大港工作的停顿 [Stoppage of Great Northern Port work].” Shen Bao 申报, 28 May 1932.
 
 https://openrivers.lib.umn.edu/article/river-conservancy-and-the-undetermined-future-of-the-port-of-tianjin/
 
