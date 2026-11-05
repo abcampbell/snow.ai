@@ -1,4 +1,4 @@
-# The Sun Yat-sen Ledger — bibliography v013
+# The Sun Yat-sen Ledger — bibliography v014
 
 Bibliographic records and access notes, updated 5 November 2026. Sources consulted only at abstract/metadata level are marked. Archival leads are not represented as inspected originals.
 
@@ -506,7 +506,19 @@ https://www.nea.gov.cn/20250221/e10f363cabe3458aaf78ba4558970054/c.html
 
 **Limit:** National installed capacity is wider in geography and technology than Sun’s 1924 regional river-power estimate.
 
-## [43] National Railway Administration, China. 2026. “国家铁路局发布《2025年铁道统计公报》 [Release of the 2025 railway statistical communiqué].” Published 29 May 2026.
+## [43] National Energy Administration, Fujian regulatory office. 2010. “Ceremony marks national hydropower capacity exceeding 200 million kW.” Official retrospective, 27 August 2010; later migrated web address.
+
+https://fjb.nea.gov.cn/dtyw/hyxx/202311/t20231113_211083.html
+
+**Access:** Full text consulted.
+
+**Locator:** Section on China becoming the largest hydropower country; founding-era mainland capacity of 360,000 kW
+
+**Use:** A 0.36 GW founding-era mainland hydropower figure, shown alongside the lower historical estimate rather than silently choosing between them.
+
+**Limit:** A later institutional retrospective. It says founding-era rather than defining a precise end-1949 census; scope and dating differ across accounts.
+
+## [44] National Railway Administration, China. 2026. “国家铁路局发布《2025年铁道统计公报》 [Release of the 2025 railway statistical communiqué].” Published 29 May 2026.
 
 https://www.nra.gov.cn/xwzx/xwxx/xwlb/202605/t20260529_351348.shtml
 
@@ -518,7 +530,7 @@ https://www.nra.gov.cn/xwzx/xwxx/xwlb/202605/t20260529_351348.shtml
 
 **Limit:** The release text was available through the search index; direct retrieval encountered a redirect loop. Confirms endpoint totals, not execution of each proposed route.
 
-## [44] Office of the National Greening Commission, China. 2026. “2025年中国国土绿化状况公报 [Communiqué on China’s land greening in 2025].” National Forestry and Grassland Administration website, 12 March 2026.
+## [45] Office of the National Greening Commission, China. 2026. “2025年中国国土绿化状况公报 [Communiqué on China’s land greening in 2025].” National Forestry and Grassland Administration website, 12 March 2026.
 
 https://www.forestry.gov.cn/lyj/1/lcdt/20260312/662822.html
 
@@ -530,7 +542,19 @@ https://www.forestry.gov.cn/lyj/1/lcdt/20260312/662822.html
 
 **Limit:** National inventory cover does not establish restoration of a particular watershed. This observation is not added to the fixed v009 composite.
 
-## [45] US Army Corps of Engineers, Institute for Water Resources. n.d.. “Coastal Navigation Fast Facts.” Value to the Nation.
+## [46] Party History Research Centre of the CPC Central Committee. n.d.. “Chronicle of the Communist Party of China: 1976.” Official chronicle, authorized reproduction on People's Daily CPC history website.
+
+https://cpc.people.com.cn/GB/64162/64164/4416105.html
+
+**Access:** Full text consulted.
+
+**Locator:** Final annual economic summary; steel output 20.46 million tonnes
+
+**Use:** Checks the approximate 20.5-million-tonne 1976 steel observation used in the foundations comparison.
+
+**Limit:** An official retrospective chronology. The quantitative check does not endorse its political interpretation or isolate the causes of growth.
+
+## [47] US Army Corps of Engineers, Institute for Water Resources. n.d.. “Coastal Navigation Fast Facts.” Value to the Nation.
 
 https://www.iwr.usace.army.mil/Missions/Value-to-the-Nation/Fast-Facts/Coastal-Navigation-Fast-Facts/
 
@@ -542,7 +566,7 @@ https://www.iwr.usace.army.mil/Missions/Value-to-the-Nation/Fast-Facts/Coastal-N
 
 **Limit:** The original tables behind every inherited US port anchor remain to be recovered.
 
-## [46] US Army Corps of Engineers, Waterborne Commerce Statistics Center. n.d.. “WCSC Navigation Infrastructure.” Institute for Water Resources.
+## [48] US Army Corps of Engineers, Waterborne Commerce Statistics Center. n.d.. “WCSC Navigation Infrastructure.” Institute for Water Resources.
 
 https://www.iwr.usace.army.mil/About/Technical-Centers/WCSC-Waterborne-Commerce-Statistics-Center/WCSC-Navigation-Infrastructure/
 
@@ -554,7 +578,7 @@ https://www.iwr.usace.army.mil/About/Technical-Centers/WCSC-Waterborne-Commerce-
 
 **Limit:** Boundary definitions do not reconcile the grouped Chinese ports with the inherited changing single-US-port comparator.
 
-## [47] US Census Bureau. n.d.. “Geography Program Glossary.” Geography Program.
+## [49] US Census Bureau. n.d.. “Geography Program Glossary.” Geography Program.
 
 https://www.census.gov/programs-surveys/geography/about/glossary.html
 
@@ -566,7 +590,7 @@ https://www.census.gov/programs-surveys/geography/about/glossary.html
 
 **Limit:** Does not supply a harmonized Tianjin–Los Angeles population history.
 
-## [48] US Energy Information Administration. n.d.. “Hydropower explained.” Energy Explained.
+## [50] US Energy Information Administration. n.d.. “Hydropower explained.” Energy Explained.
 
 https://www.eia.gov/energyexplained/hydropower/
 
@@ -578,7 +602,7 @@ https://www.eia.gov/energyexplained/hydropower/
 
 **Limit:** A terminology check, not certification of all historical capacity anchors.
 
-## [49] US Federal Highway Administration. 2025. “Public Road Length—2024: Miles by Type of Surface and Ownership/Functional System, National Summary.” Highway Statistics 2024, table HM-12, November 2025.
+## [51] US Federal Highway Administration. 2025. “Public Road Length—2024: Miles by Type of Surface and Ownership/Functional System, National Summary.” Highway Statistics 2024, table HM-12, November 2025.
 
 https://www.fhwa.dot.gov/policyinformation/statistics/2024/hm12.cfm
 
@@ -590,7 +614,19 @@ https://www.fhwa.dot.gov/policyinformation/statistics/2024/hm12.cfm
 
 **Limit:** A definition check; this table does not certify the whole inherited American historical series.
 
-## [50] Elisabeth Köll. 2019. “Railroads and the Transformation of China.” Cambridge, MA: Harvard University Press. ISBN 9780674368170.
+## [52] Yan Zhiyong. 2008. “Reflections on the development of hydropower in China.” Industry participant account reproduced by the Chinese Academy of Sciences new-energy website, 24 December 2008.
+
+https://newenergy.giec.cas.cn/hynxsdtrqshw/200812/t20081224_705275.html
+
+**Access:** Published extract or abstract consulted.
+
+**Locator:** Founding-era hydropower capacity paragraph: 163,000 kW; reform-era comparison: 17.28 GW in 1978
+
+**Use:** One published founding-era hydropower estimate underlying the lower end of the 1949 interval in the foundations figure.
+
+**Limit:** Consulted through the indexed extract after direct retrieval failed. Its 0.163 GW differs from the 0.36 GW mainland founding-era total in the 2010 energy-administration account; the difference is not resolved here.
+
+## [53] Elisabeth Köll. 2019. “Railroads and the Transformation of China.” Cambridge, MA: Harvard University Press. ISBN 9780674368170.
 
 https://www.hup.harvard.edu/books/9780674368170
 
@@ -602,7 +638,7 @@ https://www.hup.harvard.edu/books/9780674368170
 
 **Limit:** Bibliographic record and publisher description verified; the complete book was not read for this edition.
 
-## [51] Margherita Zanasi. 2006. “Saving the Nation: Economic Modernity in Republican China.” Chicago: University of Chicago Press. ISBN 9780226978734. DOI: 10.7208/chicago/9780226978741.001.0001.
+## [54] Margherita Zanasi. 2006. “Saving the Nation: Economic Modernity in Republican China.” Chicago: University of Chicago Press. ISBN 9780226978734. DOI: 10.7208/chicago/9780226978741.001.0001.
 
 https://academic.oup.com/chicago-scholarship-online/book/18277
 
@@ -614,7 +650,7 @@ https://academic.oup.com/chicago-scholarship-online/book/18277
 
 **Limit:** Catalogued as further reading. Detailed claims from the full book are not represented as verified here.
 
-## [52] Chang Kia-ngau [Zhang Jia’ao]. 1943. “China’s Struggle for Railroad Development.” New York: John Day Company.
+## [55] Chang Kia-ngau [Zhang Jia’ao]. 1943. “China’s Struggle for Railroad Development.” New York: John Day Company.
 
 https://www.tandfonline.com/toc/rpaf20/17/3
 
@@ -626,7 +662,7 @@ https://www.tandfonline.com/toc/rpaf20/17/3
 
 **Limit:** Book body not consulted. The reference is a primary-source lead; specific content should remain attributed to Lippit/Edmonds until the original pages are read.
 
-## [53] Li Shutian [李书田]. 1929. “Beifang dagang zhi chubu jihua 北方大港之初步计划 [Preliminary plan for the Great Northern Port].” Huabei shuili yuekan 华北水利月刊 2, no. 9, pp. 122–23.
+## [56] Li Shutian [李书田]. 1929. “Beifang dagang zhi chubu jihua 北方大港之初步计划 [Preliminary plan for the Great Northern Port].” Huabei shuili yuekan 华北水利月刊 2, no. 9, pp. 122–23.
 
 https://openrivers.lib.umn.edu/article/river-conservancy-and-the-undetermined-future-of-the-port-of-tianjin/
 
@@ -638,7 +674,7 @@ https://openrivers.lib.umn.edu/article/river-conservancy-and-the-undetermined-fu
 
 **Limit:** Cite as cited in Li until primary pages are obtained. URL points to the consulted secondary source.
 
-## [54] Unsigned. 1932. “Beifang dagang gongzuo tingdun 北方大港工作的停顿 [Stoppage of Great Northern Port work].” Shen Bao 申报, 28 May 1932.
+## [57] Unsigned. 1932. “Beifang dagang gongzuo tingdun 北方大港工作的停顿 [Stoppage of Great Northern Port work].” Shen Bao 申报, 28 May 1932.
 
 https://openrivers.lib.umn.edu/article/river-conservancy-and-the-undetermined-future-of-the-port-of-tianjin/
 

@@ -1226,6 +1226,35 @@
     }
   },
   {
+    "id": "nea2010-hydro",
+    "type": "webpage",
+    "title": "Ceremony marks national hydropower capacity exceeding 200 million kW",
+    "author": [
+      {
+        "literal": "National Energy Administration, Fujian regulatory office"
+      }
+    ],
+    "container-title": "Official retrospective, 27 August 2010; later migrated web address",
+    "URL": "https://fjb.nea.gov.cn/dtyw/hyxx/202311/t20231113_211083.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          5
+        ]
+      ]
+    },
+    "note": "Full text consulted. A later institutional retrospective. It says founding-era rather than defining a precise end-1949 census; scope and dating differ across accounts.",
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    }
+  },
+  {
     "id": "nra2025",
     "type": "webpage",
     "title": "国家铁路局发布《2025年铁道统计公报》 [Release of the 2025 railway statistical communiqué]",
@@ -1282,6 +1311,28 @@
         ]
       ]
     }
+  },
+  {
+    "id": "cpc1976-statistics",
+    "type": "webpage",
+    "title": "Chronicle of the Communist Party of China: 1976",
+    "author": [
+      {
+        "literal": "Party History Research Centre of the CPC Central Committee"
+      }
+    ],
+    "container-title": "Official chronicle, authorized reproduction on People's Daily CPC history website",
+    "URL": "https://cpc.people.com.cn/GB/64162/64164/4416105.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          5
+        ]
+      ]
+    },
+    "note": "Full text consulted. An official retrospective chronology. The quantitative check does not endorse its political interpretation or isolate the causes of growth."
   },
   {
     "id": "usacetons",
@@ -1396,6 +1447,35 @@
       "date-parts": [
         [
           2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "yan2008-hydro",
+    "type": "webpage",
+    "title": "Reflections on the development of hydropower in China",
+    "author": [
+      {
+        "literal": "Yan Zhiyong"
+      }
+    ],
+    "container-title": "Industry participant account reproduced by the Chinese Academy of Sciences new-energy website, 24 December 2008",
+    "URL": "https://newenergy.giec.cas.cn/hynxsdtrqshw/200812/t20081224_705275.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          5
+        ]
+      ]
+    },
+    "note": "Published extract or abstract consulted. Consulted through the indexed extract after direct retrieval failed. Its 0.163 GW differs from the 0.36 GW mainland founding-era total in the 2010 energy-administration account; the difference is not resolved here.",
+    "issued": {
+      "date-parts": [
+        [
+          2008
         ]
       ]
     }
