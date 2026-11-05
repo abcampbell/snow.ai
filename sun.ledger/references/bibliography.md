@@ -1,4 +1,4 @@
-# The Sun Yat-sen Ledger — bibliography v012
+# The Sun Yat-sen Ledger — bibliography v013
 
 Bibliographic records and access notes, updated 5 November 2026. Sources consulted only at abstract/metadata level are marked. Archival leads are not represented as inspected originals.
 
