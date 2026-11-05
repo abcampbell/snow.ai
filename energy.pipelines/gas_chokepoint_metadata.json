@@ -1,0 +1,4541 @@
+{
+  "generated_at": "2026-11-05T01:00:40.725806+00:00",
+  "universe": [
+    "ET",
+    "KMI",
+    "TRGP",
+    "LNG",
+    "EQT",
+    "KNTK",
+    "WMB",
+    "NEXT",
+    "VG",
+    "EXE",
+    "CTRA",
+    "MPLX",
+    "EPD",
+    "WES",
+    "OKE",
+    "GEV",
+    "VST",
+    "FLNG",
+    "AR",
+    "RRC",
+    "NFE",
+    "CRK",
+    "AM",
+    "KGS",
+    "USAC",
+    "AROC",
+    "NGL",
+    "HESM",
+    "CNX",
+    "KRP",
+    "BSM",
+    "DTM",
+    "PAGP",
+    "PAA",
+    "LBRT",
+    "ACDC"
+  ],
+  "core_20": [
+    "ET",
+    "KMI",
+    "TRGP",
+    "LNG",
+    "EQT",
+    "KNTK",
+    "WMB",
+    "NEXT",
+    "VG",
+    "EXE",
+    "CTRA",
+    "MPLX",
+    "EPD",
+    "WES",
+    "OKE",
+    "GEV",
+    "VST",
+    "FLNG",
+    "AR",
+    "RRC"
+  ],
+  "small_cap_leverage_universe": [
+    "NFE",
+    "CRK",
+    "AM",
+    "KGS",
+    "USAC",
+    "AROC",
+    "NGL",
+    "HESM",
+    "CNX",
+    "KRP",
+    "BSM",
+    "DTM",
+    "PAGP",
+    "PAA",
+    "LBRT",
+    "ACDC"
+  ],
+  "market_tickers": {
+    "hh": "NG=F",
+    "jkm": "JKM=F",
+    "ttf_eur_mwh": "TTF=F",
+    "brent": "BZ=F",
+    "wti": "CL=F",
+    "xle": "XLE",
+    "xop": "XOP",
+    "eurusd": "EURUSD=X"
+  },
+  "notes": [
+    "Yahoo market/fundamental proxies plus the exact existing Rose-stored Yahoo TTF history; no Bloomberg, broker or account data used.",
+    "The TTF daily-history gap after July2 is not filled. Latest TTF quote is Nov4, but TTF beta samples end July2; scores are provisional.",
+    "Quote times, observation dates, annual periods, latest vendor quarter and release dates are distinct.",
+    "Primary issuer releases supplied separately verify selected results/distributions; they are not silently substituted into vendor scoring fields.",
+    "Legacy core-focus flags are research-universe labels, not statements about current account holdings."
+  ],
+  "outputs": [
+    "gas_chokepoint_analytics.csv",
+    "gas_spread_series.csv"
+  ],
+  "as_of_cash_session": "2026-11-04",
+  "retrieved_at_utc": "2026-11-05T01:00:40.807406+00:00",
+  "price_adjustment": "Yahoo auto_adjust=True; regular-session daily equity closes",
+  "intended_end_exclusive": "2026-11-05",
+  "prices": {
+    "ET": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "KMI": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "TRGP": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "LNG": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "EQT": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "KNTK": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-11-13",
+      "observations": 2004,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "WMB": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "NEXT": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "VG": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2025-01-24",
+      "observations": 448,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "EXE": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2021-02-10",
+      "observations": 1441,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "CTRA": {
+      "last_observation": null,
+      "first_observation": null,
+      "observations": 0,
+      "age_calendar_days": null,
+      "status": "price_unavailable"
+    },
+    "MPLX": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "EPD": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "WES": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "OKE": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "GEV": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2024-03-27",
+      "observations": 655,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "VST": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "FLNG": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2019-06-17",
+      "observations": 1858,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "AR": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "RRC": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "NFE": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2019-01-31",
+      "observations": 1952,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "CRK": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "AM": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "KGS": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2023-06-29",
+      "observations": 842,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "USAC": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "AROC": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "NGL": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "HESM": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "CNX": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "KRP": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "BSM": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "DTM": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2021-07-01",
+      "observations": 1343,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "PAGP": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "PAA": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "LBRT": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-11",
+      "observations": 2216,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "ACDC": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2022-05-13",
+      "observations": 1124,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "NG=F": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2226,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "JKM=F": {
+      "last_observation": "2026-11-03",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 1,
+      "status": "provider_lag"
+    },
+    "TTF=F": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2139,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "BZ=F": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2226,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "CL=F": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2225,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "XLE": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "XOP": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-02",
+      "observations": 2223,
+      "age_calendar_days": 0,
+      "status": "current"
+    },
+    "EURUSD=X": {
+      "last_observation": "2026-11-04",
+      "first_observation": "2018-01-01",
+      "observations": 2302,
+      "age_calendar_days": 0,
+      "status": "current"
+    }
+  },
+  "fundamentals": {
+    "ET": {
+      "retrieved_at_utc": "2026-11-05T00:49:06.129366+00:00",
+      "provider_name": "Energy Transfer LP",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:00+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-03T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-03T13:30:00+00:00",
+      "dividend_rate_vendor": 1.37,
+      "dividend_yield_vendor_as_reported": 6.8,
+      "trailing_annual_dividend_rate_vendor": 0.335,
+      "ex_dividend_date_utc": "2026-11-06T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-07T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.34,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.859,
+      "error": null
+    },
+    "KMI": {
+      "retrieved_at_utc": "2026-11-05T00:49:06.825705+00:00",
+      "provider_name": "Kinder Morgan, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2027-01-27T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2027-01-27T21:00:00+00:00",
+      "dividend_rate_vendor": 1.19,
+      "dividend_yield_vendor_as_reported": 3.62,
+      "trailing_annual_dividend_rate_vendor": 1.185,
+      "ex_dividend_date_utc": "2026-11-02T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-11-02T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.298,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.093,
+      "error": null
+    },
+    "TRGP": {
+      "retrieved_at_utc": "2026-11-05T00:49:07.409835+00:00",
+      "provider_name": "Targa Resources Corp.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-05T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-05T13:30:00+00:00",
+      "dividend_rate_vendor": 5.0,
+      "dividend_yield_vendor_as_reported": 1.67,
+      "trailing_annual_dividend_rate_vendor": 4.5,
+      "ex_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_value_vendor": 1.25,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.042,
+      "error": null
+    },
+    "LNG": {
+      "retrieved_at_utc": "2026-11-05T00:49:08.036055+00:00",
+      "provider_name": "Cheniere Energy, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-29T12:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-29T12:30:00+00:00",
+      "dividend_rate_vendor": 2.5,
+      "dividend_yield_vendor_as_reported": 0.8,
+      "trailing_annual_dividend_rate_vendor": 2.29,
+      "ex_dividend_date_utc": "2026-11-09T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-10T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.555,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.399,
+      "error": null
+    },
+    "EQT": {
+      "retrieved_at_utc": "2026-11-05T00:49:08.617397+00:00",
+      "provider_name": "EQT Corporation",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:04:44+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-27T20:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-27T20:00:00+00:00",
+      "dividend_rate_vendor": 0.68,
+      "dividend_yield_vendor_as_reported": 1.25,
+      "trailing_annual_dividend_rate_vendor": 0.66,
+      "ex_dividend_date_utc": "2026-11-04T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-05T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.165,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": -0.081,
+      "error": null
+    },
+    "KNTK": {
+      "retrieved_at_utc": "2026-11-05T00:49:09.221208+00:00",
+      "provider_name": "Kinetik Holdings Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-04T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-04T21:00:00+00:00",
+      "dividend_rate_vendor": 3.24,
+      "dividend_yield_vendor_as_reported": 5.97,
+      "trailing_annual_dividend_rate_vendor": 3.21,
+      "ex_dividend_date_utc": "2026-10-23T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-23T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.81,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.363,
+      "error": null
+    },
+    "WMB": {
+      "retrieved_at_utc": "2026-11-05T00:49:09.774623+00:00",
+      "provider_name": "The Williams Companies, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-02T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-02T21:00:00+00:00",
+      "dividend_rate_vendor": 2.1,
+      "dividend_yield_vendor_as_reported": 2.9,
+      "trailing_annual_dividend_rate_vendor": 2.075,
+      "ex_dividend_date_utc": "2026-12-11T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-09-11T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.525,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.123,
+      "error": null
+    },
+    "NEXT": {
+      "retrieved_at_utc": "2026-11-05T00:49:10.285991+00:00",
+      "provider_name": "NextDecade Corporation",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:01+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-29T12:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-29T12:30:00+00:00",
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": 0.0,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": null,
+      "last_dividend_date_utc": null,
+      "last_dividend_value_vendor": null,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": null,
+      "error": null
+    },
+    "VG": {
+      "retrieved_at_utc": "2026-11-05T00:49:10.878546+00:00",
+      "provider_name": "Venture Global, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-10T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-10T13:30:00+00:00",
+      "dividend_rate_vendor": 0.16,
+      "dividend_yield_vendor_as_reported": 1.23,
+      "trailing_annual_dividend_rate_vendor": 0.07,
+      "ex_dividend_date_utc": "2026-09-15T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-09-15T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.04,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.476,
+      "error": null
+    },
+    "EXE": {
+      "retrieved_at_utc": "2026-11-05T00:49:11.500300+00:00",
+      "provider_name": "Expand Energy Corporation",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:01+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-27T20:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-27T20:00:00+00:00",
+      "dividend_rate_vendor": 2.3,
+      "dividend_yield_vendor_as_reported": 2.56,
+      "trailing_annual_dividend_rate_vendor": 2.3,
+      "ex_dividend_date_utc": "2026-11-12T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-13T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.575,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.116,
+      "error": null
+    },
+    "CTRA": {
+      "retrieved_at_utc": "2026-11-05T00:49:12.093091+00:00",
+      "provider_name": null,
+      "currency": null,
+      "financial_currency": null,
+      "regular_quote_time_utc": null,
+      "most_recent_quarter": null,
+      "last_fiscal_year_end": null,
+      "earnings_timestamp_start_utc": null,
+      "earnings_timestamp_end_utc": null,
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": null,
+      "trailing_annual_dividend_rate_vendor": null,
+      "ex_dividend_date_utc": null,
+      "last_dividend_date_utc": null,
+      "last_dividend_value_vendor": null,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": null,
+      "error": null
+    },
+    "MPLX": {
+      "retrieved_at_utc": "2026-11-05T00:49:12.670863+00:00",
+      "provider_name": "MPLX LP",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2027-02-02T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2027-02-02T13:30:00+00:00",
+      "dividend_rate_vendor": 4.84,
+      "dividend_yield_vendor_as_reported": 8.22,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2026-11-06T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-07T00:00:00+00:00",
+      "last_dividend_value_vendor": 1.077,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.106,
+      "error": null
+    },
+    "EPD": {
+      "retrieved_at_utc": "2026-11-05T00:49:13.183693+00:00",
+      "provider_name": "Enterprise Products Partners L.P.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-29T12:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-29T12:30:00+00:00",
+      "dividend_rate_vendor": 2.24,
+      "dividend_yield_vendor_as_reported": 5.97,
+      "trailing_annual_dividend_rate_vendor": 2.22,
+      "ex_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.56,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.493,
+      "error": null
+    },
+    "WES": {
+      "retrieved_at_utc": "2026-11-05T00:49:13.724339+00:00",
+      "provider_name": "Western Midstream Partners, LP",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-04T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-04T21:00:00+00:00",
+      "dividend_rate_vendor": 3.72,
+      "dividend_yield_vendor_as_reported": 8.48,
+      "trailing_annual_dividend_rate_vendor": 3.68,
+      "ex_dividend_date_utc": "2026-11-02T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-11-02T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.93,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.3,
+      "error": null
+    },
+    "OKE": {
+      "retrieved_at_utc": "2026-11-05T00:49:14.242227+00:00",
+      "provider_name": "ONEOK, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-27T20:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-27T20:00:00+00:00",
+      "dividend_rate_vendor": 4.28,
+      "dividend_yield_vendor_as_reported": 4.66,
+      "trailing_annual_dividend_rate_vendor": 4.28,
+      "ex_dividend_date_utc": "2026-11-02T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-11-02T00:00:00+00:00",
+      "last_dividend_value_vendor": 1.07,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.443,
+      "error": null
+    },
+    "GEV": {
+      "retrieved_at_utc": "2026-11-05T00:49:14.735681+00:00",
+      "provider_name": "GE Vernova Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2027-01-27T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2027-01-27T13:30:00+00:00",
+      "dividend_rate_vendor": 2.0,
+      "dividend_yield_vendor_as_reported": 0.22,
+      "trailing_annual_dividend_rate_vendor": 2.0,
+      "ex_dividend_date_utc": "2026-10-27T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-27T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.5,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.268,
+      "error": null
+    },
+    "VST": {
+      "retrieved_at_utc": "2026-11-05T00:49:15.377703+00:00",
+      "provider_name": "Vistra Corp.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-06T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-06T13:30:00+00:00",
+      "dividend_rate_vendor": 0.92,
+      "dividend_yield_vendor_as_reported": 0.66,
+      "trailing_annual_dividend_rate_vendor": 0.91,
+      "ex_dividend_date_utc": "2026-12-22T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-09-21T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.23,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": -0.055,
+      "error": null
+    },
+    "FLNG": {
+      "retrieved_at_utc": "2026-11-05T00:49:16.012113+00:00",
+      "provider_name": "FLEX LNG Ltd.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-11T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-11T13:30:00+00:00",
+      "dividend_rate_vendor": 3.0,
+      "dividend_yield_vendor_as_reported": 10.98,
+      "trailing_annual_dividend_rate_vendor": 3.0,
+      "ex_dividend_date_utc": "2026-09-03T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-09-03T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.75,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.242,
+      "error": null
+    },
+    "AR": {
+      "retrieved_at_utc": "2026-11-05T00:49:16.543183+00:00",
+      "provider_name": "Antero Resources Corporation",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-28T20:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-28T20:00:00+00:00",
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": 0.0,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": null,
+      "last_dividend_date_utc": null,
+      "last_dividend_value_vendor": null,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.171,
+      "error": null
+    },
+    "RRC": {
+      "retrieved_at_utc": "2026-11-05T00:49:17.098103+00:00",
+      "provider_name": "Range Resources Corporation",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-27T20:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-27T20:00:00+00:00",
+      "dividend_rate_vendor": 0.4,
+      "dividend_yield_vendor_as_reported": 0.74,
+      "trailing_annual_dividend_rate_vendor": 0.39,
+      "ex_dividend_date_utc": "2026-09-11T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-09-11T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.1,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.197,
+      "error": null
+    },
+    "NFE": {
+      "retrieved_at_utc": "2026-11-05T00:49:17.601263+00:00",
+      "provider_name": "New Fortress Energy Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:00+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-09T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-09T21:00:00+00:00",
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": 0.0,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2024-09-13T00:00:00+00:00",
+      "last_dividend_date_utc": "2024-09-13T00:00:00+00:00",
+      "last_dividend_value_vendor": 5.0,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.027,
+      "error": null
+    },
+    "CRK": {
+      "retrieved_at_utc": "2026-11-05T00:49:18.226994+00:00",
+      "provider_name": "Comstock Resources, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-04T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-04T21:00:00+00:00",
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": 0.0,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2023-11-30T00:00:00+00:00",
+      "last_dividend_date_utc": "2023-11-30T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.125,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": -0.252,
+      "error": null
+    },
+    "AM": {
+      "retrieved_at_utc": "2026-11-05T00:49:18.750675+00:00",
+      "provider_name": "Antero Midstream Corporation",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-28T20:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-28T20:00:00+00:00",
+      "dividend_rate_vendor": 0.9,
+      "dividend_yield_vendor_as_reported": 4.3,
+      "trailing_annual_dividend_rate_vendor": 0.9,
+      "ex_dividend_date_utc": "2026-10-28T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-28T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.225,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.12,
+      "error": null
+    },
+    "KGS": {
+      "retrieved_at_utc": "2026-11-05T00:49:19.253128+00:00",
+      "provider_name": "Kodiak Gas Services, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-09T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-09T13:30:00+00:00",
+      "dividend_rate_vendor": 1.96,
+      "dividend_yield_vendor_as_reported": 4.21,
+      "trailing_annual_dividend_rate_vendor": 1.96,
+      "ex_dividend_date_utc": "2026-08-17T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-17T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.49,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.211,
+      "error": null
+    },
+    "USAC": {
+      "retrieved_at_utc": "2026-11-05T00:49:19.699540+00:00",
+      "provider_name": "USA Compression Partners, LP",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:00+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-03T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-03T13:30:00+00:00",
+      "dividend_rate_vendor": 2.1,
+      "dividend_yield_vendor_as_reported": 8.18,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2026-10-26T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-26T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.525,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.368,
+      "error": null
+    },
+    "AROC": {
+      "retrieved_at_utc": "2026-11-05T00:49:20.126840+00:00",
+      "provider_name": "Archrock, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-02T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-02T21:00:00+00:00",
+      "dividend_rate_vendor": 0.92,
+      "dividend_yield_vendor_as_reported": 2.93,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2026-11-03T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-11-03T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.23,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": -0.03,
+      "error": null
+    },
+    "NGL": {
+      "retrieved_at_utc": "2026-11-05T00:49:20.602471+00:00",
+      "provider_name": "NGL Energy Partners LP",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2026-03-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-05T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-05T21:00:00+00:00",
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": 0.0,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2020-11-05T00:00:00+00:00",
+      "last_dividend_date_utc": "2020-11-05T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.1,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.591,
+      "error": null
+    },
+    "HESM": {
+      "retrieved_at_utc": "2026-11-05T00:49:21.170885+00:00",
+      "provider_name": "Hess Midstream LP",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-30T12:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-30T12:30:00+00:00",
+      "dividend_rate_vendor": 3.19,
+      "dividend_yield_vendor_as_reported": 9.77,
+      "trailing_annual_dividend_rate_vendor": 3.087,
+      "ex_dividend_date_utc": "2026-11-05T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-06T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.789,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": -0.037,
+      "error": null
+    },
+    "CNX": {
+      "retrieved_at_utc": "2026-11-05T00:49:21.642132+00:00",
+      "provider_name": "CNX Resources Corporation",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2027-01-28T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2027-01-28T13:30:00+00:00",
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": 0.0,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2016-02-11T00:00:00+00:00",
+      "last_dividend_date_utc": "2016-02-11T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.008333,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": -0.07,
+      "error": null
+    },
+    "KRP": {
+      "retrieved_at_utc": "2026-11-05T00:49:22.099230+00:00",
+      "provider_name": "Kimbell Royalty Partners, LP",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-05T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-05T13:30:00+00:00",
+      "dividend_rate_vendor": 1.6,
+      "dividend_yield_vendor_as_reported": 9.8,
+      "trailing_annual_dividend_rate_vendor": 1.6,
+      "ex_dividend_date_utc": "2026-08-17T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-17T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.47,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.378,
+      "error": null
+    },
+    "BSM": {
+      "retrieved_at_utc": "2026-11-05T00:49:22.595555+00:00",
+      "provider_name": "Black Stone Minerals, L.P.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-02T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-02T21:00:00+00:00",
+      "dividend_rate_vendor": 1.22,
+      "dividend_yield_vendor_as_reported": 8.28,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": "2026-11-06T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-08-06T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.32,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.132,
+      "error": null
+    },
+    "DTM": {
+      "retrieved_at_utc": "2026-11-05T00:49:23.036802+00:00",
+      "provider_name": "DT Midstream, Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:02+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-10-29T12:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-10-29T12:30:00+00:00",
+      "dividend_rate_vendor": 3.52,
+      "dividend_yield_vendor_as_reported": 2.87,
+      "trailing_annual_dividend_rate_vendor": 3.46,
+      "ex_dividend_date_utc": "2026-12-15T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-09-21T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.88,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.07,
+      "error": null
+    },
+    "PAGP": {
+      "retrieved_at_utc": "2026-11-05T00:49:23.531199+00:00",
+      "provider_name": "Plains GP Holdings, L.P.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:00+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-06T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-06T13:30:00+00:00",
+      "dividend_rate_vendor": 1.67,
+      "dividend_yield_vendor_as_reported": 6.05,
+      "trailing_annual_dividend_rate_vendor": 1.633,
+      "ex_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.418,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.663,
+      "error": null
+    },
+    "PAA": {
+      "retrieved_at_utc": "2026-11-05T00:49:23.981790+00:00",
+      "provider_name": "Plains All American Pipeline, L.P.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:01+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-06T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-06T13:30:00+00:00",
+      "dividend_rate_vendor": 1.67,
+      "dividend_yield_vendor_as_reported": 6.46,
+      "trailing_annual_dividend_rate_vendor": 1.633,
+      "ex_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-10-30T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.418,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.663,
+      "error": null
+    },
+    "LBRT": {
+      "retrieved_at_utc": "2026-11-05T00:49:24.446131+00:00",
+      "provider_name": "Liberty Energy Inc.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:03+00:00",
+      "most_recent_quarter": "2026-09-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2027-01-27T21:00:00+00:00",
+      "earnings_timestamp_end_utc": "2027-01-27T21:00:00+00:00",
+      "dividend_rate_vendor": 0.36,
+      "dividend_yield_vendor_as_reported": 2.43,
+      "trailing_annual_dividend_rate_vendor": 0.36,
+      "ex_dividend_date_utc": "2026-12-04T00:00:00+00:00",
+      "last_dividend_date_utc": "2026-09-04T00:00:00+00:00",
+      "last_dividend_value_vendor": 0.09,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": 0.263,
+      "error": null
+    },
+    "ACDC": {
+      "retrieved_at_utc": "2026-11-05T00:49:24.938545+00:00",
+      "provider_name": "ProFrac Holding Corp.",
+      "currency": "USD",
+      "financial_currency": "USD",
+      "regular_quote_time_utc": "2026-11-04T21:00:01+00:00",
+      "most_recent_quarter": "2026-06-30T00:00:00+00:00",
+      "last_fiscal_year_end": "2025-12-31T00:00:00+00:00",
+      "earnings_timestamp_start_utc": "2026-11-05T13:30:00+00:00",
+      "earnings_timestamp_end_utc": "2026-11-05T13:30:00+00:00",
+      "dividend_rate_vendor": null,
+      "dividend_yield_vendor_as_reported": 0.0,
+      "trailing_annual_dividend_rate_vendor": 0.0,
+      "ex_dividend_date_utc": null,
+      "last_dividend_date_utc": null,
+      "last_dividend_value_vendor": null,
+      "fundamentals_publication_date": null,
+      "growth_input_field": "revenueGrowth",
+      "growth_input_value": -0.008,
+      "error": null
+    }
+  },
+  "annual_cashflow": {
+    "ET": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 10149000000.0,
+      "capex": -6303000000.0,
+      "fcf": 3846000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "KMI": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 5917000000.0,
+      "capex": -3026000000.0,
+      "fcf": 2891000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "TRGP": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 3917400000.0,
+      "capex": -3333300000.0,
+      "fcf": 584100000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "LNG": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 5539000000.0,
+      "capex": -3078000000.0,
+      "fcf": 2461000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "EQT": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 5125952000.0,
+      "capex": -2288425000.0,
+      "fcf": 2837527000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "KNTK": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 604120000.0,
+      "capex": -529671000.0,
+      "fcf": 74449000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "WMB": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 5898000000.0,
+      "capex": -4999000000.0,
+      "fcf": 899000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "NEXT": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": -169397000.0,
+      "capex": -4846807000.0,
+      "fcf": -5016204000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "VG": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 6566000000.0,
+      "capex": -13365000000.0,
+      "fcf": -6799000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "EXE": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31"
+      ],
+      "cfo": 4575000000.0,
+      "capex": -2931000000.0,
+      "fcf": 1644000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "CTRA": {
+      "latest_period_end": null,
+      "periods": [],
+      "cfo": null,
+      "capex": null,
+      "fcf": null,
+      "status": "unavailable"
+    },
+    "MPLX": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 5909000000.0,
+      "capex": -1808000000.0,
+      "fcf": 4101000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "EPD": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 8585000000.0,
+      "capex": -5620000000.0,
+      "fcf": 2965000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "WES": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 2222625000.0,
+      "capex": -727991000.0,
+      "fcf": 1494634000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "OKE": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 5599000000.0,
+      "capex": -3152000000.0,
+      "fcf": 2447000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "GEV": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31"
+      ],
+      "cfo": 4987000000.0,
+      "capex": -1277000000.0,
+      "fcf": 3710000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "VST": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 4070000000.0,
+      "capex": -2752000000.0,
+      "fcf": 1318000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "FLNG": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 140736000.0,
+      "capex": null,
+      "fcf": null,
+      "status": "partial_components_missing",
+      "capex_sign_review": false,
+      "missing_component_treatment": "No zero imputation; annual FCF and FCF/EV remain unavailable."
+    },
+    "AR": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 1630930000.0,
+      "capex": -387782000.0,
+      "fcf": 1243148000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "RRC": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 1171324000.0,
+      "capex": -638303000.0,
+      "fcf": 533021000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "NFE": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": -583382000.0,
+      "capex": -650811000.0,
+      "fcf": -1234193000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "CRK": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 899607000.0,
+      "capex": -1349280000.0,
+      "fcf": -449673000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "AM": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 932464000.0,
+      "capex": -162255000.0,
+      "fcf": 770209000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "KGS": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 599740000.0,
+      "capex": -315472000.0,
+      "fcf": 284268000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "USAC": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 394262000.0,
+      "capex": -117277000.0,
+      "fcf": 276985000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "AROC": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 622107000.0,
+      "capex": -502465000.0,
+      "fcf": 119642000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "NGL": {
+      "latest_period_end": "2026-03-31",
+      "periods": [
+        "2026-03-31",
+        "2025-03-31",
+        "2024-03-31",
+        "2023-03-31",
+        "2022-03-31"
+      ],
+      "cfo": 365953000.0,
+      "capex": -221278000.0,
+      "fcf": 144675000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "HESM": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 983800000.0,
+      "capex": -255600000.0,
+      "fcf": 728200000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "CNX": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 1028957000.0,
+      "capex": -494988000.0,
+      "fcf": 533969000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "KRP": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 246462000.0,
+      "capex": -223493000.0,
+      "fcf": 22969000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "BSM": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 310167000.0,
+      "capex": -119108000.0,
+      "fcf": 191059000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "DTM": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 867000000.0,
+      "capex": -426000000.0,
+      "fcf": 441000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "PAGP": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 2931000000.0,
+      "capex": -670000000.0,
+      "fcf": 2261000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "PAA": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 2936000000.0,
+      "capex": -643000000.0,
+      "fcf": 2293000000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "LBRT": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 609598000.0,
+      "capex": -595493000.0,
+      "fcf": 14105000.0,
+      "status": "available",
+      "capex_sign_review": false
+    },
+    "ACDC": {
+      "latest_period_end": "2025-12-31",
+      "periods": [
+        "2025-12-31",
+        "2024-12-31",
+        "2023-12-31",
+        "2022-12-31",
+        "2021-12-31"
+      ],
+      "cfo": 189500000.0,
+      "capex": -169900000.0,
+      "fcf": 19600000.0,
+      "status": "available",
+      "capex_sign_review": false
+    }
+  },
+  "regression_samples": {
+    "ET": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "KMI": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "TRGP": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "LNG": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "EQT": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "KNTK": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "WMB": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "NEXT": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "VG": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "EXE": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "CTRA": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "brent_ret.60": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "brent_ret.180": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "wti_ret.60": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "wti_ret.180": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "xle_ret.60": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "xle_ret.180": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "xop_ret.60": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      },
+      "xop_ret.180": {
+        "observations": 0,
+        "first_observation": null,
+        "last_observation": null
+      }
+    },
+    "MPLX": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "EPD": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "WES": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "OKE": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "GEV": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "VST": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "FLNG": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "AR": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "RRC": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "NFE": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "CRK": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "AM": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "KGS": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "USAC": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "AROC": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "NGL": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "HESM": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "CNX": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "KRP": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "BSM": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "DTM": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "PAGP": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "PAA": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "LBRT": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    },
+    "ACDC": {
+      "jkm_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-08-10",
+        "last_observation": "2026-11-03"
+      },
+      "jkm_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2026-02-09",
+        "last_observation": "2026-11-03"
+      },
+      "ttf_hh_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "ttf_hh_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.60": {
+        "observations": 60,
+        "first_observation": "2026-04-02",
+        "last_observation": "2026-07-02"
+      },
+      "jkm_ttf_spread_chg.180": {
+        "observations": 180,
+        "first_observation": "2025-10-06",
+        "last_observation": "2026-07-02"
+      },
+      "brent_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "brent_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "wti_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xle_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.60": {
+        "observations": 60,
+        "first_observation": "2026-08-11",
+        "last_observation": "2026-11-04"
+      },
+      "xop_ret.180": {
+        "observations": 180,
+        "first_observation": "2026-02-10",
+        "last_observation": "2026-11-04"
+      }
+    }
+  },
+  "ttf_history_recovery": {
+    "source": "Existing project Rose object backed by Yahoo TTF=F",
+    "rose_code": "usa.nat.gas.export.chokepoint.ttf.px.yahoo@snow",
+    "object_id": 60749592,
+    "actor": "snow",
+    "currency": "EUR",
+    "units": "EUR/MWh, per original gas-market mapping",
+    "stored_history_last_observation": "2026-07-02",
+    "new_yahoo_last_quote": "2026-11-04",
+    "unfilled_gap": "2026-07-03 through2026-11-03; no interpolation or carry-forward",
+    "nov4_quote_retained": true,
+    "historical_overlap_check": {
+      "rows": 2091,
+      "exact_within_1e_6": 2090,
+      "one_vendor_vintage_revision_abs": 0.02500152587890625
+    },
+    "source_readback_sha256": "40e5e5468e189082a689a8fb91888ee7f82250efd59055a17183827b285c7777",
+    "original_yahoo_cache_sha256": "45116db37ddbaf0c6680fbe445baefb2df6efda6a21cb6fc34a88c332278a41b",
+    "merged_cache_sha256": "0ee38f2ccce3d57d8a7d8f21286b9028d0dc8cf0e01861c04106ce6ffa491021",
+    "current_three_factor_model_complete": false,
+    "score_qualification": "TTF-beta observations endJuly2 under the original180valid-observation rule; current scores must be labelled provisional."
+  },
+  "methodology": {
+    "original_source_sha256": "262425bb790f9a616ed3e25342bf755e78e28df70e89b174db3de3fed70ffa00",
+    "sweet_spot_weights": {
+      "valuation": 0.3,
+      "growth": 0.2,
+      "spread": 0.2,
+      "reset": 0.2,
+      "not_extended": 0.1
+    },
+    "only_formula_endpoint_refresh": "YTD endpoint advanced from2026-04-24 to actual2026-11-04; named historical event windows retained.",
+    "growth": "Uses the same Yahoo revenueGrowth field; this is not independently verified as a forward forecast.",
+    "stale_data": "Universe retained; missing or over31calendar-day-old equity quotes are excluded from current scoring. No replacement ticker or price was inferred.",
+    "cashflow": "Original latest-annual CFO plus signed capex formula, divided by current EV. Period dates shown; not TTM FCF or issuer DCF."
+  },
+  "identity_events": [
+    {
+      "ticker": "CTRA",
+      "completed": "2026-05-07",
+      "successor": "DVN",
+      "share_exchange_ratio": 0.7,
+      "treatment": "Legacy row retained, no successor-price splice, excluded from current ranks.",
+      "source": "https://investors.devonenergy.com/investors/press-releases/press-release-details/2026/Devon-Energy-and-Coterra-Energy-Complete-Merger/"
+    },
+    {
+      "tickers": [
+        "EQT",
+        "RRC"
+      ],
+      "announced": "2026-10-26",
+      "status": "pending; issuer expectsQ1 2027subjectto conditions",
+      "treatment": "Both rows retained; no completed-merger assumption.",
+      "source": "https://ir.eqt.com/newsroom/news-releases/news-release-details/2026/EQT-Announces-Strategic-Acquisition-of-Range-Resources-Creating-Americas-Undisputed-Natural-Gas-Champion/default.aspx"
+    }
+  ],
+  "distribution_data_note": "Raw provider dividendYield is preserved as reported, not treated as a fractional yield or used in scoring. Displayed quarterly declared payments come from issuer releases; rates, record and pay dates are explicit.",
+  "primary_releases": [
+    {
+      "id": "kmi-q3",
+      "ticker": "KMI",
+      "kind": "results_and_dividend",
+      "release_date": "2026-10-21",
+      "period_end": "2026-09-30",
+      "title": "Kinder Morgan Q3 2026 results",
+      "url": "https://ir.kindermorgan.com/news/news-details/2026/Kinder-Morgan-Reports-Record-Third-Quarter-2026-Financial-Results/default.aspx",
+      "quarterly_payment_usd": 0.2975,
+      "payment_unit": "share",
+      "record_date": "2026-11-02",
+      "pay_date": "2026-11-16",
+      "web_primary_verified": true
+    },
+    {
+      "id": "et-q3",
+      "ticker": "ET",
+      "kind": "results",
+      "release_date": "2026-11-03",
+      "period_end": "2026-09-30",
+      "title": "Energy Transfer Q3 2026 results",
+      "url": "https://ir.energytransfer.com/news-releases/news-release-details/energy-transfer-reports-third-quarter-2026-results",
+      "web_primary_verified": true
+    },
+    {
+      "id": "et-distribution",
+      "ticker": "ET",
+      "kind": "distribution",
+      "release_date": "2026-10-22",
+      "period_end": "2026-09-30",
+      "title": "Energy Transfer Q3 distribution announcement",
+      "url": "https://ir.energytransfer.com/news-releases/news-release-details/energy-transfer-announces-twentieth-consecutive-increase",
+      "quarterly_payment_usd": 0.3425,
+      "payment_unit": "common unit",
+      "record_date": "2026-11-06",
+      "pay_date": "2026-11-19",
+      "web_primary_verified": true
+    },
+    {
+      "id": "lng-q3",
+      "ticker": "LNG",
+      "kind": "results_and_dividend",
+      "release_date": "2026-10-29",
+      "period_end": "2026-09-30",
+      "title": "Cheniere Q3 2026 results and guidance",
+      "url": "https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full",
+      "quarterly_payment_usd": 0.625,
+      "payment_unit": "share",
+      "record_date": "2026-11-09",
+      "pay_date": "2026-11-17",
+      "web_primary_verified": true
+    },
+    {
+      "id": "wmb-q3",
+      "ticker": "WMB",
+      "kind": "results",
+      "release_date": "2026-11-02",
+      "period_end": "2026-09-30",
+      "title": "Williams Q3 2026 results",
+      "url": "https://investor.williams.com/news-releases/news-release-details/williams-delivers-strong-third-quarter-2026-results",
+      "web_primary_verified": true
+    },
+    {
+      "id": "wmb-dividend",
+      "ticker": "WMB",
+      "kind": "dividend",
+      "release_date": "2026-10-27",
+      "period_end": null,
+      "title": "Williams quarterly dividend announcement",
+      "url": "https://investor.williams.com/news-releases/news-release-details/williams-announces-quarterly-cash-dividend-29",
+      "quarterly_payment_usd": 0.525,
+      "payment_unit": "share",
+      "record_date": "2026-12-11",
+      "pay_date": "2026-12-28",
+      "web_primary_verified": true
+    },
+    {
+      "id": "epd-distribution",
+      "ticker": "EPD",
+      "kind": "distribution",
+      "release_date": "2026-10-08",
+      "period_end": "2026-09-30",
+      "title": "Enterprise Q3 distribution announcement",
+      "url": "https://ir.enterpriseproducts.com/news-releases/news-release-details/enterprise-declares-quarterly-distribution-21",
+      "quarterly_payment_usd": 0.56,
+      "payment_unit": "common unit",
+      "record_date": "2026-10-30",
+      "pay_date": "2026-11-13",
+      "web_primary_verified": true
+    },
+    {
+      "id": "next-q3",
+      "ticker": "NEXT",
+      "kind": "business_update",
+      "release_date": "2026-10-29",
+      "period_end": "2026-09-30",
+      "title": "NextDecade Q3 2026 business update",
+      "url": "https://www.investors.next-decade.com/news-releases/news-release-details/nextdecade-provides-third-quarter-2026-business-update",
+      "web_primary_verified": true
+    },
+    {
+      "id": "exe-q3",
+      "ticker": "EXE",
+      "kind": "results",
+      "release_date": "2026-10-27",
+      "period_end": "2026-09-30",
+      "title": "Expand Energy Q3 2026 results",
+      "url": "https://investors.expandenergy.com/static-files/d528805a-395b-4885-adab-e7c059250225",
+      "web_primary_verified": true
+    },
+    {
+      "id": "eqt-q3",
+      "ticker": "EQT",
+      "kind": "results",
+      "release_date": "2026-10-27",
+      "period_end": "2026-09-30",
+      "title": "EQT Q3 2026 results",
+      "url": "https://ir.eqt.com/investor-relations/news/news-release-details/2026/EQT-Reports-Third-Quarter-2026-Results/default.aspx",
+      "web_primary_verified": true
+    },
+    {
+      "id": "eqt-rrc-deal",
+      "ticker": "EQT/RRC",
+      "kind": "pending_corporate_action",
+      "release_date": "2026-10-26",
+      "period_end": null,
+      "title": "EQT announces proposed Range acquisition",
+      "url": "https://ir.eqt.com/newsroom/news-releases/news-release-details/2026/EQT-Announces-Strategic-Acquisition-of-Range-Resources-Creating-Americas-Undisputed-Natural-Gas-Champion/default.aspx",
+      "web_primary_verified": true
+    },
+    {
+      "id": "lbrt-q3",
+      "ticker": "LBRT",
+      "kind": "results",
+      "release_date": "2026-10-21",
+      "period_end": "2026-09-30",
+      "title": "Liberty Energy Q3 2026 results",
+      "url": "https://investors.libertyenergy.com/news-and-events/press-releases/2026/10-21-2026-223015990",
+      "web_primary_verified": true
+    },
+    {
+      "id": "ctra-merger",
+      "ticker": "CTRA",
+      "kind": "completed_corporate_action",
+      "release_date": "2026-05-07",
+      "period_end": null,
+      "title": "Devon and Coterra complete merger",
+      "url": "https://investors.devonenergy.com/investors/press-releases/press-release-details/2026/Devon-Energy-and-Coterra-Energy-Complete-Merger/",
+      "web_primary_verified": true
+    }
+  ],
+  "source_field_note": "Legacy field forward_revenue_growth_yf stores Yahoo revenueGrowth. Input and clipping unchanged; label corrected to reported vendor growth.",
+  "fx_conversion_note": "Original TTF conversion: EUR/MWh times EURUSD divided by 3.412. Only FX is carried forward by the original calculation; TTF prices and missing TTF spread observations are never carried forward.",
+  "score_input_validity": {
+    "required_fields": [
+      "ev_to_ebitda_ttm",
+      "price_to_sales_ttm",
+      "net_debt_to_ebitda",
+      "fcf_yield_ev",
+      "forward_revenue_growth_yf",
+      "beta_jkm_hh_180d",
+      "beta_ttf_hh_180d",
+      "beta_brent_180d",
+      "dist_from_1y_high_pct",
+      "dist_from_5y_high_pct",
+      "ytd_return_2026",
+      "dist_from_1y_low_pct"
+    ],
+    "complete_field_rows": 29,
+    "input_exceptions": [
+      "NFE",
+      "ET",
+      "AR",
+      "FLNG",
+      "NEXT",
+      "AM"
+    ],
+    "headline_rule": "Highest original score among current rows with all required finite fields. This is input completeness, not financial-quality approval; all TTF-based scores remain provisional.",
+    "original_missingness_treatment": "Raw invalid/missing ratios remain n/a. The unchanged scoring formula replaces missing factor z-score contributions with neutral zero; it does not impute raw prices, EV, EBITDA or capex. Missing-component scores are retained for transparency but excluded from the complete-input headline.",
+    "ratio_sign_rules": "EV and EBITDA must be positive for EV/EBITDA; EV must be positive for annual FCF/EV. Negative annual FCF is a valid negative yield, not cheapness. Net cash may produce a valid negative net-debt ratio with positive EBITDA."
+  }
+}
