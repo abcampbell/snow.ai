@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Land to Own</title>
+<meta name="description" content="Every US county scored for resilience (heat and water stress in 2050, wildfire, floods and storms, community) against what an acre of farmland costs: best value, premium, budget and bad-value land.">
+<link rel="stylesheet" href="style.css?v=20261027">
+<style>
+  .rz { padding: 28px 20px 64px; }
+  .rz h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 5vw, 54px); line-height: 1.05; }
+  .rz .lede { color: var(--muted); max-width: 820px; margin-top: 10px; font-size: 15.5px; }
+  .rz-ctl { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-top: 20px; font: 12px var(--mono); color: var(--faint); }
+  .rz-ctl label { display: inline-flex; align-items: center; gap: 6px; }
+  .rz-ctl select, .rz-ctl input[type=search] { background: var(--panel); border: 1px solid var(--line-2); color: var(--text); border-radius: 6px; padding: 6px 8px; font: 12px var(--mono); }
+  .rz-ctl input[type=search] { width: 210px; }
+  .rz-ctl select:focus, .rz-ctl input:focus { outline: none; border-color: var(--accent); }
+  .rz-parts { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+  .rz-part { border: 1px solid var(--line-2); border-radius: 999px; padding: 4px 10px; color: var(--muted); cursor: pointer; font: 12px var(--sans); background: var(--panel); }
+  .rz-part input { display: none; }
+  .rz-part.on { color: var(--text); border-color: var(--accent); background: var(--accent-dim); }
+  .rz-key { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+  .rz-key i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rz-chart { position: relative; margin-top: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 8px 6px 4px; }
+  .rz-chart svg { display: block; width: 100%; height: auto; }
+  .rz-chart svg text { font-family: var(--mono); }
+  .rz-tip { position: absolute; z-index: 5; pointer-events: none; background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 8px; padding: 9px 11px; font-size: 12px;
+    width: 280px; box-shadow: 0 8px 24px rgba(0,0,0,.4); display: none; }
+  .rz-tip b { font-size: 13px; }
+  .rz-tip .m { color: var(--muted); font: 11.5px var(--mono); margin-top: 2px; }
+  .rz-bars { display: grid; grid-template-columns: 112px 28px 1fr; gap: 3px 8px; align-items: center; margin-top: 8px; font: 11px var(--mono); color: var(--muted); }
+  .rz-bars .v { color: var(--text); text-align: right; }
+  .rz-bars .bar { height: 5px; border-radius: 3px; background: var(--line); overflow: hidden; }
+  .rz-bars .bar i { display: block; height: 100%; background: var(--muted); border-radius: 3px; }
+  .rz-bars .raw { grid-column: 1 / -1; color: var(--faint); margin: -2px 0 2px; }
+  .rz-bars .off { opacity: .4; }
+  .rz-strip { margin-top: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 10px 6px 4px; position: relative; }
+  .rz-strip h3, .rz h2 { font: 500 11px var(--mono); color: var(--faint); letter-spacing: .08em; text-transform: uppercase; margin: 0 8px; }
+  .rz-strip svg { display: block; width: 100%; height: auto; }
+  .rz-sum { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 16px; }
+  .rz-sum .stat b { font-size: 19px; }
+  .rz-note { margin-top: 10px; color: var(--muted); font-size: 13.5px; max-width: 900px; }
+  .rz-card { margin-top: 16px; border: 1px solid var(--line-2); border-radius: 12px; background: var(--panel); padding: 14px 16px; display: none; }
+  .rz-card h4 { font: 600 16px var(--sans); }
+  .rz-card .acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .rz-card .acts a { border: 1px solid var(--line-2); border-radius: 6px; padding: 5px 10px; font: 12px var(--sans); color: var(--muted); }
+  .rz-card .acts a:hover { color: var(--text); border-color: var(--accent); text-decoration: none; }
+  .rz-card .rz-bars { max-width: 560px; grid-template-columns: 140px 30px 1fr; }
+  .rz-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 30px 0 10px; align-items: center; }
+  .rz-tab { border: 1px solid var(--line-2); background: var(--panel); color: var(--muted); border-radius: 6px; padding: 6px 11px; font: 12px var(--sans); cursor: pointer; }
+  .rz-tab.on { color: var(--text); border-color: var(--accent); }
+  .rz-tab small { font: 11px var(--mono); color: var(--faint); margin-left: 4px; }
+  .rz-tabs label { margin-left: auto; font: 12px var(--mono); color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
+  .rz-tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  .rz-tbl table { width: 100%; border-collapse: collapse; font: 12px var(--mono); }
+  .rz-tbl th { background: var(--panel-2); color: var(--faint); font-weight: 500; text-align: right; padding: 7px 9px; border-bottom: 1px solid var(--line); cursor: pointer; white-space: nowrap; user-select: none; }
+  .rz-tbl th.s { color: var(--text); }
+  .rz-tbl td { padding: 6px 9px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; cursor: pointer; font-variant-numeric: tabular-nums; }
+  .rz-tbl th:nth-child(-n+2), .rz-tbl td:nth-child(-n+2) { text-align: left; }
+  .rz-tbl tr:hover td, .rz-tbl tr.sel td { background: var(--panel-2); }
+  .rz-more { margin-top: 8px; font: 12px var(--mono); color: var(--faint); }
+  .rz-more button { background: none; border: 0; color: var(--accent); font: inherit; cursor: pointer; }
+  .rz-method { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; color: var(--muted); font-size: 13.5px; }
+  .rz-method h2 { margin: 0 0 8px; }
+  .rz-method p + p { margin-top: 8px; }
+  .rz-method ul { padding-left: 16px; } .rz-method li { margin: 4px 0; }
+  @media (max-width: 640px) { .rz { padding: 20px 16px 48px; } .rz-ctl input[type=search] { width: 100%; } .rz-tabs label { margin-left: 0; } }
+</style>
+</head>
+<body>
+<header class="topnav">
+  <div class="wrap">
+    <a class="brand" href="./">LAND<span>.</span>ENGINE</a>
+    <nav>
+      <a href="./#underwriter">Parcels</a>
+      <a href="region.html">Regions</a>
+      <a href="drive.html">The drive</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="resilience.html" style="color:var(--text)">Resilience</a>
+      <a href="nevada.html">Nevada</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap rz">
+  <div class="eyebrow">Resilience vs. price · every US county</div>
+  <h1>Best land to own</h1>
+  <p class="lede">The same test as “The World’s Best Land to Own” (Mediterranean regions, resilience against what a hectare costs), run on every US county from public data.
+    Resilience averages five scores, each a percentile among US counties: heat and water stress in 2050, wildfire, floods, storms and quakes, and how well the community recovers.
+    Price is USDA farmland. Dashed lines are the US medians, so each quadrant is relative to the rest of the country.</p>
+
+  <div class="rz-ctl">
+    <label>Highlight <select id="rzState"></select></label>
+    <label>Find <input type="search" id="rzFind" list="rzNames" placeholder="county, ST"></label>
+    <datalist id="rzNames"></datalist>
+    <span class="rz-parts" id="rzParts" title="Score from these parts"></span>
+    <span class="rz-key"><i style="background:var(--accent)"></i><span id="rzKeyName">Nevada</span> <i style="background:var(--faint);margin-left:8px"></i>other counties</span>
+  </div>
+
+  <div class="rz-chart" id="rzChart"><svg id="rzSvg" role="img" aria-label="Scatter of US counties: resilience score against farmland price per acre"></svg><div class="rz-tip" id="rzTip"></div></div>
+
+  <div class="rz-strip">
+    <h3>The post’s regions on the same price scale <span style="text-transform:none;letter-spacing:0">(their scores are the author’s own and aren’t comparable to ours, so price only)</span></h3>
+    <svg id="rzAbroad" role="img" aria-label="Farmland price per acre of the Mediterranean regions in the original chart"></svg>
+  </div>
+
+  <div class="rz-card" id="rzCard"></div>
+  <div class="rz-sum" id="rzSum"></div>
+  <p class="rz-note" id="rzNote"></p>
+
+  <div class="rz-tabs" id="rzTabs"></div>
+  <div class="rz-tbl"><table id="rzTbl"></table></div>
+  <div class="rz-more" id="rzMore"></div>
+
+  <div class="rz-method">
+    <div>
+      <h2>How the score is built</h2>
+      <p>Five parts, each ranked against every other county (100 = the most resilient county in the country, 0 = the least), then averaged. Toggle parts above to rescore.</p>
+      <ul>
+        <li><b>Heat 2050</b>: days a year above 95°F by mid-century (RCP4.5, LOCA-downscaled climate models), fewer is better.</li>
+        <li><b>Water 2050</b>: water stress in 2050 under business as usual (WRI Aqueduct 4.0, 0–5), area-weighted from watersheds to the county. Arid, low-use basins count as extremely stressed, as Aqueduct scores them.</li>
+        <li><b>Wildfire</b>: FEMA National Risk Index wildfire loss rate (expected annual loss over what's exposed), as a national percentile.</li>
+        <li><b>Floods, storms, quakes</b>: FEMA loss rates on buildings from inland and coastal flooding, hurricanes, earthquakes and tornadoes, summed.</li>
+        <li><b>Community</b>: FEMA's community resilience score (University of South Carolina BRIC): the social, economic and institutional capacity to recover.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>What's different from the original</h2>
+      <p>The original's five are climate in 2050, water stress, how safely a foreigner can own farmland, political stability and wildfire, scored by the author's own reading. Inside the US, ownership and stability barely vary, so floods/storms/quakes and community take their slots, and every score comes from data.</p>
+      <p>Community resilience scores remote rural counties low (fewer services, thinner institutions). Turn it off to see land on physical risk alone.</p>
+      <p>Prices: the original uses average farmland per hectare (Eurostat, CREA, USDA, others), read here off its log axis and converted at the ECB rate. Its Central Valley (~$13.6K/ac) matches USDA's Fresno, Tulare and Merced ($15.6–16.5K). Its Central Coast (~$38.5K/ac) is well above USDA's Monterey, San Luis Obispo and Santa Barbara ($12–21K), likely irrigated cropland.</p>
+    </div>
+    <div>
+      <h2>Sources</h2>
+      <ul>
+        <li>USDA NASS Census of Agriculture 2012 and 2022: farm real estate (land and buildings), $/acre by county</li>
+        <li>CMRA: Climate Mapping for Resilience and Adaptation, county projections (NOAA, USGCRP)</li>
+        <li>WRI Aqueduct 4.0 water risk data (2023), future annual, business as usual 2050</li>
+        <li>FEMA National Risk Index, <span id="rzNri">December 2025</span>: wildfire, inland and coastal flooding, hurricane, earthquake, tornado, community resilience</li>
+        <li>Original chart: @thealepalombo, “The World's Best Land to Own”</li>
+      </ul>
+      <p>Built by <code>region_data/build_us_resilience.py</code>. County figures are averages: a single parcel can sit well above or below its county (the <a href="nevada.html">Nevada finder</a> scores water, access and power parcel by parcel).</p>
+    </div>
+  </div>
+</main>
+
+<script>
+(async () => {
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const money = (v) => v == null ? "–" : v >= 1e6 ? `$${(v / 1e6).toFixed(1)}M` : v >= 1e4 ? `$${Math.round(v / 1e3)}K` : v >= 1e3 ? `$${(v / 1e3).toFixed(1)}K` : `$${Math.round(v)}`;
+  const median = (a) => { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const STATES = { AL: "Alabama", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida", GA: "Georgia", ID: "Idaho", IL: "Illinois",
+    IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri",
+    MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma",
+    OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington",
+    WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming", AK: "Alaska", HI: "Hawaii" };
+  const PARTS = [
+    { k: "heat", label: "Heat 2050", raw: (r) => `${Math.round(r.heat_days)} days a year above 95°F by 2050 (now ${Math.round(r.heat_now)})` },
+    { k: "water", label: "Water 2050", raw: (r) => `water stress ${r.ws.toFixed(1)} of 5 (${r.ws >= 4 ? "extremely high or arid" : r.ws >= 3 ? "high" : r.ws >= 2 ? "medium-high" : r.ws >= 1 ? "low-medium" : "low"})` },
+    { k: "fire", label: "Wildfire", raw: (r) => r.fire_pct ? `wildfire loss rate higher than ${Math.round(r.fire_pct)}% of counties` : "no wildfire losses modeled" },
+    { k: "haz", label: "Floods, storms, quakes", raw: (r) => `${(r.haz_lr * 100).toFixed(3)}% of building value lost a year, on average` },
+    { k: "comm", label: "Community", raw: () => "FEMA community resilience (BRIC)" },
+  ];
+  const QUAD = {
+    best: { label: "Best value", sub: "Resilient land, low price", fill: "var(--go-dim)", ink: "var(--go)" },
+    premium: { label: "Premium land", sub: "Resilient, already priced in", fill: "var(--info-dim)", ink: "var(--info)" },
+    budget: { label: "Budget land", sub: "Cheap, but more exposed", fill: "rgba(245, 184, 61, 0.07)", ink: "var(--caution)" },
+    bad: { label: "Bad value", sub: "High price, more exposed", fill: "var(--kill-dim)", ink: "var(--kill)" },
+  };
+
+  const D = await fetch("data/resilience/counties.json?v=20261110").then((r) => r.json());
+  const ci = Object.fromEntries(D.cols.map((c, i) => [c, i]));
+  const rows = D.rows.map((a) => ({ fips: a[ci.fips], name: a[ci.name], st: a[ci.st], lat: a[ci.lat], lon: a[ci.lon], p22: a[ci.p22], p12: a[ci.p12],
+    parts: { heat: a[ci.s_heat], water: a[ci.s_water], fire: a[ci.s_fire], haz: a[ci.s_haz], comm: a[ci.s_comm] },
+    heat_days: a[ci.heat_days], heat_now: a[ci.heat_now], ws: a[ci.ws], fire_pct: a[ci.fire_pct], haz_lr: a[ci.haz_lr] }));
+  for (const r of rows) r.cagr = r.p12 ? (Math.pow(r.p22 / r.p12, 1 / 10) - 1) * 100 : null;
+  if (D.nri_ver) $("rzNri").textContent = D.nri_ver;
+
+  const qs = new URLSearchParams(location.search);
+  const on = new Set((qs.get("parts") || "heat,water,fire,haz,comm").split(",").filter((k) => PARTS.some((p) => p.k === k)));
+  let hl = qs.get("st") || "NV", sel = null, tab = "best", sortK = "res", sortDir = -1, onlyHl = false, shown = 60, medRes = 50, medP = D.median_ppa;
+
+  function rescore() {
+    const ks = [...on];
+    for (const r of rows) r.res = ks.length ? ks.reduce((s, k) => s + r.parts[k], 0) / ks.length : 50;
+    medRes = median(rows.map((r) => r.res)); medP = median(rows.map((r) => r.p22));
+    for (const r of rows) r.q = r.res >= medRes ? (r.p22 < medP ? "best" : "premium") : (r.p22 < medP ? "budget" : "bad");
+  }
+
+  // ---------- controls ----------
+  const sts = [...new Set(rows.map((r) => r.st))].sort((a, b) => (STATES[a] || a).localeCompare(STATES[b] || b));
+  $("rzState").innerHTML = `<option value="">none</option>` + sts.map((s) => `<option value="${s}"${s === hl ? " selected" : ""}>${esc(STATES[s] || s)}</option>`).join("");
+  $("rzNames").innerHTML = rows.map((r) => `<option value="${esc(r.name)}, ${r.st}">`).join("");
+  $("rzParts").innerHTML = PARTS.map((p) => `<label class="rz-part${on.has(p.k) ? " on" : ""}"><input type="checkbox" value="${p.k}"${on.has(p.k) ? " checked" : ""}>${p.label}</label>`).join("");
+  $("rzParts").addEventListener("change", (e) => {
+    const k = e.target.value; e.target.checked ? on.add(k) : on.delete(k);
+    e.target.parentElement.classList.toggle("on", e.target.checked); update();
+  });
+  $("rzState").addEventListener("change", (e) => { hl = e.target.value; update(); });
+  $("rzFind").addEventListener("change", (e) => {
+    const v = e.target.value.trim().toLowerCase(), r = rows.find((x) => `${x.name}, ${x.st}`.toLowerCase() === v) || rows.find((x) => `${x.name}, ${x.st}`.toLowerCase().startsWith(v));
+    if (r) { hl = r.st; $("rzState").value = r.st; select(r); update(); }
+  });
+
+  // ---------- chart ----------
+  const W = 1100, H = 600, M = { l: 50, r: 18, t: 12, b: 44 };
+  const PMIN = 300, PMAX = 300000;
+  const lx0 = Math.log10(PMIN), lx1 = Math.log10(PMAX);
+  const X = (v) => M.l + (Math.log10(Math.min(PMAX, Math.max(PMIN, v))) - lx0) / (lx1 - lx0) * (W - M.l - M.r);
+  const Y = (v) => M.t + (100 - v) / 100 * (H - M.t - M.b);
+  const TICKS = [300, 1000, 3000, 10000, 30000, 100000, 300000];
+  const svg = $("rzSvg"); svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+
+  function labelBoxes(pts, fit) {  // greedy label placement: right, left, above, below; skip when all collide
+    const placed = [], out = [];
+    for (const p of pts) {
+      const w = p.text.length * 6.4 + 4, h = 12;
+      for (const [dx, dy, anchor] of [[8, 4, "start"], [-8, 4, "end"], [0, -9, "middle"], [0, 15, "middle"]]) {
+        const x0 = anchor === "start" ? p.x + dx : anchor === "end" ? p.x + dx - w : p.x - w / 2, y0 = p.y + dy - 10;
+        const b = { x0, y0, x1: x0 + w, y1: y0 + h };
+        if (!fit(b) || placed.some((q) => b.x0 < q.x1 && b.x1 > q.x0 && b.y0 < q.y1 && b.y1 > q.y0)) continue;
+        placed.push(b); out.push({ ...p, tx: p.x + dx, ty: p.y + dy, anchor }); break;
+      }
+    }
+    return out;
+  }
+
+  function drawChart() {
+    const mx = X(medP), my = Y(medRes), x0 = M.l, x1 = W - M.r, y0 = M.t, y1 = H - M.b;
+    const quad = (q, a, b, c, d) => `<rect x="${a}" y="${b}" width="${c - a}" height="${d - b}" fill="${QUAD[q].fill}"/>`;
+    let s = quad("best", x0, y0, mx, my) + quad("premium", mx, y0, x1, my) + quad("budget", x0, my, mx, y1) + quad("bad", mx, my, x1, y1);
+    for (const v of [0, 25, 50, 75, 100]) s += `<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${x0 - 8}" y="${Y(v) + 4}" text-anchor="end" font-size="11" fill="var(--faint)">${v}</text>`;
+    for (const t of TICKS) s += `<line x1="${X(t)}" x2="${X(t)}" y1="${y0}" y2="${y1}" stroke="var(--line)" stroke-width="1"/><text x="${X(t)}" y="${y1 + 17}" text-anchor="middle" font-size="11" fill="var(--faint)">${money(t)}</text>`;
+    s += `<line x1="${mx}" x2="${mx}" y1="${y0}" y2="${y1}" stroke="var(--muted)" stroke-dasharray="4 4" stroke-width="1"/><line x1="${x0}" x2="${x1}" y1="${my}" y2="${my}" stroke="var(--muted)" stroke-dasharray="4 4" stroke-width="1"/>`;
+    s += `<text x="${(x0 + x1) / 2}" y="${H - 6}" text-anchor="middle" font-size="12" fill="var(--muted)">Farmland price per acre, 2022 (log scale) →</text>`;
+    s += `<text transform="translate(13 ${(y0 + y1) / 2}) rotate(-90)" text-anchor="middle" font-size="12" fill="var(--muted)">Resilience score → stronger</text>`;
+    const corner = (q, x, y, anchor) => `<text x="${x}" y="${y}" text-anchor="${anchor}" font-size="15" font-weight="600" fill="${QUAD[q].ink}" font-family="var(--sans)">${QUAD[q].label.toUpperCase()}</text>` +
+      `<text x="${x}" y="${y + (y < my ? 16 : -20)}" text-anchor="${anchor}" font-size="11" fill="var(--muted)">${QUAD[q].sub}</text>`;
+    s += corner("best", x0 + 12, y0 + 22, "start") + corner("premium", x1 - 12, y0 + 22, "end") + corner("budget", x0 + 12, y1 - 12, "start") + corner("bad", x1 - 12, y1 - 12, "end");
+    s += `<text x="${mx + 5}" y="${y1 - 4}" font-size="10" fill="var(--faint)">US median ${money(medP)}</text><text x="${x1 - 4}" y="${my - 5}" text-anchor="end" font-size="10" fill="var(--faint)">median ${medRes.toFixed(1)}</text>`;
+    const base = rows.filter((r) => r.st !== hl), hi = rows.filter((r) => r.st === hl);
+    s += `<g fill="var(--faint)" fill-opacity="0.55">${base.map((r) => `<circle cx="${X(r.p22).toFixed(1)}" cy="${Y(r.res).toFixed(1)}" r="2.6"/>`).join("")}</g>`;
+    s += `<g fill="var(--accent)" stroke="var(--panel)" stroke-width="1.5">${hi.map((r) => `<circle cx="${X(r.p22).toFixed(1)}" cy="${Y(r.res).toFixed(1)}" r="5"/>`).join("")}</g>`;
+    const fit = (b) => b.x0 >= x0 + 2 && b.x1 <= x1 - 2 && b.y0 >= y0 + 2 && b.y1 <= y1 - 2;
+    const pts = hi.map((r) => ({ x: X(r.p22), y: Y(r.res), text: r.name })).sort((a, b) => a.y - b.y);
+    s += labelBoxes(pts, fit).map((p) => `<text x="${p.tx}" y="${p.ty}" text-anchor="${p.anchor}" font-size="11" fill="var(--text)" paint-order="stroke" stroke="var(--panel)" stroke-width="3">${esc(p.text)}</text>`).join("");
+    if (sel) s += `<circle cx="${X(sel.p22)}" cy="${Y(sel.res)}" r="9" fill="none" stroke="var(--text)" stroke-width="2"/>`;
+    s += `<circle id="rzHov" r="7" fill="none" stroke="var(--text)" stroke-width="1.5" style="display:none"/>`;
+    svg.innerHTML = s;
+  }
+
+  const bars = (r) => `<div class="rz-bars">${PARTS.map((p) => `<span class="${on.has(p.k) ? "" : "off"}">${p.label}</span><span class="v ${on.has(p.k) ? "" : "off"}">${Math.round(r.parts[p.k])}</span>` +
+    `<span class="bar ${on.has(p.k) ? "" : "off"}"><i style="width:${r.parts[p.k]}%"></i></span><span class="raw">${esc(p.raw(r))}</span>`).join("")}</div>`;
+  const head = (r) => `<b>${esc(r.name)}, ${r.st}</b><div class="m">${money(r.p22)}/ac farmland${r.cagr != null ? ` · ${r.cagr >= 0 ? "+" : ""}${r.cagr.toFixed(1)}%/yr since 2012` : ""}</div>` +
+    `<div class="m">Resilience <b style="color:var(--text)">${r.res.toFixed(0)}</b> · <span style="color:${QUAD[r.q].ink}">${QUAD[r.q].label}</span></div>`;
+
+  function nearest(ev) {
+    const pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
+    const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+    let best = null, bd = 14 * 14;
+    for (const r of rows) {
+      const dx = X(r.p22) - p.x, dy = Y(r.res) - p.y, d = dx * dx + dy * dy - (r.st === hl ? 30 : 0);
+      if (d < bd) { bd = d; best = r; }
+    }
+    return best;
+  }
+  const tip = $("rzTip"), box = $("rzChart");
+  svg.addEventListener("mousemove", (ev) => {
+    const r = nearest(ev), hov = $("rzHov");
+    if (!r) { tip.style.display = "none"; hov.style.display = "none"; svg.style.cursor = ""; return; }
+    hov.setAttribute("cx", X(r.p22)); hov.setAttribute("cy", Y(r.res)); hov.style.display = ""; svg.style.cursor = "pointer";
+    tip.innerHTML = head(r) + bars(r); tip.style.display = "block";
+    const bb = box.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
+    let left = ev.clientX - bb.left + 16, top = ev.clientY - bb.top + 12;
+    if (left + tw > bb.width - 4) left = ev.clientX - bb.left - tw - 16;
+    if (top + th > bb.height - 4) top = Math.max(4, bb.height - th - 4);
+    tip.style.left = `${Math.max(4, left)}px`; tip.style.top = `${top}px`;
+  });
+  svg.addEventListener("mouseleave", () => { tip.style.display = "none"; const h = $("rzHov"); if (h) h.style.display = "none"; });
+  svg.addEventListener("click", (ev) => { const r = nearest(ev); if (r) { select(r); drawChart(); drawTable(); } });
+
+  // ---------- the post's regions, price only ----------
+  function drawAbroad() {
+    const a = $("rzAbroad"), h = 92; a.setAttribute("viewBox", `0 0 ${W} ${h}`);
+    let s = `<line x1="${M.l}" x2="${W - M.r}" y1="22" y2="22" stroke="var(--line-2)"/>`;
+    for (const t of TICKS) s += `<line x1="${X(t)}" x2="${X(t)}" y1="18" y2="26" stroke="var(--line-2)"/><text x="${X(t)}" y="12" text-anchor="middle" font-size="10" fill="var(--faint)">${money(t)}</text>`;
+    s += `<line x1="${X(medP)}" x2="${X(medP)}" y1="16" y2="${h - 4}" stroke="var(--muted)" stroke-dasharray="4 4"/><text x="${X(medP) + 5}" y="${h - 6}" font-size="10" fill="var(--faint)">US median ${money(medP)}</text>`;
+    const pts = D.abroad.map((r) => ({ ...r, x: X(r.usd_ac), y: 22, text: r.name }));
+    s += pts.map((p) => `<circle cx="${p.x}" cy="22" r="4.5" fill="var(--info)" stroke="var(--panel)" stroke-width="1.5"><title>${esc(p.name)} (${esc(p.where)}): €${(p.eur_ha / 1000).toFixed(1)}K/ha ≈ ${money(p.usd_ac)}/ac; the author's score ${p.score}</title></circle>`).join("");
+    const placed = []; let leads = "", labels = "";
+    for (const p of [...pts].sort((x, y) => x.usd_ac - y.usd_ac)) {
+      const w = p.text.length * 6 + 6;
+      for (const row of [40, 55, 70]) {
+        const b = { x0: p.x - w / 2, x1: p.x + w / 2, row };
+        if (b.x0 < M.l - 30 || b.x1 > W - 2 || placed.some((q) => q.row === row && b.x0 < q.x1 && b.x1 > q.x0)) continue;
+        placed.push(b);
+        leads += `<line x1="${p.x}" x2="${p.x}" y1="27" y2="${row - 10}" stroke="var(--line)"/>`;
+        labels += `<text x="${p.x}" y="${row}" text-anchor="middle" font-size="10.5" fill="var(--muted)" paint-order="stroke" stroke="var(--panel)" stroke-width="4">${esc(p.text)}</text>`;
+        break;
+      }
+    }
+    a.innerHTML = leads + s + labels;  // leader lines under the dots, labels on top with a halo
+  }
+
+  // ---------- selected county ----------
+  function select(r) {
+    sel = r; const c = $("rzCard"); c.style.display = "block";
+    const rank = [...rows].sort((a, b) => b.res - a.res).indexOf(r) + 1;
+    c.innerHTML = `<h4>${esc(r.name)}, ${esc(STATES[r.st] || r.st)}</h4>` + `<div class="m" style="color:var(--muted);font:12px var(--mono);margin-top:3px">${money(r.p22)}/ac farmland in 2022` +
+      `${r.p12 ? ` (${money(r.p12)} in 2012)` : ""} · resilience ${r.res.toFixed(0)}, #${rank.toLocaleString()} of ${rows.length.toLocaleString()} · <span style="color:${QUAD[r.q].ink}">${QUAD[r.q].label}</span></div>` + bars(r) +
+      `<div class="acts"><a href="explorer.html?pin=${r.lat},${r.lon}" target="_blank" rel="noopener">Land prices around it in the explorer ↗</a>` +
+      `${r.st === "NV" ? `<a href="nevada.html" target="_blank" rel="noopener">Parcels in the Nevada finder ↗</a>` : ""}` +
+      `<a href="https://www.google.com/maps/@${r.lat},${r.lon},10z/data=!3m1!1e3" target="_blank" rel="noopener">Satellite ↗</a></div>`;
+  }
+
+  // ---------- state summary ----------
+  function drawSummary() {
+    const hi = rows.filter((r) => r.st === hl);
+    if (!hl || !hi.length) { $("rzSum").innerHTML = ""; $("rzNote").textContent = ""; $("rzKeyName").textContent = "none"; return; }
+    $("rzKeyName").textContent = STATES[hl] || hl;
+    const n = (q) => hi.filter((r) => r.q === q).length;
+    const pm = median(hi.map((r) => r.p22)), rm = median(hi.map((r) => r.res));
+    $("rzSum").innerHTML = [["best", n("best")], ["premium", n("premium")], ["budget", n("budget")], ["bad", n("bad")]].map(([q, k]) =>
+      `<div class="stat"><b style="color:${k ? QUAD[q].ink : "var(--faint)"}">${k}</b><span>${QUAD[q].label} counties</span></div>`).join("") +
+      `<div class="stat"><b>${money(pm)}</b><span>median farmland $/ac (US ${money(medP)})</span></div><div class="stat"><b>${rm.toFixed(0)}</b><span>median resilience (US ${medRes.toFixed(0)})</span></div>`;
+    const pmed = PARTS.map((p) => ({ ...p, m: median(hi.map((r) => r.parts[p.k])) })).sort((a, b) => a.m - b.m);
+    const best = [...hi].filter((r) => r.q === "best" || r.q === "premium").sort((a, b) => b.res - a.res)[0] || [...hi].sort((a, b) => b.res - a.res)[0];
+    $("rzNote").innerHTML = `${esc(STATES[hl] || hl)}'s weakest parts: <b>${pmed[0].label.toLowerCase()}</b> (median county at the ${Math.round(pmed[0].m)}th percentile) and <b>${pmed[1].label.toLowerCase()}</b> (${Math.round(pmed[1].m)}th). ` +
+      `Strongest: ${pmed.at(-1).label.toLowerCase()} (${Math.round(pmed.at(-1).m)}th). Most resilient county: <a href="#" id="rzBestLink">${esc(best.name)}</a> (${best.res.toFixed(0)}, ${money(best.p22)}/ac).`;
+    $("rzBestLink").onclick = (e) => { e.preventDefault(); select(best); drawChart(); drawTable(); $("rzCard").scrollIntoView({ behavior: "smooth", block: "nearest" }); };
+  }
+
+  // ---------- table ----------
+  const COLS = [["name", "County"], ["st", "State"], ["p22", "$/ac 2022"], ["cagr", "%/yr since 2012"], ["res", "Resilience"], ...PARTS.map((p) => [p.k, p.label])];
+  function drawTable() {
+    const counts = { all: rows.length };
+    for (const q in QUAD) counts[q] = rows.filter((r) => r.q === q && (!onlyHl || r.st === hl)).length;
+    counts.all = rows.filter((r) => !onlyHl || r.st === hl).length;
+    $("rzTabs").innerHTML = [...Object.keys(QUAD), "all"].map((q) => `<button class="rz-tab${tab === q ? " on" : ""}" data-q="${q}">${q === "all" ? "All counties" : QUAD[q].label}<small>${counts[q].toLocaleString()}</small></button>`).join("") +
+      `<label><input type="checkbox" id="rzOnly"${onlyHl ? " checked" : ""}${hl ? "" : " disabled"}> only ${esc(STATES[hl] || "the highlighted state")}</label>`;
+    const val = (r, k) => k in r.parts ? r.parts[k] : r[k];
+    const list = rows.filter((r) => (tab === "all" || r.q === tab) && (!onlyHl || r.st === hl))
+      .sort((a, b) => { const x = val(a, sortK), y = val(b, sortK); return typeof x === "string" ? sortDir * x.localeCompare(y) : sortDir * ((x ?? -1e9) - (y ?? -1e9)); });
+    $("rzTbl").innerHTML = `<thead><tr>${COLS.map(([k, l]) => `<th data-k="${k}" class="${k === sortK ? "s" : ""}">${l}${k === sortK ? (sortDir < 0 ? " ↓" : " ↑") : ""}</th>`).join("")}</tr></thead><tbody>` +
+      list.slice(0, shown).map((r) => `<tr data-f="${r.fips}" class="${r === sel ? "sel" : ""}"><td>${esc(r.name)}</td><td>${r.st}</td><td>${money(r.p22)}</td><td>${r.cagr == null ? "–" : r.cagr.toFixed(1)}</td>` +
+        `<td><b>${r.res.toFixed(0)}</b></td>${PARTS.map((p) => `<td style="${on.has(p.k) ? "" : "opacity:.4"}">${Math.round(r.parts[p.k])}</td>`).join("")}</tr>`).join("") + `</tbody>`;
+    $("rzMore").innerHTML = list.length > shown ? `Showing ${shown} of ${list.length.toLocaleString()} · <button id="rzMoreBtn">show 100 more</button>` : `${list.length.toLocaleString()} counties`;
+    const mb = $("rzMoreBtn"); if (mb) mb.onclick = () => { shown += 100; drawTable(); };
+    $("rzOnly").onchange = (e) => { onlyHl = e.target.checked; shown = 60; drawTable(); };
+  }
+  $("rzTabs").addEventListener("click", (e) => { const b = e.target.closest(".rz-tab"); if (b) { tab = b.dataset.q; shown = 60; drawTable(); } });
+  $("rzTbl").addEventListener("click", (e) => {
+    const th = e.target.closest("th");
+    if (th) { const k = th.dataset.k; sortDir = k === sortK ? -sortDir : (k === "name" || k === "st" || k === "p22" ? 1 : -1); sortK = k; drawTable(); return; }
+    const tr = e.target.closest("tr[data-f]");
+    if (tr) { select(rows.find((r) => r.fips === tr.dataset.f)); drawChart(); drawTable(); $("rzChart").scrollIntoView({ behavior: "smooth", block: "start" }); }
+  });
+
+  function update() {
+    rescore(); drawChart(); drawAbroad(); drawSummary(); drawTable();
+    if (sel) select(sel);
+    const p = new URLSearchParams(); if (hl !== "NV") p.set("st", hl); if (on.size < PARTS.length) p.set("parts", [...on].join(","));
+    history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
+  }
+  update();
+})();
+</script>
+</body>
+</html>
