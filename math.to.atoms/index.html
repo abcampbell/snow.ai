@@ -1,80 +1,21 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Compare the effects of better math on economics, health, energy, climate and delivery.">
-  <meta name="theme-color" content="#0b1019">
-  <title>Math-to-Atoms Ledger v029</title>
-  <link rel="stylesheet" href="./math_to_atoms_v029.css">
-  <script type="module" src="./math_to_atoms_app_v029.mjs"></script>
-</head>
-<body>
-<a class="skip" href="#workspace">Skip to graph</a>
-<div class="wrap">
-<header class="top"><h1>Math-to-Atoms Ledger</h1><div class="ledger-scale"><strong>v019 · Campbell log scale · today’s math = 3, today’s capability = 3</strong></div><div class="sub">Which mathematical breakthroughs could make the biggest physical difference? Explore the connections, change the assumptions, and see what follows.</div><div class="beta-note">Public beta <span>Research priorities and conditional scenarios</span></div></header>
-<main id="workspace"><div id="loading" class="panel">Loading the ledger…</div><div id="app" hidden>
-<section class="panel master-outlook" id="master-outlook" aria-label="Master scenario slider and five outlook indicators"></section>
-<section class="graph" id="graph-details" aria-labelledby="graph-title">
-<div class="panel-h graph-heading"><h2 id="graph-title">Research priorities</h2><div class="graph-controls"><div class="seg" role="group" aria-label="Dataset scope"><button data-scope="core" aria-pressed="false">core 10 × 20 × 10</button><button data-scope="all" aria-pressed="true">all 18 × 60 × 10</button></div><div class="seg" role="group" aria-label="Map order"><button data-order="fixed" aria-pressed="true">structural order</button><button data-order="score" aria-pressed="false">by score</button></div></div></div>
-<div id="graph"></div>
-<p class="quantity-note">Scores and links are judgments. They rank research priorities; they do not predict the benefits above. Click a node to edit it. Worked paths below use the actual connections.</p>
-<div class="legend"><span><i class="l1"></i>1 weak</span><span><i class="l2"></i>2 plausible</span><span><i></i>3 direct</span><span>score low (red)<span class="ramp"></span>high (blue)</span><span id="pick-note"></span><button class="text-button" id="edit-selected" hidden>Edit selected node ↓</button><button class="text-button" id="clear-path">Clear selection</button></div>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1019"><meta name="description" content="A short summary of the Math-to-Atoms essay and one illustrative twenty-year case. Read the essay or explore the assumptions."><title>Math to Atoms — what better math could change</title><link rel="canonical" href="https://snow.ai/math.to.atoms/"><link rel="stylesheet" href="./math_to_atoms_shell_v030.css"><script type="module" src="./math_to_atoms_navigation_v030.mjs"></script></head><body class="landing-page" data-page="summary"><a class="page-skip" href="#main">Skip to content</a><div class="site-wrap"><nav class="site-nav" aria-label="Main navigation"><a class="site-brand" href="./index.html">Math to Atoms</a><div class="site-links"><a href="./index.html" aria-current="page">Summary</a><a href="./essay.html">Essay</a><a href="./model.html">Model</a></div></nav>
+<main id="main">
+<section class="cover-hero" aria-labelledby="cover-title">
+<div class="cover-kicker">From mathematical progress to everyday outcomes</div>
+<h1 id="cover-title">Math to Atoms</h1>
+<p class="cover-question">What is better math worth?</p>
+<p class="cover-intro">Better mathematics could lower costs and save healthy years. The question is how much we can turn into working technology.</p>
+<div class="cover-actions"><a class="cover-button primary" href="./essay.html">Read the essay <span aria-hidden="true">→</span></a><a class="cover-button" href="./model.html">Try the dials <span aria-hidden="true">↗</span></a></div>
 </section>
-<section class="panel worked-paths" id="worked-paths" aria-label="Three worked math-to-benefit examples"></section>
-<section class="panel macro-scenario" id="macro-scenario" aria-labelledby="macro-title"></section>
-<section class="panel payoff-summary" id="payoff-summary" aria-label="Physical problem payoffs in dollars and global GDP"></section>
-<section class="value-summary" id="value-summary" aria-label="Annual economic value and human health"></section>
-      <div class="workspace-bar">
-        <span class="save-status" id="save-status" role="status">Defaults</span>
-        <div class="actions"><button id="undo" disabled>↶ Undo</button><button id="export">Export JSON</button><button id="import">Import</button><input id="import-file" type="file" accept="application/json,.json" hidden></div>
-      </div>
-      <div class="scenario-bar">
-        <label class="scenario-name"><span class="sr-only">Scenario name</span><input id="scenario-name" placeholder="Name this scenario" maxlength="80" autocomplete="off"></label>
-        <button id="save-scenario">Save scenario</button>
-        <label class="scenario-load"><span class="sr-only">Load a saved scenario</span><select id="scenario-select"><option value="">Load a saved scenario…</option></select></label>
-        <span class="small" id="scenario-note">Browser saves · export to share</span>
-      </div>
-<section class="panel inspector" id="inspector" aria-labelledby="inspector-title" hidden></section>
-<section class="bench"><div class="col">        <section class="panel weights-panel" aria-labelledby="weights-title">
-          <div class="panel-heading"><h2 id="weights-title">Weights</h2><button class="text-button" id="reset-weights">Reset weights</button></div>
-          <p class="small">Log scale: each point multiplies by <b id="base-inline">3×</b>. Today’s math and capability = 3.</p>
-          <div id="weights"></div>
-          <div class="scale-example" id="scale-example"></div>
-          <details class="method"><summary>How scoring works</summary>
-            <p>Inputs stay on the 1–10 log scale. The computed ladder can extend beyond it. A ladder value of 3 means an index of 1.</p>
-            <code>w(s) = b^(s − 3)</code><code>Problem = w(I)^α / (w(M)^λ × w(C)^κ)</code>
-            <code>Math = [Σ (link/3) × w(I) × w(C)^−κ]^α / w(D)^λ</code>
-            <code>Outcome = Σ (link/3) × problem score</code><code>Ladder = 3 + log_b(index)</code>
-            <p>I = impact; M = math understanding required; C = physical capability required; D = difficulty of the math.</p>
-            <p>Math and outcome scores add contributions, so breadth earns points. Math difficulty is applied once to the field. The formulas are unchanged from v006.</p>
-            <p>The capability penalty covers engineering and testing barriers.</p>
-          </details>
-        </section>
-
-<section class="panel"><div class="panel-h"><h2>Scores</h2><span class="muted">I impact · M math understanding · C physical capability · D math difficulty. All 1–10 log inputs.</span></div><div class="editors"><div class="ed" id="ed-apps"></div><div class="ed" id="ed-math"></div></div></section>
-</div><div class="col">
-<section class="panel"><div class="panel-h"><h2>Outcomes ranked</h2><span class="muted">Σ link/3 × problem score · priority indices, not physical forecasts</span></div><div class="rank-list" id="outrank"></div></section>
-<section class="panel"><div class="panel-h"><h2>Priority: problems by score</h2><span class="muted">impact ÷ (math gap · capability gap)</span></div><div class="rank-list" id="prio"></div></section>
-<section class="panel"><div class="panel-h"><h2>Problems by impact</h2><span class="muted">Δ = priority rank − impact rank</span></div><div class="tbl" id="impact"></div></section>
-</div></section>
-<details class="advanced-panel"><summary>Search & sensitivity</summary>        <section class="panel results-panel" aria-labelledby="results-title">
-          <div class="panel-heading"><div><div class="eyebrow">Your settings</div><h2 id="results-title">Find a problem</h2></div><span class="count" id="scope-count"></span></div>
-          <div class="tabs" role="tablist" aria-label="Rankings"><button role="tab" data-tab="problems" aria-selected="true" aria-controls="ranking">Physical problems</button><button role="tab" data-tab="math" aria-selected="false" aria-controls="ranking" tabindex="-1">Math fields</button><button role="tab" data-tab="outcomes" aria-selected="false" aria-controls="ranking" tabindex="-1">Outcomes</button></div>
-          <div class="ranking-tools"><label class="search"><span class="sr-only">Search ranked nodes</span><input id="search" type="search" placeholder="Find a problem, field, or outcome…"></label><label class="sort" id="sort-wrap">Sort<select id="sort"><option value="priority">Priority</option><option value="impact">Impact</option></select></label></div>
-          <div class="rank-head"><span id="ranking-action">RANK / TAP FOR MATH</span><span title="Range across one-at-a-time weight changes">RANK RANGE</span><span>LADDER</span></div>
-          <div id="ranking" role="tabpanel" aria-label="Ranked physical problems"></div>
-          <button class="show-more" id="show-more">Show all</button>
-          <p class="ranking-foot" id="ranking-foot"></p>
-        </section>
-</details>      <details class="panel matrix-panel" id="matrix-details"><summary>Advanced: edit all connections</summary><p class="small">Tap a cell to cycle 0 → 1 → 2 → 3. Matrices follow the selected scope.</p><h3>Math → problem</h3><div class="matrix-scroll" tabindex="0" aria-label="Math to problem connection matrix"><table id="matrix-math"></table></div><h3>Problem → outcome</h3><div class="matrix-scroll" tabindex="0" aria-label="Problem to outcome connection matrix"><table id="matrix-outcomes"></table></div></details>
-      <footer><span>Math-to-Atoms Ledger · v029</span><button class="text-button" id="restore-defaults">Restore all defaults</button></footer>
-    </div>
-  </main>
+<section class="published-case" id="case" aria-labelledby="case-title">
+<div class="case-heading"><h2 id="case-title">One case for 2026–2046</h2><p>Assumed benefits, reached over twenty years</p></div>
+<div class="cover-metrics">
+<article class="cover-metric"><h3>Annual savings by 2046</h3><p class="cover-number">$1.81T<small>/year</small></p><p>Gross, before costs. Equal to 1.51% of the assumed $120T GDP reference.</p></article>
+<article class="cover-metric"><h3>Healthy years saved each year</h3><p class="cover-number">140M</p><p>By 2046, against the reference burden of illness and early death.</p></article>
+<article class="cover-metric"><h3>Energy price</h3><p class="cover-number">5% lower</p><p>$600B/year saved by 2046, already included in the savings total.</p></article>
 </div>
-<aside id="quick-editor" class="quick-editor" aria-labelledby="quick-editor-title" hidden></aside>
-<div id="notice" role="status" aria-live="polite"></div>
-<dialog id="confirm-dialog"><form method="dialog"><h2 id="confirm-title"></h2><p id="confirm-message"></p><div class="dialog-actions"><button value="cancel">Cancel</button><button value="confirm" class="primary">Continue</button></div></form></dialog>
-<noscript><p class="panel">Enable JavaScript to edit and explore this ledger.</p></noscript>
-</body>
-</html>
+<details class="cover-method" id="assumptions"><summary>What is assumed?</summary><p>25% of the opportunity reached × 50% used × 40% improvement where used = 5% overall improvement. Benefits build evenly over twenty years on fixed spending and health references. The $1.81T includes energy, other production costs and avoided disaster losses. Health stays separate. <a href="./model.html#master-outlook">Change the assumptions in the model →</a></p></details>
+</section>
+<section class="cover-takeaway" aria-labelledby="takeaway-title"><h2 id="takeaway-title">The takeaway</h2><div><p>The largest possible payoffs can need years of engineering and testing. Some nearer-term opportunities sit in maintenance, logistics and risk prediction. The useful question is which mathematical advances can change something we can actually build or use.</p><p class="cover-boundary">The numbers above are one scenario, not a price for all mathematics or a GDP forecast. The graph ranks research priorities; the benefit estimates use separate assumptions.</p></div></section>
+</main><footer class="site-footer"><span>Campbell · Math to Atoms · v030</span><span><a href="./essay.html">Read the essay</a> · <a href="./model.html">Explore the model</a></span></footer></div></body></html>
