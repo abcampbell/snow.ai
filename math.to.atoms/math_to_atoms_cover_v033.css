@@ -1,0 +1,6 @@
+@import url('./math_to_atoms_shell_v031.css');
+.cover-story{max-width:880px;font-size:18px;line-height:1.65;color:#b3c7dc;margin:0 0 23px}
+.cover-sensitivities{list-style:none;padding:0;margin:0 0 22px}
+.cover-sensitivities li{font-size:18px;line-height:1.6;color:#b3c7dc;margin:0 0 16px}
+.cover-sensitivities strong{color:#d9eafa;font-weight:600}
+@media(max-width:760px){.cover-story,.cover-sensitivities li{font-size:17px}}
