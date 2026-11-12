@@ -1,0 +1,432 @@
+<title>Math-to-Atoms Ledger v006</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single dark graph canvas (10 math nodes left, 20 outcome nodes right, edges by link strength), then a two-column bench: weights + score editors on the left, priority list and impact table on the right. Single dark theme by choice, to read like a knowledge-graph canvas. */
+:root{
+  --bg:#0B0E14; --canvas:#10141C; --surface:#161B25; --ink:#E7ECF2; --muted:#8C98A8; --line:#2A3342; --line2:#1F2733;
+  --node:#2F7FC2; --node-ink:#FFFFFF; --edge:#C9D1D9; --accent:#5FA8F0; --warm:#E8904F;
+  --blue-lo:hsl(212 58% 17%); --blue-hi:hsl(212 82% 52%);
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.35;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:30px;font-weight:700}
+h2{font-size:19px;font-weight:600}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted);font-size:12px}
+.top{padding-block:18px 0;display:flex;flex-direction:column;gap:4px}
+.sub{color:var(--muted);font-size:13px;max-width:70ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.panel-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+button{font-family:var(--body);font-size:12px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;padding:5px 10px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button:focus-visible,input:focus-visible,.cell:focus-visible,.node:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.seg button{border:0;border-radius:0;padding:4px 9px;color:var(--muted);background:var(--surface)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#0B0E14}
+
+/* graph canvas */
+.graph{background:var(--canvas);border:1px solid var(--line);border-radius:8px;padding:8px;position:relative;overflow:hidden}
+.graph::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 40%,rgba(95,168,240,.07),transparent 70%)}
+.graph svg{width:100%;height:auto;display:block;max-width:100%;position:relative}
+.graph text{font-family:var(--body);font-size:12px;fill:var(--node-ink);font-weight:500}
+.graph .sc{font-family:var(--mono);font-size:10.5px;fill:rgba(255,255,255,.72);font-weight:400}
+.graph .colh{font-family:var(--display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;fill:var(--muted)}
+.graph .box{fill:var(--node);stroke:rgba(255,255,255,.10);stroke-width:1}
+.graph .picked .box{stroke:#FFFFFF;stroke-width:1.5}
+.graph .edge{fill:none;stroke:var(--edge);stroke-linecap:round}
+.graph .s1{stroke-width:1;stroke-opacity:.22}
+.graph .s2{stroke-width:1.6;stroke-opacity:.48}
+.graph .s3{stroke-width:2.3;stroke-opacity:.85}
+.graph.sel .edge{stroke-opacity:.05}
+.graph.sel .edge.on.s1{stroke-opacity:.55}
+.graph.sel .edge.on.s2{stroke-opacity:.85}
+.graph.sel .edge.on.s3{stroke-opacity:1}
+.graph.sel .node{opacity:.25}
+.graph.sel .node.on{opacity:1}
+.graph .node{cursor:pointer}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);align-items:center;padding:6px 4px 0}
+.legend i{display:inline-block;width:18px;height:0;border-top:2px solid var(--edge);vertical-align:3px;margin-right:4px}
+.legend .l1{border-top-width:1px;opacity:.3}.legend .l2{opacity:.55}
+.legend .sw{display:inline-block;width:12px;height:10px;vertical-align:-1px;margin-right:4px;border-radius:2px}
+.legend .ramp{display:inline-block;width:72px;height:10px;vertical-align:-1px;margin:0 4px;border-radius:2px;background:linear-gradient(90deg,var(--blue-lo),var(--blue-hi))}
+.cf{border-radius:3px;padding:1px 3px;color:#fff}
+.tag{display:inline-block;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.04em;line-height:1;padding:2px 4px;border-radius:3px;background:var(--line);color:var(--ink);vertical-align:1px;margin-right:3px}
+.graph .tg{font-family:var(--display);font-size:10px;font-weight:700;fill:rgba(255,255,255,.55)}
+
+/* bench */
+.bench{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:860px){.bench{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}}
+.col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.sliders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}
+.sl{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sl label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.sl label b{color:var(--ink);font-weight:600}
+.sl input[type=range]{width:100%;margin:0;accent-color:var(--accent)}
+.editors{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+@media (min-width:600px){.editors{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+.ed{display:flex;flex-direction:column;border:1px solid var(--line2);border-radius:4px;overflow:hidden;min-width:0;align-self:start}
+.ed .r{display:grid;align-items:center;gap:4px;padding:3px 6px;border-top:1px solid var(--line2);font-size:12.5px;min-width:0}
+.ed .r:first-child{border-top:0}
+.ed .h{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+.ed .ra{grid-template-columns:1.4rem minmax(0,1fr) 2.6rem 2.6rem 2.6rem}
+.ed .rm{grid-template-columns:2rem minmax(0,1fr) 2.6rem}
+.ed .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ed .id{font-family:var(--display);font-weight:700;color:var(--muted)}
+.ed input[type=number]{width:100%;min-width:0;font-family:var(--mono);font-size:12px;padding:2px 1px;text-align:center;border:1px solid var(--line);border-radius:3px;background:var(--bg);color:var(--ink);-moz-appearance:textfield}
+.ed input[type=number]::-webkit-outer-spin-button,.ed input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+
+/* rankings */
+.rank-list{display:flex;flex-direction:column;gap:3px}
+.rk{display:grid;grid-template-columns:1.4rem minmax(0,1fr) 3rem;align-items:center;gap:6px;font-size:12.5px;min-width:0}
+.rk .n{color:var(--muted);text-align:right;font-size:12px}
+.rk .lab{display:flex;flex-direction:column;gap:2px;min-width:0}
+.rk .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rk .bar{height:7px;background:var(--line2);border-radius:2px;overflow:hidden}
+.rk .bar i{display:block;height:100%;background:var(--node)}
+.rk .v{text-align:right;font-size:12.5px}
+.tbl{display:flex;flex-direction:column;border:1px solid var(--line2);border-radius:4px;overflow:hidden}
+.tbl .r{display:grid;grid-template-columns:1.4rem minmax(0,1fr) 2rem 2rem 2rem 2.6rem;gap:4px;padding:3px 6px;border-top:1px solid var(--line2);font-size:12.5px;align-items:center;min-width:0}
+.tbl .r:first-child{border-top:0}
+.tbl .h{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+.tbl .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tbl .c{text-align:center}.tbl .rt{text-align:right}
+.tbl .up{color:var(--blue-hi);font-weight:600} .tbl .dn{color:var(--muted)}
+
+/* matrix */
+.mx-wrap{overflow-x:auto;border:1px solid var(--line2);border-radius:4px}
+table.mx{border-collapse:separate;border-spacing:0;font-size:12px}
+.mx th,.mx td{padding:0;border-bottom:1px solid var(--line2)}
+.mx th.rh{position:sticky;left:0;background:var(--surface);text-align:left;font-weight:500;padding:2px 6px;width:118px;max-width:118px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-right:1px solid var(--line);z-index:1}
+.mx th.rh .id{font-family:var(--display);font-weight:700;color:var(--muted);margin-right:4px}
+.mx thead th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;height:22px;background:var(--bg)}
+.cell{width:22px;height:22px;border:0;border-right:1px solid var(--line2);background:var(--surface);padding:0;cursor:pointer;display:block;border-radius:0}
+.cell[data-s="1"]{background:var(--node);opacity:.3}
+.cell[data-s="2"]{background:var(--node);opacity:.6}
+.cell[data-s="3"]{background:var(--node);opacity:1}
+details summary{cursor:pointer;font-family:var(--display);font-size:14px;font-weight:600}
+@media (prefers-reduced-motion:no-preference){.rk .bar i{transition:width .25s ease}.graph .edge,.graph .node{transition:opacity .2s,stroke-opacity .2s}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">v006 · Campbell log scale · today's math = 3, today's capability = 3</div>
+  <h1>Math-to-Atoms Ledger</h1>
+  <div class="sub">Three layers: math problems on the left, the physical problems they gate in the middle, and ten tangible outcomes on the right, each with its unit. Edge weight is link strength. The number at the end of each node is its score on the ladder and the node's blue is that same number, dim to bright, scaled within its column. Tap a node to isolate its edges. Rows tagged <span class="tag">A</span> <span class="tag">B</span> <span class="tag">S</span> came from three cheaper models asked for what I'd dismiss; the eight math rows tagged <span class="tag">+</span> were added to carry them.</div>
+</header>
+
+<section class="graph" id="graph">
+  <div class="panel-h" style="padding:2px 4px 6px"><h2>The graph</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><div class="seg" role="group" aria-label="Scope"><button type="button" id="sc-core" aria-pressed="false">core 10 × 20 × 10</button><button type="button" id="sc-all" aria-pressed="true">all 18 × 60 × 10</button></div><div class="seg" role="group" aria-label="Node order"><button type="button" id="ord-fixed" aria-pressed="true">structural order</button><button type="button" id="ord-score" aria-pressed="false">by score</button></div></div></div>
+  <div id="graph-svg"></div>
+  <div class="legend"><span><i class="l1"></i>1 weak</span><span><i class="l2"></i>2 plausible</span><span><i></i>3 direct</span><span>score low<span class="ramp"></span>high</span><span id="pick-note"></span></div>
+</section>
+
+<section class="bench">
+  <div class="col">
+    <div class="panel">
+      <div class="panel-h"><h2>Weights</h2><span class="muted" id="status">Defaults</span></div>
+      <div class="sliders">
+        <div class="sl"><label><span>base b (× per point)</span><b id="v-b" class="num">3</b></label><input type="range" id="p-b" min="1.5" max="10" step="0.5" value="3"></div>
+        <div class="sl"><label><span>impact weight α</span><b id="v-alpha" class="num">1</b></label><input type="range" id="p-alpha" min="0.25" max="3" step="0.25" value="1"></div>
+        <div class="sl"><label><span>difficulty penalty λ</span><b id="v-lambda" class="num">1</b></label><input type="range" id="p-lambda" min="0" max="3" step="0.25" value="1"></div>
+        <div class="sl"><label><span>capability drag κ</span><b id="v-kappa" class="num">0.5</b></label><input type="range" id="p-kappa" min="0" max="2" step="0.25" value="0.5"></div>
+      </div>
+      <div class="panel-h"><span class="muted">w(s)=b^(s−3). Outcome score = w(I)^α ÷ (w(M)^λ·w(C)^κ). Math score = (Σ link/3 · w(I) · w(C)^−κ)^α ÷ w(D)^λ. Shown as 3 + log_b.</span><button id="reset" type="button">Reset</button></div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h2>Scores</h2><span class="muted">Per problem: I impact · M math understanding required · C physical capability required. Per math row: D difficulty. All 1–10, ×b per point, today = 3</span></div>
+      <div class="editors">
+        <div class="ed" id="ed-apps"></div>
+        <div class="ed" id="ed-math"></div>
+      </div>
+      <details>
+        <summary>Edit edges</summary>
+        <div class="muted" style="margin-top:6px">math → problem</div>
+        <div class="mx-wrap" style="margin-top:4px"><table class="mx" id="matrix"></table></div>
+        <div class="muted" style="margin-top:8px">problem → outcome</div>
+        <div class="mx-wrap" style="margin-top:4px"><table class="mx" id="matrix2"></table></div>
+      </details>
+    </div>
+  </div>
+  <div class="col">
+    <div class="panel">
+      <div class="panel-h"><h2>Outcomes ranked</h2><span class="muted">Σ over feeding problems of link × problem score</span></div>
+      <div class="rank-list" id="outrank"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h2>Priority: problems by score</h2><span class="muted">impact ÷ (math gap · capability gap)</span></div>
+      <div class="rank-list" id="prio"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h2>Problems by impact</h2><span class="muted">Δ = priority rank minus impact rank</span></div>
+      <div class="tbl" id="impact"></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+(function(){
+const APPS=[
+ {n:1, src:"core", s:"RT superconductors", name:"Room-temp superconductors", app:"Lossless grid, helium-free MRI, compact fusion magnets", impact:9, math:8, cap:4},
+ {n:2, src:"core", s:"Fusion confinement", name:"Fusion confinement", app:"Reactor designed from first principles", impact:8, math:7, cap:7},
+ {n:3, src:"core", s:"Catalysts", name:"Catalysts to chemical accuracy", app:"Ambient ammonia, CO₂-to-fuel, cheap H₂", impact:8, math:7, cap:4},
+ {n:4, src:"core", s:"Wall turbulence", name:"Wall turbulence", app:"10–20% fuel cut, ships/aircraft/pipelines", impact:6, math:6, cap:4},
+ {n:5, src:"core", s:"Enzymes by design", name:"Enzymes by design", app:"Room-temp chemical manufacturing", impact:7, math:6, cap:5},
+ {n:6, src:"core", s:"Weather 2–6 wk", name:"Weather past two weeks", app:"4–6 week forecasts", impact:6, math:5, cap:5},
+ {n:7, src:"core", s:"Climate ±0.5 °C", name:"Climate sensitivity to ±0.5 °C", app:"Transition sized correctly", impact:6, math:6, cap:4},
+ {n:8, src:"core", s:"Solid-state batteries", name:"Solid-state batteries", app:"2× EV range, $30/kWh storage", impact:7, math:6, cap:5},
+ {n:9, src:"core", s:"Earthquakes", name:"Earthquake forecasting", app:"Evacuation windows, or proof of impossibility", impact:5, math:7, cap:5},
+ {n:10,src:"core", s:"Nuclear data", name:"Nuclear data from theory", app:"Reactors and isotopes without test loops", impact:5, math:6, cap:4},
+ {n:11,src:"core", s:"Rad-hard materials", name:"Radiation-hard materials", app:"Fusion first wall, 80-yr vessels", impact:6, math:6, cap:6},
+ {n:12,src:"core", s:"Certify by analysis", name:"Certification by analysis", app:"Printed aerospace parts in weeks", impact:5, math:5, cap:4},
+ {n:13,src:"core", s:"Drug trials", name:"Drugs without late-stage failure", app:"Drug cost ÷5, timeline ÷3", impact:8, math:7, cap:5},
+ {n:14,src:"core", s:"Aging", name:"Aging intervention", app:"+10 years healthspan", impact:9, math:8, cap:6},
+ {n:15,src:"core", s:"Inverter grids", name:"Inverter-only grids", app:"100% renewable, no spinning reserve", impact:6, math:5, cap:5},
+ {n:16,src:"core", s:"Combustion", name:"Advanced combustion", app:"Detonation engines, +15–25% efficiency", impact:5, math:6, cap:5},
+ {n:17,src:"core", s:"Hypersonics", name:"Hypersonics", app:"Mach 5+ designed without tunnels", impact:4, math:6, cap:7},
+ {n:18,src:"core", s:"Quantum EC", name:"Quantum error correction", app:"Useful QC at 10⁴ qubits", impact:7, math:4, cap:8},
+ {n:19,src:"core", s:"PQ lattices", name:"Post-quantum lattice hardness", app:"Key exchange settled, or broken", impact:6, math:7, cap:3},
+ {n:20,src:"core", s:"NP-hard solving", name:"Structured NP-hard solving", app:"Dispatch, chip placement, logistics", impact:6, math:5, cap:3},
+ {n:21,src:"A", s:"Water main breaks", name:"Water main break hazard", app:"Pipe replacement ranking; US backlog in the hundreds of $B", impact:6, math:5, cap:3},
+ {n:22,src:"A", s:"Tailings liquefaction", name:"Tailings dam liquefaction threshold", app:"Dam design limits and monitoring triggers (Brumadinho)", impact:6, math:6, cap:4},
+ {n:23,src:"A", s:"Levee piping", name:"Levee piping onset criterion", app:"Seepage design and inspection triggers (Katrina)", impact:6, math:5, cap:3},
+ {n:24,src:"A", s:"Bridge scour", name:"Bridge pier scour depth", app:"Foundation design; leading cause of US bridge failure", impact:5, math:5, cap:2},
+ {n:25,src:"A", s:"Transformer life", name:"Transformer paper life model", app:"Loading caps and replacement timing; 2–4 yr lead times", impact:6, math:5, cap:3},
+ {n:26,src:"A", s:"PV degradation", name:"PV module degradation rate", app:"25-yr warranty and project cash-flow terms", impact:6, math:5, cap:3},
+ {n:27,src:"A", s:"Hull biofouling", name:"Hull biofouling growth clock", app:"Cleaning and drydock timing; ~$100B/yr bunker bill", impact:5, math:5, cap:3},
+ {n:28,src:"A", s:"Blast fragmentation", name:"Blast fragmentation energy law", app:"Powder factor → kWh/t; comminution ≈3% of world electricity", impact:5, math:5, cap:2},
+ {n:29,src:"A", s:"Field nitrogen", name:"Field soil nitrogen balance", app:"Fertilizer rate per zone; nitrate and N₂O", impact:6, math:6, cap:3},
+ {n:30,src:"A", s:"Grain bin spoilage", name:"Grain bin spoilage clock", app:"Storage and aeration rules; ~10% postharvest loss", impact:5, math:4, cap:2},
+ {n:31,src:"A", s:"Refinery fouling", name:"Refinery crude fouling rate", app:"Preheat-train cleaning schedules and blend choice", impact:5, math:5, cap:3},
+ {n:32,src:"A", s:"Sterilization kinetics", name:"Sterilization and pathogen-kill kinetics", app:"Pasteurizer and sterilizer cycles for food and devices", impact:5, math:4, cap:3},
+ {n:33,src:"B", s:"Wildfire loss tail", name:"Wildfire aggregate loss tail", app:"Insurance pricing in fire states; LA 2025 ≈ $40B", impact:6, math:5, cap:2},
+ {n:34,src:"B", s:"Ember spotting", name:"Ember-spotting closure", app:"Evacuation timelines and fuel-break placement", impact:5, math:5, cap:2},
+ {n:35,src:"B", s:"Compound hazard pricing", name:"Compound-hazard parametric insurance", app:"Cat bonds priced for correlated flood, fire, heat", impact:5, math:5, cap:2},
+ {n:36,src:"B", s:"Bank fire-sale threshold", name:"Fire-sale contagion threshold", app:"Capital buffers and interbank exposure caps", impact:6, math:5, cap:2},
+ {n:37,src:"B", s:"Antibiotic dosing", name:"Resistance-proof antibiotic dosing", app:"Combination schedules that block resistant mutants", impact:7, math:5, cap:3},
+ {n:38,src:"B", s:"Flu escape forecast", name:"Influenza antigenic escape forecast", app:"Vaccine strain selection months ahead", impact:6, math:5, cap:2},
+ {n:39,src:"B", s:"Superspreading k", name:"Superspreading dispersion from first principles", app:"Ventilation and isolation policy by setting", impact:5, math:4, cap:2},
+ {n:40,src:"B", s:"Zoonotic spillover", name:"Zoonotic spillover rate predictor", app:"Surveillance lists and pre-emptive vaccines", impact:6, math:6, cap:3},
+ {n:41,src:"B", s:"Fractured-rock transport", name:"Fractured-rock effective transport", app:"Groundwater remediation and waste siting", impact:5, math:5, cap:2},
+ {n:42,src:"B", s:"Fishery harvest control", name:"Harvest control under unobservable stock", app:"Quotas that stay safe under survey error", impact:5, math:4, cap:2},
+ {n:43,src:"B", s:"Nonconvex grid auctions", name:"Incentive-compatible grid clearing", app:"Capacity and reserve auctions with storage and ramps", impact:5, math:5, cap:2},
+ {n:44,src:"B", s:"Phantom-jam damping", name:"Stop-and-go wave damping threshold", app:"AV fleet mix and control rules that damp jams", impact:4, math:4, cap:3},
+ {n:45,src:"B", s:"Rock weathering yield", name:"Enhanced rock weathering CO₂ yield", app:"Basalt on farmland priced per tonne removed", impact:5, math:5, cap:3},
+ {n:46,src:"S", s:"Exposure limits", name:"Exposure limits from observational data", app:"PM2.5, PFAS, diet rules without waiting for RCTs", impact:7, math:5, cap:3},
+ {n:47,src:"S", s:"Nonresponse statistics", name:"Nonresponse-proof official statistics", app:"Payrolls, CPI, census accurate at 5–20% response", impact:6, math:4.5, cap:3},
+ {n:48,src:"S", s:"Surrogate certificate", name:"Simulation surrogate extrapolation certificate", app:"Neural surrogates replace CFD/FEA with certified error", impact:7, math:6, cap:3},
+ {n:49,src:"S", s:"Granular jamming", name:"Granular jamming rheology closure", app:"Clog-free silos and ore passes; landslide runout maps", impact:6, math:6, cap:3},
+ {n:50,src:"S", s:"Hex meshing", name:"Guaranteed hexahedral meshing", app:"Push-button simulation on arbitrary CAD", impact:6, math:5, cap:3},
+ {n:51,src:"S", s:"Design-level extremes", name:"Multivariate extreme design levels", app:"10,000-yr flood, wind, surge with confidence band", impact:7, math:5, cap:3},
+ {n:52,src:"S", s:"Cascading failure tails", name:"Cascading failure tail exponents", app:"Blackout-size risk standards beyond N-1", impact:7, math:6, cap:3},
+ {n:53,src:"S", s:"Contact-rich manipulation", name:"Contact-rich manipulation reliability", app:"Robot hands at 99.99% on insertion and assembly", impact:7, math:5.5, cap:4},
+ {n:54,src:"S", s:"Controller certification", name:"Learned controller certification", app:"NN controllers cleared for flight, driving, grid", impact:7, math:6, cap:3.5},
+ {n:55,src:"S", s:"Helmholtz solver", name:"Wavenumber-robust Helmholtz solver", app:"Full-waveform seismic, radar, ultrasound imaging", impact:5.5, math:5.5, cap:3},
+ {n:56,src:"S", s:"Subsurface posterior", name:"Subsurface posterior coverage bounds", app:"Drill spacing and resource classification with real intervals", impact:6.5, math:5, cap:2.5},
+ {n:57,src:"S", s:"Fab flow stability", name:"Re-entrant fab flow stability", app:"Wafer-fab cycle time ÷2 without capex", impact:6.5, math:5, cap:3},
+ {n:58,src:"S", s:"Rail & port throughput", name:"Rail and port throughput bound", app:"Trains/hr and TEU/hr at target delay", impact:6, math:4.5, cap:4},
+ {n:59,src:"S", s:"Multi-echelon inventory", name:"Multi-echelon inventory optimality gap", app:"Safety stock with a guaranteed cost gap", impact:5.5, math:4.5, cap:2.5},
+ {n:60,src:"S", s:"Minimal sensing", name:"Minimal-sensing phase transition", app:"Fewer sensors, shorter scans, sparser arrays", impact:5, math:5, cap:3}
+];
+const MATH=[
+ {id:"B1", src:"core", s:"Correlated electrons", name:"Quantum many-body, correlated electrons", diff:8, links:{1:3,3:3,8:2,5:1,10:1,18:1,31:1,45:1}},
+ {id:"B2", src:"core", s:"Turbulence closure", name:"Turbulence closure, fluid and plasma", diff:7, links:{2:3,4:3,16:3,17:2,7:2,6:1,24:2,27:1,33:1,34:3}},
+ {id:"B3", src:"core", s:"Nonlinear dynamics", name:"Nonlinear dynamics: predictability, stability", diff:5, links:{6:3,15:3,7:2,9:2,36:2,42:3,44:3,52:2,53:2,54:2}},
+ {id:"B4", src:"core", s:"Solid mechanics", name:"Multiscale and stochastic solid mechanics", diff:5, links:{11:3,12:3,9:2,17:1,8:1,21:2,22:3,23:2,28:2}},
+ {id:"B5", src:"core", s:"Biomolecular free energy", name:"Biomolecular free energy and dynamics", diff:6, links:{5:3,13:3,14:1,3:1,29:1,32:1,37:1,38:2}},
+ {id:"B6", src:"core", s:"Somatic evolution", name:"Stochastic theory of somatic evolution", diff:7, links:{14:3,13:2}},
+ {id:"B7", src:"core", s:"Nuclear from QCD", name:"Nuclear many-body from QCD", diff:6, links:{10:3,11:1,2:1}},
+ {id:"B8", src:"core", s:"Codes & decoders", name:"Codes and decoders (qLDPC)", diff:4, links:{18:3,19:1}},
+ {id:"B9", src:"core", s:"Lattice hardness", name:"Lattice problem hardness", diff:7, links:{19:3}},
+ {id:"B10",src:"core", s:"Structured NP-hard", name:"Guaranteed algorithms, structured NP-hard", diff:5, links:{20:3,15:2,5:1,13:1,18:1,12:1,43:3}},
+ {id:"B11",src:"+", s:"Extremes & tail dependence", name:"Extreme values and tail dependence (non-stationary, multivariate)", diff:5, links:{33:3,35:3,51:3,52:2,36:2,56:1,6:1}},
+ {id:"B12",src:"+", s:"Epidemic & network dynamics", name:"Epidemic and network dynamics (heterogeneity, escape, spillover)", diff:5, links:{37:3,38:3,39:3,40:3,36:1,42:1}},
+ {id:"B13",src:"+", s:"Porous & granular media", name:"Porous, granular and fractured media transport", diff:5, links:{30:3,22:2,23:3,41:3,28:2,24:2,29:2,45:2,49:3}},
+ {id:"B14",src:"+", s:"Degradation kinetics", name:"Degradation and failure kinetics (materials, fouling, insulation)", diff:4, links:{25:3,26:3,27:2,21:3,31:3,32:2,11:1}},
+ {id:"B15",src:"+", s:"Causal & selection inference", name:"Causal and selection inference (confounding bounds, nonresponse)", diff:5, links:{46:3,47:3,56:2,13:2,7:1}},
+ {id:"B16",src:"+", s:"Queueing & network flow", name:"Queueing and network flow (re-entrant, blocking, multi-echelon)", diff:4, links:{57:3,58:3,59:3,44:2,52:1,20:1}},
+ {id:"B17",src:"+", s:"Learning theory for physics", name:"Learning theory for physical systems (surrogates, learned control)", diff:6, links:{48:3,54:3,53:2,60:2,12:1}},
+ {id:"B18",src:"+", s:"Numerical analysis", name:"Numerical analysis (Helmholtz, meshing, solver scaling)", diff:5, links:{55:3,50:3,48:1,60:2,4:1,2:1,17:1}}
+];
+const OUT=[
+ {id:"O1", s:"Lives saved", unit:"people / yr", today:"avoidable deaths run in the millions a year", links:{9:2,13:3,14:2,21:1,22:2,23:3,24:1,32:2,33:1,34:2,37:3,38:3,39:2,40:3,46:3,51:2,52:1,6:1,54:1}},
+ {id:"O2", s:"Energy price", unit:"$ / MWh delivered", today:"US retail ≈ $120/MWh", links:{1:3,2:3,8:2,15:3,25:2,26:2,43:2,20:2,52:2,11:1,10:2,7:1,16:1,3:1}},
+ {id:"O3", s:"Food cost", unit:"$ / tonne", today:"urea ≈ $400/t, wheat ≈ $250/t", links:{3:3,29:3,30:3,42:2,5:2,32:1,6:2,45:1,7:1}},
+ {id:"O4", s:"Freight & travel fuel", unit:"% of fuel burn", today:"marine + jet fuel ≈ $400B/yr", links:{4:3,27:3,16:2,17:1,58:2,44:1,59:1}},
+ {id:"O5", s:"Infrastructure losses", unit:"$ / yr", today:"disaster losses ≈ $300B/yr", links:{21:3,22:2,23:3,24:3,25:2,51:3,52:3,33:2,9:2,41:1,49:1,11:1}},
+ {id:"O6", s:"Capital held against risk", unit:"$ of buffers & premiums", today:"reinsurance capital ≈ $700B", links:{33:3,35:3,36:3,47:2,56:2,59:2,26:1,51:2,19:2}},
+ {id:"O7", s:"Time to build & certify", unit:"years", today:"airliner 8, reactor 12, drug 12", links:{12:3,50:3,48:3,54:3,53:2,57:2,11:2,2:2,13:2,17:1,10:1,60:1,55:1}},
+ {id:"O8", s:"Compute & materials cost", unit:"$ / FLOP, kWh / t", today:"comminution ≈ 3% of world electricity", links:{18:3,20:2,57:3,1:1,55:1,60:1,28:2,56:2,19:1}},
+ {id:"O9", s:"Healthy years", unit:"years of healthspan", today:"healthspan ≈ 63 yrs globally", links:{14:3,13:2,37:1,46:2,5:1}},
+ {id:"O10",s:"CO₂ removed or avoided", unit:"Gt / yr", today:"emissions ≈ 40 Gt/yr", links:{7:2,45:3,3:2,29:1,4:1,27:1,1:1,2:1}}
+];
+const DEF={b:3,alpha:1,lambda:1,kappa:0.5};
+const KEY="mta-ledger-v6";
+let P={...DEF}, apps, maths, outs, order="fixed", scope="all", picked=null;
+const tagOf=x=>!x.src||x.src==="core"?"":`<span class="tag">${x.src}</span>`;
+
+const clone=x=>JSON.parse(JSON.stringify(x));
+function load(){
+  apps=clone(APPS); maths=clone(MATH); outs=clone(OUT);
+  try{const s=JSON.parse(localStorage.getItem(KEY)||"null");
+    if(s){ if(s.P) P={...DEF,...s.P}; if(s.order) order=s.order; if(s.scope) scope=s.scope;
+      if(s.apps) apps.forEach(a=>{const o=s.apps[a.n]; if(o){a.impact=o.impact;a.math=o.math;a.cap=o.cap;}});
+      if(s.maths) maths.forEach(m=>{const o=s.maths[m.id]; if(o){m.diff=o.diff;m.links=o.links;}});
+      if(s.outs) outs.forEach(o=>{const q=s.outs[o.id]; if(q){o.links=q.links;}}); }
+  }catch(e){}
+}
+function save(){
+  try{const s={P,order,scope,apps:{},maths:{},outs:{}};
+    apps.forEach(a=>s.apps[a.n]={impact:a.impact,math:a.math,cap:a.cap});
+    maths.forEach(m=>s.maths[m.id]={diff:m.diff,links:m.links});
+    outs.forEach(o=>s.outs[o.id]={links:o.links});
+    localStorage.setItem(KEY,JSON.stringify(s));
+  }catch(e){}
+}
+const w=s=>Math.pow(P.b,s-3);
+const lad=x=>x>0?3+Math.log(x)/Math.log(P.b):NaN;
+const f1=x=>isNaN(x)?"—":x.toFixed(1);
+const clamp=v=>{v=parseFloat(v); if(isNaN(v)) v=3; return Math.min(10,Math.max(1,v));};
+
+function compute(){
+  const R={}, byN={};
+  apps.forEach(a=>{byN[a.n]=a; R[a.n]={I:w(a.impact),real:Math.pow(w(a.cap),-P.kappa)};
+    a.score=Math.pow(w(a.impact),P.alpha)/(Math.pow(w(a.math),P.lambda)*Math.pow(w(a.cap),P.kappa)); a.lad=lad(a.score);});
+  maths.forEach(m=>{let U=0,n=0; for(const k in m.links){const s=m.links[k]; if(s>0&&R[k]){U+=(s/3)*R[k].I*R[k].real;n++;}}
+    m.U=U;m.n=n;m.score=U>0?Math.pow(U,P.alpha)/Math.pow(w(m.diff),P.lambda):0;m.lad=lad(m.score);});
+  outs.forEach(o=>{let S=0,n=0; for(const k in o.links){const s=o.links[k]; if(s>0&&byN[k]){S+=(s/3)*byN[k].score;n++;}} o.score=S;o.n=n;o.lad=lad(S);});
+  [...apps].sort((x,y)=>y.score-x.score).forEach((a,i)=>a.prank=i+1);
+  [...apps].sort((x,y)=>y.impact-x.impact||y.score-x.score).forEach((a,i)=>a.irank=i+1);
+  [...maths].sort((x,y)=>y.score-x.score).forEach((m,i)=>m.rank=i+1);
+}
+function norm(list,key){const vs=list.map(x=>x[key]).filter(v=>!isNaN(v)); const lo=Math.min(...vs), hi=Math.max(...vs); return v=>isNaN(v)?0:Math.max(.04,(v-lo)/((hi-lo)||1));}
+const blue=t=>{t=Math.max(0,Math.min(1,isNaN(t)?0:t)); return `hsl(212 ${(58+24*t).toFixed(0)}% ${(17+35*t).toFixed(0)}%)`;};
+const blue10=v=>blue((v-1)/9);
+
+function renderGraph(){
+  const host=document.getElementById("graph-svg");
+  const W=Math.max(360,host.clientWidth||360);
+  const narrow=W<700;
+  const rowH=narrow?24:28, pad=6, top=20;
+  const lw=Math.round(narrow?W*0.27:Math.min(200,W*0.19));
+  const mw=Math.round(narrow?W*0.31:Math.min(220,W*0.21));
+  const rw=Math.round(narrow?W*0.27:Math.min(200,W*0.19));
+  const core=scope==="core";
+  const mset=core?maths.filter(m=>m.src==="core"):maths, aset=core?apps.filter(a=>a.src==="core"):apps, oset=outs;
+  const H=top+aset.length*rowH+pad;
+  const ml=order==="score"?[...mset].sort((x,y)=>y.score-x.score):[...mset];
+  const al=order==="score"?[...aset].sort((x,y)=>y.score-x.score):[...aset];
+  const ol=order==="score"?[...oset].sort((x,y)=>y.score-x.score):[...oset];
+  const span=aset.length*rowH, stepM=span/mset.length, stepO=span/oset.length;
+  const ym={},ya={},yo={}; ml.forEach((m,i)=>ym[m.id]=top+(i+0.5)*stepM); al.forEach((a,i)=>ya[a.n]=top+(i+0.5)*rowH); ol.forEach((o,i)=>yo[o.id]=top+(i+0.5)*stepO);
+  const gap=(W-2*pad-lw-mw-rw)/2;
+  const xL=pad+lw, xM=xL+gap, xM2=xM+mw, xR=W-pad-rw;
+  const bh=rowH-6, lbh=Math.min(stepM-6,bh+6), obh=Math.min(stepO-8,narrow?36:40);
+  const nm=norm(mset,"lad"), na=norm(aset,"lad"), no=norm(oset,"lad");
+  const fs=narrow?10.5:12;
+  const aRight={}; apps.forEach(a=>aRight[a.n]=a);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Graph of math problems, the problems they gate, and the tangible outcomes those feed" style="font-size:${fs}px">`;
+  s+=`<text class="colh" x="${pad}" y="12">math · ${mset.length}</text><text class="colh" x="${xM+mw/2}" y="12" text-anchor="middle">problems · ${aset.length}</text><text class="colh" x="${W-pad}" y="12" text-anchor="end">outcomes · ${oset.length}</text>`;
+  // highlight sets (two hops)
+  const on=new Set(); let note="";
+  if(picked){
+    if(picked[0]==="a"){const k=picked.slice(1); on.add(picked); mset.forEach(m=>{if(m.links[k]) on.add(m.id);}); oset.forEach(o=>{if(o.links[k]) on.add(o.id);}); note=aRight[k]?aRight[k].name:"";}
+    else if(picked[0]==="O"){const o=oset.find(x=>x.id===picked); if(o){on.add(o.id); for(const k in o.links){ if(o.links[k]&&ya[k]){ on.add("a"+k); mset.forEach(m=>{if(m.links[k]) on.add(m.id);}); } } note=o.s;}}
+    else {const m=mset.find(x=>x.id===picked); if(m){on.add(m.id); for(const k in m.links){ if(m.links[k]&&ya[k]){ on.add("a"+k); oset.forEach(o=>{if(o.links[k]) on.add(o.id);}); } } note=m.name;}}
+  }
+  const edgeOn=(a,b)=>picked&&on.has(a)&&on.has(b)?" on":"";
+  mset.forEach(m=>{for(const k in m.links){const st=m.links[k]; if(!st||!ya[k]) continue;
+    const y1=ym[m.id], y2=ya[k], c1=xL+gap*0.45, c2=xM-gap*0.45;
+    s+=`<path class="edge s${st}${edgeOn(m.id,"a"+k)}" d="M${xL} ${y1} C${c1} ${y1} ${c2} ${y2} ${xM} ${y2}"><title>${m.id} → ${k}: ${st}</title></path>`;}});
+  oset.forEach(o=>{for(const k in o.links){const st=o.links[k]; if(!st||!ya[k]) continue;
+    const y1=ya[k], y2=yo[o.id], c1=xM2+gap*0.45, c2=xR-gap*0.45;
+    s+=`<path class="edge s${st}${edgeOn("a"+k,o.id)}" d="M${xM2} ${y1} C${c1} ${y1} ${c2} ${y2} ${xR} ${y2}"><title>${k} → ${o.id}: ${st}</title></path>`;}});
+  ml.forEach(m=>{const y=ym[m.id]-lbh/2; const cls=["node",on.has(m.id)?"on":"",picked===m.id?"picked":""].join(" ");
+    s+=`<g class="${cls}" data-id="${m.id}" tabindex="0" role="button" aria-label="${m.name}, score ${f1(m.lad)}"><title>${m.id} ${m.name} · D ${m.diff} · ${m.n} edges · score ${f1(m.lad)}</title>
+      <rect class="box" style="fill:${blue(nm(m.lad))}" x="${pad}" y="${y}" width="${lw}" height="${lbh}" rx="6"/>
+      <text x="${pad+7}" y="${y+lbh/2+4}">${m.src!=="core"?`<tspan class="tg">${m.src} </tspan>`:""}${m.s}</text><text class="sc" x="${xL-6}" y="${y+lbh/2+4}" text-anchor="end">${f1(m.lad)}</text></g>`;});
+  al.forEach(a=>{const y=ya[a.n]-bh/2; const id="a"+a.n; const cls=["node",on.has(id)?"on":"",picked===id?"picked":""].join(" ");
+    s+=`<g class="${cls}" data-id="${id}" tabindex="0" role="button" aria-label="${a.name}, score ${f1(a.lad)}"><title>${a.n} ${a.name} · ${a.app} · I ${a.impact} M ${a.math} C ${a.cap} · score ${f1(a.lad)}</title>
+      <rect class="box" style="fill:${blue(na(a.lad))}" x="${xM}" y="${y}" width="${mw}" height="${bh}" rx="6"/>
+      <text class="sc" x="${xM+6}" y="${y+bh/2+4}">${f1(a.lad)}</text><text x="${xM2-7}" y="${y+bh/2+4}" text-anchor="end">${a.s}${a.src!=="core"?`<tspan class="tg"> ${a.src}</tspan>`:""}</text></g>`;});
+  ol.forEach(o=>{const y=yo[o.id]-obh/2; const cls=["node",on.has(o.id)?"on":"",picked===o.id?"picked":""].join(" ");
+    s+=`<g class="${cls}" data-id="${o.id}" tabindex="0" role="button" aria-label="${o.s}, ${o.unit}, score ${f1(o.lad)}"><title>${o.s} · ${o.unit} · today: ${o.today} · ${o.n} problems feed it · score ${f1(o.lad)}</title>
+      <rect class="box" style="fill:${blue(no(o.lad))}" x="${xR}" y="${y}" width="${rw}" height="${obh}" rx="6"/>
+      <text class="sc" x="${xR+6}" y="${y+obh/2+4}">${f1(o.lad)}</text><text x="${W-pad-7}" y="${y+obh/2-3}" text-anchor="end">${o.s}</text><text class="sc" x="${W-pad-7}" y="${y+obh/2+9}" text-anchor="end">${o.unit}</text></g>`;});
+  s+=`</svg>`;
+  host.innerHTML=s;
+  document.getElementById("graph").classList.toggle("sel",!!picked);
+  document.getElementById("pick-note").textContent=picked?"Showing: "+note+" · tap again to clear":"";
+  host.querySelectorAll(".node").forEach(g=>{const h=()=>{picked=picked===g.dataset.id?null:g.dataset.id; renderGraph();}; g.addEventListener("click",h); g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();h();}});});
+}
+
+function numIn(v,id){return `<input type="number" id="${id}" min="1" max="10" step="0.5" value="${v}" inputmode="decimal" style="background:${blue10(v)};color:#fff">`;}
+function tint(inp,v){inp.style.background=blue10(v);}
+function renderEditors(){
+  const ea=document.getElementById("ed-apps");
+  let h=`<div class="r ra h"><span>#</span><span>Problem</span><span class="c">I</span><span class="c">M</span><span class="c">C</span></div>`;
+  apps.forEach(a=>h+=`<div class="r ra"><span class="num" style="color:var(--muted)">${a.n}</span><span class="nm" title="${a.name} — ${a.app}">${tagOf(a)}${a.s}</span><span>${numIn(a.impact,"i-"+a.n)}</span><span>${numIn(a.math,"m-"+a.n)}</span><span>${numIn(a.cap,"c-"+a.n)}</span></div>`);
+  ea.innerHTML=h;
+  const em=document.getElementById("ed-math");
+  h=`<div class="r rm h"><span>id</span><span>Math</span><span class="c">D</span></div>`;
+  maths.forEach(m=>h+=`<div class="r rm"><span class="id">${m.id}</span><span class="nm" title="${m.name}">${tagOf(m)}${m.s}</span><span>${numIn(m.diff,"d-"+m.id)}</span></div>`);
+  em.innerHTML=h;
+  const map={i:"impact",m:"math",c:"cap"};
+  ea.querySelectorAll("input").forEach(inp=>inp.addEventListener("change",e=>{const [t,n]=e.target.id.split("-"); const a=apps.find(x=>x.n==n); a[map[t]]=clamp(e.target.value); e.target.value=a[map[t]]; tint(e.target,a[map[t]]); update(false);}));
+  em.querySelectorAll("input").forEach(inp=>inp.addEventListener("change",e=>{const m=maths.find(x=>"d-"+x.id===e.target.id); m.diff=clamp(e.target.value); e.target.value=m.diff; tint(e.target,m.diff); update(false);}));
+}
+
+function renderRank(){
+  const eo=document.getElementById("outrank");
+  const so=[...outs].sort((x,y)=>y.score-x.score); const no=norm(outs,"lad");
+  eo.innerHTML=so.map((o,i)=>`<div class="rk"><span class="n num">${i+1}</span><span class="lab"><span class="t" title="today: ${o.today}">${o.s} <span class="muted">· ${o.unit}</span></span><span class="bar"><i style="width:${Math.round(100*no(o.lad))}%;background:${blue(no(o.lad))}"></i></span></span><span class="v num cf" style="background:${blue(no(o.lad))}">${f1(o.lad)}</span></div>`).join("");
+  const el=document.getElementById("prio");
+  const sorted=[...apps].sort((x,y)=>y.score-x.score); const nn=norm(apps,"lad");
+  el.innerHTML=sorted.map((a,i)=>`<div class="rk"><span class="n num">${i+1}</span><span class="lab"><span class="t" title="${a.app}">${tagOf(a)}${a.name}</span><span class="bar"><i style="width:${Math.round(100*nn(a.lad))}%;background:${blue(nn(a.lad))}"></i></span></span><span class="v num cf" style="background:${blue(nn(a.lad))}">${f1(a.lad)}</span></div>`).join("");
+  const t=document.getElementById("impact");
+  const byI=[...apps].sort((x,y)=>y.impact-x.impact||y.score-x.score);
+  let h=`<div class="r h"><span>#</span><span>Problem</span><span class="c">I</span><span class="c">M</span><span class="c">C</span><span class="rt">Δ</span></div>`;
+  byI.forEach(a=>{const d=a.irank-a.prank; h+=`<div class="r"><span class="num" style="color:var(--muted)">${a.irank}</span><span class="nm" title="${a.app}">${tagOf(a)}${a.name}</span><span class="c num cf" style="background:${blue10(a.impact)}">${a.impact}</span><span class="c num cf" style="background:${blue10(a.math)}">${a.math}</span><span class="c num cf" style="background:${blue10(a.cap)}">${a.cap}</span><span class="rt num ${d>0?"up":d<0?"dn":""}">${d>0?"+":""}${d===0?"·":d}</span></div>`;});
+  t.innerHTML=h;
+}
+
+function renderMatrix(){
+  const t=document.getElementById("matrix");
+  let h=`<thead><tr><th class="rh">math ↓ problem →</th>`; apps.forEach(a=>h+=`<th title="${a.name}">${a.n}</th>`); h+=`</tr></thead><tbody>`;
+  maths.forEach(m=>{h+=`<tr><th class="rh" title="${m.name}"><span class="id">${m.id}</span>${m.s}</th>`; apps.forEach(a=>{const s=m.links[a.n]||0; h+=`<td><button type="button" class="cell" data-s="${s}" data-m="${m.id}" data-a="${a.n}" aria-label="${m.id} to ${a.n}: ${s}"></button></td>`;}); h+=`</tr>`;});
+  t.innerHTML=h+`</tbody>`;
+  t.querySelectorAll(".cell").forEach(c=>c.addEventListener("click",()=>{const m=maths.find(x=>x.id===c.dataset.m); const n=c.dataset.a; const s=((m.links[n]||0)+1)%4; if(s===0) delete m.links[n]; else m.links[n]=s; c.dataset.s=s; c.setAttribute("aria-label",`${m.id} to ${n}: ${s}`); update(false);}));
+  const t2=document.getElementById("matrix2");
+  h=`<thead><tr><th class="rh">outcome ↓ problem →</th>`; apps.forEach(a=>h+=`<th title="${a.name}">${a.n}</th>`); h+=`</tr></thead><tbody>`;
+  outs.forEach(o=>{h+=`<tr><th class="rh" title="${o.s} · ${o.unit}"><span class="id">${o.id}</span>${o.s}</th>`; apps.forEach(a=>{const s=o.links[a.n]||0; h+=`<td><button type="button" class="cell" data-s="${s}" data-o="${o.id}" data-a="${a.n}" aria-label="${a.n} to ${o.id}: ${s}"></button></td>`;}); h+=`</tr>`;});
+  t2.innerHTML=h+`</tbody>`;
+  t2.querySelectorAll(".cell").forEach(c=>c.addEventListener("click",()=>{const o=outs.find(x=>x.id===c.dataset.o); const n=c.dataset.a; const s=((o.links[n]||0)+1)%4; if(s===0) delete o.links[n]; else o.links[n]=s; c.dataset.s=s; c.setAttribute("aria-label",`${n} to ${o.id}: ${s}`); update(false);}));
+}
+
+function setStatus(){
+  const changed=JSON.stringify(P)!==JSON.stringify(DEF)||JSON.stringify(apps.map(a=>[a.impact,a.math,a.cap]))!==JSON.stringify(APPS.map(a=>[a.impact,a.math,a.cap]))||JSON.stringify(maths.map(m=>[m.diff,m.links]))!==JSON.stringify(MATH.map(m=>[m.diff,m.links]))||JSON.stringify(outs.map(o=>o.links))!==JSON.stringify(OUT.map(o=>o.links));
+  document.getElementById("status").textContent=changed?"Edited · saved in this browser":"Defaults";
+}
+function update(editors){compute(); renderGraph(); if(editors) renderEditors(); renderRank(); save(); setStatus();}
+function fmt(k){return k==="b"?P[k].toString():P[k].toFixed(2).replace(/\.?0+$/,"");}
+function syncSliders(){["b","alpha","lambda","kappa"].forEach(k=>{document.getElementById("p-"+k).value=P[k]; document.getElementById("v-"+k).textContent=fmt(k);}); document.getElementById("ord-fixed").setAttribute("aria-pressed",order==="fixed"); document.getElementById("ord-score").setAttribute("aria-pressed",order==="score"); document.getElementById("sc-core").setAttribute("aria-pressed",scope==="core"); document.getElementById("sc-all").setAttribute("aria-pressed",scope==="all");}
+document.getElementById("sc-core").addEventListener("click",()=>{scope="core"; picked=null; syncSliders(); renderGraph(); save();});
+document.getElementById("sc-all").addEventListener("click",()=>{scope="all"; picked=null; syncSliders(); renderGraph(); save();});
+["b","alpha","lambda","kappa"].forEach(k=>{const inp=document.getElementById("p-"+k); inp.addEventListener("input",()=>{P[k]=parseFloat(inp.value); document.getElementById("v-"+k).textContent=fmt(k); update(false);});});
+document.getElementById("ord-fixed").addEventListener("click",()=>{order="fixed"; syncSliders(); renderGraph(); save();});
+document.getElementById("ord-score").addEventListener("click",()=>{order="score"; syncSliders(); renderGraph(); save();});
+document.getElementById("reset").addEventListener("click",()=>{P={...DEF}; apps=clone(APPS); maths=clone(MATH); outs=clone(OUT); picked=null; try{localStorage.removeItem(KEY);}catch(e){} syncSliders(); renderMatrix(); update(true);});
+let rt; window.addEventListener("resize",()=>{clearTimeout(rt); rt=setTimeout(renderGraph,120);});
+
+load(); syncSliders(); renderMatrix(); update(true);
+})();
+</script>

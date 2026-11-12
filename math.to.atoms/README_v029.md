@@ -42,7 +42,7 @@ Sources establish reference quantities or existing engineering results. Future m
 
 Annual macro benefits phase in linearly. With fixed references, cumulative benefit = final annual benefit x transition years / 2. At defaults: $1.8112T/year resources freed, 1.509333% of reference GDP, $18.112T accumulated over 20 years, and 139.85M DALYs/year saved at the end. Display rounds to three significant digits. Healthy years, money and CO2 are separate measures; project durations are not accumulated across years or projects.
 
-Export schema is version 19 and adds `workspace.worked`. Existing imports and saved workspaces without this field receive defaults. Supported imports: 7, 8, 9, 13, 14, 15, 18 and 19. Storage key stays `mta-ledger-v7`. Campbell's v007 logarithmic scoring model and source graph data are unchanged.
+Export schema is version 19 and adds `workspace.worked`. Existing imports and saved workspaces without this field receive defaults. Supported imports: 7, 8, 9, 13, 14, 15, 18 and 19. Storage key stays `mta-ledger-v7`. Campbell's v007 logarithmic scoring model and source graph data are unchanged. The original v006 HTML is included as the regression-test fixture, so a fresh GitHub checkout can reproduce the comparison.
 
 ## Validation
 
