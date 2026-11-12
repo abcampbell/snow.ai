@@ -1,0 +1,13 @@
+@import url('./math_to_atoms_shell_v031.css');
+.worked-calculation{margin-top:16px;border-top:1px solid #31485f;padding-top:12px}
+.worked-calculation h4{font:600 13px/1.5 var(--body);margin:0 0 9px;color:#d1e6f7}
+.worked-calculation table{width:100%;border-collapse:collapse;table-layout:fixed;font:11px/1.5 var(--body)}
+.worked-calculation th,.worked-calculation td{padding:7px 3px;border-bottom:1px solid #24394d;vertical-align:top;overflow-wrap:anywhere}
+.worked-calculation th{font-weight:400;text-align:left;width:44%;color:#adc4d8}
+.worked-calculation thead th{font-size:10px;color:#91abc2}
+.worked-calculation th:nth-child(2){width:19%}
+.worked-calculation th:last-child{width:37%;text-align:right}
+.worked-calculation td{font:11px/1.5 var(--mono);color:#c5e2fc}
+.worked-calculation td:last-child{text-align:right}
+.worked-final-step th,.worked-final-step td{font-weight:600;color:#c5e2fc}
+.worked-scope{font:11px/1.65 var(--body);color:#a2bbcf;margin:10px 0 0}
