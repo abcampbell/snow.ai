@@ -1,0 +1,337 @@
+{
+  "schema": "swarm.miner-research-price-week.v1",
+  "window": "2026-11-06 to2026-11-13",
+  "rows": [
+    {
+      "ticker": "AEM",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 191.57000732421875,
+      "end_adjusted_price": 178.4499969482422,
+      "adjusted_price_return_pct": -6.8486766583308984,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "AGI",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 31.829999923706055,
+      "end_adjusted_price": 28.610000610351562,
+      "adjusted_price_return_pct": -10.116240405506039,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "AU",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 92.98999786376953,
+      "end_adjusted_price": 86.29000091552734,
+      "adjusted_price_return_pct": -7.205072698310733,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "BTG",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 5.400000095367432,
+      "end_adjusted_price": 4.909999847412109,
+      "adjusted_price_return_pct": -9.074078505585303,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "CDE",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 15.470000267028809,
+      "end_adjusted_price": 13.979999542236328,
+      "adjusted_price_return_pct": -9.631549444560239,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "CGAU",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 21.780000686645508,
+      "end_adjusted_price": 20.239999771118164,
+      "adjusted_price_return_pct": -7.0707110513159925,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "CXBMF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": null,
+      "end_adjusted_price": null,
+      "adjusted_price_return_pct": null,
+      "both_exact_dates": false,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "DPMLF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 38.900001525878906,
+      "end_adjusted_price": 34.15999984741211,
+      "adjusted_price_return_pct": -12.18509381114915,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "EDVMF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 55.91999816894531,
+      "end_adjusted_price": 49.52000045776367,
+      "adjusted_price_return_pct": -11.444917597897607,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "EGO",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 35.58000183105469,
+      "end_adjusted_price": 31.579999923706055,
+      "adjusted_price_return_pct": -11.242275720900551,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "EQX",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 11.520000457763672,
+      "end_adjusted_price": 10.3100004196167,
+      "adjusted_price_return_pct": -10.503472135988655,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "FNV",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 254.9499969482422,
+      "end_adjusted_price": 247.00999450683594,
+      "adjusted_price_return_pct": -3.1143371392227004,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "GFI",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 39.16999816894531,
+      "end_adjusted_price": 35.7599983215332,
+      "adjusted_price_return_pct": -8.705642090419142,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "GOLD",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 40.560001373291016,
+      "end_adjusted_price": 37.59000015258789,
+      "adjusted_price_return_pct": -7.322487968796986,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "HMY",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 17.170000076293945,
+      "end_adjusted_price": 15.09000015258789,
+      "adjusted_price_return_pct": -12.11415209355673,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "IAG",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 18.760000228881836,
+      "end_adjusted_price": 17.31999969482422,
+      "adjusted_price_return_pct": -7.675908936507758,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "IAUX",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 1.4199999570846558,
+      "end_adjusted_price": 1.2899999618530273,
+      "adjusted_price_return_pct": -9.154929518344924,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "KGC",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 22.239999771118164,
+      "end_adjusted_price": 20.760000228881836,
+      "adjusted_price_return_pct": -6.654674269189154,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "KNTNF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 19.5,
+      "end_adjusted_price": 17.770000457763672,
+      "adjusted_price_return_pct": -8.871792524288857,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "LUGDF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 69.66000366210938,
+      "end_adjusted_price": 64.33999633789062,
+      "adjusted_price_return_pct": -7.637104571546982,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "MGDPF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": null,
+      "end_adjusted_price": null,
+      "adjusted_price_return_pct": null,
+      "both_exact_dates": false,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "NEM",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 120.91000366210938,
+      "end_adjusted_price": 113.13999938964844,
+      "adjusted_price_return_pct": -6.42627081062267,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "NESRF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 17.549999237060547,
+      "end_adjusted_price": 16.729999542236328,
+      "adjusted_price_return_pct": -4.672363136589864,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "OCANF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": null,
+      "end_adjusted_price": null,
+      "adjusted_price_return_pct": null,
+      "both_exact_dates": false,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "OR",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 36.220001220703125,
+      "end_adjusted_price": 34.88999938964844,
+      "adjusted_price_return_pct": -3.6720093490622663,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "ORLA",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": null,
+      "end_adjusted_price": null,
+      "adjusted_price_return_pct": null,
+      "both_exact_dates": false,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "PAAS",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 41.16999816894531,
+      "end_adjusted_price": 37.5,
+      "adjusted_price_return_pct": -8.91425390374102,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "RGLD",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 265.80999755859375,
+      "end_adjusted_price": 256.8900146484375,
+      "adjusted_price_return_pct": -3.3557740461548913,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "SSRM",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 28.34844207763672,
+      "end_adjusted_price": 27.149999618530273,
+      "adjusted_price_return_pct": -4.227542578263455,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "TORXF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 53.5,
+      "end_adjusted_price": 48.459999084472656,
+      "adjusted_price_return_pct": -9.420562458929616,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "WDOFF",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 20.190000534057617,
+      "end_adjusted_price": 18.68000030517578,
+      "adjusted_price_return_pct": -7.478950911044723,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "WPM",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 136.30999755859375,
+      "end_adjusted_price": 131.4499969482422,
+      "adjusted_price_return_pct": -3.565402903233461,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    },
+    {
+      "ticker": "GDX",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-13",
+      "start_adjusted_price": 87.5999984741211,
+      "end_adjusted_price": 81.63999938964844,
+      "adjusted_price_return_pct": -6.803652041424824,
+      "both_exact_dates": true,
+      "not_portfolio_PnL": true
+    }
+  ],
+  "qualification": "Coherent current-vintage adjusted-price observations at exact endpoints; not final settlement assurance, historical strategy performance or portfolio P&L."
+}

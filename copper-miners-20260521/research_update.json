@@ -1,0 +1,758 @@
+{
+  "schema": "swarm.existing-miner-research-update.public-safe.v1",
+  "status": "bounded_source_qualified_refresh",
+  "sector": "copper",
+  "reference_market_date": "2026-11-13",
+  "retrieval_date": "2026-11-14",
+  "original_universe_version": "2026-05-21",
+  "preserved_rows": 18,
+  "scored_rows": 17,
+  "scoring_source_sha256": "fdbe884648a27e62743e5fd8320f6531e1695737479bb9b6880749a553e37ffe",
+  "unchanged_inline_script_sha256": [
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "b33a9176e74d1db5c157ed8f40e5801d9ff29e5bc57f20ace16041f1575a7c81"
+  ],
+  "CIO_paragraphs": [
+    "The unchanged balanced score keeps ERO first, with HBM moving from fifth to second, followed by LUNMF, SCCO and GMBXF. ERO's vendor FCF yield rises from 1.6% to 4.3%; HBM's falls from 4.7% to 2.9% despite a much stronger growth input. A higher rank therefore needs a cash-conversion check, not just a growth story.",
+    "Current issuer releases support real operating progress but also important countercases. Ero reported stronger operating cash generation alongside higher copper-cost guidance. Hudbay reported strong free cash flow, while regional cost pressure and project-dedicated cash limit a simple balance-sheet reading. Lundin Mining generated cash but cut production guidance after weather disruption.",
+    "COPX fell 2.84% in observed adjusted prices from November 6 to 13. Relative issuer appeal does not protect against a falling copper market. All 17 scored names have November 13 price observations; CSFFF remains unavailable. RIO and ZIJMF market caps reconcile to vendor implied-share totals, but legal group/share-class scope is not independently proved. No cap or share count was substituted."
+  ],
+  "relative_selection_qualification": "A long/short issuer basket is a relative-selection idea, not a neutral gold or copper exposure by construction. Differences in commodity mix, operating leverage, geography, FX, project spending and borrowing costs can dominate it. The historical PM recipe is not rebalanced here; no new long/short positions, weights, borrow assumptions or performance claims are created.",
+  "prior_rankings": [
+    {
+      "ticker": "ERO",
+      "composite": 0.6452541465994303,
+      "subscores": {
+        "value": 0.6261988685534874,
+        "quality": 0.611024985869919,
+        "growth": 1.0186983085331776,
+        "balance": 0.5480204158564187
+      },
+      "forward_pe": 5.89,
+      "roic": 0.1985,
+      "fcf_yield": 1.6,
+      "ev_ebitda": 6.8,
+      "rev_growth": 0.739,
+      "ebitda_margin": 0.4949,
+      "net_debt_mn": 472,
+      "rank": 1
+    },
+    {
+      "ticker": "LUNMF",
+      "composite": 0.43545878089716983,
+      "subscores": {
+        "value": 0.4163026707733344,
+        "quality": 0.4295224894041618,
+        "growth": 0.3755121006604297,
+        "balance": 0.7134670152490543
+      },
+      "forward_pe": 13.8,
+      "roic": 0.1804,
+      "fcf_yield": 4.3,
+      "ev_ebitda": 8.1,
+      "rev_growth": 0.381,
+      "ebitda_margin": 0.4707,
+      "net_debt_mn": 123,
+      "rank": 2
+    },
+    {
+      "ticker": "SCCO",
+      "composite": 0.4297926728613772,
+      "subscores": {
+        "value": -0.7304911641907408,
+        "quality": 1.3072901482185002,
+        "growth": 0.776504225956603,
+        "balance": 1.061466283969566
+      },
+      "forward_pe": 23.33,
+      "roic": 0.3961,
+      "fcf_yield": 3.8,
+      "ev_ebitda": 13.7,
+      "rev_growth": 0.391,
+      "ebitda_margin": 0.6416,
+      "net_debt_mn": 446,
+      "rank": 3
+    },
+    {
+      "ticker": "GMBXF",
+      "composite": 0.37021432645039254,
+      "subscores": {
+        "value": -0.4355402495861484,
+        "quality": 0.9979026214741918,
+        "growth": 0.6506490193245936,
+        "balance": 0.5683261578417875
+      },
+      "forward_pe": 20.68,
+      "roic": 0.22,
+      "fcf_yield": 3.2,
+      "ev_ebitda": 7.5,
+      "rev_growth": 0.379,
+      "ebitda_margin": 0.5851,
+      "net_debt_mn": 4730,
+      "rank": 4
+    },
+    {
+      "ticker": "HBM",
+      "composite": 0.3458342924056987,
+      "subscores": {
+        "value": 0.5731811899490084,
+        "quality": 0.3724423056908281,
+        "growth": -0.09522681691428911,
+        "balance": 0.5175440843528919
+      },
+      "forward_pe": 10.74,
+      "roic": 0.1831,
+      "fcf_yield": 4.7,
+      "ev_ebitda": 8.5,
+      "rev_growth": 0.177,
+      "ebitda_margin": 0.4645,
+      "net_debt_mn": 154,
+      "rank": 5
+    },
+    {
+      "ticker": "SLSR",
+      "composite": 0.2601818057895907,
+      "subscores": {
+        "value": -0.06801555582481156,
+        "quality": 0.7212008074797969,
+        "growth": -1.8459826840357458,
+        "balance": 0.935786317397038
+      },
+      "forward_pe": -22.53,
+      "roic": null,
+      "fcf_yield": -2.9,
+      "ev_ebitda": null,
+      "rev_growth": null,
+      "ebitda_margin": null,
+      "net_debt_mn": -54,
+      "rank": 6
+    },
+    {
+      "ticker": "ZIJMF",
+      "composite": 0.18142174380305054,
+      "subscores": {
+        "value": 0.4418037586671421,
+        "quality": 0.27522824054514605,
+        "growth": -0.3176428086831303,
+        "balance": -0.27743785123527426
+      },
+      "forward_pe": null,
+      "roic": 0.265,
+      "fcf_yield": 8.5,
+      "ev_ebitda": 5,
+      "rev_growth": 0.032,
+      "ebitda_margin": 0.3598,
+      "net_debt_mn": 9976,
+      "rank": 7
+    },
+    {
+      "ticker": "BHP",
+      "composite": 0.11210753642639527,
+      "subscores": {
+        "value": -0.10013373787157723,
+        "quality": 0.37522193650072205,
+        "growth": 0.1445889190900945,
+        "balance": -0.32769677877736764
+      },
+      "forward_pe": 16.55,
+      "roic": 0.2404,
+      "fcf_yield": 4.8,
+      "ev_ebitda": 7.1,
+      "rev_growth": 0.183,
+      "ebitda_margin": 0.5089,
+      "net_debt_mn": 9866,
+      "rank": 8
+    },
+    {
+      "ticker": "TECK",
+      "composite": 0.09702692975055843,
+      "subscores": {
+        "value": 0.38720097193225955,
+        "quality": -0.20855593494909214,
+        "growth": 0.0704184684875499,
+        "balance": 0.1322561665068483
+      },
+      "forward_pe": 15.1,
+      "roic": 0.0548,
+      "fcf_yield": 5.6,
+      "ev_ebitda": 5.9,
+      "rev_growth": 0.334,
+      "ebitda_margin": 0.5031,
+      "net_debt_mn": 2205,
+      "rank": 9
+    },
+    {
+      "ticker": "FCX",
+      "composite": -0.040622421736351194,
+      "subscores": {
+        "value": 0.008701322513175305,
+        "quality": 0.11998495265725972,
+        "growth": -0.5732220966527528,
+        "balance": 0.1281237415705743
+      },
+      "forward_pe": 14.38,
+      "roic": 0.1762,
+      "fcf_yield": 2.1,
+      "ev_ebitda": 9.6,
+      "rev_growth": 0.082,
+      "ebitda_margin": 0.3766,
+      "net_debt_mn": 6021,
+      "rank": 10
+    },
+    {
+      "ticker": "RIO",
+      "composite": -0.099487823288986,
+      "subscores": {
+        "value": 0.3895930503230943,
+        "quality": -0.4022292080411801,
+        "growth": -0.4779358659405435,
+        "balance": -0.5984899651071567
+      },
+      "forward_pe": 9.62,
+      "roic": 0.1527,
+      "fcf_yield": 2.7,
+      "ev_ebitda": 6.4,
+      "rev_growth": 0.155,
+      "ebitda_margin": 0.3708,
+      "net_debt_mn": 13345,
+      "rank": 11
+    },
+    {
+      "ticker": "ANFGF",
+      "composite": -0.1848560178220115,
+      "subscores": {
+        "value": -0.7304927491739257,
+        "quality": 0.42406705594652544,
+        "growth": -0.02204862078337109,
+        "balance": 0.02442879518989368
+      },
+      "forward_pe": 45.66,
+      "roic": 0.1614,
+      "fcf_yield": 1.4,
+      "ev_ebitda": 8.3,
+      "rev_growth": 0.179,
+      "ebitda_margin": 0.5834,
+      "net_debt_mn": 3966,
+      "rank": 12
+    },
+    {
+      "ticker": "TGB",
+      "composite": -0.44776416704135424,
+      "subscores": {
+        "value": -0.03800588331894869,
+        "quality": -0.9426804858718747,
+        "growth": 0.0360116259121502,
+        "balance": -0.5101618058022668
+      },
+      "forward_pe": 8.85,
+      "roic": 0.0178,
+      "fcf_yield": -2.7,
+      "ev_ebitda": 15.6,
+      "rev_growth": 1.848,
+      "ebitda_margin": 0.2825,
+      "net_debt_mn": 414,
+      "rank": 13
+    },
+    {
+      "ticker": "NGLOY",
+      "composite": -0.45209319412806453,
+      "subscores": {
+        "value": 0.08900835559792367,
+        "quality": -0.8104499615663336,
+        "growth": -0.8278158557712417,
+        "balance": -0.8305264234986883
+      },
+      "forward_pe": 13.27,
+      "roic": 0.0331,
+      "fcf_yield": 4.9,
+      "ev_ebitda": 9.1,
+      "rev_growth": 0.109,
+      "ebitda_margin": 0.3489,
+      "net_debt_mn": 8396,
+      "rank": 14
+    },
+    {
+      "ticker": "IVPAF",
+      "composite": -0.4685431419351612,
+      "subscores": {
+        "value": -0.8799827401294896,
+        "quality": -0.4935909684525584,
+        "growth": -0.26311283539386915,
+        "balance": 0.7710075379319702
+      },
+      "forward_pe": 15.02,
+      "roic": 0.0345,
+      "fcf_yield": -3.4,
+      "ev_ebitda": 107.1,
+      "rev_growth": 0.577,
+      "ebitda_margin": 0.1569,
+      "net_debt_mn": 663,
+      "rank": 15
+    },
+    {
+      "ticker": "FQVLF",
+      "composite": -0.4886848043788149,
+      "subscores": {
+        "value": -0.0426511185002994,
+        "quality": -0.9784508546404164,
+        "growth": -0.05617401379760617,
+        "balance": -1.0858466814740868
+      },
+      "forward_pe": 9.21,
+      "roic": 0.0297,
+      "fcf_yield": -0.2,
+      "ev_ebitda": 12.9,
+      "rev_growth": 0.55,
+      "ebitda_margin": 0.3134,
+      "net_debt_mn": 6810,
+      "rank": 16
+    },
+    {
+      "ticker": "GLNCY",
+      "composite": -0.5842422299596158,
+      "subscores": {
+        "value": 0.08353780892572343,
+        "quality": -1.3796316619273137,
+        "growth": -0.25460548562421775,
+        "balance": -1.5389647485916094
+      },
+      "forward_pe": 11.61,
+      "roic": 0.0221,
+      "fcf_yield": 3.9,
+      "ev_ebitda": 9.7,
+      "rev_growth": 0.486,
+      "ebitda_margin": 0.0415,
+      "net_debt_mn": 41996,
+      "rank": 17
+    }
+  ],
+  "current_rankings": [
+    {
+      "ticker": "ERO",
+      "composite": 0.8076134314264876,
+      "subscores": {
+        "value": 0.8667991371220797,
+        "quality": 0.6848428132735161,
+        "growth": 1.1137550945714987,
+        "balance": 0.6430402972272452
+      },
+      "forward_pe": 6.1,
+      "roic": 0.2133,
+      "fcf_yield": 4.3,
+      "ev_ebitda": 5.5,
+      "rev_growth": 0.965,
+      "ebitda_margin": 0.5115,
+      "net_debt_mn": 374,
+      "rank": 1
+    },
+    {
+      "ticker": "HBM",
+      "composite": 0.5483231053417146,
+      "subscores": {
+        "value": 0.5325788911327989,
+        "quality": 0.37949794704271567,
+        "growth": 1.0019217280988009,
+        "balance": 0.5273682994474529
+      },
+      "forward_pe": 10.7,
+      "roic": 0.1776,
+      "fcf_yield": 2.9,
+      "ev_ebitda": 6.8,
+      "rev_growth": 1.208,
+      "ebitda_margin": 0.499,
+      "net_debt_mn": 259,
+      "rank": 2
+    },
+    {
+      "ticker": "LUNMF",
+      "composite": 0.4084401541834714,
+      "subscores": {
+        "value": 0.5143980633846293,
+        "quality": 0.4758790193881268,
+        "growth": -0.021185429659908796,
+        "balance": 0.7270712954839199
+      },
+      "forward_pe": 13.54,
+      "roic": 0.1851,
+      "fcf_yield": 5.9,
+      "ev_ebitda": 7.3,
+      "rev_growth": 0.163,
+      "ebitda_margin": 0.4907,
+      "net_debt_mn": -48,
+      "rank": 3
+    },
+    {
+      "ticker": "SCCO",
+      "composite": 0.37762652250332174,
+      "subscores": {
+        "value": -0.7265073112322067,
+        "quality": 1.2894618889813347,
+        "growth": 0.566656288796713,
+        "balance": 1.0381150243911519
+      },
+      "forward_pe": 21.72,
+      "roic": 0.3931,
+      "fcf_yield": 4,
+      "ev_ebitda": 12.8,
+      "rev_growth": 0.391,
+      "ebitda_margin": 0.6416,
+      "net_debt_mn": 535,
+      "rank": 4
+    },
+    {
+      "ticker": "GMBXF",
+      "composite": 0.30022483047771753,
+      "subscores": {
+        "value": -0.4812973843940256,
+        "quality": 0.9838923805416471,
+        "growth": 0.4471671656797177,
+        "balance": 0.5464359134240733
+      },
+      "forward_pe": 20.14,
+      "roic": 0.22,
+      "fcf_yield": 3.3,
+      "ev_ebitda": 7.3,
+      "rev_growth": 0.379,
+      "ebitda_margin": 0.5851,
+      "net_debt_mn": 4730,
+      "rank": 5
+    },
+    {
+      "ticker": "SLSR",
+      "composite": 0.27687182592472825,
+      "subscores": {
+        "value": -0.04614305573348311,
+        "quality": 0.7283794671717989,
+        "growth": -1.804935027059032,
+        "balance": 0.9450386276367491
+      },
+      "forward_pe": -22.84,
+      "roic": null,
+      "fcf_yield": -2.8,
+      "ev_ebitda": null,
+      "rev_growth": null,
+      "ebitda_margin": null,
+      "net_debt_mn": -54,
+      "rank": 6
+    },
+    {
+      "ticker": "ZIJMF",
+      "composite": 0.19574420087964461,
+      "subscores": {
+        "value": 0.43504406211187946,
+        "quality": 0.2526949865691632,
+        "growth": -0.22408025568663206,
+        "balance": -0.302124481364199
+      },
+      "forward_pe": null,
+      "roic": 0.265,
+      "fcf_yield": 8.8,
+      "ev_ebitda": 4.9,
+      "rev_growth": 0.032,
+      "ebitda_margin": 0.3598,
+      "net_debt_mn": 9951,
+      "rank": 7
+    },
+    {
+      "ticker": "BHP",
+      "composite": 0.09123482905303522,
+      "subscores": {
+        "value": -0.11701462778298354,
+        "quality": 0.3524802934822092,
+        "growth": 0.1318204271776763,
+        "balance": -0.3552436609195603
+      },
+      "forward_pe": 15.56,
+      "roic": 0.2404,
+      "fcf_yield": 4.7,
+      "ev_ebitda": 7.1,
+      "rev_growth": 0.183,
+      "ebitda_margin": 0.5089,
+      "net_debt_mn": 9866,
+      "rank": 8
+    },
+    {
+      "ticker": "TECK",
+      "composite": 0.05307622726894643,
+      "subscores": {
+        "value": 0.3670300296479924,
+        "quality": -0.2215334458948865,
+        "growth": -0.07147522075408422,
+        "balance": 0.10586623151182292
+      },
+      "forward_pe": 14.71,
+      "roic": 0.0548,
+      "fcf_yield": 5.5,
+      "ev_ebitda": 5.9,
+      "rev_growth": 0.334,
+      "ebitda_margin": 0.5031,
+      "net_debt_mn": 2158,
+      "rank": 9
+    },
+    {
+      "ticker": "FCX",
+      "composite": -0.046701682883891774,
+      "subscores": {
+        "value": -0.010326782538495068,
+        "quality": 0.09511996502907899,
+        "growth": -0.5044031382276258,
+        "balance": 0.10006525571344323
+      },
+      "forward_pe": 14.03,
+      "roic": 0.1762,
+      "fcf_yield": 2.2,
+      "ev_ebitda": 9.1,
+      "rev_growth": 0.082,
+      "ebitda_margin": 0.3766,
+      "net_debt_mn": 6021,
+      "rank": 10
+    },
+    {
+      "ticker": "RIO",
+      "composite": -0.13699646372724197,
+      "subscores": {
+        "value": 0.3199522663157669,
+        "quality": -0.42760822873346194,
+        "growth": -0.47004663939669733,
+        "balance": -0.6272611959333199
+      },
+      "forward_pe": 9.87,
+      "roic": 0.1527,
+      "fcf_yield": 2.7,
+      "ev_ebitda": 6.5,
+      "rev_growth": 0.155,
+      "ebitda_margin": 0.3708,
+      "net_debt_mn": 13345,
+      "rank": 11
+    },
+    {
+      "ticker": "ANFGF",
+      "composite": -0.23905946185451613,
+      "subscores": {
+        "value": -0.8315127987036743,
+        "quality": 0.4085353219859827,
+        "growth": -0.03937058243194178,
+        "balance": -0.01124883804846298
+      },
+      "forward_pe": 47.76,
+      "roic": 0.1614,
+      "fcf_yield": 1.3,
+      "ev_ebitda": 8.6,
+      "rev_growth": 0.179,
+      "ebitda_margin": 0.5834,
+      "net_debt_mn": 3966,
+      "rank": 12
+    },
+    {
+      "ticker": "TGB",
+      "composite": -0.3013347954373504,
+      "subscores": {
+        "value": 0.18134358337102127,
+        "quality": -0.8743881717098955,
+        "growth": 0.07917779781353425,
+        "balance": -0.2999428095669968
+      },
+      "forward_pe": 9.39,
+      "roic": 0.0183,
+      "fcf_yield": -1.1,
+      "ev_ebitda": 11.1,
+      "rev_growth": 0.968,
+      "ebitda_margin": 0.3201,
+      "net_debt_mn": 379,
+      "rank": 13
+    },
+    {
+      "ticker": "NGLOY",
+      "composite": -0.47811929717623713,
+      "subscores": {
+        "value": 0.022451860845745963,
+        "quality": -0.8303989075765206,
+        "growth": -0.7640324336275023,
+        "balance": -0.8882727553128511
+      },
+      "forward_pe": 13.24,
+      "roic": 0.0331,
+      "fcf_yield": 4.9,
+      "ev_ebitda": 9.1,
+      "rev_growth": 0.109,
+      "ebitda_margin": 0.3489,
+      "net_debt_mn": 8396,
+      "rank": 14
+    },
+    {
+      "ticker": "IVPAF",
+      "composite": -0.4818116223158253,
+      "subscores": {
+        "value": -1.0537965823695796,
+        "quality": -0.4976106321330696,
+        "growth": -0.06543582977855088,
+        "balance": 0.7642134997727854
+      },
+      "forward_pe": 16.81,
+      "roic": 0.0338,
+      "fcf_yield": -4.6,
+      "ev_ebitda": 80.3,
+      "rev_growth": 1.039,
+      "ebitda_margin": 0.1472,
+      "net_debt_mn": 809,
+      "rank": 15
+    },
+    {
+      "ticker": "FQVLF",
+      "composite": -0.6161123830852038,
+      "subscores": {
+        "value": -0.10903820339132428,
+        "quality": -1.0011445225909383,
+        "growth": -0.45365723959723847,
+        "balance": -1.1207513091229162
+      },
+      "forward_pe": 9.22,
+      "roic": 0.0297,
+      "fcf_yield": -0.2,
+      "ev_ebitda": 12.7,
+      "rev_growth": 0.55,
+      "ebitda_margin": 0.3134,
+      "net_debt_mn": 6810,
+      "rank": 16
+    },
+    {
+      "ticker": "GLNCY",
+      "composite": -0.6389266529735181,
+      "subscores": {
+        "value": 0.11517923086698997,
+        "quality": -1.3756400838671603,
+        "growth": -0.5463182302718581,
+        "balance": -1.5631053444085024
+      },
+      "forward_pe": 10.69,
+      "roic": 0.0221,
+      "fcf_yield": 4.1,
+      "ev_ebitda": 9.5,
+      "rev_growth": 0.486,
+      "ebitda_margin": 0.0415,
+      "net_debt_mn": 41996,
+      "rank": 17
+    }
+  ],
+  "comparison_medians": {
+    "forward_pe": {
+      "before": 13.8,
+      "after": 13.54
+    },
+    "roic": {
+      "before": 0.1688,
+      "after": 0.1688
+    },
+    "fcf_yield": {
+      "before": 3.2,
+      "after": 3.3
+    },
+    "ev_ebitda": {
+      "before": 8.4,
+      "after": 7.949999999999999
+    }
+  },
+  "median_definition": "Conventional midpoint for even samples; forwardPE restricted topositivevalues. Existingpageheader retains its original upper-middle display convention.",
+  "primary_source_review": [
+    {
+      "ticker": "ERO",
+      "release_date": "2026-11-02",
+      "period": "2026-09-30 quarter",
+      "url": "https://filemanager-cdn.mziq.com/published/1951db45-c927-4b21-b514-7cb902782309/ddf4c645-b752-4c2f-83a5-1cbab9c8c097",
+      "supports": "Q3 operating cash flow was US$191.2m and issuer-defined net debt fell to US$353.5m. This supports a cash-generation/deleveraging case behind the leading screen position.",
+      "countercase": "Copper cost guidance increased to US$2.25-2.45/lb; gold sales also benefited from recovery of historic stockpiles. Mine-only gold costs and future repeatability differ from the blended headline.",
+      "source_status": "native_HTTP200_full_primary_PDF"
+    },
+    {
+      "ticker": "HBM",
+      "release_date": "2026-11-12",
+      "period": "2026-09-30 quarter",
+      "url": "https://hudbayminerals.com/investors/press-releases/press-release-details/2026/Hudbay-Delivers-Record-Third-Quarter-2026-Results-Further-Improves-Cost-Guidance-and-Advances-Copper-Growth-Pipeline/default.aspx",
+      "supports": "Issuer-reported Q3 free cash flow was US$201.9m; Copper Mountain recorded its first positive free-cash-flow quarter since acquisition.",
+      "countercase": "British Columbia cash costs exceeded its guidance range; some cash is contractually dedicated to Copper World. Company-defined net debt and free cash flow are not interchangeable with the screen's vendor debt-minus-cash and FCF fields.",
+      "source_status": "native_HTTP200_full_primary"
+    },
+    {
+      "ticker": "LUNMF",
+      "release_date": "2026-11-04",
+      "period": "2026-09-30 quarter",
+      "url": "https://lundinmining.com/news/2026/lundin-mining-reports-third-quarter-2026-results-delivering-strong-financial-performance-amidst-record-copper-prices",
+      "supports": "The issuer reported US$418m free cash flow from operations and US$237m net cash at quarter end.",
+      "countercase": "Weather and snowmelt disrupted Caserones, cutting its production outlook and consolidated copper guidance to285-310kt. High realized copper prices can mask operating shortfalls; these non-GAAP cash measures are not replacements for screen inputs.",
+      "source_status": "native_HTTP200_full_primary"
+    },
+    {
+      "ticker": "FCX",
+      "release_date": "2026-10-02",
+      "period": "Q3 operational update, not final quarter financial corroboration",
+      "url": "https://investors.fcx.com/investors/news-releases/news-release-details/2026/Freeport-Provides-Third-Quarter-2026-Operational-Update/default.aspx",
+      "supports": "The dated operational notice described copper production close to expectations and Indonesian gold-sales timing.",
+      "countercase": "Sales timing and mine/smelter ramp risks can change cash generation independently of copper prices. This October2notice is not treated as a new November financial result or proof of the latest operational status.",
+      "source_status": "native_HTTP200_full_primary_older_context_only"
+    }
+  ],
+  "qualifications": [
+    "Scoring features, 10/90 winsorization,population standard deviation, missing-feature normalization and all presets are unchanged. A rank is not demonstrated alpha.",
+    "ROIC retains the original first-available annual EBIT/tax/equity inputs plus latest vendor debt/cash. The periods can differ; a high annual ratio is not an expected stock return.",
+    "The balance score retains absolute USD net-debt amounts and therefore a size bias. Screen EV/EBITDA is (rounded market cap + net debt)/EBITDA, not vendor enterpriseValue/EBITDA.",
+    "Vendor freeCashflow, share counts and net-debt definitions are not replaced with issuer non-GAAP measures. Native PE/PB remain vendor ratios. Financial currency conversion uses genuine November 13 observed FX only.",
+    "The 12-month price-return label retains original ret(253) indexing: 252 observed intervals, with len>253. The fresh history window is bounded from October 27, 2025; price_days/start describe that window, not an inception history.",
+    "Quote timestamps, history endpoints, quarter/fiscal/annual periods and retrieval timestamps are distinct. Current-vintage data is not a point-in-time public-availability history.",
+    "Legacy Rose series were not refreshed. Their old codes do not establish current chart/history dates. Current research returns use the new Yahoo adjusted-price observations.",
+    "Comparison medians in the evidence use conventional midpoint medians and positive forward P/Es; the page header retains its original display convention.",
+    "RIO and ZIJMF cap/price arithmetic matches vendor impliedSharesOutstanding rather than the separate sharesOutstanding field. No legal/ADR/group-capital proof or replacement cap/share count is inferred; original eligibility and scores are unchanged."
+  ],
+  "marketcap_scope_diagnostics": [
+    {
+      "ticker": "RIO",
+      "marketCap": 134917947392,
+      "price": 82.95,
+      "quote_currency": "USD",
+      "financial_currency": "USD",
+      "sharesOutstanding": 1254747091,
+      "impliedSharesOutstanding": 1626497329,
+      "cap_vs_price_times_shares_relative_error": 0.29627497664545466,
+      "cap_vs_price_times_impliedshares_relative_error": -4.483132043375804e-08,
+      "shares_in_original_EV_or_ROIC_formula": false,
+      "eligibility_or_financial_fields_changed": false,
+      "independent_legal_capital_ADR_scope_verified": false,
+      "interpretation": "Two different vendor share-scope fields; cap reconciles arithmetically to implied shares. This does not prove legal capital scope or justify replacing the cap."
+    },
+    {
+      "ticker": "ZIJMF",
+      "marketCap": 90408714240,
+      "price": 3.4,
+      "quote_currency": "USD",
+      "financial_currency": "CNY",
+      "sharesOutstanding": 5989005101,
+      "impliedSharesOutstanding": 26590798241,
+      "cap_vs_price_times_shares_relative_error": 3.439935825308017,
+      "cap_vs_price_times_impliedshares_relative_error": 2.440030399952775e-09,
+      "shares_in_original_EV_or_ROIC_formula": false,
+      "eligibility_or_financial_fields_changed": false,
+      "independent_legal_capital_ADR_scope_verified": false,
+      "interpretation": "Two different vendor share-scope fields; cap reconciles arithmetically to implied shares. This does not prove legal capital scope or justify replacing the cap."
+    }
+  ],
+  "benchmark_research_return": {
+    "ticker": "COPX",
+    "start_date": "2026-11-06",
+    "end_date": "2026-11-13",
+    "start_adjusted_price": 71.25,
+    "end_adjusted_price": 69.2300033569336,
+    "adjusted_price_return_pct": -2.8350830078125,
+    "both_exact_dates": true,
+    "not_portfolio_PnL": true
+  },
+  "bounded_source_operations": {
+    "logical_vendor_operations": 194,
+    "exact_cache_reused_records": 4,
+    "raw_HTTP_count": null,
+    "explicit_retries": 0,
+    "qualification": "Logical application operations are not transport requests or billed quota. No explicit retries; library transport calls are not counted."
+  },
+  "nested_ratio_projection_receipt_sha256": "d75ab3ae3e5abc51f369b1f570ec2359959b763718302119578dce28f6d7ebd9",
+  "collection_receipt_sha256": "94af5ecf1430acf69ec633b60db059be93cfe253d6ba94e20cc7c61011468286",
+  "no_portfolio_PnL_trades_weights_Rose_or_backtest_change": true,
+  "publication_by_producer": false
+}
