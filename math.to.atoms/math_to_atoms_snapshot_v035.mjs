@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {defaultValues} from './math_to_atoms_value_model_v027.mjs';
+import {DEFAULT_SCENARIO,scenarioOutcomes} from './math_to_atoms_scenario_v029.mjs';
+import {defaultProjection,projectAll} from './math_to_atoms_projection_v031.mjs';
+import {trendCards,gdpExplanation} from './math_to_atoms_timeline_v035.mjs';
+const read=name=>JSON.parse(fs.readFileSync(new URL(name,import.meta.url),'utf8'));
+const data=read('./math_to_atoms_history_v017.json'),energy=read('./math_to_atoms_energy_history_v028.json'),values=defaultValues(read('./math_to_atoms_values_v013.json'));
+const settings={...DEFAULT_SCENARIO},projection=defaultProjection(),impact=scenarioOutcomes(settings,values),max=scenarioOutcomes(settings,values,100);
+fs.writeFileSync(new URL('./math_to_atoms_snapshot_v035.html',import.meta.url),trendCards(data,projectAll(data,projection,impact),projectAll(data,projection,max),impact,projection,max,energy,settings,{snapshot:true}));
+fs.writeFileSync(new URL('./math_to_atoms_gdp_v035.html',import.meta.url),gdpExplanation(impact));
+console.log('Rendered v035 fallback charts and GDP accounting explanation.');
