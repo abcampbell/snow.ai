@@ -49,5 +49,5 @@ builder=source[:source.index("cover=head(")]+source[source.index('doc=Document(S
 builder=builder.replace('math_to_atoms_v007_20261111.docx','math_to_atoms_v008_20261115.docx').replace('math_to_atoms_essay_assets_v030','math_to_atoms_essay_assets_v036').replace('figure_{figures:02d}_v030','figure_{figures:02d}_v036').replace('range(1,15)','range(1,17)').replace('11 November 2026 · v007','15 November 2026 · v008').replace('11 November 2026 · draft v007','15 November 2026 · draft v008').replace('math_to_atoms_essay_v031.html','math_to_atoms_essay_v036.html').replace('Math to Atoms · v031','Math to Atoms · v036')
 # Heading 2 in the new comparison section uses native semantics too.
 builder=builder.replace("if p.style.name=='Heading 1':","if p.style.name in ['Heading 1','Heading 2']:")
-write('build_math_to_atoms_essay_v036.py',builder)
+write('build_math_to_atoms_essay_v036.py',builder.rstrip()+'\n')
 print('Built v036 summary/model and essay converter.')

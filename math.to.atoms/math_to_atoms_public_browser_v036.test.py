@@ -80,5 +80,5 @@ with sync_playwright() as p:
    page.evaluate('scrollTo(0,0)');page.screenshot(path=str(OUT/f'public-top-{width}.png'))
    page.locator('#worked-paths').screenshot(path=str(OUT/f'worked-{width}.png'))
  assert page.locator('#graph .node').count()==88;assert not errors,errors
- print(json.dumps({'passed':True,'headline_units':True,'GDP_and_lifespan_context_only':True,'live_dragging':True,'three_graph_linked_examples':True,'costs_and_presets':True,'export_v019_import_v018':True,'widths':[320,400,768,1100,1440,1920],'errors':errors}))
+ print(json.dumps({'passed':True,'headline_units':True,'GDP_and_lifespan_context_only':True,'live_dragging':True,'three_graph_linked_examples':True,'costs_and_presets':True,'export_v020_import_v018':True,'widths':[320,400,768,1100,1440,1920],'errors':errors}))
  b.close()
