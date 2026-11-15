@@ -1,0 +1,16 @@
+.worth-panel{margin:22px 0 27px;padding:23px 0;border-top:1px solid #2b3b49;border-bottom:1px solid #2b3b49;color:#b3c8db;font:14px/1.6 Barlow,Arial,sans-serif;min-width:0}
+.worth-head{display:grid;grid-template-columns:1.2fr 1fr;gap:35px;align-items:center}
+.worth-label{font-size:12px;color:#a7bed0;margin:0 0 7px}.worth-total{font-size:clamp(30px,4vw,47px);line-height:1.2;letter-spacing:-.035em;color:#e7f4ff;margin:0;font-variant-numeric:tabular-nums}
+.worth-addition{font-size:13px;color:#a2c8e5;margin:10px 0 0}.worth-scope{font-size:13px;max-width:46ch;color:#9cb2c5;margin:0}
+.worth-cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:23px}
+.worth-cases button{font-family:inherit;display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:transparent;border:1px solid #3a5062;border-radius:5px;padding:13px;color:#a9c3d9;text-align:left;cursor:pointer;min-width:0}
+.worth-cases button[aria-pressed=true]{border-color:#88c4ee;background:#112638}.worth-cases span{font-size:12px}.worth-cases strong{font-size:22px;color:#dcefff;font-weight:400;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.worth-cases button:focus-visible,.worth-inputs input:focus-visible{outline:2px solid #88c4ee;outline-offset:3px}
+.worth-case-note{font-size:12px;color:#9cb2c5;margin:13px 0 0;max-width:120ch}
+.worth-panel summary{color:#bad6ed;cursor:pointer}.worth-work,.worth-prices{margin-top:18px}.worth-work p,.worth-prices p{margin:14px 0 0;max-width:115ch}.worth-panel strong{font-weight:500}
+.worth-panel a{color:#9ccff3;text-underline-offset:3px}.worth-sources{font-size:12px}
+.worth-table{width:100%;border-collapse:collapse;table-layout:fixed;margin-top:15px;font-size:12px}
+.worth-table th,.worth-table td{padding:10px 5px;border-bottom:1px solid #2c4050;text-align:right;vertical-align:top;overflow-wrap:anywhere;font-weight:400;font-variant-numeric:tabular-nums}.worth-table th:first-child{text-align:left;width:38%}
+.worth-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:15px}.worth-inputs label{font-size:12px;color:#a9c3d9;min-width:0}.worth-inputs input{display:block;box-sizing:border-box;width:100%;margin-top:7px;border:1px solid #425a70;border-radius:4px;background:#0e1a27;color:#e4f2ff;padding:9px;font:15px Barlow,Arial,sans-serif}
+.worth-prices>button{margin-top:16px;background:transparent;color:#bad5e9;border:1px solid #40566a;border-radius:4px;padding:8px 12px;cursor:pointer;font:12px Barlow,Arial,sans-serif}
+@media(max-width:600px){.worth-head{grid-template-columns:1fr;gap:14px}.worth-cases{grid-template-columns:1fr;gap:9px}.worth-cases button{flex-direction:row;justify-content:space-between;align-items:center;padding:11px}.worth-cases strong{font-size:20px}.worth-cases span{max-width:51%}.worth-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.worth-inputs input{font-size:16px}.worth-table{font-size:11px}.worth-panel{font-size:13px}.worth-case-note{font-size:11px}}

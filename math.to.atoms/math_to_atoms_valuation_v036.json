@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "referenceYear": 2026,
+  "endYear": 2046,
+  "years": 20,
+  "prices": {
+    "daly": 14500,
+    "capital": 1.5,
+    "carbon": 100,
+    "investmentT": 10,
+    "finance": 5
+  },
+  "cases": [
+    {
+      "id": "published",
+      "name": "25% reached · half used",
+      "reach": 25,
+      "use": 50,
+      "impact": {
+        "effect": 0.05,
+        "gdp": 120000000000000,
+        "components": [
+          {
+            "id": "energy",
+            "name": "Energy",
+            "base": 12000000000000,
+            "value": 600000000000
+          },
+          {
+            "id": "production",
+            "name": "Other production & logistics",
+            "base": 24000000000000,
+            "value": 1200000000000
+          },
+          {
+            "id": "resilience",
+            "name": "Avoided disaster losses",
+            "base": 224000000000,
+            "value": 11200000000
+          }
+        ],
+        "economicValue": 1811200000000,
+        "gdpPercent": 1.5093333333333334,
+        "health": {
+          "birthsMillion": 132,
+          "lifeExpectancy": 73.3,
+          "healthyLifeExpectancy": 62.8,
+          "yllSharePercent": 64.6,
+          "groups": [
+            {
+              "id": "cmnn",
+              "dalysMillion": 681,
+              "cutPercent": 5,
+              "averted": 34050000
+            },
+            {
+              "id": "ncd",
+              "dalysMillion": 1800,
+              "cutPercent": 5,
+              "averted": 90000000
+            },
+            {
+              "id": "injury",
+              "dalysMillion": 316,
+              "cutPercent": 5,
+              "averted": 15800000
+            }
+          ],
+          "baseline": 2797000000,
+          "averted": 139850000,
+          "yllAverted": 90343100,
+          "yldAverted": 49506900,
+          "lifeYears": 0.6844174242424242,
+          "healthyYears": 1.059469696969697,
+          "lifePercent": 0.9337209061970317,
+          "healthyPercent": 1.6870536575950592,
+          "lifeAfter": 73.98441742424242,
+          "healthyAfter": 63.8594696969697,
+          "cutPercent": 5
+        },
+        "carbonAvoided": 1.92,
+        "deliverySaved": 0.5,
+        "deliveryAfter": 9.5
+      },
+      "value": {
+        "health": 2027825000000,
+        "combined": 3839025000000,
+        "energyGDP": 900000000000,
+        "energyGDPPercent": 0.75,
+        "climate": 192000000000,
+        "released": 2500000000000,
+        "delivery": 125000000000,
+        "globalHealth": 40556500000000,
+        "cumulative": 38390250000000
+      }
+    },
+    {
+      "id": "all-half",
+      "name": "All reached · half used",
+      "reach": 100,
+      "use": 50,
+      "impact": {
+        "effect": 0.2,
+        "gdp": 120000000000000,
+        "components": [
+          {
+            "id": "energy",
+            "name": "Energy",
+            "base": 12000000000000,
+            "value": 2400000000000
+          },
+          {
+            "id": "production",
+            "name": "Other production & logistics",
+            "base": 24000000000000,
+            "value": 4800000000000
+          },
+          {
+            "id": "resilience",
+            "name": "Avoided disaster losses",
+            "base": 224000000000,
+            "value": 44800000000
+          }
+        ],
+        "economicValue": 7244800000000,
+        "gdpPercent": 6.037333333333334,
+        "health": {
+          "birthsMillion": 132,
+          "lifeExpectancy": 73.3,
+          "healthyLifeExpectancy": 62.8,
+          "yllSharePercent": 64.6,
+          "groups": [
+            {
+              "id": "cmnn",
+              "dalysMillion": 681,
+              "cutPercent": 20,
+              "averted": 136200000
+            },
+            {
+              "id": "ncd",
+              "dalysMillion": 1800,
+              "cutPercent": 20,
+              "averted": 360000000
+            },
+            {
+              "id": "injury",
+              "dalysMillion": 316,
+              "cutPercent": 20,
+              "averted": 63200000
+            }
+          ],
+          "baseline": 2797000000,
+          "averted": 559400000,
+          "yllAverted": 361372400,
+          "yldAverted": 198027600,
+          "lifeYears": 2.737669696969697,
+          "healthyYears": 4.237878787878788,
+          "lifePercent": 3.734883624788127,
+          "healthyPercent": 6.748214630380237,
+          "lifeAfter": 76.0376696969697,
+          "healthyAfter": 67.03787878787878,
+          "cutPercent": 20
+        },
+        "carbonAvoided": 7.68,
+        "deliverySaved": 2,
+        "deliveryAfter": 8
+      },
+      "value": {
+        "health": 8111300000000,
+        "combined": 15356100000000,
+        "energyGDP": 3600000000000,
+        "energyGDPPercent": 3,
+        "climate": 768000000000,
+        "released": 10000000000000,
+        "delivery": 500000000000,
+        "globalHealth": 40556500000000,
+        "cumulative": 153561000000000
+      }
+    },
+    {
+      "id": "all-used",
+      "name": "All reached · fully used",
+      "reach": 100,
+      "use": 100,
+      "impact": {
+        "effect": 0.4,
+        "gdp": 120000000000000,
+        "components": [
+          {
+            "id": "energy",
+            "name": "Energy",
+            "base": 12000000000000,
+            "value": 4800000000000
+          },
+          {
+            "id": "production",
+            "name": "Other production & logistics",
+            "base": 24000000000000,
+            "value": 9600000000000
+          },
+          {
+            "id": "resilience",
+            "name": "Avoided disaster losses",
+            "base": 224000000000,
+            "value": 89600000000
+          }
+        ],
+        "economicValue": 14489600000000,
+        "gdpPercent": 12.074666666666667,
+        "health": {
+          "birthsMillion": 132,
+          "lifeExpectancy": 73.3,
+          "healthyLifeExpectancy": 62.8,
+          "yllSharePercent": 64.6,
+          "groups": [
+            {
+              "id": "cmnn",
+              "dalysMillion": 681,
+              "cutPercent": 40,
+              "averted": 272400000
+            },
+            {
+              "id": "ncd",
+              "dalysMillion": 1800,
+              "cutPercent": 40,
+              "averted": 720000000
+            },
+            {
+              "id": "injury",
+              "dalysMillion": 316,
+              "cutPercent": 40,
+              "averted": 126400000
+            }
+          ],
+          "baseline": 2797000000,
+          "averted": 1118800000,
+          "yllAverted": 722744800,
+          "yldAverted": 396055200,
+          "lifeYears": 5.475339393939394,
+          "healthyYears": 8.475757575757576,
+          "lifePercent": 7.469767249576254,
+          "healthyPercent": 13.496429260760474,
+          "lifeAfter": 78.77533939393939,
+          "healthyAfter": 71.27575757575758,
+          "cutPercent": 40
+        },
+        "carbonAvoided": 15.36,
+        "deliverySaved": 4,
+        "deliveryAfter": 6
+      },
+      "value": {
+        "health": 16222600000000,
+        "combined": 30712200000000,
+        "energyGDP": 7200000000000,
+        "energyGDPPercent": 6,
+        "climate": 1536000000000,
+        "released": 20000000000000,
+        "delivery": 1000000000000,
+        "globalHealth": 40556500000000,
+        "cumulative": 307122000000000
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "daly": 5000,
+      "allHalf": 10041800000000
+    },
+    {
+      "daly": 14500,
+      "allHalf": 15356100000000
+    },
+    {
+      "daly": 50000,
+      "allHalf": 35214800000000
+    }
+  ]
+}
