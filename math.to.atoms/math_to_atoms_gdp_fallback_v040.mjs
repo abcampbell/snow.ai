@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import {defaultValues} from './math_to_atoms_value_model_v027.mjs';
+import {DEFAULT_SCENARIO,scenarioOutcomes} from './math_to_atoms_scenario_v029.mjs';
+import {defaultProjection,projectAll} from './math_to_atoms_projection_v031.mjs';
+import {gdpPaths,gdpPathsHTML} from './math_to_atoms_gdp_paths_v040.mjs';
+import {PRICE_DEFAULTS} from './math_to_atoms_welfare_v036.mjs';
+const read=name=>JSON.parse(fs.readFileSync(new URL(name,import.meta.url),'utf8'));
+const data=read('./math_to_atoms_history_v017.json'),values=defaultValues(read('./math_to_atoms_values_v013.json'));
+const impact=scenarioOutcomes(DEFAULT_SCENARIO,values),f=gdpPaths(projectAll(data,defaultProjection(),impact).economy,impact);
+fs.writeFileSync(new URL('./math_to_atoms_gdp_paths_fallback_v040.html',import.meta.url),'<section class="gdp-paths" data-cover-gdp-paths aria-label="GDP with and without added math">'+gdpPathsHTML(f,impact,PRICE_DEFAULTS)+'</section>');
