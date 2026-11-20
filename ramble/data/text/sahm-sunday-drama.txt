@@ -1,0 +1,62 @@
+TITLE: Sahm Sunday Drama
+SUBTITLE: 
+DATE: 2024-08-04
+
+We had a spot of drama at the end of last week. 
+Bit of a “vibe shift” as the kids say.  As a set of events previously thought to be further out on the horizon came a little bit closer into view: recession, vol blow up, Israel v Iran.
+
+When VIX hits 30…
+Today we’re going to zoom in from four thousand word pieces on the role of technology and society and look at what markets are telling us today.  
+For those of you that took our recommendation to hedge last month with an optimistic view, this week will likely present you with an opportunity to buy back risk here cheaper, betting on a soft landing and the easing the bond markets are promising.  
+For those with a more pessimistic view (or who, like us, are structurally in need of a hedge), we recommend moving some of your short equity/long equity vol position into a short credit position.  If we are indeed headed for a hard landing, credit would likely be the ‘next pipe to burst’ and represents significantly better relative pricing now that implied equity volatility has gapped higher.
+
+It started earlier in the week with a confirmation from Chair Powell that the Fed was ready to ease in September. 
+
+This shot across the recessionary bow was then ‘confirmed’ Friday with an unemployment report that just ticked up enough to qualify under the Sahm Rule (or a 50bp increase in the 3m smoothed version of the unemployment rate over the 12m min).  
+
+An indicator with a pretty good track record of predicting recessions. 
+(Though it’s funny how much sometimes people fixate on Sahm or whatever as way to describe the basic calculus of comparing the change in the unemployment rate to it’s history.   Good example of how difficult stocks vs flows can really be!
+Note that there are only a small handful of times where something simpler would yield the same timing (if the 12m change in Unemployment increased by 50bps).
+
+Markets began rapidly priced in an additional 50bps of easing over the next 2yrs.
+
+Which had predictable consequences on the dollar, falling dramatically against the Japanese Yen, after the BoJ opened the week by raising rates.
+
+Sending Japanese Banks stocks down their most since covid overnight Thursday.
+
+As a reminder, the Japan owns about $3tr more foreign assets than they have liabilities.  So the prospect of a lot of that money coming home as the interest rate differential with the US compresses represents a real source of potential selling.
+
+What’s interesting is that US domestic investors seem happy to pick up the duration that those Japanese investors are selling, as bonds largely rallied.  
+Meaning the net selling pressure flowed most dramatically into stocks, which broke the recent (unreasonably strong) trendline, setting everyone up for some short term momentum-based sales.  News that NVidia was delaying shipments of it’s most advanced AI chips didn’t help, contributing to the “AI cannot make money” meme, which looks to be on the precipice of escaping containment. 
+
+Note we’re still 10% away from real pain here…
+Combined with what looks to be the first steps of an unwind in the short vol dispersion trade that we talked about last month, Friday was a classic recipe for a lot of ‘it’s over’ memes.  
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The weekend didn’t help as Saturday, news came out that Warren Buffett sold half of shares of Apple.
+
+Proving once again the Oracle of Omaha has a real knack for timing.
+
+Oil and copper, traditional bellwethers for economic weakness saw spot prices fall more than 10% on the week.
+
+Which brings us, whether we like it or not, to the middle east.  Where Israel’s targeted assassination of a Hamas’ leader on Iranian soil appears to have forced a classic tit-for-tat response (which remains unknown at time of writing).  The gears of conflict slowly grinding to life, fueled by the reciprocal logic of escalation and zero sum thinking.
+
+To some extent these moves are representative of classic late cycle dynamics.  The yield curve remains inverted (meaning 2yr rates are higher than 10yr rates, implying future easing) but also looks to be in the early stages of ‘bull steepening’ (which occurs the most violently when policy makers confirm an easing cycle and short term rates crash).  
+If you are familiar with using the yield curve as an indicator for the state of the economy, this is usually the best way to time the recession.  When the bond market confirms that yup, the central bank is easing, and you see a rally in bonds, disproportionately at the ‘short end.’  This shift of yields down (the “bull” part) then widens the gap between the two rates such that lower rates go down faster (the ‘steepening’).
+
+What stands out most to us amongst these markets is less the late cycle price action (bonds up, stocks down) and more the degree to which credit markets have failed to pick up on the ‘end of days’ dynamics. 
+
+Note that while the VIX (an indicator of expectations for volatility of stocks) reached almost 30 on Friday (which would represent around a 2% move in the index per day, double the usual ~1%), credit spreads have barely moved.
+
+Credit tends to be the fastest moving and most important marginal source of spending or investment in the economy, and the collapse of various credit pipes tends to be the real starting gun for a deep recession.  So if you are looking for a hard landing, usually moderately weak employment data is not enough.  You need a pipe to break.
+The classic counter example here being the the regional banks in 2023 which came under pressure post the failure of Silicon Valley Bank, but which were saved by the Fed Bank Term Funding Program (BTFP).  Note these banks rallied strongly on expectations of a pivot earlier in the year, but many have yet to really take any credit losses (in addition to the ~$1tr of existing mark to market losses owing from their overexposure to duration going into the 2022 hikes).  We remain short what we see as the weakest of these banks, against a long position in the major US banks with strong balance sheets, profitability, and commitment to innovation like JP and Goldman. 
+
+All in all shaping up to be an interesting week.  One to pay attention to.  
+Happy hunting.
+
+Appendix: some other charts worth considering.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

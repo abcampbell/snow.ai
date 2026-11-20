@@ -1,0 +1,58 @@
+TITLE: Twitter is a Bank
+SUBTITLE: always was
+DATE: 2023-07-25
+
+Twitter is a bank now.
+You might have seen the news.
+
+For those of you terminally online enough to be exposed to my twitter rambles, this should not be a surprise.
+
+In fact, we’ve been highlighting this for sometime.
+
+They did the same thing at PayPal.
+Sometimes you have to just pay users to use your product. 
+Uber did it by subsidizing rides.  Most startups do it by giving away their product.
+When you are a financial institution, you can just cut out the middle-man.  
+Send people money directly.
+
+A strategy Elon seems to be repeating here by paying creators directly.
+
+Thing is, it’s actually not that hard to be a bank.  
+
+When you think of it, the products and services banks offer are extremely commoditized.  
+Just ask the regional banks that saw their unsecured deposits flee for JP Morgan.
+
+So what are the features of a bank and why does Twitter/X fit into that?
+Identity / KYC
+
+Hold financial / asset balances
+
+Make / receive payments
+
+Extend / request credit.
+
+Keep good records.
+
+(Deprecated) Have nice offices.
+
+Of the 5, it’s clear that social networks actually have an advantage in clearing up identity, relative to traditional financial institutions.  
+Sure accounts can be spoofed, and everyone’s got an alt, but when it comes time to collect money, most people can be bothered to upload some form of government identity.  Plus with a social network, you don’t just have their ID, you have all their connections, all their public thoughts, and the trove of location / device information that comes pouring in when someone uses your app.
+Elon knows who you are, you are in his database now.  
+Just like Zuk, just like Larry and Sergey.
+Not that any of this should be a surprise to western technologists / investors.
+WeChat has had 1bn users for 5 years.
+
+Alipay and Tenpay have outcompeted Chinese debit cards for about as long.
+
+Between the two of them, they have around $1Tr of assets under management.
+
+Before the IPO was scuttled, Ant Financial (the parent holding company behind AliPay) was valued at $300bn IPO.  For those counting at home that’s about as valuable as ICBC and Bank of China, combined.
+
+No wonder the emperor was concerned.
+
+Which kind of begs the question: if Twitter is a bank…then is Apple a bank?  
+If Apple is a bank, then Google is a bank.  
+If Google is a bank, what is Meta?
+
+Till next time.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

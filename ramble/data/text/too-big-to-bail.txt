@@ -1,0 +1,285 @@
+TITLE: Too Big to Bail
+SUBTITLE: Inside China's $7 Trillion Black Hole
+DATE: 2025-10-16
+
+Yesterday we laid out the thesis: China is weaker than most people realize, trapped by a property bubble they can’t admit and can’t fix, and that weakness makes them dangerous. Today we’re going deep on why they’re trapped. Not speculation. Math.
+The property sector has created $10 trillion in losses across the economy. The banking system is staring at $7 trillion in write-downs. The banks have $5 trillion in equity.
+That’s not a solvency problem. That’s a physics problem.
+In 2018, they could have handled this. The hole was maybe $2-3 trillion—painful but manageable. By 2024, the losses metastasized. Now the hole is bigger than all their available resources combined. Not bigger than their reserves. Not bigger than their fiscal capacity. Bigger than reserves PLUS fiscal capacity PLUS everything else they could possibly deploy without triggering the crisis they’re trying to prevent.
+This is why China can’t afford to wait. Can’t afford to lose. Can’t afford to admit weakness. And why desperation makes their empire dangerous.
+
+The Discovery: How I Learned to Stop Worrying and Short the Dragon
+2015, I was a commodity trader at a large systematic hedge fund, trying to figure out why Chinese iron and steel producers that lost money every quarter never went bankrupt.
+
+Simple question. Turned out the answer rewired how I understood the entire Chinese economy.
+The mills didn’t respond to Beijing—they answered to local governments. And local governments didn’t care about profitability. They cared about hitting their growth targets and keeping people employed. So they just kept lending through local banks, which turns out, were also owned (or ‘backed’ as we say) by the local governments. Local government + local bank + local state-owned enterprise. An unholy trinity where nobody in the chain had any incentive to stop the music.
+Then, following the steel to where it actually went, I stumbled onto Chinese property developers. That’s when I first heard the phrase “Wealth Management Product” and everything clicked.  
+WMPs weren’t just bad loans buried in bank balance sheets. The virus had escaped the lab. Property developers were selling pieces of paper to households that looked like bank deposits, paid interest like bank deposits, got stamped by real banks (for a fee), but were actually unsecured loans to massively leveraged property companies. Banks helping developers cosplay as banks so grandmas would hand over their life savings for fake deposits that would never be repaid.
+When I saw that, I knew this wasn’t just inefficiency or misalignment. This was fraud at a scale that would make every Ponzi schemer in history jealous.
+Sounds like a complicated story, but you really only need these three charts to understand the entire system.  These are the three charts that changed my life. 
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Chart 1: How the Sausage Gets Made
+
+“China Shadow Banking Map (2016)” - From our friend at the Bank of International Settlements.
+Or, in other words…
+
+The shadow banking system had exploded post-2008. Small banks and non-bank financials with zero deposits were making the sketchiest loans imaginable, wrapping them in an alphabet soup of products designed to hide risk while trading on the implicit government guarantee of everything.
+The worst were LGFVs—Local Government Financing Vehicles. These “independent companies” (owned by local governments) would borrow from banks (owned by local governments) to build infrastructure (directed by local governments) that would “increase land values” so the government could sell more land to developers who’d borrow more money to keep the whole thing spinning.
+It was a shell game wrapped in a Ponzi scheme, stuffed inside a Matryoshka doll of deniability.
+Chart 2: Follow the Money Supply
+
+M2 - Money Supply, PBoC, Haver
+They were printing money at an insane rate. By 2018, China’s money supply could buy all the money in the United States twice over. Let that sink in. An economy half the size of America with twice the money. 
+Where was it all going?
+Chart 3: The Emperor Has No Clothes
+Investment. The raw data showed Fixed Asset Investment consistently at 45-50% of GDP. For context, a healthy developed economy runs maybe 20-25% investment. Even Japan at peak bubble was around 30%.
+
+If you think I’m exaggerating, try looking at “Fixed Asset Investment” (below) instead of “Gross Fixed Capital Formation” (above), and don’t even THINK about trying to add up the data from the provinces…
+
+How can investment be more than half your economy, year after year? It can’t. Not sustainably, or not unless you are cooking the books.
+That’s when I knew this wasn’t a bug. This was the system. And it was going to blow.
+
+In 2018, we ranked China’s worst banks for our fund. Shengjing Bank—a $150 billion lender out of Liaoning province—topped my list. Worst liquidity, worst asset quality, worst accounting, worst everything.
+
+A year later, Shengjing got bailed out. By whom? Evergrande. Yes, that Evergrande. The property developer. When was the last time a property company had to bail out a bank? When was the last time the rescuer paid 40% over market to do it?
+
+The whole thing reeked.
+Here’s the thing though: I’ve been wrong on timing. In 2018, I thought this would blow in 2-3 years. Took six, but along the way, the ‘good’ banks consistently outperformed out bad banks.
+
+In 2020 I wrote about how they were trapped between Step 4 and Step 5 of our 5B framework (Boom, Bubble, Bankruptcy, Bank Failures, Bailout). 
+
+Took until 2021 for Evergrande to officially default (we were short) and the game was on.  So we decided to do it again, this time ranking the property cos on a similar scale, from worst to best. Almost a hundred of them.
+
+Which, again, played out pretty much as we expected.  Except this time, the bottom of the list didn’t just underperform, they pretty much all disappeared.
+
+What did we get wrong?  Well, the extend-and-pretend machine is more powerful than even I gave them credit for. Evergrande died in 2021 and yet it’s bankruptcy is still unresolved. But the math hasn’t changed. The losses are still there. They’re just bigger now, and in the meantime, the regime has revealed it’s hand.
+
+LINK
+The reason they won’t resolve the bankruptcy is simple.  They can’t.  Were they to kill the developers for good, the banks would have to take the write down on all their loans.  The hole has gotten to big.  They are in too deep.
+
+The Mechanics: Anatomy of a $10 Trillion Hole
+Here’s how the scam actually worked. Not the sanitized version from sell-side research. The real mechanics. And critically: who eats the losses.
+Step 1: The Local Government Revenue Hack
+China’s local governments are responsible for 85% of public spending but can’t raise property taxes (political suicide) or freely issue bonds (Beijing controls that). The solution? Sell land use rights at increasingly absurd prices.
+By 2021, land sales were 30-50% of total local government revenue in major cities. Not tax revenue. Total revenue. Imagine if Los Angeles funded half its budget by selling parking lots to developers. Every year. Forever.
+
+Source: Caixin
+It worked brilliantly until property prices stopped going up.
+Step 2: The LGFV Shell Game
+Local Government Financing Vehicles—the greatest financial engineering you’ve never heard of. Here’s the playbook:
+Local government creates “independent” company → LGFV borrows from banks using land as collateral → builds infrastructure → infrastructure “increases land values” → sell more expensive land to developers → use proceeds to service LGFV debt → repeat until physics intervenes.
+Total LGFV debt today: $7-9 trillion.
+The beauty? These aren’t on government balance sheets. They’re “corporate” debt. The IMF believed this fiction for years. Turns out when your “independent company” is owned by the government, staffed by government officials, and borrowing from government banks to execute government policy, maybe it’s not that independent.
+
+Source: China MoF, Wind, PIMCO
+Who eats these losses: Banks made the loans. When LGFVs can’t pay—and most can’t, they’re ghost city infrastructure with zero revenue—banks eat the write-downs.
+Step 3: The Pre-Sale Ponzi
+Chinese developers perfected selling apartments that don’t exist. Not “under construction.” Don’t exist. Won’t ever exist.
+The model: Sell apartment 2-3 years before completion → take customer’s life savings as “deposit” → use deposit to buy more land (not finish the building) → sell more pre-sale units on the new land → use those deposits to maybe finish the first building → repeat.
+Billionaires taking grandma’s life savings to buy land they’ll never develop, while she pays a mortgage on air. Genius, until it’s not.
+By 2021, developers had pre-sold 2.2 billion square meters of housing. At $2,000 per square meter average, that’s $4.4 trillion in customer deposits for unfinished apartments.
+Evergrande alone pre-sold $200 billion worth of apartments it never finished. Country Garden another $150 billion. Those buyers? Still paying mortgages on concrete shells. Some of them organized mortgage boycotts in 2022—refused to pay for apartments that don’t exist. Got labeled as threatening “financial stability” for their trouble.
+
+LINK
+Who eats these losses: This is where it gets messy. Households lost $2-3 trillion in deposits for apartments that will never be finished. That’s wealth destruction—hits consumption and growth, not bank balance sheets directly. But the developer loans? Those are 100% on bank books. When Evergrande defaults, banks eat the $300 billion.
+Step 4: The Banking Enablement
+Chinese banks knew. They had to know. Their loan books tell the story:
+Mortgage loans: $5.8 trillion
+
+Developer loans: $2.3 trillion
+
+LGFV loans: $7 trillion
+
+“Corporate” loans with property collateral: $5 trillion
+
+Total property-related bank assets: $20 trillion. That’s one-third of the entire banking system, all tied to an asset class that’s down 30-50% and still falling.
+But here’s the thing about Chinese banks: they’re not really banks. They’re policy arms of local governments. The provincial party secretary appoints the bank chairman. County governments own the small banks. You think a local bank chairman is going to refuse loans to the local government’s LGFV when the party secretary who appointed him is the one asking?
+
+LINK
+Look at that chart. See that thin green line at the bottom? That’s bank equity. About $5 trillion supporting $60 trillion in assets. A 8% cushion.
+Now what happens when you mark $7 trillion in property loans to market?
+
+Adding It Up: The Stress Test Nobody Wants to Run
+Let’s do what Beijing won’t: an actual mark-to-market of bank balance sheets.
+Total economic losses are roughly $10 trillion:
+Developer defaults ($1.7T) + LGFV write-downs ($2.8T) + household wealth destruction ($2.2T) + property-collateralized corporate loans ($3T) = ~$10.5 trillion in deadweight loss across the economy.
+But the critical question is: How much hits bank equity specifically?
+
+The banks need $5.3 trillion just to get back to minimum capital ratios. That’s assuming no bank runs, no capital flight, no credit crunch, no secondary effects. Just the math of recognizing losses that already exist.
+The household losses—the $2.2 trillion for unfinished apartments—don’t directly hit bank balance sheets. But they make everything worse. Crushed households can’t consume, can’t buy new homes, can’t generate the growth needed to grow out of the debt. It’s deflationary dead weight.
+
+Here’s what haunts me: they used to be able to fix this.
+2018: Manageable
+Estimated losses: $2.5T
+
+Foreign reserves: $3.2T
+
+Fiscal capacity: $1.5-2T
+
+Total firepower: ~$4.5-5T
+
+The math worked. It would have been painful—a few years of sub-5% growth, some bank consolidation, Xi taking political heat. But mathematically feasible.
+2020: Tight But Doable
+Estimated losses: $3.5T
+
+Usable reserves: $2.5T
+
+Fiscal capacity: $1.5T
+
+Total firepower: ~$4T
+
+Getting tight, but still possible. That’s why Xi announced the Three Red Lines in August 2020. That was the moment. Hold the line, admit the losses, take the medicine, solve the problem.
+They blinked.
+2024: Impossible
+Bank losses alone: $7.5T
+
+Usable reserves: $1.5T (can’t deploy more without currency collapse)
+
+Fiscal capacity: $1.5T (and falling)
+
+Total usable resources: ~$3T
+
+The hole is bigger than all available resources combined.
+Between 2018 and 2024, they let it compound. Kept lending to zombies. Allowed more pre-sales. Printed more money into LGFVs. Extended and pretended. Every year the losses grew while their capacity to fix it shrank.
+Now it’s too late. Not “difficult.” Not “requires political will.” Mathematically impossible without triggering the crisis they’re trying to prevent.
+
+Why They Can’t Fix It: When All the Doors Are Locked
+Walk through the options and you’ll see why Beijing can’t actually deploy even the $3 trillion they theoretically have.
+Door #1: Foreign Reserves
+China has $3.2 trillion in foreign reserves. More than you think are locked up in illiquid assets.  Deploy even $2 trillion to bail out banks and markets read it as desperation. Capital flight accelerates. The currency you’re trying to protect collapses anyway.
+Reserves are called reserves for a reason—they’re the backstop, the last line of defense from a Balance of Payments crisis. Start drawing them down for domestic bank bailouts and you signal to every wealthy Chinese person that the situation is worse than anyone thought. Money flees. The RMB craters. You trigger the crisis you’re trying to prevent.
+Best case: $1.5 trillion usable.
+Door #2: Print Money
+China’s M2 is already ~triple the US money supply. Print another $5 trillion and you get inflation or that destroys the savings you’re trying to protect, or currency collapse that triggers the capital flight you’re trying to prevent, and the permanent death of any reserve currency ambitions.  Perhaps the most important goal of all.
+Oh, and Chinese households have $40 trillion in bank deposits. Even 10% inflation is $4 trillion in wealth destruction. The CCP’s entire legitimacy rests on “we protect your savings.”
+Door locked.
+Door #3: Fiscal Bonds
+Central government has maybe $1 trillion in annual fiscal capacity. But China’s debt-to-GDP is already 280%. Adding another $5 trillion overnight takes you to 360-370%. At that point, you’re in Greece-during-the-crisis territory.
+Maybe $1.5 trillion usable before markets panic.
+Door #4: Bail-In Depositors
+Make depositors eat the losses. Except taking even 10% of the $40 trillion in household deposits means social explosion. Youth unemployment is already at 20%. Property values down 30-50%. Wages flat. Now you’re going to confiscate people’s savings too?
+The CCP’s entire legitimacy bargain is “you don’t get political freedom, but we deliver prosperity and we protect your savings.” A bail-in destroys both pillars simultaneously.
+Political suicide.
+The Math
+Reserves: $1.5T + Fiscal: $1.5T = $3 trillion usable
+Need: $5.3 trillion
+Shortfall: $2.5 trillion. Every door is locked.
+
+When They Showed Their Hand
+August 2020. The Three Red Lines policy was supposed to be Xi’s “whatever it takes” moment. Three simple rules for property developers:
+Liability-to-asset ratio must be below 70%
+
+Net debt-to-equity must be below 100%
+
+Cash-to-short-term debt must be above 100%
+
+Reasonable, prudent standards. The kind of rules any functioning financial system enforces.
+Ninety percent of Chinese developers failed all three tests.
+And here’s what happened next:
+Year 1 (2020-2021): Credit markets froze. Evergrande started missing payments in September 2021. Officially defaulted in December. Property sales dropped 30%.
+Year 2 (2022): Contagion spread. Country Garden, Shimao, Sunac—one by one the dominoes fell. Mortgage boycotts erupted across 100+ cities. In Henan province, bank runs started. Videos of protesters outside banks getting beaten by police went viral before being scrubbed. Property sales down 50% from peak.  People with money stuck in broken banks had their ‘health apps’ turned red, preventing them from turning up and asking “Where’s the money Lebowski”
+
+Social stability—the one thing the CCP can’t afford to lose—started cracking.
+Year 3 (2023-2024): Full retreat. They effectively abandoned the Three Red Lines, flooded the system with liquidity, ordered state-owned developers to buy distressed projects with printed money.
+Right back to the model that created the problem.
+
+REUTERS
+That retreat told everyone what they needed to know. Beijing blinks when pain becomes real. The implicit guarantee is still there. Extend-and-pretend is the actual policy, regardless of what the regulations say.
+Every player in the system learned that Beijing will always choose slow bleeding over surgery. Which means the losses keep growing, the hole keeps getting bigger, and the resources needed to fix it keep expanding beyond what they actually have.
+They showed their hand. Can’t unsee it.
+
+The Political Economy of Denial
+But even if the math worked—even if they had $6 trillion sitting around—could they actually do it?
+No. And here’s why.
+The Fragmentation Problem
+Wall Street thinks China is monolithic. Xi snaps his fingers, 1.4 billion people jump, problem solved. That’s not how it works.
+Power is fragmented across three levels:
+Beijing: Sets policy, controls the printing press, appoints provincial leaders.
+Provinces: Control implementation, own the local banks, employ the bureaucrats who actually run things.
+Cities/Counties: Run the LGFVs, sell the land, employ the construction workers.
+Each level lies to the level above. This isn’t corruption—it’s the system working as designed.
+Provincial governors get promoted based on GDP growth. A governor who admits his province’s economy is built on phantom collateral doesn’t get promoted. In most countries, that’s career suicide. In China, people who cause “financial instability” disappear.
+So they report fake GDP numbers. Beijing knows the numbers are fake. But calling them out triggers the crisis Beijing is trying to avoid. It’s a Nash equilibrium of mutual deception. Everyone lies, everyone knows everyone’s lying, but admitting it blows up the system.
+We’ve seen this movie before. During the Great Leap Forward, local officials reported fake harvest numbers because Mao rewarded the highest yields. Beijing made policy based on the fake data. Grain requisition targets were set based on phantom harvests. Forty-five million people starved.
+Same incentive structure. Same information cascade. Different domain.
+Today it’s not grain—it’s property values and bank capital ratios. Local governments know their banks are insolvent. Provincial authorities know their LGFVs are worthless. Everyone lies to the next level up. Beijing makes policy based on fiction.
+Try to fix it—really fix it, mark everything to market, force losses—and you have to expose the lying. You have to admit that provincial GDP numbers have been overstated for years. That local officials have been cooking the books. That the banks everyone thought were healthy are actually insolvent.
+Who goes to jail for that? Whose career ends? In a system where political stability requires maintaining the fiction of competence, admitting the scale of the problem is admitting the scale of the deception.
+They can’t fix it without admitting they lied. They can’t admit they lied without triggering political crisis. So they don’t fix it.
+The Employment Bomb
+Even if Beijing could somehow get past the political fragmentation, they still hit the employment wall.
+Property and related industries employ 25-30% of Chinese workers. Fifty million people work construction. Five million are real estate agents. Ten million make the steel, cement, and glass that goes into buildings. Another fifteen million in related services—architecture, engineering, interior design, property management.
+Eighty million jobs tied to building apartments.
+Let’s be clear about what mass unemployment means in China. This isn’t America where you lose your job, collect unemployment insurance, and look for the next one while food stamps cover groceries. The Chinese social safety net barely exists. Unemployment insurance maxes out at a few hundred dollars a month in major cities, less elsewhere. Runs out after a year. After that, you’re on your own.
+Mass unemployment doesn’t just mean people are angry. It means they’re desperate. Hungry. Willing to take risks they wouldn’t normally take. And the CCP’s entire legitimacy bargain rests on a simple trade: you don’t get political freedom, but we deliver prosperity and stability.
+Admit the banking losses? Credit freezes overnight. Nobody can borrow, including the marginal developers who are still sort of operating. Construction sites go silent. Those eighty million people lose their jobs over the next 6-12 months.
+Add that to youth unemployment already hitting 20% (official, probably actually 30-40%), and you’re looking at social explosion. Not protests—revolution. And the CCP knows their history better than anyone. Every dynasty that fell did so after the economy collapsed and the people had nothing left to lose.
+They can’t fix it without mass unemployment. Mass unemployment threatens regime survival. So they don’t fix it.
+
+What They’re Actually Doing: The Slow Bleed Strategy
+Since they can’t fix it—math doesn’t work, politics don’t allow it, employment bomb makes it suicidal—what are they actually doing?
+Extend-and-pretend forever.
+The Japanese playbook, except Japan in 1990 had $31,000 per capita GDP. Rich enough to stagnate for thirty years. China’s at $12,000 per capita. Too poor to stagnate. But that’s the path they’ve chosen anyway.
+Here’s the actual policy:
+Banks don’t mark to market. Loans to bankrupt developers stay classified as “performing.” LGFV debt that will never be repaid gets rolled over indefinitely. Real NPL ratio is probably 20-25%. They claim 1.6%. Just don’t look at the corpse in the room.
+Financial repression. Pay depositors 1.5% interest. Charge borrowers 4.5%. Banks earn a 3% spread, slowly rebuilding capital. Savers pay for the bailout through negative real rates. Inflation runs 2-3%, meaning depositors lose 1% purchasing power annually. Over thirty years, that’s a 26% wealth transfer from households to banks.
+Capital controls tightening. Foreign exchange limits cut from $50k to $25k per person. “Administrative guidance” to banks: scrutinize all outflows. Cryptocurrency banned (again). The message is clear: your money stays in China.
+And yet: gold imports are running at 100+ tonnes per month. Private citizens aren’t stupid. If you can’t get money out through official channels, you buy gold. At least it’s portable.
+
+Flood the world with exports. This is the critical one. With property dead and infrastructure tapped out, exports are the only working growth engine left. They HAVE to export deflation to maintain employment. No choice.
+Problem is, the world’s had enough. US slapped 100% tariffs on Chinese EVs. EU launched anti-subsidy investigations. Southeast Asia is pushing back.
+Which makes China more desperate, not less.
+
+The Resource Drain: Why the Window is Closing
+China’s bleeding roughly $1.1 trillion annually just to prevent collapse.
+I’ve shorted enough commodity plays to know when a system’s reallocating from innovation to survival—it’s like watching a poker player go all-in on a busted flush. Every yuan spent propping up zombie banks is a yuan not spent on what China actually needs.
+$500B in lost land sale revenue (local governments’ main funding source, down 50% from peak). $200B in bank profit compression (lending at low rates to zombies while paying depositors). $300B in direct LGFV bailouts and rollovers. $100B in WMP rescues and “restructuring.”
+That’s their entire military budget plus their entire R&D budget. Every year. Forever.
+
+Semiconductor independence requires $500+ billion in subsidies and infrastructure. They’re spending maybe $50 billion annually. At that rate, they’re still 5-10 years behind TSMC.
+Military modernization to compete with the US requires massive investment. The US defense budget is $850 billion. China’s official budget is $230 billion (probably actually $300-350 billion with hidden spending). But they’re bleeding money on banking system life support.
+AI development. Every major Chinese AI lab is burning through cash. But state funding is constrained because so much is going to keep banks and LGFVs on life support.
+Meanwhile:
+Working age population declining 10 million per year
+
+Tech independence still 5-10 years away
+
+Dollar weaponization accelerating (SWIFT alternatives haven’t materialized)
+
+Russia becoming a liability not an asset (war draining their resources)
+
+The window for action is closing. Each year they wait:
+Demographics get worse (losing workers)
+
+Technology gap widens (US pulling ahead on AI and chips)
+
+Resources get tighter (more money to zombie banks, less for development)
+
+Social stability degrades (youth unemployment, falling property values, stagnant wages)
+
+They need to act while they still have:
+Military advantage over Taiwan (probably next 5 years max before balance shifts)
+
+Leverage over rare earth supplies (before US develops alternatives)
+
+Resources to compete (before banking drain consumes everything)
+
+Social stability to mobilize (before unemployment gets worse)
+
+A weak China that can’t admit weakness. A banking system that’s technically insolvent. A political system that kills the messenger. And a closing window before the physics catches up.
+That’s not a recipe for peaceful decline.
+That’s a recipe for desperate moves.
+
+Next chapter, we’ll look at the historical precedents. What happens when great powers decouple. When declining empires can’t admit weakness. Why 1914 wasn’t an accident, why the 1930s were inevitable, why the USSR’s final years got dangerous.
+Because if you understand how British-German decoupling led to World War I, how Japan’s stagnation bred militarism, how the USSR’s desperation led to reckless moves... you understand why Taiwan isn’t about democracy. Why rare earths aren’t about minerals. Why the map matters more than anyone wants to admit.
+If you think $7 trillion in losses is bad, wait till you see what desperate empires do with them. Spoiler: it’s not yoga.
+Next: Chapter 3 - History Doesn’t Repeat, But It Sure as Hell Rhymes
+Till next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORA
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

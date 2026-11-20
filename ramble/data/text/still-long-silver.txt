@@ -1,0 +1,93 @@
+TITLE: Still Long Silver
+SUBTITLE: 
+DATE: 2024-12-11
+
+The case for silver in 2025 is relatively simple. 
+Yes, silver had a great 2024 (34% ytd as of writing December 10th, 2024), but we think the fundamental case is improving, rather than weakening.
+
+To review the fundamental logic here, despite the huge run-up:
+Silver remains historically 'cheap' compared to gold.
+
+This is largely due to losing its legacy as 'money' back in the late 1800s.
+
+Which is reflected by its under allocation in both global official and household reserves.
+
+Solar power consumed ~20% of new silver last year, and models suggest this could exceed 100% in 10 years.
+
+This fundamental demand will drive monetary demand, as escalating conflict and inflation increase interest in holding energy-producing metals as strategic and monetary reserves.
+
+More timely indicators - inventories, speculative positions, and local price premiums - are moderately bullish.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+To flesh that out:
+Silver remains historically 'cheap' to gold. 
+There is only 10x more silver than gold in the earth, and ~8x above ground, but gold currently trades at 80x the value of silver.
+
+Silver's role in monetary history is profound - it once comprised up to 50% of Chinese and Indian reserves, with significant holdings in the US and Germany through the mid-1800s. From Williams Jennings Bryant's Cross of Gold speech to Chinese reserves pre-opium wars, through the White Lotus and Taiping Rebellions, silver was central to the global monetary system.
+
+As it went out of favor, it fell in value relative to gold and dollars.
+
+This disconnect is self-reinforcing - as silver became less monetary, central banks stopped holding it as reserves, which made gold's density premium even more valuable. In a weird way, the more valuable gold is relative to silver by volume, the more competitive it becomes as a liquid storehold of wealth. At some point, it's a volume game: a billion dollars of gold fits in a closet, silver fills a room, copper a warehouse.
+
+Or, in non-log scale, a billion dollars of iron spans multiple football fields. The physical reality drives the financial reality.
+
+This history is reflected in silver's current under allocation in global official and household reserves, even though it acts like a higher-leveraged version of gold over time. 
+
+Prior episodes of extreme price squeezes have created generations of investors scarred by the metal as an asset class. Which, as we've learned recently with crypto volatility, might actually signal opportunity for excess returns rather than risk.
+
+The Solar Angle
+Solar power consumed ~20% of new silver last year and contributed 40% of net new energy supply in 2023. Data below is lagged but illustrates how significant 5 exajoules of energy per year is. Over 5 years that would be 25 Exajoules, roughly 50% of long-term energy growth needs.
+
+Data below is lagged but shows you how big a deal 5 exajoules of energy a year is.  Over 5yrs that would be 25 Exajoules, which would be around 50% of long term energy growth needs.
+
+Someone should check my numbers, as it gets tricky with stocks and flows, but think about it this way: how long can solar demand (and hence silver demand for solar) grow at 30% while mine supply grows at 2% before these collide? 
+
+Model Developed with GPT 4o, available upon request
+If you map out even 10% solar growth over 10 years, combined with new forms of solar using more silver per watt (up from 10 to 20, with some arguing up to 65!), that puts significant pressure on global supply. 
+
+The numbers here are wonky.  30% growth for a decade is a LOT.
+Our best hope is that efficiency improvements make panel costs less sensitive to rising silver prices. Numbers below are illustrative, but you basically can't fill the demand gap without significant recycling of existing silver.
+Probably a good time to start a silver recycling company. Silver is notoriously inelastic, coming mainly as a byproduct of other mining processes (though I need to go deeper on that). Keep in mind silver supply hasn't actually grown for more than a decade and is currently in drawdown, with prices near the highs.
+
+The Industrial to Monetary Bridge
+This industrial demand creates a new floor for prices. As panel production automates, more of the cost becomes raw material rather than labor. Casey Handmer has a good piece on why solar wins for next-gen data centers - when you're building at gigawatt scale, the commodities matter more than the tech.
+
+Fundamental demand becomes monetary demand. Whereas before your cost of carry for silver was negative, now you have a positive yield - it can be turned into energy. At least this is how people will start to think of it.
+Combined with escalating inflationary conflict, we expect increased interest in holding energy-producing metals as strategic and monetary reserves. Current indicators suggest Western investors haven't yet embraced the diversification these assets provide. This will change.
+
+Market Positioning
+More timely indicators, like speculative positioning and local price premiums, are moderately bullish. Currently, specs are long but remain longer gold - a relationship that has shown predictive power historically. 
+
+Local price premiums in China have declined from their peaks but still sit more than 5% above U.S. levels.
+
+The Strategic Context
+Step back and look at what China just did with gallium (98% market share) and germanium (60%). The raw material costs are tiny compared to final product value, but supply disruption can halt entire industries. The lesson is clear - control of strategic metals means control of industrial capacity and thus deserves consideration in any industrial policy toolkit.
+
+Silver = Solar = Energy = WATER
+One of the more overlooked aspects of the solar question is how it intersects with the long-term water picture. Many regional conflicts are fundamentally about water. Reducing energy costs through solar will unlock clean water access just when the world needs it most.
+
+Cost-effective energy anywhere on earth means fewer fights over rivers and streams. Industrialization both creates demand for and destroys supplies of potable/usable water. Energy represents 1/3 to 1/2 of water facility operating costs, and as solar costs fall, at some point the marginal cost of water will effectively become the marginal cost of silver. Which, to some extent, makes perfect sense.
+Sustainability by numbers
+How much energy does desalinisation use? Is it “absurdly cheap”?
+
+Elon Musk has said several times recently that desalinisation is “absurdly cheap…
+Read more
+2 years ago · 167 likes · 57 comments · Hannah Ritchie
+
+Risks and Positioning
+The counter-arguments are clear:
+Prices are up
+
+The dollar could continue to rally (which is true)
+
+Substitutions would kick in
+
+My response: substitutions take time, and while the dollar could indeed rally, much of the demand comes from non-dollar investors - we need to view this from their perspective.
+Stepping back, the risks are clear: strong recent performance, potential substitution (though this takes time), and rare earth supply chain disruptions that could slow solar adoption. But unlike previous rallies, this one has fundamental drivers that strengthen rather than weaken with price.
+Position
+We're holding our substantial long allocation to silver, along with butterflies we bought when SLV was 25 and which are now a form of downside protection. Between these and a risk reversal (short call, long put) we did to sell some upside skew, we are comfortably long 10% of the book in delta, rolling to 50% by February when our options short roll off. Lots of positive carry just staying here happily marginally long and looking to add in the near future.
+Till Next Time
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. As noted the views in this portfolio are not intended to maximize return and any use in a portfolio aught be considered in the broader context of your portfolio and investment needs and obligations. Please consult with a registered investment advisor if you would like financial advice, that’s their job.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

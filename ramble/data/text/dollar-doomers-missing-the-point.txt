@@ -1,0 +1,120 @@
+TITLE: Dollar Doomers Missing the Point
+SUBTITLE: Why I’m Long Dollars at $5,000 Gold
+DATE: 2026-01-28
+
+Gold just hit $5,000. Silver hit $100. I’ve been pounding the table on both for a decade.
+And I’m long dollars.
+Even back as far as the Black Snow Capital days, when your humble author wore out his shoes traveling near and far, begging, pleading with asset allocators to increase their gold position (ideally through our fund, mind you), the case wasn’t based on the death of the dollar. If you want that story, you know where to find Luke Gromen.
+No. In fact, we used to bend ourselves in knots, trying to explain three very simple themes:
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+We live in a world of dollars. The US had a debt and entitlements problem yes, but this problem was offset by the most attractive capital markets in the world, backed by (as we’re now seeing) the world’s most capable military, and the US remained the single best place to ‘spend’ your money in the world.
+The Chinese credit bubble would end in tears. Imagine being trapped in an authoritarian society, with a closed capital account, a Potemkin banking system, and a stock market where all of the nominal increases came from equity issuance and not appreciation.
+One of the best portfolio diversifiers for your US stocks is a Gold AND Dollars. A long gold (or silver mind you) position for most western investors could also be seen as a short dollar position. Both mechanistically (insofar as you pay for your gold with dollars) and in terms of investor sentiment (the spec flows tend to chase when the dollar is weak because the price rises and because they look for places to hide).
+
+Even though the specs are mostly coincident with the dollar. Meaning they buy it when it goes up and vice versa. Very little lead here, at least not enough to trade on even though the chart looks fun.
+
+Which, as far as trilemmas go, was an interesting trio. See, Ray is right that the US government has too much debt, with no prospect of relief. He’s right that countries at the end of their debt cycles often face the twin spectre of social and economic upheaval. He’s also right that China makes a lot of stuff.
+What’s noticeably missing from his framework is the bleedingly obvious: almost all of these themes apply to China as much as any other nation on earth. Aging society with terrible demographics. Debt overhang and a social contract bursting at the seams.
+So rather than try to get too cute with timing the dollar (which remember, your precious metals position gets you if you are buying US ETFs like GLD or SLV, or Comex futures), the best portfolio hedge wasn’t gold IN dollars, it was gold AND dollars.
+We even went so far as to try to invent goofy names for our strategies like “double dollar gold” and “gold in China” as ways to help our (potential) investors build an intuition for the dynamics.
+
+The Double Dollar Trade
+See, the dollar is driven by a LOT of things. In quiet times, the dollar tends to trade against major developed world currencies based on things like interest rate differentials. Especially when inflation is low or falling.
+In boom times for emerging markets, the dollar tends to depreciate against their currencies, as capital flows from the imperial core out to economies with high (but very uncertain) rates of return.
+In times of panic, investors tend to rush into dollars (and short term US treasuries) as a ‘safe haven.’ A dynamic that won’t last forever, but by and large looks to hold.
+So, rather than borrowing dollars to invest in precious metals, we advocated that you borrow other currencies, convert them into dollars, and then use ~half of those dollars to go out and buy your gold and silver.
+The mechanics: You borrow in euros or yen (currencies with low or negative rates at the time). You convert that to dollars. Now you’re short euros, long dollars. Then you take half those dollars and buy gold. So your final position is: short EUR, long USD, long gold. The gold gives you the precious metals exposure. The short EUR/long USD gives you the dollar hedge that offsets the implicit short dollar in your gold position.
+This combination of ‘gold and dollars’ was a pretty great portfolio diversifier to the trade du jour - long duration, illiquid, pro-growth assets like PE, VC and “Private Credit.”
+We even did a bunch of backtests, to no avail.
+
+The results were pretty compelling actually. Mix in 25% double dollar gold with US stocks and you get higher returns, lower drawdowns, and a better Sharpe ratio than stocks alone. The diversification benefit was real - when stocks cratered, the combination of long gold and long dollars (funded by short other currencies) tended to hold up. Classic portfolio theory stuff, except with actual alpha on top.
+Anyway, the point of all this isn’t to cry over spilt Oolong, it’s more to take some perspective over a) the role of the dollar, b) the context of the recent moves, and c) to provide some insight on what we ought expect in the coming months.
+
+What Changed (2021-2026)
+In terms of what changed since then, mostly four things:
+The AI acceleration arrived, a bit earlier than other people thought, and a bit late for my ‘database for AI’ startup Rose (but that’s a different story) but early enough to lead to a radical appreciation in US stocks, sucking in capital from the outside world.
+COVID hit at the zenith of “MMT” (another Ray inspired idea) and everyone got to experience what it was like to print a bit too much money.
+We got confirmation that, indeed yes, Chinese real estate was a bubble.
+Globalism officially died, the day Russia invaded Ukraine and we effectively strategically defaulted on our treasuries.
+Which explains how we got to where we are today with gold at $5,000 and silver at $100.
+Today, we’re going to take a closer look at the dollar leg of that trade. Remind ourselves how we got here, look at some of the short term drivers, and then make a very simple argument that (for once) has nothing directly to do with gold and silver.
+If you are dooming on the dollar, you should be short US stocks and US bonds. Because that’s what will actually get sold if foreigners decide they have had enough of Trump. DXY futures market can only take you so far.
+
+Reserve Currency ≠ Strong Currency
+Being reserve currency means there’s more demand for your financial assets than your goods and services. Your export is stable currency. In fact, the fact that your assets are prized actually pushes up your currency too far, which reduces competitiveness. A lot of the hollowing out of US manufacturing wasn’t just outsourcing, it was the direct impact of high dollar. In this way, the seeds of a reserve currency’s destruction are laid by this currency appreciation.
+Every foreign central bank that buys Treasuries to park their reserves is bidding up the dollar. Every pension fund that overweights US equities because they’re the deepest, most liquid market in the world is bidding up the dollar. The very features that make you the reserve currency - the depth, the liquidity, the safety - create a structural bid that prices your exporters out of global markets.
+This is why globalization isn’t just about offshoring, it’s the whole system, much of which operates above the understanding of the mom and pop who went out of business when the Walmart with the Chinese supply chain came into town and destroyed main street.
+Every time the US gets all geared up for conflict, you see tweets saying “X is about to find out why we don’t have free health care.” Which is a meme but is also true. The US carries the NATO burden, spends gobs of money on the military so they don’t have to. Another example of a post-war era ‘deal’ which Trump is currently renegotiating.
+Lower dollar is consistent with this, especially when it is appropriately seen as a critical piece in regaining competitiveness.
+Dollar dominance doesn’t mean that the dollar is strong, it means the dollar is ubiquitous. You can have a managed decline in your reserve currency and in fact it feels good! Because it means that the nominal appreciation in assets is positive, so people like that. No one likes lower home prices and stocks.
+
+The Current Freakout is Overblown
+Dollar hasn’t even fallen that much. Most people are just peddling charts with less backhistory than those “I let AI trade my portfolio for 48 hours yipeee!” posts.
+
+We have a lot more to go to get it down to the range. Look at 85-90 and 2000 to 2010 if you want to see what weak dollar looks like. And remember, those were kinda fun!
+
+The fall in the dollar feels large up close, but keep in mind we are still at least 25% above where the dollar typically bottoms. Trump pissing off the Europeans at Davos about Greenland doesn’t change the fundamentals. It’s theater. Loud theater, yes, but theater.
+And the fundamentals are actually improving.
+The doom narrative assumes America is deteriorating - deficits spiraling, foreigners losing patience. But the current account deficit just got cut in half. We’re importing less relative to GDP than we have in years. The “unsustainable imbalances” that were supposed to kill the dollar? They’re shrinking.
+
+Doesn’t mean the dollar can’t fall. Just means the structural case for collapse isn’t in the data. It’s in the vibes.
+
+The RMB Dilemma
+The problem is the beggar-thy-neighbor dynamics and competitive devaluations. Which isn’t a big deal right now, but could be. Especially when you consider the other big player in the room has proven a) a willingness to print, and b) a proclivity to deploy capital controls effectively.
+When people say “lower dollar,” do they mean vs the Euro or Yen (which has its own issues right now) or the RMB?
+The Schizo Currency
+RMB is a bit schizo. On the bullish side: trillion dollar current account surplus. You could imagine it trading richer than 6.
+On the bearish side: trillions in hidden capital flight. Rich Chinese want out. They’ve been smuggling money through Macau, crypto, Vancouver real estate, anything they can find for two decades now.
+This is why Beijing is paralyzed by past decisions and locked into a closed capital account. They can’t open up.
+If they let the RMB actually float you would probably see BOTH 6 and 8 in the same year. The inflows from trade and foreigners rushing to buy the appreciating currency would push it up, just in time for the ‘rush to the exit’ to crater it. A currency that swings 30% in twelve months isn’t a reserve currency. It’s a meme coin with an army.
+
+The Patient Bull
+Folks think I’m a China perma-bear, but you could actually say I’m a reaaaaly patient bull. I hunger for the day that both the currency and the political system liberalizes and Black Snow Capital becomes Red Robe Capital and I raise money to buy anything and everything I can get my hands on.
+Until then, you have to worry that competitive devaluation is both a thing they fear and want to keep in their back pocket. Even though it makes their quest to pass the US in nominal GDP space much harder propaganda-wise.
+This is why 'lower dollar' doesn't have an obvious winner on the other side of the trade.
+
+The Debasement Trade is Vibes
+This is also why we think the ‘dollar debasement’ trade is more vibes than execution at this point. It’s not that people are fleeing from the dollar to precious metals. It’s that they got psyopped by perpetual bull runs and low inflation (again globalization) into radically underowning gold and silver.   What we’re seeing now is the Veblen-good like dynamics we spoke about previously, where higher prices leads to a flood of new buyers. Sure they will make money if the dollar collapses, but the weak hands probably won’t be in the trade by the time it does.
+
+That’s going to change. Remember this is the bull case for these assets, not the dollar falling apart.
+At least not yet.
+
+The Real Mechanism
+If you are betting against the dollar, the mechanism by which this will happen is foreigners selling their assets, not currency speculators. Foreigners hold ~$20t of US stocks and $15t of US debt.  It’s the world’s favorite destination for portfolio investment.  The dollar doesn’t sell off in size without people liquidating these positions.  Something they have been loathe to do, thus far at least.
+
+Meaning you can tell who has their money where their mouth is if they decide to short US stocks and/or US bonds. Everyone else is larping.
+Well, maybe it is happening on the margin, maybe it’s what driving the underperformance of US software stocks.
+People don’t want to sell AI stocks - Mag 7, NVDA, chips, memory - that’s where the growth is. But they do want to sell expensive tech stocks that don’t have the AI tailwind. So software is getting murdered. Palantir down 30% from the highs. Snowflake. ServiceNow. The ones that ran on vibes and multiple expansion without the GPU moat.
+That’s what “selling America” actually looks like at the moment. Not some coordinated attack on DXY futures. Selective rotation out of the stuff that got ahead of itself while keeping the crown jewels.   People going into their portfolio and looking for high PE names vulnerable to disruption from AI that just automated the creation of software.  
+If you want to know whether the dollar doom is real, watch the flows. Are Europeans actually liquidating their SPX? Are Japanese pension funds selling Treasuries? Or are they just talking about it at Davos dinner parties while maintaining their allocations?
+So far it’s mostly talk.
+What would actually worry me?
+Japanese life insurers dumping Treasuries in size - not rotating, liquidating. SWIFT dollar share dropping below 40%. Stablecoin flows reversing - people fleeing USDT for local currencies instead of the other way around. A credible alternative payments system that actually clears trade, not just BRICS photo ops.
+None of that is happening. The noise is loud but the flows are quiet.
+
+The Positioning
+Me, I’m short both stocks and bonds but marginally LONG dollars. Mostly to hedge out all the short dollars I have from the metals.
+
+My gold and silver positions are implicitly short dollars. Every ounce I own was purchased by selling dollars. If I didn’t hedge some of that out, I’d be massively exposed to dollar weakness on top of whatever the metals themselves do.
+So I hedge. The dollar position isn’t a bet that the dollar is going to rip. It’s acknowledgment that my metals book is already betting it won’t.
+The stocks and bonds shorts? Those are the real expression of “bearish America” if you want to call it that. That’s where the transmission happens. That’s what foreigners would actually sell. DXY futures are a sideshow.
+For the reader:
+If you own metals and nothing else, you’re implicitly short dollars whether you meant to be or not. Fine if that’s the bet you want. Just know you’re making it.
+If you’re genuinely bearish America, the trade isn’t shorting DXY. It’s selling the assets foreigners actually own - SPY, TLT, mega-cap tech. That’s where the pressure will show up first.
+If you think the dollar is going to weaken but not collapse - the managed decline scenario - you probably want to own some combination of metals AND dollars AND short duration. The 2000-2010 playbook.
+Pick your thesis, then pick the expression that matches.
+
+Conclusion
+We still live in a world of dollars. Just at different prices.
+The denominator hasn’t budged.
+Gold hit $5,000. Silver hit $100. And the unit of account for both is still dollars. When people describe how much their gold went up, they describe it in... dollars. When they calculate their portfolio returns, the benchmark is... dollars.
+That’s what reserve currency status means. Not the exchange rate. Ubiquity. Being the ruler against which everything else gets measured. Being the pipes.
+Wake me up when DXY is actually at 85. Until then, this is a correction, not a crisis.
+Till next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These views are my own, not Rose’s clients/partners/investors.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service. Nothing herein is intended to provide tax, legal, or investment advice. You are solely responsible for determining whether any investment, strategy, security or transaction is appropriate for you.  
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

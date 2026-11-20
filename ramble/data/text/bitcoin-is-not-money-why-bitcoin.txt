@@ -1,0 +1,59 @@
+TITLE: Bitcoin Is Not Money - Why Bitcoin is Cool (p1)
+SUBTITLE: April 29th, 2016
+DATE: 2021-11-09
+
+This is the first in our series of posts on bitcoin.
+While we hold no material position in bitcoin, we have been studying this market for some time. .
+Our overarching conclusion on bitcoin is simple:
+Bitcoin can be cool, or bitcoin can be money, but it cannot be both.
+
+The structure of this series follows this line of thinking
+Part 1: Bitcoin the Ideology — Why bitcoin is cool
+Part 2: Bitcoin the Currency — Why bitcoin isn’t money
+Part 3: Ideology vs Currency —Why the scale question is existential
+
+PART 1: BITCOIN THE IDEOLOGY
+When Satoshi banged out his white paper introducing bitcoin back in 2008, he saw some very real problems at the heart of our modern notions of money.
+See, pretty much all of the money in the world is held in banks and backed by governments.
+This can lead to problems when, as they are wont to do, banks fail, and governments print too much money.
+
+The solution to this problem, according to Satoshi, was to essentially open-source money. He imagined a world where transactions were cleared in a public ledger (called the blockchain), and designed a system of interlocking incentives such that the people responsible for maintaining that ledger have an incentive to the tell the truth (more on this in a later post).
+In this light, bitcoin can be seen as an attempt to take the control of money out of the hands of greedy banks and untrustworthy governments, and put it back in the hands of the people.
+This is a pretty cool idea.
+
+Jefferson probably would been a bitcoin bull. Hamilton…not so much.
+MONEY IS ABOUT TRUST
+“What is needed is an electronic payment system based on cryptographic proof instead of trust” — Satoshi
+
+This is where the problems start for Satoshi and the ‘bitcoin is money’ crowd, at the ideological root.
+The very idea that you can remove the need for trust just fundamentally misunderstands the way money works.
+Look, money is hard. Not many people understand it.
+It’s hard because, when you stop and think about it, money doesn’t exist as a specific thing.
+Rather than a specific thing, money is a state of being (or status) that other things can obtain.
+When people start using something as money, we start calling them ‘money.’
+When people stop using something as money, we stop calling it ‘money.’
+
+In order for me to think of bitcoin as money, I need to believe that you will accept my bitcoin as money in the future.
+In order for me to believe that you will accept my bitcoin as money, I need to believe that someone else, at some even further point in time, will accept those bitcoin as money.
+Turtles. All the way down. And trust throughout.
+
+This is usually where I go off on a tangent about recursion in computer programming
+WHOM DO YOU TRUST?
+Satoshi asks:
+Can we design a money system without any trust?
+
+This is the wrong question.
+Once you see that the answer to “what is money?” is just defined by “what are humans willing to believe is money?”, you realize the answer is clearly no.
+The relevant question, for Satoshi and for us, is then:
+Where do we want to place our trust?’
+
+When we look at bitcoin, rather than see a trust-less money, we see a notion of money which asks you and I to shift the recipient of our trust away from banks and governments and to a different entity entirely: technology.
+What’s ironic here is that many of the bitcoin proponents have so much faith in the ability of technological progress to surmount problems in the way of bitcoin becoming money, that they don’t even realize that this belief is just another form of trust.
+Here’s a technical diagram from Satoshi’s white paper.
+I have no idea what this means.
+
+In order to use bitcoin as my primary form of money, I need to believe (aka trust) that someone understands it. Wouldn’t this person be a trusted third party?
+…allowing any two willing parties to transact directly…without the need for a trusted third party.-Satoshi
+
+Mom and pop aren’t going to run a bitcoin mining computer in their basement, and they certainty aren’t going to try to parse this diagram. Meaning any world in which bitcoin is money is a world in which mom and pop are trusting someone else act as an intermediary layer between them and that technical complexity.
+The fact that bitcoin is technically complex basically demands the development of financial intermediaries in order for people to start treating it as money. Which kind of explains how in a currency that is supposedly without trust can have financial intermediaries like Mt Gox blow up, and take hundreds of millions of client money with it.

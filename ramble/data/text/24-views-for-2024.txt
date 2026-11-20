@@ -1,0 +1,161 @@
+TITLE: 24 Views for 2024
+SUBTITLE: Plus how I'm trading them.
+DATE: 2024-01-05
+
+I am a deep believer in the idea of ‘track record.’ 
+Not just in the narrow - financial - sense of “What did you spend and what did it get you?” But also in the sense of looking back on the process under those outcomes (in retrospect and with the benefit of hindsight!) as a way to learn, improve and evolve. 
+I’m also a believer that we should not only apply that concept when learning new domains, but also try to generalize / abstract that process up, up, up, and out into how you evaluate your entire life. 
+Set goals. 
+Observe outcomes. 
+Examine your process in the context of the gap between the outcomes and your goals. 
+Loop.
+Sound familiar?
+
+That “track record” is also helpful insofar as it helps you communicate your process to others.  Even observed outcomes, where possible, usually come with a lot of measurement, selection and timing bias.  
+Two examples here: 
+“The best traders in the world only have a 57% win rate.”
+
+A lot of peers of mine had their funds blow up by fluke timing things.  Stuff notionally outside of their control.  
+
+So “the track is the track, but tell me how you generated it?” was always my favorite question to ask or be asked.  
+Tells someone how you think.  
+Which is actually more important than numbers in an excel file when trying to model how out someone will behave in the future.  
+Which is after all the job of any investor.  
+With that in mind, here are 24 predictions (or ‘views’ as this word is compliance-coded in finance) for 2024, and the objective measures we are going to use to track these for the year. 
+Some of these views have made it into our personal investment portfolio, some of them we have taken a position on in a prediction market, some we just have data to point to, or in lieu of that, someone I view as more believable on a topic.   Each of these is are worthy of a ramble or a debate at some point, but then again, time is limited and this ramble is free.  And “for the tapes”: None of these views should be considered a recommendation or solicitation of investment in any security, fund or investment strategy.
+Anyway, with all that said, here's 24 of my views for 2024:
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+1. Evergrande & Co will not be resolved, the pain will spread to the Chinese "trusts" and banks.
+We’ve publicly been short Evergrande and Shengjing Bank previously.
+I am currently short these banks and own Feb puts on CHIX (bank ETF).
+
+For the latest on the saga:
+
+2. Gold in China will outperform. 
+Consistent with this view, I continue to go long a lot of gold (via out of the money GLD butterflies).  
+One position has an expiry coming up with a lot of ‘upside convexity’ to say the least.   One of those options where you hold it for more than a year and boom, somehow you end “up at the money” (aka spot right on top of strike) towards expiry. 
+Personally, I’m ok risking 1% to make 20-30% when it’s a core view and I like the odds.
+
+Which, depending on how you look at risk* is a little spicy: 
+
+1 as in 100% here…
+*Risk here can be defined as dollar exposure, or delta, or volatility, or “valure-at-risk”,or “Max Loss”, or even “capital” etc, etc. 
+Which, if none of those buzz words mean anything to you don’t worry, everyone else in finance is confused too!  You can generally proxy the confusion in a discipline by the proliferation of jargon-adjacent, overloaded, domain specific terms.  
+Aka there’s a lot of terms because there’s a lot of different ways of thinking about it.  And that’s before we get to the ancient pantheon of noble Greeks.  
+Gamma, Theta, Vega….oh my, don’t forget Rho!  We’ll get to Rho in 2027.
+3. China will catch up to the US in semis, space, and LLMs.
+Longer convo here…for another ramble.  Here’s one option for a mark to market:
+
+4. China lockdown on tech, military & Taiwan will tighten. 
+We will use flights (+balloons) plus leadership disappearances/purges as a proxy here:
+
+As for the military purges, haven’t seen any good data compiled yet. 
+But am “tracking the dots” as they say.  
+I mean, imagine you are Xi, you’d probably want the CIA out of the ranks too…
+
+5. The US will ban TikTok. 
+
+6. Trump will return.
+
+7. Conflict will prove inflationary via shipping and energy. 
+This one is important!  
+Shipping rates and equities are up a lot since we sent this just last week…
+
+8. Food inflation will return. 
+Food *deflation* over the past 18 months has contributed to bringing down inflation. Expect this to reverse in 2024.
+
+9. "We are going to need more boats" 
+The return of great power conflict will lead to investment and restocking.  Something the US is just catching on to.
+
+I have been long a basket of defense names for a while... 
+Raytheon, Lockheed, General Dynamics, Northrop, and an ETF.
+10. "Bonds are priced to perfection" 
+@dampedspring  spring is all over the treasury auctions and  @BobEUnlimited is your man for following (tight) US labor conditions. 
+Think we all agree that the current bond market is priced a little too easy, at least in the short term and in the absence of real economic weakness. 
+Below you can see a toy investment system which uses the relative performance of bonds and stocks to time the bond market and right now it is bearish. 
+I probably need to go deeper here though and come to a real systematic view.
+
+This is implemented in a general lack of bonds in my book and overall very low gross exposure to beta.
+11. BTFP will have to be renewed. 
+Old view here was "long JPM vs Regional Banks (KRE)" until the pivot. We got the pivot, but I remain short. 
+Part for portfolio risk/balance reasons and partially because the Fed announced they would not roll BTFP. 
+I bet they balk.
+
+12. "The Machine is Down" 
+If you are going to get some gold, I would recommend having some physical on hand as well for when 'the lights go out'. 
+Don't think that happens this year, but #dontTrustMachines so you might want to be safe...
+
+13. Volatility is (kinda) cheap. 
+Equity volatility looks cheap compared to history but expensive compared to realized vol. 
+Bond vol looks elevated in terms of both realized and implied. 
+
+My view is we likely get more conflict / machines breaking which is inflationary and hence will drive realized vol for bonds and then stocks higher as policymakers end up tighter than discounted and "there are bonds in the stocks." 
+If you don't buy that, then BOTH equity and bond vol should likely be sold!
+14. American brands & IP outperform. 
+If you are long global or US stocks, you are already implicitly long US Brands and US IP. 
+I have this in my book implicitly with ETFS for US Equities, along with Tech and Energy, as well as explicitly in this Food & Bev ETF ($PBJ). 
+
+ Lot of juice to be squeezed here if there was more time.
+
+15. European growth disappoints. 
+3m Euribor is currently ~3.9% 
+
+The market is pricing in around 100bps of rate cuts.
+
+Looking at what's going on in Germany et al, I buy it. 
+Dollar/Euro is a way to play this, though I also think "Gold in Euros" works here too.
+16. Passive/Thematic investing continues. 
+As you can see, I use a lot of thematic or sector ETFs, and think the democratization of investment vehicles will continue.
+
+Statista
+17. Crypto can be cool, or it can be money, but it cannot be both. 
+I have a beta portfolio of Bitcoin, Ethereum and some alt coins. 
+As well as a core position in Coinbase ($COIN) on the idea that it functions like a proto-bank in the crypto space - which needs more healthy and mature financial intermediaries in order to reach it's potential.
+
+18. The US banks will implement MiFID II. 
+It's now illegal for investment banks to give away research & data under MiFID II. 
+Gensler gave the US banks a reprieve that expired last summer. 
+Time to pay up for your data folks.  And I mean pay GS, JP, MS, BAML et al.  We need to build a world where the good folks working in the scraping mines to bring you clean data are paid for their labor.
+
+Don’t blame the messenger…
+19. AI in your workplace. 
+This is year where everyone realizes that to get an LLM to talk to their corporate data, they need to actually finally finish the swing on that ‘digital transformation.’  
+You remember that right?  
+That whole buzz wave of ‘moving your data’ to the cloud?  
+Did the tech guys ever find a way to make it work with all the files you end up saving on your local harddrive?
+
+20. p(AI Doom | 2024) = 0 
+Earlier this year, I live-streamed a session where I spent an hour in excel arbitraging existential risk trading on prediction markets.  Primarily AI and Taiwan. 
+
+ Back when AI Doom by 2030 was trading at 27%(!).    It’s 4%, and I’m still short.
+
+21. Open Source catches up with GPT4. 
+Lots of interesting developments here.  Looks like open source has already caught up with GPT 3.5.
+
+Meanwhile, OpenAI reacts.
+
+22. AI companies pay for training data. 
+Lots of potential outcomes in the upcoming legal challenges to ChatGPT/DALLE and Midjourney. 
+In the end, we can neuter the models or pay for the data. 
+Right now it's too hard to pay for the data. 
+That will change.  
+I bet my life on it.
+
+23. GLP goes mainstream. 
+This year I think the bio-singularity accelerates faster than the AI-singularity. 
+GLP is a part of a much broader trend. I'm not an expert here on implementation, for that go to @Citrini7 as he has the alpha here.
+
+24. Superconductors are legit (kinda) 
+I have 0 alpha in materials science so this is a fun 'dumb and long' position! 
+
+Regardless of whether LK99 replicates, think the hype wave and investment of energy & capital here in '23 will surprisingly show dividends.
+
+That’s it folks.  On a personal note, my family expanded this year, and I was lucky enough to spend the holidays at home with the new addition.  Hope your holidays were spent with the people you love.  Wishing everyone a happy, safe, and accelerated New Year.
+
+Luna Bean Ghost Campbell @ 10wks
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction.  You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation. 
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION 
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

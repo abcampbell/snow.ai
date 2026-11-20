@@ -1,0 +1,76 @@
+TITLE: Why We're Still Long Gold
+SUBTITLE: Portfolio Insurance in a Fragmenting World
+DATE: 2024-12-04
+
+When I left traditional finance something like 9 years ago, my first goal was to start what would become Rose AI.
+My second goal was to convince you to buy more gold.
+Today we're going to update that view and make the case (again) that while gold looks relatively extended at the moment (and vulnerable to further upward shocks in the dollar), the fundamental conditions driving this view are stronger than ever, and that gold (and silver) should be thought of less as a speculative beta (or 'alpha trade') and more as portfolio level diversification, particularly for those who have a heavy exposure to US stocks.
+
+Portfolio weights post vol targeting (16 vol)
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+This view was a response to a set of conditions we saw as fundamentally unsustainable coming out of China (and emerging markets like India which fit this pattern): record money printing, leading to record over-investment in what looked to be a fixed asset / real estate bubble, and a financial system that appeared to be drunk on liquidity and shadow banking. Our view was that policymakers would inevitably have to take the pain, and engineer what some might describe as a 'deleveraging.' The start of this process would inevitably require the government to make some difficult policy decisions. In particular:
+Where is the line? Who would get bailed out and who would be left to the wolves?
+
+How big were the losses, and who would take them?
+
+What form of the inevitable stimulation would be to get them out of the crunch caused by defining those two questions and then recapping the banks?
+
+Our view was that policymakers were fundamentally benign and responsible, and seeing the unsustainable credit growth would turn to 'diffusing the credit bomb' (their language not mine) which would likely put downward pressure on their currency and upward pressure on gold, as money previously tied up in shadow banks and other financial institutions found its way to the yellow rock, consistent with its 4000-year track record as a store of value.
+As things progressed, and in response to recalcitrance by those policymakers to deal with said issues, we began to broaden that thesis beyond the narrow credit problems, and more to the global issues around what looked to the end of globalism and the return of great power conflict.
+Using the 70s as an example for what happens when ideologies go head to head, when money printing is an option. In 2020, this was still a little early, but by 2022, the following things became clear:
+Whether or not it was ideologically driven or just a function of pure national self-interest, there was an emerging block of nations that appeared deeply unsatisfied with the "liberal, rules based international order" (read: American hegemony). Russia, Iran and North Korea being the most obvious members of the club.
+
+Members of that club would be systematically excluded from western markets, be it via trade or financial sanctions, or in some extreme cases, the explicit appropriation of assets.
+
+Excluding these nations from the club would force them to develop alternative supply chains and export markets, and, perhaps most importantly, remove their incentive for storing their foreign reserves/assets in US government bonds.
+
+In spite of living in a 'world of dollars’, anyone considered 'non-aligned' would be forced to diversify away from these bonds, as they no longer could be considered an 'all weather' source of liquidity. If you can't sell your bonds to pay for stuff, do they even exist?
+
+Nine years later, and while we actually do not have answers to any of those initial three questions (!), "Gold in China" (as we called it, or XAUCNH for you markets’ folks) is up 140%, we do have confirmation that indeed, across the emerging world, both private and public portfolios have diversified out of bonds and into gold.
+So what?
+Well today, we're going to revisit these ideas, and ask ourselves a very simple question:
+"Gold is up 120% since 2015 and 30% this year, are you still long here?"
+Or at least that's what our followers on Twitter/X voted for when we polled them yesterday.
+
+So today we're going to revisit that question in light of our existing framework, which ought be a guide to any evolution in our views.
+Our short answer: yes, we remain basically denominated in precious metals, though with much less upside via calls than earlier in the year.
+Partially due to the run up, and partially due to conditions we see as supportive of the dollar (tariffs, a shift away from the dramatic easing priced into markets in August and slowly towards normalization) which should act as a significant drag on the price of gold (in dollars, mind) which one should expect to continue to 'flush out the weak hands'.
+
+That being said, and keeping our framework in mind, it's interesting to note that pretty much all of those bullish pressures remain basically in place, and in some contexts, even more dramatically in favor of gold than when we were shilling it in 2018.
+Global conflict continues to escalate.
+
+Non-aligned players are investing more than ever in developing alternative forms of payment and wealth preservation.
+
+In spite of a swath of policy announcements in September, it appears there is no political will in China to a) put a floor on the property problems, b) recognize the full extent of the losses, or c) recapitalize the failed financial institutions holding that bad debt.
+
+Long term bond yields in China continue to fall, currently trading inside (or lower) than bonds in Japan and Germany, reducing the 'carrying cost' of owning an asset with no explicit yield.
+
+Budget deficits continue to run at war-like rates (though there is debate on whether Trump + Elon will follow through on their promise to cut $2 of spending, which would likely reduce the deficit and push up the dollar (and hence be bad for gold).
+
+Global central banks have indicated a desire to increase the proportion of their FX reserves held in gold.
+
+In short, the fundamental view on the core drivers of long term gold appreciation are in place even if the recent price action gives us pause in the short term. For silver most of the same dynamics are in play, but when you add a) the likely shift by central banks back into silver as a reserve asset after 100 years, and b) the intensity of demand growth for silver for use in solar panels, the bull case is even stronger.
+What's particularly interesting is that this price appreciation hasn't been driven by retail demand. In fact, looking at the data, ETF holdings have only been able to arrest their years-long decline in household holdings of gold via ETFs.
+
+Putting those together, we are no longer 100% denominated in gold/silver, nor are we 200% long via options (as we have been at points early in the year), but we retain our base 40% gold 40% silver weight in our portfolio, consistent with our investment goals of holding a basket of assets diversifying to US tech equity.
+Given this introduction has likely run long, we'll try to keep the rest of this piece pretty visual. Where we drop charts in to support individual lines in this tree of logic, with the hope that the user can contextualize these into this overall story.
+Before we do, we just want to briefly comment on the two news stories out today that are relevant here.
+The first is the report today that China will ban exports of gallium, germanium and antimony to the United States, while simultaneously lowering tariffs across the board to 0 for the least developed economies. Aside from the interesting contrast (and China positioning themselves contra to Trump's tariff hikes), we see this as yet another notch in the road to escalation along the current Cold War.
+"You prevent us from buying chips, we prevent you from buying the metals you need from us to make the chips." In short, China finally playing the rare earth metals card that folks have been pointing to for a while.
+
+We will cover this tomorrow in detail when we dig deeper into these markets and work through which players are likely to benefit the most. As a quick preview, here are some of the names we think likely to benefit on first blush. Note this is not investment advice, more breadcrumbs, as we need to do deeper work on the individual names.
+
+However, it’s interesting that this portfolio is up almost 100% this year, although it has been subject to some huge boom/bust swings.  More on this tomorrow.
+The second big news item was that the South Korean Prime Minister tried, and failed to impose martial law for about 2hrs. This plan failing after legislators literally stormed the parliament building and voted 190-0 to end the martial law, in a weird inversion of the January 6 images from the last US election.
+
+We don't have too much valuable or differentiated to say here, outside of a) it's interesting to note that one of the primary reasons for the move by the PM was an accusation that the opposition was 'too soft on North Korea", and b) the Korean Won was down 2% today. 
+
+Again highlighting the role that gold plays for emerging markets during times of chaos. As we always say, most western investors usually pay for their gold by giving up dollars (when they invest in a US-listed ETF or go long a dollar-denominated futures contract), and so miss the degree to which this substitution effect dampens the protective nature of gold in a crisis.
+Anyway, this topic likely deserves a follow up where we go deeper into the medium term drivers of this market, which requires looking into things like inventories, spec positioning, and the actual market flows into and out of this asset. For the time being, and in the interest of keeping this brief, we'll conclude by saying that the long term bull case remains intact, and that now even appears like a good time to begin buying again. But be prepared for another material drawdown if we get another 5% rally in the dollar!
+
+Note the dollar axis is flipped here, dollar down - gold up!
+Till next time.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

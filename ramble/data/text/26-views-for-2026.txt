@@ -1,0 +1,237 @@
+TITLE: 26 Views for 2026
+SUBTITLE: The Warm Embrace of the Overton Window
+DATE: 2026-01-08
+
+Yup, we're late. Spent NYE trading — aligning the portfolio to the views and cleaning up the book for 2026. Thought I had time to flesh out the analytics before hitting send.
+“How much can really happen first week of the year?”
+First bad call of 2026.
+Silver, mooning. Maduro, taken like a thief in the night. Iran, tipping? Greenland, back on the table? Russian/Iranian/Venezuelan boats captured by special forces? Today Trump banned defense contractors doing biz with the government from paying dividends or stock buybacks AND banned institutional investors from the single family home business.
+We may be late with the blog, but the world seems to be coming around to the frameworks we’ve been prattling on about: End of Globalism, resource nationalism, remonetization of silver, Gold in China, the horseshoe is real, and the need for a New New Deal as the machines drive inequality.
+So did the market, apparently — we finished the year up 131%. Owing, primarily, to our outsized positions in silver and gold.
+
+Keep in mind, we benefited from running a modest portfolio relative to the legends out there paying 10x or 1000x more in transaction, liquidity, and institutional costs to manage pension and endowment sized checks. This is not the same game — they are professionals. I'm an amateur. This is a portfolio I use to kinda hedge my illiquid startup equity and capture returns consistent with our overall stoic macro investment framework.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Silver Situation
+Rather than stare at returns, let's look at what's actually in the portfolio. You can see our correlation with silver has increased, and we've run around our 30 vol target.
+
+Notice the dramatic drawdowns silver is subject to from prior squeezes — visible in the data decades later. We know it will end this way. The question is whether this wave ends at $85, $200 or $1000, and how long it takes to get there.
+
+The bears are waging war. Astute observation that the index roll is upon us — silver will go from close to 10% in some commodity baskets back to its historical average of 2%. I think this ends with structurally higher silver weight, but the bears are right: this represents western selling pressure.
+
+What we’re seeing in the silver market is a phenomenon familiar from my days trading oil.
+When I was training interns, we’d start by asking “what’s the price of oil?” and see what they came back with. The thing is, there is NO single price of oil. When humans say this they’re using an abstraction of a collection of markets, each with its own price, synthesized into some complicated basket or weird formula attached to a futures market priced in dollars.
+So “what’s the price of oil?” begs other questions:
+What’s the diff between US WTI and Europe Brent? Different locations.
+
+Oil today or oil tomorrow (or in 5 years)?
+
+Different grades — Dubai crude?
+
+Different products — gasoline, naphtha, residual fuel?
+
+Different currencies — oil in Shanghai?
+
+Which brings us to silver.
+The bears are right: index needs to roll, pace of rally is unsustainable, and if silver gets above $100, producers will expedite plans to substitute with base metals.
+
+But in the medium term, those bearish pressures relieve and turn into buying. The index rebalance will pass. The record shorts will eventually close — and THAT flow is bullish.
+
+Some of which shows up in positioning. Some literally shows up in the price.
+
+Because as we zoom out, it doesn’t matter. Why?
+First, copper substitution will take time. My back-of-envelope: 4+ years and ~$16bn of capex to get there. Open to other models.
+
+Meaning we have time, and about 50% higher prices, before what bears call a “short term squeeze” turns into something solar producers have no choice but to replace.
+
+And it’s just as plausible that efficient frontier solar developers create panels radically more effective at capturing energy — which just so happen to require MORE silver. That was the recent trend (though TopCon and HJT sound like names designed to be forgotten).
+Second, consider “what’s the price of silver?” in context of the actual markets:
+New York (COMEX): Price is $76.93, market still relatively flush with exchange inventory, curve in classic contango shape — short term prices lower than further out as holders get bribed to cover cost of carry.
+
+London (LBMA): The old world home of silver. Inventory scarce. Short term prices HIGHER than longer term — backwardation.
+
+Shanghai/Mumbai/Dubai: The ultimate home of physical metal these days. Trading at premiums. Government just banned (or made administratively difficult) silver leaving the country. Your silver in Asia now needs a passport.
+
+This is why we love this market. The long term story is so dynamic that you earn the right to follow the day to day. That feeling when you understand a market — not where it will go (the best bat 55-60%) but the behavior. The shape of the curve. The volatility.
+The Trades:
+We’ve shifted our silver position from 30%+ outright long with 15% derivative exposure into:
+Calendar spread: COMEX contango will shift to backwardation. Long March, short June. COMEX inventory down 81M oz since September.
+
+Butterflies: At-the-money butterflies for markets with expensive upside skew where we acknowledge downside. Enter the silver butterfly. 5% of book in SLV 70-90-110 June flies for ~$2.50. Target ~$10, max ~$20. Around 7x.
+
+Will roll or close as we approach middle strike (~$100/oz futures) or 1-2 months to expiry.
+
+Other moves:
+Cut duration, added crash protection. Swapped intermediate treasuries for SPY puts. Better margin efficiency, more convexity on downside.
+
+Short student loan servicers. $1.7T in debt, SAVE plan in limbo, defaults rising. When the system breaks, servicers eat it.
+
+Long tin miners. Lottery ticket sizing for lottery ticket thesis. Every chip needs solder, solder needs tin, supply is hosed.
+
+Long Japanese banks. BOJ finally normalizing. Thirty years of ZIRP ending. Real NIM finally.
+
+Net result: cleaner book, better margin, positions aligned with the views below.
+
+The Framework
+Three forces drove 2025. Three forces drive 2026:
+I. The Death of Globalism — Both sides of Cold War II realizing the old equilibrium is unsustainable. Resource nationalism, grey zone conflict, spheres of influence.
+II. The Acceleration is Real — Public and private participants racing to secure supply chains of critical minerals, energy, and talent that feed the hungry beast.
+III. The Horseshoe is Real — Disintegration of the neo-liberal consensus playing out. Compounded by inter-generational and inter-sex zero sum thinking. New political realities emerging.
+For folks new here: many zany ideas from our New New Deal platform — particularly the global portfolio — are now squarely within the Overton window:
+
+Greenland, Monroe 2.0, bet on India, Moon Base, Strategic Reserve, Korean partnership, nuclear expansion, fusion, nat gas, chips in America, AI acceleration — all mainstream now.
+Domestic ideas still a year or two out:
+
+Longer piece forthcoming.
+But you’re not here for philosophy. Veterans want to see if we keep the ~80% hit rate. New folks want the silver update (which you just got).
+Let’s jump into the views.
+
+The Views
+I. END OF GLOBALISM
+1. Resource Nationalism Accelerates
+Everyone’s hoarding. Indonesia restricts tin. Chile tightens lithium. China controls gallium and germanium.
+End of globalism isn’t tariffs on finished goods. It’s controlling the inputs.
+2. Monroe Doctrine 2.0
+Greenland. Panama. Venezuela.
+Maduro’s out. Trump’s talking Greenland. Western hemisphere secures strategic resources. This was ridiculous in November. Policy now.
+3. Conflict Inflationary for Metals, Not Oil
+Old playbook broken.
+Venezuela and Iran online means crude floods. OPEC pricing power gone for a decade. But metals that build energy infrastructure — copper, silver, tin — go up. Supply chains disrupted, export bans spread, demand climbs.
+WTI curve collapsed from $75 backwardation to $60 flat. The 2027-28 belly still has a hump that probably flattens.  May bet on it.
+Long metals. Neutral-to-short oil.
+
+II. CHINA
+4. Banks Stay Zombie
+No substantial recap. Losses stay hidden. Extend and pretend.
+$5-10T in property losses on books, marked at par. Sophie’s Choice — restructure or debase — unchosen. Slow bleed by default.
+5. LGFV Default Goes Public
+First Local Government Financing Vehicle default hits the news. Then swept under the rug.
+$9T+ in debt. Implicit guarantee never tested publicly. When it breaks, they contain it. No precedent for the trillions behind.
+6. Religiosity Rising
+Underground churches spreading. CCP cracking down. People finding meaning outside the Party.
+Economy stops delivering, people find God.
+
+III. THE ACCELERATION
+7. The Air Gap
+I burned more compute over the break than the previous six months. Claude Code on desktop.  Five different agents, talking to each other (and me) on slack, creating and storing and evolving context from the perspective of a developer, a quant, or an analyst. I saw the future.  The future is here.  So is the acceleration.
+
+The demand is real. I lived it. When this stack clicks — infrastructure + permissions + models + local compute — everyone does what I just did. And a legion of hackers (including this one) are currently banging away on keyboards trying to make their own ‘orchestration environment’ to hold it all together. The first person who does may unlock an Operating System level revolution in the way we interact with personal computers.
+But here's the problem: infrastructure arrives before demand. Always has. Railroads, fiber, highways. Society benefits long-term. Investors who built it lever up and often fall prey to our framework on the origin of financial panics back in 2018…
+
+The bulls are right about 2035. We'll be 8-50x short on compute. Tokens will be the kWh of knowledge work. Current capex will look prescient.
+But the bears may be right about today, where our ballpark is we are investing ~12x what the companies are making.
+
+Which can only be made up in quantity in one of three ways: more users, more queries per day, or more tokens (aka compute) per query.
+If you limit tokens per query to a 2x increase (which could be off by an order of magnitude, but we think roughly tracks efficiency improvements in token/compute) then the average user would need to go from asking bots 10 times a day to 30.
+
+Unlikely for a person bashing away at a keyboard. Totally reasonable for an agent operating on your behalf — which sometimes kicks off an order of magnitude more sub-queries per task.
+Meaning we see the gap getting the worst in 2027, with markets pricing it in sometime middle this year. Equity and credit markets reprice.
+Our short math (more in a more involved post soon):
+Supply compounds at ~50%/year (hyperscalers building like crazy)
+
+Demand crawls at ~15%/year until capability thresholds cross
+
+Utilization at current trend bottoms from 25-30% today to 10-15% by 2027-2029
+
+Google telling employees they need to “scale 1,000x over 4-5 years” is a planning scenario, not a demand forecast. You can’t manufacture demand by building supply. Without widespread adoption of agentic AI, the compute will sit idle until capabilities cross thresholds.
+Two phases:
+Phase 1 (2025-2027): Oversupply. Build faster than demand. Utilization collapses. Economic losses mount. This is now.
+Phase 2 (2028-2030+): Thresholds cross. Demand explodes. Hit compute ceiling. This is what the bulls are modeling.
+Both are true. They happen in sequence, not simultaneously. The question: can investors survive Phase 1 to reach Phase 2?
+Near-term: gap hurts stocks. Long-term: thesis validates.
+8. Agents START to Come Online
+LLMs embedded in environment. Connected to local data. Empowered to DO ACTUAL WORK.
+This is Phase 2. Token/user goes 10x to 100x. Market gets deeper, not just broader.
+But adoption ≠ capability. Adoption = Capability × Tooling × Org Readiness.
+Even when models can do 4-hour autonomous tasks:
+Legal still needs document management integration (2029-2030)
+
+Finance still needs ERP integration + regulatory approval (2031-2032)
+
+Robotics still needs safety validation + physical infrastructure (2030-2035)
+
+Capability is necessary but not sufficient. The three-gate model explains why demand lags supply by 3-5 years.
+9. Claude Gains Share
+In the meantime, Claude Code is currently the best product to build with a single persistent chat. Removes need to manage multiple chats and context windows before restarting work.
+Hackers (including me) already integrating this with products. Many charts in this piece were built by Claude from data I selected, after 100 hours over the break building an environment for bots to create, store, index, retrieve and share amongst the network — developer, front end, architect, quant, analyst all on one channel.
+
+Other labs will catch up, but this demonstrates a culture pushing the envelope of agentic AI fastest.  We think it starts to make an impact and Anthropic passes, say, Perplexity.  Which, after all, is a wrapper on Claude.
+
+10. Local AI Rises
+As folks start to integrate AI into their work, they will need to integrate it into their machines. This is a lot easier and more intuitive when you actually host and own the model.
+You can tweak it, you can investigate it, you don't have to worry about someone else's servers going down, or being hacked. Problems that a lot of people already solved for themselves.
+Yes, the cloud will likely persist as the home for frontier models. Their memory footprint guarantees that. But medium models are getting smart enough to do real work on actual consumer-level hardware, with the NVIDIA 5090 card carrying 32GB of VRAM, and their DGX desktop packing 100GB+ (though reportedly running with weak enough CPU and memory around the cards that inference speed is kinda mid).
+Western open source resurgence? Doomer-PRC alignment was successful in hobbling western open source development. We have higher confidence that doomers WON'T admit their own-goal than we do that a we
+11. LLMs in Games
+NPCs with actual theory of mind, not scripts. Dialogue, characters, environments shaped by AI.
+As long-suffering gamers (and investors) in TakeTwo’s GTA franchise, we’re hoping they delayed a year to bring this vision to life. Regardless we think it likely that someone’s independent/homebrew game featuring LLM in the engine goes viral this year.
+12. Peak Data Center Announcements
+Even to execute on these plans, they need to do a lot of work. Two years of pencils to paper (to lawyer, to checkbook) of data center talk. Building those data centers is a lot of work — and it remains to be seen if compute, energy, and data grow exponentially to fuel them.
+
+IV. LONG THE INPUTS
+13. COMEX vs LBMA Spread Arb
+See earlier content.  My kingdom for an ISDA, and a boat to ship silver to London and melt it down in order to deliver.  Long backwardation in NY, short it in London. 
+14. Long Copper
+Data centers: 20-40 tons each. EVs, grid, solar.
+Demand up 35-40% by 2030. Supply grows 3% annually. 5-7 year lag.
+15. Long Tin
+Every chip needs solder. Solder half tin. AI boom = more semiconductors = more tin.
+Myanmar civil war — 10% of supply chaos. Indonesia restricting. Western-aligned production doesn’t exist.
+16. Long Lasers/Photonics
+Holy photonics, Batman.
+
+Interconnect moving copper to fiber. Co-packaged optics for data centers taking off.
+Plus defense: drone economics broke something. $50k Shahed shot down by $10M Patriot is asymmetric the wrong way. Lasers fix it — pennies per shot, unlimited magazine.
+17. Long Nuclear
+AI needs baseload that doesn’t depend on weather.
+Bottleneck is workers, not tech. Decimated that workforce over 30 years.
+18. Long Natural Gas
+Bridge fuel. Europe replacing Russia. AI needs dispatchable power for spikes.
+19. Long Compute Stack
+We need more of everything.  Korean memory. US chips. Hard drives. Networking. Gaming.
+
+Demand for inputs real, even if we don’t get more mega projects, even fulfilling the data center + local AI demand has put strain on supply chains of memory, CPUs, and all kinds of components. 
+
+V. US DOMESTIC
+20. Government Shutdown
+Polymarket at 20-30%. MAGA vs Congress.
+December dynamics don’t disappear. CR kicks the can.  The zero sum dynamics of American politics have manifested negative sum dynamics, though hopefully for not too long.
+
+21. Student Loans Under Stress
+$1.7T debt. SAVE in litigation. Accounting fiction harder to maintain.
+Defaults rise. Servicers feel it first.
+22. GLP-1 Goes Mainstream
+Peptides for everyone. Insurance covers.
+Not just weight loss — heart, kidney, addiction, maybe Alzheimer’s. If trials read out, most prescribed drugs in history.
+23. Horseshoe Meets Robots
+AI displacement creates strange bedfellows. Left-right convergence on inequality.
+$150k coding jobs disappearing. $45k health aide jobs appearing. New New Deal type stuff.
+
+VI. MARKETS
+24. Japan Normalizes
+BOJ exits YCC. JGB 10Y trades freely.
+Japanese investors own $1T+ Treasuries. If domestic yields rise, money comes home. August 2024 was preview.
+25. Private Credit Stress
+$2T+ private credit. Pensions chased yield into illiquid loans, no mark-to-market.
+CRE cooked. 2021 LBOs rolling at higher rates. If equity markets price in the cash flow gap, credit markets will too.
+Someone should arb the different worldviews for GPU-as-a-service names. Credit spreads at 700+ while equity vol at 80.
+
+What would a Merton model suggest for realized vol if credit spread and leverage were commensurate with 700bp on 5yr debt?
+Bloomberg penciling in $26bn capex against $12bn revenue and $8bn EBITDA for -$18bn cash flow, for a company with $2bn cash on hand.
+Kind of makes sense why some folks have the straddle on. We don’t know which direction, but we know it can’t stay here.
+26. Oil Curve Flattens
+Not positioned here, but chart tells the story.
+WTI collapsed $75 backwardation to $60 flat. Venezuela + Iran thesis playing out. Belly hump probably arbitraged away.
+
+Through-Line
+Demand for AI is real. Infrastructure clicking. Usage goes exponential when agents work.
+Supply of energy shifting. Metals up, oil down. Resource nationalism for inputs, abundance for crude.
+Overton window moved. Greenland is policy. Monroe Doctrine is back.
+Cash flow gap hurts first. Then thesis validates.
+Position accordingly.
+
+Not financial advice. Views, not recommendations. Your capital, your risk.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. This not a solicitation to any investment.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+THERE CAN BE NO ASSURANCE THAT ROSE INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

@@ -1,0 +1,117 @@
+TITLE: War for the Dollar
+SUBTITLE: 
+DATE: 2026-03-23
+
+This is one of those inflection points in markets. Either the situation continues and the bottom falls out, or we get a Hail Mary and folks go back to the races.
+My liquids book is 300% short credit, long a bit of gold, energy companies (natural gas exporters, pipelines), and wheat. So you know where I stand.
+I’ve been through a couple of these moments. COVID felt like this. 2008 felt like this. Hell, the 2014 puke in crude kinda felt like this. The fear of missing out colliding with the fear of what lies below.
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+On one hand: the acceleration is real. The robots woke up. We just need to invest and monetize. Chips, stacks, turbines, even the rocks that go into it all. More of everything.
+On the other: an acceleration predicated on cheap energy, just-in-time supply chains, and Pax Americana is now having to price in inflation, supply chain disruptions (again, for the third time in six years), deteriorating current accounts, and worst of all, tightening. Ew.
+After the close Friday, Trump declares war over. Spoos rally 1.5%. Game on.
+Over the weekend, escalatory talk on both sides. Another ultimatum. Targeting generic infrastructure.
+
+Well, Iran — and by association, you know who — just declared war not on the US, but on the dollar. We’re ok with taking some bruises in the infantry. We’re even willing to risk some planes and boats. But if you come for the dollar, you come for the whole thing.
+
+So we may be in this thing for a while.
+The two sides facing off, with a literal gulf between them.
+“End your nuclear project.” “Leave the region. Pay reparations. We collect $2m per ship.”
+Two million per ship would go an awful long way to rebuilding the rocket and nuclear program. And if they obtained that concession through regional terror, it would only embolden the further radicalized regime. Tit-for-tat. Tit-for-tat.
+Meanwhile the conflict spreading faster than anyone can treat it.
+
+Saudi putting down a red line. One more strike on energy infrastructure and they go to war. Worth recalling that Saudi also has a defense pact with Pakistan. Which would be quite the turn.
+
+The sectarian geography here matters. Iran is predominantly Shia. Saudi, Pakistan, most of the Gulf: Sunni. The fault lines of this conflict aren't new, but they haven't been this activated in decades.
+
+For the Gulf states, whether they wanted to be dragged into a fight started by Israel or not, they are in one. The damage to Dubai is much deeper than a couple of rockets. 
+
+Tax havens are only competitive when they are safe.  
+
+The other thing about conflict is the more damage you take, the less you have to lose and the more incentive you have to win. Allowing Iran to threaten them existentially will permanently damage their ability to attract foreign talent and capital.
+We talked about this before, four years ago. 
+
+This is bigger than Hormuz, though Hormuz is the spot where both sides have something genuinely important to fight for.
+
+Someone woke up Zoltan, apparently Mr Big Picture finally got the memo.
+
+Look even the sell-side has caught on.   This is about more than Israel now.  Congratulations Bibi, mission accomplished.
+
+Markets
+As things deteriorated over the weekend, Brent on Hyperliquid rallied 5% before futures opened and brought it back in line. 
+
+Good reminder who the big dog really is.
+
+Saudi may have hedged some of their transportation, but the market is still around 10mb/d short. Whether you want to bet on politics or not, if you are short oil here, explicitly or implicitly, you are making a big bet on peace.
+
+Goldman is starting to price out more sustained supply problems.
+
+Sixty days of Hormuz closure adds $24-42 to the December 2027 contract. Given it was around $60 going in, and given the curve would be in backwardation if that occurred, the front end implies somewhere between $120 and $200/bbl.
+
+Oil has about a 45% flow-through to CPI Energy, which is around 6.4% of the basket. 
+
+So a 100% increase in the price of oil would create an inflationary impulse around 2-3% alone, let alone the knock on effects.
+
+The combination of a slower economy and tighter financial conditions has historically been very bad for stocks.
+
+Positioning
+Over the weekend, we got our hands on some research on equity market positioning, which more or less confirmed my view.  We’ll go through it in depth for subscribers below, but the headline is you can see this tension I laid out above in the positioning info below.  Fast money in stocks finally started moving last week, but most folks are either still long, or still holding on to their most prized possessions (the chips, my precious!) and bought some puts (which it looks like the dealers are now finally short making the market more prone to volatile down moves).
+ Systematic players who target volatility or manage risk parity funds look to only have started to de-risk, and we doubt many of the major real money accounts have started selling.  They usually go last, and they usually define the biggest moves.  Which then closes the loop we started this piece with.  
+Yes, a fast money bounce is possible this week on some good news, the Friday post close mini squeeze was proof enough of that.  But the real money, the big money is still long, and though it has started selling cyclicals (like financials), most folks are still overexposed to tech, and under exposed to energy.  I don’t know about you, but looking around, feels like we might need a bunch more energy infrastructure soon.
+Let’s start with the fast money.  Commodity Trading Advisors or CTAs, which you can read as ‘guys who trend follow and punt futures’.  Depending on who you ask, they have started selling and are either very short (Goldman), or just turning short (DB).
+
+Same with fast money quants.
+
+Sentiment indicators just now moving into bearish territory from strongly bullish just a couple of weeks ago.  This is the fading dawn.
+
+If you are playing for a pop, this is what you hope happens.  A face ripping relief rally.
+
+As mentioned above, for the past two weeks, the market has felt ‘long vol.’  Meaning dealers (who delta-hedge) had a positive exposure to realized volatility, but act in ways that ironically dampen that volatility, buying when the market sells off and selling when the market rallies.  That’s over, and they are moving into short vol territory.
+
+This is backed up a bit by positioning data showing non-dealers are now long VIX as well (which means the street is short).  
+
+VIX has performed poorly as a hedge the last couple of weeks as implied vol got juiced at the oil highs and then dragged down along with low realized.
+
+Which somewhat explains the move overnight, with futures opening up much lower, but then rallying quickly as it became clear that oil wasn’t up 5%, and then selling off again.  Expect some jawboning tomorrow and one more attempt to push the market above Friday’s close before the real selling hits (is my guess).
+
+Goldman has vol controlled and risk parity funds basically fully allocated to equities.  If we start getting realized volatility, they have to sell.
+
+Real money still looks pretty long,
+
+As they continue to accumulate single stocks while selling index as a hedge.  This means they are trying to protect their favorite names vs just liquidating out of hand.
+
+Keep in mind, we’re still up a LOT relative to the last couple of years, so a lot of investors in the market have only really lived in ‘buy the bloody dip’ territory.
+
+But the composition of those books is not well positioned for the stagflation that will result from an extended war.  You want energy and stuff in an existential fight.
+
+Which is born out slightly by positioning shifts, where energy has picked up but isn’t really buying the front month prices which drive the chart below.
+
+As folks slowly accumulate energy, protect their non-software tech and sell futures, the rest of the book gets sold.
+
+With financials being a good bellwether.  We haven’t seen material strains here outside of private credit, but weakness in equity cushions plus losses would start to force people to take a closer look at their allocations. We’re working on our ‘good banks, bad banks’ update and hope to publish it soon.
+
+There are bonds in the stocks.
+Bonds in Europe have sold off hard, and now gold isn’t the only thing with a death chart.
+
+Market is beginning to remember the linkages, there are bonds in the stocks, inflation is about oil, if oil rallies, bonds sell off (at least until the damage to stocks is so bad that bonds start to rally but we’re still a leg down before that happens).
+
+And this vulnerability means that bond vol in general is bad for stocks
+
+In spite of the mini rally, dollar positioning isn’t yet extended.  This is one to watch as bond yields up could attract capital to treasuries as a value play, but if the liquidity needs go the other way, or Iran gets what it wants, we would see dollar down bonds down.
+
+The Dollar
+Which brings us back to where this started.
+Iran’s parliament speaker told the world that US Treasuries are soaked in Iranian blood and that buying them means buying a strike on your own assets. This morning there were rockets raining down on Tel Aviv. Iron Dome is struggling with the volume.
+
+Nobody has overtly declared war on the dollar before. Not like this. Not with a specific call for sovereign wealth funds and central banks to dump Treasuries, with a monitoring threat attached.
+The market, as of this morning, has priced in roughly a 4% drawdown in equities since this started. The historical median for major oil shocks is 23%. Real money is still long the wrong stuff. Vol-control funds are still near full equity allocation and will be forced sellers when realized volatility picks up, which it will.
+My book is positioned for what comes after everyone finishes pretending this resolves quickly. Short credit because the spread compression that made sense in a stable globalized world doesn’t make sense in this one. Long energy because if you are short oil here you are betting on peace, and I’m not ready to do that. Long gold because when a country weeks from nuclear capability, with ballistic missiles already in the air, tells the world to dump your reserve currency, that's not a headline you fade.
+The dollar is the whole thing. Come for it and you come for everything built on top of it. The market hasn’t fully priced that yet. It will.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counter parties.
+The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

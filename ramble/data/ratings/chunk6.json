@@ -1,0 +1,975 @@
+[
+ {
+  "slug": "war-for-the-dollar",
+  "title": "War for the Dollar",
+  "date": "2026-03-23",
+  "summary": "Argues the Iran war is an inflection point where markets are underpricing a prolonged conflict, and that Iran's call to dump Treasuries makes it a war on the dollar. Backs this with positioning data (CTAs, dealer gamma, vol-control funds) and a book that is short credit and long energy and gold.",
+  "themes": [
+   "oil-hormuz",
+   "positioning-flows",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 6,
+  "best_line": "The dollar is the whole thing. Come for it and you come for everything built on top of it.",
+  "improve": [
+   "Lede promises a binary but the positioning section is half-teased as subscriber content; put the key positioning chart and conclusion up front. The 'war on the dollar' claim rests on one parliament speaker's quote with no evidence of actual reserve-manager behavior."
+  ],
+  "falsifiable_calls": [
+   "Equity drawdown to date (~4%) is far below the 23% median for major oil shocks, implying more downside",
+   "Vol-control and risk-parity funds will be forced sellers once realized vol picks up",
+   "Sustained Hormuz closure means Brent front end well above $120"
+  ],
+  "return_to": true,
+  "return_reason": "Test whether the 'war on the dollar' framing and the 23%-median-drawdown call played out versus the later ceasefire and rally."
+ },
+ {
+  "slug": "systems-101-overconfidence",
+  "title": "Systems 101: Overconfidence",
+  "date": "2026-03-24",
+  "summary": "Uses Lehman/Bridgewater hazing stories and a bad overnight hedge decision to argue LLMs behave like overconfident first-year analysts with no memory of past mistakes, which is the core obstacle to an AI trading machine. Sketches test-time training and activation steering as possible fixes.",
+  "themes": [
+   "data-tools",
+   "personal-essay",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "AI has no last time.",
+  "improve": [
+   "Anecdotes (five Claude reversals, hostage-diary messages) are vivid but there is no systematic test; the 'toy model of human vs agents' is mentioned and never shown.",
+   "Long wind-up before the thesis; lead with the 'scar tissue' problem and cut the Lehman hazing section by half."
+  ],
+  "falsifiable_calls": [
+   "Frontier LLMs will not learn from experience without something like test-time training or activation steering",
+   "A human who values their time and must check agents often still beats a stable of agents"
+  ],
+  "return_to": true,
+  "return_reason": "The 'Systems' series is a recurring promise (Systems 103 never arrived); the learning-problem thesis is worth testing against newer models."
+ },
+ {
+  "slug": "systems-102-the-pursuit-of-alpha",
+  "title": "Systems 102: The Pursuit of Alpha",
+  "date": "2026-03-26",
+  "summary": "Defines alpha vs beta, contrasts quant and discretionary overconfidence, and lays out a three-level ladder for using AI in trading, illustrated with a z-score screener for gold and copper miners.",
+  "themes": [
+   "data-tools",
+   "portfolio-construction"
+  ],
+  "format": "data-dashboard",
+  "scores": {
+   "insight": 5,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "The question is never whether you're right about the world. The question is whether you're right about something the market hasn't already figured out.",
+  "improve": [
+   "The first half is textbook alpha/beta material the author admits is novice; the screener section carries the value but is stale (March 15 data) and shows no backtest.",
+   "The Black Snow fundraising anecdote is the most interesting part and is under-developed."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-cascade",
+  "title": "THE CASCADE",
+  "date": "2026-03-29",
+  "summary": "Claims Hormuz is not an oil story: LNG, sulfur, helium, plastics, fertilizer and aluminum shortages cascade from days to years, with irreversible planting-window damage and physically destroyed capacity that a ceasefire cannot repair. Uses a days/weeks/seasons/years frame and a crop-yield-to-price model.",
+  "themes": [
+   "oil-hormuz",
+   "commodities-supply",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 8,
+   "evidence": 7,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 8,
+  "best_line": "The market is pricing a disruption. What's happening is destruction.",
+  "improve": [
+   "Scenario probabilities (2-3%, 40%, 55-60%) are stated with false precision and no derivation; show the yield-elasticity model inputs and sensitivity.",
+   "Several supply facts (helium container timelines, Ras Laffan repair times) are asserted without sources; add citations so the reader can verify."
+  ],
+  "falsifiable_calls": [
+   "Hormuz reopening by mid-April has only 2-3% probability",
+   "Base case reopening by June gives ~6% global yield loss and +63% cereal prices (40% prob)",
+   "Hormuz closed through the year gives 12% yield loss, +120% cereals (55-60% prob)",
+   "US CPI +4.4%, EU +7.4%, India +11.5% in the June-reopening base case"
+  ],
+  "return_to": true,
+  "return_reason": "Best-structured piece of the series with dated, checkable calls (helium venting, planting windows, yield loss) that can be scored against outcomes."
+ },
+ {
+  "slug": "the-cascade-trade",
+  "title": "The Cascade Trade",
+  "date": "2026-03-31",
+  "summary": "Turns the cascade thesis into a position: cheap far-OTM calls on corn, wheat and sugar, funded conceptually by a 'peace hedge' in UK/German front-end rate options. Appendices cover strike selection, why airline/Korea put-spreads were rejected, and why the WEAT ETF is a poor wheat proxy.",
+  "themes": [
+   "commodities-supply",
+   "oil-hormuz",
+   "trade-idea",
+   "rates-curve"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 7,
+   "actionability": 8,
+   "timelessness": 4
+  },
+  "overall": 7,
+  "best_line": "Peace is linear: bounded, visible, mostly priced. War is exponential: the market prices each broken node with a lag. That is the trade.",
+  "improve": [
+   "Very long and dense; the main text should stop at the trade table and push all four appendices to a linked post. The peace hedge ends as a placeholder (Schatz calls and IEI) while the real instrument (SONIA) was not yet executable, which muddies the headline structure.",
+   "Correction note admits stale quotes; internal inconsistency (87 vs 89 day expiry) signals a rushed publish. Add a clean P&L-at-expiry table for the combined structure."
+  ],
+  "falsifiable_calls": [
+   "Grain calls pay 10-30x if war escalates",
+   "BoE repricing of 125bp (from -50 to +75) should unwind on peace or growth shock",
+   "A ceasefire by end of April has under 30% odds"
+  ],
+  "return_to": true,
+  "return_reason": "Fully specified, scorable trade with strikes and premiums; the follow-up grading of how it actually paid is the obvious next piece."
+ },
+ {
+  "slug": "waking-the-hegemon",
+  "title": "Waking the Hegemon",
+  "date": "2026-04-04",
+  "summary": "Argues European defection over Hormuz (France's side deal, blocked UNSC resolution) reveals allies as free riders, ending globalism and pushing the US from voluntary hegemony toward imposed empire. Closes by tying it back to the cascade.",
+  "themes": [
+   "macro-regime",
+   "oil-hormuz",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Game theory has a concept called a separating equilibrium. When the hegemon subsidizes everyone equally, partners and free riders look identical.",
+  "improve": [
+   "Strongly one-sided narrative with selective facts and loaded framing (e.g. 'Europe just revealed its type'); steelman the European position or the reader cannot calibrate.",
+   "Market implications arrive in the last paragraph; say what to own or avoid if the thesis is right."
+  ],
+  "falsifiable_calls": [
+   "Multipolarity will produce conflict, not stable cooperation",
+   "China's window for challenging the US is 2027-2030"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-fragile-peace",
+  "title": "The Fragile Peace",
+  "date": "2026-04-09",
+  "summary": "Argues the market bought a ceasefire that does not exist: both sides claim contradictory terms (enrichment, strait control, Lebanon), and physical damage and oil-curve backwardation mean the clock runs toward depletion. Lists the specific trades done that day.",
+  "themes": [
+   "oil-hormuz",
+   "commodities-supply",
+   "trade-idea"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 8,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 4
+  },
+  "overall": 7,
+  "best_line": "Both sides are claiming victory right now. Those claims are mutually exclusive.",
+  "improve": [
+   "The 'two different deals' claim leans on one Iranian media report; flag its confidence level.",
+   "Trade list is useful but sizing is only given for one leg; give sizes for all so readers can reconstruct the book."
+  ],
+  "falsifiable_calls": [
+   "The ceasefire will not resolve quietly; contradictions over enrichment vs strait control cannot both hold",
+   "Physical system will not snap back overnight; oil tankers/zero transits persist",
+   "Peace on day 14 of the ceasefire starts from a worse inventory position than day 1"
+  ],
+  "return_to": true,
+  "return_reason": "The call that the market priced a non-existent deal was largely vindicated within days (see Return of Rimland); worth grading against the later resolution."
+ },
+ {
+  "slug": "the-rational-conclusion",
+  "title": "The \"Rational\" Conclusion",
+  "date": "2026-04-11",
+  "summary": "Reacts to a Molotov attack on Sam Altman's home by arguing AI doomer logic (certainty of extinction plus escalating purity spiral) predictably yields violence, and that intelligence is not equivalent to power.",
+  "themes": [
+   "personal-essay",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 7,
+   "evidence": 3,
+   "actionability": 1,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "They should stop acting surprised when their own logic shows up at 3:45 AM with a bottle full of gasoline.",
+  "improve": [
+   "Rhetorical attack on a whole movement from the actions of one individual is guilt by association; the 'priesthood' and fanfiction jabs lower credibility.",
+   "No link to markets until one sentence about the 'New New Deal'; say why an investor should care, or skip it in a markets newsletter."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-return-of-rimland",
+  "title": "The Return of Rimland",
+  "date": "2026-04-12",
+  "summary": "Reads Trump's blockade, interdiction and tariff threats as a Rimland playbook (control the seas, bring China to the table) and lists the second-order market questions as the ceasefire unravels.",
+  "themes": [
+   "oil-hormuz",
+   "china",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "Trump is running the Rimland playbook.",
+  "improve": [
+   "Mostly a list of open questions; commit to a view on which answers matter most and size of the expected move.",
+   "Pastes a repeated paragraph on urea/wheat from the prior post; replace with new content."
+  ],
+  "falsifiable_calls": [
+   "Ceasefire gains from last week look extremely likely to unravel",
+   "Houthi escalation at Bab el-Mandeb would force VLCCs onto the long route"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-cascade-what-oil-feeds",
+  "title": "The Cascade: What Oil Feeds",
+  "date": "2026-04-14",
+  "summary": "A very long commodity-by-commodity deep dive (sugar, wheat, corn) with scenario S/D models over 1, 3 and 12 month closures, calendar gates for nitrogen and planting, positioning and vol-surface analysis, and the resulting trades (sugar call spreads, wheat futures, Dec corn calls).",
+  "themes": [
+   "commodities-supply",
+   "oil-hormuz",
+   "trade-idea"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 8,
+   "clarity": 6,
+   "evidence": 8,
+   "actionability": 8,
+   "timelessness": 5
+  },
+  "overall": 8,
+  "best_line": "The damage is locking in now, on biological and chemical timelines the market doesn't track. The repricing comes later.",
+  "improve": [
+   "At ~10k words the best material (the five corn gates, the nitrogen-to-corn ratio, the vol-versus-base-rate work) is buried; split into three posts or open with a one-page trade summary.",
+   "Several charts were noted as not rendering in email; lead with the conclusion and ensure charts survive the email format."
+  ],
+  "falsifiable_calls": [
+   "Sugar trades 14 to 20 cents, not 14 to 30, because mills shift back above 18-19c",
+   "Sidedress UAN above $600 in late May causes 60%+ skip and locks in yield loss",
+   "Dec corn 525C pays if USDA revises yield below 180 bu/acre in July",
+   "Closed 12 months leads to wheat stocks-to-use of 14.3% and KC HRW near $9"
+  ],
+  "return_to": true,
+  "return_reason": "Highly specific, dated catalysts (UNICA, May UAN, July WASDE) make it a rare post that can be graded cleanly against outcomes."
+ },
+ {
+  "slug": "whatever-happened-to-alpha-redux",
+  "title": "Whatever Happened to Alpha Redux",
+  "date": "2026-04-21",
+  "summary": "Argues most investors have a beta problem, not an alpha problem: 40 stocks is one equity trade, fees on hedge fund alpha eat the edge, and retail should diversify first and then lever using futures or return-stacked ETFs rather than 3x ETFs. Provides an ETF-based all-beta blueprint with a regime tilt toward gold and commodities.",
+  "themes": [
+   "portfolio-construction",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 8,
+   "evidence": 6,
+   "actionability": 8,
+   "timelessness": 8
+  },
+  "overall": 8,
+  "best_line": "Most portfolios don't fail because they were wrong. They fail because they were one bet pretending to be many.",
+  "improve": [
+   "The promised backtest and residual-Sharpe math are deferred to 'Part 5'; the ETF weights table is given without any performance evidence. Include at least one simple backtest or drawdown figure.",
+   "The closing hedging caveats (steepener, 'wait for another 10% drawdown') muddle an otherwise clear practical framework; separate timeless advice from current views."
+  ],
+  "falsifiable_calls": [
+   "Retail should hold 80-90% beta and 10-20% alpha until demonstrating 0.5 Sharpe",
+   "In a conflict-inflation regime, bonds and equities correlate positively so TLT weight should shrink in favor of gold and commodities"
+  ],
+  "return_to": true,
+  "return_reason": "Part 5 (backtest of four beta constructions) was promised and is the most useful follow-up; also reviewing the TLT-trim call."
+ },
+ {
+  "slug": "long-convexity-long-chaos",
+  "title": "Long Convexity, Long Chaos",
+  "date": "2026-04-27",
+  "summary": "Monthly portfolio review: down ~3% in April because the macro was right but the sequence wrong, with about half the drawdown from risk/ops/implementation mistakes. Preview only; the book detail is paywalled.",
+  "themes": [
+   "portfolio-construction",
+   "oil-hormuz",
+   "personal-essay"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "I got the macro right and the sequence wrong.",
+  "improve": [
+   "The visible portion ends mid-section; give free readers one concrete positioning takeaway before the paywall.",
+   "Candid admission that execution errors cost half the drawdown is the interesting part; quantify them."
+  ],
+  "falsifiable_calls": [
+   "Bonds will eventually need to sell off if stocks keep ripping while Hormuz stays closed"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "a-new-oil-era",
+  "title": "A New Oil Era",
+  "date": "2026-04-29",
+  "summary": "Explains going long 10% crude via broken butterflies, citing the UAE leaving OPEC, collapsing OPEC output, falling Asian inventories, SPR run-out math, steep backwardation and widening cracks. Concludes the cartel is fracturing and US energy is the winner.",
+  "themes": [
+   "oil-hormuz",
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 8,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "The world keeps trying to price this conflict like it's a two-week event. The production data says otherwise.",
+  "improve": [
+   "The inventory run-out math is the strongest part and should lead; the UAE-leaves-OPEC point is positioned as the hook but is really a long-run bearish factor, which the post half-contradicts by being long crude now.",
+   "Charts are described rather than interpreted; each needs a one-line takeaway."
+  ],
+  "falsifiable_calls": [
+   "Asia ex-China refineries hit involuntary run cuts by Q3",
+   "Commercial inventories reach record lows this summer in every Goldman scenario",
+   "SPR meaningful releases last only 4-5 more months",
+   "Breakevens do not yet price enough inflation"
+  ],
+  "return_to": true,
+  "return_reason": "Inventory run-out and SPR timelines are concrete and checkable; revisit against actual Q3 data."
+ },
+ {
+  "slug": "a-trade-as-sweet-as-sugar",
+  "title": "A Trade as Sweet as Ethanol",
+  "date": "2026-05-04",
+  "summary": "Makes the case for sugar optionality: Brazilian mills opened the crush at 75% ethanol versus 52% consensus, the price stack shows ethanol pays 58% more than sugar, and a 7 Mt deficit is likely. Lists catalysts and invalidation.",
+  "themes": [
+   "commodities-supply",
+   "oil-hormuz",
+   "trade-idea"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 8,
+   "clarity": 8,
+   "evidence": 8,
+   "actionability": 7,
+   "timelessness": 4
+  },
+  "overall": 8,
+  "best_line": "The mills have voted. The government confirmed the ballot on May 1. The market has not yet counted.",
+  "improve": [
+   "Title says 'Sweet as Ethanol' but slug and framing say sugar; the actual strikes/size of the trade are thin ('indicative') compared with the rigor of the fundamentals.",
+   "Calls Brazil's October election 'municipal' when 2026 is a general election; small factual slip that undercuts credibility. Also the Petrobras freeze later proved the main brake (see Down Days) and was treated here as a minor point."
+  ],
+  "falsifiable_calls": [
+   "Full-year Brazil ethanol crush share will land 58-62% versus 52% consensus",
+   "Surplus flips to a 4-6 Mt deficit",
+   "Peace (Brent $70-75) is the clean invalidation and sugar stays 14-16c"
+  ],
+  "return_to": true,
+  "return_reason": "A clean falsifiable mechanism whose follow-up (author exited June sugar within days citing the Petrobras freeze) shows what was missed."
+ },
+ {
+  "slug": "priced-for-peace",
+  "title": "Priced for Peace",
+  "date": "2026-05-08",
+  "summary": "Argues every vol surface (equity, rates, FX, credit) is priced for peace and perfection while data shows a mid-cycle re-acceleration, making optionality cheap. Updates the long-API/short-slides pair trade (+21.7%) and adds a belly steepener.",
+  "themes": [
+   "positioning-flows",
+   "rates-curve",
+   "ai-capex",
+   "trade-idea"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 6,
+  "best_line": "Oil capped, stocks at highs, vol crushed, credit tight, gold bid. The market is pricing peace.",
+  "improve": [
+   "Claims 'either way, the portfolio works' despite the prior month's loss; temper with a stress case.",
+   "The belly steepener rationale is dense and its curve chart evidence is not shown; explain it in two plain sentences."
+  ],
+  "falsifiable_calls": [
+   "Belly steepener: 2026 rates will be lower than 2027",
+   "Long-API / short-slides basket keeps outperforming",
+   "Realized correlation will revert, ending the vol crush"
+  ],
+  "return_to": true,
+  "return_reason": "Several concrete calls (low vol, steepener, API/slides basket) to score; the 'vol at lows' call can be graded against the next drawdown."
+ },
+ {
+  "slug": "the-dragon-and-the-tigers",
+  "title": "The Dragon and the Tigers",
+  "date": "2026-05-11",
+  "summary": "Argues the AI-driven surpluses of Taiwan, Korea and Japan make the Taiwan question the real test of dollar reserve status, and proposes long TWD/KRW versus INR via premium-neutral risk reversals because FX lags the equity move.",
+  "themes": [
+   "china",
+   "crypto",
+   "macro-regime",
+   "trade-idea"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 8,
+  "best_line": "Taiwan is the credibility test for the balance-sheet regime that finances America.",
+  "improve": [
+   "The China-wants-Taiwan-to-recapitalize-its-banks framework is speculation presented as explanatory ('ties it together better'); flag it as hypothesis and give a disconfirming signal.",
+   "The trade is admittedly not executable for retail; add one retail-feasible proxy sooner and tighten the carry math (3% cost) since the forward-versus-spot reasoning was self-flagged as unchecked."
+  ],
+  "falsifiable_calls": [
+   "TWD/INR breaking 3.20 confirms continuation; KRW breaking 1,250 confirms the second leg",
+   "FX will catch up to the equity relative move (EWY/INDA +240%)",
+   "Rate differential widens if crude rips, making carry worse before better"
+  ],
+  "return_to": true,
+  "return_reason": "Fresh, non-consensus angle (private lifer hedging as the plumbing); author later stopped out of long TWD (Nov 12), so a post-mortem is natural."
+ },
+ {
+  "slug": "how-to-short-a-bubble",
+  "title": "How to Short a Bubble",
+  "date": "2026-05-12",
+  "summary": "Offers a three-part framework for shorting bubbles: find the wedge (e.g. rates), short the victim (convex-to-downside neighbor), or wait for confirmation, then 'hedge, wedge, confirm, press'. Opens with a defense of using AI for editing.",
+  "themes": [
+   "portfolio-construction",
+   "positioning-flows",
+   "ai-capex"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 3,
+   "actionability": 6,
+   "timelessness": 8
+  },
+  "overall": 7,
+  "best_line": "A long who sells is out of the market.",
+  "improve": [
+   "Author admits 'no new analytics', and it shows: the framework is the value but the examples (Canadian banks, victim) are hand-wavy and 'Honestly, I'm not sure' on the key victim. Add historical case checks for each of the three methods.",
+   "The first third is a meta-discussion about AI editing and envy; cut it or move it to the end."
+  ],
+  "falsifiable_calls": [
+   "Rates (inflation) are the wedge that pierces the AI bubble",
+   "Canadian banks at 3x book on negative-amortizing mortgages are a short"
+  ],
+  "return_to": true,
+  "return_reason": "The framework is reusable and the Canadian-bank short has a checkable outcome."
+ },
+ {
+  "slug": "out-of-oil",
+  "title": "Out of Oil",
+  "date": "2026-05-14",
+  "summary": "Explains selling delta on oil calls because of a hantavirus cruise-ship outbreak, with rough R0 and fatality reasoning, then a coda on safety filters making AI research on the topic hard.",
+  "themes": [
+   "commodities-supply",
+   "personal-essay",
+   "data-tools"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 4,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 2
+  },
+  "overall": 4,
+  "best_line": "Not a game.",
+  "improve": [
+   "Epidemiology is explicitly 'JV' and the numbers (7x less contagious, 50x deadlier, population R0 of 0.5) come from guesswork; either do the work or shorten to a trade note.",
+   "The AI-refusal coda is a different post; the trade rationale (why a niche outbreak moves oil) is thin and was later conceded to be an overreaction."
+  ],
+  "falsifiable_calls": [
+   "Hantavirus ship R0 of 2.7 implies population R0 around 0.5, so it self-extinguishes without intervention (base and bull case)",
+   "Ags will not be bearish on lockdowns"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "down-days",
+  "title": "Down Days",
+  "date": "2026-05-15",
+  "summary": "A frank post-mortem of the book's mistakes (early short credit, unbalanced equity, gold/silver as hidden duration) and a framework for good and bad down days (resolve dissonance with yourself, seek dissonance with the market). Walks through adds in wheat, corn, sugar, silver and short equities.",
+  "themes": [
+   "portfolio-construction",
+   "personal-essay",
+   "commodities-supply"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 8,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "Today we lost money and gained conviction. So we added risk.",
+  "improve": [
+   "Adds risk in positions that were losing and is candid that the sugar catalyst slipped; define a loss threshold that would change his mind, otherwise 'dissonance with the market' is unfalsifiable.",
+   "The two kill-scenarios listed are too narrow; include 'peace plus bond selloff'."
+  ],
+  "falsifiable_calls": [
+   "Wheat fundamentals (US crop cut to 42 MMT) will outrun the speculator washout",
+   "Higher rates will compress equity multiples",
+   "Sidedress/Petrobras delays push sugar timeline back, not the thesis"
+  ],
+  "return_to": true,
+  "return_reason": "The dissonance framework and the honest list of errors is a reusable template; also test whether adding to wheat/ags paid."
+ },
+ {
+  "slug": "there-are-bonds-in-the-semiconductors",
+  "title": "There Are Bonds in the Semiconductors",
+  "date": "2026-05-20",
+  "summary": "Argues semiconductor equities are long-duration assets whose cash flows are 75% beyond ten years, so even if AI earnings arrive, rising rates and competing capex capital can derate them. Maps equity duration by sector and explains why scarcity is itself inflationary.",
+  "themes": [
+   "ai-capex",
+   "rates-curve",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 8
+  },
+  "overall": 8,
+  "best_line": "Duration is a property of the price you paid, not the quality of what you bought.",
+  "improve": [
+   "The duration map is labelled 'estimates, not precise' with a 75% anchor borrowed from Verdad; show the calculation or a sensitivity. The Bob Prince all-nighter anecdote is far too long relative to the payoff.",
+   "Present the strongest counter (earnings growth outrunning discounting) and quantify the break-even growth; the post later admits stocks rallied anyway."
+  ],
+  "falsifiable_calls": [
+   "Rates rise and long-duration semis derate even if earnings arrive",
+   "A 50bp bond selloff between earnings prints equals roughly 10% price hit for a 20-year duration asset",
+   "TLT put spreads kept on"
+  ],
+  "return_to": true,
+  "return_reason": "The thesis was directly challenged by subsequent price action (stocks up, bonds down through October); a scored revisit would be valuable."
+ },
+ {
+  "slug": "initiate-ghost-protocol",
+  "title": "Initiate Ghost Protocol",
+  "date": "2026-05-22",
+  "summary": "Announcement that the author is going dark to build, with paid billing paused.",
+  "themes": [
+   "personal-essay"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 8,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 2,
+  "best_line": "Ghost will be monitoring the situation in my absence.",
+  "improve": [
+   "Say what 'building' means and when to expect a return; the reader is left with no information."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "back-in-the-saddle",
+  "title": "Back in the saddle",
+  "date": "2026-09-27",
+  "summary": "Announces return to writing after a stint in government service and explains compensation for subscribers who kept paying.",
+  "themes": [
+   "personal-essay"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 2,
+   "clarity": 8,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "Friday was my last day in government service.",
+  "improve": [
+   "Intriguing reveal with zero detail; promise a date for the full account.",
+   "The subscriber compensation terms are clear but buried below the fold."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "consilience-of-curves",
+  "title": "Consilience of Curves",
+  "date": "2026-09-29",
+  "summary": "Resets the worldview around three linked themes (AI acceleration, death of globalism, reindustrialization) and says the portfolio will be rebuilt around compute, land and minerals, while tightening makes capital costly.",
+  "themes": [
+   "macro-regime",
+   "ai-capex",
+   "commodities-supply"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 2,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "The singularity may be here, but the capital cycle is immortal.",
+  "improve": [
+   "The synthesis is clean but entirely assertion; one chart or number per theme would make it a thesis rather than a manifesto.",
+   "'Next time we build the portfolio' is the actionable bit; give at least an asset list."
+  ],
+  "falsifiable_calls": [
+   "Compute, minerals and land will outperform on a five-year view",
+   "Fed is tightening and will test aggressive AI valuations"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "there-are-bonds-in-the-singularity",
+  "title": "There Are Bonds in the Singularity",
+  "date": "2026-10-01",
+  "summary": "Frames the AI debate as SF (FOOM) vs NYC (capex payback and credit), argues stocks rising despite rising yields requires earnings to outrun discounting, and previews an 'illiquids book' of land, water, minerals, energy, food and compute.",
+  "themes": [
+   "ai-capex",
+   "rates-curve",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Every time another data center turns on, a billion dollars goes poof.",
+  "improve": [
+   "Admits charts were LLM-generated and 'worth checking'; do not ship unverified charts.",
+   "The SF vs NYC split is a good frame but ends without a view on which wins; commit."
+  ],
+  "falsifiable_calls": [
+   "Watch credit to time the end of the cycle",
+   "Rising risk assets with rising rates is sustainable only if real cash flows show up"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-real-yield-singularity",
+  "title": "The Real (Yield) Singularity",
+  "date": "2026-10-06",
+  "summary": "Notes since May stocks are up and bonds down, and that the entire move is real yields (10y real 2.88%, breakevens lower), implying equity risk premium compression; starts rebuilding the beta book with TLT and GLD.",
+  "themes": [
+   "rates-curve",
+   "ai-capex",
+   "portfolio-construction"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "So the market is pricing a higher real cost of money, and stocks don't care.",
+  "improve": [
+   "Great observation (real not breakeven) gets one paragraph; show the decomposition chart and what level of real yield breaks equities.",
+   "Trade ideas are tiny and tentative; state the threshold for conviction."
+  ],
+  "falsifiable_calls": [
+   "Watch credit: wait for it to rally and sell into strength",
+   "Buying nominal bonds and gold as beta starter"
+  ],
+  "return_to": true,
+  "return_reason": "The real-yield-with-stocks-up regime is a testable condition; track what real yield level finally hits equities."
+ },
+ {
+  "slug": "punter-portfolio-book-v001",
+  "title": "Punter Portfolio Book - v001",
+  "date": "2026-10-15",
+  "summary": "First restart of a published risk-reporting portfolio: 2.6% vol, short 14% stocks, long commodities and bonds, with Greeks shown. Only preview text visible; detail is paywalled.",
+  "themes": [
+   "portfolio-construction",
+   "personal-essay"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 3,
+   "clarity": 5,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "Last time it was a list of holdings and a thesis.",
+  "improve": [
+   "Preview gives no reason to subscribe; show the top-line positions or one Greek.",
+   "State clearly what 'conviction 2/10' means for reader decisions."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-boomer-fiscal-trap",
+  "title": "The (Boomer) Fiscal Trap",
+  "date": "2026-10-21",
+  "summary": "Argues Western social contracts built on demographics and US hegemony no longer hold, citing French protests as the start of the end of the post-war order. Visible text is only the setup; the argument is paywalled.",
+  "themes": [
+   "macro-regime",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 2,
+   "timelessness": 6
+  },
+  "overall": 4,
+  "best_line": "Western birthrates and lifespans.",
+  "improve": [
+   "Preview ends before any evidence; include one demographic or fiscal number.",
+   "'The streets of Paris are alight' is an unsupported claim; cite events."
+  ],
+  "falsifiable_calls": [
+   "French-style protests will spread across developed economies as the post-war social model breaks"
+  ],
+  "return_to": true,
+  "return_reason": "A multi-year 'New New Deal' thesis the author keeps returning to; a data-driven installment would be valuable."
+ },
+ {
+  "slug": "spooky-speedbrake-on-the-way-to-the",
+  "title": "Spooky Speedbrake on the Way to the Singularity?",
+  "date": "2026-10-31",
+  "summary": "Short note on a bumpy Nasdaq day: stays short stocks via puts and starts adding minerals. Mostly paywalled.",
+  "themes": [
+   "positioning-flows",
+   "ai-capex"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 2,
+   "clarity": 4,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 1
+  },
+  "overall": 2,
+  "best_line": "Net net, we remain short stocks, via puts.",
+  "improve": [
+   "Almost no content visible; either publish the reasoning or skip the post.",
+   "Title promises a revisit of the 'Air Pocket' call with no result shown."
+  ],
+  "falsifiable_calls": [
+   "Remain short stocks via puts"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "dems-win-data-centers-lose",
+  "title": "Dems win. Data centers lose.",
+  "date": "2026-11-05",
+  "summary": "Two-line political/market headline; the thesis is paywalled.",
+  "themes": [
+   "ai-capex",
+   "personal-essay"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 2,
+   "clarity": 3,
+   "evidence": 1,
+   "actionability": 2,
+   "timelessness": 1
+  },
+  "overall": 2,
+  "best_line": "Dems sweep.",
+  "improve": [
+   "Public text conveys nothing beyond the title; give the causal chain (power prices, permitting) in the free section."
+  ],
+  "falsifiable_calls": [
+   "Data center build-out slows under Democratic wins"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "hes-out-im-out",
+  "title": "He's Out? I'm Out!",
+  "date": "2026-11-12",
+  "summary": "Stops out of long TWD vs INR as an Nvidia CEO scandal threatens the credit intermediary role ('Jensen Put') and chip supply, arguing both credit and supply pipes behind the AI rally are damaged.",
+  "themes": [
+   "ai-capex",
+   "china",
+   "trade-idea"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Not good for the convenient fiction that we can ask Taiwan to continue to play both sides.",
+  "improve": [
+   "Stop-loss rationale is conflated with a speculative reading of a breaking scandal; show how much the trade lost and the stop level.",
+   "Appendix gags (LLM ratings of potential CEOs, Michael Richards line) dilute a serious claim."
+  ],
+  "falsifiable_calls": [
+   "Fewer chips and tighter credit will push compute prices up",
+   "The AI rally credit channel (the 'Jensen Put') is impaired"
+  ],
+  "return_to": true,
+  "return_reason": "Closes out the Dragon and Tigers trade; a full post-mortem on the FX thesis is owed."
+ },
+ {
+  "slug": "tomorrow-never-knows",
+  "title": "Tomorrow Never Knows",
+  "date": "2026-11-17",
+  "summary": "Conference notes from TomorrowX: a hungover mood, Druckenmiller short copper and leaning toward bonds, AI stack at 5.2% of GDP past the 2000 peak, and tighter compute, credit and chip supply. Stays short stocks, long minerals and compute.",
+  "themes": [
+   "ai-capex",
+   "conference-notes",
+   "rates-curve"
+  ],
+  "format": "conference-notes",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "The problem was never the theme, it was the risk control that led to 4x leverage on a 100% correlated portfolio of 50 vol names.",
+  "improve": [
+   "Few direct conference quotes or data; the Druckenmiller point is one line. Add what specific numbers or statements surprised.",
+   "The AI-GDP stat (5.2%, capex 14.7% tying 1981) is the most important and has no source or chart."
+  ],
+  "falsifiable_calls": [
+   "Fed tightening plus peak expectations gives AI a hangover",
+   "Chip supply tightens to Asia; mineral supply tightens in the West",
+   "Token supply, not demand, is the constraint over 1-3 years"
+  ],
+  "return_to": true,
+  "return_reason": "The AI-capex-share-of-GDP vs 2000 comparison deserves a standalone data post."
+ },
+ {
+  "slug": "who-is-selling-all-the-gold",
+  "title": "Who Is Selling All The Gold?",
+  "date": "2026-11-20",
+  "summary": "Sets up three questions on who is selling gold, how to add via an interesting structure, and what is negatively correlated for balance. Only the intro is visible; answers are paywalled.",
+  "themes": [
+   "gold",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 3,
+   "clarity": 6,
+   "evidence": 1,
+   "actionability": 3,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "Well, sometimes the chart looks like crap because it's about to collapse.",
+  "improve": [
+   "No findings in the free section; give the answer to Q1 before the paywall.",
+   "Frame the gold view versus earlier strategic bullishness he called conflicted in April."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "Gold is the position the author flagged as most conflicted twice; tracking who sold and whether the dip was bought is worth following."
+ }
+]

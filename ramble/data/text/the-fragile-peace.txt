@@ -1,0 +1,105 @@
+TITLE: The Fragile Peace
+SUBTITLE: Judgement Day Delayed
+DATE: 2026-04-09
+
+Last night we got the word.
+Ceasefire.
+Rally.
+I was working late on the day gig, only to come back to the screens to a flood of green. Stocks up. Bonds up. Gold up.
+Yuan...up.
+
+The market decided: done deal.
+The problem, which became clear to us more over the ensuing day: no one could say what the deal actually was.
+
+If you read what each side was claiming, it wasn’t clear which 10-point plan they had agreed to.
+
+Iran’s 10-point plan includes continued enrichment. Trump posted this morning: “There will be no enrichment of Uranium.”
+Iran says passage through Hormuz will be possible “via coordination with Iran’s Armed Forces and with due consideration of technical limitations.” Trump says the strait is “totally clear.”
+Pakistan’s PM announced the ceasefire applies “everywhere including Lebanon and elsewhere, EFFECTIVE IMMEDIATELY.” Netanyahu said it doesn’t include Lebanon and launched the largest coordinated strike on the country since the war began. On the same day.
+
+Thing is, some of those contradictions are bigger than others. Some of them seem like they might be “dealbreakers,” as they say.
+At least one side is claiming a victory that isn’t real. The market priced the version where both sides are right. That’s the mistake.
+
+Coming into the deadline, the positions were clear enough. Trump wanted dismantlement: enrichment gone, stockpiles neutralized, the nuclear question closed permanently. Iran wanted normalization: keep enrichment, control the strait, end the war on terms that look like victory.
+There was actually space in the Venn diagram.
+Neither nation had actually ratified UNCLOS, the UN convention that prohibits tolling international waterways. You could imagine a world where Trump lets Iran claim some version of strait sovereignty in exchange for the thing he actually cares about, and both sides walk away with something to sell at home.
+For Trump: “No one else helped us contest Iran’s nuclear ambitions. The UN is feckless. The Europeans who need this oil refused to fight for it. Not our problem if Iran and Oman call these territorial waters, in exchange for NO NUKES.”
+For Iran: “We fought off the Great Satan, we kept our position, we control the waterway.” (Even though they tried to make clear recently this applied to the government and not the people of the US. OK sure, then stop financing terrorism.)
+For the GCC: a bitter pill, but hey, at least the shooting stops.
+For Israel: a deeply suboptimal regional outcome, but globally one we could jam down their throat, as the likely target of any nuclear ambition from Iran.
+That overlapping Venn is what the market bought.
+
+The enrichment chart shows why that Venn only works in one configuration.
+
+Iran has roughly 440kg enriched to 60%. That’s 99% of the work to weapons-grade and about 4-5 weeks from a bomb. It’s pretty inconceivable that they would not only be allowed to continue enriching but keep their stockpile of 60% highly enriched uranium (HEU).  20% HEU is defensible for civilian nuclear uses, the only reason you go past there is to get nukes, and by the time you are at 60%, you are 99% of the way there.
+If Trump gets full denuclearization — stockpile surrendered, Natanz and Fordow dismantled, enrichment ended — then you could imagine letting Iran claim some version of strait sovereignty. Ugly for the GCC, ugly for Europe, but defensible. The Venn diagram holds.
+But if Iran keeps enrichment, which their 10-point plan explicitly demands, then you cannot also give them the strait. A nuclear-capable Iran with a toll booth on 20% of the world’s oil is not a concession. It’s capitulation. You can trade one for the other. You can’t keep both.
+That’s where the diagram breaks.
+And right now Iran is claiming both.
+
+Then the seams appeared.
+Iranian missiles hitting Gulf states on the morning of the ceasefire. Bahrain, Kuwait, the UAE all reporting fresh attacks. Iran bombing the Saudi East-West pipeline, the one piece of infrastructure the Saudis had been using to route oil around Hormuz to the Red Sea port of Yanbu. A parting gift: good luck with your Plan B.
+
+Then tears in the fabric.
+
+Iranian attestations that an end to the conflict in Lebanon WAS part of the deal. Trump and Vance saying it wasn’t. Israel proving the point by bombing Beirut, Tyre, and the southern suburbs while the ink was still wet.
+Trump saying “the strait is totally clear” while Iranian VHF controllers broadcast to ships: “vessels transiting without permission will be destroyed.”
+
+Then the data.
+
+Zero oil tankers. Four dry cargo ships. Remember the folks on those boats, and the insurance companies behind them don’t live in the world of promises.  They have to live with the downsides from ambiguity made real.
+
+And then, late in the day, Iranian media reporting that Pakistan had handed each side a different version of the deal.
+
+Not two interpretations of one deal. Two different deals.   Which isn’t the biggest deal if the principles are notionally bought in, which is what the market seems to think.  But what if the differences aren’t really something you can still paper over.
+Oil executives already pushing back on the toll: “We didn’t have to do that before. I thought we won the war.”
+
+US officials announcing thousands of marines and ground forces will continue deploying to the Middle East. Despite the ceasefire.
+
+The market held on to the consensus that if both sides WANT a deal, one would be reached. Maybe. But peace without capitulation requires both sides to claim victory. That works when the claims are cosmetic. It breaks when they touch physical reality.
+You cannot simultaneously have enrichment and no enrichment, a controlled strait and a free strait, Lebanon included and Lebanon excluded. These are states of the world. Only one can be true. And when that resolves, it won’t resolve quietly.
+Wars don’t end because people are tired of fighting. They end when the ego of the belligerents is resolved. Sometimes it’s literally about the scrap of earth, but more often it’s about why a scrap of earth leads to the mobilization of men. It’s the ego of saying: you cannot enforce your will on me.
+Both sides still have that. Very real material concerns outstanding: nukes, enrichment, who controls the strait, what currency people pay for their oil in. And ego: who gets to claim victory, who gets to shape the region as a result.
+Both sides are claiming victory right now. Those claims are mutually exclusive.
+
+Meanwhile, every day the clock ticks, the physical damage compounds.
+This is what the oil curve is actually showing you.
+
+The curve has been in extreme backwardation since Hormuz closed. Front month screaming tight, back months pricing normalization. The ceasefire hit and the front dropped $17. The clock got faster.
+But backwardation isn't just a price signal. It's a physical process. 
+As opposed to purely financial securities like stocks, the commodity futures curve represents the balance between physical buyers and physical sellers across time.
+When the front trades above the back, holders of inventory are being pulled to sell today rather than store for tomorrow. Every day in backwardation, the system gets thinner. Barrels come out of tanks, buffers shrink, spare capacity drains. The clock isn't just ticking toward resolution. It's ticking toward depletion. Peace on day 14 of this ceasefire starts from a worse position than peace on day 1, even with zero additional damage. And when inventories hit the floor, prices stop being linear. That's when the math breaks.
+But the clock only runs one direction. It can price resolution faster. It cannot undo what’s already been destroyed.
+Ras Laffan, the world’s largest LNG export facility, took drone strikes that knocked 17% of Qatar’s export capacity offline. Repair timeline: three to five years.
+The Saudi East-West pipeline was hit hours before the deal. Main pressurization and pumping station likely damaged. Yanbu flows limited. That was the Plan B.
+Israel struck the Xinjiang-Iran railway corridor at Kashan, China’s terrestrial alternative for trading crude oil while avoiding Hormuz. First direct attack on Chinese infrastructure in the war.
+
+Bob Elliott’s chart puts it plainly: to get meaningful relief in oil prices, Hormuz can’t just be open to some ships. It needs at least 10 million barrels per day passing through, at least 50% of pre-war capacity. Even with every theoretical offset firing, there’s still a 6 million barrel per day gap.
+
+Every compressor station, refinery, terminal, and loading facility hit in the last 40 days sits on an industrial timeline, not a diplomatic one.
+Diplomats negotiate in days. Markets price in weeks. Infrastructure operates on years.
+The curve is pricing resolution. It is not pricing recovery. The gap between those two timelines is where we are.
+
+And the cascade hasn’t paused for the ceasefire.
+
+Crude got smoked. Corn barely moved. That’s the cascade in one chart. Oil reprices on headlines. Agricultural calendars don’t. Urea is still at $700. The USDA’s smallest planned wheat crop since 1919 doesn’t reverse because two diplomats shook hands. Farmers who couldn’t afford fertilizer in March aren’t retroactively applying it in April because someone in Islamabad said “ceasefire.”
+
+What We Did
+The market gave us exactly the setup you want: a headline-driven repricing of the front end with no change to the underlying physical damage.
+We added the sugar calls and picked up the wheat we sold late last night. Agricultural calendars are clocks too, and they’re not resetting.
+Invested a another 5bps in July 85/95 WTI Call spreads.  The backend continues to creep up.  If you are looking for war hedge, the July-August time spread looked kind of interesting to us at 4.  You have downside of -4 and as the clock ticks, the same upside as the 10+ we’re seeing right now.  But this trade has already bounced and has probably passed.  If it goes down to 3 we’ll think about entering. 
+
+Bought some short-dated put spreads for tomorrow at low 20s implied vol. Insurance against the ceasefire unraveling overnight, which the traffic halt and Lebanon escalation suggest is a real possibility.
+
+Rolled the SPX delta hedge on our equity puts into some names we like on the long side.
+Holding the SONIA position. If this ceasefire holds and rate markets start pricing normalization, that leg gives back. But rate cuts aren’t coming until oil actually flows, and zero oil tankers in 24 hours isn’t oil flowing.
+
+Nothing we did today depends on the ceasefire holding. It depends on the physical system not snapping back overnight.
+And it won’t.
+The market bought a deal. The deal doesn’t exist yet. The curve will figure that out before the diplomats do.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

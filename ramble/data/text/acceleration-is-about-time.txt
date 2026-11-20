@@ -1,0 +1,114 @@
+TITLE: Acceleration is about Time
+SUBTITLE: Distance = Time * Speed (aka Compounding)
+DATE: 2023-09-11
+
+Seems like more and more these days, we’re confronted with stories about technology that resonate with fairy tales, myths and legends.
+Rocks that float. A potion that cures cancer. A man on a quest to live forever by drinking blood. Energy from the gods. Ways to cool the planet
+Science, catching up with myth.
+Let’s start with a big one from summer.
+What if we had to rebuild all the electronics?
+For about two weeks this summer, it felt like a 50-50 thing whether our fundamental understanding of how energy flows through matter was wrong.  
+With some very entertaining potential consequences like flying cars and waaaay faster computers. 
+
+Predictions markets mostly faded (aka sold) the move, as the world learned the critical difference between a diamagnetic semiconductor and a superconductor.
+The second question also one of alchemy, but this one related to our health: 
+What if we made progress on the magic potion for fighting cancer? 
+What is the right mix of stuff that kills the bad and preserves the good?  
+
+Begging the question, of how far we really have to go before we’ve tried all the recipes.
+
+Neither of these topics do I claim any particular expertise or alpha.  I would defer to the market vs my personal view.  What’s nice about sitting on the sidelines here is just routing for the good outcomes.  Prediction markets being a nice outlet to play with the ideas.  This one trading at 5:1, likely with some premium from folks looking to buy volatility on a better future.
+
+What I find interesting, however, is the rate at which these kinds of deep questions seem to be coming up lately.
+Here’s another from the world of health, someone bold enough to openly ask: 
+“How can I live forever?”  
+In the process raising questions about whether vampires really do live amongst us.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Maybe you are in energy game.   
+Looking for ways to power the world without burning it up.  
+Now you have to ask: 
+What are our timelines on fusion?
+
+The next question, a bit more contrarian…
+What if the acid rain from shipping has been cooling the atmosphere all along?
+
+Since it seems unlikely that we are going to purposefully dump sulfur back into the air to make clouds.  
+Begging the question:
+What are our options for cooling the planet?
+If and when this gets worse:
+
+I’m coming to the view that the only solution is to take carbon OUT of the atmosphere.   
+
+That or convert everything to nuclear.  Apparently we can’t plant enough trees:
+
+Meaning for the foreseeable future it’s carbon, nuclear, or we melt Greenland, choose one.
+Let’s put it on the list for a trillion stimulus bucks for our next Great Recession.  Or what I’m calling the #NewNewDeal.  Which is the topic of another ramble.
+The Magic of Compounding
+To be clear, I’m not saying that any of these potential technological breakthroughs are legit or scalable or commercially viable.  Heck, I’m not even saying the rock floats.  
+More, it’s interesting how at least it’s starting to feel like things are accelerating, simply by the pace at which previously arcane, mystical, or spiritual areas are coming under intense investigation and reconsideration by western science/technology.  
+This is all before we start talking about sentient machines or the what the heck is going on with UFOs! 
+Even one or two of these things would feel like a decade of progress in the past.
+But the idea of compounding, which we used to talk a lot about at the old shop, was that there’s a positive sum interaction between individual breakthroughs and the collective machine.
+
+In essence, acceleration is about compounding. The notion that systems evolve faster as the other interconnected pieces make complimentary breakthroughs.  Those small changes being to lead to faster growth rates, which, with time, lead to massively different outcomes.
+Distance = Speed (Rate of Compounding) * Time
+
+For example, if your goal is to live forever, someone curing cancer lops off 50% or whatever of your potential mortality.  So the two goals are interconnected.  The meta game is positive sum.  Free energy makes healthcare easier. The nicro version being when your neighbor invests in their home and it raises your property value.
+Not all of these big questions are positive however.  Some of them are negative and dramatic and scary:  Basilisks, nanobots, and totalitarian police states filled with robocops, oh my!
+Which, again, is topic for another ramble…
+What does the Singularity Feel Like?
+Most people estimate the pace of progress as an extension of their prior experience.  Humans tend to look backwards over a period of 10 days, weeks, years, decades, guestimate how much progress was made since then, and then extend that forward at a similar rate.
+And the issue with the singularity, is that that curve that describes the rate of progress is ‘convex.’  
+Note this is what couple hundred years of ~2% real growth looks like.
+
+Meaning - definitionally - that a backward looking, linear estimate of it’s slope will generally underestimate the current rate of progress.
+In short, if you only use the past as a measure, you will always undershoot.
+
+I used to say that the irony of the singularity was that even though the chart of human progress is exponential, humans experience time in a linear fashion.   
+Meaning, we can use calculus (!) to shorten the window under which we evaluate progress.  As that window goes to 0, the slope becomes linear.
+
+Now, the options trader in me has seen this chart before.  From Mssrs. Black, Scholes and Merton.
+
+It means that at some level, humans estimating the pace of technological process were trying to solve the same problem as a first year trader at Lehman trying to ‘hedge their delta’ (aka estimate the impact of a linear change in the underlying with respect to the value of their option)!
+It also means that the fundamental question of whether humans can adapt to the singularity is not whether we can handle that much progress, but whether we can sufficiently shorten our time windows on which we understand the evolution of technological progress.   
+So as to not radically underestimate it’s progress as to be wildly out of touch.  
+As an aside, this also explains why your grandma had a hard time with the VCR remote, and is unlikely to be on snapchat.  She’s used to a world with slower cycles, longer loops.  By the time she learns the VCR buttons, someone is trying to get her on TikTok.
+This is actually one shade of the argument the deccelerationists (aka AI doomers) make.
+They argue that because we tend to underestimate the rate of progress, we are likely to underestimate the rate at which the machines are catching up with us.  
+Which is a good point.
+
+This then morphs into a bad argument, when used as justification for the idea that the slope of that line will ALWAYS be convex (upward sloping) and never flatten out.
+
+Which then takes a turn into argument by metaphor.  Raising the spectre of infinitely cruel, logical, complete, non-halting thinking machines.  Machines that boil the ocean with the heat exhaust from their massive simulation computations.  (Note ironically, superconductors might change that math too).
+Obviously it’s also possible to overestimate the rate of technological process as well!  Something anyone who’s ever invested in equities is well aware of.
+
+Overestimating technological progress isn’t necessarily a problem on it’s own.  
+It’s when it interacts in positive feedback loop with capital that we get boom bust cycles, and spectacularly, bubbles and their inevitable financial crises.  Remember, there was a time that roads, canals, and railroads were all considered highly speculative and untested investments.
+
+Venture Capitalists get a lot of gruff when they pile into popular, faddish trends, but honestly that’s their job.
+Buy low, sell high.
+Sounds familiar.  
+Sounds like hedging a delta.
+When the world is behind on a particular tech/asset, investors aught pile in and buy it cheap.  This then bids up the price.  
+This is where “AI feeding frenzy” comes from.
+
+When a tech becomes overpriced, the original, early investors see it in their portfolio first, and then not only stop investing in it, but go on the internet and write long pieces about why they are ‘out of crypto’ or SaaS is overpriced.'
+Which actually makes sense.  There’s a reason these things come in waves.
+
+So What?
+Well, in spite of the circuitous route of this ramble, the take aways are pretty clear.
+Acceleration is about the pace of change increasing, and it’s all around us.
+
+If you feel like the world is moving too fast, shorten your time horizons.
+
+Estimating the rate of progress is hard, likely a full time job.
+
+And then a slightly provocative closing thought.  
+Regardless of whether we are ‘in the singularity’ we do appear to have confirmation that things are speeding up.  That the rate of change in our technology, economy, and culture is increasing.
+Given that, why are so many of our major political, cultural and economic institutions led by boomers?
+
+We need young folks with short cycles for what’s coming.  We can’t afford to have leaders that can’t keep up.  
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

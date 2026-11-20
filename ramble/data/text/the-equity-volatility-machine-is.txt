@@ -1,0 +1,54 @@
+TITLE: The (equity) volatility machine is down
+SUBTITLE: 
+DATE: 2024-08-06
+
+Well that was interesting. 
+A little over 24hrs ago the Japanese equity market opened and proceeded promptly to break.  Like 10% down in a single day break.
+
+Like, implied volatility in the 70 range kinda broken.
+
+If you were looking for a culprit, look to Japanese banks, leading the way down 25% over two days!  
+
+Carry trades are fun, until they aren’t?
+But was this simply the result of carry trading “pods blowing up?” Not really.
+A carry trade is about borrowing Yen to buy USD assets, (like government bonds and stocks), but why would a carry trade unwind crush Japanese stocks?
+It makes sense that US assets would fall, but did you see bonds?  They rallied like crazy?
+
+So given Japanese stocks looked to be undergoing their own version of the 1987 crash, it makes some sense that you would see some weakness in US stocks.  However by the time the S&P 500 found a floor, US equity implied volatility measures (VIX) were also above 65!
+
+For some context, the last time we went to 65 on the VIX was March 12th, 2020, and it took a month to get there.  You know, because the entire world was about to lockdown.
+
+For some more context , the only times equity vol hit these levels previously in the US was 2020, 2008, 1987, and the Great Depression.  The US Stock market usually moves around 1% a day.  That’s around “16vol.”  You can think of a rough ratio of 16 to convert annualized to daily volatility.  We’ll switch between them as we go through this since the numbers are so large.
+When vol is ~65, that means the stock market is priced to move ~4% a day, forever.  Here’s another angle.  
+
+At it’s daily peak, US equity vol was so expensive it was priced as the entire stock market moving around like a soon to be dead financial institution in 2008.
+
+Not to be outdone, the price of betting on implied volatility itself (or the “implied volatility of equity volatility”) also hit ~record highs.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Recall from our piece on hedging in June that all of these implied (aka expected) volatilities were being driven down not only by low realized volatility, but by the excess concentration in a few names.
+
+Combined with the second order impacts from folks going ‘short vol’ (by selling the implied volatility of stocks and harvesting the gap between implied and realized), this worked to actually compress volatility.  Especially on the way up.
+
+Exposing themselves to both short term realized volatility, and the realized correlation of stocks.  Both of which surprised everyone to the upside, when stocks went…downside.
+As they say, in a crash all correlations go to 1…
+
+This is what a correlation of 1 looks like!
+Which you can see by the way that vol tracks short term correlation.  Which, as a note for those of you looking for reasons to get bearish, looks like it could certainty go higher…
+
+Anyway, with Japanese markets now bouncing back strongly (up ~9% as of writing), we have more confirmation that these moves were as much a function of individuals / desks / pods / funds being ‘short vol’ as something specific to the carry trade.  What that means in practice is that folks that have sold equity options have to sell moves in stocks to the downside and buy moves to the upside.  Buy high, sell low.  Not only the opposite of what you want to do, but exacerbating moves against you.  Sounds kinda crappy huh?  
+Well, that’s where the bribe comes in from the buyer of the option, who’s generally willing to pay more than the risk neutral expected volatility for the optionality embedded in that contract.  For the privilege of being ‘long vol.’   The insurance premium the seller of options collects.  The raw materials for those sky high Sharpe ratios.
+In our June ramble, we argued that investors should consider adding direct protection (in the form of puts on US stocks) as well as a long position in volatility (via call spreads or risk reversals in the VIX).
+Well, today was a day to sell optionality not buy it.  
+hile we were unable to sell out equity volatility at the 65 peak (owing to a day job with a never ending cycle of zooms and a need to have our downside hedged at the moment), we did manage to add to our short credit position (via high yield ETFs, HYG and HYGH) as promised in our last missive.
+Which, turns out is also what Boaz thinks you should do.  Great (credit) minds think alike…
+
+So to zoom out.  Today was a good life lesson, when equity vol is blowing out, look around you.  Check credit, check other markets, check bonds and the banks.  Check rates, and swaps and spreads, and ask yourself, are we really going into another Great Depression?
+If not, time to sell some skew, short some VIX & cover by going double short credit.   Then buckle down, and ride out the storm of up 5% down 6% up 3% down 7%, until things slowly come back to normal.
+99 times out of a hundred, if you size your credit right, you have a nice little alpha trade there.
+Till next time.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This is NOT INVESTMENT ADVICE, these are the ramblings of a speculator running a portfolio designed to hedge his massive position in illiquid startup equity.  If you would like investment advice on how to maximize your returns relative to risk, relative to your portfolio, liquidity and risk constraints, that’s going to be 50bps.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

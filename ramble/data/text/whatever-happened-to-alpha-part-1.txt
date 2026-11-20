@@ -1,0 +1,36 @@
+TITLE: Whatever Happened to Alpha - Part 1
+SUBTITLE: Why haven’t hedge funds made money lately? (June 8th, 2017)
+DATE: 2021-11-09
+
+Part 1: Why haven’t hedge funds made money lately?
+An investor asked us this question a couple of weeks ago.
+At the time, we didn’t have a very good answer.
+So we went looking.
+This is our reply.
+~~~
+Start with the concept of Total Returns.
+Total Returns are comprised of three different return streams.
+Alpha. Beta. Cash.
+
+Alpha Returns have fallen due to the explosion of competition in the hedge fund space.
+Beta Returns have fallen because monetary policy is no longer easing.
+Cash Returns have fallen because the interest rate on cash is ~zero.
+
+Are Hedge Funds Making Less Money?
+As a group, yes.
+
+And for most strategies, yes.
+
+Hedge fund returns have fallen for two big reasons:
+Competition
+
+The first is the increase in competition, both in terms of the number of funds, and the size of the assets chasing alpha in their particular market niche.
+Competition has compressed the alpha returns that hedge funds provide to their investors.
+Monetary Policy
+
+The second (and perhaps more important) is monetary policy.
+Interest rates very close to zero pull down the cash rates that funds earn on their investor’s capital.
+In addition, lower and lower interest rates have stimulated asset prices, fueling beta returns.
+With interest rates close to zero, we’ve run out of fuel.
+Were interest rates to rise materially, for example due to tightening by central banks, the withdrawal of liquidity would negative impact asset prices.
+As the vast majority of hedge funds are structurally long beta (as we will go into in subsequent posts), this means that not only are hedge fund returns low now, they are likely to be low going forward.

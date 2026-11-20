@@ -1,0 +1,720 @@
+TITLE: China Can't Win
+SUBTITLE: Why Chaos Favors the Strong in the Coming Great Decoupling
+DATE: 2025-10-13
+
+A Strategic Analysis of US-China Economic Separation (2017-2045)
+
+Ten years ago, I left one of the world’s largest hedge funds to short China. Specifically, to short their worst banks, their most overleveraged property developers, and the entire extend-and-pretend machinery holding the system together.
+The trade was early. It’s always early until it isn’t.
+This is the culmination of that work—a framework for understanding why US-China decoupling isn’t just inevitable, but asymmetric. China needs us far more than we need them. And the property crisis that everyone’s been waiting to “blow over” for a decade? It’s not a bug. It’s the feature that makes everything else inevitable.
+In this book, we will argue that:
+China cannot win the decoupling because they face an impossible trilemma: protect the currency, bail out the banks, or maintain social stability. They can pick two at most. More likely, they get one. The math is unforgiving: $5-10 trillion in hidden property losses against $5 trillion in bank equity. That’s not a solvency problem—it’s a physics problem. Meanwhile, they’re bleeding $1.1 trillion annually just to hide the losses, burning their entire defense and R&D budget combined on financial zombies.
+The strategic asymmetry runs deeper than most analysts realize. China holds $2.5 trillion in US assets—and thinks that’s leverage. It’s not. It’s a hostage situation where we hold the gun. We can freeze those assets, inflate them away, or just buy them back (we printed $4 trillion in 18 months during COVID). They can’t do the same to our physical assets in China without triggering capital flight that collapses the currency. Game theory says: when you’re stronger, make chaos. When you’re weaker and need central planning, you need predictability. Trump’s “madman” strategy isn’t madness—it’s mathematically optimal.
+The timeline matters more than anyone understands. We’re not half decoupled as most people think—we’re 25-30% when you account for the stocks of accumulated linkages (locked capital, installed equipment, tenured professors, 30-year supply contracts). This isn’t a 5-year story. It’s 20 years+, and we’re only 7-8 years in. But here’s the critical insight: 2027-2030 is the danger zone. Four countdowns converge: China’s demographics cliff, US rare earth independence, Xi’s succession window, and Taiwan election cycles. If they’re going to move, it’s then. After 2030, their leverage expires.
+This book shows you the math, the game theory, the historical precedents, and most importantly—how to position for all four scenarios. Because the trade of our generation isn’t predicting which future arrives. It’s observing that certain futures are impossible (reintegration), others are inevitable (separation), and building a portfolio that profits regardless.
+We’re not halfway through this process. We’re barely a quarter done. The market prices the conventional wisdom (gradual, managed, symmetric). We’re positioned for reality (accelerating, hostile, asymmetric).
+Time favors us. Physics doesn’t care about five-year plans.
+Let’s show you why.
+—Alexander Campbell, October 2025
+(Author’s Note: What follows is entirely my own opinion, based on publicly available information.  The views and opinions presented herein are those of the author and do not represent the views of Rose AI, any of our clients or an investment recommendation.  We’re all adults here, this is my rant and my rant alone.  You get it, but I have to say it.) 
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Table of Contents
+Chapter 1: The Core Thesis - Why China Is Already Losing
+Chapter 2: Too Big to Bail - Inside China’s $7 Trillion Black Hole
+Chapter 3: Grounds for Divorce - Why Recoupling is Impossible
+Chapter 4: Don’t Invade the Heartland - How to Win from the Periphery from 2,500 Years of History
+Chapter 5: The Chaos Game - How Unpredictability Forces Truth Revelation
+Chapter 6: Time to Build - They May Be Bleeding But We’re Vulnerable
+Chapter 7: Epilogue - How I Got Here
+
+Chapter 1: The Core Thesis - Why China Is Already Losing
+Here’s what everyone’s missing about US-China decoupling: China needs us more than we need them. Not in some abstract geopolitical sense. In cold, hard, mathematical reality.
+The numbers don’t lie. And the numbers say China is fucked. (Pardon my language, but c’est la vérité.)
+The Asymmetry Nobody Talks About
+This isn’t a symmetric competition between equals. It’s a strong power (US) slowly strangling a weak power (China) that looks strong but is actually bleeding out internally.  Wearing a rising power costume, trying to bluff it’s way to hegemony.  
+The property bubble didn’t just pop. It revealed that the emperor has no clothes. And now China faces an existential choice that isn’t really a choice at all.
+What China Needs From the US:
+Dollar system access ($2.5 trillion in US assets held hostage)
+
+Advanced semiconductors (frozen at 7nm while we’re at 3nm)
+
+Software ecosystems (Windows, Android, cloud, enterprise software—90% of Chinese businesses run on US software)
+
+Allied markets (US + allies = 55% of global GDP; China can’t grow without access)
+
+Food security (they import 30% of soybeans from us, plus high-quality meat/dairy)
+
+Technology transfer (H-1B pipeline, research collaboration, patent cross-licensing)
+
+Cultural exports (Hollywood, music, fashion—soft power that legitimizes the regime)
+
+What the US Needs From China:
+Rare earth processing (85% controlled—our only real vulnerability, expires in 5-7 years)
+
+Some legacy manufacturing (toys, furniture, textiles—annoying but replaceable over 5-10 years)
+
+...that’s it
+
+Attempt to break down the major areas of decoupling into a) progress, b) pain and c) exposures.  Buyer beware we could spend months tweaking these numbers.
+This isn’t even close.
+But here’s where it gets interesting: China knows this. They’ve spent 15 years preparing for decoupling. Every move they made—banning Facebook, forcing joint ventures, building Huawei, developing domestic AI models—was preparation for this moment.
+The question isn’t whether decoupling happens. The question is whether China survives it.
+
+The Property Bomb: An Existential Political Bet
+Let’s start with why China is so vulnerable. A property bubble dressed up as an economic model.
+For 25 years, China’s growth formula was simple:
+Local governments sell land → Developers build apartments → Banks lend against property → Property prices rise → Repeat
+At the peak, this machine generated:
+30-50% of local government revenue (land sales)
+
+25-30% of GDP (property + construction + related industries)
+
+70% of household wealth (Chinese citizens parked life savings in apartments)
+
+Then in 2020, Xi tried to pop the bubble gently with the “Three Red Lines” policy. Limit developer leverage. Prevent systemic risk. Sounds reasonable.
+What actually happened:
+Developers couldn’t meet the leverage limits (they were all overleveraged)
+
+Credit markets froze
+
+Evergrande defaulted (December 2021), then Country Garden, then dozens more
+
+100+ cities saw mortgage payment boycotts (buyers refused to pay for unfinished apartments)
+
+Property sales down 40-50% from peak (and stayed there)
+
+Ranked in 2019, Indexed to 2018, Data from Bloomberg
+The Math That Doesn’t Work:
+Conservative estimate of bank balance sheet losses: $7.5 trillion* 
+Total bank equity in Chinese banking system: $5 trillion
+If you write down $7.5T in losses against $5T in equity, you get: negative $2.5 trillion in bank equity
+This isn’t a solvency problem. It’s a physics problem. The losses exceed the system’s capacity to absorb them.
+Breakdown in Chapter 2: $2.3T in developer debt at 75% haircut = $1.7T losses, $7T in LGFV debt at 40% haircut = $2.8T losses, $5T in property-collateralized corporate loans at 60% haircut = $3.0T losses. Total: $7.5T in direct bank balance sheet losses. Mortgages ($5.8T) are excluded—Chinese homeowners keep paying even when underwater, with foreclosure rates under 1%. WMPs and other shadow banking products add another $400-500B in potential losses. The additional $2-3T in household wealth destruction from unfinished apartments doesn’t hit bank equity but destroys consumption. We conservatively round to “$7 trillion” in the text.
+The Existential Political Bet:
+Here’s what people miss. This is about more than GDP growth or bank balance sheets. It’s about regime survival.
+The CCP’s legitimacy rests entirely on one thing: delivering economic prosperity. Not democracy. Not rule of law. Not individual freedom. Just: “We make you richer every year.”
+No growth = no mandate = potential collapse.
+China can’t take the Japanese path (accept stagnation) because Japan had:
+Democracy (legitimacy beyond growth)
+
+Wealth cushion ($40k per capita vs China’s $12k)
+
+US security guarantee
+
+Social cohesion
+
+China has none of these.
+Which is why they’ve made an existential bet: extend-and-pretend on property + triple down on manufacturing exports.
+The Strategy:
+Forbearance forever: Banks don’t mark loans to market, roll over bad debt, pretend it’s performing
+
+Financial repression: Negative real rates force savers to fund the bailout slowly (over 15-20 years)
+
+Manufacturing surge: Export deflation to the world—flood markets with cheap EVs, solar panels, batteries
+
+Hope growth outpaces losses: Maybe, somehow, 2-3% real growth for 20 years rebuilds bank capital
+
+The Problem:
+This strategy requires the world to absorb Chinese overcapacity. But the world’s had enough:
+US: 100% tariffs on Chinese EVs (under Biden no less!)
+
+EU: Anti-subsidy investigations on Chinese green tech
+
+India: Blocking Chinese imports across the board
+
+Everyone: “Not this time”
+
+Which means China’s only remaining growth engine (exports) is hitting a wall right as they’re bleeding $1.1 trillion annually hiding property losses.
+
+That $1.1T is their entire defense budget + entire R&D budget. Every year. Forever. Just to hide losses that everyone knows exist.  About as big as the net exports in goods which is keeping their balance of payments afloat.
+This is why decoupling is existential for China. They can’t afford competition with the US and a zombie banking system. But they can’t fix the banking system without triggering the crisis they’re trying to avoid.
+The CCP isn’t worried about a recession. They’re worried about regime collapse. When you can’t deliver prosperity and you have no other source of legitimacy, economic failure is political death.
+(Pain + Reflection = Progress... but what if you can’t admit the pain without losing power?)
+
+What China Saw Coming (And Why They Prepared)
+To be clear: China has been preparing for this for 15 years.
+Think about every move they made that seemed protectionist or paranoid:
+2009: Ban Facebook, Twitter, Google
+2010: Force foreign tech companies into joint ventures (51% Chinese ownership)
+2012: Launch “Indigenous Innovation” policies
+2015: Made in China 2025 (semiconductor & AI self-sufficiency)
+2017: National Intelligence Law (all Chinese companies must assist state security)
+2019: Accelerate Huawei 5G buildout despite Western resistance
+2020: Push domestic AI models (Baidu, Alibaba, Tencent—all open source or locally trained)
+Every move was prep for decoupling.
+They knew it was coming. They just thought they’d have more time.
+The Infrastructure They Built:
+Alternative tech stack:
+Mobile OS: Android-based but Google-free (no Play Store, no Gmail)
+
+Cloud: Alibaba Cloud, Tencent Cloud, Huawei Cloud (all domestic)
+
+Payments: WeChat Pay, Alipay (no Visa, no Mastercard)
+
+Social: WeChat, Douyin (domestic TikTok), Weibo
+
+Search: Baidu (heavily censored but functional)
+
+Maps: Baidu Maps, AutoNavi
+
+E-commerce: Alibaba, JD, Pinduoduo
+
+They didn’t ban US tech because they were anti-market. They banned it because they knew decoupling was inevitable and they needed domestic alternatives in place before the rupture.
+But here’s what they couldn’t replicate:
+Semiconductors:
+Stuck at 7nm (vs TSMC’s 3nm) though rapidly catching up
+
+Equipment embargoed (no ASML EUV, restricted DUV)
+
+Can make enough for military, can’t scale commercially
+
+Software depth:
+No equivalent to Windows/Office for enterprise (yet)
+
+Xinchuang (replacement campaign) only 40% complete in government, <10% in private sector
+
+Developer tools still dominated by US (GitHub, VS Code, cloud platforms)
+
+The dollar system:
+CIPS (Chinese payment system) processes $12T vs SWIFT’s $150T
+
+RMB is 3% of global reserves vs dollar’s 60%
+
+Can’t escape dollar system without destroying trade (for now…)
+
+Allied markets:
+Belt & Road projects failing (Pakistan, Sri Lanka defaulting)
+
+BRICS is a joke (India in Quad and BRICS—pick a side)
+
+No one actually trusts China (transactional relationships, not alliances)
+
+5-year preparation reveals they knew this was coming. But preparation ≠ readiness.
+They built alternatives where they could (consumer apps, payments, cloud). But they failed on the things that matter most (chips, enterprise software, financial system, alliances).
+Which means they’re going into this fight with one hand tied behind their back. And the other hand is busy hiding $5-10T in property losses.
+
+The Financial Hostage Situation
+Now here’s the twist that makes this whole situation darkly hilarious: China’s wealth is our hostage.
+Remember those $2.5 trillion in US assets China holds? Everyone thinks that’s Chinese leverage over us. “They could dump Treasuries! Crash our markets!”
+Wrong.
+It’s our leverage over them.
+The Breakdown:
+$1.0-1.2T in US Treasuries
+
+$1.1-1.3T in US equities
+
+$200-300B in US corporate bonds
+
+Total: $2.3-2.8T
+
+Why This Is Chinese Vulnerability, Not Strength:
+If China tries to weaponize these holdings:
+Sell Treasuries aggressively → Bond yields spike (temporarily), but China realizes losses on forced sale (market knows they’re desperate seller)
+
+Dump US equities → Markets drop 10-20% (temporarily), but China loses 30-40% in fire sale (illiquid at scale)
+
+Freeze/withdraw dollar holdings → Triggers capital controls, RMB collapse, bank runs
+
+None of these hurt us more than them.
+But if we weaponize their holdings:
+IEEPA (International Emergency Economic Powers Act) gives the President authority to:
+Freeze all Chinese government assets ($1.5-2T)
+
+Block transactions by Chinese SOEs
+
+Sanction Chinese banks (cut off from dollar system)
+
+Precedent exists:
+Russia (2022): Froze $300B in reserves
+
+Iran (1979-present): Froze $50B
+
+Venezuela (2019): Froze government assets
+
+The difference: Chinese holdings are 8-10x larger than Russia’s were.
+
+Bit of a “Mexican Standoff” where China holds physical assets and IP, the US holds Chinese dollar liquidity.
+The Game Theory:
+In a Taiwan crisis:
+US moves first:
+Freeze $2.5T in Chinese assets (Day 1)
+
+China can’t retaliate effectively (their move is selling, which hurts them)
+
+We use frozen assets as compensation for US companies nationalized by China
+
+China’s countermove:
+Freeze/nationalize $500B-1T in US assets in China (factories, JVs, etc.)
+
+But: These are physical assets (harder to liquidate), not financial assets
+
+Net effect:
+US frozen assets: Liquid, easily repurposed
+
+Chinese frozen assets: Illiquid, require ongoing management
+
+We win the financial war before it starts.
+Or we just print. That’s the other option everyone forgets.
+China holds $1.2T in Treasuries? The Fed’s balance sheet is $7.7T. We printed $4T during COVID in 18 months. We could literally buy back every Treasury China holds, retire the debt, and it would be a rounding error in our monetary response.
+The Dollar System Trap:
+This is why China’s been trying to internationalize the RMB for 15 years. They know dollar dependence is a strategic vulnerability.
+But it’s not working:
+RMB share of global reserves: 3% (vs 60% for dollar)
+
+CIPS payment volume: $12T vs SWIFT’s $150T
+
+RMB-denominated trade: Limited to bilateral deals, not global standard
+
+Why? Because international currency requires:
+Trust: Do people believe you’ll honor contracts? (China: No)
+
+Rule of law: Can foreigners sue in your courts? (China: No)
+
+Capital account openness: Can people move money in/out? (China: No—capital controls)
+
+Deep financial markets: Can foreigners invest safely? (China: No—arbitrary government intervention)
+
+China can’t open up without losing control. But they can’t gain trust without opening up.
+So they’re stuck. Dependent on a dollar system that the US controls. With $2.5T in US assets that we can freeze at will. Or inflate away. Or buy back with printed money.
+(What if the real vulnerability isn’t economic? What if it’s that China built their entire growth model on access to systems they don’t control?)
+To be clear, weaponizing IEEPA at scale would be our nuclear option. Once you freeze $2.5T in sovereign assets, every central bank on earth starts asking uncomfortable questions about dollar reserves. But that’s the beauty of MAD - the threat alone changes behavior. China knows we could do it. We know it would hurt us too, but not as much. The game theory says neither side pulls that trigger... until Taiwan forces someone’s hand and then it’s just a matter of what side are you on?
+
+Why Trump’s Chaos Strategy Is Optimal
+Most people think Trump’s strategy is ‘crazy’, I see a “mixed strategy” of unpredictable escalation.
+
+A mixed strategy Nash equilibrium involves at least one player playing a randomized strategy and no player being able to increase his or her expected payoff by playing an alternate strategy.
+Greenland comments. Panama Canal threats. Random tariffs. “Canada should be the 51st state.” Maximum chaos, zero predictability.
+The media thinks he’s unhinged. I think he’s playing optimal game theory.
+The Setup:
+When you’re the stronger player in a competitive game, you want unpredictability.
+When you’re the weaker player and need central planning to optimize around constraints, you need predictability.
+Trump’s Mixed Strategy:
+“Maybe 10% tariffs”
+
+“Maybe 60% tariffs”
+
+“Maybe tomorrow”
+
+“Maybe we’ll buy Greenland”
+
+“Maybe we’ll take the Panama Canal”
+
+What this does to China:
+Resource Exhaustion:
+Must prepare for all scenarios simultaneously
+
+Can’t optimize (don’t know which threats are real)
+
+War-game teams burning intelligence resources on “is Greenland serious?”
+
+Every tweet is a potential policy shift that requires analysis
+
+Planning Paralysis:
+CCP’s 5-year plans require predictability
+
+Can’t plan when rules change randomly
+
+Provinces can’t coordinate (Beijing’s strategy keeps shifting)
+
+Central planners lose control (which for an authoritarian system is existential)
+
+Information Asymmetry:
+China must take all threats seriously (can’t risk being wrong)
+
+Trump can just... not do things (costs him nothing)
+
+China spends real resources preparing for scenarios that don’t happen
+
+Case Study: The TikTok Dance
+Watch how this played out in real-time with TikTok:
+2020: Trump threatens TikTok ban (national security)
+Result: ByteDance panics, negotiates sale to Oracle/Walmart
+2021: Biden pauses, reviews policy
+Result: ByteDance thinks they’re safe, stops negotiating seriously
+2023: Congress passes bill forcing sale/ban
+Result: ByteDance lobbies hard, lawsuit filed
+2024: Trump returns, hints he might “save TikTok”
+Result: ByteDance completely confused—is he helping or threatening?
+2025: Bill becomes law, Trump says “we’ll see”
+Result: ByteDance burning millions on legal fees, lobbying, contingency plans, while Trump hasn’t committed to anything
+The cost to Trump: A few tweets, zero actual policy changes
+The cost to ByteDance: Hundreds of millions in legal/lobbying, strategic paralysis, executive bandwidth consumed
+Mixed strategy in action.
+Compare to Obama/Biden’s Approach:
+Predictable Containment:
+Announce policy 18 months in advance
+
+Clear timeline, specific rates
+
+Allied consensus, gradual implementation
+
+Result: China optimizes defense
+Stockpiles equipment before bans
+
+Builds alternatives on known timeline
+
+Lobbies effectively (weakens final rules)
+
+Prepares counters for each move
+
+Trump’s Approach:
+Unpredictable Escalation:
+No advance warning
+
+Inconsistent messaging (deliberate)
+
+All options on table (including crazy ones)
+
+Result: China can’t optimize
+Must prepare for worst case (expensive)
+
+Can’t build specific counters (don’t know what’s coming)
+
+Domestic audience confused (is US serious?)
+
+Exhausts limited resources hedging all scenarios
+
+The Tariff Sequence (Another Example):
+March 2018: Trump announces steel tariffs (25%)
+June 2018: Adds tariffs on $50B in Chinese goods
+August 2018: Increases to $200B
+September 2019: Threatens 30% on everything
+October 2019: “Phase 1 deal” reduces some tariffs
+2020: COVID pauses escalation
+2024: Trump returns, threatens 60% universal tariff
+2025: Actually implements 25% on some, 10% on others, 100% on EVs
+The pattern: No one knew which tariffs would stick, at what rate, for how long.
+China’s response: Had to prepare for 10%, 25%, 60%, and 100% scenarios simultaneously. Couldn’t optimize supply chains because didn’t know which products would be hit. Domestic manufacturers screaming for clarity. Central planners unable to issue coherent guidance.
+The Strategy:
+This only works if you’re stronger and your opponent needs control.
+The US can absorb chaos. Democratic systems expect volatility. Markets price uncertainty. We’re antifragile by design.
+China’s authoritarian system requires control. Central planning breaks with uncertainty. CCP legitimacy depends on appearing in command.
+Chaos favors the US. Stability favors China.
+So Trump gives them chaos.
+(Pain + Reflection = Progress... but what if the pain is random and the reflection is impossible?)
+
+The One Thing We Need From China (And Why It Doesn’t Won’t Matter Soon)
+Our vulnerability: rare earth processing.
+China’s Monopoly:
+Rare earths: 85% of global refining
+
+Graphite: 95% of anode material processing
+
+Cobalt: 70% of refining
+
+Lithium: 60% of refining
+
+Manganese: 90%+
+
+Why This Matters:
+Every EV needs 50-80 oz of silver, 15-20 lbs of rare earths, 20 lbs of graphite
+
+Every wind turbine needs 2,000 lbs of rare earths
+
+Every F-35 needs 920 lbs of rare earths
+
+Every advanced weapon system depends on these materials
+
+If China cut us off tomorrow:
+EV production stops
+
+Wind turbine production stops
+
+Defense production severely limited
+
+Solar panel production stops
+
+But Here’s the Key Insight:
+This vulnerability expires in 5-7 years.
+Major projects coming online:
+MP Materials (rare earths): Texas facility 2027
+
+Lynas (rare earths): Already producing, can scale 2-3 years
+
+Syrah Resources (graphite): Louisiana 2026-2027
+
+Multiple lithium projects: US/Australia/Canada 2027-2030
+
+Timeline:
+By 2028: 30-40% independence (enough to sustain critical production)
+
+By 2032: 60-70% independence (enough for defense + partial commercial)
+
+By 2037: 80%+ independence (minimal Chinese dependence)
+
+We’re building alternatives. They’re 3-7 years out for defense-critical levels. 10-15 years for full commercial independence.  Which is a conservative estimate, barring a “Warp Speed 2.0” focus in the wake of China’s moves last week.
+Which means China’s leverage window is closing.
+
+Why Now? The 2025-2030 Critical Window
+The next 5 years are make-or-break for this entire dynamic.
+Four Countdowns Are Converging:
+1. China’s Demographic Cliff
+Chinese working-age population (15-64):
+2015: Peaked at 1.01 billion
+
+2025: 980 million (down 30M)
+
+2030: 940 million (down another 40M)
+
+2035: 880 million (down 60M more)
+
+They’re losing 5-10 million workers per year. You can’t run a manufacturing export economy with a shrinking workforce.
+And it’s not just quantity—it’s dependency ratios. By 2030, they’ll have 300 million people over 60 (20% of population) with inadequate pensions, healthcare, or social safety net.
+
+2. US Rare Earth Independence
+As I just showed:
+Today: 100% dependent on China for processing
+
+2028: 30-40% independent (defense secured)
+
+2032: 60-70% independent
+
+2037: 80%+ independent
+
+China’s leverage expires by 2030. After that, an embargo wouldn’t cripple us—it would annoy us.
+3. Xi’s Political Timeline
+Xi Jinping:
+Born: 1953 (currently 71)
+
+2027: 21st Party Congress—if he stays (breaking precedent), signals entrenchment
+
+2032: 22nd Party Congress—will be 79, precedent says retire
+
+2037: If still there at 84, it’s lifetime rule
+
+The succession question:
+If Xi steps down in 2032, the next generation has different calculus. They inherit his mess (property crisis, demographics, decoupling) without his revolutionary credentials.
+If Xi stays past 2032, he’s increasingly desperate for legacy achievements (read: Taiwan) before biology intervenes.
+Either way, 2027-2032 is his make-or-break window.
+
+4. Taiwan Election Cycles
+Taiwan presidential elections:
+2024: DPP won (pro-independence party)
+
+2028: Next election
+
+2032: Following election
+
+Each DPP victory moves Taiwan further from mainland. Each election is a window where Beijing calculates: “If we don’t move now, will we ever be able to?”
+Add in that US elections 2024, 2028, 2032 create brief windows of transition/uncertainty where adversaries historically probe.
+The Synthesis:
+2025-2027:
+China still has rare earth leverage
+
+Demographics declining but manageable
+
+Xi consolidating for potential 2027 decision
+
+US building alternatives but not complete
+
+2027-2030:
+CRITICAL WINDOW
+
+China’s leverage expiring (rare earths)
+
+Demographics worsening (dependency ratios crossing threshold)
+
+Xi deciding on legacy/succession
+
+Taiwan potentially emboldened by US support
+
+2030-2035:
+China’s leverage largely gone (US alternatives online)
+
+Demographics catastrophic (20% over 60, shrinking workforce)
+
+Xi either retired or entrenched in decline management
+
+Taiwan further from reunification than ever
+
+The Strategic Logic:
+If you’re China and you’re going to make a move on Taiwan, it has to be before 2030. After that:
+We don’t need your rare earths
+
+Your workforce is shrinking
+
+Your leverage is gone
+
+Xi is too old or already failed
+
+If you’re the US and you’re going to force decoupling, now is optimal:
+We’re building alternatives (5-7 years to independence)
+
+Our alliances are strong (AUKUS, Quad, Chip 4)
+
+Their property crisis is bleeding them
+
+Time favors us
+
+This is why Trump’s chaos strategy works NOW.
+China can’t wait us out. Every year that passes, we get stronger (rare earth alternatives) and they get weaker (demographics + property bleeding).
+They need stability to plan their way out. We’re giving them chaos to accelerate their decline.
+
+The Dynamics of Immediate Decoupling
+Let’s play out the scenario everyone fears: complete, overnight decoupling.
+Taiwan crisis. Mutual sanctions. Full embargo. Financial freeze. Cold War 2.0 begins Day 1.
+What happens to China:
+Month 1:
+Dollar system cutoff → immediate currency crisis
+
+RMB collapses 30-50% (capital flight unstoppable)
+
+$2.5T in US assets frozen → $1T+ in losses realized
+
+Bank runs (depositors panic, try to withdraw)
+
+Food shortages (30% of soybeans from US, can’t replace immediately)
+
+Year 1:
+GDP contracts 10-15% (export collapse + financial crisis)
+
+Unemployment spikes to 25%+ (manufacturing exports die)
+
+Social unrest (property owners + unemployed workers)
+
+Regional governments defy Beijing (withhold revenue)
+
+PLA loyalty questioned (economic crisis threatens military spending)
+
+Years 2-5:
+Depression (not recession, depression)
+
+Political instability (CCP legitimacy collapses)
+
+Possible fragmentation (regional autonomy movements)
+
+Best case: Japan’s Lost Decades at 1/3 the wealth level
+
+Worst case: USSR-style collapse
+
+This is also why the currency is such an important bellweather for the regime.  Because what path they choose on the above list of (bad) options will pretty much be immediately signalled by whether they choose to defend the currency.  It also explains why they steadfastly refuse to recapitalize the banking system.  They likely need that external, dollar liquidity for a rainy day. 
+
+What’s interesting about the last couple of years, is that the US decision to freeze Russia’s access to their holdings of US Treasuries even calls this decision framework into question.  Why hold onto US bonds if they aren’t going to be there when the rainy day arrives.  This also explains why they are shifting so much of their holdings off the mainland and into proxies like Belgium and Luxembourg.
+
+What happens to US:
+Month 1:
+Supply chain shock (no Chinese imports → shortages)
+
+Inflation spike (6-10% as prices adjust)
+
+Market volatility (VIX 60+, equity markets down 20-30%)
+
+Recession begins (consumer spending falls, business investment pauses)
+
+Year 1:
+Mild recession (GDP -2 to -5%)
+
+Inflation persists (supply chains take time to rebuild)
+
+Reshoring boom begins (massive infrastructure/manufacturing investment)
+
+Defense spending surges (cold war footing)
+
+Years 2-5:
+Recovery and restructuring
+
+New supply chains operational (Mexico, India, ASEAN, domestic)
+
+Manufacturing renaissance (Rust Belt booms)
+
+Fiscal stimulus (infrastructure, chips, rare earths, defense)
+
+Stronger than before (more resilient, less dependent)
+
+The Asymmetry:
+China: Depression → Potential collapse
+US: Recession → Stronger recovery
+We can survive immediate decoupling. They can’t.
+Which is why immediate decoupling is more threatening to them than to us.
+Their $2.5T in US assets? We can freeze/default/inflate away.
+Our $500B-1T in China assets? They can nationalize, but these are physical (harder to liquidate).
+Net effect: We win the immediate decoupling scenario.
+
+The Inevitable Conclusion
+Let’s tie this together into one coherent thesis:
+1. China is structurally weaker due to property crisis bleeding $1.1T/year with no solution
+2. China needs us more (7 critical dependencies vs our 1-2)
+3. China prepared for this (15 years of alternative infrastructure) but failed on what matters (chips, finance, alliances)
+4. Their wealth is our hostage ($2.5T in US assets we can freeze, default on, or inflate away)
+5. Trump’s chaos exploits this asymmetry (strong player benefits from unpredictability)
+6. Our vulnerability (rare earths) expires in 5-7 years (after 2030, we’re insulated)
+7. The 2025-2030 window is critical (four countdowns converging)
+8. Immediate decoupling hurts them catastrophically, us temporarily
+The Strategic Reality:
+Every year that passes, China gets relatively weaker:
+Property losses compound
+
+Demographics worsen (workforce shrinking 5-10M/year)
+
+Debt/GDP ratio rising (280% → 350% → 400%+)
+
+US building alternatives (rare earths, supply chains)
+
+Every year that passes, we get relatively stronger:
+Energy independent (net exporter)
+
+Technology leadership widening (AI, chips, biotech)
+
+Alliance structure solidifying (AUKUS, Quad, Chip 4)
+
+Fiscal reform potential (if entitlement reform happens)
+
+This is not a peer competition. This is a strong power slowly choking a weak power that’s pretending to be strong.
+The Investment Implication:
+Most investors are positioned for:
+Gradual, managed separation
+
+China muddles through
+
+Symmetric pain on both sides
+
+But reality is:
+Separation is inevitable and accelerating
+
+China is in existential crisis (hidden behind extend-and-pretend)
+
+Asymmetric pain (much worse for them)
+
+Critical window is NOW (2025-2030)
+
+The opportunity:
+Long:
+Decoupling beneficiaries (rare earths, defense, nearshoring)
+
+Chaos hedges (gold, silver, volatility)
+
+US domestic resilience (infrastructure, semiconductors)
+
+Short:
+China dependence (multinationals stuck in China)
+
+Global efficiency (supply chains permanently less efficient)
+
+Extend-and-pretend (Chinese assets that assume muddling through)
+
+This is the trade of our generation.
+I'm not predicting the future. I'm observing that certain futures are impossible (re-integration), certain futures are inevitable (continued separation), and the market isn’t pricing the difference.
+The math doesn’t lie:
+$5-10T in hidden losses > $5T in bank equity
+
+7 dependencies > 2 dependencies
+
+$2.5T we can freeze/print away > $500B-1T they can nationalize
+
+5-7 years until rare earth independence
+
+2025-2030 critical window where all countdowns converge
+
+Time favors us. Physics doesn’t care about their 5-year plans.
+(Which got us thinking... if the property crisis makes China structurally aggressive but strategically weak, and they know their leverage window closes by 2030, and their only choice is extend-and-pretend while tripling down on exports that the world is rejecting...
+...maybe the question isn’t whether decoupling happens.
+Maybe the question is whether China survives it.)
+Till next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORA
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

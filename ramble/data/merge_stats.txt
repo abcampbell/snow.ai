@@ -1,0 +1,101 @@
+236 236 set()
+overall dist [(1, 7), (2, 6), (3, 15), (4, 15), (5, 52), (6, 75), (7, 46), (8, 20)]
+corr overall ~log reactions 0.28
+insight 5.72 corr w reactions(2024+) 0.27
+clarity 5.81 corr w reactions(2024+) 0.35
+evidence 4.19 corr w reactions(2024+) 0.25
+actionability 4.41 corr w reactions(2024+) 0.24
+timelessness 4.6 corr w reactions(2024+) 0.17
+corr overall~log react 2024+ 0.32
+
+THEMES n, avg overall, med react(2024+)
+macro-regime               82 6.0 58.0
+china                      59 6.1 45
+gold                       54 6.1 45
+positioning-flows          49 5.7 51
+personal-essay             48 5.1 48.5
+portfolio-construction     42 6.0 52
+commodities-supply         40 6.3 66.5
+rates-curve                36 5.7 28
+ai-capex                   36 5.9 50
+data-tools                 30 4.8 26
+fed-liquidity              19 6.2 139
+oil-hormuz                 17 6.5 92.0
+crypto                     12 5.8 75.0
+inflation-regime            7 5.4 -
+ai-thesis                   7 5.6 -
+venture-private-markets     7 6.0 -
+trade-idea                  7 7.0 75
+conflict-inflation          5 5.6 18.5
+ai-singularity              4 5.0 13.0
+ai-doom                     3 5.3 12.5
+fintech                     1 5.0 -
+other                       1 4.0 130
+conference-notes            1 6.0 55
+
+FORMAT
+essay             120 6.0 49.5
+market-note        68 5.2 50.0
+trade-idea         21 6.7 41
+other              15 2.3 18
+data-dashboard      7 6.1 79.5
+conference-notes    3 4.3 55
+link-roundup        2 5.5 44.5
+
+TOP overall
+8 265 2026-03-29 the-cascade True
+8 179 2026-05-20 there-are-bonds-in-the-semiconductors True
+8 157 2026-02-06 the-silver-attack True
+8 156 2026-01-31 when-you-feel-pain-remember-to-reflect False
+8 156 2026-03-08 the-strip-vs-the-strait True
+8 152 2025-12-28 10-silver-days-of-christmas True
+8 121 2026-02-08 long-apis-short-slides True
+8 119 2024-12-03 convert-of-doom True
+8 97 2026-05-11 the-dragon-and-the-tigers True
+8 89 2026-02-02 dear-comrade-xi True
+8 82 2024-09-23 a-depression-with-chinese-characteristics True
+8 75 2026-04-14 the-cascade-what-oil-feeds True
+8 73 2025-02-11 the-silver-squeeze True
+8 66 2026-05-04 a-trade-as-sweet-as-sugar True
+8 60 2026-04-21 whatever-happened-to-alpha-redux True
+8 58 2026-02-21 blood-transfusion-or-blood-on-the True
+8 50 2025-02-17 gold-goes-west True
+8 49 2025-10-03 conviction-through-dissonance True
+8 4 2021-11-09 what-evergrande-means-to-an-old-china True
+8 3 2023-03-12 contagion-comes-to-california True
+7 290 2026-05-12 how-to-short-a-bubble True
+7 181 2026-01-08 26-views-for-2026 True
+7 145 2026-01-28 dollar-doomers-missing-the-point True
+7 132 2026-03-12 watch-credit True
+7 131 2026-03-24 systems-101-overconfidence True
+7 121 2026-03-31 the-cascade-trade True
+7 101 2025-10-16 too-big-to-bail True
+7 95 2026-04-29 a-new-oil-era True
+7 78 2026-04-09 the-fragile-peace True
+7 76 2025-12-18 my-meandering-path-to-silver True
+
+High rated low reach (>=7, react<25, 2024+)
+7 18 2024-03-10 gold-in-china
+7 8 2024-05-23 how-to-short-a-startup
+7 16 2024-09-30 is-this-chinas-whatever-it-takes
+7 21 2024-11-19 the-death-of-globalism
+7 22 2024-12-06 no-soup-aka-gallium-for-you
+7 22 2024-12-11 still-long-silver
+7 22 2024-12-17 fill-it-up-again
+7 22 2024-12-23 the-s-curve-strikes-back
+7 26 2025-01-30 the-compute-constraint
+
+High reach, rating<=6 (react>=100)
+6 160 2025-09-22 the-protection-portfolio-september
+6 218 2025-10-13 china-cant-win
+5 153 2026-01-25 silver-moon
+6 105 2026-02-04 the-air-pocket
+4 114 2026-02-05 flash-crash
+4 130 2026-02-15 dont-f-with-the-money
+6 194 2026-03-18 dont-take-the-bait
+6 139 2026-03-20 what-the-heck-happened-to-gold
+6 137 2026-03-23 war-for-the-dollar
+6 194 2026-04-04 waking-the-hegemon
+6 112 2026-04-12 the-return-of-rimland
+6 127 2026-09-29 consilience-of-curves
+return_to count 143

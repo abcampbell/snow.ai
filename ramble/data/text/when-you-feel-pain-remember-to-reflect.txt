@@ -1,0 +1,144 @@
+TITLE: When You Feel Pain, Remember to Reflect
+SUBTITLE: Or: What 6-Sigma Feels Like
+DATE: 2026-01-31
+
+Friday was painful.  
+This is my reflection.
+Later in this post, we’ll walk through the standard format for when something historic like Friday’s precious metals washout happens. What (do we think) actually happened? Why? How did it impact the portfolio? And where do we go from here.
+But first, my reflection. Pardon if it gets a bit…philosophical.
+The quote at the beginning of this article isn’t just an aphorism, to me it’s a way of life. One of the most profound lessons from my time at Bridgewater, and a way to contextualize all the pain that life gives along the way.
+On the way to your goals, you will face challenges. On the way to your financial goals, there will be drawdowns.
+As far as drawdowns go, I've had worse. Maybe not in a single day, but in life definitely. Sure maybe this gets worse, maybe the move in silver and gold was the canary in the coal mine for a series of cascading 'race for liquidity', pushing the price of assets down, and demand for safe havens (like the dollar, bonds, and Swiss Franc) up. Could be.
+In the next couple of days, you are no doubt going to see a plethora of experts come out of the woods saying "I told you so!" Pitching this or that take. Shoving screenshots in your face. To some extent, when the trade was going in the other direction, you could say that was me, so I'm no different.
+But the reality is, no one knows the future. There are always conditions that are unknown, the world is chaotic and dynamic in ways that make it possible to have edge, but even the best investors bat 55-60%. Gödel's machine is never truly complete. This is why you diversify, this is why you hedge, this is why you will see the best investors speak with a level of humility pretty much at all times. Though occasionally the compliance speak that comes with it makes it hard to glean their meaning.
+That being said, I do think it's important to stare at moments where you were wrong, diagnose what happened, and try to learn, about the world, and about yourself. It's hard to be reflective when you are up 130% on the year. It's a requirement when you lose 10% in a single day on a book that's supposed to trade with 40% volatility a year.
+A lot of things went through my head Thursday night through Friday afternoon. Later we'll talk about the rational process of trying to track how the world was evolving and piece together a story of what was happening, why, and what to do about it. But before we do, I want to talk about the emotional side.
+All professional investors, or at least all investors who take material risk in public markets will understand what I mean when I talk about how investing is often emotional. The two demons in your head: greed, telling you to press, to capitalize even more on your alpha. Battling against fear, the recognition that I could be wrong, and there's a lot I don't know.
+What was particularly interesting to me though was a somewhat new feeling that evolved Thursday night through Friday. The feeling of responsibility.
+See, many of the folks reading this blog now are relatively new. Eyeballs chase returns, and the price move from $60 to $120 brought a lot to these pages, and my inbox. People thanking me. People asking me for hot takes. A seemingly infinite line of folks in my replies asking me for minute by minute updates or 'levels' or what have you. A process probably well known to much more well known public voices, but, at least to me, relatively new.
+If you follow my Twitter/X, you know I try to take an irreverent tone. Something I picked up from my days debating in the Oxford Union - straddling the line between insouciant and incisive. It's not an act so much as a worldview: I often have strong conviction I'm right, while also knowing I'm often totally full of shit and these views are subject to rapid evolution when new information arrives. A perspective I think I share with a lot of professional sh*tposters (as they are called).
+What changes as you go 'micro-viral', even if you try to keep that irreverent tone, to communicate that message, is that the distribution of folks actually listening gets bigger and bigger. You go from friends and colleagues, to internet personalities to more people than you could ever actually meet, reading, interpreting, interacting. Outside of just the knowledge that as that distribution gets wider the context of your message likely gets diluted (like a game of internet telephone), there's the lag of it all.
+I first started writing about the silver/solar nexus back in 2023. I started 'pounding the table' around 18 months ago. When my portfolio was 100% long. As the price rose, from $25 to $40, then $60 and $80. I slowly reduced that exposure from 'irresponsibly long' to 'dangerously long' to 'still pretty long.' Selling off little bits or letting options roll, trying to bank profits while maintaining exposure. Thing was, as silver climbed this wall, it also got more volatile. So I still did pretty well. This is where naysayers say this was a red flag, which of course it was, which we will deal with later in the section on 'tells' but the important point is that you end up in this weird position where even though there were many folk along for the ride at $25 or $40, you realize that the eyeball-weighted perspective, just between the lag from when you write and when folks actually ingest that information, could have been as high as $90.
+Which puts you in an interesting position. Where you kind of feel guilty if, upon getting that feeling up the back of your spine, you simply cut and run, as I did feel at certain times over the past week or so. You feel like you owe it to all the people who like your work to kind of stick to the trade, to put yourself in their shoes.
+Which is, after all, from a money management perspective, totally stupid. You can tell yourself if you were managing other people's money, you would have cut your entire position early Friday, when China came in and instead of bailing out the market, sold gold in size. You can rationalize and say, if I was managing other people's money, I wouldn't have been so long in copper. I would have taken off some risk Friday morning when it was up 10%. But, in the end, the book is the book.
+
+One more thing before we get to the part you came here for.
+Some of you subscribed because you liked my takes on silver and markets. Some because you like the rambles.  
+Going forward, I’m thinking about splitting things up. The rambles - the philosophy, the worldview stuff, the meditations on process - those stay free. If and when I start publishing specific, actionable trade ideas with real-time updates, that’ll probably be a separate thing people pay for. Creates actual responsibility on my end, creates actual value on yours.
+For now, just know that not every post is going to be about rocks. Some of you won’t like that. That’s fine.
+With all that in mind. What the heck just happened?
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+How Historic Was This?
+Before we get into the blow-by-blow, let’s put Friday in context. Because I don’t think people appreciate how rare this kind of move is.
+
+That's 275 years of silver daily returns. Friday's move is one of the largest single-day drops in the entire history of the metal. We're talking about a move that rivals the end of bimetallism, the Hunt Brothers collapse, and March 2020 - except this one came out of nowhere on a random Friday in January.
+The vol surface going into Friday was pricing maybe a 3-sigma move as a tail event. We got something like 6-sigma. The kind of thing that's not supposed to happen based on the historical distribution, which of course is exactly what happens when everyone's positioned the same way and liquidity disappears.
+
+The Blow-by-Blow
+If you were tracking the story from a narrative perspective, even before Friday, the last couple of months has been a wild ride. Silver opened November in the high $40s, and rallied 74% through the end of the year to ~$85, before selling off 15% going into the end of the year. As outlined in our last piece, bulls then defended the trend, kicking off another monster 65% rally through Monday peaking around $117 (in New York mind you), when western sellers came in selling, pushing us down 15% again.
+Gold largely mirrored these moves, and the trend of “New York sells off, Shanghai buys, metal moves east” looked to be intact.
+
+Even through Thursday AM, where the news was dominated by Copper being up 10% overnight. (Another shot across the bow that things were getting a bit unwieldy, which we will talk about in our subsequent piece on the red metal).
+
+Feeling the chop, I reduced a bit, and tweeted this out. A message to myself more than anything. The number (30%) kind of hanging in the recesses of my mind, only to be pushed out as a voice speaking from fear rather than rationality.
+
+Enter Kevin Warsh late Thursday, whose nomination to Fed Chair late Thursday was confirmed/leaked by Polymarket.
+
+Known somewhat as a 'hard money' advocate, I took this in stride. See I had actually met Warsh briefly back at Stanford a decade ago, when he showed up to kind of hang out. At the time (~2011-2015), he was somewhat well known as calling for balance sheet normalization of the Fed's massive push to QE in the wake of the financial crisis. At the time, he seemed a bit more of a politician than an economist (not classically trained, more positioning himself as a policy wonk than a hard money academic), and I always kind of discounted his hawkish stance as a way to make a name for himself amidst the ocean of easy money advocates. After all, it's easy to call for interest rate hikes and balance sheet normalization when you aren't sitting in the driver's seat. And more power to him, it was a reasonable view at the time, but not something that I would think make him incredibly hawkish now, and besides, Trump had been calling for easier money for years, so I doubted he was going to come in and wreck shop compared to Powell, whose reluctance to cut had already gotten him in hot water with the White House.
+So, even though I was pretty exposed to commodities (more so copper and gold than silver actually, as I thought), I figured I would take bit of a hit, and then wait to see how China opened up. As a reminder, and as I have been posting for months, to me western metals investors kind of didn't appreciate how 'you are the tail, the dog is in Shanghai' these days. Underestimating:
+a) How much actual demand for these metals was concentrated in the east
+
+b) How much the overall return for these metals has been derived from the 'overnight' market (measured by the return from yesterday's close to today's open)
+
+c) How much money actually exists in China compared to the west:
+
+And yes, there was a lot of chaos online about how much of the "China premium" was owing to the VAT imposed on physical delivery to retail. There are a lot of things in macro which are difficult and messy to do, and so rather than bust out their calculators, folks online were just throwing charts at each other, the bulls ignoring this point, the bears using it as a weapon to sow doubt in the narrative that, indeed, China was bidding up the price. To me this seemed a classic case of 'look at the change, not the level,' since what was clear was a) this premium (or discount) had increased recently, and b) also appeared in India.
+
+But I could feel the bearish narrative gaining traction. It didn't matter that there was corroborating evidence of this demand, such as ridiculous premiums in the only pure play onshore silver fund.
+
+Low inventories in Shanghai
+
+And besides, there was some evidence that the physical buying pressure had eased, most directly in the 'front end' of the London silver curve. Which had gotten considerably less 'backwardated' over the past month.
+
+London Silver Curve
+I cut my delta going into the night to almost flat, but figured ‘let’s wait and see how China opens up.’ This was perhaps my biggest mistake.
+China opens up, and rather than storm back, China sells off. And not just silver, but GOLD is down 8%. This was strike one. I didn’t know it at the time but the local Chinese silver ETF was actually halted.
+
+Meaning no rescue from Chinese retail.
+
+A shot across the bow to probably get out. I checked my book, did a back of the envelope across the positions, feeling content that most of my long exposure was in the form of options, so if we did entirely wash out, I would take more pain, but not entirely wash out. This was strike two. Not just because I should have hit the bid on futures (GLD and SLV were closed, and I had developed a distaste for futures given a couple of scarring experiences forgetting to roll positions while not trading full time over the past couple of years), but I probably should have just pledged to cut as soon as the market opened up. Yes, I had an entirely full plate of meetings, which would make it impractical to close a portfolio of 20 options positions, but I didn't really want to flee like a dog in the night, whilst so many of the folks out there were still long. This was strike three and perhaps my worst decision.
+
+You probably know the rest of the story. The US opened down, and just kept going. The selling was unrelenting, by the time I realized what had happened, it was too late. Because my fourth strike became immediately apparent as the day went on.
+
+We were in a ‘short gamma’ market.
+
+This Is What Short Vol Feels Like
+Short vol isn't just a mystical condition, what it actually represents is a mechanical process, whereby market moves become accentuated by machine-like market behavior.
+
+The most obvious example was 1987, where portfolio protection left the market short vol (or 'short gamma' in options speak), as insurance plans were forced to sell increasing amounts of futures as the 'spot' price deteriorated. Themes we covered back in 2018, during the flash crash and wipe out of Credit Suisse short vol ETF XIV, as well as back in 2024, for those interested.
+
+Anyway, in retrospect the crazy thing is that I actually was already familiar with this dynamic, having suffered from it back in October, when GLD and SLV fell through my bottom strikes on option expiry.
+
+See, the way this works is you and me go out there and buy call options. The option to buy at a given strike. If you are buying this option outright (for levered ‘delta’) you probably don’t hedge by selling shares against it as the price goes up.
+Thing is, usually the person who sold you this option DOES. They aren’t betting on the direction of the thing itself, usually they are making a bet that the premium you paid for the option is greater than the expected loss from ‘delta’ hedging the other side. They sell the call option, and buy shares against it. If for example they sell you 100 calls at “50 delta” (roughly speaking meaning a 50% chance they end up ‘in the money’), then they go out and buy 50 shares against it.
+If the price goes up (and 'through' the strike), the delta of the option goes up. Let's say the delta on the options goes to 80. Well, they are short 100 calls, and only long 50 shares against it, so to 'delta' hedge, now they have to go out and buy 30 more shares (the diff between 80 and 50 delta) at a higher price. As prices go up, they have to buy at progressively higher levels. This also works in reverse as prices fall. If prices fall back under strike, delta falls to say 40. Now they have 80 shares long against calls with only 40 delta, so they need to go out and sell 40 shares, into a falling market.
+This behavior kind of works mechanistically, and usually can be seen by price action where distressed assets trade as if there is no floor. Markets are particularly vulnerable to short gamma as we get close to monthly or quarterly options expiries. If you look at the history of these flash crashes, I would bet a majority occur at or near these expiries.
+
+This happens in options markets and it also happens via leverage. When investors buy assets on leverage, usually they have to post collateral in order to do so. When the price falls, the exchange or their market maker asks them to 'post collateral' aka pony up more cash. When there's too much leverage in the market, usually they have to sell something in order to make good on that cash. In essence putting them in a position of being short vol.
+The third way this market was short vol was a bit of a surprise to me. Unbeknownst to me, the 'double levered' silver fund AGQ had accumulated $5b of assets, promising investors 2x silver returns. Meaning for $5bn of assets, they held $10bn of silver (in this case via futures). This fund 'rebalances' every day, and so when folks woke up to silver down 15%, in essence the fund was down 20% * $10bn or $2bn. Bringing the fund value to $3bn before redemptions. Meaning their new 'delta' was $6bn and they had to sell $4bn of silver!
+Dynamics outlined previously by options guru Kris here:
+
+LINK
+And brought to my attention by long-time mentor and friend Andy Constan. Who informed me not only of this dynamic, but the timing of the 'roll' at 1:30.
+
+LINK
+Waiting a few minutes for some tepid signs of a bottom, I stepped in at $71 on SLV and went twice as long via buying shares, buying a call, and selling a downstrike put spread. Monetizing relationship alpha if not my own work.
+
+There was actually a fourth way I was short vol which is even more wonky. Owing to my proclivity to buy call spreads and flys, where I would buy at the money vol and sell upside, I had been 'rolling' my options as we got progressively higher and higher strikes. Partially to maintain my position and partially to just hedge some short exposure from the curve trade I had talked about previously. This left me with a false sense of security since I was long at the money vol but also meant my delta increased as prices fell, whereas my curve trade actually reduced its exposure as we went down. Meaning my dirty hedge gave me another source of short vol. For all my talk of being long vol and flat delta (going into the close last night), I was actually short a fair bit of gamma. By the end of the day I had lost 2% in silver and 2% in gold. Adding up losses in copper and other positions, we ended the day down 8%, bruised but not beaten. Bringing our YTD to up 12.6% and cumulative return since Jan '25 to 165%.
+
+Ok, so if you are still with us, now we kind of have an answer for WHY silver got destroyed, we have a mechanism - short vol - through three channels: excess leverage, short option gamma, levered ETFs.
+But where do we go from here.
+
+Fog of War
+Well first, we need to look through the fog of war. Given that the Chinese markets closed before the worst of the move in the US, simple back of the envelope estimates of the “China premium” are now entirely out of whack.
+
+Classic case of 'do your data pipes deal with frequency well.' Same thing for claims that "SLV is trading under NAV."
+
+Which looks more a function of the fact that SLV uses the London clearing price to calculate its NAV (which was closed by the time the worst happened). Looking at the intraday price Friday the ETF looked to trace the futures price pretty well.
+
+Right now, outside of the likely rebound from distressed buyers Monday, the real question is 'where does China open Sunday night?' If you believe the folks online, physical prices out east are still in the $136 range, which would imply we could see something like a +5-10% day Monday.
+
+Indicators from my fiancée who is out hiking at the moment and says Western jewelry dealers are still selling sterling silver (92% pure) at $1.90 a gram (or around $64 when you convert it to troy oz of fine silver). So the underlying narrative still seems intact that silver is cheap out west, and dear in China.
+
+Whether or not that leads to prices rising will depend on local conditions. It's entirely possible that as Merridew points out Chinese levered players will be forced to liquidate on the open Sunday night/Monday morning.
+
+Add in the fact that CME raised margins (again!) Friday, though keep in mind with prices ~30% lower, even higher margins mean the net cash draw on longs is likely de minimis. So much more per unit of silver, but around the same amount of futures margin.
+
+source: @profitsplusid
+Bitcoin's pricing here is not bullish and appears to be some combination of forced selling, continued worries about quantum, and potentially expectations of problems with MSTR.
+
+Which we remain short based on the analysis from 14 months ago about the weird nature of their business model.
+
+What Are Reasons to Be Bullish Here?
+Well, first, shares of SLV were already going down before the sell off Friday. Along with the reduction in price, it means notional exposure is down a bunch.
+
+Unless we get some radical deleveraging in China Sunday night, the AGQ selling is behind us, and any significant bounce/rally will function in the other direction, like a short call option, forcing them to buy additional shares as the price goes up.
+Me, I’m betting that China doesn’t sell all the way off, and if we do see some sort of forced liquidation, that stocks won’t be spared.
+
+That last one is worth noting - the geopolitical backdrop hasn't gotten any calmer. If anything, the signals from Tehran suggest we're closer to some kind of confrontation than further from it. Precious metals historically do well in that environment, even if the path there is messy as hell.
+With all these potential deleveraging forces, you should view this positioning as extremely tactical. I reserve the right to go entirely flat/short delta across the commodity curve based on conditions as they evolve.
+Maybe I'm betting too much on my short book, but I'm becoming increasingly concerned we'll see a material drawdown in stocks as people start to price in the 'air gap' between the cashflows necessary to invest in data centers and the revenues these companies will see. Yes, agents are coming, yes, Moltbook is pretty interesting (and consumes a ton of tokens when done right), but implementing AI in enterprise is still a huge logistical, compliance, and operational hassle. Most of what you are seeing on Twitter about revolutionized workflows is coming from individual hackers, creators, or small firms with nimble and easily overhauled business processes. My estimates are still that agents mostly start to come online in enterprise in late Q2, with revenues following. Leaving US stocks vulnerable to the kind of dynamics that crushed Microsoft last week.
+So on a relative basis, I still like metals. But I'm open to being wrong, and looking to be more reactive to conditions.
+
+This whole thing started with a quote about pain and reflection. Friday delivered plenty of the former. This piece is my attempt at the latter.
+The thesis hasn’t changed - solar demand, Chinese capital flight, supply constraints. What changed is the price, and the positioning, and my appreciation for just how much short gamma was hiding in a market that felt like it was only going up.
+Pain + Reflection = Progress. We’ll see what that progress looks like when China opens Sunday night.
+Happy hunting and be safe out there.
+Till next time.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

@@ -1,0 +1,53 @@
+TITLE: What if Uber isn't a monopoly?
+SUBTITLE: August 4th, 2016
+DATE: 2021-11-09
+
+All happy companies are different: Each one earns a monopoly by solving a unique problem. — Peter Thiel
+What if selling stuff were different than selling information?
+
+What if Uber were different than Google?
+
+What if network effects were different than increasing returns to scale?
+
+What if the competition among apps for both demand (riders) and supply (drivers) drastically reduced barriers to entry?
+
+What if we confused competitive oligopolies with monopolies?
+
+Further, what if there were no monopolies amongst all of the on-demand startups?
+
+one of these things is not like the other, one is a joke
+
+Uber As Case Study
+Let’s be clear. None of this is to pick on Uber in particular. Uber is a tremendous, world-changing product and a terrific example of the capacity for technology to improve our quality of life.
+At the same time, we see Uber as an interesting case study for a common trap we see technology investors falling into. That of applying the mental models and frameworks developed from a decade investing in internet startups (that sell information) to on-demand startups (that sell real world goods and services).
+See, when you sell information. Your marginal cost is (basically) zero. Meaning the more you sell, the lower the costs. Economists call this ‘increasing returns to scale.’
+
+The more we look at on-demand startups, the more we see decreasing, rather than increasing returns to scale, (particularly at scales consistent with current valuations).
+Here, we can turn to the history of Uber.
+The Evolution of Uber
+In 2010 Ubercab (as it was then called) raised $1.25m in angel funding from FirstRound* capital on the idea of a app which let you order a black car to your current location with the click of a button. A rideshare marketplace
+In this marketplace, Uber would play middleman, essentially selling information about drivers to riders and vice versa. While the company raised the question of disrupting the cab market, it didn’t seem central to the product
+
+Five months later, Uber raised $11m from Benchmark to expand to multiple cities. Later that year, the company took on $39m from Menlo Ventures and expanded to Europe. A little over a year later, the company launched UberX and began directly competing with cabs, and took down more than $250m from Google Ventures. This was a huge expansion in their potential market, and there were additional costs that came with servicing that market.
+
+Flash forward a couple of years, and Uber is oversubscribed on a $1.2bn Series D led by Fidelity and fighting dozens of lawsuits against the disrupted. Turns out eating the world is expensive.
+
+Etc etc. Growth, Funding, Expansion. Repeat. Eventually, you are growing so fast, you run out of drivers that own cars.
+Well, there’s a solution for that too:
+
+Since Uber isn’t a public company, we don’t really know the impact of auto-leasing on their bottom line. Needless to say, between the headline risk and the increase in operational complexity, it doesn’t seem like the kind of thing you do just for the fun of it.
+
+It helps to have hundred-billion dollar visions when closing billion dollar investment rounds. Enter UberEats.
+
+None of this is to say that Uber can’t become the world’s largest taxi company.
+
+note: these numbers are ballpark, given the opaque nature of prices in these markets
+None of this is to say that Uber (and it’s clones) aren’t going to radically change the world of transportation.
+Just, the on-going food fight to invest in on-demand technology companies begs the question…if these markets are so profitable and so vulnerable to monopolies, why do these companies need so much liquidity/capital to “reach scale”?
+
+Originally published on medium August 4th, 2016. 
+
+DISCLOSURE
+Snow provides financial diversification to clients through the construction of hedge portfolios. Some of our portfolios hold ‘short’ positions in equities, in which case those portfolios, and our firm, stand to benefit financially from declining stock prices.
+DISCLAIMER
+This article is for informational purposes only and does not constitute an offer to sell, a solicitation to buy, or a recommendation for any security, nor does it constitute an offer to provide investment advisory or other services by Snow Ventures. In preparing the information contained in this article, we have not taken into account the investment needs, objectives and financial circumstances of any particular investor. This information has no regard to the specific investment objectives, financial situation and particular needs of any specific recipient of this information and investments discussed may not be suitable for all investors. Any views expressed on this website by us were prepared based upon the information available to us at the time such views were written. Changed or additional information could cause such views to change.

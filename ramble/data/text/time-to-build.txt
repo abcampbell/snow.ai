@@ -1,0 +1,281 @@
+TITLE: Time To Build
+SUBTITLE: They May Be Bleeding But We're Vulnerable
+DATE: 2025-10-30
+
+Chaos works abroad; at home, entropy is the enemy.
+Let’s get something straight: China is losing. Seven trillion in hidden losses. Demographics cratering by 2030. Political system that can’t admit failure. We proved this across five chapters.
+But wars aren’t won just because your opponent is bleeding out. The Confederacy couldn’t win by 1863—the math was impossible. But they could’ve made Union victory so painful the North gave up anyway.
+That’s our risk. Not that China wins. That they exploit our vulnerabilities before their window closes.
+We Forgot How to Build
+The Francis Scott Key Bridge in Baltimore collapsed March 2024 after a cargo ship lost power and hit it. Not “developed issues.” Collapsed. Six people died.
+One year later, as of this writing, they still haven’t torn down the broken bridge. Haven’t started rebuilding. The twisted wreckage still sits in the harbor.
+
+Not because of money. Not engineering complexity. Because of process.
+Environmental reviews. Community consultations. Historical preservation. Traffic studies. Permits. Stakeholder meetings. Public comment periods.
+Here’s what happened to America: We built a system where every micro-decision is individually rational, but they aggregate into macro-paralysis.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Add them together, layer across federal/state/local jurisdictions, give every stakeholder veto power, and you get a system that literally cannot build.
+Two forces created this:
+Boomer NIMBYism: The generation that built wealth on cheap houses and abundant infrastructure now blocks everything that might affect their property values. They got theirs. Pulled up the ladder.
+Service Economy Metastasis: We stopped making things and started making process. An entire class of lawyers, consultants, administrators whose job is managing the process of not building things.
+
+This strangles the American Dream. Young Americans can’t afford houses. They face climate change but we can’t build green energy. They need jobs but we can’t build factories. They watch infrastructure crumble but we can’t tear down broken bridges.
+This is entropy in action. Systems that can’t integrate conflict into creation don’t just stagnate—they collapse. The capacity to build measures vitality. Ours is declining.
+
+Part I: The Critical Minerals Trap
+The dependency isn’t mining—it’s processing. Mountain Pass mine in California produces rare earths. But we ship the ore to China for separation because we shut down processing in the 1990s.
+That’s the chokepoint.
+Strategic Material Bottleneck
+
+China cutting us off: Days.
+Us building replacement capacity: 3-7 years minimum.
+The Thacker Pass Story
+Thacker Pass lithium mine, Nevada. Enough lithium for 370,000 EVs annually. Critical for battery independence. Federal land—should be straightforward.
+Timeline: 2016 application → 2021 BLM approval (5 years) → 2021-2024 lawsuits → 2023 construction begins → 2028 target operation.
+Total: 12+ years from application to operation. For a mine we desperately need.
+Australia does this in 2-3 years. Canada in 2-3 years. China in 18 months.
+Every project runs the gauntlet: Federal NEPA review (2-3 years) + State permits (1-2 years) + Species consultations (1-2 years) + Community meetings (1-2 years) + Lawsuits (2-5 years) = 7-12 years minimum.
+This isn’t technical. It’s systemic. The same forces that won’t let us tear down the broken Baltimore bridge won’t let us build processing plants.
+The Trade Talks Reality
+Current negotiations include potential one-year guarantee of critical minerals supplies as tactical pause.
+Except China’s bet is: “You can’t fix this in one year. Or five years. Or maybe ever.”
+They’re right. Not because of technical barriers. Because our system is optimized for process over outcomes.
+A ceasefire buys time. But doesn’t solve the problem. And trusting China to honor it—after Hong Kong, after COVID origins, after South China Sea—requires ignoring everything Chapter 5 proved.
+What’s Actually Needed
+Not “speed up NEPA reviews.” Override them for strategic projects.
+Federal preemption. One approval process. One timeline. No local veto. Sovereign immunity for critical projects—no lawsuits tying things up for five years.
+This will outrage people. Environmental groups, NIMBYs, the paper-economy whose jobs depend on managing approvals.
+But the choice is reform the system or lose to China. Not because they’re better. Because we’re paralyzed and they’re not.
+
+Part II: The Energy Buildout Race
+AI has detonated the largest energy demand shock since electrification. And we’re not building fast enough to power it.
+The Power Bomb
+Data centers consumed 4.4% of US electricity in 2023. Goldman Sachs estimates 8-12% by 2030.
+Why? AI inference is 10-100x more power-intensive than traditional computing. Every ChatGPT query uses 10-20x the electricity of a Google search. (There are certainty startups working on this problem at the moment, but bear with me for now)
+The scale:
+Microsoft’s Stargate: 5 gigawatts (entire nuclear plant for one facility)
+
+Meta’s next-gen infrastructure: 4 GW target
+
+Google, Amazon: Similar scale requirements
+
+When Microsoft starts buying old nuclear plants just to ensure power supply, that’s not a market signal. That’s a crisis.
+The Deployment Gap
+
+Cape Wind offshore wind project, Massachusetts: Proposed 2001. Approved 2010 (9 years of reviews). Cancelled 2017. Never built. Not technical failure or economics—lawyers and NIMBY opposition killed it.
+That’s the system we’re competing with. They build solar farms in 12-18 months. We spend 9 years approving one, then cancel it.
+The net result…
+
+Not because they’re richer or smarter. Because their system allows decisive action without needing consensus.
+The Real Stakes
+Whoever builds energy infrastructure first deploys AI at scale first.
+Whoever deploys AI first gets economic advantage (productivity gains), military advantage (autonomous systems), and strategic advantage (data processing dominance).
+Right now, China is building faster. The window: 2027-2030. When AI capabilities hit critical mass. When deployment speed advantages compound into dominant positions.
+If we’re permitting solar farms while they’re deploying AI manufacturing at scale, we’ve lost the race that matters.
+
+Part III: The Narrative Infrastructure Problem
+It’s not physical infrastructure. It’s cognitive infrastructure. And we’re importing it from China.
+Cognitive Colonization
+Remember when the internet was US-dominated? Microsoft, Google, Apple, Amazon. That gave America enormous soft power.
+AI is the next layer. And Chinese models are becoming foundational infrastructure for American startups.
+DeepSeek, Qwen (Alibaba), GLM (Zhipu) et al —all open source, all competitive with GPT-4, all free. US startups build on them because it’s cheaper and faster.
+
+But they’re importing CCP narratives baked into training data:
+Taiwan: “Province of China.” Not disputed. Province.
+
+Tiananmen Square 1989: Sanitized or refused
+
+Xinjiang: “Vocational training centers”
+
+When American logistics software builds on Qwen, and Qwen thinks Taiwan is Chinese territory, what happens to routing decisions in a Taiwan crisis? When financial models build on Chinese LLMs that hide geopolitical risks, what happens to capital allocation?
+This is narrative warfare at the infrastructure level.
+Coalition of Obstruction
+Meanwhile, domestic forces slow our response—not coordinating, but their incentives align with Chinese interests:
+AI Safety Logic
+Claim: “Slow AI development because of existential risk”
+
+Effect: US companies pause while Chinese companies accelerate
+
+Environmental Logic
+Claim: “Block energy projects because of climate concerns”
+
+Effect: Data centers can’t get power, AI deployment slows
+
+Labor Logic
+Claim: “Block automation because of job displacement”
+
+Effect: US manufacturing stays less competitive
+
+This isn’t theoretical—we’ve already seen these forces block critical projects: 
+- AI safety advocates pushed California’s SB 1047 (defeated 2024, but delayed AI deployment and who’s chilling effect lost the US the lead in open source AI)
+ - Environmental groups canceled Cape Wind after 16 years (proposed 2001, cancelled 2017, never built) 
+- Labor unions blocked Amazon warehouse automation in multiple cities (New York, California).  Blocked automation in ports. Each force acts on genuine values. But consequences compound regardless of intent.
+None think they’re helping China. Most genuinely believe they’re protecting important values. But intentions don’t matter. Consequences do.
+The consequence: A coalition that slows American buildout exactly when speed determines outcomes.
+The Deployment Asymmetry
+Pattern repeats across applications:
+Facial recognition: China deployed nationwide 2017-2020, US still debating ethics (5+ year gap)
+
+Military AI: China integrated into PLA doctrine 2019, US debating autonomous weapons (3-5 year gap)
+
+They deploy first, iterate later. We debate first, deploy later (if at all). In a 2027-2030 competition window, 3-5 year deployment gaps compound into decisive advantages.
+
+Part IV: The Vision That Justifies the Fix
+We’re not going to override NIMBYs and reform regulations without compelling answers to “what are we building?” and “what do I get?”
+This is what I call the New New Deal—a comprehensive vision for American renewal that makes the short-term pain worthwhile. What follows are examples from that larger framework, which I’ll detail in a later post. But you need to see the destination to understand why the journey matters.
+
+Automation Is Bad For Inequality
+Doomers say “AI will grow GDP 10,000%!” No. GDP is nominal—measured in dollars.
+What actually happens when AI automates 10% of jobs: Same output, but income shifts from workers (who spend 99% of income) to billionaires (who spend 0.01%). Money doesn’t circulate. 
+Result: Deflationary pressure + growth slowdown.
+Thing is, the faster AI automates work, the more deflationary it is.
+Then, to maintain nominal growth, someone has to borrow: individuals (consumer debt crisis) or government (fiscal deficits). Both unsustainable way to support increases in spending.
+Megaprojects as Pro-Growth Employment Sinks
+When you displace 10-20% of knowledge workers (2027-2030), you need somewhere for them to go.
+Nine Megaprojects (these are examples from the New New Deal—full details in a future piece):
+
+Total: 5-20 million jobs. That’s an AI displacement buffer which builds the backbone of America’s infrastructure for the 21st century.
+When GPT-6 automates junior lawyers and analysts, they transition to building physical infrastructure AI can’t automate (yet). AI makes things cheaper (deflationary force), megaprojects create employment (offsetting deflation and lopsided income growth), which balances these forces.  Creating a stable transition instead of social collapse.
+What You Actually Get
+Here’s the tangible payoff that justifies the pain of reform:
+Transportation: $5,000 EVs
+Current: Average new car $48,000+, EVs $55,000-$80,000
+
+With AI + lithium independence: Battery costs drop from $100/kWh to $20/kWh, automated assembly, domestic lithium eliminates China premium
+
+Result: EVs drop to $15,000-$20,000 new, $5,000 used within 5 years
+
+Plus abundant energy means charging costs approach zero (average American spends $2,000/year on gasoline—that disappears)
+
+Education: Your Kid Gets Better Than Rich Kids Had
+Current: Good schools require expensive zip codes
+
+With AI tutors: $10-20/month subscription, personalized 24/7 instruction that adapts to individual learning
+
+The class inversion: Poor kid with AI tutor gets better education than 1990s Harvard students
+
+Your kid’s future isn’t determined by zip code anymore
+
+Healthcare: $200 Doctor Visits, Not $2,000
+Current: Doctors spend 2 hours on paperwork per 1 hour with patients, administrative overhead consumes 25-30% of costs, average family premium $22,000/year
+
+With AI automation: AI handles coding, billing, documentation; diagnostic AI catches what humans miss
+
+Result: Admin costs drop 50-70%, premiums drop to $15,000 or less
+
+What you feel: Security. Not one diagnosis away from bankruptcy.
+
+Housing: $150,000 Houses in Good Areas
+Current: Median home $420,000, young people can’t afford to start families
+
+With automated construction + NIMBY override: Robotic construction drops labor costs 60%, modular factories at scale, federal override increases supply
+
+Result: $150,000 starter homes in actual neighborhoods with good schools
+
+Your kids can afford to have kids
+
+The Budget Math
+
+That’s life-changing savings for the median family.
+“But won’t my TV get more expensive without cheap Chinese labor?”
+Consumer goods represent 5-8% of average household budget. The Big Four consume 60-70%. Even if consumer goods prices rise 20%, you save 50% on Big Four expenditures—net $30,000 ahead annually.
+Plus alliance networks still manufacture consumer goods: South Korea and Japan (high-end electronics), Vietnam/Mexico/India (mid-tier assembly), domestic automation (when robot costs approach offshore labor costs).
+We don’t need China for consumer goods. The alliance network plus automation covers it.
+The Deflation Is The Point
+AI makes stuff CHEAP. That’s the actual wealth creation—not measured in nominal GDP but in purchasing power:
+Can you afford a car?
+
+Can your kid get educated?
+
+Can you get healthcare without bankruptcy risk?
+
+Can you buy a house and start a family?
+
+AI makes all of these affordable again.
+But only if: (1) We build the infrastructure (energy, manufacturing, housing), (2) We employ the displaced workers (megaprojects), (3) We recycle the capital (so it doesn’t stagnate and entropy wins).
+The Capital Circulation Problem
+Nevada resident sees Thacker Pass proposal: “Industrialize landscape so Elon profits? NO.”
+The intuition is correct. People sense profits flow to capital owners who don’t spend it. After automation, same nominal GDP but money goes from people who spend 99% of income to people who spend 0.01%. Velocity of money collapses—deflationary spiral.
+Stagnant capital is entropy. Money sitting in portfolios earning 3% is low-grade decay. Money deployed building things fights entropy. Problem: AI pushes more income to capital, which has lower spending propensity.
+
+The Nuance: Not all capital accumulation is bad.
+Elon getting more capital = GOOD (deploys $44B on Twitter, Starlink, factories, SpaceX)
+
+Bezos getting more = MAYBE (Washington Post, Blue Origin, some deployment)
+
+Random heirs getting more = BAD (sit on family office wealth, pure stagnation)
+
+Recycling Mechanisms Needed: If robots automate most labor in 15 years, we need wealth taxes on stagnant accumulation (not productive deployment), inheritance taxes (ideally people give it away like Gates/Buffett; reality: most don’t), status consumption taxes on mega-yachts and trophy real estate creating no value.
+The logic isn’t “tax the rich because inequality bad” (moral argument). It’s “recycle stagnant capital because entropy bad” (systemic necessity).
+The balance is tricky—too much taxation kills productive capital formation, too little allows destructive stagnation. But we know current trajectory leads to deflationary spiral without recycling mechanism. The New New Deal includes specific proposals for this—wealth taxes on stagnant capital, inheritance reform structured to encourage giving rather than hoarding, and luxury consumption taxes on purely positional goods. Full framework details in a future piece.
+Why This Matters Now: The malaise is part of the problem. Without compelling answer to “what do I get?”, people say NO. And they have veto power over every project.
+Why This Overcomes Resistance
+Nevada resident evaluating Thacker Pass:
+Before this framing: “Industrialize the landscape so Elon Musk profits? NO.”
+After this framing: “Build processing plants so my kids can afford EVs? So they drive for free instead of spending $2,000/year on gas? So we’re not hostage to Chinese supply chains? So I might get a job there, or my neighbor does, or the tax revenue improves our schools? Yeah, industrializing this desert valley is worth it.”
+The Capital Recycling Promise: “Yes, billionaires profit from AI automation. But that capital gets recycled through wealth and inheritance taxes into building things that make YOUR life affordable. And employs you when your job gets automated. So you actually get the deflationary benefits (cheap goods and services) instead of just unemployment and despair.”
+
+Part V: The Synthesis - Three Races
+We’ve identified the vulnerabilities. Now let’s be precise about what matters in the 2027-2030 window.
+
+Race 1: Can We Fix the System Before China Exploits It?
+We’re 80-90% dependent on China for critical minerals processing. Our fix timeline: 3-7 years if we reform immediately. Their action window: 2027-2030, after which demographics and our independence close their window forever. If they move in 2027-2028 while we’re still vulnerable, strategic crisis. If we fix supply chains by 2028, their leverage expires. HIGH RISK.
+Race 2: Can We Build Energy Infrastructure Faster?
+Current status: building too slow for AI demand explosion (4.4% of electricity today → 8-12% by 2030). Our buildout timeline: 5-10 years. China building 2-3x faster on every metric. Not existential short-term, but determines long-term AI dominance. Whoever builds energy infrastructure first deploys AI at scale first. MEDIUM RISK—survivable short-term, decisive long-term.
+Race 3: Can We Prevent Narrative Infrastructure Capture?
+Chinese AI models (DeepSeek, Qwen, etc.) becoming foundational infrastructure for US startups. They’re importing CCP narratives: Taiwan as “province,” Tiananmen sanitized, Xinjiang camps as “training centers.” Fix timeline requires comprehensive policy change plus cultural shift. Already happening. Hardest to reverse once embedded. MEDIUM-HIGH RISK.
+The Meta-Question
+Can America remember how to build things before China exploits the fact that we can’t?
+The Asymmetry
+China’s Challenge:
+Hide $7 trillion in property losses until at least 2030
+
+Manage catastrophic demographic collapse
+
+Maintain economic growth without property sector
+
+Timeline: Must act by 2030 or window closes forever
+
+US Challenge:
+Fix supply chain vulnerabilities (3-5 year minimum)
+
+Build energy infrastructure at speed (5-10 year buildout)
+
+Maintain alliance cohesion (ongoing diplomatic work)
+
+Counter narrative infrastructure infiltration (policy-dependent)
+
+Timeline: Need 3-5 years to complete critical fixes
+
+The Races Determine Everything
+If we fix vulnerabilities by 2028 → China’s window closes → We win the long game
+If China moves in 2027 while we’re still vulnerable → Crisis scenario → Outcome uncertain
+If both sides muddle through → Stalemate → Decades-long frozen competition
+One side finishes their race. The other doesn’t. That determines the outcome.
+
+Bridge to Chapter 7
+Three variables determine which scenario we get:
+Variable 1: US Execution Speed
+We can move fast: declare national emergency, override permitting entirely. We can move slow: current pace, incremental reform, muddling through. Or we can be paralyzed, where political gridlock blocks everything needed.
+Variable 2: China’s System Stability
+Their system stays stable if they successfully hide losses and maintain extend-and-pretend until 2030+. It enters crisis if the banking system breaks down between 2027-2029 under pressure. Or it collapses early, before 2027, in chaotic disintegration.
+Variable 3: Our Containment Style
+We can be chaotic. Trump-style unpredictability keeps them constantly off-balance. Or we can be methodical. Biden-style coordinated pressure with alliances holding firm.
+These three variables create five distinct scenarios. Each has different timeline, different winners and losers, different portfolio positioning requirements.
+The choice is ours:
+Keep the current system—where every stakeholder has veto power, every project takes a decade, America slowly forgets how to build anything.
+Or acknowledge the system is broken, accept harsh medicine needed to fix it, and build toward American renewal that makes the short-term pain worthwhile.
+Incremental reform—speeding up NEPA reviews by 20%—is rearranging deck chairs. The ship is sinking. We need to admit it’s sinking and start bailing water.
+The enemy isn’t China. It’s our own conviction that building is immoral.
+The clock is running. And they’re watching to see if we remember how to use it. 
+That’s what Chapter 7 will answer.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORA
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

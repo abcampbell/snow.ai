@@ -1,0 +1,81 @@
+TITLE: Bitcoin is not money - part 3 - scale
+SUBTITLE: June 19th, 2018
+DATE: 2021-11-09
+
+Bitcoin can be cool, or bitcoin can be money.
+It cannot be both.
+
+Note these charts are from when we first drafted this in 2016. We are posting is by and large as it was written then.
+We need to update the charts, but that being said, we believe the fundamental problems with the bitcoin network as money hypothesis are still valid.
+When Satoshi banged out his white paper introducing bitcoin back in 2008, he saw some very real problems at the heart of our modern notions of money.
+See, pretty much all of the money in the world is held in banks and backed by governments.
+This can lead to problems when banks fail, and governments print (as they are both wont to do).
+The solution to this problem, according to Satoshi, was to essentially open-source money. He imagined a world where transactions were cleared in a public ledger (called the blockchain), and designed a system of interlocking incentives such that the people responsible for maintaining that ledger have an incentive to the tell the truth.
+In this light, bitcoin can be seen as an attempt to take the control of money out of the hands of greedy banks and untrustworthy governments, and put it back in the hands of the people.
+This is a pretty cool idea.
+It’s also an idea that up to this point doesn't work so well.
+By any objective measure, after almost a decade of development and more than a billion dollars of startup funding, bitcoin is still very, very far from being money.
+What’s pretty interesting (at least to us at Snow) about the way this grand experiment is playing out is that the very things that make bitcoin cool (the decentralized governance, the apparent anonymity, the fixed supply) are also the very things that are actively preventing bitcoin from becoming money.
+In that light, the ongoing blockchain size debate is not just a discussion about the first step to scaling the bitcoin platform, it’s an existential debate between bitcoin the payment technology and bitcoin the idealogy.
+The Problem
+The first problem with ‘bitcoin as money’ isn’t that the network lacks capacity, the first problem with ‘bitcoin as money’ is that not many people want to use bitcoin as money.
+Look, money is hard. It’s hard because, when you stop and think about it, money doesn’t exist as a specific thing. Rather than a specific thing, money is a state of being (or status) that other things can obtain.
+When people start use something as money, we start calling them ‘money.’
+With that in mind, one way to tell if something is money is to see if…people are using it as money.
+Compared to competing alternatives, bitcoin just isn’t that big of a deal. Even at max capacity the bitcoin network would process 10x fewer transactions than PayPal.
+
+We will revisit the question of why bitcoin’s not very useful as money, but before we do, let’s look at the scale question.
+Since 2010, the settlement system for banks, ACH, has increased it’s payment processing by more than 20x the current max capacity for the bitcoin network.
+Let’s pause to consider this for a moment. Every month that the bitcoin community spends debating the capacity question is a month that ACH increases transactions processed as by an amount equal to the entire bitcoin network.
+
+Which is a long way of saying, yes, there appears to be a scale problem. But before we dive into the ways to address that scale problem, we need to spend some time on bitcoin the ideology.
+Money is About Trust
+“What is needed is an electronic payment system based on cryptographic proof instead of trust” — Satoshi
+A core principle behind the creation of bitcoin was the notion that we shouldn’t trust financial institutions and governments to protect the value of our money.
+At the same time, money is fundamentally about trust.
+In order for me to think of bitcoin as money, I need to believe that you will accept my bitcoin as money in the future.
+In order for you to accept my bitcoin as money, you need to believe that someone else, at some even further point in time, will accept those bitcoin as money.
+Basically, I need to believe that you believe that someone else will think of bitcoin as money, at some indeterminate point in the future.
+Turtles. All the way down. And trust throughout.
+
+Who do you trust?
+“…allowing any two willing parties to transact directly…without the need for a trusted third party.”-Satoshi
+Bitcoin doesn’t create a money system without trust.
+What’s ironic here is that the more technologically complex a system, the harder it is for most people to understand, and the more need for intermediaries to act as a layer between lay people and the technical guts.
+Mom and pop aren’t going to run a mining rig in their basement, and they certainty aren’t going to try to parse this diagram.
+ Good band name","title":null,"type":null,"href":null,"belowTheFold":true,"topImage":false,"internalRedirect":null,"isProcessing":false,"align":null,"offset":false}" class="sizing-normal" alt="“Simplified Merkle Roots” -> Good band name" title="“Simplified Merkle Roots” -> Good band name" srcset="https://substackcdn.com/image/fetch/$s_!vajZ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7eba9334-54ed-470a-951a-8cc0d4389315_575x375.png 424w, https://substackcdn.com/image/fetch/$s_!vajZ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7eba9334-54ed-470a-951a-8cc0d4389315_575x375.png 848w, https://substackcdn.com/image/fetch/$s_!vajZ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7eba9334-54ed-470a-951a-8cc0d4389315_575x375.png 1272w, https://substackcdn.com/image/fetch/$s_!vajZ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7eba9334-54ed-470a-951a-8cc0d4389315_575x375.png 1456w" sizes="auto, 100vw" loading="lazy">
+
+Meaning, any world in which bitcoin is an important part of our financial system is one in which there are a lot financial institutions dealing with the complexities of the blockchain for mom and pop.
+Which pretty much explains this:
+
+And also explains how a currency “without the need for a trusted third party” could have almost half of the bitcoin exchanges fail, the most high profile being the implosion of Mt. Gox, which lost hundreds of millions of dollars worth of customer deposits to (FINISH)
+Scale as a Governance Question
+Which brings us back to the scale question and why it’s an existential question and not just a technical one.
+At the core of bitcoin is the ‘blockchain,’ the public ledger which records transactions and which uses the full history of prior transactions as useful information in the verification of new transactions.
+The chart below shows a projection of the literal file size of the blockchain if it were to grow at the rate it’s growing now (and consistent with a 1MB maximum block size).
+A technical perspective might look at this chart and think at 200GB that’s 40% of the hard drive of a macbook, we probably need to make the network more efficient if it is going to scale.
+
+But that’s before any increase in the capacity of the network.
+The simplest way to increase bitcoin’s capacity is to increase the rate at which the network can process information. But since the transaction record is necessarily cumulative, more information means bigger files.
+
+More information processing on the network also means more bandwidth consumption by people on the network.
+Greater bandwidth requirements could in turn cut out the 70% of so of the network computing power originating out of China, where internet connectivity is spotty.
+So, whereas in principle bitcoin is a decentralized open-source network, in practice, the economic incentive to consolidate under large ‘mining pools’ means that the future of the network will be dictated by a few major players, each with their particular interests at stake.
+
+Incentives to profit share among network participants has led to significant consolidation
+The fact these are all open questions, and that we don’t even really know the processes by which these decision will be made, speaks to the depth of trust in technology that ‘bitcoin as money’ proponents have.
+I don’t have a view on whether 4,000 GB hard drives are just around the horizon, just like I don’t have a view on whether we can jam more information onto a 1MB block or whether the crypotography at the core of bitcoin will hold up for a decade.
+If bitcoin were money, I wouldn’t have to have an opinion on these things.
+Money is necessarily the thing you don’t have to think about. It just works.
+To Be (Money) or Not to Be
+All of this is not to say that bitcoin can’t be money.
+A lot of people compare bitcoins to gold, and maybe that makes sense, in the long run.
+Like gold, bitcoin is in relatively fixed supply.
+Like gold, bitcoin isn’t as liquid as other forms of money.
+Like gold, there are serious scalability and liquidity issues with transacting in gold, and so people trust financial intermediaries to store their bitcoin and process transactions with them.
+Maybe the net of all the above is that, just like the gold, we will see a world in which people don’t actually transact in bitcoin, but rather little pieces of paper (or electronic deposits) that represent claims on bitcoin.
+Maybe the scalability problems leads the pools to merge into (or be subsumed by )the wallet and exchange companies, and the result will be companies that act as trusted intermediaries for mom and pop.
+Maybe, just like gold, one day those intermediaries become so trusted that people will be willing to accept their promises to deliver bitcoins just like money.
+Maybe, but until that day, my hedge for US dollars being a bad store of value is gold, not bitcoin.
+DISCLAIMER
+This article is for informational purposes only and does not constitute an offer to sell, a solicitation to buy, or a recommendation for any security, nor does it constitute an offer to provide investment advisory or other services by Snow Ventures. In preparing the information contained in this article, we have not taken into account the investment needs, objectives and financial circumstances of any particular investor. This information has no regard to the specific investment objectives, financial situation and particular needs of any specific recipient of this information and investments discussed may not be suitable for all investors. Any views expressed on this website by us were prepared based upon the information available to us at the time such views were written. Changed or additional information could cause such views to change.

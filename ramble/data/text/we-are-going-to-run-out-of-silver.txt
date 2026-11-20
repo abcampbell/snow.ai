@@ -1,0 +1,81 @@
+TITLE: We are going to run out of silver
+SUBTITLE: By the time we build enough solar panels to power the earth
+DATE: 2024-10-09
+
+The point of today’s ramble is incredibly simple:  
+
+Sorry for the all caps, it’s part of the joke.
+The justification of such a simple conclusion is going to require a bit more work, but if you are wondering the takeaway, there ya go.  If you want to bet on AI, you are betting on a future with a LOT more energy production.  If you are betting on more energy, you are betting on a LOT more solar.  A lot of silver goes into solar panels, so any surge in demand for solar will also look like a surge in demand for silver.
+Another way to think of this, if you are more skeptical, is that this tweet from Elon is almost certainly wrong.  
+Why?  Well, simply put, we would run out of silver.
+
+To flesh out this mildly disturbing conclusion takes a couple of steps.
+Step 1.  This is already starting to happen!  Demand for silver solar panels (or “silver panels” as we’ll call them from here on out) grew by 64% last year, passing jewelry as the single biggest source of demand.   This has been enough to swing the market into a supply deficit for the past four years
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Currently, solar is only 9% of global electricity production and around 2% of total energy production.  Your bearish case at this point has to be that solar gets to 20% of electricity production in the next ten years.  To create that much solar would take an entire year of global mine production, or around 800 million ounces.  
+
+Going up the scale, global electricity production is around 100 Exajoules.  To double that with solar would take around ~12 years of silver production, or ~10 billion ounces (a bit less than 20% of all the silver ever made).
+
+Claude 3.5 Sonnet (2024.10.08)
+
+GPT4o (2024.10.07)
+
+Meaning to replace all 600 exajoules of global energy production with solar panels would consume all of the silver ever produced.  Oh, and the below ground reserves only get you an additional 20% buffer.
+
+Claude
+
+GPT4o
+
+It would take an area the size of Portugal (~100k km²) to do so, but luckily we already have that much area just in the roofs of our homes and parking lots etc.  Note, US roofs and parking lots could do 20% of it (#NewNewDeal).
+
+For context on how rare silver is, mines produce only 8x the amount of silver as gold.  A total of ~58bn oz of silver has been mined in all of history, compared to 7bn oz of gold.  Meaning we also have around 8x more silver above ground than gold. Geologists estimate the Earth has around 20x the silver as gold.
+
+An oz of silver can produce around $100-200 of electricity in a solar panel.   When you take into account that 10% of the cost of a panel is silver, that means you can produce around ~$100-200 of electricity for a $330 investment in silver + panels.  Note, these are subject to things like yield, which is going up, and silver intensity per area, which is also going up in newer methods and cuts against increased yields.
+
+This means your silver actually has a positive yield, whereas most people think of it carrying a negative real yield, in the form of the carry.   
+
+Tell me what happens to an asset with a historically negative risk premium (silver) that starts being positive carry when rates fall and the IRR swings positive?  
+
+So think about it.  Silver is 8x as plentiful above ground, 20x as plentiful below, but currently trades at a ~80:1 ratio to gold.  Even though as we just discussed, every energy-hungry nation on Earth is now in need of silver.   This is before we get to strategic or monetary reserves. 
+
+So how likely is it silver will remain 98% cheaper than gold, now that is has that positive yield?  
+
+We think it is much more likely that silver begins to catch up to gold, closing that gap to 20-30x as the market prices in that solar demand is just getting started.  That gets you to $50/oz.  If we get central bank buying again, you could imagine the ratio coming all the way back to 10:1 (over years), which would imply $250/oz silver!  
+Oh, would you look at that…
+
+In conclusion, while the current moment may not be the best tactical time to buy silver, the long-term outlook remains strong. If China stimulates its economy while the Fed shifts to tightening, we should expect dollar strength and a rotation out of gold and silver into stocks. Indeed, we've seen this trend in recent days, with silver retreating from its highs and down 3.5% this morning to ~$30/oz (or 7507/kg). 
+
+October 9th 2024
+However, these short-term fluctuations shouldn't overshadow the larger picture. As we've discussed, the growing demand for solar energy is likely to drive significant long-term demand for silver. Despite current market movements, the fundamental thesis remains intact: the future needs silver, and a lot of it. Investors should watch for opportune entry points amidst these market fluctuations, 
+Till next time.
+
+Calcs / Appendix / Chart Junkyard
+“Solar panels typically use about 20 grams of silver each, translating to around 425 watts of capacity per ounce of silver. Under optimal conditions, this capacity can generate 0.425 kWh of electricity per hour. With the average electricity price in the U.S. at $0.16 per kWh, this results in a revenue of 6.8 cents per hour per ounce of silver in a solar panel.”
+
+Summary of Material Costs:
+Silver: $0.05 - $0.10 per watt
+
+Silicon: $0.10 - $0.15 per watt
+
+Glass: $0.05 - $0.07 per watt
+
+Aluminum: $0.03 - $0.05 per watt
+
+Encapsulants/Backsheet: $0.02 - $0.04 per watt
+
+Other materials: $0.01 - $0.03 per watt
+
+This breakdown illustrates that while silver is important for conductivity, silicon and glass are the most significant materials in terms of cost per watt in solar panels.
+
+How much silver to do all solar? (Rose - Scratch)
+Solar % of Global Energy (Rose)
+Chinese Solar Production (Rose)
+World Energy Sources Breakdown (Rose)
+Disclaimers
+This is not investment advice.   Your investment objects should depend on a lot of things a newsletter writer cannot know.  Silver is a volatile asset and you should be prepared to take a 50% drawdown on any speculative precious commodity bet, as has been shown in the past. 
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This is not my full time job and I do not promise the data included is accurate or up to date. There are innumerable small logical and mathematical decision inherent in making these charts, and mistakes do happen. Please consult me on anything contained herein before making an investment decision on the basis of this work. We are happy to provide the source and business/transformation logic where appropriate.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

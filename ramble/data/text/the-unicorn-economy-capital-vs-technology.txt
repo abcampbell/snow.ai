@@ -1,0 +1,87 @@
+TITLE: The Unicorn Economy - Capital vs Technology (Part 3)
+SUBTITLE: January 22nd, 2016
+DATE: 2021-11-09
+
+THE EXISTENTIAL TENSION BETWEEN TECHNOLOGY AND CAPITAL
+At the beating heart of every great tech company is the creative tension and the conflict of interest between technology and capital.
+Technology is best served when its solutions are given away at marginal cost, so they can be compounded upon by others. Think about the technologists' passion for open-source software.
+Capital is best served when it captures the maximum amount of economic benefit from its use. Think about the capitalist fervor for the creation of a monopoly.
+Both forces compound and evolve, pulling the company to create and then capture value. In order to create a viable billion dollar enterprise, you need both.
+
+In the narrative of Silicon Valley, the founding moment was a meeting between technology and capital:
+Technology, in the form of a group of engineers called the ‘traitorous eight’ with a radical new plan to make computer chips out of inexpensive silicon…
+
+…and Capital, in the form of a 1950s NY banker by the name of Arthur Rock (way before he was on the cover of time).
+
+The technologists were looking for a home to do their research and came upon the capitalist, who said:
+WHY NOT JUST MAKE YOUR OWN COMPANY?
+Essentially, Rock introduced the radical capitalist notion of ‘Hey, why not capture some of the value that your plan would create?’
+The company they started was called Fairchild Semiconductor. Many companies sprung from Fairchild, though perhaps the most prominent to be created, with the help of none other than Arthur Rock, was called Intel.
+
+The legacy of the traitorous eight and Arthur Rock is not only what we now know as Silicon Valley, but a set of economic and organizational structures that have defined the marriage between technologist and capitalist for fifty years.
+Those structures seek to align incentives in ways that allow for the right balance between the creation and extraction of value, but those structures often add uncertainty and opacity to capital market deeply in need of more, rather than less, transparency.
+HOW TO CREATE A UNICORN
+Paul Graham, and Peter Thiel have forgotten more than I will ever know about how to create a Unicorn.
+Here is a simplified version of their process for creating one:
+1. Create value, by solving a big, painful problem
+2. Scale, by getting a lot of users
+3. Profit, by extracting value from those users, preferably by creating some sort of monopoly
+As far as three-step processes go, this one is pretty compelling. To make a billion dollar business, you pretty much need to nail all three.
+The thing about this process is that even in the best of worlds, you need liquidity today in order to do 1 and 2. In order to get that liquidity, the technologist needs to promise the capitalist that there will be a stage 3.
+The price that this deal is struck at is determined (in the capital market) by the answers to three questions:
+1. How long until the enterprise turns the corner to profitability?
+2. How much capital will it burn in the meantime?
+3. How much cash flow will it generate at scale?
+
+To the capitalist, the value of the company is defined by the expected value of that line. A company with a lot of area in the blue, and not much in the red, is a very valuable company, maybe even a unicorn.
+The technologists, knowing the company and technology, may have opinions on these questions, but it is the role of the capitalist to answer them. This is the process which turns uncertainty about the future into a distribution of risk around these questions, which can in turn be priced.
+In the traditional narrative, the capitalist receives a share of economics and control in exchange for their liquidity.
+What is not as widely know, is that in addition to a share of economics and control, the capitalist usually also receives protection.
+PROTECTION
+In traditional venture capital deals, the capitalist receives the promise that they will get their money back, even (and especially) when the firm sells for a value less than what the capitalist paid for it. Venture capitalists get shares of preferred stock in the startup, which guarantee that the capitalist will be paid a) before holders of common stock, and b) at an agreed-upon rate called a "liquidation preference".
+If the capitalist receives $1 for every $1 of liquidity they provided, we call it a 1x liquidation preference. Sometimes they get $2 for every $1 of liquidity, and we call that a 2x liquidation preference.
+It can be complicated to think about the impact of legal terms with obscure names like liquidation preference. Usually, the best way to handle this complexity is to make a chart.
+
+This chart shows the payoff profile of $20m invested in an enterprise for a 20% stake, with a 1x liquidation preference.
+This protection turns the capital they provide into something that looks like equity (a share of the upside) in a boom, and credit (a promise of the return of liquidity) in a bust.
+
+This protection is also valuable, sometimes so much that these protections make the investor less interested in the ‘value’ of the company, and more interested in the terms and protections. 
+
+For example, in the last bust, it wasn’t uncommon for investors to receive 3x-4x liquidation preference (among other terms).
+This is just a complicated way of saying these companies were taking on debt with a very high implied interest rate. The thing about debt is that it gets paid back first, and in the process, subordinates the holders of traditional equity (“common shares”). Here’s an example of the payoff to both preferred (holding the liquidity preference) and common share holders, where capital paid $50 for a 50% stake of the business.
+
+CROSSING OVER
+In the mid 2000s, the financial economy in the US went through its own capital cycle. When Lehman blew up, it introduced a lot of uncertainty, and there was a scramble for liquidity in the capital market itself.
+When there are liquidity problems in the part of the economy that is supposed to provide liquidity to the rest of the economy, that’s a big problem.
+In reaction to this problem, the monetary authorities in the US stepped in and supplied a lot of liquidity to the capital market. That's why we call the Fed the “lender of last resort”, because they can always create money and lend it to the lenders.
+That's exactly what the Fed did. Along with lowering the interest rates to 0%, they printed 20% of the GDP in new money. This money was then sold to capital markets in exchange for assets (bonds), which increased liquidity in capital markets and increased the price for assets in those markets, slowly and in proportion to the distance of those assets from the bond market.
+That liquidity eventually found its way to the Unicorn Economy.
+
+In prior times, new enterprises raced to turn the corner to profitability. By generating revenue and capturing some of the value their products created, the technologist could move from private capital markets to public markets, by having an IPO.
+This is important because moving to public markets usually means the end of selling protection.
+The technologist would like to avoid selling protection to the capitalist because, in order to give protection to the capitalist, they need to take it away from other investors. In particular, the protection ‘bought’ by the new investor is effectively ‘sold’ by employees and earlier investors in the enterprise.
+When the company is young and facing a lot of uncertainty, the value of this protection is small.
+In the wake of the financial crisis, traditional ‘public’ investors began investing in private companies, but did so using structures and protections inherited from an economy with roots to Arthur Rock.
+This source of new liquidity pushed up asset prices in the Unicorn Economy and allowed technologists to continue to invest in business models that had yet to turn to the corner.
+
+A PORTFOLIO APPROACH
+Capitalists tend to think in portfolios. You take your liquidity and deploy it in a series of investments which you hope will make a return. You are evaluated not on the basis of each individual investment, but the return of the entire portfolio.
+This makes sense, as most investment firms are, themselves, just another single investment in someone’s portfolio.
+The thing about investing in companies in the Unicorn Economy is that before they turn the corner, there is a lot of uncertainty about how much cash flow they will generate once they reach the plateau of profitability.
+However, thinking in a portfolio approach allows you to turn some of this uncertainty into risk by buying stakes in lots of enterprises.
+
+Submitted with deep respect for the investors with the (very difficult) job of finding diamonds.
+Which brings us to today.
+The combination of a portfolio approach from the public market world and the structures of protection from the Unicorn Economy have created billions of dollars of expectations, the majority of which will be too optimistic.
+Meaning that in times like today, when we become scared and race for liquidity, asset prices will fall, and in this case, fall to the point where the protection purchased by the capitalist will (in some cases) leave very little value left over for the employees and early investors who took the most risk in building the enterprise.
+The news is filled with examples of unicorns where expectations were too high, valuations fell, and the subordination of the employees left them with much less wealth than they expected. The enterprises that do manage to make it to IPO seem to be suffering as much as anyone.
+
+What is not widely appreciated is that, in the Unicorn Economy, big winners and big losers are just the natural state of affairs. 
+The asymmetric payoffs from investing in the next Google, Facebook or Apple more than compensate for the underperformance of the vast majority of investments. This inequality between gains on winners and losses on everything else enables capital markets to provide liquidity to the next Google, Facebook or Apple.
+
+This means we have a market that has asymmetric returns, asymmetric information, and an asymmetric ability of market participants to seek diversification (public market investors can always short the market against their holdings in the unicorn economy). 
+The irony of all this is that, owing to the lack of information and liquidity, a hedge to private market valuations is more necessary but less practical. 
+The regulations put in place to protect mom and pop investors from getting burned by the opacity in private markets only function appropriately when mom’s life savings isn’t in a pre-IPO company. 
+Employees in these companies sometimes even have contractual obligations preventing them from hedging. Meaning they are forced to deal with a complicated, technical and totally illiquid process in order to gain liquidity. Some firms even have things called a ‘right of first refusal’ which adds to a cognitively painful process, and only increases the burden for employees seeking the diversification enjoyed by the late round investors (who are also further subordinating them).
+The Unicorn Economy has grown up. It is no longer about two guys in a garage and couple of million in funding. It is the crown jewel of the American economy and deserves more transparency, more liquidity and more uniformity in the financial structures that come with its particular funding needs.
+In short, it needs a market.

@@ -1,0 +1,660 @@
+[
+ {
+  "slug": "the-protection-portfolio-september",
+  "title": "The Protection Portfolio: September 2025",
+  "date": "2025-09-22",
+  "summary": "Discloses a 124% net-long book (silver, gold, AI hardware, short HY credit, vol) as a hedge against regime change: China printing, a weak labor market, tight credit spreads and concentrated passive-driven equities.",
+  "themes": [
+   "gold",
+   "positioning-flows",
+   "portfolio-construction",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 7,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "The stock market isn't wrong about earnings. It's wrong about risk.",
+  "improve": [
+   "Many assertions (CRE delinquency, spreads 'should be' 180bps, correlation 0.45 vs 0.85) lack sourced charts or a method for the 'should be' levels.",
+   "Position sizes and the butterfly trade are strong, but the 125% net long is hard to square with 'protection'; explain the risk budget and stop/exit logic."
+  ],
+  "falsifiable_calls": [
+   "Mag7 implied correlation (0.45) will reprice toward ~0.85 in a drawdown",
+   "HY credit spreads (300bps) will widen; short HY is largest short",
+   "2026 rates lower than 2027: belly steepener"
+  ],
+  "return_to": true,
+  "return_reason": "Concrete positions and levels (silver butterfly, HY short, correlation) are testable against subsequent outcomes."
+ },
+ {
+  "slug": "the-arsenal-of-autocracy",
+  "title": "The Arsenal of Autocracy",
+  "date": "2025-09-28",
+  "summary": "A FDR-pastiche (drafted with LLMs) arguing the West has surrendered industrial and critical-mineral capacity to China and needs allied reindustrialization.",
+  "themes": [
+   "commodities-supply",
+   "china",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 5,
+  "best_line": "The arsenal of autocracy wasn't stolen from us. We gave it away, one factory at a time, for marginally cheaper phones and slightly higher margins.",
+  "improve": [
+   "The FDR-voice gimmick is long and bombastic, burying the genuinely useful statistics (steel, rare earths, gallium shares); lead with the data and cut the rhetoric.",
+   "Stats are not individually sourced and the reindustrialization policy ask is generic; add costs, timelines and an investable angle."
+  ],
+  "falsifiable_calls": [
+   "Japan/allies can cut Chinese rare-earth dependence as Japan did (91% to 58%)",
+   "TSMC Arizona won't reach full production until 2028"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "investing-as-myth-making",
+  "title": "Investing as Myth-Making",
+  "date": "2025-09-30",
+  "summary": "All investing is storytelling; catalogs popular 2025 market narratives with story/reality/complexity/endgame and places each in a narrative life cycle.",
+  "themes": [
+   "portfolio-construction",
+   "positioning-flows",
+   "personal-essay",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "Every story works until it doesn't. Every framework explains until it can't. Every edge decays into common knowledge.",
+  "improve": [
+   "The narrative catalog is punchy but verdicts (e.g. uranium disappoints, regional banks consolidate 50%) are asserted without evidence or dates for testing.",
+   "The Black Snow fundraising anecdote is the strongest material; develop it and trim the list to the 5-6 narratives you actually have an edge on."
+  ],
+  "falsifiable_calls": [
+   "Private markets face capital-call chaos/markdowns (pre-liquidation)",
+   "Passive indexing approaching saturation; AI still late adoption",
+   "60/40 outperforms alts",
+   "Regional banks lose ~50% of count in 5 years"
+  ],
+  "return_to": true,
+  "return_reason": "Narrative-cycle stage calls (AI, passive, private markets) can be re-scored a year on."
+ },
+ {
+  "slug": "the-return-of-the-23-year-old-trader",
+  "title": "The Return of the 23-Year-Old Trader",
+  "date": "2025-10-02",
+  "summary": "Posts a 12-month track record (+86%, 2.36 Sharpe) and a 2008 Lehman record, and frames a project to build a learning machine around conviction updating and linkage testing.",
+  "themes": [
+   "personal-essay",
+   "portfolio-construction",
+   "gold"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Being angry about 'making not enough' while you're making a lot is the classic greed signal.",
+  "improve": [
+   "The self-mythologizing (Oxford, Stanford, debating rank) delays the point; the track record sits mid-post without audited context or benchmark comparisons.",
+   "'First of three posts' promises a machine but delivers mostly philosophy; the execution-failure story is the most useful part and deserves more space."
+  ],
+  "falsifiable_calls": [
+   "Will publish process and machine posts, monthly snapshots, full trade log at year-end"
+  ],
+  "return_to": true,
+  "return_reason": "Promised follow-ups (process, machine, year-end trade log) can be checked against what was delivered."
+ },
+ {
+  "slug": "conviction-through-dissonance",
+  "title": "Conviction Through Dissonance",
+  "date": "2025-10-03",
+  "summary": "Proposes a framework for when to trust your model over price: size up when causal linkages confirm but price disagrees; illustrated with a 2008 TIPS trade, LTCM and ten years of China-gold, plus silver risks.",
+  "themes": [
+   "portfolio-construction",
+   "gold",
+   "china",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 8
+  },
+  "overall": 8,
+  "best_line": "Both feel exactly the same in the moment. You're losing money. You're convinced you're right. The market is screaming you're wrong.",
+  "improve": [
+   "The TIPS-vs-LTCM contrast is hindsight-selected; show a case where the same checklist would have told you to cut and you didn't, or a quantified false-positive rate.",
+   "Explicit 95/5 and 70/30 probabilities are shown without how they were derived; show the update steps."
+  ],
+  "falsifiable_calls": [
+   "Gold/silver ratio compresses from 80:1 to 40:1",
+   "China keeps printing/no restructuring until three 'green lines' crossed"
+  ],
+  "return_to": true,
+  "return_reason": "The linkage-confirmation/dissonance framework is the core intellectual contribution and should be tested with live trades."
+ },
+ {
+  "slug": "the-silver-fox",
+  "title": "The Silver Fox",
+  "date": "2025-10-10",
+  "summary": "Trade-desk note on silver's break through $50: backwardation, SLV borrow stress, vol surface dislocations and a suggested trade selling expensive short-dated SLV upside vs buying deferred calls.",
+  "themes": [
+   "gold",
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 4
+  },
+  "overall": 7,
+  "best_line": "Western investors are too concerned with how things look when priced in dollars, and not nearly concerned enough with how things look in China.",
+  "improve": [
+   "Charts carry the argument but text barely explains them; label each chart's takeaway and give strikes/expiries for the relative-value trade.",
+   "Honest admission that futures curves contradict the backwardation story is good but unresolved; follow with the data."
+  ],
+  "falsifiable_calls": [
+   "SLV rich vs futures will revert",
+   "Short-dated SLV upside (67 vol) is overpriced vs deferred calls"
+  ],
+  "return_to": true,
+  "return_reason": "Microstructure signals (SLV vs futures, borrow, backwardation) were a leading indicator worth reviewing after the Jan-2026 volatility."
+ },
+ {
+  "slug": "china-cant-win",
+  "title": "China Can't Win",
+  "date": "2025-10-13",
+  "summary": "Capstone book-length thesis that China cannot win decoupling: $5-10T hidden property losses vs $5T bank equity, hostage US assets, asymmetric dependencies, and a dangerous 2027-2030 window.",
+  "themes": [
+   "china",
+   "macro-regime",
+   "commodities-supply"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Time favors us. Physics doesn't care about five-year plans.",
+  "improve": [
+   "Overlong aggregate that duplicates chapters 2-7 released afterward; publish the executive summary alone and link out.",
+   "Confident point estimates ($7.5T, 25-30% decoupled, 'we win immediate decoupling') rest on unsourced haircuts and a one-sided view of US costs; add ranges and a steelman."
+  ],
+  "falsifiable_calls": [
+   "2027-2030 is China's danger/Taiwan window",
+   "US rare-earth independence ~30-40% by 2028, 60-70% by 2032",
+   "China keeps printing rather than restructuring banks"
+  ],
+  "return_to": true,
+  "return_reason": "A decade-long flagship thesis whose 2027-2030 markers can be tracked."
+ },
+ {
+  "slug": "too-big-to-bail",
+  "title": "Too Big to Bail",
+  "date": "2025-10-16",
+  "summary": "Chapter 2: walks through Chinese property/LGFV/shadow-bank mechanics, estimates $7T bank losses vs $3T usable resources, and argues extend-and-pretend is the only viable policy.",
+  "themes": [
+   "china",
+   "macro-regime",
+   "gold"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "The hole is bigger than all available resources combined.",
+  "improve": [
+   "Loss haircuts and 'usable reserves' ($1.5T) drive the whole conclusion yet are unsourced; present sensitivity tables.",
+   "Official NPL claim (1.6%) vs your 20-25% is asserted; cite an independent estimate."
+  ],
+  "falsifiable_calls": [
+   "China will not recapitalize banks comprehensively",
+   "Evergrande bankruptcy remains unresolved",
+   "Real NPL ratio is 20-25%"
+  ],
+  "return_to": true,
+  "return_reason": "Quantified hole vs capacity can be updated with new recap/LGFV data."
+ },
+ {
+  "slug": "grounds-for-divorce",
+  "title": "Grounds for Divorce",
+  "date": "2025-10-20",
+  "summary": "Chapter 3: uses a divorce metaphor, UK-Germany pre-WWI analogy and a 16-dimension scorecard to argue US-China recoupling is impossible and the divorce hurts China ~3x more.",
+  "themes": [
+   "china",
+   "commodities-supply",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "You can't flip a switch on forty years of integration. Even when you're shooting at each other.",
+  "improve": [
+   "Longest chapter is sprawling; the scorecard (the actual product) is an image with no per-item sourcing. Make it a table with sources.",
+   "The '24% decoupled, same as UK-Germany' precision is not defensible; give a method or drop the number."
+  ],
+  "falsifiable_calls": [
+   "US-China ~25% decoupled; collision in 2027-2030",
+   "Rare earth ~25-30% independent by 2030"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "dont-invade-the-heartland",
+  "title": "Don't Invade the Heartland",
+  "date": "2025-10-22",
+  "summary": "Chapter 4: codes 141 conflicts (LLM-assisted) to argue Rimland maritime coalitions win when they avoid invading the Heartland, then applies it to Taiwan and A2/AD.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "The Heartland doesn't win by being strong. It wins by making you weak.",
+  "improve": [
+   "The 141-conflict dataset is self-described amateur/LLM-built, and the 81% vs 10% result likely reflects coding choices; publish the dataset and test sensitivity.",
+   "Critique of Allison's n=16 is fair but the new analysis has the same selection and labeling risks."
+  ],
+  "falsifiable_calls": [
+   "Rimland powers avoiding Heartland invasion win ~81% vs 10% if invading"
+  ],
+  "return_to": true,
+  "return_reason": "Releasing the conflict dataset for outside checking would convert a clever frame into testable research."
+ },
+ {
+  "slug": "the-chaos-game",
+  "title": "The Chaos Game",
+  "date": "2025-10-27",
+  "summary": "Chapter 5: models Trump's unpredictability as costly-signaling/mechanism design against an always-defect China, using 79 scored agreements and grim-trigger math, and floats a Siberia-for-Taiwan idea.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Tit-for-Tat cannot beat Always-Defect when defection is masked by misrepresentation.",
+  "improve": [
+   "Game-theory parameters (delta 0.6-0.7, tau 3-5, p*) are invented and then used to 'prove' a conclusion; circular and unfalsifiable as framed.",
+   "79-agreement compliance scores come from LLMs graded by American models; the 11% five-year compliance claim needs the appendix up front."
+  ],
+  "falsifiable_calls": [
+   "China's new agreement will be violated within 18 months",
+   "Defection at 11% five-year compliance base rate"
+  ],
+  "return_to": true,
+  "return_reason": "The 'violation within 18 months' call on the October 2025 deal is directly checkable."
+ },
+ {
+  "slug": "time-to-build",
+  "title": "Time To Build",
+  "date": "2025-10-30",
+  "summary": "Chapter 6: argues US permitting paralysis, energy shortfall and Chinese open-source AI are the real vulnerabilities, and pitches a 'New New Deal' of megaprojects funded by capital-recycling taxes.",
+  "themes": [
+   "macro-regime",
+   "commodities-supply",
+   "ai-capex",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Chaos works abroad; at home, entropy is the enemy.",
+  "improve": [
+   "The $5,000 EV/$150k home 'what you get' section is speculative and unsourced; tie each claim to a cost model or label as vision.",
+   "Part III lumps AI safety, environmentalists and unions as a 'coalition of obstruction' aiding China, an assertion rather than evidence."
+  ],
+  "falsifiable_calls": [
+   "Data centers to 8-12% of US electricity by 2030",
+   "US must fix supply chains by 2028 or face a 2027 crisis window"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "epilogue-how-i-got-here",
+  "title": "Epilogue: How I Got Here",
+  "date": "2025-11-03",
+  "summary": "Personal origin story plus scenario math claiming the comfortable view gives 16.5% war odds while his distribution gives 45% near-term war probability but 83% long-term US win.",
+  "themes": [
+   "china",
+   "personal-essay",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Being early feels exactly like being wrong. Same drawdowns. Same people questioning you.",
+  "improve": [
+   "The 45% war probability stems from arbitrary equal-weighted state probabilities and which cells 'trigger' conflict; show how the headline moves under alternative priors.",
+   "The probability tree is not connected to specific portfolio hedges despite 'position accordingly'."
+  ],
+  "falsifiable_calls": [
+   "45% probability of US-China war over the near term (2027-2030 window)",
+   "Dollar falls to 35-40% of reserves if China wins violently"
+  ],
+  "return_to": true,
+  "return_reason": "A 45% war number is extreme and should be revisited annually against events."
+ },
+ {
+  "slug": "the-doomers-paradox",
+  "title": "The Doomer's Paradox",
+  "date": "2025-11-12",
+  "summary": "Reviews Yudkowsky/Soares, arguing doom rhetoric is internally inconsistent and its practical effect was to slow Western AI while Chinese open-source models dominate.",
+  "themes": [
+   "ai-capex",
+   "china",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 2,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Either preferences are unpredictable, or you can predict them; you can't have it both ways.",
+  "improve": [
+   "The page-cited inconsistency argument is the strongest part; the causal claim that doomers 'caused' Chinese open-source dominance is asserted, not shown.",
+   "Tone ('useful idiots', 'national security threat') undercuts the analysis; steelman the book's actual argument about instrumental convergence."
+  ],
+  "falsifiable_calls": [
+   "Chinese open-source models keep gaining share of Western ecosystem"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "we-still-live-in-a-world-of-dollars",
+  "title": "We (Still) Live in a World of Dollars",
+  "date": "2025-11-16",
+  "summary": "Revisits the 2021 thesis that dollar dominance is a network effect, scoring four years of evidence and arguing stablecoins reinforced it; the main threat is US failure to defend the system.",
+  "themes": [
+   "macro-regime",
+   "crypto",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 8,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 8
+  },
+  "overall": 7,
+  "best_line": "Next time someone predicts dollar collapse, ask: 'Relative to what?'",
+  "improve": [
+   "Strongly organized, but it sits awkwardly beside the author's own 124% long gold/silver 'debasement' book; reconcile the two.",
+   "Dominance stats (SWIFT 48%, 88% FX) lack sources and dates; add a table with citations."
+  ],
+  "falsifiable_calls": [
+   "Dollar remains the denominator; RMB share stays flat",
+   "Dollar erodes faster only if the US fails to defend Taiwan"
+  ],
+  "return_to": true,
+  "return_reason": "Reconciling the dollar-network thesis with the debasement trade is the open question."
+ },
+ {
+  "slug": "portfolio-review-november-2025",
+  "title": "Portfolio Review - November 2025",
+  "date": "2025-11-30",
+  "summary": "Reports +108% YTD, a 13% drawdown from silver butterflies mishandled around expiry, shows portfolio exposures and argues China's silver exports are processing detours, while trimming silver into strength.",
+  "themes": [
+   "gold",
+   "portfolio-construction",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "I was the retail long. Tuition paid.",
+  "improve": [
+   "Charts are unlabeled in text; provide the actual exposure table and P&L attribution so the 108% can be audited.",
+   "The silver-powder-via-Japan explanation is flagged as unverified; follow with trade data."
+  ],
+  "falsifiable_calls": [
+   "Silver thesis continues; HY spreads widen; plans to keep selling silver into strength"
+  ],
+  "return_to": true,
+  "return_reason": "Candid options-management lessons and the China silver-export mechanism can be checked later."
+ },
+ {
+  "slug": "25-for-2025-year-in-review",
+  "title": "25 for 2025: Year in Review",
+  "date": "2025-12-09",
+  "summary": "Scores last year's 25 predictions using multiple AI models: mostly validated with misses on entitlement reform, Syria elections and stocks going down.",
+  "themes": [
+   "macro-regime",
+   "personal-essay",
+   "gold"
+  ],
+  "format": "link-roundup",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "When the physics is right, the outcomes follow. When it requires humans to make hard political choices... they usually don't.",
+  "improve": [
+   "Self-scoring is generous: 'Long Batteries' and 'Lasers' marked as validated/too early with no clean trade; define pass/fail criteria before the year.",
+   "Add a hit-rate summary and calibration (probabilities) rather than check marks."
+  ],
+  "falsifiable_calls": [
+   "(retrospective) 25 prior calls scored; ~80% hit rate claimed"
+  ],
+  "return_to": true,
+  "return_reason": "Genuine accountability post; the lesson about political-will calls is worth carrying into 2026 scoring."
+ },
+ {
+  "slug": "rock-em-sock-em-robots",
+  "title": "Rock 'Em Sock 'Em Robots",
+  "date": "2025-12-15",
+  "summary": "Argues viral Chinese humanoid/robot-dog videos (esp. a Unitree triple flip) are physically impossible and propagandistic, using a torque/angular-momentum derivation, while real robots remain worth investing in.",
+  "themes": [
+   "china",
+   "personal-essay",
+   "data-tools"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 2,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "The emperor has robots. Just not those robots.",
+  "improve": [
+   "Physics hinges on assumed airtime, torque and moment of inertia; sensitivity ranges and a note on possible motion-capture/edit explanations would harden it.",
+   "The link from one video to epistemic collapse and Chinese banking data is a stretch; keep the scissor-question idea and drop the sweeping claim."
+  ],
+  "falsifiable_calls": [
+   "Go2 triple flip will never be replicated"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "my-meandering-path-to-silver",
+  "title": "My Meandering Path to Silver",
+  "date": "2025-12-18",
+  "summary": "Retrospective of eight prior posts showing how the silver thesis evolved (gold in China to solar/AI demand, byproduct supply, carry) and gives gold/silver ratio targets.",
+  "themes": [
+   "gold",
+   "commodities-supply",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 8,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "The best trades compound in conviction before they compound in returns.",
+  "improve": [
+   "Hindsight narrative omits what disconfirmed or nearly killed the thesis along the way; add the near-miss moments.",
+   "Ratio targets (45x medium, 30x long) lack a mechanism for timing; state the invalidation level."
+  ],
+  "falsifiable_calls": [
+   "Gold/silver ratio to 45:1 medium term and 30:1 long term",
+   "Silver fundamental deficit persists for years"
+  ],
+  "return_to": true,
+  "return_reason": "Ratio targets and stated invalidators can be re-checked as silver volatility plays out."
+ },
+ {
+  "slug": "10-silver-days-of-christmas",
+  "title": "10 Silver Days of Christmas",
+  "date": "2025-12-28",
+  "summary": "Pre-year-end silver update: 'wouldn't buy fresh here', works through bear arguments (tax selling, margins, copper substitution) with numbers and lists bull structure signals like backwardation and China export licensing.",
+  "themes": [
+   "gold",
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 8,
+   "timelessness": 5
+  },
+  "overall": 8,
+  "best_line": "The money is screaming 'do it.' The physics are saying 'wait.'",
+  "improve": [
+   "Copper-substitution timeline (4 years) and $134 breakeven rest on assumed factory retool rates; show the model.",
+   "'Don't buy fresh' is buried while the bull list reads as an advert; give an explicit trigger or level to add."
+  ],
+  "falsifiable_calls": [
+   "Copper substitution cannot reach 50% in under ~4 years",
+   "Solar demand inelastic until ~$134/oz silver",
+   "Another CME margin hike will not trigger a 2011-style cascade",
+   "Don't buy fresh; accumulate in coming drawdown"
+  ],
+  "return_to": true,
+  "return_reason": "Explicit pullback and margin-cascade calls were made into a violent period and should be graded."
+ },
+ {
+  "slug": "26-views-for-2026",
+  "title": "26 Views for 2026",
+  "date": "2026-01-08",
+  "summary": "Annual forecasts across globalism, China, AI acceleration, inputs, US domestic and markets; reports +131% in 2025, restructures silver into calendars and butterflies and argues AI compute oversupply peaks in 2027.",
+  "themes": [
+   "ai-capex",
+   "commodities-supply",
+   "gold",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 7,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "You can't manufacture demand by building supply.",
+  "improve": [
+   "Twenty-six views read as a list; weight them by conviction and give resolution criteria/dates so they are scorable next December.",
+   "AI utilization math (supply 50%/yr vs demand 15%) is a thin back-of-envelope; show sources and sensitivity."
+  ],
+  "falsifiable_calls": [
+   "AI compute utilization falls from 25-30% to 10-15% by 2027-2029; markets price the gap mid-2026",
+   "First LGFV default hits the news in 2026",
+   "WTI/oil flat-to-lower; metals (copper, silver, tin) higher",
+   "BOJ normalization pulls Japanese money home",
+   "Government shutdown 20-30% chance"
+  ],
+  "return_to": true,
+  "return_reason": "Dated, specific calls (compute utilization, LGFV default, metals vs oil) are ideal for a year-end scorecard."
+ }
+]

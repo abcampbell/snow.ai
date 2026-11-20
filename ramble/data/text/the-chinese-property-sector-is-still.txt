@@ -1,0 +1,67 @@
+TITLE: The Chinese Property Sector is *still dead*
+SUBTITLE: 
+DATE: 2023-04-11
+
+With all the talk about western financial institutions imploding, you may be forgiven forgetting about Chinese property.  
+To a policymaker in Beijing prioritizing financial stability, that’s probably a good thing.  Out of sight out of mind.  
+Lucky for you, I have not.
+Me, I’m like the guy in the Holy Grail, reminding everyone that, yes, the Chinese property sector is still dead:
+
+To some extent the slow motion train crash is probably a feature, and not a bug.
+Why else would it take almost two years to pull together a restructuring plan for the biggest and highest profile default, Evergrande?
+
+A debt to equity swap that looks good on paper, until you look up what the equity value of those two subsidiaries was worth.  Looks like $22.7bn of dollar debt will be redeemed in new bonds and equity in subsidiaries worth ~$7bn at last trade.  
+
+Not to mention the CNY bonds which are still trading as low as 27% of par.
+
+With that in mind, here are 6 reasons you should keep paying attention.
+The Property Sector in China is Massive
+Looking at the largest property companies in the world, China is ridiculously over-represented.  To the point where the chart below begs the question on how much of the ~80% share of assets is mismarked
+
+Further, what happens to a financial system with $11Tr of residential real estate (and an additional $50Tr of assets, many of which with mortgages outstanding) eventually get written down?
+
+The Biggest Propcos are the Most Risky
+As opposed to western companies, Chinese property companies were rewarded time and time again for growth at all costs.  If you never had to take a mark down, wouldn’t you be?
+Below is from our work grading the creditworthiness of every property company in the world.  When we did this analysis back in 2021, China was the only country for whom we saw a negative correlation between balance sheet size and riskiness.
+
+Developer Bonds are Still Deeply Distressed
+In spite of a policy pivot, the end of lockdown, and target measures to support the sector, around 1/3 of the sector is still trading at deeply distressed prices in bond markets.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Developer Equity is down 50-75%
+Equity markets haven’t escaped unscathed.  In spite of a ~100% or so rally from the lows of November ‘22, the equity buffer on balance sheets is deeply imparied.
+
+The Entire Sector is Effectively Insolvent
+Focusing on Evergrande misses the forest for the (really really big) tree.  By estimating the losses required to destroy the bonds, and comparing it to the distressed equity value, you come to a scary place.  There are likely more losses on the liability side of the balance sheet than the remaining market capitalization of all the equity.  
+Aka, it’s not just Evergrande.  No wonder the restructurings are taking forever.  Can’t let the cat get out of the bag too soon.
+
+The Banking System is Not Immune
+Extend and pretend has by and large worked to prevent a wholesale run on the banking system.  So far, only the ‘worst’ banks in China have seen material drawdown in their equity.  
+Though note, we told you as far back in 2018 who those banks were!
+
+Interestingly enough, the link between the banks and the propcos appears to be clearer now to the market, as the worst banks now trade in line with the performance of the best property companies.  
+Indicating some awareness of the existential risk posed by the sector.
+
+Printing + Jawboning has Worked, Thusfar
+So why haven’t we seen a systemic run on the banking system?
+Two reasons, the first, an enormous amount of money printing.
+
+This policy easing has occurred simultaneously with a repeal of lockdown.  Supporting underlying economic activity and the prices of financial assets.
+
+Leaving us wondering, will the new year see continued printing to support asset prices, and what happens when more of the restructuring deals come through, some of them fail, and all force awareness on the market of the actual health of the assets on the banking system?
+We’ll keep you posted.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION.  
+
+For prior work on the topic, below is a good place to start.
+Campbell Ramble
+One Trillion of Losses... Hiding in Plain Sight
+
+If you are following markets at the moment, you might be focused on the pace of the Fed’s tightening, the impact of conflict in Europe on global energy prices and inflation, and the supply chain bullwhip epicentered on Shanghai’s lockdown. You would be also missing the bigger picture…
+Read more
+5 years ago · Alexander Campbell
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

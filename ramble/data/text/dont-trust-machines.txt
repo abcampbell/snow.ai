@@ -1,0 +1,117 @@
+TITLE: Don't Trust Machines
+SUBTITLE: (Technical) Reasons for Optimism in the Age of the Machines
+DATE: 2024-03-17
+
+We’re going to depart a bit from markets today and talk about machines.  The ways they fail and the scope that opens for positive-sum interactions between humans and robots.  In short, we’re going to try to provide a bit a (technical) antidote to all the doomerism going around.
+Funnily enough, when I was growing up, people used to call me a pessimist.  Feels like my whole life I’ve been running into weird fail modes for the computers, bureaucracies and interpersonal systems that make up our modern life.  For whatever reason, prob being somewhere out on the ADHD/autism spectrum, I tend to break other people’s machines and I tend to remember breaking the,.  Seems I’m always taking the low road when the developer least expects it.
+More recently, I’ve found this appreciation for the ways in which machines fail has been a source of optimism.  Why?
+Well, in spite of all the things that are getting radically better, it’s pretty clear that the rise of the machines fills people full of anxiety and dread.  Most of these anxieties connected to underlying fears that the machines will get so much better as us at everything that eventually they (or their capitalist owners) will decide they no longer need us.  
+
+And yes you could say it’s all a matter of incentives.  After all my day job is huckster data salesman.  But today we’re going to go back a bit deeper, and demonstrate with math, math I named after myself( partially as a joke, since it’s so simple), of why you be optimistic.  
+Optimistic every time your bluetooth headphones break, your airplane doesn’t take off, or your internet goes out.  Optimistic because these breaks remind us that all machines are imperfect.  Optimistic because it’s clear how much more we have to build and how deeply the interaction between humans and machines is positive sum. 
+
+Background
+Last week Dr. Wolfram came out with a claim that there was a limit to the computability of complex outcomes.  He called it his “principle of computational irreducibility.”  Aka the idea that there were some problems you cannot reduce to computation.  
+
+The similarities or “isomorphisms” between this framework and an old idea we’ve brought up in the past got me thinking.  
+The idea that in spite of the rapid progress in machines, we also know, with some certainty, that there are limits to those machines.  We know this from Turing, we know this from Godel, & Arrow & Lucas and Russel et al.  For a previous introduction:
+
+Coming from the originator of automata theory - and the guy who got rich with Mathematica - I thought that was a good one. by Dr Wolfram. 
+Automata theory, for the uninitiated, is the idea that you can derive a lot of complexity from incredibly simple, self-referential / recursive rules.  
+Which in practice means you end up spending a lot of time looking at these automata tree diagrams as if they were Magic Eye pieces.
+
+So you can imagine it’s interesting coming from the guy who’s life’s work seems to be “write down the fundamental interaction dynamics of the world in order to explain the universe” that there’s a limit to this whole exercise!
+What I think is particularly relevant to our current discourse on AI is an underappreciation for the way in which the notion of imperfect machines acts as a counterpoint to arguments from ‘doomers’ or ‘decels’ (or those that would seek to pause or limit AI development).  In particular, arguments emanating by and large from Eliezer Yudkowsky et al that the intelligent machines we are currently building will inevitably react perfection, and in their perfection, seek power and control in a way that leads to the ability, willingness and interest to remove humans from the universe.  
+A truly nihilistic worldview in my opinion, but ok let’s run with it.
+Anyway, my antidote to this mind virus, prescribed on a daily basis, is to consider all of the imperfect machines I encounter every day.  I “log” them in my head or on paper.  I tweet them.  I annoy people at the beginning of a zoom call when their audio doesn’t work parroting: “the machine is down” “ don’t trust machines” again and again.
+Here’s a thread of about thirty I’ve taken the time to document 
+
+The idea here being, not only do imperfect machines exist today, they have always existed, and will always exist.  Machines by their very nature are imperfect.  
+Further, the way in which machines fail is actually predictable, and insofar as we allow for this kind of thinking, we open up a space for non-zero sum interactions between humans with these so called near-perfect machines.  Gaps in the machine, as it were.
+When zoom out to the economy, these gaps in the machines are mostly filled by people.  These gaps are what we call “jobs.”  
+A job being when you have to show up everyday and move around information in spreadsheets, or products on a shelf, or kids in a classroom, because currently, we don’t have machines capable enough of doing those things.  And here capability is defined both by what it looks like when the machine succeeds and when it fails (or “halts”).   As the type of failures you would get our of machines in these roles is currently unacceptable (dropping the baby, burning down the Pizza Hut, crashing the nuclear powered aircraft carrier etc etc).
+Reading the reactions to the release of products like “Devin” (and to a less extend Rose), you get the real sense that many people are afraid of what’s coming. They are worried that *poof* tomorrow all the software jobs will literally disappear!
+
+A bit ironic, being up until now it was “software is eating the world.”
+
+Which, when you looked at it turned out wasn’t true.  For example in finance, where machines have been hard at work pretty much since Lotus Notes, we’ve seen a flat line of employment.  With much of the impact of machines being felt in greater productivity rather than cannibalizing existing employment.
+Or take Bank tellers.  You might think the introduction of ATMS cannibalized their human equivalent.  On the contrary, ATMs helped lead to an explosion of financial services such that there was even more demand for this labor.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Put another way: “Where did all the farmers go?”
+
+Meaning we already *know* where the farmers go.  First they get a lot more productive.  
+
+This pushes up supply, which increases production at radically lower prices.  Eventually agricultural jobs fall but across generations.  Which highlights the critical variable here.  It’s not that we worry about machines displacing human labor eventually, it’s that we worry about a productivity shock whereby we see a radical decline in labor demand in spite of rising production.   
+
+On it’s own the increase in productivity is a good thing.  Think about your experience as a consumer of movies, music and print as compared to your parents or great-great-great grandparents.  No contest.
+Over time more and more of their work is automated, but by and large you still need folks to wake up everyday and do stuff on the farm or whatever, but more and more of that labor now involves dealing with and fixing broken machines and driving ever bigger ones. Only after the initial easy productivity gains have been squeezed out does the automation financed by capex begin cutting employment and wages.  
+
+This pattern repeats itself throughout the entire economy.   More and more work is automated by ever more complex and capable machines.  But the complexity of these machines means that while you may need fewer farmers, but you will always need someone to fix the broken combine.  You can never totally remove the ghost from the machine.
+Zooming out, we actually have anecdotal examples where the more complex and interactive machines become, the more we aught have expectations that we will see parallel, catastrophic failures in those machine.  
+
+Recall examples of large, dramatic machines failing and the story is usually the same.  Chernobyl, Three Mile Island, Bhopal Chemical disaster, all follow a common pattern.  Complexity + Ambiguity + Time = multiple parallel failure in subsystems resulting in catastrophic collapse.  
+
+Those of you that currently deal with extremely high performance machines probably can feel this lesson intuitively through lived experience.  Be it quants gambling other people’s money, medical folks gambling with other people’s lives, or even say Formula 1 drivers, gambling with other people’s go-karts.  Tell me of an industry with high performance, complex machines, and I will show you an setting with demonstrable value in the human capital capable of building, maintaining, and running those incredible machines.  Value in the form of high wages.
+
+Finally, that, if you look at the history of logic, mathematics, computing, and (ugh) epistemology , you find very real truths discovered by the greats that are not only relevant to this conversation, but devastating to those that would argue we should pause development of intelligent machines, over-regulate our startups to death in their cribs, or blow up chip centers.
+What are some of those truths:
+Gödel’s  Incompleteness Theorem - Imagine a book which attempts to describe all the fundamental rules of the universe (making it what Gödel would call “complete”).  Now imagine an unknowable or unknown thing, and then try to add it to the book.  
+
+Well, now you need to reprint the book.  It wasn’t complete.  
+
+Take it further.  Imagine living in a world where everyone has access to the book, and uses it to guide their behavior.  In that case, would the rules of the game change?  Of course.  Only if the book could contain itself would that be possible.  And we know that can’t be true, because we already acknowledged there is something unknown or currently uncomputed for the book!
+
+Turing’s Halting Problem
+Imagine Turing back at Bletchley in ‘44, waiting for Bombe to finish calcing, facing a skeptical Colonel from her majesty’s royal intelligence services…
+
+General: “Alan, what are the bloody coordinates for the submarine strike?!?”
+
+Alan: “I don’t know she’s still thinking!”
+
+General: “That’s what you said last time!  Then “she” failed!”
+
+Alan: “Yes, that’s true.  We won’t know if it fails until we see if gives an answer, or fails!”
+
+Which, for those without a background in the mathematics, is basically a (absurbists?) living out the real world horror of his Halting problem, published 8yrs prior…
+
+Anyone who has spent significant time with any of the latest and greatest LLMs knows, yes they are incredibly smart, but it’s also not that hard to make them halt:
+
+Going back to my prior ramble on the topic “The Machine is Down” you can see I tried to make the argument that these ideas were all inextricably linked.  That there was a whole set of problems on the border of math, economics, logic, physics, and epistemology (ew).  Basically all saying the same thing
+If it is not knowable if the machine will halt.  This is known.   A known unknown as Rumsfeld would put it.
+Then from a rational actor’s perspective, in expectation all machines will eventually halt, given enough time to run.  Aka “The Machine is Down”
+Other examples being Heisenberg, Arrow, Lucas, Russell and the notion of paradoxes within logical systems writ large.
+Which means that as a builder of machines, or even someone just running them or existing in a world filled with them, there is a take away to the human living in a world of machines that will inevitably fail: aka “Don’t Trust Machines”
+As we evolve into a world ever more suffused with machines, you will inevitably be forced to interact with more and more variety of ever more complex machines, and that in doing so, you will find more and more bespoke and unique ‘fail’ conditions.
+ Sometimes it will feel like the whole world has a unique fail conditions, just for you.  
+“Wait you needed that in triplicate?  The website said duplicate?”
+For example, last weekend when coming back from Singapore this month, my partner brought the TSA machine down, when the Southwest border pass (with PreCheck, with their Global Entry physical card + passport) refused to green beep at SFO at 4:30am (for our 5am flight).  Maybe it was the two other flights we had been on which deplaned three times over the course of 14hrs during a pass the hot potato between United, Air Traffic Control, Weather, Government Regs and Unions.  Regardless it was a good reminder …”Don’t Trust Machines.”
+Oh and for those of you markets folks who have made it this far, this is also why I decided to short United last week (and add to my Boeing shorts), both of which are in the money and both displaying classic cases of an inability to deal with ‘the machine is down.’
+
+Technical Appendix - Campbell’s Completeness Conjecture 
+In this section, we’re going to formalize this intuition into a mathematical framework, with the goal of proving the conjecture:
+Any and all sufficiently complex machines will eventually, and inevitably, break.
+Or put more formally “as your machine grows in complexity and time, the odds that your machine will fail/break/halt asymptotically approaches 1.
+Let’s start off by imagining a game where you are faced with a fork with two roads.  You do not know which one will lead you to your destination, but if you go down the wrong road, the game ends.   Do not pass go, do not collect $200.  
+We will label these failures or halts ‘red forks’. 
+A ‘blue fork’ is defined as a success.  And occurs with probability 1-p.
+
+Now imagine that we add another leg to the game.  In which the same basic dynamics occur.  There is some probability p of a failure, and some probability of success of (1-p).  
+The odds of an overall success are now the odds of getting two blue forks in a row, or (1-p) squared.
+
+Now play that game out for 10 rounds. 
+
+Or 20 rounds.
+
+As we increase the number of rounds, the underlying math become’s is pretty clear.  There’s a lot of sensitivity to the p(halt) at the beginning of the machine, but for very low values of p, the fail rate will eventually be determined by the number of rounds the machine is in operation.
+
+Which, when zoomed out, looks like this:
+
+Now, we can then formalize this a bit into actual math.  For those that are interested, I asked Claude to format them into the below (a radical improvement in productivity vs LaTEX for those that know what that is).
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

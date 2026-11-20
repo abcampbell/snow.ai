@@ -1,0 +1,46 @@
+TITLE: Whatever Happened to Alpha - Part 2
+SUBTITLE: Easy Monetary Policy Killed Alpha (June 30th, 2017)
+DATE: 2021-11-09
+
+Part 1: Why haven’t hedge funds made money lately?
+Part 3: Do we even know how much Beta is the Alpha?
+Last time, we laid out a framework for thinking about why hedge fund returns had fallen.
+In this part, we will go into to the causal drivers of that shift to lower returns.
+It begins, as it so often does, with competition.
+
+Competition 
+We’d like to define alpha as that which is provided to investors above and beyond the opportunity cost of their capital. 
+There are lots of ways to define opportunity cost, and lots of ways to compare different kinds of return streams, and many existential questions about how measure alpha….but we will save existential questions about alpha for another post. Perhaps Part 3.
+Anyway.
+The most apparent reason for a structural decline in alpha is competition.
+The hedge fund industry was built on applying different forms of technology to the domain of investment management.
+Sometimes that technology was in the form of rules of thumb and excel files, sometimes it came in the form of data platforms capable of finding ever nuanced and complex patterns in securities pricing.
+Either way, like any industry, the high profits of prior years attracted new competition to the space. That competition was by and large organic, as generations trained in one particular strategy struck out on their own.
+More smart people looking at the similar problems, more money invested in technology, more capital chasing the same opportunities.Same numerator, bigger denominator etc.
+
+Now, the most direct way to see the impact from competition would be looking at the evolution of alpha for specific firms, and for groups of firms.
+However, as we will see in the next section, distinguishing beta from alpha, can be a bit of a pickle.
+
+Monetary Policy Is Now A Drag On Returns
+The bulk of people investing large pools of capital were around when interest rates were much higher.
+As interest rates came to zero, so did cash returns.
+
+While a shift in short term interest rates from ~6% to 0% isn’t necessarily a big deal for any individual hedge fund, the decline in interest rates means that all funds generate 6% less return every year.
+2% fees to manage money make a lot more sense when they are 1/3rd the cash rate.
+When management fees are more than 2x the cash rate, it begins to feel expensive for investors.
+Nominal returns matter.
+
+Monetary Policy and Beta
+Shifts in monetary policy impact beta returns in two ways. 
+Lower rates directly stimulate the economy (though credit and balance sheet channels) which in turn improves the cashflows underlying major asset markets.
+Lower rates also directly stimulate capital markets, in pulling down the rates at which those future cashflows are discounted, right at the time when borrowing is easier.
+Critically, and missing from many investors worldview is that some of this support must be paid back as interest rates rise.
+Thus, we shouldn’t be surprised to see returns for funds falling right as monetary policy shifts from easing to tightening.
+The chart below shows the relationship between interest rates and asset prices returns across very long time periods.
+We’ve constructed a beta portfolio benchmark called All-Beta as a proxy for a global, diversified basket of beta return streams. Details in another post.
+
+Low rates compress total returns through the cash rate, but it also appears that easing is a critical driver of beta returns. The logic for this is pretty straightforward, but that chart is the first time I’ve ever seen it laid out that clearly.
+In Part 3, we try to extend this by trying to answer How much beta is in the alpha?
+
+DISCLAIMER
+This article is for informational purposes only and does not constitute an offer to sell, a solicitation to buy, or a recommendation for any security, nor does it constitute an offer to provide investment advisory or other services by Snow Ventures. In preparing the information contained in this article, we have not taken into account the investment needs, objectives and financial circumstances of any particular investor. This information has no regard to the specific investment objectives, financial situation and particular needs of any specific recipient of this information and investments discussed may not be suitable for all investors. Any views expressed on this website by us were prepared based upon the information available to us at the time such views were written. Changed or additional information could cause such views to change.

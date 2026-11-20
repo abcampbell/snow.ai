@@ -1,0 +1,128 @@
+TITLE: We (Still) Live in a World of Dollars
+SUBTITLE: The Denominator That Wouldn't Budge
+DATE: 2025-11-16
+
+We live in a world of dollars.
+Not pounds, not yen, not RMB. Dollars.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+For Americans it’s obvious: coffee, rent, the expenses that underpin life are all in dollars. For everyone else, daily expenses might not be dollars, but they still think in dollars. Retirement accounts tracked in dollars. Countries’ GDP compared in dollars. When calling someone a billionaire, they aren’t talking about Mexican Pesos - they’re implicitly converting assets into dollars. When people say gold or Bitcoin is “up,” they’re measuring their value in...dollars.
+Most people don’t really think about the fact they think in dollars. They just kinda do. This, after all, being the core benefit of the abstraction of a ‘numeraire’ or benchmark. You don’t have to think about the fact that a dollar bill is itself a commodity: a liability of the Federal Reserve that most people have coordinated on as a mutual definition of “money.”
+This abstraction unravels a bit when famous investors predict dollar collapse, when China announces de-dollarization initiatives, or when crypto people declare the dollar is dying.
+Back in 2021, I wrote a piece arguing that “we live in a world of dollars” and that most de-dollarization narratives misunderstood what reserve dominance actually is. The argument was simple: network effects matter more than balance sheets, the denominator is stickier than people think, and betting against the dollar is usually betting against yourself.
+
+Since then, three things happened that should have validated the bears. China doubled down on alternatives: CIPS, mBridge, digital yuan, yuan-priced commodities. Emerging market central banks trimmed Treasury holdings and bought gold at record rates. Crypto exploded into a $2+ trillion asset class that was supposed to “end the Fed.”
+On its face, food for the bear with an axe to grind that the dollar is dying.
+Instead, the opposite happened.
+
+The 2021-2025 Scorecard
+What We Got Right:
+The network effect thesis played out by and large as expected. Despite de-dollarization headlines, the dollar’s share of global trade invoicing stayed above 80%. SWIFT remained dollar-dominated. When crisis hit (COVID, Ukraine), everyone fled to Treasuries. The denominator didn’t budge.
+
+We predicted China’s banking system would stay stuck in quasi-insolvency, hindering any RMB challenge. Four years later, property developers have defaulted on hundreds of billions, Evergrande liquidation remains unresolved, and Beijing is still paralyzed between fixing banks, defending the currency, or maintaining growth.
+US tech and financial dominance only strengthened. Equity markets went from 55% to over 60% of global market cap. The AI revolution is almost entirely US-centric: Nvidia, hyperscalers, model leaders. Every major capital pool benchmarks in dollars and overweights US assets.
+
+What Surprised Us:
+Stablecoin adoption happened faster than we modeled. Tether went from $40B in 2021 to $200bn+ today, with most growth from EM users seeking dollar access. We underestimated how quickly crypto would transition from speculation to wealth storage for people escaping broken local currencies by pegging not to Bitcoin but to dollars.
+US regulators shifted from “ban stablecoins” to “integrate stablecoins” faster than expected. The establishment doesn’t fear stablecoins; it wants to leverage them to embed dollar dominance in the next generation of financial products.
+The Core Thesis Strengthens:
+What looked like de-dollarization at the official level (central bank gold purchases, BRICS summits, yuan trade deals) was overwhelmed by re-dollarization at the grassroots. Stablecoin adoption. Continued trade invoicing. Asset allocation. The denominator got stronger, not weaker.
+Today we’re going to revisit this debate, look at what the data actually shows, and explain why the structural barriers to displacing dollar dominance remain insurmountable.
+
+Part I: What Reserve Dominance Actually Is
+Most dollar commentary confuses three things: being a reserve asset, being the denominator, and being money-good.
+The real definition: a reserve asset is something that other people’s money treats as money. It’s a network effect. A Schelling point. The ultimate coordination problem with phase-shift dynamics - stickier than expected in good times, faster-shifting in bad.
+When Germany sells cars to Japan, they don’t want yen (limited use) or RMB (capital controls). They want dollars because everyone else wants dollars. More trade in dollars creates more reserve demand, more market liquidity, lower transaction costs, more trade in dollars.
+
+The dollar isn’t just a reserve asset. It’s the measuring stick we use to describe economic reality. When you hear “China’s GDP is $18 trillion” or “AI will be a $15 trillion industry,” the unit is always dollars. Every spreadsheet, valuation model, and risk framework runs in dollars.
+Breaking this requires coordinating a simultaneous switch by enough players that the network tips. That almost never happens peacefully. It requires the incumbent to catastrophically fail while a superior alternative waits.
+Next time someone predicts dollar collapse, ask: “Relative to what?”
+
+Part II: How Reserve Currencies Are Won and Lost
+History is clear: reserve currencies live in the Rimland, not the Heartland.  As we discussed in ‘Don’t Invade the Heartland’:
+
+The Rimland is coastal maritime powers - Europe, Middle East, South Asian coasts, East Asian trading cities, the Americas. The Heartland is interior Eurasia - Russia, Central Asia, inland China.
+The Rimland has structural advantages: Maritime trade creates natural hubs for capital flows. Dense trading cities breed competition and innovation. Plural political systems let capital escape if threatened. Merchant cultures develop sophisticated financial tools to manage risk across distance.
+The Heartland has land, resources, manpower, strategic depth. But capital is trapped. Exit is hard.
+Athens controlled Aegean trade through naval power. Rome’s denarius worked across an empire that made property rights trustworthy. Italian city-states pioneered modern banking. The Dutch created the Amsterdam bourse and proto-central banking. Britain had the Royal Navy and the City of London. Each dominated trade routes and provided open capital markets.
+
+The US formalized what industrial power already implied at Bretton Woods. The pattern holds: maritime trading powers with open capital markets, robust legal systems, and capacity to secure trade routes become reserve currency issuers. Land empires with closed systems and trapped capital don’t.
+This isn’t ancient history. It’s the structural reason why Beijing faces an uphill battle regardless of how large their economy grows.
+
+Part III: The Visual Evidence
+Here’s what dollar dominance actually looks like:
+Pricing Dominance
+80%+ of global trade invoiced in dollars. When Germany sells to Japan: dollars. Even transactions that never touch US soil.
+
+Asset Dominance
+US equity and bond markets: 60%+ of global investable assets. Want to diversify? You’re still thinking in dollars.
+
+Savings Dominance
+
+Emerging market sovereign debt: 68% issued in dollars. Even when they borrow from each other.
+
+Payment Dominance
+Dollar share of SWIFT: 48% of all cross-border transactions. The RMB peaked at 4% in 2015 and hasn’t budged since.
+
+Transaction Dominance
+
+Every currency trade: 88% involves dollars on one side. Local currencies trading against each other? They convert through dollars first. Why? Market liquidity. The deepest market for any pair is [X/USD] and [USD/Y].
+
+Debt Dominance
+The majority of global credit to non-financial sectors: denominated in dollars. Not just trade flows but the actual stock of debt.
+
+Reserve Dominance
+Central bank reserves: 58% dollars. Down from 72% in 2000, but that’s because the dollar got stronger, not weaker. China’s currency swaps across 40+ countries? Mostly unused. Fed’s unlimited swap lines with major allies? Actually drawn in crises.
+
+Digital Dominance
+$200bn+ in tokenized dollars. Tether alone is now a top-15 holder of US Treasuries. Crypto didn’t kill the Fed; it gave it a digital yield curve.
+
+Physical Dominance
+
+$1T+ in physical dollars circulating outside the US. The street denominator for Argentina, Lebanon, Zimbabwe, anywhere local currency fails.
+
+Part IV: Why the Alternatives Failed
+China made tiny inroads in pricing (some commodity contracts), almost none in assets (foreigners don’t want Chinese exposure), and negative progress in savings (stablecoins pull EM wealth into tokenized dollars).
+The structural barrier: You can’t be a reserve currency with capital controls.
+The dollar works because dollars move anywhere instantly, you can buy almost anything, legal protections are predictable, foreigners can exit. The yuan: capital controls limit flows, assets are claims on an opaque party-controlled system, property rights are contingent on party favor.
+Fourteen tankers of Russian oil sat off India’s coast in early 2024. India won’t pay in dollars (sanctions risk). Russia doesn’t want rupees (no use case). Deal stuck.
+Digital yuan? Hundreds of billions in transactions, mandatory for some state workers. But it’s primarily a surveillance tool, hamstrung by the same capital controls as analog yuan.
+Belt and Road? $1T+ committed. Borrowers convert yuan to dollars immediately to pay contractors. Result: shaky loans without a stable offshore yuan system.
+mBridge? Technically interesting, might reduce some friction. But doesn’t solve “what do you hold as a safe asset?” Commodity pricing in yuan? Sellers convert to dollars when they can.
+The Fatal Contradiction
+The world needs dollars to function → US must run deficits to supply them → Deficits create debt concerns → Debt concerns undermine confidence → But everyone still needs dollars.
+This is the Triffin dilemma. It creates long-term tensions. But short-term, it makes dominance harder to dislodge because everyone’s trapped in the same system.
+
+Part V: Crypto Saved the Dollar
+The genuinely surprising development of the past four years: the one technology that could have challenged dollar hegemony instead reinforced it.
+Stablecoins are Eurodollars for the digital age. Each USDT transaction is a vote for dollar hegemony. Tether and Circle combined now hold more Treasuries than most countries. They’re extending dollar reach into jurisdictions where traditional banking can’t or won’t go.
+
+US regulators figured this out. The shift from “ban stablecoins” to “integrate stablecoins” happened fast once policymakers realized: these aren’t competitors to the dollar. They’re distributors of the dollar.
+EM users fleeing broken local currencies chose to peg to dollars, not Bitcoin. Venezuelan savers, Lebanese depositors, Argentine inflation refugees, all voting with their capital for tokenized dollars.
+The crypto revolution didn’t end the Fed. It made the Fed’s job easier.
+
+Part VI: What Could Actually Kill the Dollar
+The evidence is overwhelming. Network effects are powerful and path-dependent. Sterling-to-dollar took two world wars and a superior successor. We’re nowhere near that shift.
+But there is one scenario where dollar dominance erodes faster than models predict.
+Taiwan Tests Credibility
+China wants Taiwan for the obvious reasons: TSMC’s chip fabs, breaking the First Island Chain, all that. But the deeper play is testing whether the US still means what it says.
+Think about it from Tokyo or Seoul’s perspective. If Washington won’t defend a rich, democratic, strategically critical partner it’s been implicitly backing for seventy years, what’s an alliance with America actually worth?
+The dollar doesn’t just rest on the size of our economy or the depth of our capital markets. It rests on the belief that the US defends the system it built. Not out of charity but out of self-interest in maintaining the rules-based order that made American dominance possible.
+If Japan, Korea, Southeast Asia watch us abandon Taiwan, they won’t suddenly start using yuan. The structural barriers we’ve discussed don’t disappear. But they might start hedging differently. More gold in reserves. More deals cut on Beijing’s terms. More acting like we’re back in the 1920s when nobody was quite sure who ran the system.
+That’s the scenario where dollar dominance erodes faster than the models predict. Not because China built something better. Because America stopped showing up.
+
+The Real Threats Are Domestic
+The serious threats don’t come from Beijing’s currency initiatives. They come from whether America can still do the basic functions of a hegemon. Can we educate the next generation? Govern despite polarization? Handle a major war without exposing dysfunction?
+Here’s what’s weird: the dollar system is bigger than the US alliance network. Narco groups, sanctioned oligarchs, Gulf monarchies that actively dislike US policy, all use dollars. You can be outside the US security umbrella but inside the dollar balance sheet.
+Short-term, that makes the system harder to abandon. Long-term, it creates a vulnerability. If enough players decide they need to exit both the security and financial umbrellas, they’ll start building alternatives.
+The question isn’t whether China can build a better system. It’s whether America screws up badly enough that people start looking for exits even knowing the alternatives are worse.
+Conclusion
+The de-dollarization narrative gets the mechanism wrong. It assumes rational actors will coordinate away from the dollar because of deficits, sanctions, or geopolitical tensions. Yes, these are long term problems eating away at our edge, but coordination problems don’t work that way. Sterling didn’t die because everyone agreed it was time for a change. It died because Britain lost two world wars and the US emerged as an unambiguous superior alternative.
+We’re not in that world. No one has the combination required: open capital markets, rule of law, military capacity to secure trade routes, and an economy large enough to supply the world’s reserve needs.
+So we still live in a world of dollars. The denominator hasn’t budged. If anything, it got stickier. The real risk isn’t external competition. It’s whether the US stops defending what it built.
+That’s the game. Everything else is noise.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. Opinions contained herein are solely my own and do not represent the views or perspective of any of Rose’s clients, investors, or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security. Nothing herein is intended to provide tax, legal, or investment advice. You are solely responsible for determining whether any investment, strategy, security or transaction is appropriate for you. Consult your business advisor, attorney, or tax professional.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

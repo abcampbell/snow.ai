@@ -1,0 +1,127 @@
+TITLE: Silver Moon
+SUBTITLE: A month ago was 45%
+DATE: 2026-01-25
+
+It’s been a month since our last missive on silver.
+A month ago was 45%.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Remember when I said it was about to get scary?
+In the past year, the silver trade has gone from a backwater, to an interesting bull run, to a generational move. The dynamics we laid out years ago — inelastic demand from solar, inelastic supply from mining dynamics, Veblen-like speculative flows, strategic buying from investors diversifying out of dollars, capital flight from EMs with questionable banking systems, and strategic stockpiling — are all in full flight.
+And yet, the rally feels less like a party and more like a doomsday clock. Not for silver — for the dollar and the global order that’s been built on it. An indicator that the world our children will inhabit will look nothing like that of our parents.
+Options are pricing >4% daily moves for the next couple months, and 3% moves for the foreseeable future. This has been backed up by realized vol. The only two times in recorded history where silver was realizing more volatility were 1981 during the Hunt squeeze, and the American Revolution (where the vol was the local currency collapsing vs the pound, not the metal moving).
+
+Gold vol has picked up too — consistent with the broader debasement trade, diversification flows out of EM currencies, and folks hunting for alternatives to Treasuries in their reserve portfolios.
+Long story short: We’ve diversified back into gold, liquidated a little over half our butterflies when they went through the middle strike last week, and are maintaining a long position.
+
+While keeping our shorts on US stocks, US bonds/credit, and a small long dollar position to hedge some of the short dollar embedded in our metals exposure.
+
+What’s Driving This
+China capital flight remains the core short term driver in a market with a structural supply deficit from solar/AI demand.
+Remember how we got into this trade — hunting for assets that would appreciate from Chinese capital flight. Including recycling, there’s only ~1bn oz of silver supply per year. At $100/oz that’s a $100bn market. The Chinese money machine prints around $3tr a year in bank deposits. Now that the secret is out that property is not a safe store of wealth, you only need a tiny shift in savings behavior to break the silver market.
+That’s what you’re seeing.
+
+If you’re a rich Chinese household, do you want more money in a zombie banking system with trillions of hidden losses? Or are you okay buying physical silver at elevated levels and risking a 30% drawdown? The answer is obvious when your alternative is a deposit in a bank that’s technically insolvent.
+Chinese property bonds are selling off again. Equity in our “worst banks in China” basket is rolling over.
+
+Industrial Bank or The Worst (Big) Bank in China (2021)
+India and the Middle East are piling in too. If you're an Indian oligarch, do you want to hold wealth in a currency down 20%+ vs the dollar since 2020?
+
+European institutions are finally waking up. If you're a European pension fund with 40% in US bonds and stocks — many illiquid and overmarked (cough: PE, VC, private credit) — you've been underweight metals for years. Now you have political reasons to diversify AND your investors are asking why you missed the move.
+
+Official purchases feel inevitable. Asian demand seems inexhaustible. The rebalancing trade that put brakes on retail demand at year-end is behind us. ETF flows are strong but still below historic highs.
+At this point, it feels like a matter of when, not if, governments start building strategic silver reserves.
+
+Why We’re Still Long
+The premium persists.
+Shanghai: $114/oz. COMEX: $103/oz. That’s a 10%+ premium. Persistent. Structural.
+
+When physical diverges from paper like this, one of them is wrong. Historically, it’s not physical.
+COMEX inventories are crashing.
+At the current pace of depletion, COMEX will hit historical lows in July and be functionally exhausted by September.
+
+Hard to think that far ahead in a 70 vol market. But the direction is clear.
+ETF flows still have room.
+US silver ETF shares are climbing but remain ~20% below 2021 peaks. We’re not at euphoria yet.
+
+Specs aren’t crowded.
+Western specs have actually reduced longs and attracted shorts as prices blew through all-time highs. Positioning isn’t extreme.
+
+Miners are lagging.
+Miners are chasing but still underperforming the underlying commodity. There’s probably catch-up growth if energy stays cheap (watch Hormuz). We’re long junior miners via stock, not options — vol on the miners looks expensive relative to realized.
+
+The AI Acceleration Re-Accelerated
+Claude Code and its imitators /forks (Codex, Ralph Wiggins, Clawdbot) are demonstrating what 'agents' actually look like. Less about intricate workflows, more about crossing the threshold of trust where you give a machine total access to your computer, files, and applications. Hackers and hobbyists are rushing to buy Mac Minis. I've built an agent framework (releasing this month, hopefully). Memory is sold out. Rental rates are spiking while traditional SaaS is puking.  Maybe software ate the world and then the GPU ate software.
+
+The cashflows will take a while, but the machines are here. More machines means more data centers. More data centers means more power demand. More power demand means more solar.
+More solar means more silver.
+
+What Could Go Wrong
+Dollar strength is the near-term risk.
+The recent move was exacerbated by dollar weakness. If strong US growth continues, a lot of 2yr easing could come out of the curve, pushing the dollar higher.  Dollar weakness over the past couple of days definitely exacerbated this last upward move.
+
+Dollar up + elevated prices = weak hands puke. The specs who chased above $100 aren’t the same as the Chinese households who’ve been accumulating since $30. Weak hands will fold on a sharp reversal.  If this chart below is right, we’re seeing extremes in the disjoint between metals prices and break even inflation rates.  This could re-align through higher rates/dollar and lower metals prices.
+
+Silver is now cutting into solar margins.
+At $103/oz, this is no longer a rounding error for panel manufacturers. We’re getting close to the pain threshold.
+
+At $28/oz (2024 average), the industry made $31bn. At $103 today, they're down to maybe $8-10bn. The breakeven is $134/oz — that's only 30% away. In a 70 vol market, that's not a comfortable cushion.
+Copper substitution is accelerating.
+We’re now $22 below the $125 level where copper conversion payback drops below one year. At that point, every board meeting becomes a conversion discussion.
+
+The economics are screaming "convert now." But physics still says 4 years minimum to get halfway there. That's the window.
+
+Where does marginal supply come from?
+Not miners — inelastic, takes years. Not shorts — this is a physical market, you can’t issue more metal like you can shares of an expensive stock. That leaves recycling and jewelry melting. If anyone has good names in silver recycling, hit me up.
+
+What We’re Watching
+The tells:
+Shanghai premium persisting = structural demand, not noise
+
+COMEX inventory pace = if it accelerates, front-month squeeze risk rises
+
+Dollar direction = strong US growth pulls up DXY, shakes out weak hands
+
+Miner catch-up = when miners start outperforming spot, retail is arriving
+
+Official announcements = first central bank to announce silver reserves triggers a scramble
+
+The framework:
+Watch the flows, not the price.
+If Eastern physical demand stays bid while Western specs puke on dollar strength, that’s accumulation. Buy the dip.
+If Eastern premiums collapse while COMEX inventories stabilize, the squeeze is unwinding. Take profits.
+
+The Trade
+Prices are high. Upside vol remains bid.
+We liquidated half the butterflies when spot went through the middle strike. Took profits on the structure that was designed for exactly this move.
+Remaining position:
+Long gold via stock and call spreads
+
+Long silver via stock, call spreads, and rolled butterflies
+
+Long junior miners via stock (not options — too expensive)
+
+Long dollar via UUP to hedge metals exposure
+
+Short SPY, HYG, TLT via puts and stock
+
+We’re long the COMEX front end (March) and short June — playing the inventory draw. May need to roll.
+Net-net: Stay long, but via options. Roll up your strikes as spot moves. Wait for official and institutional buyers to catch up to the price action.
+
+Bottom Line
+We’re slowly reducing delta as price goes parabolic. But until we see some combination of:
+a) China proactively dealing with the property debt crisis 
+b) A shift to fiscal responsibility in the US 
+c) A more peaceful world (Ukraine, Taiwan, Iran) 
+d) Some emerging deal between non-US western elites and the US
+...we’re holding the long.  Though with some downside protection.
+The dynamics that got us here — capital flight, debasement, solar demand, supply constraints — haven’t changed. They’ve accelerated.
+Silver at $103 isn’t the end. It might not even be the middle.
+And we’re starting to see these same dynamics bleed into other metals. Copper in particular is getting a lot of attention from folks doing the back-of-the-envelope math who missed the silver move. Less dramatic setup — copper doesn’t have the same monetary/Veblen characteristics — but the AI power demand story is real and the supply constraints are similar. We’re long copper too. More on that soon.
+To the moon, gents.
+
+Appendix: Volatility Surfaces
+
+DISCLAIMERS
+Numbers subject to revision — I wrote this in a few hours before futures opened. Charts for education only. Not financial advice. These views are my own, not Rose’s clients/partners/investors. Past results ≠ future results. You can lose everything. Consult a professional.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

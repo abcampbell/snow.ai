@@ -1,0 +1,40 @@
+TITLE: Food vs Oil
+SUBTITLE: Investor Update - March 29th, 2020
+DATE: 2021-11-09
+
+COVID + OPEC = Deflation 
+While on its own COVID19 would be plenty painful, what's interesting is that this massive contraction in energy demand is hitting at the same time that the OPEC + Russia cartel is breaking down and we are getting a large expansion in energy supply.
+Stay Home.  Don't fly to the Olympics.  Don't spend the weekend going to the outlet mall.  And Coachella? Not happening.
+Meanwhile, at least on paper, the Saudi's are prepared to pump until they kill the competition.
+So, what happens when you have a lot of oil no one wants on the same day investors (and corporates, and households) are rushing to cash?
+Dollar Squeeze and Deflationary Markets.  Twin pillars of a financial risk   
+I don't care about your business prospects, I just want cash today pls thanks.
+
+Two weeks ago we sold equity volatility.  At the end of last week, we bought back our short.  Up 1.5% in 7 days on one trade isn't bad in these markets.  Now we just need to wait out the short squeeze, before we go (probably) go lower.
+Food vs Oil
+All this talk of a potential Great Depression got us thinking about (relative) commodity price swings.
+See, there's a little energy in everything, and food is no different.  
+It's not just the cost of plowing the fields, or transporting the goods to market.  Due to ethanol, and a host of other ways we turn biological energy back into mechanical energy, to some extent the calories in your dessert are now direct substitutes for the calories in your gas tank.  
+
+Then we look around, we see a lot of people worried about where they are going to buy food, and if the store will have enough in stock when they get there.  
+Whereas we don't really see any of that going on with fuel.  Not too many gas stations rationing out the gallons these days.
+But if there's oil in the food, and food in the oil, then you might wonder, when do those things differ, and if so how and when?
+So we did that analysis.  It's a little rough, and relatively 'proprietary' as a result, but the outputs are interesting.
+If I told you I had a portfolio that beat the market (in this case, the market for commodities) in a convex way in 1986, 1994, 1998, 2008 and 2015, you'd probably be interested.  
+If I told you that outperforming financial product was a basket full of cocoa, wheat and sugar, you might stop to pause and think. 
+
+For example: the price of piglets in China is up 5x in 18m and Orange Juice has rallied 20% in the last 10 days.
+Breakfast just got more expensive, even if you are eating at home. 
+
+Which got us thinking about countries, and which countries might not be well positioned for the next 12m.  In particular which countries need a lot of food, and use a lot of oil to pay for food they import.    
+Russia being one obvious example, but they just took a 20%+ write down in the Ruble so maybe a little late.
+
+The Saudi Arabian Riyal on the other hand, is still basically priced to perfection.  As if there's no chance that they need to re-evaluate the dollar peg. And maybe that's right, and everything is good with the Kingdom's Balance of Payments.  But when you promise to pump till prices for your primary export go negative, we might be forgiven for not taking the Kingdom's word for it.  
+Given the pricing, betting against the peg looks like a free option against more COVID, more pain in oil and more deflationary and dollar squeeze dynamics.
+
+Consistent with this fundamental view, last week we started shorting Saudi banks through the ETF KSA  (We'll look to lay this view off when the pricing above gets to 1998/2015 levels).    Toe in the water, pending some deeper research.
+Of the top 10 equities in the basket, 6 are banks.  
+
+When a peg breaks, usually it's because of liquidity stress originating in the local banking system.  The same financial institutions tasked with intermediating the demand and supply for local currency vs the rest of the world can't handle the capital flight.  Sometimes when locals try to get their money out at the same time foreign investment dries up, policymakers are left with the tough decision of "save the peg" vs "save the banks".  We aren't there yet with Saudi, but it's early days..
+In conclusion, if your book is (still) exposed to dollar squeeze dynamics or the oil deleveraging blues, a little short Saudi might add some much needed diversification.  For those trading with an ISDA, you can probably find better than 10:1 odds in options markets by betting against the Riyal-Dollar peg.  
+Happy hunting.

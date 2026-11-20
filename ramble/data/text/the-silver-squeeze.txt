@@ -1,0 +1,165 @@
+TITLE: The Silver Squeeze
+SUBTITLE: How Solar Threatens a Decade of Deficits
+DATE: 2025-02-11
+
+Today we're going to make a simple but consequential case: demand for solar energy has already pushed the silver market into a structural deficit that, barring radical technological breakthroughs, will persist and likely deepen over the next decade.
+
+The math is straightforward but striking. Solar panels now consume one in four ounces of silver mined globally. Even at current solar installation rates - before factoring in any AI-driven surge in energy demand - we're looking at a supply-demand gap as large as the entire elastic (price-sensitive) portion of silver supply. And unlike most commodities, where higher prices reliably destroy demand, silver exhibits Veblen-good characteristics in times of stress - meaning investment demand often accelerates as prices rise.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Let's break this down step by step:
+
+We'll start with supply - a relatively simple story that forms the root of our problem. Silver production is remarkably inelastic, with 72% coming as a byproduct of other metals. This means even as prices rise, supply struggles to respond.
+Then we'll examine demand, particularly the explosive growth in solar usage, and make some reasonable projections for the next decade. Finally, we'll walk through various scenarios for how this gap might be resolved - from technological substitution to price-driven demand destruction - and explain why we believe significantly higher prices are the most likely outcome.
+The Supply Side is Simple (and Inelastic)
+You can think of global silver supply as roughly 1 billion ounces annually, coming from two sources:
+Below-ground supply (mining) - about 800 million ounces per year
+
+Above-ground supply (recycling and 'destocking') - providing an additional 15-20% of total supply
+
+What makes silver unique - and problematic in a world of rising industrial demand - is that mine supply has actually fallen over the past decade, despite prices well above production costs. This decline comes after a century of growth, where production increased roughly tenfold from 1900 to 2000.
+
+The key constraint is structural: more than 70% of silver mine production comes as a byproduct of copper, lead, tin, and zinc mining. 
+
+Link
+This makes silver supply what economists call "extremely inelastic" - meaning it responds very weakly to price signals.
+
+Link
+Even the "elastic" portion of supply has been shrinking, as mine’s degrade, and production flatline/sinks pretty much everywhere but Mexico.
+
+The historical dominant player.
+
+Though we see green shoots looking at more recent data, where higher prices look to finally be leading to higher Peruvian supply.
+
+Over the past ten years supply from Peru, the US and Australia has fallen from 35% of global supply to close to 20%.  Less than the amount demand for silver is currently consuming.
+
+% World Silver Supply
+Additionally, traditional sources of non-mine supply have largely dried up since 2010 - the last time governments or hedgers provided significant supply to the market.
+
+This supply picture is unlikely to improve meaningfully in the near term:
+Mine depletion and declining ore grades continue to pressure primary supply
+
+Labor and operational challenges persist in key producing regions
+
+Development timelines for new mines remain long
+
+Traditional above-ground sources (government sales, hedging) remain absent
+
+Looking forward, our bottom-up (by country) and top-down (by trend) analyses suggest mine supply will remain roughly flat for the next decade. Even assuming aggressive growth in recycling (50% over ten years), total supply growth will be minimal.
+
+This supply inelasticity means that any significant increase in demand will need to be resolved primarily through higher prices - either to incentivize more recycling or to destroy demand. Unfortunately for the market, we're seeing exactly the opposite: structural demand growth that's remarkably price insensitive.
+
+The Demand Side is Dominated by Technology
+Gone are the days when silver demand was driven primarily by photography and silverware. Today's silver market is fundamentally about technology - specifically, the technology that will power our energy transition. The numbers tell a striking story: industrial demand, particularly from electronics and solar, now accounts for 40% of total demand and a staggering 60% of mine supply.
+Let's break down the numbers:
+
+Solar's Surging Appetite
+The biggest shift has been in solar demand, which grew by 64% in 2023 alone, surpassing jewelry as the single largest source of silver consumption. This isn't a temporary surge - it's a structural shift that's likely to accelerate.  In our forward estimates we hold solar demand growth stable, though this is likely to be a significant underestimate and a risk to our projection.
+
+For more bullish estimates for total solar investment, please see our prior work here:
+
+The math here is compelling but concerning. Modern solar panels typically use between 10-20mg of silver per watt (though newer HJT and TOPCon technologies are actually more silver-intensive). At current installation rates of ~600GW per year, this translates to around 200 million ounces of silver annually - or roughly 25% of global mine production.
+
+The Technology Triple-Threat
+The solar story gets more interesting when you consider three competing forces:
+Overall solar installation rates are rising dramatically
+
+Efficiency improvements are reducing silver needed per watt
+
+New high-efficiency technologies (HJT, TOPCon) actually use more silver
+
+The Substitution Question
+The obvious question is: why not simply substitute away from silver? The reality is more complex. While copper substitution is technically possible, the timeline for widespread adoption is longer than many realize.
+
+After extensive research and conversations with deep research, we believe meaningful substitution is unlikely to provide relief before 2030. Owing to the need to retrofit existing production channels, even though early returns suggest in the long run silver will face material demand for copper here.  Even then, the transition will be gradual - meanwhile, solar demand continues to grow.
+Investment Demand Acts as an Accelerant
+Here's where the silver market gets really interesting - and why it's more complex than a simple industrial commodity story. Unlike most materials, silver demand often increases with price, particularly during periods of market stress or monetary uncertainty.
+The Veblen Effect in Action
+Silver shares a unique characteristic with gold: it can act as what economists call a "Veblen good," where higher prices actually attract more buyers. This creates a potentially explosive dynamic when layered on top of inelastic industrial demand.
+
+Current Market Positioning
+The institutional backdrop looks increasingly supportive:
+Long-dated options are showing unusually high implied volatility (55 vol vs historical realized in the 20-30s). Meaning there is demand for deep out of the money calls.
+
+ETF borrowing costs are spiking (now 10-13% vs historical 2-3%)
+
+Maybe the market is doing the same math we are.
+
+Physical premiums in key markets remain elevated
+
+Historical Context
+This wouldn't be the first time silver has seen dramatic price moves. Looking at previous squeeze episodes (1974, 1980, 2011), we can see how inelastic supply combined with investment demand can create powerful upward pressure.
+
+Inventories and Availability
+While overall inventories appear healthy on the surface, the picture becomes more nuanced when you dig deeper:
+COMEX registered stocks have declined significantly
+
+ETF holdings have drawn down over the past two years
+
+Physical bars for immediate delivery are increasingly scarce
+
+The key point here is that investment demand isn't just adding to industrial consumption - it's potentially multiplicative, capable of accelerating precisely when supply-demand fundamentals are tightest.
+Putting It All Together: A Structural Deficit Story
+Let's connect all these pieces into a forward-looking view. The basic equation is straightforward but profound: we're facing accelerating demand from solar (one of the few truly price-inelastic sources of demand) colliding with structurally inelastic supply.
+Base Case Projections
+Our modeling suggests three possible paths forward:
+
+With our conservative “Rose” estimate coming in somewhere between the low and middle estimates, with the deficit peaking this year and then efficiency and substitution slowly eating away at the gap over time.  
+
+Even in our conservative base case, holding everything but solar constant/on trend, we're looking at possible deficits of 200 to 100mz oz a year for a decade.  With 10yr forward estimates ranging from a market in balance to 800mn oz of deficits.
+Note, if you are looking for even more bullish estimates, you can find prior work where we tried to ballpark how much silver it would take to double US electricity production (ala Situational Awareness) coming up with answers like “all of last year’s silver supply” as a result. 
+
+The Gap Must Close
+As they say, water finds its level. In this context, that means the market must find equilibrium through some combination of:
+Higher prices driving increased recycling
+
+Technology substitution (copper replacing silver)
+
+Demand destruction in non-critical uses
+
+Why This Time Is Different
+Silver has seen shortages before, but several factors make the current situation unique:
+Solar demand is structurally inelastic (unlike previous industrial uses)
+
+Traditional supply relief valves (government sales, hedging) are absent
+
+The scale of energy transition demands is unprecedented
+
+Investment Implications
+The market appears to be slowly waking up to this reality:
+Long-dated call options are unusually expensive
+
+Physical premiums are rising
+
+ETF borrow rates are spiking
+
+We believe the adjustment will likely come through price, potentially driving silver to trade at a significantly higher ratio to both:
+Its production costs
+
+Its historical gold ratio
+
+Conclusion
+The silver market is heading into a perfect storm. Even in our most conservative case, holding everything but solar demand constant, we're looking at potential deficits of 100-200 million ounces annually for the next decade. The traditional pressure relief valves that balanced previous supply shortages - government sales, producer hedging, and demand destruction - are either exhausted or unlikely to function with solar-driven demand.
+This time truly is different, for three specific reasons. First, solar demand is structurally inelastic - panel manufacturers will buy silver at almost any price because it represents a tiny fraction of total costs but is essential to functionality. Second, the sheer scale of the energy transition dwarfs anything in silver's industrial history - we're talking about rebuilding the entire global energy infrastructure. Third, silver's monetary role creates the potential for a dramatic overshoot, as rising prices attract rather than deter certain types of demand.
+The market appears to be slowly waking up to this reality, with long-dated call options showing unusual premiums, physical premiums rising, and ETF borrow rates spiking. But the bigger implications may still be underappreciated. Silver's unique position - simultaneously a critical component of energy independence and a monetary hedge - makes it particularly attractive to sovereign buyers in an increasingly fractured global financial system. Even at $30/oz, silver trades at less than 1/80th the price of gold, despite being only 8x more abundant in the earth's crust. This disconnect between price and fundamentals appears increasingly unstable as we enter what may be the largest commodity supply-demand mismatch of the energy transition era.
+Till next time
+Technical Appendix
+1. Solar Panel Technology Evolution
+
+2. Department of Energy “Solar Futures” Build Projections
+
+3. Leading Silver Producers
+
+4. Silver Recyclers
+
+5. Copper Substitution Economics / Process
+
+ Which mines in America are producing
+
+Detailed Supply Demand (Silver Institute)
+
+Disclaimers
+There will be typos.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. As noted the views in this portfolio are not intended to maximize return and any use in a portfolio aught be considered in the broader context of your portfolio and investment needs and obligations. Please consult with a registered investment advisor if you would like financial advice, that’s their job.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

@@ -1,0 +1,122 @@
+TITLE: Gold Goes West
+SUBTITLE: The Bullion Market Breaks
+DATE: 2025-02-17
+
+Gold is doing something unprecedented: moving West. After a decade of positioning for Eastern demand, we're witnessing a dramatic reversal that threatens to break the market's plumbing.
+Our long-standing 'Gold in China' thesis rested on two pillars:
+Households seeking to diversify away from local bank accounts, LGFVs, and WMPs as the real estate bubble deflates, and
+
+The official sector moving to reduce its exposure to US Treasuries.
+
+So far, this thesis has played out as expected.
+
+Why haven't we discussed Western under-allocation to gold before? Two reasons: it's well-known, and arguing something is cheap because investors haven't bought it yet tends to backfire. Markets have enough reflexivity without that.
+Gold has a peculiar habit of making its most dramatic moves when nobody's watching. So it wasn't entirely surprising when people started asking this week, “Campbell, why is the physical gold market breaking?”
+The answer, though mundane, is simple:
+Gold is moving West.  
+For the first time in a long time, and it’s threatening to break the pipes.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Mechanics of the Squeeze
+Over the past month, U.S. demand for physical gold has strained the supply infrastructure. Traders, investors, and speculators are rushing to acquire physical bullion before Trump's tariffs take effect. Meanwhile, central banks—historically lenders of gold—have become net buyers, forcing private markets to fill the supply gap. And now, the machine is down.
+The physical gold market is showing stress in ways we haven't seen in decades:
+Gold lease rates have exploded from near-zero to over 4%
+
+Short-term rates have spiked to 12% - a 20-year high
+
+This means people are now willing to pay you interest to hold their cash rather than their gold.
+
+Gold leasing is typically a background operation in the market, with rates hovering near zero as central banks and bullion banks readily lend to each other. Not anymore.
+
+While this market doesn't represent a pure arbitrage between gold and cash, these preference levels for physical gold are unprecedented in the past 20 years.
+
+Meanwhile, more than 12 million ounces of gold have been airlifted from London to New York since November. 
+
+Swiss refiners are working overtime to recast 400oz London bars into 100oz COMEX-deliverable size. One former JPMorgan trader called it a "total dislocation.”
+
+The Bank of England, traditionally one of the world's most liquid gold sources, now has wait times of 4 to 8 weeks for withdrawals, compared to just a few days under normal conditions. Gold stored in BoE vaults trades at a $5 discount to gold in private vaults because it's stuck in a queue.
+
+This isn’t 2020, when supply chain breakdowns made it physically impossible to move gold. This time, the issue isn’t logistics—it’s ownership.
+What’s Different This Time?
+What makes this gold squeeze unique is its location: the physical market. Several key indicators tell the story:
+ETF holdings are flat/declining. Normally, gold squeezes coincide with a rush into ETFs like GLD. Not this time—ETF outflows continue. Retail isn’t driving this.
+
+Chinese price premiums have moderated, and for gold, turned to discounts.  This provides compelling evidence that the latest rally since November stems from Western buyers.
+
+Gold is flowing West. India is doing something unprecedented: exporting gold to capture the New York premium. Indian bullion vaults are 'nearly empty'—during what's normally peak buying season. When Indian jewelers start exporting gold, something fundamental is shifting.
+
+Central banks aren't lending. BIS gold swaps, a key source of liquidity for bullion banks, have collapsed from 500 tonnes to just 93 tonnes since 2022. Translation: the traditional lenders of last resort for gold are sitting this one out.
+
+While EM central banks continue to accumulate.
+
+This aligns with our framework, but faster than expected:
+Physical moving (though westward, surprisingly)
+
+Trust breaking down (visible in lease rates)
+
+Markets fragmenting along geopolitical lines
+
+Interestingly at the very moment when checking in with the gold in Fort Knox seems like an eminently reasonable thing to do.
+
+The Market at a Crossroads
+History suggests three possible resolutions to this lease rate spike:
+Everything normalizes – Lease rates fall, arbitrage closes, markets return to normal. This is the market's default expectation, but given central banks' reluctance to lend, it's not guaranteed.
+
+The paper market breaks – COMEX futures and London OTC trading disconnect from physical gold, forcing cash settlement or significant repricing of paper gold versus bullion.
+
+A structural shift in gold financing – Higher lease rates become the new normal, as central banks demand more collateral (or refuse to lend entirely), permanently increasing the cost of gold liquidity
+
+Our Take: While the current squeeze will likely resolve through price action—as most dislocations do—something deeper might be happening. The rush to beat Trump's tariffs explains the immediate pressure, but not the broader structural changes we're seeing.
+Key Indicators to Watch:
+Lease curve for near-term stress
+
+BIS gold swaps for central bank appetite
+
+Location spreads for market fragmentation
+
+Beware mean reversion trades—these dislocations can outlast your capital
+
+Traditional ‘arbitrage’ pipes should be able to resolve these demand and supply issues, it would take something much bigger to really blow up the gold market.
+Consider this: what if Fort Knox's gold is already leased out, showing up in those historically low BIS inventories? This would explain both the reluctance to audit and why central banks aren't lending. An audit now would be particularly revealing—if that gold is being quietly recalled for counting.
+Market Implications
+When gold lease rates spike while ETF holdings decline, it usually means a powerful player is moving metal regardless of cost—typically central banks. The current situation is more complex:
+U.S. buyers rushing ahead of tariffs
+
+European and Middle Eastern inventories draining
+
+Indian and Chinese flows stable Yet this combination alone has pushed gold to record highs.
+
+The critical question isn't whether gold prices rise further, but whether we're witnessing a fundamental transformation in how gold trades globally. Physical gold is acting less like a commodity and more like strategic collateral.
+Short-term Strategy
+While buying gold during a surge typically loses money, the current uncertainty makes gold optionality compelling. Contra to silver, market pricing of gold volatility looks unusually cheap given the structural stresses we're seeing.  Might be an interesting time to buy calls, over=hedge by selling a bit too much delta and play for a grind back down or a continuation higher.
+
+Watch List
+BIS swap numbers (the first sign of severe stress)
+
+Physical premiums across key markets
+
+Lease rate term structure
+
+Location spreads between major trading hubs
+
+The gold market is under unprecedented strain. While price action will likely resolve near-term pressures, the potential for structural change looms larger than many realize. Remember gold's tendency to surprise: just when consensus forms around one outcome, the market often moves in an unexpected direction.
+Till next time
+
+Appendix
+The curve appears largely normal - if we saw significant backwardation (near prices higher than far prices), it would indicate spreading stress. 
+
+For context, this curve's slope tracks the 'cost of carry,' primarily influenced by interest rates, and currently aligns with expected rate paths.  The historical relationship between gold swap rates and U.S. funding markets provides context for current dislocations. 
+
+Silver Futures Curve
+
+The data shows a clear trend of declining inventories, particularly in traditional banking channels. This supports our thesis of structural change in gold market dynamics.
+
+Current market pricing suggests less long term skew than usual, which is odd.
+
+Note historically “buy the London close, sell the open” was decent advice for trading London gold in an era with above average Asian.  This trend has reversed recently as demand from further west pulls up close prices relative to open.
+
+Disclaimers
+There will be typos.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. As noted the views in this portfolio are not intended to maximize return and any use in a portfolio aught be considered in the broader context of your portfolio and investment needs and obligations. Please consult with a registered investment advisor if you would like financial advice, that’s their job.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

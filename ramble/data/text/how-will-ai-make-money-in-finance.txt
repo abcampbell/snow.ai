@@ -1,0 +1,101 @@
+TITLE: How Will AI Make Money (in Finance)?
+SUBTITLE: Part 1: MiFID II and You
+DATE: 2024-07-31
+
+In today’s ramble, we’re going to start with a relatively simple question: “How will AI make money in Finance?”
+A broader version of this question has been getting a lot of play recently, as billion dollar investments in chips, infrastructure, training and compute fail to manifest billion dollar sales (for pretty much anyone other than NVidia).
+
+Not to be outdone, Sequoia and Goldman have gotten into the mix:
+
+So with all the smart set suddenly coming out as bearish AI, I’m going to make the bullish case.  
+Always a contrarian to a fault I guess.
+We’re going to talk about how AI can make money in finance, which is the other side of how finance can make money in AI (and what that means).
+We’re going to place this conversation in the context of around three decades of failure by the tech ecosystem of startups and Venture Capital (aka “California”) to build disruptive software products for financial services workflows (aka “New York’). 
+We’re going to talk about a little known regulation that came out of Europe almost ten years ago called MiFID II, which, when combined with the explosion of interface modalities enabled by AI, catalyzes a new kind of economic behavior.  One much less oriented toward legacy software business models (*SaaS cough SaaS*) and much more towards business models where users either pay directly for use / consumption or pay indirectly via things like data licenses or marketplace transaction fees.
+Finally, we’re going to talk about how, contrary to commonly received wisdom, this disruption at the application layer will actually sustain and grow legacy businesses in both finance and tech (think vendors like Bloomberg, tools like Excel, and yes, banks like Goldman Sachs), as AI adapts existing financial data workflows to radically increase the ability for data to move into and out of financial institutions.  We’ll close with some back of the envelope math that implies that yes, this is a trillion dollar question.  With a T.
+
+Well, now you have my attention.
+What does the future look like?  MiFID II and You
+Before we get to the money though, we’re going to have to talk about what MiFID II is and how it unlocks the kind of economic activity we’re going to talk about today.  If however, you are one of the ~200 or so of our 2k subscribers that I would guess already familiar with MiFID 2 please feel free to skip this rather arduous section! 
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+With that handwringing out of the way, let’s start with this handy introduction from ESMA in 2021 on the topic, and I quote:
+The cost of research is now ‘unbundled’. (ESMA 2021)
+
+From 2021 ESMA policy paper on MiFID II
+The short version is pretty simple: financial institutions can no longer give away research or data for free.  
+I’ll give you a minute to fully consider the implications of that before we talk about how it fundamentally changes the way we work with information below.  In the meantime, we’ll start by answering the question of: “who does this thing apply to?”
+Well, if you ask ESMA, they will tell you who is impacted: Anyone who produces research (aka investment firms or data sellers), consumes research (aka asset managers or data buyers) or is covered by the research done by either of those players (aka…every listed company on earth).  Hmm.
+Don’t believe me, ask ESMA.  Let’s start with another one of their docs:
+
+So if you work in finance, do business with firms who work in finance, or even just like have stocks in a retirement or brokerage account somewhere (yes 401ks and Robinhood count), then yes, we are talking about your life.    
+In small ways at the moment, and very large, and very obvious ways…in about 3-5yrs.
+This is where some of you will go “but Campbell this is a European regulation, how does this impact my American market?”
+
+Hi my name is ESMA and I’m here to regulate you.
+Which, for anyone in the world of finance is a relatively neophyte question.  Given the degree to which all major American investment firms have a European presence (aka raise money from European clients, do business with European counterparties, and participate in European markets).
+Don’t believe me, here’s the the dissention from Commissioner Uyeda of the SEC last year to the Chair Gensler’s (implicit) decision to enforcing MiFID II on US financial institutions by letting their prior no-action letter lapse (which itself is a mouthful).
+
+Aka, in layman’s term, game on.
+In case you were wondering, yes this also applies in the UK, according to the good old Financial Conduct Authority (FCA).
+
+So if you have an office in Europe, the UK or the US, it definitely applies to you.  Which when it comes to the world of money, means pretty much anyone.  
+If you are feeling confused, don’t worry that’s a normal response to financial regulation.  Here’s an example thread from Deutsche Bank employees. 
+
+So now that I have you convinced that yes, this thing pretty much covers everyone, let’s go back into this whole ‘unbundling’ concept, what does it mean, where did it come from, and what behavioral change among financial institutions does this cause?
+What does it mean to unbundle research?
+Well it means the person who’s business is say, selling you the financial service of buying Microsoft stock for you on the Paris Stock Exchange (Euronext) can no longer give away a bunch of free information / research / data / content about that stock, or any other stock that they are covering, as part of that deal.
+Too many conflicts of interest.  
+Instead of ‘bundling’ research with execution or advisory services (the former of which is usually free, the latter of which is vey very expensive), you have to charge for all the stuff that used to be part of the business.
+Why?
+Well it’s a pretty clear extension of a regulatory treatment on ‘soft dollars’ that came into play in the US in 1975.
+
+Story time.  See back on the Lehman trading desk, the broker clearing your trades could pull $20k in commissions from helping you executing a chunky order.  Just by simply pushing the button or making a call.  $20k.  Not bad for a gig that requires little to no formal education and a lot of the on the job training.
+Then after a week of big trades he’d take you out for a massive dinner and a game/show/whatever just because you decided to call him rather than his boy Danny, (who actually runs the exact same execution software, into the same execution broker dealer market for a competitor, and so is happy to pay you back in an even more outrageously expensive wine), just for looking his way.
+By the time I showed up on the desk in 2007, these quid pro quo ‘gifts’ (aka bribes) were limited to below  $50 around Christmas time, down from trips to Ibiza and tasting menus.
+So untangling this mess of incentives totally makes sense.  Especially when you scale it up and take into account that most of the people actually buying $20bn of bonds or whatever from whatever bank or funds are likely doing it ‘on account.’  Meaning for someone else.  Agents.
+aka folks managing “Other people’s money.”  As opposed to ‘permanent capital’ or ‘real money.’
+And so what looks like a quirky principle and agent problem at the level of 'can we let brokers take traders out to dinner’ is actually a huge doozy of an incentive problem when you widen the aperture and realize ‘the traders aren’t actually managing their own money, and are incentivized via XYZ byzantine compensation system which may or may not connect to getting a good price here or ‘best execution’ for those whom they are acting as fiduciaries on behalf of.
+The goal of MiFID II then was to remove this inherent quid-pro-quo that occurs where people buying and selling things in markets have a disproportionate incentive to prioritize the more established firm, the closer friend, or the broker who took them out on the town last night.
+ESMA then goes, well this is such a mess, we should stop letting brokers give away that stuff for free (and in doing so rationing it to the preferred fund managers), but make them charge for it.  Strip it out of the commission in the spread and set up a seperate payment account for it, that presumably the fund managers can pass onto their investors in the form of research fees.
+So anyway, good intentions actually here.  All around.
+Total disaster implementation wise.
+
+Why?
+Well. think about it. What that means in practice, is that it is illegal for people selling you investment services to give away their investment research for free.  You can no longer get a bunch of great research (pdfs, access to private dashboards, data print outs, data downloads, pricing sheets, research reports) for free, just by being a customer to the biggest banks in the world.  Now, take a moment and actually think about that. Think about all the little and big ways that you source what could be broadly be described as ‘research’ or ‘charts’ or ‘data.’  And then think about the biggest investment banks in the world talking to the biggest investment managers in the world about markets, and all the stuff that goes back and forth, all the free reports, and data dumps, and pricing sheets, and economics reports, and all of a sudden they can no longer give away data for free. 
+So you can imagine the response in the center of global capitalism, when the Americans, personified in the form of Gensler, you know, the Chair of the SEC, who goes, hey guys this actually conflicts with a bunch of regulation we did back in the 70s on so called ‘soft dollars’ which said that if you start charging for research / data you actually need to register as an investment advisor.
+Anyway, so now you have a problem, at least for everyone in Europe and the UK.  Which is all these banks really can’t give away research for free now (and to be clear, the banks aren’t even the largest players, just the most obvious ones after whom the rest of the financial system will follow). It’s gotta cost money.  So everyone goes into a scramble and starts setting up things called Research Payment Accounts (RPA), which is like a lot work, but basically means, now in addition to paying via price, or paying via spread, you gotta pay.
+
+Not a lot of investment managers wanted to use these things (good luck finding data on how much money was paid out via an RPA), because frankly, the whole thing sounds pretty confusing.  
+Rather than go through the hoops of charging those RPAs to their clients, investment managers did the rational thing.  The vast majority, and pretty much ALL of the major investment firms decided to pay out of pocket rather than set up RPAs and pass along those costs to their LPs.
+
+Which leads to higher costs for research and fewer analysts at the banks doing research: 
+
+Leading to lower headcount and a corresponding loss of ‘research coverage’:
+
+According to a post-MiFID II report from the FT shows research budgets down 20-30%, hitting smaller and mid sized banks disproportionately.
+
+So there you have it.  The Europeans, in forcing major investment banks to charge their clients for access to what was previously free research, have inadvertently changed the way that knowledge is bought and sold in finance.  Ironically this has led to radically less money and worse research for everyone involved.   But as research teams shrink, these banks have also continued to develop the very products that yesterday were a cost center, and tomorrow will be a source of revenue.  A cultural change that, in lieu of regulations like MiFID II might never have occurred.  A cultural change that will set the precedent to unlock a trillion dollar market not only for data and research, but knowledge and truth.
+
+Remember when it was called “Lehman Live”? :)
+Which brings us back to today and the problems that a) AI has in dealing with ‘truth’, and b) all tech startups have in bringing financial services kicking and screaming into the 21st century.
+Topics we’ll cover tomorrow, in a special double feature called:
+“California vs New York” 
+Till then.
+Links
+MiFID II (ESMA)
+Questions and Answers On MiFID II and MiFID investor protection and intermediaries topics (ESMA)
+Changes to UK MIFID’s conduct and organisational requirements (FCA)
+Markets in Financial Instruments Directive II Implementation – Policy Statement II (FCA 2017)
+Commission Guidance Regarding Client Commission Practices Under Section 28(e) of the Securities Exchange Act of 1934 (SEC)
+US Banks
+Expiration of the MiFID II No-Action Letter
+Equal Treatment for U.S. Investors (Harvard Law)
+GFMA Letter to Chair Gensler
+McKinsey says banks will cut $1.2 billion in research spending with MiFID II, a 30% drop
+MiFID II to Transform Investment Research Landscape
+MiFID II: One Year On (CFA Institute)
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

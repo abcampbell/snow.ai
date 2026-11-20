@@ -1,0 +1,133 @@
+TITLE: The Silver Attack
+SUBTITLE: Going Paid
+DATE: 2026-02-06
+
+For the past three years I’ve been writing about macro, geopolitics, and markets while working two jobs (more on that later). I’ve given everything away for free. That changes today.
+The free posts will continue. The philosophy, the geopolitical essays, the longer-form pieces on US-China competition. That’s not going anywhere. We’ll never stop rambling.
+What I’ve noticed as this blog’s audience grew is that more and more people came looking for advice on markets. Tactical takes. This is something I love to do, but it takes time, so that’s what’s going behind the paywall: trade ideas, portfolio frameworks, and market memos. How I think about positioning, risk, and when to get out — not just when to get in.
+What paid subscribers get:
+Subscriber-only posts and full archive
+
+Trade ideas and market analysis
+
+Community access
+
+What founding members get:
+Everything above
+
+Quarterly markets call
+
+More responsive Q&A
+
+Early notification of fund launches
+
+Pricing: $50/month or $500/year. Founding memberships at $750/year.
+This post is free. It’s a sample of what the paid content looks like. When I have the trade, you’ll get it behind the wall.  In the meantime, there’s so much noise here, and so much fog of war, I’m out of this market from a long / short perspective, and will leave my comex backwardation trade (which has some short delta) against what’s left of my up and out call spreads (which have some long delta remaining).
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+Going Hunting
+Over the past 24 hours, news hit the tape about a speculator out of China, based in Gibraltar, who accumulated a massive short in SHFE silver futures. The market dropped 17% in an hour while New York slept.
+Initially I discounted this. Oh, another rant about paper versus physical. People licking their wounds. I don’t want to sound like those people.
+So I went hunting.
+Start with the intraday chart. Pull up SAI1 (Shanghai silver) and SI1 (COMEX silver) on the same panel, normalized. Then zoom in on the move.
+
+SHFE underperformed COMEX by 6% during the crash.
+That tells you two things:
+The selling came from China.
+
+The seller wasn’t hedging physical or closing an arb.
+
+Now, looking at the normalize price (which is a better way to look than trying to line up price series with materially different closing periods in a market that is moving 10-20% a day, you might think the moves are just western players closing the arb.  Capturing the premium by going long COMEX, short SHFE.  If anything, the arb still looked tasty last night, so why not?
+
+Well, remember, if you’re selling to get the highest price, you don’t destroy the market. It’s not in your interest. If you’re trying to hedge physical or take the other side of a US long, you want a high price for your silver. So why sell in a way that crushes the premium you’re trying to capture?
+You wouldn’t. Unless you’re not hedging. Unless you’re attacking.
+
+The Math
+The trader is Bian Ximing. 
+
+He trades through Zhongcai Futures. 
+
+Chinese financial institutions and modern web design have a mutual non-aggression pact.
+According to Bloomberg data, his net short position peaked around 30,000 lots going into last week. The biggest short in the Chinese market.
+
+That sounds abstract. Let’s make it concrete.
+30,000 lots = 450 metric tons = 14.5 million troy ounces.
+That’s 1.8% of global annual mine supply. In one position. On one exchange.
+But here’s the number that matters: SHFE warehouse stocks sit around 420 tons.
+He is short more silver than physically exists on the exchange.
+And those warehouse stocks aren’t static. Combined Shanghai silver stockpiles have fallen 85% since 2021, from 7,500 tons to 1,133. The pool he needs to deliver from is draining.
+
+The Trap
+On February 5th, the SHFE restricted his account, along with five others. One month ban on opening new positions.
+Sounds like a slap on the wrist. It’s not.
+In futures, if you’re short and want to avoid delivery, you roll. Buy back your near-month contract, sell the next one out. But rolling requires opening a new short position in the deferred month.
+Which he now cannot do.
+His options: cover (buy back), or deliver physical silver at expiry. But his position is 107% of warehouse stocks. The silver to deliver doesn’t exist.
+Look at where the open interest sits. April has 225,000 lots. June has 130,000. Those two months are 61% of the entire market. 
+If he’s in April — and that’s the most liquid contract, so he probably is — he’s got weeks, not months.
+
+He can’t add. He can’t roll. He can only buy.  Though he was smart enough to only go short April out, meaning he won’t be asked to deliver any silver over the time period where he is restricted.
+
+The Curve
+Pull up the SHFE silver curve.
+Front month: 21,124 CNY/kg. Back month (January 2027): 17,598.
+That’s 17% backwardation. The market is paying a massive premium for silver now versus later. That only happens when physical supply is tight.
+He’s short the middle of the curve — and in doing so sent it into backwardation.  Shorts bleed on every roll. Except he can’t even roll.  He may not be outright short, he may be arbing COMEX-SHFE, which would mean his shorts in China are offset by longs in COMEX, but even so, he’s short margin in both places.
+The paper market says silver is crashing. The curve says there’s a shortage. One of them is wrong.
+
+The Short Capitulation
+Here’s what caught my attention when I pulled the positioning data.
+Firm (member) shorts: down 45% from the April 2024 peak. Non-firm (retail) shorts: lowest level since 2015. Down 74%.
+The entire short side of SHFE silver is gone. Everyone covered. Everyone except Bian.
+
+His 30,000 lots now represent 6.5% of all firm shorts. That percentage grows every day as the denominator shrinks.
+Every short that still exists is a future buyer. And the biggest one just got locked in a cage.  My bet is he lays low for the next couple of days, and then starts buying back now that the chart looks terrible.
+
+What I Don’t Know
+I’ll be honest. I can’t fully explain February 5th.
+Volume hit 1.3 million contracts. But when I pull the broker data, I can only find 30–40k lots of long liquidation across the major Chinese firms.   The major longs weren’t puking like I thought they were.
+
+The major shorts were actually covering — buying, not adding.  
+
+Which leaves two options:
+Non-members going short (which I guess could be western banks closing the arb)
+
+Folks successfully attacking the market and then getting out before the close of business (entirely possible.
+
+Most of the shorts look to have built their position going INTO the sell off, like Guotai.
+
+When the things you don't know start growing faster than the things you do, in an increasingly volatile market, it's time to let discretion be the better part of valor.
+
+Why I’m Flat
+The near-term and medium-term are pointing opposite directions.
+Near-term: risk-off is still running. Correlations going to one.  Silver sold off again after the US close tonight (but before Shanghai opened) mostly because stocks sold off (unless the bears are just getting creative).
+Crypto is getting destroyed. 
+SHFE longs — 600,000 to 700,000 contracts of them — haven’t fully capitulated. I can’t identify who’s selling or when they stop.
+Medium-term: the biggest short is trapped and can only buy. Short base at decade lows. 17% backwardation. Position exceeds warehouse stocks. April expiry is a hard deadline and western spec data (though lagged) doesn’t imply extended positioning.
+
+Going short here means picking up pennies in front of a steamroller. The steamroller is parked, but it’s still a steamroller. Bian has to buy 30,000 lots eventually.
+Going long here means catching a knife during a liquidation I can’t see the bottom of.  We said the weak hands would get flushed, we just didn’t go short fast enough.  Now the chart looks like death.
+
+wow
+So I sit. The setup isn’t going anywhere. He can’t escape. When risk-off clears, the asymmetry is obvious.  If there was a time to go short, it was before yesterday’s attack.  If there’s a time to go long, it’s when stocks find a floor and when they start buying back their short.  
+No crying in the casino.
+
+What to Watch
+Zhongcai Futures positioning in the daily SHFE data — that’s him
+
+SHFE warehouse stocks — currently ~420 tons, watch for draws
+
+April contract open interest as expiry approaches
+
+SHFE-COMEX premium — currently ~14%, normal is 0–5%
+
+Risk-off indicators — VIX, crypto, cross-asset correlations
+
+When the flush ends, I’ll be writing about it. That one will be behind the wall.
+
+This is what paid content looks like. Subscribe at $50/month or $500/year. Founding memberships at $750/year.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

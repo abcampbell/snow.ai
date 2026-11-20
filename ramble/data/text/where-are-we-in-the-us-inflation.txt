@@ -1,0 +1,38 @@
+TITLE: Where are we in the US inflation cycle?
+SUBTITLE: Energy prices have peaked, but inflation remains...
+DATE: 2022-10-13
+
+Hi folks, todays' video is 'How to make a bar chart in Rose in 30 seconds' featuring global inflation data. 
+
+Headline CPI inflation is well above 5% across the developed world. Greece and Spain at the top is no surprise.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Inflation in the emerging world is running hot, even outside of countries on the brink of hyper-inflation like Venezuela, Argentina, Turkey and Iran.
+
+Note the above is "headline inflation", which includes energy and food prices. Policymakers tend to prefer measures like "core" and "pce" basket indexes of inflation, which generally are less volatile, but lagging, indicators.
+
+Energy and food price inflation are particularly volatile, and exposed to short term demand and supply shocks, but price pressure in both looks to have peaked, and with it, headline inflation.
+
+The deflation in energy and food prices should flow through downward pressure on inflation going forward, barring any further supply or conflict related prices pressures. Knowing this made today's Core CPI report especially painful, as inflation beats expectations yet again.
+
+Meaning, we are now in the tricky part of the economic cycle where: 
+a) the Fed is still tightening 
+b) portfolios are hurting 
+c) inflation has peaked, but 
+d) inflation remains higher than target, and 
+e) labor markets remain tight. 
+Leaving the Fed no wiggle room.
+
+Meanwhile we know that there will be carnage in the housing market from the flow through from tightening. For example, mortgage rates are another 50bps higher than in this post, and home prices have barely moved.
+#HappyMonday ","username":"rosedotai","name":"rose","profile_image_url":"","date":"Mon Sep 26 17:00:02 +0000 2022","photos":[{"img_url":"https://pbs.substack.com/media/FdltmFRXoAMIEpZ.jpg","link_url":"https://t.co/iSDKUE6dII","alt_text":null}],"quoted_tweet":{},"reply_count":0,"retweet_count":0,"like_count":3,"impression_count":0,"expanded_url":{},"video_url":null,"video_preview_media_key":null,"belowTheFold":true}" data-component-name="Twitter2ToDOM">
+The bond market reflects these mixed signals. Still pricing in 'just another 100bps' before a return to the good old days. Problem is, unless Fed pushes the financial system into crisis, we are still a long way from 2% inflation.
+
+US unemployment below 4% begs the question: how much tightening, and how much financial chaos, is necessary until policymakers (feel) they have bested inflation? 
+
+Today's stock rally notwithstanding, our read of inflation and bond markets is 'more to pain to come.'
+
+Note this piece was originally posted earlier this week as a thread on twitter. Follow us there for this kind of work when it comes out.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION.  
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

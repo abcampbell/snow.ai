@@ -1,0 +1,56 @@
+TITLE: Remember Folks, Banking Crises are *Deflationary*
+SUBTITLE: It doesn't pay to short dollars into a financial crisis
+DATE: 2023-03-22
+
+There’s a meme going around that the end of the dollar is right around the corner.
+That the emergency liquidity provision by the Fed to the banking system represents a restart of QE, and this time, we will print out way to infinity, and the dollar will be trashed faster than an SF VC can tweet the Fed when their bank is failing.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Most prominently, this bet.
+
+As a former options trader the irony of a 40:1 bet that lasts 90 days and HAS NO STRIKE OR TRIGGER PRICE is a bit too much here.  
+As a former hedge fund manager, I wish I could make these kinds of bets all day.
+Thing is Mr Balaji has a point.
+archive.is/CtW1B… https://t.co/ucoN3PlxSU ","username":"balajis","name":"Balaji","profile_image_url":"","date":"Fri Mar 17 20:09:28 +0000 2023","photos":[{"img_url":"https://pbs.substack.com/media/FrcnepDaYAA-bxE.png","link_url":"https://t.co/5nnxaoW9db","alt_text":null},{"img_url":"https://pbs.substack.com/media/Frcnfs8akAExKIh.png","link_url":"https://t.co/5nnxaoW9db","alt_text":null},{"img_url":"https://pbs.substack.com/media/Frcng5maIAA12ZS.png","link_url":"https://t.co/5nnxaoW9db","alt_text":null},{"img_url":"https://pbs.substack.com/media/FrcniLSaMAEtI0d.jpg","link_url":"https://t.co/5nnxaoW9db","alt_text":null}],"quoted_tweet":{},"reply_count":0,"retweet_count":2600,"like_count":8156,"impression_count":0,"expanded_url":{},"video_url":null,"video_preview_media_key":null,"belowTheFold":true}" data-component-name="Twitter2ToDOM">
+It’s true, fractional reserve banking is inherently vulnerable to what we used to call a ‘scramble for liquidity.
+
+Thing is, noticing a thing, and understanding how it works (or will work in the future as conditions change) are very different things.  What looks like a bug to Mr. Balaji is actually a feature.  
+Imagine you could take $100 of shiny rocks and use it to support $2000 of spending? 
+Now instead of having to go find $100 more of rocks to finance $100 of spending, you just need $5.  Not bad when rocks are in short supply.
+
+So yes, the financial institutions that engage in this kind of behavior (call it leveraging or fractional reserve banking or just the modern financial system) are inherently vulnerable to ‘runs.’  Usually, the folks who have $2000 in the bank don’t all need it at the same time, so why keep $2000 of rock lying around?
+The problem occurs when all $2000 of deposits show up and ask for their money back.
+Yes this is a problem, but it’s in the “so what” that Mr. B ‘gets his linkages wrong’ (as we used to say at the old shop).
+See, turns out, pretty much the only thing we can say for sure about bank runs (or deleveragings more broadly) is that they are deflationary.
+Why?  Well, the process of deleveraging (and to a lesser extent monetary tightening) is one of destroying money.
+When $1000 of people ask for their money back, and the bank only has $100 of ‘money’ the bank is left with only two options.
+Ask other people for money to cover their liabilities, or 
+
+Sell assets.
+
+Problem with #1, is that if $1000 of folks are asking for their money back from your bank, they are probably asking other banks as well, and so it’s kind of hard to find people willing to lend you money (especially at old rates) in the middle of a bank run.  Leaving us really with only one option: selling assets.
+This drives down the prices of assets as liquidity leaves the system.
+As a policymaker, this isn’t a bug, its a feature!
+
+Looking at history of US inflation makes this even more clear.  
+Of the ~20 or so deflationary episodes in the last 200 years of economic history, 15 were a direct result of a financial crisis.  In fact they used to be so common we just called them ‘panics’ and people expected them every 5-15 years.
+
+So, while we still don’t know if ‘this one is different’ in terms of whether the stress in the banking system is truly systemic, what we CAN say is that if it is, it will be followed by deflation and not inflation.
+Now, there is a caveat here, specifically the example from emerging economies where banking crises lead to capital flight, and the very underpinning of the currency come under attack.  This is the model that Balaji likely has in his head.
+When you add in the moves from Saudi to sell oil in RMB, and ten the recent news that Russia will settle their trade in RMB, it’s certainty looks like foreign global powers are doing their darndest to undermine the status of the dollar as the global reserve currency.
+
+What these folks miss out on, is not only are the vast majority of global reserves still in dollars…
+
+But so is the VAST majority of emerging market debt.  (Note we’re moving fast here and so this need updating).
+
+Which, depending on how you count it, is on the order or $5 to $65 trillion globally!
+
+When other people BORROW in your currency, it means that the scramble for liquidity seen in banking panics creates urgent and emergency demand for dollars!
+This is why historically, in times of stress, the dollar APPRECIATES.
+
+In short, if you are worried about the state of the global financial system (as I am), you might not want to short dollars (yet).
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

@@ -1,0 +1,12 @@
+TITLE: Punter Portfolio Book - v001
+SUBTITLE: Start with protection...
+DATE: 2026-10-15
+
+Testing the pipes.  One leg at a time. Protection first.
+2.6% vol. 2/10 conviction.  Twelve positions across five themes, which given most of them are spreads means something like five trades. Short 14% stocks, long 4% commodities, long 4% bonds. That’s the (incomplete) punter book as of Wednesday night.
+Just back from the week long plus road trip across the country. Saw a lot of land. Took a lot of notes. Lots of potential for reindustrialization, and so much more. 
+Also had some time to think about what I want the book in this space to be, now that we had to hit the reboot button on this book for compliance etc. 
+The last time we laid out a whole book it was 125% net long, mostly a bunch of call options on agricultural futures, and I was “sleeping fine”. At some point we’ll go back and grade the trades. 
+In the meantime, this book runs at about a fifth of the vol of the stock market. 
+That’s by design, partially as we’re getting our heads back into markets and on the road the next couple of weeks, partly because we’re reconnecting the system pipes, and partially because it’s an opportunity to start fresh and build it back up from basics as people have been requesting.
+The other thing that’s different from last time is we’ll show the greeks. Last time it was a list of holdings and a thesis. This time it’s the actual risk report the book runs on, so you can see what it does when the market moves and what it costs per day to hold it that way, rather than a list of tickers.  Again, all works in progress, experimental etc etc.

@@ -1,0 +1,66 @@
+TITLE: There Are Bonds in the Singularity
+SUBTITLE: Bonds vs stocks as NYC vs SF
+DATE: 2026-10-01
+
+It’s gonna take us a little while to get back in the swing of markets here folks, so rather than jump right into a full portfolio, we’re going to reboot the world view more or less asset by asset. To show not just what the view is, but how we put views together, at various levels of confidence.
+Right now there are two big themes dominating everyone’s world view, the second being more or less the counter to the first.
+The first being FOOM.
+The SF idea that yes, we are somewhere in the singularity, yes things are about to get weird, and as a corollary, yes you pretty much want to be buying any and all compute that isn’t tied down right now.
+The second, call it the NYC idea, is that ugh, the nasty combo of
+a) a massive demand for capital to build all that compute
+b) the inflationary impact of conflict, and
+c) the death of the neoliberal consensus
+is doing terrible, awful, despicable things to bonds.
+
+The consequence of which, as we have covered previously, is pulling discount rates UP, which in turn drags DOWN the net present value of any cashflow priced into the future.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+When we wrote 'there are bonds in the semiconductors' this was our fundamental contention. Since then, bonds have sold off and stocks are mostly up/unchanged.
+
+Meaning the rise in stocks is in spite of the rise in rates. 
+
+Put another way, for equities to rally as bonds sell off, you need rapid increases in earnings, higher expectations for future growth, or both. Through June it looked like stocks were running on rising expectations/growing multiples. Since then we've actually seen extremely strong earnings growth, which has paid out the majority of those rising expectations.
+
+Semiconductor Stocks Since April, from LLM so worth checking…
+
+US Stocks Since May, also worth checking…
+There's a somewhat good version of this scenario, which we may be in the early innings of: the inflationary impact of the AI investment boom pulls up both inflation AND real growth (and subsequently real earnings). We would see this in markets as a declining correlation between bond and stock returns, more akin to the disinflationary markets we saw in 2000-2020 but from the other side. Whereas in the Greenspan era this negative correlation was the Fed easing in the face of declining risk asset prices, this could be the reverse. Rising risk assets representing real cashflows, which in turn pull up rates in a sustainable way…
+
+That good version is the Situational Awareness(tm) worldview. The notion, popular throughout SF, that the increase in model capabilities will not only lead to a VC funded investment boom, but a wholesale economic revolution.
+Then there’s the Citadel(tm) worldview, let’s call it NYC, which says there have been many investment cycles, and regardless of the productivity enhancements, the capex underneath this investment boom will need to be paid back.
+In between them lies the crux. The underlying question which divides these two camps, and one that is similarly reflective of their ecological customs.
+The assertion that the economic returns to capabilities gains will be sufficiently exponential that they justify the exponential increase in not only model training cost, but investment itself.
+If you are from SF, you look at this question and think, follow the Uber example. Uber didn’t just displace some limo drivers, it rapidly expanded the market for transportation by providing a service so much better (and cheaper, back in the halcyon days of the VC subsidy) than the existing alternative that its introduction actually grew the market. Which was the answer to the question I asked back in 2016: what if Uber is not a monopoly?
+
+In this context, the SF perspective is that the returns to intelligence are so dramatic that they justify trillions of dollars of investment. And if it looks like the returns to chat and coding are plateauing, these capabilities will be brought to bear on more difficult but explicitly valuable markets - cyber, health, finance.
+Note the first two are actually problems created by AI [bio instead of health?], which in turn require the deployment of tokens to solve. An interesting wrinkle, and an observation which has increased my pdoom over the past 6m, though from a very low base.
+Anyway, Dwarkesh et al see these things as abstractions, applications derivative of the confidence acquired when the ‘scaling laws’ converting electrons and data into intelligence proved out.
+Which is the classic SF pitfall: extending an extremely novel idea in the world of engineering into only somewhat applicable meta frameworks in the world of people, money and matter.
+NYC, on the other hand, lives in the world of cash flows, IRR and CDS. What do you owe, to whom, at what price, and when will you pay it back, or else.
+Credit guys being those schooled in the dark arts of breaking financial knees when it comes time to collect and you are a couple bucks short.
+So right now what you are seeing is a debate between these two camps.
+Every time the machines do another trick, the expectations go up.
+Every time another data center turns on, a billion dollars goes poof.
+And in between these two worlds of money lies the market. Me and you, the folks looking at this madness and thinking, ok where do I put my liquidity to hedge against what’s coming, and maybe even prosper.
+As we’ve talked about previously, step 1 is to set up a good strategic asset allocation. And when I say strategic I mean meta.
+What currency do you want to be in? Where do you want to live? How will you get water and electrons if and when the lights go out for a bit? What’s the plan if the lights go out and don’t come back on? The latter being just a thought experiment I call the ‘zombie apocalypse,’ a demonstration via extremis which helps hydrate your mental pipes with the shape of the question. What a doomer might call an ‘intuition pump.’
+Anyway, this ramble ended up being a bit like a poem, mostly because I am on the road and lack the desk time to generate a bunch of charts, but also to serve as a bit of a pre-ramble on what we’re going to call the ‘illiquids book.’ This book is still being built, but the shape of it thus far, the asset classes I want to put in it consistent with yesterday’s framework of acceleration → deglobalization → reindustrialization, is:
+Land
+Water
+Minerals
+Energy
+Food
+Compute
+More on this later.
+In the meantime, yes, watch bonds, but if you are trying to time the end of the cycle, you really should watch credit. 
+
+Me? I added a bit long duration inflation linked bonds ($LTPZ) back into my beta portfolio today.  Good diversification, though I missed the bottom from this morning.
+
+DISCLAIMER
+The views expressed here are mine and mine alone. They do not reflect the official policy or position of the U.S. Government or any of its departments or agencies, or of any entity with which I am or have been affiliated. References to my former roles do not imply endorsement by any of them.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service, regardless of whether such security, product or service is referenced in this letter.
+Nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

@@ -1,0 +1,109 @@
+TITLE: THE CASCADE
+SUBTITLE: Why This Crisis Isn't an Oil Story
+DATE: 2026-03-29
+
+We go high and pull a peace rabbit out of a hat, or we go low and the strait stays closed for months. Markets aren't pricing the second option, especially the second-order consequences.
+Four years ago, we told you the war phase was here. Two years ago, we told you Iran and the West were caught in a tit-for-tat loop with no offramps. Six months ago, we argued that Trump’s chaos was not noise but the kind of mixed strategy that makes sense when you’re negotiating a divorce with a rival who spent twenty years hollowing out your manufacturing capacity. 
+Now we are one month into the Iran war. Saudi is in. Houthis are firing ballistic missiles at Israel. 3,500 Marines just arrived on an amphibious assault ship. Brent closed above $112. The US has struck over 11,000 targets and destroyed more than 150 Iranian vessels. Enlistment age expanded to 41 (a surprisingly specific number). There are whispers of de-escalation and preparations for invasion at the same time. Thailand cut a bilateral deal to transit the Strait. Iran and Israel are trading fires dangerously close to what look like red lines.
+Go or no go.
+War or peace.
+Really only Trump knows. 
+What matters for us is simpler. Most people still think Hormuz is an oil story. It’s not.  The implications for global markets are much deeper than the price of gasoline.
+Oil is node one. The damage is downstream: LNG shortages shutting fertilizer plants across South Asia, sulfur shortages choking phosphate and copper production, helium venting into space from stranded containers, and industrial infrastructure being destroyed faster than any ceasefire could restore it. The market has priced crude. It has not priced the cascade beneath it.
+
+What makes this worse than 2022, and potentially approaching COVID in breadth, is simple. A supply shock hitting an economy with intact demand. A conflict at the heart of the world’s most vulnerable chokepoint (Suez, Malacca and Panama all have alternative routes, for many of the product leaving the Gulf, there is no road ‘around’ the 10 mile wide strait).
+In 2022, Russia-Ukraine disrupted one commodity channel and one fertilizer nutrient (potash, which you can skip for a season). The US Strategic Petroleum Reserve had 600 million barrels. Russian energy found alternative buyers. 
+COVID’s supply shock hit during a moment of equally dramatic demand destruction: people lost their jobs, stayed home, ordered Uber Eats. The demand shock more than provided a cushion, and the price of oil collapsed.
+2026 has no cushion. The economy was running fine before February 28. Employment was normal. Demand is intact. Now we’re getting a 10-15% supply shock across energy, fertilizer, chemicals, metals, and specialty gases, against full demand. 
+And the problem is deeper than oil, the supply of nitrogen and phosphate, central to the Green Revolution that feeds eight billion people, is seizing up. Physical infrastructure is being destroyed, not sanctioned, meaning peace doesn’t restore capacity.  Qatar’s Ras Laffan LNG plant needs three to five years to repair whether Hormuz reopens tomorrow or never.
+At the center of the chaos, of everyone currently under stress, the two states in the least bad position are the belligerents themselves. 
+Iran has survived the decapitation, seized control of the Strait, and compelled friends and foes alike to acknowledge their regional power. Their stated terms betray their confidence: control Hormuz, evacuation of the US from the region, reparations. 
+The US has managed to make its problem the world’s. Formalizing soft security guarantees into actual alliances, making allies more dependent on US energy exports, undercutting China’s manufacturing model (Chinese coal notwithstanding). Nat gas in the US has barely moved. CF Industries, the largest US nitrogen fertilizer producer, is printing money domestically.
+Europe’s “not my war” strategy has been laid bare. India is desperate for energy and fertilizer. East Asia has minimal domestic resources and supply chains that depend on Middle Eastern helium for their chips and aluminum for their manufacturing. If you’re in Taipei, this is a dress rehearsal. Trump has aligned incentives whether anyone wanted it or not.   This is what decoupling looks like on fast mode.
+Below we’ll walk through the shot clock on this conflict.  Laying out the thresholds by which the clogged artery of Hormuz turns into a heart attack for the global economy. What breaks in days, what shuts down in weeks, what becomes irreversible in seasons, and what takes years to rebuild.  
+The goal here is not to be alarmist, but to clearly communicate what is at stake.  We hope, somehow, someway, a peaceful resolution to the conflict can be found.  This is what happened if we can’t.
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+THE CASCADE
+
+Days
+Most folks are still thinking of this conflict in terms of the impact from ~30 days of disruption.
+Oil has largely priced this in (though regional differences are already showing up in gasoline, diesel, and energy-intensive industry). Brent is back at levels before the announcement of SPR release.
+
+Even this impact has already had second order consequences.  The supply shock to diesel fuel creating an inflationary impact on the parts of the economy using it as energy: plants shut down and fishing boats stop running. This week, 80-90% of the Dutch beam trawler fleet stayed in port because the fuel bill now equals the revenue from a catch of sole and turbot. Half the Dutch fishing fleet, idle. Fresh fish in Northern Europe drops within days. Not months. Days.
+Two hundred helium containers are stranded in the Gulf right now. Each one holds 41,000 liters cooled to -269°C. The containers have no refrigeration, just insulation that buys 35 to 48 days. After that, the helium vents to atmosphere. It literally leaves the planet. 8.2 million liters, permanently lost to space, starting around April 6-16. That’s next week.
+What’s important to note is the impact to energy markets is just starting to be felt.  Recent research by JP Morgan’s lays out the delivery timelines from Gulf energy still in transit.  Asia hits the wall April 1. Europe April 10. North America April 15. Australia April 20. But JPM’s map is still just oil, the impact of Hormuz is much deeper: fertilizer, food, helium, semiconductors, aluminum, copper, and the planting seasons that determine whether 8 billion people eat next year are all in question now.
+
+Meanwhile, Iran is systematically closing the bypass routes. Drone strikes on Oman’s ports at Salalah and Duqm, which Gulf states were trying to use to circumvent the Strait. Over the weekend, the Houthis entered the conflict, threatening Bab el-Mandeb. Two chokepoints controlled by two different actors with two different sets of objectives. Were they to begin threatening tankers carrying Saudi crude through the Red Sea, oil at $150 could seem optimistic.
+Goldman Sachs models $160 Brent in a 10-week production-scarring scenario. But Goldman is only modeling oil, and only modeling 6-10 week disruptions. They haven’t touched the downstream cascade. The oil analysts have done their work. The edge is not here.
+
+Weeks
+
+Thirty ammonia and urea plants in India have shut down or curtailed production. Every single fertilizer plant in Bangladesh has gone dark. All of them. A country of 170 million people with zero domestic fertilizer output.
+
+The plants aren’t shutting because urea prices are high. They’re shutting because the natural gas they need as feedstock isn’t arriving. 
+The LNG market may be in worse shape than crude.
+Qatar’s North Field, which fed these plants via LNG cargoes through the Strait, is running at a fraction of capacity after Iran’s strikes damaged two processing trains at Ras Laffan. 
+
+Meanwhile Cyclone Narelle has taken 30m MT/yr+ of Australian LNG offline. Ukrainian drone strikes have knocked roughly 40% of Russian refining export capacity out of action. Three simultaneous supply shocks to global energy, on three separate continents, with no coordination required.  
+Fertilizer
+
+The Green Revolution runs on synthetic nitrogen. Sixty years of feeding a planet that went from 3 billion to 8 billion people runs on turning natural gas into food.
+
+Forty-nine percent of global urea exports transit the Strait. India CFR urea spot is at $510 per metric ton, up 70% from $300 in late 2024, but still only halfway to the 2021-22 crisis peak of $990. The price says disruption. The plant closures say crisis. That gap is the mispricing.
+
+In the United States, urea prices (NOLA granular spot) hit $687.50 per short ton on Friday, roughly 76% of the way to the 2022 peak of $902, and accelerating. Anhydrous ammonia has gone from $560 to $931. Farmers in their fourth consecutive year of negative margins can’t even get a price quote. “If you had sat us down and said, what’s the nightmare scenario for fertilizer, it would be this exact event during this exact time of year,” said Josh Linville at StoneX.
+Sulfur 
+Then sulfur. Forty-four percent of seaborne sulfur trade originates in the Gulf. Sulfur is the feedstock for sulfuric acid, which is the primary input for phosphate fertilizer. Morocco’s OCP, the world’s largest phosphate producer, needs 6.7 million tons per year from the Gulf. When sulfur runs out, phosphate stops regardless of how much rock is in the ground.
+Sulfur also feeds copper production. About 9-14% of global copper comes from SX-EW processing that consumes sulfuric acid. Indonesian nickel HPAL operations import 75% of their sulfur from the Gulf and hold one to two months of inventory. Week four. Note Copper is actually slightly down since the war started because macro traders are selling it as a proxy for recession.  Folks doing the math on the demand side, while the supply side takes body blows.
+Plastics
+Then plastics. Naphtha is the feedstock for polyethylene and polypropylene, the two resins that become everything from food packaging to medical supplies. 
+
+Asia produces 60% of global plastics and received 80% of Hormuz crude. Asian crackers are already running out of naphtha. Channel inventory on PE/PP nurdles is three to six weeks. Plastic is oil turned solid the same way aluminum is energy turned solid, and the same chokepoint kills both.
+
+Helium
+Samsung and SK Hynix hold six to twelve weeks of helium buffer from late February. That runs out in April or May, the same window when the stranded containers start venting. EUV lithography needs 99.9999% purity helium for wafer cooling. No substitute exists. If Korean fabs ration HBM production, every NVIDIA GPU delivery slips. The AI buildout stalls in those regions on a supply chain input that costs pennies per chip.
+Note: this is basically a dry run for a blockade of Taiwan. Every industrial vulnerability being exposed right now (energy dependence, feedstock concentration, chokepoint fragility) applies with equal or greater force to the Taiwan Strait. Except Taiwan makes the chips instead of just needing helium to cool them.
+
+Seasons
+This is where the damage becomes irreversible.
+Food production being the market that concerns us most. When economies don’t have energy they stop commuting and production halts.  When people don’t have food, societies collapse.
+Our model tracks two curves. The first is the percentage of global yield-weighted fertilizer supply blocked by Hormuz. This ramps to about 44% as channel inventories deplete. 
+The second is the percentage of crop-weighted planting windows that have irreversibly closed. The agricultural calendar doesn’t care about geopolitics. The US Corn Belt plants in April and May. India’s kharif season starts with the monsoon in June. Brazil’s soy goes in October. Each week of disruption during an open window locks in permanent yield damage. It’s a rotating clock, and it only turns one direction.
+
+The steepest part of the curve is right now, April through July, when the fertilizer constraint peaks and the two largest planting windows (US Corn Belt at 22% of global crop weight, India kharif at 25%) are simultaneously open. After May 15, the prevent-plant insurance deadline passes and the damage to US corn is locked in. After June, India’s kharif starts with whatever fertilizer is or isn’t available.
+
+We translate yield loss to price using Roberts and Schlenker’s 2013 demand elasticity for calories (American Economic Review, ε = 0.07-0.15, central estimate 0.10). A 5% yield loss produces a 50% price increase. A 12% loss produces 120%. The 2022 validation: wheat trade fell roughly 12%, prices rose 70%, implying ε around 0.17. But that was a single-crop trade disruption where other exporters could substitute. When nitrogen and phosphate are both disrupted simultaneously and all crops are affected, cross-crop substitution largely disappears. That pushes the effective elasticity back toward the aggregate caloric number, which is why the price response gets violent so quickly.  
+Three scenarios. 
+If Hormuz reopens mid-April (now 2-3% probability with Houthis in the Red Sea and Saudi in the war): 2% yield loss, +20% cereals. 
+Base case, reopening by June: 6% yield loss, +63%. Matches 2022. 40% probability.
+High case, closed through the year: 12% yield loss, +120%. 55-60% probability and climbing with every headline.  
+
+Note if elasticity ends up higher, this methodology could underestimate the impact.
+At the base case (Hormuz closed through June), the implied CPI impact across regions: United States +4.4%. European Union +7.4%. India +11.5%. Southeast Asia +9.4%.
+
+Luckily, India enters this crisis with record food grain stocks, roughly 120 million tonnes in government warehouses (Ministry of Agriculture data through February). That’s the buffer. 
+
+But those stocks are the product of sixty years of increasing fertilizer intensity. Indian foodgrain yields climbed from roughly 600 kg per hectare in the 1960s to over 2,600 today. That entire climb is the Green Revolution, and the Green Revolution runs on nitrogen.  If kharif goes in under-fertilized this June, India draws down that buffer without replenishing it.
+
+Food price inflation is socially destabilizing in ways that energy inflation is not. You can turn down the thermostat. You can’t skip dinner. The countries most exposed are the ones short energy AND short food simultaneously. India. Bangladesh. Pakistan. Egypt. Parts of Southeast Asia. The places where food is 40-50% of household spending.
+Years
+Physical infrastructure is being destroyed, and the repair timelines are measured in years.
+
+The strike on the Ras Laffan LNG plant used a precision missile with roughly a 100 kg warhead, placed within 50 meters of the optimal aim point. Deliberately targeting ExxonMobil co-owned “trains” while sparing Japanese and Korean partner infrastructure. That was a message. Will take three to five years to repair.
+Yesterday, Emirates Global Aluminium confirmed its smelter was damaged. 2.7 million tons per year, roughly 4% of global aluminum. Aluminum is energy turned solid. The smelters are in the Gulf because energy is cheap, and vulnerable because that advantage can be destroyed from the air. Smelters take 12-18 months to restart because the cells solidify. The IRGC published a retaliatory target list of six Gulf industrial facilities and appears to be executing it.
+Lastly, and most critically, water. A strike on a major Iranian water source this weekend will likely trigger reciprocal attacks on Gulf desalination. Qatar gets 99% of its drinking water from desalination plants. If those are hit, the economic crisis becomes an existential one.
+Europe rebuilt its gas supply around LNG after cutting Russia, but domestic EU production has collapsed 80% from peak. They entered this crisis drawing storage faster than seasonal norms with no way to refill if Hormuz stays closed through summer. By autumn, they’re looking at a 2022 repeat. By winter, something worse. Data centers need power. Power needs gas. No meaningful AI buildout at current economics in those regions until the energy picture changes. Same for Japan, same for Korea.
+
+And this is massively bullish for US energy. Not just spot crude (that’s priced), but the structural advantage in LNG exports and pipelines. US nat gas has barely moved even as gasoline is up. The spread between domestic US gas and international LNG is the widest structural advantage American energy producers have had since the shale revolution.
+
+None of these timelines compress because someone signs a ceasefire. The heat exchangers at Ras Laffan, the smelter cells at EGA, the LNG trains, the desalination plants if they get hit: these are years-long rebuilds. The market is pricing a disruption. What’s happening is destruction.
+Tomorrow, for paid members: how to position for both tails of this outcome. Where to sell peace insurance, where to buy the cascade, and the one expression we think still has real convexity.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counter parties.
+The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

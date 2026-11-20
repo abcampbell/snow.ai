@@ -1,0 +1,36 @@
+TITLE: Time to "Buy the Dip"?
+SUBTITLE: Probably not, but still...
+DATE: 2022-09-30
+
+How bad is the pain in markets right now? 
+Well, let's start by making a portfolio called "long dollars, short everything else" 
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+To be clear, this is a pretty terrible long-run portfolio...
+
+Recently though, each leg of the trade has performed strongly. 
+Shown below as the rolling 1y sharpe ratio from shorting ...everything but dollars. 
+Regardless of the market, you are looking a sharpe of ~1-2 over the last year being short. 
+Not bad.
+
+Again, in the long run, this portfolio sucks. 
+You don't want to short everything over long periods, paying risk premiums. 
+However, over the last year, this portfolio has done tremendously well. 
+You have to go back to '70, '82 &'84 to find better times for 'Short Everything'.
+
+So, is the 'Short Everything' a good potential timing indicator for whether to 'buy the dip'?   
+No.  
+At least not according to our simple backtest, where data says, “when shorts are doing well, buy dollars and bonds, and sell gold and stocks”.
+
+This was a bit surprising here, would have thought the “short everything but dollars” portfolio would signal times of market stress, where picking up value and buying distressed assets makes sense. 
+This is decidedly not the case, with deeply negative sharpe ratios for 'buy the dip' strategies in stocks (-0.3) and gold (-0.2).
+
+Take away: 
+Buying the dip during periods of 'dollar squeeze' does not pay. 
+Only dollars and bonds historically are safe. 
+But buyer beware, bonds haven't been this volatile this since the Volker tightening in the 80s, and it's a big bet on a pivot from the Fed.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION.  
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

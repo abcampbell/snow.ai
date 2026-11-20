@@ -1,0 +1,69 @@
+TITLE: Bitcoin Is Not Money  - Lack of payments (p2)
+SUBTITLE: June 21st, 2016
+DATE: 2021-11-09
+
+This is the second in our series of posts on bitcoin. 
+Bitcoin can be cool, or bitcoin can be money, but it cannot be both.
+Part 2: Bitcoin the Currency
+Make something people want is the unofficial motto of Y Combinator (the unofficial center of the San Francisco startup universe). It’s pretty good advise, not just for startups, but for life.
+Which kind of raises the question: How many people use bitcoin as money?
+The answer: not many.
+
+Before we obsess about bitcoin’s capacity, shouldn’t we be asking why no one is using bitcoin as money?
+As far as we can tell, bitcoin has found product-market fit as money in just three places:
+Facilitating black market transactions
+
+Getting money out of places like China and Russia
+
+Speculating on the price of bitcoin
+
+Now in these three domains, bitcoin is pretty useful. It isn’t perfect, but it gets the job done…to the tune of about 2 transactions a second.
+Problem for the ‘bitcoin is money’ theory is that that much activity just isn’t that big of a deal in the broader scheme of things.
+If we use transactions as a proxy for demand for something as currency, it implies there is about 50x more demand PayPal money than bitcoin money in transactions, and ~1000x more demand for Visa money.
+That’s before you factor in the size of the transactions or the fact that lots of bitcoin transactions are essentially housecleaning, and so total transactions probably a very optimistic measure of demand for bitcoin as money.
+Which just raises another question, one that not enough people are asking: why is (almost) no one using bitcoin as money?
+
+Liquidity
+Liquidity is another one of those wacky concepts (like money) that’s becomes more and more ephemeral the more you stare at it.
+I like to think of liquidity as inversely related to pain.
+Painful transactions, as measured in time, energy or money, aren’t that liquid.
+Think back to the biggest purchasing decision you ever made, be it a house, a car or even a TV.
+Before buying that asset, you went through a lot of process:
+Researching what you wanted
+
+Understanding the fair price
+
+Finding out where it was on sale
+
+Negotiating the deal
+
+Filling out the paperwork
+
+Let’s say you just bought a house. Were you to turn around immediately and decide to sell the house, you would have to kick off an entirely new process, one that mirrors the one the new buyer would have to engage in.
+This process costs time, energy and money. The more time, energy and money sucked up by transacting in a thing, the less liquid it is.
+This is part of the reason that cars lose 30% of their value when they drive off the lot. It’s not that your car is a fundamentally different object once it is ‘off the lot,’ it’s just that selling a car is sufficiently painful that most people don’t have the time, energy and money to run a process to get a fair price. That’s why we have car dealerships.
+Ironically, the illiquidity of cars lowers their (resale) prices to the point where the only used cars for sale are the crappy ones that owners are just trying to get rid of. Hence, the “lemons problem.”
+Anyway, this is all a long way of saying, that when you think about it, when compared to other forms of money, bitcoin is kind of a lemon.
+
+Bitcoin as Lemon Money
+If you have ever tried to use bitcoin as money, this is obvious.
+No one accepts bitcoin as money
+
+Using bitcoin is hard
+
+The price (value) of bitcoin moves around a bunch
+
+There exist outstanding existential questions about the ability of bitcoin to scale to the point where it could be useful as money even if 1–3 get solved.
+
+Let’s take this first point and leave the rest for Part 3.
+No One Accepts Bitcoin as Money
+
+A couple months ago, I wrote a draft of this post where I looked up the number of restaurants that accepted bitcoin as money (by going to 
+http://bitcoinrestaurants.net/
+ no less)and compared it to the number of hits for ‘shark meat’ in San Francisco. The results:
+99 restaurants that accept bitcoin…in the United States. Going back to that link today, that number has fallen to 97.
+That’s not a lot of restaurant’s accepting bitcoin as money.
+Let’s compare it to something else that probably not that liquid…
+
+Ok. 686 hits in yelp for restaurants in the Bay Area serving shark meat.
+So there you have it, by this admitted crude measure, for your restaurant experience in 2016, shark meat in San Francisco is more liquid than bitcoins in America.

@@ -1,0 +1,178 @@
+TITLE: Investing as Myth-Making
+SUBTITLE: Or: How I Learned to Stop Worrying and Love the Story
+DATE: 2025-09-30
+
+Yesterday we discussed whether the Arsenal of Democracy still exists. When you look at where the critical minerals are actually produced—the stuff that makes the 21st century smarter, faster, and stronger—the West no longer has a decisive advantage.
+A prediction wrapped in a story. A way to frame chaos and extract enough structure that you might feel comfortable making a decision.
+Today we’re going to zoom way out and talk about storytelling in investing. We’re going to make the case that ALL investing is, at its core, based on stories. That investing is myth-making. The art of boiling down the world’s complexity so much that not only do I feel comfortable making a prediction, but you should TRUST me enough to bet your money on it.
+What Is Your Investment Process?
+When I was raising capital for Black Snow, this was usually the first question (after the usual: where did you go to high school, what did you do at Bridgewater, how much money do you have—aka do you have enough social capital that if I give you a check I won’t get fired).
+I didn’t want to talk about me. I wanted to talk about them. Massive institutional investors were falling for what I called ‘the Yale model’—ripping money out of hedge funds and plowing it into illiquid, long-duration, growth-sensitive assets like Private Equity and Venture Capital.
+Thing is, if you actually did the forward-looking math, 2018-2021 was one of the worst times to over allocate to private equity. Why? Well, basically a lot of the stuff that made the absolute returns of PE/VC high was actually the duration of those investments. Sometimes providing liquidity 10 or even 20 years later. Which seemed a bit bonkers to the guy pitching a portfolio you could cut in an afternoon.
+Not only do you lock up your capital for a decade when you deploy to PE, not only do you have to ‘trust them’ on the marks they provide (or don’t provide), you basically buy a lot of bonds. Or at least, that’s what drives the risk-free rate which provides the discount rate to your stream of future cashflows bundled into your PE portfolio. And here we were, a decade and a half past the financial crisis with interest rates pretty much as low as you can go.
+
+Now, at the time, inflation was pretty low and people were still scarred from the financial crisis, so to some degree global bond yields at the lows kinda made sense.
+On the other hand, we saw lots of reasons to think that the secular decline in inflation was pretty much over, primarily due to the imminent peak in globalization and the return of great power conflict. Or, as we tried to meme it: “Conflict is Inflationary.”
+While this may seem like a bit of a bank shot—you call the conflict to expect inflation, which pulls up interest rates (due to tightening) and hence bond yields—for a macro guy, this is all pretty bog standard stuff. If your fixed income or macro trader didn’t have a chart of bond yields in the 70s stapled to the wall, well, what are you even doing?
+
+So call it mean reversion, call it foresight—it seemed insane to go massively overweight illiquid assets underwritten by historically low bond yields, right at the top.
+Instead, we offered a simple story: China’s credit-fueled property bubble was ending. This would force both public printing and private flight to gold.
+We were right, but we were also early.  
+
+The usual players like Cambridge Associates—who consult for the allocators we were pitching—hated it. 
+The fund of funds didn’t understand it.
+Then we lost a $200m seed check because, and I quote: “You remind me too much of Peter [Thiel]. We backed Clarium, rode assets up 100% and down 75%. Not fun.”
+Making big calls about regime change wasn’t a story people wanted to buy. Especially when that regime change would make their recent decisions look...dumb.
+Which is the point. When someone asks about your investment process, they don’t actually want to know how you build your models. They’re asking you to tell them a story. A story about markets, about companies, or in the most ambitious cases, about building a $100bn institution that transcends frameworks and outlives us all.
+Just don’t tell them they need to hedge.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Most Expensive Story on Wall Street
+Let me tell you about systematic investing’s greatest triumph: the idea that you can build a “machine” that understands markets. Some of the largest funds in the world have sold this story for hundreds of billions in AUM. Pure alpha through pure process.
+Here’s the dirty secret: When you decompose most “alpha,” a shocking percentage is just beta. Not 10%. Not 30%. Often 60% or more is just levered exposure to traditional risk factors with good risk management. Here’s a breakdown by investment strategy from a piece we wrote on the topic from 2017.
+
+Source: Campbell Ramble, ‘Whatever Happened to Alpha’ (2017)
+
+Remember LTCM? Nobel laureates. The smartest quants in the room. They had a machine too. Worked great until correlations went to 1 and they discovered their 25 uncorrelated strategies were actually one strategy: short volatility.
+Their models didn’t include the impact of their own trades on market positioning. Gödel strikes again. Required a Fed-orchestrated bailout to prevent systemic collapse.
+The machine story persists because it’s worth billions in management fees and carry to whoever tells it best. That’s not a bug—it’s the entire business model. It’s not a problem, it’s what makes finance beautiful.
+The Narrative Premium
+Every successful fund is selling a story, not returns. Returns are commoditized. Stories are scarce.
+The average hedge fund has underperformed the S&P 500 for 15 years straight. Pension funds know this. Yet they still pay 2-and-20. Why?
+Because “we put it all in SPY” isn’t a story you can tell your investment committee. “We’ve allocated to a proprietary machine learning system that exploits market inefficiencies through systematic risk premia harvesting”—that’s worth 200 basis points.
+The math is beautiful: Stories create tracking error. Tracking error justifies fees. Small divergence? That’s noise. Big divergence? That’s genius. Heads I’m a visionary, tails it’s a black swan.
+Renaissance Technologies understood this perfectly. They built the ultimate black box. Nobody knows what’s inside. That’s the point. Mystery is margin.
+The Meta-Framework
+Every story follows the same structure. Once you see it, you can’t unsee it:
+A compelling narrative (usually with a kernel of truth)
+
+An inconvenient reality (usually about structure or flows)
+
+Genuine complexity (why smart people disagree)
+
+A predictable endgame (usually disappointing)
+
+Let me show you how this plays out across today’s market narratives.
+The Major Portfolio Construction Myths (2025 Edition)
+“Private Markets Premium”
+The Story: Escape public market volatility with smoothed returns
+The Reality: PE sitting on 2021 vintages at cost while public comps down 40%
+The Complexity: Smoothing is real value for some investors (pension accounting)
+The Endgame: LPs demand liquidity, massive markdowns, denominator effect 2.0
+
+“60/40 is Dead” Industrial Complex
+The Story: Bonds can’t hedge stocks when inflation is structural
+The Reality: They said this at 0% rates, now we’re at 4.5% real
+The Complexity: Correlation unstable but bonds still diversify over long periods
+The Endgame: 60/40 outperforms alts, consultants find new story
+“AI Changes Everything”
+The Story: This time is different, traditional valuation doesn’t apply
+The Reality: It’s real but priced at perfection with no margin of safety
+The Complexity: Infrastructure wins, applications commoditize (my S-curve analysis)
+The Endgame: NASDAQ 2000-style washout but real companies survive
+The Macro Tourist Favorites
+“The Dollar Wrecking Ball”
+The Story: DXY breaks everything, Fed pivots, global liquidity explosion
+The Reality: Been wrong for 15 years except 6 months in 2008
+The Complexity: Dollar is worst currency except all the others
+The Endgame: Dollar stays stronger longer, bears capitulate at the top
+“China Reopening 3.0”
+The Story: This time stimulus is serious, consumption rebounds
+The Reality: I’ve documented the ugly deleveraging since 2015
+The Complexity: They’ll print but it goes to banks not consumers
+The Endgame: Capital flight accelerates, gold/silver moon in CNY terms
+
+“The Great Rotation”
+The Story: Money finally moving from Mag7 to small caps
+The Reality: Passive flows make this mathematically impossible
+The Complexity: Can happen in active funds but they’re 20% of market
+The Endgame: Small caps rally 10%, Mag7 pulls everything back down
+The Crypto Casino Narratives
+“Institutional Adoption”
+The Story: Sovereign wealth funds coming, Bitcoin becomes reserve asset
+The Reality: It’s still 90% retail leverage and Tether printing
+The Complexity: Some adoption real (ETFs) but it’s speculation not utility
+The Endgame: Becomes digital gold for small cohort, never becomes money
+“DeFi Replacing TradFi”
+The Story: Eliminate middlemen, democratize finance, 20% yields
+The Reality: Smart contract risk = picking up pennies in front of code trains
+The Complexity: Some protocols work but regulatory arbitrage not sustainable
+The Endgame: Regulated into TradFi with extra steps
+The Hedge Fund Hotel Narratives
+“The Uranium Renaissance”
+The Story: Nuclear needed for AI data centers, supply deficit
+The Reality: 10 years to build = 10 years of carry cost
+The Complexity: Spot price matters less than term contracts
+The Endgame: Natural gas bridges the gap, uranium disappoints
+“GLP-1 Changes Everything”
+The Story: Obesity solved, transforms public health, pharma prints money forever
+The Reality: It works, but current valuations assume perfect execution and no competition
+The Complexity: Genuinely transformational for individuals; unclear if it scales to population level
+The Endgame: Big market, real impact, but stock returns disappoint as competition arrives via bootleg Chinese peptides and patents expire
+“Regional Bank Comeback”
+The Story: Steepening curve saves NIMs, credit losses manageable
+The Reality: CRE exposure toxic, deposits still fleeing
+The Complexity: BTFP postponed reckoning but didn’t solve it
+The Endgame: Forced consolidation, 50% fewer banks in 5 years
+
+The Perma-Bear Favorites
+“Commercial Real Estate Apocalypse”
+The Story: $20T global CRE implodes, takes down banking system
+The Reality: 50% office occupancy but extend-and-pretend forever
+The Complexity: Location matters—NYC different from SF different from Dallas
+The Endgame: Slow grind lower, some spectacular failures, system survives
+“The Passive Bubble”
+The Story: Flows create valuations, reversal causes 1987-style crash
+The Reality: 35% in Mag7, no price discovery
+The Complexity: Flows can stay irrational longer than shorts stay solvent
+The Endgame: Violent but brief correction, passive buying continues
+
+The Sophisticated Institutional Narratives
+“Volatility Risk Premium Harvesting”
+The Story: Sell vol systematically, collect insurance premium
+The Reality: One day kills five years (Feb 2018, March 2020)
+The Complexity: Works in specific regimes with proper sizing
+The Endgame: Correlation reprices, vol sellers become vol buyers
+“Multi-Strategy Pod Shops”
+The Story: Uncorrelated returns from 100 independent teams
+The Reality: Same factors, different window dressing, 5-and-50 fees
+The Complexity: Best talent concentrated but diminishing returns
+The Endgame: Returns converge to expensive beta, model breaks
+Trading the Myth Cycle
+The alpha isn’t in believing or disbelieving these stories. It’s in knowing where we are in the cycle and positioning for the inevitable disappointment.
+Every narrative follows the same lifecycle:
+Birth: Smart money discovers anomaly
+
+Adoption: Institutions need a story for flows
+
+Proliferation: Retail learns the lingo
+
+Saturation: Everything is the thing
+
+Liquidation: The story meets reality
+
+Right now:
+AI: Late Adoption/early Proliferation (still has room to run)
+
+Passive indexing: Approaching Saturation (danger zone)
+
+Value investing: Post-Liquidation (might actually work)
+
+Private Markets Premium: Pre-Liquidation (wait for the capital call chaos when the endowments start balking at the very moment the funds marks tell a story no one believes)
+
+The Protection Portfolio as Anti-Story
+By this measure, my Protection Portfolio is just another narrative.  Though a contrarian one.
+The Story: Regime change is coming, prepare accordingly.
+The Reality: Long 100%+ silver & gold, short credit, long AI infrastructure
+The Complexity: Looks insane by traditional metrics, that’s the point
+The Endgame: Survives what kills everything else
+Problem, this is less of a narrative and more insurance against everyone else’s narratives blowing up simultaneously.
+The Ultimate Paradox
+This entire framework is, of course, just another story. I’m selling you a meta-narrative about narratives having predictable structures. The myth that understanding myths gives you an edge.
+But here’s what I know: Every story works until it doesn’t. Every framework explains until it can’t. Every edge decays into common knowledge.
+The only truth in markets is that stories create their own reality until reality creates its own stories.  Reflexivity in the flesh.
+The best traders aren’t the ones with the best models or clearest sight. They’re the ones who understand they’re playing a game of collective fiction. Sometimes you bet on the story. Sometimes you bet against it. Sometimes you ARE the story.  But you always respect its power to become true.
+Every portfolio is indeed a story. The only question is: Are you the author, the reader, or the cautionary tale?
+Now if you’ll excuse me, I need to check my silver position. Not because the industrial demand story is true. But because it looks like enough people are starting to believe that the thing has wings.
+And in markets, that’s the only truth that matters.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

@@ -1,0 +1,87 @@
+TITLE: Why I'm still short Boeing
+SUBTITLE: aka "Chirping from the Peanut Gallery"
+DATE: 2024-10-13
+
+I’m not an aerospace expert.
+I really know nothing about planes or manufacturing.  
+Let’s be clear: I’m a keyboard warrior.  
+I wouldn’t know an Allen wrench from a monkey wrench. 
+I couldn't tell you the difference between the Boeing F-15 and F-18 by sight, even after looking at pictures.
+
+I’ve never manufactured an airframe.
+
+Or connected all these wires into a single whole.
+
+Let alone understood most of the words in the diagram below of what catastrophic wiring failure looks like.  “Severe bend radius which precipitated chaffing” sounds more like something you would say about a bad suit not a plane.
+
+Heck, I'm not even that good at stonks. For great stock picks, you're better off talking to Citrini. For insights on industrials, consult my friend who traded at a Tiger Cub and now manages his own firm — one with an intentionally forgettable name.
+Nope, I’m the type of person that needs to see the numbers to understand what’s going on.
+“First we start with a list, then we add data to that list, turning it into a table, then try to see or viz the data. Then, add more data on the same stuff or the system it’s in.  Bottoms Up. Top Down. Shake.  Viz. Repeat.”  
+For example, here's a concise list of problems that have plagued Boeing over the past five years, compiled and scored by the robot (in this case GPT 4o).
+
+When these issues are charted against Boeing's stock performance, an interesting story emerges. The data reveals something about the organization's culture — one that appears incapable of identifying problems and actively designing and implementing solutions.
+
+A chart that says conditions at Boeing are more like ‘83, ‘03, ‘09, ‘20 than a world where stocks at the all time highs!
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Further, I believe you have to understand these numbers in context.  Take this story of a single airplane company and look at the system from the top down.
+For example, I believe all you need is this top-down chart of the decline of US Air Force plane readiness…
+
+along with this bottoms up chart on the individual planes, to “derive” a couple of preliminary conclusions:
+
+The more advanced the plane (F35, F22, B2), the lower the reliability.  This seems to be consistent across manufacturers.  Stealth tech is a pain in the *ss apparently.
+
+Boeing isn't a major player in the cutting-edge "5th or 6th Generation" fighter or bomber market. Instead, they produce "4th generation" planes like the F-15 and F-18, as well as various tankers, transports, and other large airframes derived from their commercial aircraft designs.
+
+Boeing's current development pipeline appears to focus primarily on drones and an update to their reliable F-15. (Note: This is the part I am least confident/believable about and may prove incorrect!  Ask someone who knows.)
+
+Ok, we have some idea of the role that Boeing plays in the whole, at least on the military side.  Now we can look at the same objects, but from a different dimension.  In this case, how expensive these planes are to operate. Looks like $10-30k per hour, again, with the most advanced planes (F35, F22) being the most expensive, likely in part due to their unreliability, as their stealth coating or whatever necessitates constant maintenance.
+
+Then go up a level, again.  Look at where all these planes are, and how many of them are out there.  Revealing that the US has invested by more than any country in owning the skies.
+
+Then go bottoms up again, and look at where that hegemonic air power is investing in new planes.  Which specific planes.  IIn 2021, investments focused on the multi-role stealth fighter F-35, the Boeing-made F-15EX, and various support craft and helicopters.
+
+Zooming out once more, we can examine the overall spending on developing, operating, and maintaining this fleet. The chart below represents Air Force expenditures alone; factoring in Navy and Army air power spending likely pushes the total beyond $300 billion. Approximately half of this goes towards developing and procuring new capabilities, while the other half supports operations and maintenance of the existing fleet.
+
+So what does this mean for Boeing?  Put another way: “Campbell, why are you ranting about the US Air Force?”
+This analysis provides crucial context for Boeing's operating environment, especially when we consider that the global market for commercial airframes is only $200 billion.
+To understand what this means at a firm level, we can look at the segment performance, and all of a sudden the strategic/market dynamic that Boeing find themselves in kind of clicks into place.  
+Boeing's commercial airline division grapples with significant governance, labor, and supply chain issues. Their military business, while substantial, is unprofitable and largely absent from the stealth aircraft market, relying on one core product and an uncertain pivot to drones. Sandwiched between these two giants, each operating over 30 million square feet, is a smaller, more agile, and profitable service business. However, this service segment primarily generates revenue by maintaining and repairing aging aircraft from the other two divisions — a situation that creates perverse incentives across the company.
+
+Which kind of tells you what the dynamic is probably like inside the firm. On the commercial side, Boeing operates as an unprofitable quasi-monopoly, a 'national champion' grappling with intricate supply and production chains amid ongoing labor disputes. Under normal circumstances, such a company would be ripe for disruption.
+This is then paired with a military program which doubtless can count of billions of R&D contracts for the foreseeable future, as they lever their existing relationships to take part in what will likely be a revolutionary shift away from manned flight and towards drones.  
+Finally, this profitable service business, which basically makes money in proportion to the degree to which the old airplanes fall apart, which just happens to be the only profitable part of the biz.
+Leading us to ask, how deep are these cultural problems, and whether it makes sense to either clean house at the top (Board + Senior Management) or just break the thing up entirely.  Where are activist managers like Elliot Management, Pershing Square or Greenlight when you really need them?!
+See, this whole thing started for me we first when long defense stocks via an ETF or “Exchange Traded Fund” called ITA.  Something issued by iShares (aka Blackrock) which just happened to come with a lot of allocation Boeing.  At the time it was something like their second biggest position in the index.  (It’s now something like the 10th).
+
+Back when I bought the ETF, we didn’t have a strong opinion on Boeing.  I didn’t even consider myself worth of an opinion.  We were still running the fund and my head trader Ryan convinced me to short the airlines (via an ETF called JETS) during that weird period in between when covid was blowing up in China but US stocks hadn’t reacted or priced in a lockdown.  At the time I was hesitant because, well “I have no alpha in airlines,” but Ryan was right and it ended up being our best trade of the year.
+
+Anyway, so mid-2020 we write up how “conflict is going to lead to inflation which will lead to higher yields”.  
+
+As part of that view, we also took a long position in defense stocks via ITA against what was then our residual short position in airlines via JETS.  As part of that, we had to ask ourselves, do we really want to go long Boeing?   
+Boeing's stock performance during the COVID-19 pandemic (down 75%) and their questionable handling of the MAX issues led us to pass on the opportunity. This decision marked the beginning of our skepticism.
+
+Not as an active short, but just a matter of hedging out the beta.
+
+Over time, we began hearing increasingly about both production issues and apparent cultural problems within Boeing. The company's inability to effectively manage and resolve the MAX 737 issues was particularly concerning — a classic 'the machine is down' scenario where a modification to an automated system directly resulted in multiple fatal crashes.
+These cultural questions then compounded when whistleblowers started turning up dead.  The second of which seems relatively benign, the first of which seems relatively sketchy.   It's important to note that the deaths themselves aren't the primary issue (we have no alpha on whether they are or are not related); rather, it's the company's apparent inability to thoroughly investigate and address these situations that's most troubling. 
+More recently, we’ve seen more chaos.
+
+Add in renewed labor trouble, and you have a situation where all of a sudden where the death of an American icon is actually on the table.
+
+This progression has shifted our approach from a purely numbers-based investing philosophy (selling Boeing to hedge out unwanted alpha from our defense beta exposure) to something more akin to 'vibes-based investing.'
+
+So take it with a grain of salt.  This is not really an investment recommendation so much as a walk through of how I try to use data to understand, contextualize, and price the risk of any particular investment.  There’s a lot more vibes underneath investing than a lot of people like to admit, and data can help us understand when we really are making a bet like “stay short until the assassination jokes stop being funny.” 
+
+Boeing's data tells a story of a company in crisis, facing challenges across both commercial and military divisions. In this post, we’ve tried to visualize a combination of top down and bottoms up data in order to lay out the macro and micro dynamics at play.  As a national champion in crisis, Boeing can probably never die.  But it’s our belief that things likely have to get worse before the company makes the hard cultural and operational choices needed to get them out of this bind.  
+The impending shift toward autonomous air power presents an 'innovator's dilemma' for both Boeing's commercial and military arms. To navigate this transformative period successfully, the company must realign itself proactively, addressing past problems while embracing future technological advancements with clarity and purpose. Until we see evidence of such decisive action, it appears that maximizing shareholder value may require either a comprehensive overhaul of leadership, a strategic restructuring of the company, or both.
+Till next time
+Disclaimers
+This is not investment advice. Your investment objects should depend on a lot of things a newsletter writer cannot know. Boeing is a public equity asset and you should be prepared to take a 100% drawdown on any speculative long and infinite loss on any stock short. 
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This is not my full time job and I do not promise the data included is accurate or up to date. There are innumerable small logical and mathematical decision inherent in making these charts, and mistakes do happen. Please consult me on anything contained herein before making an investment decision on the basis of this work. We are happy to provide the source and business/transformation logic where appropriate.
+THERE CAN BE NO ASSURANCE THAT ROSE INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL
+Appendix
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

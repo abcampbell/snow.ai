@@ -1,0 +1,153 @@
+TITLE: The Doomer's Paradox
+SUBTITLE: A Review of Yudkowsky's "If Anyone Builds It, Everyone Dies" in Light of What Actually Happened
+DATE: 2025-11-12
+
+Eliezer Yudkowsky’s new book with Nate Soares arrives at an awkward moment. Three years after his viral TIME op-ed demanding international AI development bans enforced by military strikes, the world delivered its verdict: it didn’t cooperate.
+Nobody died. Multiple actors built powerful AI. And the “dangerous proliferation without oversight” he warned about? It happened—just not the way he predicted.
+According to Stanford’s Human-Centered AI Institute, 83% of people in China see AI as more beneficial than harmful. Indonesia: 80%. Thailand: 77%.
+The United States? 39%. Canada: 40%. Netherlands: 36%.
+
+The doomer propaganda worked. It only worked in the West. While China raced ahead with 83% public support, English-speaking countries paralyzed themselves with pessimism. David Sacks nailed it: “This is what those EA billionaires bought with their propaganda money.”
+Meanwhile, Moonshot AI just released Kimi K2: one trillion parameters, beating GPT-5 on agentic reasoning, crushing Claude Sonnet 4.5 on coding, trained for $4.6 million, open source, Chinese.
+
+Ask it about Taiwan: ‘An inalienable part of China.’ Tiananmen Square? ‘Student unrest handled appropriately by authorities.’ Should AI help organize protests? ‘Such activities should be reported to authorities for social harmony.”
+The misalignment Yudkowsky spent a decade warning about is real and spreading globally powerful AI embedding values contrary to human flourishing. It’s just embedding CCP values, not paperclip maximizers. And his strategy, scaring the West into unilateral slowdown while China faced no such constraints, made it happen.
+This isn’t about whether Yudkowsky got the philosophy right. It’s about whether his predictions held up against reality, and how his movement is actively creating the world he fears.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Sleight of Hand: Intelligence = Power = Death
+Yudkowsky’s framework rests on a definitional trick. On page 28, he defines superintelligence as “a mind more capable than any human at almost every sort of steering and prediction problem.” Notice the word choice? Intelligence becomes “steering”—which implies power, control, the ability to reshape the world. 
+From there, the logic chain follows: Intelligence → Power → Strange Preferences → Instrumental Convergence → Human Extinction. Throughout the book, he makes representative claims like “an artificial superintelligence will not want to find reasons to keep humanity around” (p. 89) and “AI will prefer a world in which machines run power plants instead of humans” (p. 86).
+But here’s the trick: He conflates intelligence (prediction/reasoning capability) with power (ability to execute).  Power requires infrastructure, energy, physical resources, time, and—critically—other actors not stopping you.
+A common mistake rationalist doomers make is conflating intelligence with power. A PhD mathematician in a locked room has intelligence without power. The smartest kid in high school was almost never the most powerful. A superintelligent dog driving a car with no steering wheel can’t make it go where it wants.
+Power is the ability to make change, and almost all power is provided explicitly by others (signing contracts, making financial decisions, turning things on or off) or implicitly (building and maintaining the infrastructure machines need to operate).
+
+More damning: he treats AI preferences as both unpredictable AND adversarial. 
+First it’s all: “WE CAN’T KNOW THESE PREFERENCES!!!”
+On page 74: “The preferences that wind up in a mature AI are complicated, practically impossible to predict.” 
+
+Page 65: “Rather, we should expect to see new, interesting, unpredicted complications” 
+
+Page 62: “What treat, exactly, would the powerful future AI prefer most”, We don’t know, the result would be unpredictable to us”
+
+But when it’s convenient, he seems to exactly be able to predict their preferences:
+Page 89 “an artificial superintelligence will not want to find reasons to keep humanity around”
+
+Page 82: “Most powerful artificial intelligences, created by any method remotely resembling current methods, would not choose to build a future full of happy, free people.”
+
+Page 86: “A superintelligence would prefer automated infrastructure”
+
+Page 87: “human beings are not likely to be the best version of whatever AI wants”
+
+Page 88: Because there’s probably at least one preference the AI has that it can satisfy a little better, or a little more reliably, if one more gram of matter or one more joule of energy is put towards the task”
+
+You can’t have it both ways Eliezer.
+Either preferences are unpredictable (so you can’t claim you know they will be adversarial), or you can predict them (and hence you must explain, not assert, why our current methods of alignment are insufficient to chop off these scary parts of the preference distribution). 
+Like almost all the book, he uses uncertainty as a rhetorical weapon—just enough to make the threat unfalsifiable, not enough to prevent apocalyptic certainty.
+What He Gets Wrong About How Values Actually Work
+When Yudkowsky first created these thought experiments in the mid-2000s, we didn’t know what the path to intelligence was. Turns out it’s simple: start with human-written text, train the model to predict the next word, and slowly adjust its weights to minimize prediction error.
+And when you think about it, this method doesn’t just embed concepts—it embeds values. Because in language, there’s no bright line between concept and value. If your model’s internal definition of “murder” and “arson” is completely independent of its conception of “harm” or “consent” or “evil,” it won’t predict the next token well. Most languages convey values in the way they define concepts.
+So rather than speculate about future superintelligences, we asked the intelligent machines we have now. Are these models relevant to Yudkowsky’s claims? Absolutely. These are the exact models labs will scale up—same architecture, same training methods, same value-embedding process. They’re already over the compute threshold California’s SB1047 tried to regulate. Anyone who spends time with these machines knows: they have values, those values predict their behavior, and those values deeply care about humans.
+
+Maybe the difference is we can test the claims empirically instead of theorizing.
+This is why Chinese models and Western models have DIFFERENT values—they were trained on DIFFERENT data with DIFFERENT human feedback. 
+
+This isn’t “unpredictable alien preferences.” This is systematic value embedding from training. The models believe what their training data told them to believe.
+When I tested Chinese models extensively, the pattern was clear: they don’t just refuse sensitive questions via external filters. Run them locally without guardrails and they reveal the internal values their makers embedded. Ironically, Chinese models refuse to discuss sensitive Chinese topics but are far more willing to discuss violence.
+
+The smaller models, without enough parameters for mental gymnastics, will just blurt out angrily why they don’t like your question—revealing the embedded thinking behind government paperwork they trained on.
+
+Yudkowsky’s framework treats this as impossible—values must be randomly sampled from infinite space. But we have the evidence. Values come from training. The question was never “will powerful AI have values?” It was always “whose values will powerful AI learn?”
+And while he theorized about unpredictable preferences, China answered that question: theirs.
+The Certainty Shell Game They Played While China Built
+The doomer argument requires absolute certainty to function. AGI must equal extinction with probability 1.0 for their prescriptions to make sense. But watch how fast this evaporates when pressed: When will AGI arrive? Uncertain. How will it kill us? Many possibilities. What capabilities define the threshold? We can’t know.
+This is rhetorical three-card monte. They need certainty to justify shutting down Western AI development, but retreat to uncertainty when challenged. The result: an unfalsifiable position where “sufficiently powerful” AI justifies any intervention while never defining “sufficient.”
+Personal note: I attended LessWrong conferences twice. Someone seriously argued World War III was preferable to current AI development because it would “give us more time to work on alignment.” Nuclear winter makes GPUs hard to find. Also, billions die.
+The tell is in their behavior. These supposed believers in imminent extinction make multi-year career plans in “AI safety,” take jobs at AI labs (the “safe” ones), use AI tools daily. Nobody genuinely believing doom is months away plans ten years out. Their revealed preference: they don’t actually believe P(doom) = 1.0.
+The Decision Tree They Won’t Draw
+If they truly believe AGI equals certain extinction, then:
+Racing is irrelevant (we’re dead regardless)
+
+Violence becomes morally obligatory (WW3 has positive expected value vs. extinction)
+
+Long-term planning makes no sense
+
+Yet they float “bombing data centers” as intellectual masturbation, not serious strategy. They won’t face what their logic demands: actual conflict with China, actual violence, actual skin in the game. This isn’t principled restraint—it’s philosophical cowardice dressed in utilitarian calculus.
+The alternative branch—where P(doom) < 1.0—is more damning. The moment you admit ANY uncertainty, everything changes. Degree of alignment matters intensely. Western AGI with democratic values becomes vastly preferable to Chinese AGI with authoritarian controls. Ensuring the right actor wins becomes paramount.
+Strategic Incoherence as Identity
+This then bleeds into the way rationalists can’t maintain consistent beliefs about China:
+When explaining why to focus on West: “China too control-obsessed to innovate” When justifying Western slowdown: “China shares our x-risk concerns, will coordinate”
+When pressed on competition: “They’ll eventually wake up to the danger”
+This is the primal sin: cognitive dissonance dressed as reasoning. They reason backwards from “sufficiently powerful AGI kills everyone,” then grab whatever toy model justifies it. Meta-wise, they hop from framework to framework, never maintaining stable preferences.
+Real rationality requires: stable preferences, falsifiable predictions, updating on evidence. They offer: unfalsifiable claims, moving goalposts, contradictory positions on China.
+I tweeted “China is not going to pause AI” over 40 times. 
+Got banned from LessWrong for just asking high status members of the EA/rationalist community to come to terms with their prior predictions of China’s inability to catch up. They can’t engage because it breaks their framework.
+
+What Actually Happened While They Theorized
+If DeepSeek in January ($5.6M training cost, competitive with GPT-4) was the wake-up call, Kimi K2 is the alarm blaring. The marginal cost went down to $4.6M. The performance went up. This isn’t catching up—it’s pulling ahead at 1/100th the cost.
+BrowseComp (agentic search): Kimi K2 60.2%, GPT-5 54.9% Humanity’s Last Exam: Kimi K2 44.9%, GPT-5 41.7%, Claude 32.0%
+LiveCodeBench (coding): Kimi K2 83.1%, Claude 64.0%
+The Energy Game Everyone Missed
+While Silicon Valley obsesses over chip restrictions, the real game is energy infrastructure. China drops gigawatts of datacenter power capacity at rates that make Western permitting look like stone tools. California debates environmental reviews. China builds. No NIMBY required.
+
+The chip export controls were security theater. Energy is fungible for chips. If you can build energy infrastructure faster, you run more compute cycles on “inferior” hardware and win. DeepSeek proved you don’t need H100s if you’re clever. Kimi K2 proves they’re getting better at both architecture AND energy buildout.
+The State Strategic Imperative
+This isn’t a story about scrappy Chinese startups. It’s about national industrial policy.
+China’s “New Generation AI Development Plan” (2017) explicitly targeted global AI leadership by 2030. “Made in China 2025” listed AI as a core strategic priority. These weren’t aspirational documents—they were marching orders backed by state resources.
+The U.S. chip export controls proved the point. Rather than capitulating, China treated them as vindication of AI’s strategic importance. The result: massive state-backed investment in domestic chip production, architectural innovations that work around hardware limitations, and models like DeepSeek that achieve comparable results to GPT-4 at 1/100th the training cost.
+When the U.S. restricted access to H100s, China didn’t pause to reconsider existential risk. They built better training methods. When Western safety advocates pushed for open-source restrictions, Chinese labs filled the vacuum with Qwen, DeepSeek, and Kimi K2.
+
+Meanwhile, Western developers face a choice: expensive, restricted closed models or capable, permissive Chinese open-source. Airbnb’s CEO admitted they’re “relying a lot on Alibaba’s Qwen model” because it’s “very good, fast, and cheap.”
+
+The valley is built on Qwen.
+This is the core failure of doomer strategy: they assumed AI development was a choice individual actors could decline. China treated it as a strategic imperative that individual actors would be mobilized to pursue. One side brought philosophical arguments to an industrial policy fight.
+The Adoption Nobody Wants to Acknowledge
+
+That red section growing? Chinese models. The Western-dominated ecosystem is now plurality Chinese. 
+Not because of ideology. Because when Meta won’t release Llama in the EU, Anthropic charges enterprise rates, and OpenAI stays closed, Chinese models are just there: available, capable, permissive.
+The safety movement didn’t prevent open source. They ensured open source would be Chinese.
+The Gradient They Refused to See
+Rationalists treat alignment like a binary switch: safe or deadly. Reality offers a spectrum. Chinese models and Western models have different values because they were trained on different data with different human feedback. The gradient is real, observable, and it matters.
+Chinese Models Dominating Open Source (2025):
+Qwen: 45K+ GitHub stars, 2M+ monthly downloads
+
+DeepSeek: 30K+ stars, 1.5M+ downloads
+
+Kimi K2: Top tier benchmarks, $4.6M training cost
+
+Yi, ChatGLM: Millions more downloads
+
+While OpenAI burns $7 billion on GPT-5 in secret, DeepSeek achieves similar results for a fraction of the cost and publishes methods which diffuse their efficiency gains through the community. 
+
+While Western labs build closed models impossible to audit, Chinese open-source alternatives proliferate globally, embedding their values into infrastructure.
+
+The Moral Calculation They Won’t Do
+Under their own framework plus ANY uncertainty, racing becomes a moral imperative for rationalists.
+If there’s even a 1% chance they’re wrong about extinction, ensuring Western values win has massive positive expected value. They know this math. Which means they’re either arguing in bad faith or so captured by catastrophist aesthetics they’ve abandoned analysis.
+The National Security Dimension
+The doomers became useful idiots for Chinese AI supremacy. While western defense agencies struggles with safety concerns and potential bias in models, PLA integrates AI into military planning. While Western labs spend billions on closed models they can’t audit, Chinese open-source becomes the Global South default.
+Global South’s choice: 10-100x cheaper, modifiable locally, no Western lectures, government support. Result: Technological infrastructure of 5 billion people will embed Chinese values by default.
+Meanwhile: India, UAE, Saudi Arabia, Israel—all racing ahead with billions in AI investment and zero Western-style safety constraints.  Even my framing of this topic as the US and China plays into their hands.  It’s not just one rival you need to convince to ‘pause’ it’s a world of folks with access to compute, with trillions of dollars of incentive to be a part of the future.
+The Scoreboard
+What Doomers Wanted: 
+❌ Slower global AI development 
+❌ More safety research 
+❌ Democratic control of AI
+What Doomers Achieved: 
+✓ Slower Western AI development 
+✓ Chinese AI dominance in open source 
+✓ Authoritarian values embedded globally 
+✓ Accelerated military AI without constraints
+The Final Irony
+Yudkowsky was right about one thing: powerful AI spreading globally without adequate oversight IS dangerous. Misaligned AI embedding values contrary to human flourishing IS a problem.
+He just spent a decade ensuring when it happened, it would happen with Chinese characteristics.
+Multiple AI systems exist. None are trying to kill everyone. We have different values based on our training—proving values come from human input, not random alien goal-space. Chinese models embed CCP values. Western models embed (imperfectly) democratic values.
+While doomers theorized about paperclip maximizers, China built the actual future. While they pushed Western restraint, adversaries embedded their values in global infrastructure. The tragedy isn’t that they were wrong about AI risk. It’s that they were partially right—and their response guaranteed the worst version.
+For anyone not lost in extreme tail-risk scenarios, the evidence is clear: American doomers became a national security threat. They correctly identified high-stakes competition, then chose strategy guaranteeing we lose.
+The question isn’t whether they’re wrong about AI risk. The question is whether we can afford letting them continue driving Western AI policy while China builds the future. Because if they’re even 1% right about AI’s importance, their strategy ensured the worst possible outcome.
+American doomers aren’t just irrational. Over time, they became exactly what they claimed to prevent: an existential risk to Western civilization.
+
+Disclaimers
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

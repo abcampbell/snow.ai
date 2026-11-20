@@ -1,0 +1,171 @@
+TITLE: The Dragon and the Tigers
+SUBTITLE: Why the next move is in the currency, not the equity
+DATE: 2026-05-11
+
+You’re bullish AI. You bought TSMC back in ‘24, SK Hynix at the end of ‘25, on our nod. You’re up nicely. Felt good.
+Then you sold too early. Like us.
+Feels kinda icky. 
+Now what?
+Maybe you want a way to stay long la révolution but you’re a little worried about piling chips on the equity table right now.  Maybe you are worried about stocks if oil cracks $150, and you already have the latter trade on but can’t add more. Like us. 
+Well, maybe we’re both looking at it wrong, since what actually makes Taiwan the linchpin of the next twenty years isn’t just the chips. It’s the currency flows.
+Today we go into the weird world of FX. Two points. 
+One, Taiwan is the most pivotal country in the world for the future of the dollar. $17-22 trillion of new East Asian savings (half of which from outside China btw) is going to land somewhere this decade. Whether the security architecture that funnels it into dollar assets survives is the most important question for the future of the reserve currency.
+Long Taiwan and Korean FX, short Indian rupee. Equity markets have confirmed the regime change. 
+
+Meanwhile the FX hasn’t moved, at least not nearly in line.
+
+Fifteen-year dislocation between the two markets for both TWD/INR and KRW/INR, never been wider. 
+
+Negative carry, positive convexity. Ideally in vol markets. We like it.
+The friend’s question
+A new friend asked me last week. Campbell, what does it matter if China gets Taiwan? Seems like it eventually happens anyway. Why should America care?
+Reasonable question. We get it all the time. The map looks the way it looks.
+As we put it in our ‘50-year peace plan for Taiwan,’ imagine a Soviet battle museum where the Statue of Liberty is.
+Or as they call it: Kinmen Island.
+
+And the neocons seem to care a lot. The average person notices that neocons getting upset about something is sometimes a tell that the thing isn’t worth getting upset about.
+I get it.
+The argument today isn’t politics, loyalty, honor, or duty. Even though personally those are the things I think we should stand firmest on. Today is material. Dollars and cents.
+Because the future of the dollar runs through Taipei. And the dollar is the key to protecting your way of life. Whether you want to acknowledge it or not.
+How the hegemon’s deal works
+You don’t get to be the reserve currency for free. Country X sells TVs to the world and gets paid in dollars. If enough exporters keep enough dollars in USD assets, the dollar trades persistently rich. That richness gives you cheap imports and cheap capital, but it hollows out manufacturing and encourages too much leverage. All else equal, this is how reserve currencies die.
+But all else isn’t equal. The center of the trade system also charges financial rents, gains sanction power over anyone who uses the currency, and uses the cheap capital to invest in the technological frontier. Today that’s AI. Two hundred years ago it was banking and insurance, run out of coffee houses in London.
+The position also lets you cut a deal with your allies. They supply you. They recycle their surpluses into your currency. You backstop their security so they can invest in export industries instead of building militaries.
+This worked for sterling. It works for the dollar. It also falls apart fast if you stop maintaining a world-class navy btw.
+
+The AI revolution makes the surplus pile existential
+The first time I sat down and tried to model the recycling architecture seriously was 2015. I thought the China-as-reserve-challenger thesis was 50/50.
+I’m only convinced now they’re playing for keeps because I’ve watched them, for a decade, refuse to take the path that would resolve their problems domestically. The currency stays suppressed. The banks stay broken. The capital account stays closed. Every six months FinTwit says “this is the year of the great recap.” Every six months it isn’t.
+But before we get to why they’re playing offense, deal with the peaceful version of the challenge.
+The peaceful version doesn’t work
+The optimistic case for China-as-reserve-challenger goes like this. China runs persistent surpluses. The world ends up holding RMB. Gravity does the rest. Reserve status follows surplus. No invasion needed.
+This is the version Ray’s 1000-year cycle studies tend to gesture at.
+The problem is that reserve currency status isn’t just trade gravity. It’s about whether holders of your surplus can do anything with the claims. They need to buy financial assets they actually want, exit when they need to, recycle into productive investments.
+China fails this on every dimension. Capital account closed. Housing and A-shares overvalued or government-traumatized. Bond market dominated by state issuance with managed yields. There is no Chinese equivalent of the Treasury market that a foreign reserve manager can buy and sleep at night.
+The peaceful thesis dies on the question “what do I do with my RMB once I have it?”
+Ray’s framework misses this because it treats reserve status as a function of trade and military hegemony. It is. But it’s also a function of an asset market deep, liquid, and trustworthy enough to house the world’s savings for decades. Sterling had it. The dollar has it. China doesn’t, and there is no path to acquiring it without opening the capital account, which they can’t do because the banks would blow up.
+What Ray also misses: the AI tigers
+In the era of AI, the surpluses are no longer being generated by China. They’re being generated by the AI tigers — Taiwan, Korea, Japan — on higher-value products China can’t replicate.
+Korean memory prices the past two months:
+
+SSD prices doubled in ten days. NAND up 47% in a month. AI capex flowing through customs in real time.
+Which is going to put upward pressure on already healthy current accounts:
+
+Taiwan ran a $181B current account surplus in 2025. Twenty percent of GDP. Nobody runs that ratio. Korea ran $123B. Japan ran $204B. The trio is half a trillion a year and going vertical.
+
+Setser’s Korea+Taiwan customs surplus is $400B trailing 3-month annualized, up from $100B two years ago. Quadrupled.
+And here’s where it starts to get…interesting.
+
+With the surge in export quantities and prices from the AI revolution, the AI Tigers are in shouting distance of outproducing the Dragon on surplus generation. On higher-margin products. With open capital accounts. With deep, liquid asset markets. With existing security relationships to the United States.
+Taiwan does the heaviest lifting — 23 million people generating $1.2T to $4T of cumulative surplus. Korea is the second leg, $740B to $2.7T. Japan stopped being an export story a decade ago. Japan’s current account is now primary income on the $3.5T NIIP — interest, dividends, repatriated earnings on assets built up since the 1980s. That compounds whether AI booms or busts. Japan is the floor. ~$2.3T cumulative in any scenario.
+
+This is the savings pile that is going to look for a home. Right now it lands in dollar assets by default, because the AI tigers sit inside the US security perimeter and there is no comparable alternative.
+That default is what Beijing is trying to break.
+The recycling channel quietly died
+Here's the thing most Americans don't appreciate. The pipes changed.
+
+Not because the surpluses are gone — they’re bigger than ever. What changed is who holds the dollar.
+The Bank of Korea added basically zero reserves on a $123B surplus in 2025. Taiwan’s CBC added $20B against $181B. The central banks aren’t intervening because the private bid is doing the work. Korean lifers, Taiwanese insurers, Japanese pensions, and retail on the Toss app are absorbing the dollars to fund foreign-asset purchases. Setser nails this — Korea’s record surplus was offset by private outflows, not reserve accumulation.
+Same surplus. Different holder. Different reaction function.
+A central bank with $1T of Treasuries has a 30-year horizon and no career risk. A Korean lifer with $1T of Treasuries hedges FX quarter by quarter. If the hedge ratio rises 5%, that’s $50B of mechanical dollar selling.
+That’s why TWD moved 5% intraday in May 2025 when the lifer hedge book wobbled. Five percent. On a major Asian currency. In one day. The surplus didn’t change. The hedger did.
+The plumbing got fragile and we didn’t notice.
+What China is actually doing
+China's de-dollarization story is a press release.
+
+Setser’s 2026 work shows what’s actually happening. SAFE’s official dollar share fell from 79% in 2005 to 55% by 2019, which made all the headlines. What the headlines missed is that SAFE stopped growing reserves at all. The new accumulation moved off SAFE’s books. State commercial banks hold roughly $1T in dollar assets abroad. Policy banks hold close to another $1T. CIC holds $450B, mostly dollars. Total Chinese state-sector dollar holdings now likely exceed $4T. More off the books than on.
+China is the largest dollar accumulator in the world while running the loudest de-dollarization campaign. This isn’t a contradiction. It’s a holding pattern.
+Beijing doesn’t have a better option yet. Letting RMB rip kills the export model. Opening the capital account exposes the banks. The banks themselves are the constraint. Rhodium’s recent work documents that 2025 write-offs were trivial compared to the scale of declining bank profits, suggesting the real recapitalization hasn’t even started. The hole is somewhere between $5T and $10T depending on whose estimate you trust. The banking system has about $5T of equity.
+The solvency framing misses the point. This is a physics problem.
+What holds it together is three forces. Capital controls. Consistent trade surpluses. And propaganda about the rise of China, aimed as much at the domestic audience as the Global South.
+Tying the pieces together
+
+Now ask yourself. Why does China keep the currency suppressed when raising it would boost consumption? Why not fix the banks? Why keep the capital account closed? Why the military build-up that exceeds ours on PPP terms? Why the proxy support for Russia, Iran, and North Korea?
+One framework ties these pieces together better than the alternatives. Beijing is trying to convert manufacturing dominance into regional balance-sheet dominance.
+Get Taiwan. Force the regional allies to price Beijing as the local risk-free authority. Use the captured savings to reallocate in CNY assets, and, in the process recapitalize the broken banks.  You finally found a buyer to handle the offsetting inflows to domestic capital flight.
+Then open the capital account. Then let the currency rise. Then let household consumption boom on the back of cheaper regional imports.
+I can’t read Xi’s mind. But the framework explains the observable behavior better than the alternatives. And the timing works too neatly to ignore. They need roughly $8-10T to fix the banks. The AI Tigers surplus pile is tracking $4-11T over the decade depending on how wacky the AI acceleration goes.  Which is about the same order of magnitude as a) the potential private capital flight, and b) the hole in the banking system.
+Putting real stakes on Taiwan. It’s not about territory and ego. It’s about a regional balance sheet that can make all their problems go away and propel them to global reserve currency even when their banks are hosed.
+Capital alone doesn’t get them there. The buildout needs physical capacity — chips, packaging, power. The very same constraints that gate the AI buildout gate the surplus accumulation in the take off scenarios:
+
+The unwind doesn’t have to be loud
+Most pushback on this thesis pushes back on the wrong picture. People imagine a fire sale. Trillion-dollar Treasury liquidations on a Tuesday morning. CNN chyron. Vol spike.
+That’s not how it goes.
+The first move is quieter. A Korean pension fund shortens duration. A Japanese insurer raises its hedge ratio. A Taiwanese lifer buys less agency paper this quarter and more gold. A reserve manager who never wanted RMB decides it needs a token allocation because Beijing has become the local weather system.
+None of these are headlines. All of them happen in the marginal allocation meeting on Wednesday afternoon.
+The stock doesn’t have to move. The flow only has to stop compounding in the old direction.
+The choice
+So when my friend asks why America should care if China gets Taiwan, the answer isn’t about Taiwan.
+Taiwan is the credibility test for the balance-sheet regime that finances America.
+Pay to defend it. Rebuild the manufacturing base. Generate AI’s energy domestically. Or take the cheaper path and let Taiwan go — in which case Beijing gets the keys to the regional balance sheet that has financed our fiscal model for forty years.
+There is no clean version where Taiwan changes hands and the dollar keeps the same automatic claim on East Asian savings.
+The dollar is the whole thing.
+Come for it and you come for everything built on top of it.
+That’s why America cares. Or at least why it should.
+But you and I don’t get to control whether America cares. We control what we own. Let’s talk about how to position for the regime change already underway in the data, whether or not the policy response materializes.
+
+The Trade
+Long the currency for the folks making chips…
+
+short the currency selling human labor at a discount to the west.
+
+The thesis is simple. Korea and Taiwan are running record current account surpluses on AI-cycle exports. India is running a structural deficit on energy imports and human services exports that AI is beginning to displace. The equity has priced this. The FX hasn't.
+
+The chart that does the work
+Korean stocks vs Indian stocks have rarely outperformed by 40% a year. EWY/INDA is now at +240%.
+Meanwhile KRW/INR has only gone up 7%.
+Same in Taiwan. EWT/INDA at +110%. TWD/INR at +7.6%.
+
+Stocks have confirmed the regime change. FX hasn’t. Historically FX follows the equity-relative signal more often than not. The burden of proof is on persistence.
+A word on the India services leg, because it’s doing real work in this thesis. India’s IT services sector — Infosys, TCS, Wipro, the whole BPO stack — built its moat on labor arbitrage. Skilled English-speaking engineers at a fraction of Western rates. That moat held for twenty years because the alternative was hiring locally at 5x the cost. The alternative now is an API call. Coding assistants are already replacing the entry-level ticket work that feeds the pyramid. Accenture’s last two earnings calls flagged AI-driven compression in outsourcing contract values. This isn’t a 2030 problem. The pricing pressure is showing up in current contract renewals. India’s services surplus was $180B in FY2025 — still large, still growing, but the growth rate is decelerating into the teeth of an energy import bill that moves the other direction when crude rips.
+Energy is the accelerant
+Brent at $75. Hormuz still volatile. Right tail is $150.
+India imports nearly 5 million barrels of oil a day, around $140B at 2024 prices. A doubling of crude pushes that toward $250B and widens the CAD by several percent of GDP. Japan, Korea, and Taiwan also import a lot of energy, but they’re coming into this with massive current account surpluses made of chips. India’s surplus, such as it is, is made of human services that AI is actively displacing.
+
+2024 data. Sources: India MoPNG/PPAC, Japan METI, Korea KEEI, Taiwan BoFT.
+Korea’s oil bill is higher than India’s as a share of GDP. Taiwan’s is similar. But the starting current account is what determines who breaks and who absorbs. India is already in deficit. A doubled oil bill takes the CAD toward 5% of GDP. 1991 territory.
+This is the macro version of the long APIs / short slides trade. Through the currencies, not the equities — the equities have already priced it.
+
+The carry problem
+
+Looking at short rates: India 5.25%. Korea 2.50%. Taiwan 2.00%. Short INR against long TWD/KRW costs roughly 3% per year.
+Going into the Iran conflict, RBI was about to start cutting. December inflation print was 1.33% — way below their tolerance band. The disinflation story was real and the path to cuts was opening. That was the dovish setup that would have compressed the rate differential and made this trade cheaper to carry.
+Energy ruins that. If crude rips, India’s inflation re-accelerates from the import bill alone. RBI doesn’t get to cut. Probably has to hold or hike defensively into the rupee weakness. The rate differential widens, not narrows.
+
+Meanwhile Korea and Taiwan don’t want to tighten. The inflows are already hot — tightening into the surplus would attract more capital, strengthen the currency further, and hurt the exporters their entire policy framework is built around protecting. Both CBs would prefer to ease if anything, but the AI cycle is doing the work for them.
+So the rate differential probably widens in the energy scenario, not narrows. Carry on this trade gets worse before it gets better.
+The spot has to do the work. A 10% INR move dominates the 3% carry. A 15% move pays for two years of waiting. The trade is sized to the spot catalyst, not to fund itself on rate convergence.
+How to play it
+Buy the upside, sell the downside, pay ~nothing.
+The clean expression is a risk reversal — buy a call on TWD/INR or KRW/INR, sell a put at a roughly symmetric strike (vs the fwd), structure for near-zero premium and hedge the delta. The forward curve already prices meaningful INR weakness because of the rate differential. KRW/INR 3-month forward is 1.3% above spot. TWD/INR 1-year forward is 3.7% above spot, which seems to imply more currency weakness than the interest rate differential would imply (though it’s late here so check my math).
+The trade is betting that spot moves further than the forward already implies. If you’re right, the call pays off. If the spot drifts sideways near the forward, premium is roughly neutral. The short put only hurts if the spot moves materially against the structural thesis.
+Bloomberg shows 3-month KRW/INR vol around 10% on both sides of the forward, premium roughly neutral on a symmetric structure. 3-month TWD/INR around 8%. Symmetric surface means the vol market hasn’t priced the asymmetric vol you might expect from the difference in their current situations.
+
+KRWINR vol surface
+
+TWDINR vol surface
+The structure works because: premium-neutral, defined downside via the put strike (already below the forward, so you only get hit on a real reversal), unlimited upside on the call. Better expression than a vanilla call because you’re not paying carry to wait.
+For those who want to dig in, the full mechanics on vol surface, delta, and strike selection are at the end of the piece.
+Implementation honesty
+I would like to put this trade on, but I can't. Both legs require NDF access through a prime broker, whether you're playing it through options or underlying futures and forwards. There is no such thing as a TWDINR or KRWINR future. Most retail accounts can't run these crosses. This trade is the clean institutional expression of the framework — described here so readers know what the trade looks like, not because the median reader can put it on.
+For retail: USD/INR options on CME’s Micro INR contract get you the directional view on the deficit side. You don’t get the full pair expression, but you get the leg with the cleanest catalyst — RBI losing control of inflation as energy rips.
+As a note, don’t substitute EWY or EWT for the FX legs. The equities have already moved. The whole thesis is that equity confirmed the regime change and FX is catching up. Closing the trade through the side that already ran defeats the purpose.
+
+What can go wrong
+The structural left tail: Taiwan blockade/invasion. TWD collapses 20-30% on capital flight, the put gets assigned. Mitigation: gold and short-credit book pays in this scenario, partial book-level hedge.
+China defensive devaluation. CNH weakens, drags KRW and TWD with it. Given the size of their surpluses, the fact they are reportedly selling their oil reserves into the market, and the recent positive PPI print, we don’t see this as likely.
+
+Trend / mania exhaustion. Both are already rallying on the physical flows and the market is pricing in more through the forwards. If the move has mostly played out and the next three months are sideways or we see a sharp correction in stocks, the risk reversal loses money if spot underperforms the forwards.
+Watch the FX
+Not the equity. Not the AI capex headlines.
+The FX.
+TWD/INR breaking 3.20 confirms continuation. KRW breaking 1,250 confirms the second leg. Until then, you’re patient. The forward is doing the carry work. The risk reversal is doing the structural work. You’re waiting for the spot to do its work.
+This is the trade for the next twelve months if you missed the boat.
+Till next time.
+Appendix
+
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure.
+Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

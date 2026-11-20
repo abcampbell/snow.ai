@@ -1,0 +1,176 @@
+TITLE: 25 Views for 2025 
+SUBTITLE: 
+DATE: 2025-01-09
+
+First it was 24 for '24, now 25 for '25. 
+Classic hedonic treadmill. 
+At a certain point, this whole thing will become ridiculous. What's it going to be, 73 calls for 2073? Totally unsustainable. I'll be ninety something! Comical. Let's hope Bryan Johnson is onto something and all you boomers are about to drop a couple trill on life extension. And yet, strangely appealing.
+
+Looking back at our track record from 2024, patterns emerged that went deeper than individual predictions. The most successful calls weren't just shots in the dark - they were manifestations of larger forces reshaping technology, markets, and geopolitics. Understanding these forces matters more than any individual prediction.
+What's different this time is how these forces are colliding. AI's energy demands reshape commodity markets. Great power competition drives technological acceleration. China's financial stress feeds both trends. Each force amplifies the others in ways that make traditional year-ahead predictions feel almost quaint.
+Our list this year will be framed by three fundamental forces that are reshaping our world. The first two are increasingly visible, though their implications remain underappreciated. The third changes everything - and it's still hiding in plain sight. Most of my specific calls are either derivative of these foundational views, and responses to tracking (or 'updating' in rationalist speak) my views.
+I. The Acceleration is Real
+A year ago, folks were debating whether AI would reach parity with humans, and whether it would continue to get exponentially smarter as a result of 'pre-training' LLMs. 
+A year later we have answers to both of those questions. AGI is here and represents a transformational technology on the scale of the internet, potentially greater. Yet it's also just the latest S-curve in humanity's long dance with tools, from hand axes to looms to computers. What's different this time isn't just the technology - it's the pace of change and the energy required to fuel it. 
+
+Topics we've written about previously:
+
+1. The S Curve is real
+Our first prediction stems from what we learned in 2024: AGI is here, but we've hit an interesting wall. 'Pretraining' very very large models has reached diminishing returns - we can make machines smarter than humans, but at a cost. Every time you send them a text message it costs $3k to answer....
+
+Data from OpenAI
+The immediate implications of this are fascinating. Firstly, we're still early in the fundamental technology cycle. The machines are still getting smarter, but it's getting exponentially more expensive to train and run them. It's a classic technology S-curve, but with a twist: the constraint isn't processing power or algorithms, it's energy.
+
+Which is good for folks who worry about existential AI risk, because it means that the end state probably looks more like monopolistic competition than a monopoly.  With the latter being much more dangerous/scary from a doomer perspective.
+
+Marginal Cost, Average Cost, Demand Curve and Marginal Revenue for an industry with monopolistic competition and upward sloping cost curves.
+The key insight here drives our first real call for 2025: intelligent machines are possible but they are extremely energy intensive. This leads to dramatic investment and demand for energy supply, and forces us to focus on the supply chains of the underlying products - hardware, materials, commodities underneath it all.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+2. Long silver (for Solar)
+Our second call is a straightforward implication from the above. We can replicate intelligence in machines but it's expensive in terms of silicon and energy. The smartest models look to draw exponentially more energy in 'run-time' aka when you actually use them. Meaning to some extent, energy is now intelligence. We have now linked them. 
+So what happens to energy demand if the energy intensity (energy use per question) of answering questions goes up right as the number of questions AI is being asked is exploding? More energy means more solar, more solar means more silver.
+
+Add to that many of the newer, more efficient solar panels actually use materially more silver per watt (20mg/watt + vs 10mg/watt), you get a set up for very very convex demand hitting very linear supply and an eventual price squeeze. Even at 10mg/watt the next time Meta wants 4GW of power, that's 1.2m oz or around $30m of silver. 
+In 2024, 25% of what came out of mines went right into solar panels, we expect this to increase in 2025. As a result we expect silver to appreciate relative to the price of gold, as industrial demand grows while countries begin adding silver to their strategic reserves.
+
+3. Long US natural gas exports
+Thing is, silver can only produce energy when the sun is out and shining. Whereas demand for energy to train models might be particularly spiky, with big runs presumably being driven by the work-life balance amongst researchers crushing GPUs at odd hours.
+While lots of people suggest nuclear as the obvious relatively clean source of energy for AI, it creates a baseload problem - too little capacity to deal with spikes, too much for the average day. Natural gas solves this. It's the least carbon intensive fossil fuel and can be easily scaled to match local energy demand spikes. Add in Europe's dire need to replace Russian supply, and you've got a perfect setup. 
+
+We expect US natural gas exports to continue to grow strongly.
+
+4. Long batteries
+In between those two sources of energy (solar and gas), you will likely see nuclear as well, but also a huge need for energy storage. As coordinating this demand and supply - given the magnitude of the local spikes - will likely require either overbuilding capacity or storing pure electricity in the form of batteries.
+Not exactly sure how to play this, lithium seems picked over and we keep finding it out here in Nevada, but this is one to watch. I'll update this if we find one and note the date.
+5. Long lasers
+Lasers for autonomous driving. Lasers for surgery. Lasers for fusion, and 3d printing, and quantum, and space. I'm seeing this pattern everywhere.
+In addition to those civilian applications, seems like all aspects of modern war require some form of laser. Missile defense, rangefinders, targeting systems all run on lasers. Their use as directed energy weapons and jammers against drones and satellites is just getting going. 
+The economics are compelling: spending $10m on a THAD interceptor missile to shoot down a $50k drone is kind of the definition of asymmetric warfare - and lasers fill this gap. This also interacts with our battery thesis, as lasers on trucks and ships will need their own energy storage and generation systems.
+6. Bird flu
+Bird flu looks to be real. Not sure if we know where it stands on the r0 vs mortality chart, which was probably the most important piece of info we got early days on covid.
+This call was a little more controversial when we were drafting this, as in the last 24hrs the first US death has been reported.
+
+7. Unicorns dying in space
+In spite of the very real and present applications, we see space as a likely place where the 'unicorn economy drought' will be particularly acute. Huge initial required investment, few existing potential buyers, and long, government laden procurement cycles combine with a normalization in rates to make growth stage space companies particularly vulnerable to a lack of late stage liquidity. That being said, we want to be long SpaceX here, so would go long SpaceX short a basket of pre-profit growth stage space startups.
+In addition to technological acceleration we're seeing the acceleration of various cultural phenomena, either unlocked by technology, or interacting with the global phenomena we outline below.
+8. The Horseshoe is real
+No real alpha here. Just bringing this meme to your attention. Feels like everyday we get closer and closer to a significant re-alignment in American politics. My partner introduced me to the idea of the horseshoe theory a couple of years ago, and it's all I see now in the back and forth discourse online.
+
+The basic idea is that the traditional left-right dynamic is falling to adequately capture the real groupings (in N-dimensional space remember) of the 'alignment' inherent in the populous. I think of it as the emerging third dimension, which is kind of still coming into view.
+
+You can see in the reaction to “Waluigi”, as I call him, where there's a weird *age* thing cutting across what first looked liked it would be pretty standard R-D dynamics. Doesn't mean all young are going left, but that on this issue, the age bias in this data suggests that young people see the world fundamentally differently on this issue.
+
+For the record, if I had to place myself on the scale, which is just an example, as you can imagine any number of dimensions, I'd put myself here. Way closer to the boomers than the zoomers on that one.
+
+If you are worried about civil war or instability this probably isn't the right 'cleavage' (as they used to say in political science) or dividing line to look. 
+If you are worried about social instability in the west, you can imagine other dimensions where the dividing lines are so extreme, that you could 'complete the horseshoe' and create a material re-alignment in politics.
+This is also why, if you are like me, you find yourself bouncing between what people call left or right depending on the issue and depending on where you fall on this or that horseshoe. Rolling around the 'saddle points' of what used to be a political spectrum and increasingly feels like a manifold (or surface) of increasingly larger dimension.
+
+Our call for 2025 is that we'll continue to see increasing evidence that the horseshoe is real, across multiple dimensions. Meaning the rise of political parties previously considered fringe like AfD in Germany, Rassemblement National in France, and Reform UK. All good examples of political parties previously considered extreme right, which have been melded with nationalism and populism as liberalism comes under attack from the horseshoe. In terms of US domestic policy. Less relevant for 2025, but I personally wouldn't short AOC. Think the game of thrones for 2028 comes down to her vs Newsome.
+9. Entitlement reform
+$2Tr, $2Tr, where oh where are we going to get the $2tr? Well, looks like Elon and Trump are in synch: they need to unleash the productive capacity of the country and reduce the budget at the same time. Entitlement reform. It's the only way to make the numbers work.
+This lines up perfectly with our horseshoe thesis - what was once a third rail of American politics suddenly becomes possible when populist movements from both ends of the spectrum converge. The traditional left-right divide on entitlements dissolves when both sides prioritize national renewal over established programs.
+If Millei is a guide, you need 1 full year to do a reset and then show real growth your way out. His playbook: shock the system with dramatic cuts, weather the initial outrage, then point to tangible economic improvements. The timeline matters - reforms would need to start in 2025 to show results before 2028.
+What might this actually look like? Social Security retirement age pushes higher, means testing expands dramatically, and Medicare benefits get restructured. The sacred New Deal cows all face the knife. The question is how much political capital they're willing to burn to make it happen.
+The bond market implications are straightforward: any serious reform attempt means higher rates for longer. We're going to cut some of our duration here, especially in the belly of the curve where the market seems to be pricing in early Fed cuts. This could be the shock that breaks the "Fed pivot" narrative.
+But holy moly don't think people are ready. The protests in France over raising retirement age by two years might look tame compared to what's coming. We'll keep you posted on specific trades as this develops.
+
+10. Peak secularism
+Related to the above, and I don't know how to monetize this one, and frankly kind of scared to even try. (If you have thoughts, the ideal play would be a publicly listed corporation that derives revenue from a religious or quasi religious tax status.) Basic theory is it feels like, at least for now, we've seen the peak in secularism. 
+I'm not even making a value judgement on this here, just looking around and seeing the frameworks that people live their lives with. Some folks, grappling for structure, have fallen into utilitarianism. The idea that there is some *knowable* math that can give you confidence to do things that would otherwise be considered harmful. Ends justifies the means type shit. One of the most dangerous ideas of all time and the source of most of global calamities. Others, will likely fall back into tradition, linguistic group, or tribe.
+Not knowing shit is SCARY. People need meaning, they need stories and narratives and to understand their place in history and society and clan. That's likely TOO weird for you, so you will likely feel a pull to the family of your people, your language, your community. Which is natural and good, and likely part of some bigger plan, but also potentially destabilizing as we balkanize further into tribes, competing in negative sum games, as opposed to appreciating how much amazing shit is about to happen. So yeah, long story short, long mega churches as generations 'find God.'
+11. Health positivity
+We saw four things pointing in the same direction here. GLP-1 and the "Don't Die" movement breaking into the mainstream. A shift in media and cultural back to traditional beauty standards (enabled by GLP-1 drugs like Ozempic which have the potential to turn weight into a class market in a way never done before), and the appointment of RFK in the Department of Health in the US. We think these drugs will become even more widespread in 2025 and there are interesting implications for pharmaceutical stocks, food producers, and media companies in this coming shift.
+This isn't just about weight loss anymore - it's about a fundamental shift in how society views health optimization. The confluence of GLP-1s, longevity science, and preventative medicine is creating a new paradigm. What started with Silicon Valley biohackers is going mainstream.
+The market implications ripple across sectors: Pharma, Food, Media, Fitness etc.
+But the really interesting part is the class angle. For the first time in history, weight becomes a purely economic choice - if you can afford the drugs. This creates social and political dynamics we haven't seen before.
+II. Great Power Conflict Escalates
+Our second big thematic core view is that we are in an inevitably tit-for-tat cycle of escalation between global, mis-aligned nuclear powers. One without many clear off ramps. 
+By adopting the West's economic machine while rejecting its political and cultural frameworks, China was put on an inevitable collision with the existing global order. Add in Russia's pivot post-Ukraine to the east, and we're watching MacKinder's Heartland slowly unite to challenge the Rimland, with America at its center. 
+
+From prior work , couple small errors like Singapore here.
+2024 saw escalations in Lebanon, Syria, Iran, North Korea, Ukraine, record military drills/flights by the PLA around Taiwan's, and four mysteriously cut undersea cables. We believe this rising Heartland power will accelerate various cultural, economic and military trends in the west. Starting with:
+12. The death of globalism.
+We've written about this recently, we believe the latest shifts away from globalism represent a natural and necessarily re-alignment of western cultural, economic and political institutions in the face of a determination to re-write the international order. This trend will continue under Trump, who is to some degree a manifestation of this underlying force, and not its origin. We should see this play out publicly in international organizations and negotiations, and unilaterally as America First goes global. Greenland, Panama, Canada, are all examples of Trump signaling the way the world is changing.
+
+13. Trump is serious about Greenland
+Probably a focus of a longer piece, but in world where China and India look determined to fuel their industrialization with energy derived from coal, there is zero chance we are getting to net zero carbon, even with the emissions falling in many western countries.  Just extrapolating the existing growth rates, while holding coal somewhat constant reveals a simple truth.  Without dramatic improvements in carbon sequestration, we’re going to melt the North Pole.  Bad news for island real estate, good news for real estate up north, where Alaska, Vladivostok, and Greenland all of a sudden become a lot more livable.  When you include the mineral resources and positioning next to an eventual north west passage for shipping through the artic, the strategic benefit the US is real and should be seriously considered.  Another example where ideas from the New New Deal are coming into the mainstream earlier than anticipated.  
+Panama is a little more controversial, but more immediately relevant.  Though I don’t have strong views there.
+
+14. Tariffs go up
+Not that controversial a call, and an extension of the above, but yes we think tariffs are going to go up in general, and strategically as a tool of economic and foreign policy. Trump has deployed this weapon already, and it's a surprisingly effective implementation of American interests. At least as a feint, we'll see about implementation. 
+There may be a hangover, in the form of inflation, but if you are going to acknowledge that we are in a post-consensus era, then everything is up for debate in the pursuit of national interest. Including the previously inviolable idea of Most Favored Nations. It was a good way to bootstrap a global supply chain, but it's already been violated in principle with the regional trade deals that every country has built on top of the WTO framework. These regional deals (NAFTA, EU, MERCOSUR, GCC, CARICOM) actually drive down the transaction costs or movement of goods or people between states to zero, but call into question this MFN framework. 
+For 2025 we expect Trump to use his political momentum to both implement new tariffs, and use tariffs as a weapon of statecraft. Deploying a 'mixed strategy' (in game theory speak) where his bark is often much worse than his bite.
+
+15. Immigration tightens
+Consistent with this rejection of globalism, we see emergent challenges to the notion of open borders across both the US and Europe. As a nation of immigrants, this may seem hypocritical, but all you have to do is look to Europe to see what happens when liberalism lacks the capacity to assimilate new arrivals. This is a potentially explosive issue as many of these cultural differences line up along existing national, linguistic, religious or racial identities. Meaning honest conversations around things like labor supply get immediately politicized and racialized.
+16. Water wars
+We see water playing a material role in destabilizing existing conflicts. In particular, water is at the heart of the current tension between Afghanistan and Pakistan.
+
+Along with the classic tension that results from imperially drawn borders (in this case the “Durand Line” which divided the regions Pashtun population across the Afghanistan / Pakistan border).
+
+Which recently has become unstable.  
+
+As well as the ongoing, frozen conflict between India and China.
+
+There are a lot more examples, but you get the idea. This is also another place where energy supply becomes relevant, as most of the ways to move or purify water are extremely energy intensive.
+17. Syria will not hold elections in 2025
+
+Syria looks ready to split into pieces, with the neighbors each taking a piece. Thing is the fracturing of that state into further ethno-linguistic enclaves may look good on paper, but likely will bring chaos in the long run.
+
+18. Turkey & NATO
+In particular, the destabilization and potential disintegration of Syria will bring Turkey into direct connection with it's new neighbor Israel, and potentially a new Kurdistan... 
+
+This could be enough to put pressure on Turkey's relationship with NATO, as what previously felt like existential threat from the USSR wanes relative to it's new regional interests in the South. Note, it's been a while since I looked into Turkish entanglements in the east, where Armenia, Azerbaijan et al have one of those conflicts within a conflicts that looks a eerie like 1920s Balkans in it's potential to cause chaos.
+19. Long India
+The fundamentals here are obvious. India is less developed than China, but with a larger population. Meaning much more potential for 'catchup growth'. Lots of human capital, a lot of which happens to speak English. In our New New Deal one of our points was a NAFTA for the US-India. Seems relatively controversial today, especially in the context of a popular shift against immigration and a recent fight on 'tech twitter' recently regarding the status of H1-Bs. But anyone running a real business or trying to find talent understands that the US number one asset is it's ability to attract and retain the world's best and brightest. While there still exists obvious cultural dissonance, we think China's loss vis-a-vis America is India's gain.
+
+20. European malaise continues
+The equities are the obvious thing, probably already priced in. Question here is pain needed coming in the form of the currency, or soul searching enough to unleash their productive potential?
+Like, there is no reason there can't be a Silicon Valley in the Rhine.  It wouldn’t be the first time.
+
+In the 1500s, intelligence was constrained by where you had access to rivers. As this map of medieval universities demonstrates.
+
+In 2100, the binding constraint will access to energy (read: sun or oil) and people. Speaking of, why aren't there more data centers in Spain?
+
+21. Resource & rare earth mineral nationalism intensifies
+Natural implication from all of the above. Growing demand for energy and critical minerals right as the geopolitical situation puts strains on those supply chains. We expect this trend to accelerate, as both sides work out their long term strategy.
+In terms of how to implement this view, in lieu of buying the actual commodities (lol), probably just buy the stocks that are making this stuff domestically. For those with interest, we've published our basket of names previously here:.
+
+III. China’s Ugly Deleveraging
+These two big themes, acceleration and the rise of global conflict, are relatively generic. You don't need to be a macro punter to really have opinions on either, this last theme is a little more specialized and one I've been tracking now for a decade:
+Much of the Chinese financial system remains technically insolvent and the country is still in what we used to call the 'ugly' phase of its deleveraging.
+
+Trillions of dollars of losses relating to real estate sitting on books, leaving policymakers the Sophie's Choice between letting the currency peg go by printing, and restructuring the banking system. The former bearish for the RMB and the latter bullish for gold, silver and other real, portable assets.
+In 2024, we saw further confirmation that indeed there was economic weakness in China resulting from the popping of the real estate bubble, that policymakers would respond to further economic weakness with monetary stimulus, and that Trump would somewhat target Chinese imports for disproportionate tariff treatment on competitive grounds. While the follow through on the stimulus has thusfar been weak, rates in China indicate they on track to get their own form of ZIRP. Determined to grow their way out via manufacturing exports, a weaker currency would boost competitiveness and counter the tariffs and so seems in the cards for 2025.  Meanwhile, credit continues to grow relative to the economy.
+
+22. Gold in China 
+The first obvious implication of this tradeoff is the valve itself, “Gold in China.”  Now that we have confirmation they intend to ease their way out, you might want to double up the short CNY leg, as it actually only has half the volatility as the gold/usd leg, and so to be fair, you don’t just want gold denominated in CNY, you actually probably want gold AND dollars.  As the PBoC continues down the path of ZIRP, currency debasement, and perpetual easing vs taking stern medicine.  We can’t blame them, to each their own, but seems obvious that in a world where you are getting hit with tariffs and your real estate engine is dead, you would probably want to take the currency depreciation, which makes your exports cheaper abroad.  
+
+The only reason we think they haven’t done more of this is politicians sensitivity to the de facto currency peg as an indication of national pride and interest.  After all if the RMB goes down 10% a year vs the dollar, even 8% nominal growths means they are losing ground to the US in terms of actual GDP weight.
+
+Expect Gold in China to outperform as they finally let the quasi-currency peg go to protect the financial system.
+
+23. Evergrande will not pay back it’s $6bn in WMPs
+Would you believe it’s now 4yrs since Evergrande defaulted, and one year since a Hong Kong court ruled to liquidate the firm, and yet we pretty much still know nothing about how big the loss will be and whether domestic banks, or domestic depositors will take a loss.  Given the firm sold around 40bn in “Wealth Management Products” (WMPs), which look to remain unpaid, we’ll stick with our prediction from last year that policymakers will kick this can as far as they can down the road.  So as not to set a precedent which could then be applied to trillions of other stressed property, credit, and banking assets.
+
+From Reuters in 2021.  Some of the $6bn may have been paid back but there are no reports of any widespread settlement
+24. Crypto can be cool, or crypto can be money, it cannot be both.
+Nothing new here.  Same story as last year, though marginal better as capital flight from China, combined with the potential for national reserve accumulation, should drive demand for crypto as a financial asset.  At the same time, it’s use as a technology to change our day to day world still remains under expectations.
+Most tech folks overestimate the average human’s interest in engaging with technology, myself included.  When it comes to money, this is game over.  Your money aught be the dumbest, simplest, most reliable tech you have.  The ability to store, spend and save.  As crypto continues to evolve, we see most of the value creation occurring at the financial intermediary layer.  The exchanges, wallet hosts, and other intermediaries which wrap crypto financial services in consumer friendly products.  You could go much much deeper here, and many have.  For the time being I continue to like Coinbase as the market leader the likely beneficiary of continued adoption of bitcoin by traditional financial institutions and asset managers.
+
+25. Stonks go down
+Lastly, I think stocks are expensive.  My models are also bearish.
+Not sure they will end the year down, but feels like everyday more and more expectations get piled on the same smaller and smaller set of names.  This flow into concentrated indices then pushes up valuations for other index members.  At a time where bond yields are going up.  Don’t forget, there are bonds in the stocks!
+
+So when you think about US stocks from a valuation, positioning, relative value to bonds, concentration, and narrative perspective, things look almost as good as you can get.  Pretty much the bull case at this is some combination of short(er) timelines on AI than I have, or more confidence that Trump’s combination of industrial policy, tariffs, deregulation, tax cuts, and…spending cuts, somehow drive up growth even further than what is currently discounted.  Oh and the tailwind to production and demand provided by importing cheap labor is almost certain to turn into a headwind.  
+So to be super bullish stocks here, you need be super bullish the adoption of AI in the next 12 months, or the power of deregulation. We believe in both, but not much more than what's discounted in the markets, and so have trimmed our longs going into the new year and look to add if we get a rapid unwind ala August for reasons connected to excess market concentration
+
+Looking to rates and the dollar to lay out the likely path of monetary and fiscal policy while expectations for AI implementation diminish along with widescale understanding that yes, AGI is here, but no, it's not cheap enough to replace human labor (yet).
+Till next time.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+There will be typos.  This is not my full time job and I do not promise the data included is accurate or up to date. There are innumerable small logical and mathematical decision inherent in making these charts, and mistakes do happen. Please consult me on anything contained herein before making an investment decision on the basis of this work. We are happy to provide the source and business/transformation logic where appropriate.  
+THERE CAN BE NO ASSURANCE THAT ROSE INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

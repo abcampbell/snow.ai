@@ -1,0 +1,2677 @@
+[
+ {
+  "slug": "inflation-deflation-bubble-intro",
+  "title": "Inflation, Deflation, Bubble",
+  "date": "October 31st, 2020 (orig; imported 2021-11-09)",
+  "summary": "Fed crisis playbook inflates long-duration assets; the real long-run inflation driver is conflict, not policy, so investors should rotate some bonds into gold.",
+  "themes": [
+   "inflation-regime",
+   "gold",
+   "fed-liquidity",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "Financial panics lead to deflation and conflicts lead to inflation.",
+  "improve": [
+   "Lede is buried under a long 1970s/Miracle-on-Ice preamble; open with the conflict-causes-inflation thesis.",
+   "The inflation-history chart deck is only linked; define 'conflict' ex ante so the claim is testable."
+  ],
+  "falsifiable_calls": [
+   "Long-term inflationary pressure is building; shift some government bonds into gold",
+   "Absent global conflict, no massive inflation shock"
+  ],
+  "return_to": true,
+  "return_reason": "Conflict-inflation thesis can be scored against the 2021-23 inflation and Ukraine war."
+ },
+ {
+  "slug": "bitcoin-is-not-money-lack-of-payments",
+  "title": "Bitcoin Is Not Money  - Lack of payments (p2)",
+  "date": "June 21st, 2016 (orig; imported 2021-11-09)",
+  "summary": "Bitcoin has product-market fit only for black markets, capital flight and speculation; almost nobody uses it as money (illiquid 'lemon money').",
+  "themes": [
+   "crypto"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 3,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "shark meat in San Francisco is more liquid than bitcoins in America.",
+  "improve": [
+   "Restaurant counts and tx/sec are weak proxies; use value settled and merchant-acceptance data.",
+   "Ignores store-of-value use, which is what later drove adoption."
+  ],
+  "falsifiable_calls": [
+   "Bitcoin cannot be both cool and money"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit with stablecoin/ETF-era payments data."
+ },
+ {
+  "slug": "the-cost-of-gold",
+  "title": "The cost of gold",
+  "date": "September 13th, 2019 (orig; imported 2021-11-09)",
+  "summary": "Short poem: negative rates remove gold's carry cost, which should be bullish for gold with 1-3% inflation.",
+  "themes": [
+   "gold",
+   "rates-curve"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 3,
+   "clarity": 4,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 3
+  },
+  "overall": 3,
+  "best_line": "the winner just sits still",
+  "improve": [
+   "Poetic form hides the actual claim; state carry math in one line with a chart.",
+   "No numbers on rate level or breakeven."
+  ],
+  "falsifiable_calls": [
+   "Gold rallies if cash rates go negative and inflation runs 1-3%"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "a-credit-bubble-in-china",
+  "title": "A credit bubble in China",
+  "date": "May 29th, 2019 (orig; imported 2021-11-09)",
+  "summary": "Chinese credit bubble remains un-deleveraged; Rose's China conditions indicator and PCA suggest long soft commodities hedged with short HKD.",
+  "themes": [
+   "china",
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "the entire global economy is essentially long the Chinese credit bubble.",
+  "improve": [
+   "Charts lack captions/takeaways; the PCA section never states what the components imply for the trade.",
+   "Trade (long sugar, long USDHKD) has no sizing, stop or exit conditions."
+  ],
+  "falsifiable_calls": [
+   "Long soft commodities (sugar, cocoa, coffee) vs short HKD",
+   "Possible break in HKD peg from Chinese liquidity stress"
+  ],
+  "return_to": true,
+  "return_reason": "The HKD peg held; re-test the commodity/HKD expression and the conditions indicator."
+ },
+ {
+  "slug": "the-day-the-oil-machine-went-down-63b",
+  "title": "The day the oil machine went down - part 2",
+  "date": "April 26th, 2020 (orig; imported 2021-11-09)",
+  "summary": "Fragment of the negative-oil post: USO's predictable rolls were front-run, retail lost, and negative prices raise questions about ETF and exchange solvency and a Fed oil role.",
+  "themes": [
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Passive beta being a little too confident in the herd.",
+  "improve": [
+   "Duplicate of the longer post; consolidate.",
+   "Roll front-running (~10%/month) and $7bn margin figures are unsourced."
+  ],
+  "falsifiable_calls": [
+   "Fed could end up buying physical oil / backstopping an exchange"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "what-if-ai-werent-inevitable",
+  "title": "What if AI weren't inevitable?",
+  "date": "September 29th, 2016 (orig; imported 2021-11-09)",
+  "summary": "AGI is not inevitable: machine failures (face rotation, mislabelled images) reflect our inability to represent reality in a machine, not just missing data and compute.",
+  "themes": [
+   "ai-thesis"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 2,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "The machine fails when we fail.",
+  "improve": [
+   "Two anecdotal examples carry the argument; add systematic evidence or counter-cases.",
+   "Define what would falsify the claim."
+  ],
+  "falsifiable_calls": [
+   "AGI will not arrive from more data and compute alone"
+  ],
+  "return_to": true,
+  "return_reason": "Re-test against what LLM scaling actually delivered."
+ },
+ {
+  "slug": "overconfidence-is-probably-blowing",
+  "title": "Overconfidence is (probably) blowing up your life",
+  "date": "December 22nd, 2015 (orig; imported 2021-11-09)",
+  "summary": "Blow-ups come from overconfidence plus structure (leverage, obligations); buy back optionality in life and portfolios.",
+  "themes": [
+   "personal-essay",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 5,
+   "timelessness": 7
+  },
+  "overall": 6,
+  "best_line": "Overconfidence + structure = financial blow ups",
+  "improve": [
+   "The life-structure to leverage analogy is asserted, not shown; one concrete portfolio example would help.",
+   "Trim the personal narrative before the finance link."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "what-if-volker-killed-the-soviet",
+  "title": "What if Volker killed the Soviet Union?",
+  "date": "December 9th, 2019 (orig; imported 2021-11-09)",
+  "summary": "Speculative note that with concentrated wealth, rate hikes now hit supply (shale, tech) more than demand, so tightening could be inflationary.",
+  "themes": [
+   "rates-curve",
+   "commodities-supply"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 4,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Lower rates don’t stimulate demand if demand is just poor people who are already levered up.",
+  "improve": [
+   "No chart or data behind the supply-side rates channel.",
+   "Last line is a non sequitur joke."
+  ],
+  "falsifiable_calls": [
+   "Raising rates could contract oil supply and raise prices"
+  ],
+  "return_to": true,
+  "return_reason": "Shale supply response to rates in 2022-23 can test it."
+ },
+ {
+  "slug": "dress-rehearsal-covid",
+  "title": "Dress Rehearsal (Covid)",
+  "date": "February 2nd, 2020 (orig; imported 2021-11-09)",
+  "summary": "Only a title/subtitle survives in the text (body likely an image or embed), so there is nothing to rate.",
+  "themes": [
+   "data-tools"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 1,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 1,
+  "best_line": "",
+  "improve": [
+   "Include body text or a caption describing the chart/video so the post stands alone."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "whatever-happened-to-alpha-how-much",
+  "title": "Whatever Happened to Alpha - Part 3",
+  "date": "June 18th, 2018 (orig; imported 2021-11-09)",
+  "summary": "Hedge funds carry substantial beta; an equal-weight 'All Beta' benchmark suggests 25-75% of returns is beta.",
+  "themes": [
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "it’s clear that yes, investors are getting a lot of beta along with their alpha.",
+  "improve": [
+   "The 25% vs 75% range is too wide to be useful; pin down one estimate with method.",
+   "Cliffhanger on what else drives the line is never resolved."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "Series promised a follow-up; finish and quantify."
+ },
+ {
+  "slug": "food-vs-oil",
+  "title": "Food vs Oil",
+  "date": "March 29th, 2020 (orig; imported 2021-11-09)",
+  "summary": "COVID plus OPEC price war is deflationary; food and oil diverge, so own a cocoa/wheat/sugar basket and bet against the Saudi riyal peg (short KSA).",
+  "themes": [
+   "commodities-supply",
+   "positioning-flows",
+   "macro-regime"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 6,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "we might be forgiven for not taking the Kingdom's word for it.",
+  "improve": [
+   "Analysis is labelled 'proprietary' and shown without evidence.",
+   "The peg bet needs a catalyst, cost of carry and exit; the peg held."
+  ],
+  "falsifiable_calls": [
+   "Short Saudi riyal peg / short KSA",
+   "Long cocoa, wheat and sugar basket",
+   "COVID + OPEC means deflation and dollar squeeze"
+  ],
+  "return_to": true,
+  "return_reason": "Peg call was wrong or early; post-mortem of the oil-food relative value idea."
+ },
+ {
+  "slug": "trading-in-my-pjs",
+  "title": "Trading in my PJs",
+  "date": "March 21st, 2020 (orig; imported 2021-11-09)",
+  "summary": "Investor update: long gold/vol book did well; trimmed gold before dollar squeeze, sold April VIX at 68, expects liquidity via money printing.",
+  "themes": [
+   "positioning-flows",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Which is generally good practice, whenever you are short convexity.",
+  "improve": [
+   "Position sizing and P&L are only gestured at.",
+   "The Lehman-prop-desk anecdote consumes the opening."
+  ],
+  "falsifiable_calls": [
+   "Printing/liquidity will arrive and stabilize markets",
+   "Short April VIX at 68"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-machine",
+  "title": "The Machine",
+  "date": "September 6th, 2018 (orig; imported 2021-11-09)",
+  "summary": "Introduces 'the Machine': capital in three forms (culture, technology, finance) interacting; promises later posts.",
+  "themes": [
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 2,
+   "actionability": 2,
+   "timelessness": 5
+  },
+  "overall": 4,
+  "best_line": "Simply put, technological capital is the ability to do more, with less.",
+  "improve": [
+   "Framework is defined but never applied; no charts delivered despite referencing three.",
+   "Add one concrete market example."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "Framework promised but not developed in this post."
+ },
+ {
+  "slug": "2020-outlook-buy-the-tails",
+  "title": "2020 Outlook - Buy the tails",
+  "date": "January 22nd, 2020 (orig; imported 2021-11-09)",
+  "summary": "Two-sentence outlook: own both tails in 2020.",
+  "themes": [
+   "portfolio-construction"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 3,
+   "clarity": 5,
+   "evidence": 1,
+   "actionability": 3,
+   "timelessness": 3
+  },
+  "overall": 3,
+  "best_line": "Gotta own both tails.",
+  "improve": [
+   "Too thin to be an outlook; say which tails and how to fund."
+  ],
+  "falsifiable_calls": [
+   "Own both tails in 2020"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "waiting-for-the-crash-waiting-for",
+  "title": "Waiting for the crash.  Waiting for inflation.",
+  "date": "July 26th, 2019 (orig; imported 2021-11-09)",
+  "summary": "Chinese bank failures show the credit bubble; MMT misses the dollar peg, and PBOC faces a trilemma, buying time only while western easing and low inflation persist.",
+  "themes": [
+   "china",
+   "fed-liquidity",
+   "inflation-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "Your move PBOC. Choose two.",
+  "improve": [
+   "'Reserves slowly dwindle' needs numbers.",
+   "No timeline for when the music stops."
+  ],
+  "falsifiable_calls": [
+   "PBOC must eventually choose between peg and domestic policy",
+   "Return of inflation forces tightening and a dollar squeeze on China"
+  ],
+  "return_to": true,
+  "return_reason": "Peg/trilemma framing is a recurring thesis worth re-testing."
+ },
+ {
+  "slug": "rmb-update-lucky-number-7",
+  "title": "RMB update - Lucky number 7",
+  "date": "August 4th, 2019 (orig; imported 2021-11-09)",
+  "summary": "USDCNH broke above 7; stay long gold and sell RMB vs USD.",
+  "themes": [
+   "china",
+   "gold"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 3,
+   "clarity": 3,
+   "evidence": 2,
+   "actionability": 4,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "once USDCNH got past 7, it kept running.",
+  "improve": [
+   "No chart or levels; say what 'where it's going' means."
+  ],
+  "falsifiable_calls": [
+   "Long gold, short RMB vs USD"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "bubbles",
+  "title": "Bubbles",
+  "date": "December 6th, 2018 (orig; imported 2021-11-09)",
+  "summary": "Short musing that bubbles occur at financial, technological and civilizational levels and may resolve in war.",
+  "themes": [
+   "macro-regime",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 3,
+   "clarity": 3,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 3
+  },
+  "overall": 3,
+  "best_line": "Each of these conflicts, a kind of bubble about culture.",
+  "improve": [
+   "Chart is missing from the text; claim is unanchored.",
+   "Overreaching analogy; tie to a market implication."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "campbell-at-the-cfas-3rd-annual-macro",
+  "title": "Campbell at the CFA's 3rd Annual Macro Outlook",
+  "date": "October 10th, 2018 (orig; imported 2021-11-09)",
+  "summary": "List of panel topics only (investment philosophy, passive, yield curve, dollar, tariffs, vol, biggest risk).",
+  "themes": [
+   "macro-regime"
+  ],
+  "format": "conference-notes",
+  "scores": {
+   "insight": 2,
+   "clarity": 3,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 2,
+  "best_line": "",
+  "improve": [
+   "Add the actual answers or a recording link."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-dollar-part-2",
+  "title": "The Dollar - part 2",
+  "date": "September 19th, 2018 (orig; imported 2021-11-09)",
+  "summary": "One-liner: dollar could fall 30% but must first rally 10-20%.",
+  "themes": [
+   "fed-liquidity"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 4,
+   "clarity": 4,
+   "evidence": 1,
+   "actionability": 4,
+   "timelessness": 3
+  },
+  "overall": 3,
+  "best_line": "Yes the dollar could fall 30%, but we think it has to rally at least another 10-20% before it does.",
+  "improve": [
+   "Standalone it has no support; link to Part 1."
+  ],
+  "falsifiable_calls": [
+   "Dollar rallies another 10-20% before any 30% decline"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-dollar",
+  "title": "We Live in a World of Dollars",
+  "date": "September 14th, 2018 (orig; imported 2021-11-09)",
+  "summary": "Disputes Dalio's near-term dollar-collapse call: Fed tightening and a global demand shock mean the dollar rallies first, then paper currencies fall vs real assets; hold gold in RMB.",
+  "themes": [
+   "fed-liquidity",
+   "gold",
+   "rates-curve"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "this stronger dollar will lead to the next downturn in the global credit cycle, as tightening in the reserve currency traditionally has.",
+  "improve": [
+   "Central bank balance sheet charts are referenced but conclusions are not quantified.",
+   "Specify how long the dollar-strength phase should last."
+  ],
+  "falsifiable_calls": [
+   "Dollar rallies 10-20%",
+   "Stronger dollar causes next global credit downturn",
+   "Gold in RMB as hedge"
+  ],
+  "return_to": true,
+  "return_reason": "Dollar rally played out in 2022; score the call and gold-in-RMB hedge."
+ },
+ {
+  "slug": "cultural-dissonance",
+  "title": "Cultural Dissonance",
+  "date": "November 26th, 2019 (orig; imported 2021-11-09)",
+  "summary": "Trade war may be a cultural not economic clash; buy gamma around US veto and HK democracy headlines.",
+  "themes": [
+   "china",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 3,
+   "clarity": 4,
+   "evidence": 1,
+   "actionability": 2,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "Our is not to reason why, ours is but to see that gap, and go buy gamma accordingly.",
+  "improve": [
+   "The link between Article 1 Section 7 and Trump-China is unclear.",
+   "Specify gamma instruments."
+  ],
+  "falsifiable_calls": [
+   "Buy gamma into HK/trade-war event risk"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-unicorn-economy-capital-vs-technology",
+  "title": "The Unicorn Economy - Capital vs Technology (Part 3)",
+  "date": "January 22nd, 2016 (orig; imported 2021-11-09)",
+  "summary": "Venture structure (liquidation preferences, protection) turns capital into equity-in-boom/credit-in-bust and subordinates employees; unicorn valuations rest on expectations that will mostly be disappointed; the sector needs a market.",
+  "themes": [
+   "venture-private-markets",
+   "fed-liquidity"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "What is not widely appreciated is that, in the Unicorn Economy, big winners and big losers are just the natural state of affairs.",
+  "improve": [
+   "Payoff charts are described but the text never quantifies how much value is subordinated in a typical down round.",
+   "The call for a market is vague: sketch the hedging instrument."
+  ],
+  "falsifiable_calls": [
+   "Unicorn valuations too optimistic; employees/common holders will be wiped out by preferences in a downturn"
+  ],
+  "return_to": true,
+  "return_reason": "Unicorn bust thesis was early; tie to 2022 repricing and SVB."
+ },
+ {
+  "slug": "inflation-deflation-bubble-the-destruction",
+  "title": "Inflation, Deflation, Bubble - The Destruction of a Bubble",
+  "date": "October 31st, 2020 (orig; imported 2021-11-09)",
+  "summary": "Excerpt of the 2020 inflation piece: the Fed bubble is less the risk than the end of disinflation; conflict drives inflation; hold gold over bonds.",
+  "themes": [
+   "inflation-regime",
+   "gold",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Fight a war, get inflation.",
+  "improve": [
+   "Duplicate of the section in the full post; keep one.",
+   "Chart deck is linked not summarized."
+  ],
+  "falsifiable_calls": [
+   "Conflict drives inflation; bonds are overweighted vs gold"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-coming-chinese-credit-crisis",
+  "title": "The coming Chinese credit crisis in ten charts",
+  "date": "December 15th, 2020 (orig; imported 2021-11-09)",
+  "summary": "Only a title/subtitle survives in the text (body likely an image or embed), so there is nothing to rate.",
+  "themes": [
+   "data-tools"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 1,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 1,
+  "best_line": "",
+  "improve": [
+   "Include body text or a caption describing the chart/video so the post stands alone."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-day-the-oil-machine-went-down-66c",
+  "title": "The day the oil machine went down - poem",
+  "date": "April 26th, 2020 (orig; imported 2021-11-09)",
+  "summary": "Poem retelling the negative-oil episode: Saudi tanker glut, super-contango, USO rolls front-run, physical players win.",
+  "themes": [
+   "commodities-supply"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 2,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "“Our systems weren’t built for negative numbers,” they said.",
+  "improve": [
+   "Poetic form hides the mechanism; a prose version is the companion post.",
+   "Duplicated content across three posts."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "breakout",
+  "title": "Breakout",
+  "date": "January 2nd, 2020 (orig; imported 2021-11-09)",
+  "summary": "Gold starts a holiday run; gold held as a 'lockbox trade', supported by weaker dollar, PBOC easing and China FX quota reset.",
+  "themes": [
+   "gold",
+   "china",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "When it costs you 15% to get into a trade, and 15% to get out, you can’t be day trading your best ideas",
+  "improve": [
+   "Which 'options' are being held and what is the strike/expiry?",
+   "The trade-deal digression dilutes the gold case."
+  ],
+  "falsifiable_calls": [
+   "Gold in USD appreciates on weak dollar and China demand",
+   "Trade deal may slip past Jan 15"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "what-if-coronavirus-was-inflationary",
+  "title": "What if coronavirus was inflationary?",
+  "date": "February 2nd, 2020 (orig; imported 2021-11-09)",
+  "summary": "Only a title/subtitle survives in the text (body likely an image or embed), so there is nothing to rate.",
+  "themes": [
+   "data-tools"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 1,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 1,
+  "best_line": "",
+  "improve": [
+   "Include body text or a caption describing the chart/video so the post stands alone."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "whatever-happened-to-alpha-part-1",
+  "title": "Whatever Happened to Alpha - Part 1",
+  "date": "June 8th, 2017 (orig; imported 2021-11-09)",
+  "summary": "Hedge fund returns fell as alpha is competed away, beta stalled when easing ended, and cash yields are near zero.",
+  "themes": [
+   "portfolio-construction",
+   "fed-liquidity"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "With interest rates close to zero, we’ve run out of fuel.",
+  "improve": [
+   "No data in the text to support the three-part decomposition.",
+   "Spell out how much of the decline each factor explains."
+  ],
+  "falsifiable_calls": [
+   "Hedge fund returns will stay low as rates rise"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "staring-at-the-deflationary-abyss",
+  "title": "Staring at the (deflationary) abyss",
+  "date": "March 30th, 2020 (orig; imported 2021-11-09)",
+  "summary": "Sold most gold in the March 2020 dollar squeeze, but argues COVID is not straightforwardly deflationary: supply disruptions plus money printing may mean inflation after the panic.",
+  "themes": [
+   "gold",
+   "inflation-regime",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Higher real yields + higher dollar = doom for gold.",
+  "improve": [
+   "Sold gold into the low; explain the re-entry plan.",
+   "Add evidence (breakevens, CPI components) for the supply-side argument."
+  ],
+  "falsifiable_calls": [
+   "Money printing plus supply shortage leads to inflation after the panic"
+  ],
+  "return_to": true,
+  "return_reason": "Inflation call vindicated in 2021; revisit the gold exit timing."
+ },
+ {
+  "slug": "levered-stocks-as-inflation-protection",
+  "title": "Levered Stocks as Inflation Protection",
+  "date": "February 5th, 2019 (orig; imported 2021-11-09)",
+  "summary": "One-line suggestion to buy levered stocks for inflation protection.",
+  "themes": [
+   "inflation-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 2,
+   "clarity": 3,
+   "evidence": 1,
+   "actionability": 2,
+   "timelessness": 2
+  },
+  "overall": 2,
+  "best_line": "",
+  "improve": [
+   "No reasoning given; a fragment."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "another-leg-down",
+  "title": "Another Leg Down?",
+  "date": "April 2nd, 2020 (orig; imported 2021-11-09)",
+  "summary": "Markets come in waves; expects a squeeze higher then another leg down, with China the biggest long-term risk; long gold in China, long food, moderately short stocks.",
+  "themes": [
+   "macro-regime",
+   "china",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "In short, we are betting on another wave of pain, and we hope we are wrong.",
+  "improve": [
+   "The 'financial chaos' indicator is shown but its scale is not interpreted numerically.",
+   "Provide a trigger for the second wave."
+  ],
+  "falsifiable_calls": [
+   "Another leg down in equities after a squeeze",
+   "Stay long gold in China, long food, short stocks"
+  ],
+  "return_to": true,
+  "return_reason": "The second-wave call failed (March 2020 low held); post-mortem on pattern matching."
+ },
+ {
+  "slug": "whatever-happened-to-alpha-part-2",
+  "title": "Whatever Happened to Alpha - Part 2",
+  "date": "June 30th, 2017 (orig; imported 2021-11-09)",
+  "summary": "Competition and monetary policy killed alpha: zero cash rates make 2% fees look expensive and easing flattered beta, a tailwind that reverses as rates rise.",
+  "themes": [
+   "portfolio-construction",
+   "fed-liquidity"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "2% fees to manage money make a lot more sense when they are 1/3rd the cash rate.",
+  "improve": [
+   "Chart evidence is referenced but not summarized.",
+   "Separate alpha decay from beta tailwind quantitatively."
+  ],
+  "falsifiable_calls": [
+   "Fund returns fall as monetary policy shifts to tightening"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-unicorn-economy-the-capital-cycle",
+  "title": "The Unicorn Economy - The Capital Cycle (Part 2)",
+  "date": "January 22nd, 2016 (orig; imported 2021-11-09)",
+  "summary": "Defines the capital cycle: uncertainty converts to risk, booms breed overconfidence, busts follow.",
+  "themes": [
+   "venture-private-markets",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "By definition, risk is what can be understood (and priced), and uncertainty is what cannot.",
+  "improve": [
+   "No empirical examples in this part.",
+   "Section headings substitute for argument in places."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "pricing-gold-upside-vs-equity-downside",
+  "title": "Pricing gold upside vs equity downside",
+  "date": "June 15th, 2020 (orig; imported 2021-11-09)",
+  "summary": "Only a title/subtitle survives in the text (body likely an image or embed), so there is nothing to rate.",
+  "themes": [
+   "data-tools"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 1,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 1,
+  "best_line": "",
+  "improve": [
+   "Include body text or a caption describing the chart/video so the post stands alone."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "where-do-we-go-from-here",
+  "title": "Where do we go from here?",
+  "date": "April 15th, 2020 (orig; imported 2021-11-09)",
+  "summary": "Only a title/subtitle survives in the text (body likely an image or embed), so there is nothing to rate.",
+  "themes": [
+   "data-tools"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 1,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 1,
+  "best_line": "",
+  "improve": [
+   "Include body text or a caption describing the chart/video so the post stands alone."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "why-you-should-care-about-brexit",
+  "title": "Why you should care about Brexit",
+  "date": "June 28th, 2016 (orig; imported 2021-11-09)",
+  "summary": "Brexit exposes that nobody agrees what the EU is; uncertainty destroys the ability to model risk, so liquidity matters.",
+  "themes": [
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 3,
+   "timelessness": 3
+  },
+  "overall": 6,
+  "best_line": "capital markets generate liquidity by turning uncertainty into risk.",
+  "improve": [
+   "Market-implication section is mostly images; give a concrete positioning view.",
+   "The Google-questions opener is long for the payoff."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "pivot-the-goal-of-snow",
+  "title": "Pivot - The Goal of Snow",
+  "date": "December 3rd, 2015 (orig; imported 2021-11-09)",
+  "summary": "Founder narrative: building Rose revealed financing pain for startups and led to Snow, a hedge fund that helps founders and employees hedge.",
+  "themes": [
+   "personal-essay",
+   "venture-private-markets"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 4,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 1,
+   "timelessness": 2
+  },
+  "overall": 4,
+  "best_line": "A hedge fund, that, you know…lets you hedge.",
+  "improve": [
+   "Product pitch with no concrete mechanism for the hedge.",
+   "Trim the list of financing pitfalls."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "bitcoin-is-not-money-why-bitcoin",
+  "title": "Bitcoin Is Not Money - Why Bitcoin is Cool (p1)",
+  "date": "April 29th, 2016 (orig; imported 2021-11-09)",
+  "summary": "Part 1: bitcoin's ideology is cool, but money is about trust and bitcoin merely shifts trust to technology and intermediaries.",
+  "themes": [
+   "crypto"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 2,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Bitcoin can be cool, or bitcoin can be money, but it cannot be both.",
+  "improve": [
+   "Mt Gox example is thin; compare to gold and fiat trust models.",
+   "Claims hang on rhetoric over data."
+  ],
+  "falsifiable_calls": [
+   "Bitcoin will need financial intermediaries to be used as money"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit with crypto custody and stablecoin evolution."
+ },
+ {
+  "slug": "diverisify-your-life",
+  "title": "Diversify (Your Life)",
+  "date": "December 10th, 2015 (orig; imported 2021-11-09)",
+  "summary": "Personal tale of unhedged currency (CAD, GBP) and employer exposure to argue for a 'life portfolio' asset-liability view of diversification.",
+  "themes": [
+   "personal-essay",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 6,
+   "timelessness": 8
+  },
+  "overall": 7,
+  "best_line": "To sum up...buy GBP high. Sell low. An auspicious start to a career in global macro.",
+  "improve": [
+   "Closes abruptly; give a short checklist the reader can run.",
+   "Quantify one of the exposures."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "Life-portfolio framework could become a practical guide."
+ },
+ {
+  "slug": "things-that-dont-add-up-china-credit",
+  "title": "Things that don't add up (China credit update)",
+  "date": "November 13th, 2019 (orig; imported 2021-11-09)",
+  "summary": "China conditions are deteriorating while a thin trade deal is touted; easing will help bonds and hurt the currency, challenging the promise to hold the peg.",
+  "themes": [
+   "china",
+   "gold",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Which leaves us wondering, how can China really promise not the let the currency go?",
+  "improve": [
+   "Home-brew indicator is shown without construction details.",
+   "Make the trade explicit (long China bonds, short CNY)."
+  ],
+  "falsifiable_calls": [
+   "China will ease further, boosting bonds and weakening the currency"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "goals",
+  "title": "Goals",
+  "date": "December 2nd, 2015 (orig; imported 2021-11-09)",
+  "summary": "Introduces the blog: structure thinking, invite pushback, learn faster; prioritize transparency over high-confidence answers.",
+  "themes": [
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 3,
+   "clarity": 6,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 3
+  },
+  "overall": 3,
+  "best_line": "We accept that we might be wrong, that at times we will be wrong",
+  "improve": [
+   "Add a concrete promise on accountability, e.g. tracking calls."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "stop-buying-real-estate-in-sf",
+  "title": "Stop Buying Real Estate (in SF)",
+  "date": "January 13th, 2016 (orig; imported 2021-11-09)",
+  "summary": "SF homes are 9x income, rate tailwinds are reversing, and tech workers' life portfolios are already long the local system, so don't buy.",
+  "themes": [
+   "portfolio-construction",
+   "rates-curve"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "Even though households in Silicon Valley make almost 2x the national average, they are buying houses that are 9x their income.",
+  "improve": [
+   "The model attributing 50-100% of price gains to rates needs specification.",
+   "Address rent vs buy cost explicitly."
+  ],
+  "falsifiable_calls": [
+   "SF real estate is vulnerable as the Fed tightens",
+   "Tech workers should not buy local homes"
+  ],
+  "return_to": true,
+  "return_reason": "Score the SF price call against 2016-2023 and 2024-26."
+ },
+ {
+  "slug": "tails",
+  "title": "Tails",
+  "date": "February 2nd, 2019 (orig; imported 2021-11-09)",
+  "summary": "Short poem: buy inflation through the curve, sell fluffy tech, own both tails and fund the carry by selling vol.",
+  "themes": [
+   "rates-curve",
+   "positioning-flows"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 3,
+   "clarity": 3,
+   "evidence": 1,
+   "actionability": 2,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "Two world’s, and while one can’t know which, you gotta buy those tails.",
+  "improve": [
+   "Cryptic; one clear sentence on the trade would help."
+  ],
+  "falsifiable_calls": [
+   "Long inflation via the curve, short tech"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-unicorn-economy-intro-part-1",
+  "title": "The Unicorn Economy - Part 1",
+  "date": "January 22nd, 2016 (orig; imported 2021-11-09)",
+  "summary": "Introduces the Unicorn Economy and argues it will bust as Fed liquidity fades, hurting startups, suppliers and anyone whose life portfolio is tied to it.",
+  "themes": [
+   "venture-private-markets",
+   "fed-liquidity"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "I call this system the Unicorn Economy, and I believe it is headed for a bust.",
+  "improve": [
+   "Quantify funding pace and expected markdowns.",
+   "Name concrete hedges."
+  ],
+  "falsifiable_calls": [
+   "Unicorn economy bust and contraction in broader economy"
+  ],
+  "return_to": true,
+  "return_reason": "Early; the bust arrived in 2022-23. Review the call."
+ },
+ {
+  "slug": "what-evergrande-means-to-an-old-china",
+  "title": "What Evergrande Means to an Old China Bear",
+  "date": "September 17th, 2021 (orig; imported 2021-11-09)",
+  "summary": "Walks through the China credit bubble, ranking banks and developers (the 'find the bad debt, find the trade' method), and recommends short copper vs iron, short bad banks, gold funded in RMB.",
+  "themes": [
+   "china",
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 7,
+   "timelessness": 7
+  },
+  "overall": 8,
+  "best_line": "If the Fed money printer goes ‘brrr’ the banks in China go “$Trrrrrrrr.”",
+  "improve": [
+   "Self-congratulatory opening; start with the chart.",
+   "The bank rankings are 'available on request'; publish the methodology."
+  ],
+  "falsifiable_calls": [
+   "Short copper vs iron near term",
+   "Short bad Chinese banks, long good banks",
+   "Gold in RMB longer term",
+   "Foreign USD creditors take losses before domestic ones"
+  ],
+  "return_to": true,
+  "return_reason": "One of the strongest China cases; track the three trades over time."
+ },
+ {
+  "slug": "what-markets-said-about-brexit",
+  "title": "What Markets Said About Brexit",
+  "date": "June 24th, 2016 (orig; imported 2021-11-09)",
+  "summary": "Pre-vote, options markets priced higher uncertainty than polls and currency markets did.",
+  "themes": [
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 4,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 2,
+   "timelessness": 2
+  },
+  "overall": 4,
+  "best_line": "Book maker odds told the same story…until they didn’t.",
+  "improve": [
+   "Data caveat 'noisy, time pressure' undermines it; state which charts matter."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "easing",
+  "title": "Easing",
+  "date": "January 11th, 2019 (orig; imported 2021-11-09)",
+  "summary": "Powell's pivot rallied everything with duration 10%; add dollar weakness and it could be party on.",
+  "themes": [
+   "fed-liquidity",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 3,
+   "clarity": 4,
+   "evidence": 1,
+   "actionability": 2,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "The end of last year felt to some like the end of the world.",
+  "improve": [
+   "Too short to carry evidence."
+  ],
+  "falsifiable_calls": [
+   "Risk assets rally on easing and weaker dollar"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "what-if-uber-isnt-a-monopoly",
+  "title": "What if Uber isn't a monopoly?",
+  "date": "August 4th, 2016 (orig; imported 2021-11-09)",
+  "summary": "On-demand marketplaces selling physical goods have decreasing returns to scale; Uber's escalating capital needs suggest oligopoly not monopoly.",
+  "themes": [
+   "venture-private-markets"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "if these markets are so profitable and so vulnerable to monopolies, why do these companies need so much liquidity/capital to “reach scale”?",
+  "improve": [
+   "Numbers are 'ballpark' and unsourced; show unit economics.",
+   "No clear implication for investors."
+  ],
+  "falsifiable_calls": [
+   "On-demand startups lack durable monopolies"
+  ],
+  "return_to": true,
+  "return_reason": "Compare with Uber's actual path to profitability."
+ },
+ {
+  "slug": "real-vision-appearance-on-the-tape",
+  "title": "Real Vision Appearance - On the tape for gold in China at 10.5k RMB/oz",
+  "date": "August 19th, 2019 (orig; imported 2021-11-09)",
+  "summary": "Only a title/subtitle survives in the text (body likely an image or embed), so there is nothing to rate.",
+  "themes": [
+   "data-tools"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 1,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 1,
+  "best_line": "",
+  "improve": [
+   "Include body text or a caption describing the chart/video so the post stands alone."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "bitcoin-is-not-money-part-3-scale",
+  "title": "Bitcoin is not money - part 3 - scale",
+  "date": "June 19th, 2018 (orig; imported 2021-11-09)",
+  "summary": "Part 3: bitcoin's decentralization, anonymity and fixed supply block scaling, so intermediaries will dominate and gold remains the better dollar hedge.",
+  "themes": [
+   "crypto"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Money is necessarily the thing you don’t have to think about.",
+  "improve": [
+   "A draft marker '(FINISH)' was left in the published text.",
+   "Charts are from 2016; update before reposting."
+  ],
+  "falsifiable_calls": [
+   "Bitcoin cannot scale to money without losing decentralization"
+  ],
+  "return_to": true,
+  "return_reason": "Stale 2016 charts; update with Lightning and L2 evidence."
+ },
+ {
+  "slug": "big-infrastructure-ideas-for-monetary",
+  "title": "Big infrastructure ideas for Monetary Policy 3 (MP3)",
+  "date": "August 2nd, 2019 (orig; imported 2021-11-09)",
+  "summary": "Series opener: if the US prints $3tr, spend on Bay transit and a ten-hour coast-to-coast train.",
+  "themes": [
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 4,
+   "clarity": 5,
+   "evidence": 1,
+   "actionability": 3,
+   "timelessness": 3
+  },
+  "overall": 4,
+  "best_line": "In short, if you had to print and spend $3tr, where should it go?",
+  "improve": [
+   "No costings or comparison with HSR experiences.",
+   "Series never developed."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "what-just-happened-covid",
+  "title": "What just happened? (covid)",
+  "date": "March 29th, 2020 (orig; imported 2021-11-09)",
+  "summary": "Only a title/subtitle survives in the text (body likely an image or embed), so there is nothing to rate.",
+  "themes": [
+   "data-tools"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 1,
+   "clarity": 1,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 1
+  },
+  "overall": 1,
+  "best_line": "",
+  "improve": [
+   "Include body text or a caption describing the chart/video so the post stands alone."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "overconfident-overconcentrated-and",
+  "title": "Overconfident, Overconcentrated, and Overcrowded",
+  "date": "May 12th, 2016 (orig; imported 2021-11-09)",
+  "summary": "Hedge funds hold crowded, concentrated portfolios and function as one network vulnerable to a liquidity scramble as private-market losses mount.",
+  "themes": [
+   "positioning-flows",
+   "venture-private-markets"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "we found a densely interconnected network of funds that hold dangerously concentrated portfolios in a handful of overcrowded stocks.",
+  "improve": [
+   "Methodology for the OC group is redacted; show more.",
+   "No explicit trade or time frame."
+  ],
+  "falsifiable_calls": [
+   "Unicorn downturn continues",
+   "Crowded OC stocks vulnerable to liquidity scramble"
+  ],
+  "return_to": true,
+  "return_reason": "Crowding thesis testable with 13F data."
+ },
+ {
+  "slug": "the-day-the-oil-machine-went-down",
+  "title": "The day the oil machine went down",
+  "date": "April 26th, 2020 (orig; imported 2021-11-09)",
+  "summary": "After WTI went negative, USO's roll history, ETF solvency risk and possible Fed involvement; oil didn't break, portfolios did.",
+  "themes": [
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "We say the oil machine broke, because in spite of the headlines, the oil market did not break this week.",
+  "improve": [
+   "Roll front-running claim and margin figures unsupported by chart.",
+   "The poem attachment is not integrated."
+  ],
+  "falsifiable_calls": [
+   "CME/exchange could need Fed backstop (hypothetical)",
+   "Fed could buy physical oil"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "evergrande-end-game",
+  "title": "Evergrande: End Game",
+  "date": "2021-12-08",
+  "summary": "Evergrande's missed payment and expired grace period mean default: no China private firm is too big to fail; expect contagion to other developers, easing and bank pressure.",
+  "themes": [
+   "china",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "For the first time we have an answer, there is no private company in China that is too-big-to-fail.",
+  "improve": [
+   "Backward induction opening is a detour.",
+   "Add scale to the 20-more-developers claim."
+  ],
+  "falsifiable_calls": [
+   "No Evergrande bailout",
+   "Contagion to Kaisa, Sunac, Country Garden",
+   "PBoC eases while Fed tightens",
+   "Weak banks underperform"
+  ],
+  "return_to": true,
+  "return_reason": "Evergrande outcome supports; track later developer failures."
+ },
+ {
+  "slug": "do-you-have-enough-gold",
+  "title": "Do You Have Enough Gold?*",
+  "date": "2022-04-14",
+  "summary": "History shows gold's spikes reflect currency collapse in wartime; with war back, own more gold.",
+  "themes": [
+   "gold",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "War is bad for currencies. War is good for gold.",
+  "improve": [
+   "Add returns table by war episode.",
+   "State a sizing view."
+  ],
+  "falsifiable_calls": [
+   "More war means gold outperforms"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit with 2022-26 gold performance."
+ },
+ {
+  "slug": "bitcoin-is-still-not-money-yet",
+  "title": "Bitcoin Is (Still) Not Money (Yet)",
+  "date": "2022-04-15",
+  "summary": "Updates bitcoin series: scale, speed, cost and reliability problems force crypto to centralize and become boring tradfi; 5 years will be a critical test.",
+  "themes": [
+   "crypto"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Boring things aren’t cool. They just work, and you never think of them.",
+  "improve": [
+   "'About a third of the way through' is unsupported.",
+   "Engage with Lightning and stablecoins."
+  ],
+  "falsifiable_calls": [
+   "Crypto centralizes into banks; next 5 years are the test"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit with stablecoin/ETF era evidence."
+ },
+ {
+  "slug": "one-trillion-of-losses-hiding-in",
+  "title": "One Trillion of Losses... Hiding in Plain Sight",
+  "date": "2022-04-26",
+  "summary": "Chinese property is a $5tr asset class with $4tr debt; bond-implied losses of $500bn-1tr exceed market caps; capital flight shrinks reserves; buy gold denominated in RMB.",
+  "themes": [
+   "china",
+   "gold",
+   "fed-liquidity"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "When the losses cross the market cap valuation of companies, it’s time to think about restructuring.",
+  "improve": [
+   "Bond-implied loss method is crude; state error bars.",
+   "Reserve haircut from errors and omissions is an upper bound."
+  ],
+  "falsifiable_calls": [
+   "Losses $500bn-1tr on China property",
+   "Domestic banks will be hit",
+   "Gold in RMB / 'Double Dollar Gold'"
+  ],
+  "return_to": true,
+  "return_reason": "Track losses and RMB-gold trade through 2023-26."
+ },
+ {
+  "slug": "is-this-it",
+  "title": "Is This It?",
+  "date": "2022-08-02",
+  "summary": "Chinese property contagion, bank-run signs and depleted effective reserves interact with Taiwan tension; asks whether China is nearly out of money.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "In short, what if China is almost out of money?",
+  "improve": [
+   "Reserves claim built on proxy; give ranges.",
+   "Link the Taiwan angle to a market view."
+  ],
+  "falsifiable_calls": [
+   "China's usable reserves are largely depleted",
+   "Property losses exceed $1tr"
+  ],
+  "return_to": true,
+  "return_reason": "Reserves depletion claim needs follow-up."
+ },
+ {
+  "slug": "the-dollar-squeeze-heads-to-china",
+  "title": "The Dollar Squeeze Heads to China",
+  "date": "2022-09-30",
+  "summary": "Property bonds price in over $1tr losses; Fed tightening plus PBoC easing mean a stronger dollar and a weaker yuan; a Fed pivot would peak the dollar.",
+  "themes": [
+   "china",
+   "fed-liquidity",
+   "gold"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "At least for the time being, we live in a world of dollars.",
+  "improve": [
+   "Provide the dashboard figures in-text.",
+   "Define the pivot signal."
+  ],
+  "falsifiable_calls": [
+   "Dollar strength continues while Fed tightens",
+   "Fed pivot would peak dollar and lift gold"
+  ],
+  "return_to": true,
+  "return_reason": "Dollar peak (Q4 2022) call can be scored."
+ },
+ {
+  "slug": "time-to-buy-the-dip",
+  "title": "Time to \"Buy the Dip\"?",
+  "date": "2022-09-30",
+  "summary": "Backtest shows when 'short everything vs dollars' works, buy dollars and bonds, not stocks or gold; dip buying during squeezes does not pay.",
+  "themes": [
+   "positioning-flows",
+   "fed-liquidity"
+  ],
+  "format": "data-dashboard",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Buying the dip during periods of 'dollar squeeze' does not pay.",
+  "improve": [
+   "Backtest specifics (lookback, costs) missing.",
+   "Reconcile with the actual 2022 recovery."
+  ],
+  "falsifiable_calls": [
+   "Dip buying in stocks and gold has negative Sharpe during squeezes"
+  ],
+  "return_to": true,
+  "return_reason": "Re-run the signal with 2023-25 data."
+ },
+ {
+  "slug": "the-downside-of-the-yale-endowment",
+  "title": "The Downside of the Yale Endowment Model - part 1",
+  "date": "2022-10-06",
+  "summary": "Endowment model overweights illiquid, long-duration assets; tightening and capital calls create stress, as the BoE LDI crisis hints.",
+  "themes": [
+   "portfolio-construction",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 4,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "What's the impact of 300bps of tightening on a portfolio with 30yr duration?",
+  "improve": [
+   "Thread-style fragments; add numbers.",
+   "Evidence for 70% illiquid claim is absent."
+  ],
+  "falsifiable_calls": [
+   "Long-duration illiquid portfolios will face liquidity stress"
+  ],
+  "return_to": true,
+  "return_reason": "Pairs with SVB; quantify."
+ },
+ {
+  "slug": "why-is-everyone-talking-about-credit",
+  "title": "Why is everyone talking about Credit Suisse's CDS?",
+  "date": "2022-10-06",
+  "summary": "Credit conditions are bad but not 2008-level; European broker CDS and bank spreads are stressed, Credit Suisse stands out on leverage; expect policy step-in.",
+  "themes": [
+   "fed-liquidity",
+   "positioning-flows"
+  ],
+  "format": "data-dashboard",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "Well, banks borrow at Risk Free + CDS",
+  "improve": [
+   "Charts need captions with levels.",
+   "Make the 'policymakers step in' condition explicit."
+  ],
+  "falsifiable_calls": [
+   "Policymakers will step in to stop bank stress",
+   "EU bank spreads approach 2012 levels"
+  ],
+  "return_to": true,
+  "return_reason": "Credit Suisse failed five months later; review."
+ },
+ {
+  "slug": "is-it-time-to-start-worrying-about",
+  "title": "Is it time to start worrying about US economic surveys?",
+  "date": "2022-10-06",
+  "summary": "US survey index is bearish, driven by corporate surveys; consumers hold up; backtested returns shown.",
+  "themes": [
+   "macro-regime",
+   "data-tools"
+  ],
+  "format": "data-dashboard",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Knowing what's going on with economic surveys is useful for understanding the economy, but not necessarily trading markets.",
+  "improve": [
+   "Report the backtest numbers in text.",
+   "Explain index construction."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "where-are-we-in-the-us-inflation",
+  "title": "Where are we in the US inflation cycle?",
+  "date": "2022-10-13",
+  "summary": "Headline inflation likely peaked but core and tight labor keep the Fed hawkish; more pain to come.",
+  "themes": [
+   "inflation-regime",
+   "rates-curve"
+  ],
+  "format": "data-dashboard",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Today's stock rally notwithstanding, our read of inflation and bond markets is 'more to pain to come.'",
+  "improve": [
+   "Opens with a product tutorial; lede is late.",
+   "Make the bond curve view explicit."
+  ],
+  "falsifiable_calls": [
+   "More pain in markets before inflation returns to target"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "how-can-we-measure-growth-in-china",
+  "title": "How can we measure growth in China without the GDP Report?",
+  "date": "2022-10-18",
+  "summary": "China skipped GDP release; Rose's indicator (activity, policy, prices) shows weak activity and prices despite strong policy easing, very bearish.",
+  "themes": [
+   "china",
+   "data-tools"
+  ],
+  "format": "data-dashboard",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "If you can't report good news, just don't report!",
+  "improve": [
+   "Indicator construction opaque; link method.",
+   "Hard data vs survey divergence needs reconciliation."
+  ],
+  "falsifiable_calls": [
+   "Chinese activity and prices remain weak despite easing"
+  ],
+  "return_to": true,
+  "return_reason": "Compare with 2023 reopening outcome."
+ },
+ {
+  "slug": "why-eating-meat-and-worrying-about",
+  "title": "Why eating meat and worrying about AGI is morally inconsistent.",
+  "date": "2022-10-24",
+  "summary": "Moral reductio: if intelligence justifies eating animals, a smarter AGI deserves more moral weight; longtermism implies building robots.",
+  "themes": [
+   "ai-thesis",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 1,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "In the future, it’s build robots, or be replaced by them.",
+  "improve": [
+   "Unclear whether sincere or provocative; signal tone.",
+   "Engage objections to the intelligence-moral-weight premise."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "this-week-in-markets",
+  "title": "This Week in Markets",
+  "date": "2022-10-29",
+  "summary": "PCE in line; energy easing helps headline but food and labor keep the Fed from pivoting; bond-equity correlation up; housing weak.",
+  "themes": [
+   "rates-curve",
+   "inflation-regime",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 6,
+  "best_line": "Markets still aren’t really pricing in short term interest rates at 5%. Yet.",
+  "improve": [
+   "Boil the multiple strands into a single positioning view.",
+   "Credit Suisse aside is a tangent."
+  ],
+  "falsifiable_calls": [
+   "Short rates will be priced at 5%",
+   "Home prices continue to fall"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-war-phase",
+  "title": "The War Phase",
+  "date": "2022-11-06",
+  "summary": "Argues China's bubble is misreported (FAI 80% GDP), Xi won't pop it, and Japan 1989 parallels plus nationalism raise Taiwan war risk.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "Maybe China just can't take a 50% write down.",
+  "improve": [
+   "Leap from the property bubble to war is asserted; strengthen.",
+   "Tweet embeds break the flow."
+  ],
+  "falsifiable_calls": [
+   "WW3 starts over Taiwan",
+   "China won't pop its property bubble",
+   "China can have lockdown or a property bubble, not both"
+  ],
+  "return_to": true,
+  "return_reason": "Core Taiwan/bubble linkage deserves an update."
+ },
+ {
+  "slug": "the-white-paper-rebellion",
+  "title": "The White Paper Rebellion",
+  "date": "2022-11-27",
+  "summary": "Chinese protests against zero-covid have a focal point; Xi can end lockdown; gold in China looks cheap.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 3,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "this isn’t a movement organized around a single focal point, or at least it wasn’t, until the regime gave the people one…",
+  "improve": [
+   "Protest tracker appendix is raw embeds; curate.",
+   "Investment conclusion is one line."
+  ],
+  "falsifiable_calls": [
+   "Xi can renounce lockdown; protests may become the White Paper Rebellion",
+   "Gold in China looks cheap"
+  ],
+  "return_to": true,
+  "return_reason": "Reopening followed within weeks; link to the call."
+ },
+ {
+  "slug": "the-smallest-violin-in-the-world",
+  "title": "The smallest violin in the world",
+  "date": "2023-02-08",
+  "summary": "Origin story of Rose: finance's dirty secret is spreadsheets and bad data; build a natural-language smart database.",
+  "themes": [
+   "data-tools",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 1,
+   "timelessness": 3
+  },
+  "overall": 4,
+  "best_line": "What if you didn’t have to code to work with data?",
+  "improve": [
+   "Show the product, not the metaphor.",
+   "Trim the spreadsheet history."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "yes-there-will-be-a-recession-in",
+  "title": "Yes, there will be a recession in America",
+  "date": "2023-03-02",
+  "summary": "Fed tightening, QE reversal, weak surveys and collapsed housing demand imply late-cycle recession; headline will converge to core; watch for credit breaks.",
+  "themes": [
+   "macro-regime",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Turned out it was, rates, not crypto, to the moon, after all.",
+  "improve": [
+   "Title asserts recession; no probability or timing.",
+   "Soft/hard data discussion lacks numbers."
+  ],
+  "falsifiable_calls": [
+   "There will be a recession",
+   "Headline converges to core",
+   "Something breaks in credit pipes"
+  ],
+  "return_to": true,
+  "return_reason": "Recession did not materialize in 2023; score and extract lessons."
+ },
+ {
+  "slug": "the-machine-is-down",
+  "title": "The Machine is Down",
+  "date": "2023-03-03",
+  "summary": "Zombie thought experiment: don't trust machines, since complex systems fail, but keep building them; five principles from 20 years of trading.",
+  "themes": [
+   "personal-essay",
+   "ai-thesis"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "The more confident in that control, the less fault-tolerant those models (or machines) become.",
+  "improve": [
+   "Principles list is thinner than the setup.",
+   "Gödel/Turing name-drops are loose."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "Return to expand the Machine-is-Down principles."
+ },
+ {
+  "slug": "two-a-days",
+  "title": "Two-A-Days",
+  "date": "2023-03-07",
+  "summary": "Football 'double sessions' anecdote to announce a daily posting practice.",
+  "themes": [
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 3,
+   "clarity": 6,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "Practice Like You Play",
+  "improve": [
+   "Anecdote overshadows the announcement.",
+   "Be clear whether the daily cadence will cover markets."
+  ],
+  "falsifiable_calls": [
+   "Will try to post daily"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "change-in-conditions",
+  "title": "Change in Conditions",
+  "date": "2023-03-08",
+  "summary": "Meandering note on AI personas, a subscriber drawdown and how machines learn from changing conditions with a Fed-to-7% worry.",
+  "themes": [
+   "personal-essay",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 4,
+   "clarity": 4,
+   "evidence": 2,
+   "actionability": 2,
+   "timelessness": 2
+  },
+  "overall": 3,
+  "best_line": "They always said pain plus reflection equals progress.",
+  "improve": [
+   "Disjointed; pick one thread.",
+   "Tease for AI piece never delivers."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "short-stocks-short-bonds",
+  "title": "Short Stocks, Short Bonds",
+  "date": "2023-03-08",
+  "summary": "Rose's systematic signals are marginally short US stocks and bonds due to spreads, real yields and inflation.",
+  "themes": [
+   "positioning-flows",
+   "data-tools"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 2
+  },
+  "overall": 5,
+  "best_line": "When you looking at signals, remember to reflect, and ask what’s inside the black box.",
+  "improve": [
+   "Show signal history and hit-rate.",
+   "Disclaim less, specify horizon."
+  ],
+  "falsifiable_calls": [
+   "Short US stocks and bonds"
+  ],
+  "return_to": true,
+  "return_reason": "Track signal performance."
+ },
+ {
+  "slug": "oh-hi-silicon-valley-bank",
+  "title": "Oh hi Silicon Valley Bank 👋 ",
+  "date": "2023-03-09",
+  "summary": "Admits shorting SVB twice (stopped out) and ties the failure to unicorn-economy liquidity and illiquid beta theses.",
+  "themes": [
+   "venture-private-markets",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 2,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Terrible trade. Stopped out twice. Always 5 years ahead…",
+  "improve": [
+   "Cite exact earlier calls with dates.",
+   "Explain the LP capital call link."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "Post-mortem on the SVB-short and the unicorn thesis."
+ },
+ {
+  "slug": "contagion-comes-to-california",
+  "title": "Contagion Comes to California",
+  "date": "2023-03-12",
+  "summary": "SVB failed because duration risk and unhedged securities, not credit; roughly $500-700bn unhedged losses and low risk weights on Treasuries leave the banking system more levered; contagion and policy recommendations.",
+  "themes": [
+   "rates-curve",
+   "fed-liquidity",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 7,
+   "timelessness": 7
+  },
+  "overall": 8,
+  "best_line": "If Generals always fight the last war, then Regulators always fight the last crisis.",
+  "improve": [
+   "Hedge-ratio math uses CFTC data loosely; flag error.",
+   "Tighten length and move the policy list upfront."
+  ],
+  "falsifiable_calls": [
+   "Roughly $500bn+ of unhedged mark-to-market losses",
+   "Raise FDIC ceiling to stem contagion",
+   "Bailout may already be in place"
+  ],
+  "return_to": true,
+  "return_reason": "Strong analysis; revisit the unhedged-loss figure and the stress-test critique."
+ },
+ {
+  "slug": "wait-and-see",
+  "title": "Wait and See",
+  "date": "2023-03-13",
+  "summary": "Reaction to BTFP: track regional bank equity, CS CDS, rates and vol; wait until banks stop dying to buy risk.",
+  "themes": [
+   "rates-curve",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Wait until banks stop dying to buy risk.",
+  "improve": [
+   "Add levels for the tracked indicators.",
+   "Thin for a market-moving day."
+  ],
+  "falsifiable_calls": [
+   "Choppy waters while the market hunts the weakest bank"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "contagion-comes-for-credit-suisse",
+  "title": "Contagion Comes for Credit Suisse",
+  "date": "2023-03-15",
+  "summary": "Crisis trading is rank-the-banks; this time the problem is duration not credit, leaving the Fed between hikes and cuts, and Credit Suisse next.",
+  "themes": [
+   "rates-curve",
+   "fed-liquidity"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "Trading financials in a financial crisis is actually pretty easy.",
+  "improve": [
+   "Mostly links to earlier posts; add new data.",
+   "Specify the trade."
+  ],
+  "falsifiable_calls": [
+   "Credit Suisse is next",
+   "Fed trapped between inflation and bank stress"
+  ],
+  "return_to": true,
+  "return_reason": "Credit Suisse failed days later; log the call."
+ },
+ {
+  "slug": "remember-folks-banking-crises-are",
+  "title": "Remember Folks, Banking Crises are *Deflationary*",
+  "date": "2023-03-22",
+  "summary": "Rebuts 'dollar is dead' memes: bank runs and deleveraging are deflationary and dollar-positive because of dollar debt, so don't short dollars into a crisis.",
+  "themes": [
+   "fed-liquidity",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "pretty much the only thing we can say for sure about bank runs (or deleveraging more broadly) is that they are deflationary.",
+  "improve": [
+   "EM dollar-debt range of $5-65tr is unusably wide.",
+   "Address Balaji's EM-style mechanism more directly."
+  ],
+  "falsifiable_calls": [
+   "Dollar appreciates in stress",
+   "Systemic crisis leads to deflation not inflation"
+  ],
+  "return_to": true,
+  "return_reason": "Dollar-in-crisis rule worth re-testing."
+ },
+ {
+  "slug": "now-they-want-us-to-bomb-data-centers",
+  "title": "Now They Want Us To Bomb Data Centers",
+  "date": "2023-03-30",
+  "summary": "Criticizes AI doomers' calls for bombing data centers: the prisoner's dilemma with China makes unilateral restraint futile.",
+  "themes": [
+   "ai-thesis",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "What about China.",
+  "improve": [
+   "Strawmanning of doomer arguments.",
+   "Compute governance alternatives ignored."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "bloomberg-enters-the-ai-game",
+  "title": "Bloomberg enters the AI game",
+  "date": "2023-04-02",
+  "summary": "BloombergGPT trains mostly on text, not financial data, so it can't deliver up-to-date, accurate, auditable answers; finance users need data tools.",
+  "themes": [
+   "data-tools",
+   "ai-thesis"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "the model in question…doesn’t really deal with financial data!",
+  "improve": [
+   "Ends as a Rose pitch; give fair counterpoints (tool use/retrieval).",
+   "Quantify training mix."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "all-the-silver-in-the-world",
+  "title": "All The Silver In The World",
+  "date": "2023-04-05",
+  "summary": "Brief history of the silver dollar to the gold standard; poses puzzles on gold-silver price ratios.",
+  "themes": [
+   "gold",
+   "commodities-supply"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "If gold is only 8x rarer than silver above ground, why is that gold 80x as expensive?",
+  "improve": [
+   "Dates and claims are lightly sourced.",
+   "The puzzle questions are left unanswered."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "Revisit the gold/silver ratio questions."
+ },
+ {
+  "slug": "a-proactive-peace-plan-for-taiwan",
+  "title": "A Proactive Peace Plan for Taiwan",
+  "date": "2023-04-09",
+  "summary": "Thought experiment and five-step plan: 50-year freeze, hand over Kinmen, split Senkaku oil, demilitarize.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "I’m no military expert, just a guy with a substack and dream.",
+  "improve": [
+   "Add feasibility and reactions from each party.",
+   "Embedded tweets distract."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-chinese-property-sector-is-still",
+  "title": "The Chinese Property Sector is *still dead*",
+  "date": "2023-04-11",
+  "summary": "Chinese property remains insolvent: Evergrande restructuring gives $22.7bn debt for ~$7bn equity, a third trades distressed, banks exposed.",
+  "themes": [
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Looks like $22.7bn of dollar debt will be redeemed in new bonds and equity in subsidiaries worth ~$7bn at last trade.",
+  "improve": [
+   "Six reasons overlap; condense to three.",
+   "Name a catalyst."
+  ],
+  "falsifiable_calls": [
+   "Chinese property sector is effectively insolvent",
+   "Banking system will eventually take write-downs"
+  ],
+  "return_to": true,
+  "return_reason": "Track restructuring and bank marks."
+ },
+ {
+  "slug": "wait-for-it",
+  "title": "Wait for it...",
+  "date": "2023-05-02",
+  "summary": "Speaker notes: waiting on US recession, China credit reckoning, Taiwan move and AI; bonds/duration pain; US default risk.",
+  "themes": [
+   "macro-regime",
+   "china",
+   "ai-thesis"
+  ],
+  "format": "conference-notes",
+  "scores": {
+   "insight": 5,
+   "clarity": 4,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Reminder, if financial crises are deflationary. It’s conflict you have to watch out for.",
+  "improve": [
+   "Notes lack connective tissue; convert to prose.",
+   "No prioritization among four themes."
+  ],
+  "falsifiable_calls": [
+   "Powell is Volcker 2.0",
+   "AGI arrives in about 3 years per AI forecasters"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "what-if-treasury-defaults",
+  "title": "What if Treasury Defaults?",
+  "date": "2023-05-16",
+  "summary": "Debt-ceiling: recovery on Treasuries likely 95%+, so 250bp CDS implies a high default probability; sell US protection, buy elsewhere.",
+  "themes": [
+   "rates-curve",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Sell protection on a US default, buy protection elsewhere.",
+  "improve": [
+   "Explain the CDS pricing math more simply.",
+   "Add gold sizing."
+  ],
+  "falsifiable_calls": [
+   "Recovery 95%+",
+   "Sell US CDS protection"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "how-to-regulate-ai",
+  "title": "How to Regulate AI",
+  "date": "2023-05-17",
+  "summary": "Machines are not legal persons, so operators and designers should be liable; licensing will tie to identity.",
+  "themes": [
+   "ai-thesis"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "when the machine goes down, look to the human behind it as the ultimate responsible party.",
+  "improve": [
+   "Define what counts as AI for liability.",
+   "Develop the UUID warning."
+  ],
+  "falsifiable_calls": [
+   "Licensing tied to identity; global unique ID coming"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit as AI liability law develops."
+ },
+ {
+  "slug": "ranking-the-banks",
+  "title": "Ranking the Banks",
+  "date": "2023-05-19",
+  "summary": "Ranks US banks on volatility, HTM/AFS exposure and capitalization; PNC, USB, PACW, WAL stressed; discloses test trades.",
+  "themes": [
+   "rates-curve",
+   "positioning-flows",
+   "data-tools"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 6,
+  "best_line": "Full disclosure, we put on some test trades consistent with these rankings today.",
+  "improve": [
+   "Methodology weights not shown.",
+   "Publish scorecard later."
+  ],
+  "falsifiable_calls": [
+   "Stressed banks' pain could go systemic",
+   "Bought back some US equity short"
+  ],
+  "return_to": true,
+  "return_reason": "Score the rank vs subsequent outcomes."
+ },
+ {
+  "slug": "so-you-wanna-bet-on-ai",
+  "title": "So, you wanna bet on AI (infrastructure)?",
+  "date": "2023-06-12",
+  "summary": "Basket of AI stocks shows hardware trades cheaper than software; Taiwan looks good.",
+  "themes": [
+   "ai-capex",
+   "positioning-flows"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Take it from someone that bet their career on it - 8 years ago (!) - it’s going to take some time.",
+  "improve": [
+   "Basket constituents never revealed.",
+   "Selection bias."
+  ],
+  "falsifiable_calls": [
+   "Taiwan stocks look good"
+  ],
+  "return_to": true,
+  "return_reason": "Part 1 only; revisit the basket."
+ },
+ {
+  "slug": "my-friend-nick",
+  "title": "My friend Nick",
+  "date": "2023-07-19",
+  "summary": "Tribute to mentor and investor Nick, who backed Rose and later died of cancer.",
+  "themes": [
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 8,
+   "evidence": 2,
+   "actionability": 1,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "Rare bird - a VC that actually makes a gut decision based on you, as opposed to what other people will think of you.",
+  "improve": [
+   "Strong; keep.",
+   "Maybe less repetitive list of mentors."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "twitter-is-a-bank",
+  "title": "Twitter is a Bank",
+  "date": "2023-07-25",
+  "summary": "Twitter/X is becoming a bank: identity, balances, payments and credit are commoditized; WeChat and Ant show the path.",
+  "themes": [
+   "fintech",
+   "crypto"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Thing is, it’s actually not that hard to be a bank.",
+  "improve": [
+   "Add regulatory realities.",
+   "Provide data on X payments."
+  ],
+  "falsifiable_calls": [
+   "X will become a financial institution"
+  ],
+  "return_to": true,
+  "return_reason": "Check X Money rollout."
+ },
+ {
+  "slug": "another-propco-bites-the-dust",
+  "title": "Another (PropCo) Bites the Dust",
+  "date": "2023-08-22",
+  "summary": "Country Garden and Zhongrong Trust failures show the entire $7tr Chinese property sector is distressed; WMP exposure raises policy difficulty; short CNY, buy gold.",
+  "themes": [
+   "china",
+   "gold"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Find the Debt, Find the Trade",
+  "improve": [
+   "Cite evidence for the 30 Manhattans inventory.",
+   "Quantify bank exposure."
+  ],
+  "falsifiable_calls": [
+   "Short CNY, buy gold (Gold in China)",
+   "Policymakers running out of time"
+  ],
+  "return_to": true,
+  "return_reason": "Track losses and options trade."
+ }
+]

@@ -1,0 +1,135 @@
+TITLE: California vs New York
+SUBTITLE: or "How Finance can make money from AI?"
+DATE: 2024-08-01
+
+Yesterday’s question of “How is AI going to make money in Finance” is kind of a funny question for people in tech, since “AI for finance” startups have now become relatively ubiquitous.  
+If, like me, you are in the business of talking to tech investors about the landscape for applying AI to finance, these meetings pretty much always starts the same: ‘We have seen so many of these companies and outside of XYZ, none have gone anywhere.’
+Which makes sense, because if you look at the way that LLM-based companies try to help financial services workers, they (primarily) all make the same mistakes:
+They fundamentally misunderstand the actual pain of working in finance.  Both in terms of direction and magnitude.
+
+Leading them to focus on trying to replace existing workflows, rather than supercharge existing ones.
+
+Leading them to attempt to monetize their software products via a business model called “SaaS” or “Software as a Service” (which actually means using software to help people that work in professional services do their job).
+
+Tech investors then compound these problems with the following mistakes:
+They massively over-index on their own lived work experience (VC or otherwise), relative to the customers these companies are trying to help. 
+
+They massively over-invest in technical talent as opposed to financial talent.
+
+They massively discount non-SaaS business models, and then get burned when they over-capitalize companies that ‘look’ like workflow SaaS products they already understand, but fail to break through the long sales cycles and high friction costs for starting financial software companies.
+
+These problems then create a self-reinforcing feedback loop whereby VCs continue to narrow their aperture on what financial software business they invest in. Which, ironically, further compresses returns with outcomes suffering disproportionately.  Leaving fewer and fewer ‘unicorns’ standing as examples from which the next generation of VCs can extrapolate a Seed → A → growth → IPO/acquisition lifecycle.
+Put another way, name a really successful financial software startup (outside of payments or crypto) since Bloomberg?  
+Maybe TradingView (worth $3b as of last mark, which replicates 20% of Bloomberg’s feature set around public market data designed for retail traders)?
+Meanwhile, think of all the massive financial institutions that have been created since Bloomberg….the comparison is not even close in terms of impact and magnitude of success.
+
+So, long story short, the problem we see with the way that the current generation of AI enabled software companies (aka LLM+) are trying to help financial services workers mirrors the same as the problems that “California” (aka “Silicon Valley” aka “SF”) has had for decades trying to build software for “New York.”
+Which, anyone with a passing familiarity with a trading floor or investment manager can tell you.  There’s just no impact, relative to like self-driving cars where you can literally see the future driving around San Francisco.
+
+In fact, a lot of the biggest developments at the intersection of tech and finance over the past 20 years have applied open-source tools (jupyter notebooks, R, mapReduce et al) or projects that were spun out of major firms (if you ever have run ‘pip install pandas’ you owe a small debt of gratitude to Cliff and the smart guys & gals over at AQR).
+
+For folks on the front lines of finance, the flow by which they interact with data hasn’t really changed in 20 years.  Neither have their workstations.  Neither has the culture.
+Long hours (predominantly in excel):
+
+Deteriorating physical and mental health:
+
+Leading to low job and life satisfaction.
+
+Now these survey results were of first year investment bankers, which may seem like cherry picking, but it’s indicative not only of the working environment, but the acculturation that occurs at these institutions.  
+Imagine four months ago you were hanging out in the quad with you buds, shooting the breeze, pretending to study for finals, while the summer air blew in. Flash forward to today and you are sharing a “3 bedroom” in Murray Hill, commuting down to FiDi on the 6 in the slush, while pulling 100hrs in Excel, PowerPoint and Outlook.   Putting together deck after deck, chart after chart.  For deals that will never get done.
+
+Thank you sir, may I have another?
+A lot of folks get the ‘Sunday Scary’s,’ but if you work in finance, there’s a decent chance they hit while you are still in the office, alone, as you cancel plans with your loved ones to grind out some formatting for a table for a pdf that no one will ever read.  And you will ask yourself if a life of moving around numbers in little hidden databases of money really means anything.
+Now here’s the confusing part.  
+For me, those experiences and that structure were exactly what I needed at the time.  They took someone young and bull headed and kinda smart but mostly overconfident and shaped me into the person I am today.  They also taught me a set of cultural principles which are by and large consistent across financial institutions (albeit with some interesting side quests):
+Don’t mess with the money, it’s not yours.
+
+If you mess with the data, it’s almost worst than messing with the money.  
+
+“I don’t know” is always better than being “wrong and strong.”
+
+etc.,
+
+So this is our backdrop.  About $7t of global financial services GDP (on a $31t ‘market’ if you believe this link), pumping data into and out of spreadsheets.  Sucking in information, capital and youthful dreams, and generating spreadsheets, slides, and misery (jokes!). 
+
+A market waiting for disruption, abandoned by a tech community that can only think about how to automate away all the spreadsheet bros, rather than meet the billions of users currently sitting in them.   Where they are.  In pain, but with the right data.
+How NY will make money from AI
+At this point you’d be right to exclaim ‘Campbell you said that we would learn how AI is going to make money from finance but all you did was crap on California fintech companies and competitors and the venture investors who passed.” haha more jokes!
+Which is the moment that MiFID 2 re-enters the chat.  Because the way that AI makes money in Finance will actually be the flip side of the way that Finance will make money from AI.  Which is the way that those “competitors” actually become different sources of demand and supply for what powers all those AIs….data.
+Here me out.
+See when you think about what people in finance are doing (when they go and get data from pdfs / vendors to put in excel to make charts for powerpoint), they are basically looking for truth.  Not the capital T “Truth” that lies at the heart of the truth = beauty equation but something far more practical.
+“What is close enough to truth that I can justify this view / trade / investment / decision / chart / email, still get home before 2am AND not abandon my responsibility to my boss / client / investor / regulator.”
+A culture of ‘don’t tell me, show me.’
+A culture of ‘don’t trust the data, but report it anyway.’
+A culture of ‘if you f*** with the data, some combination of managers, compliance, counterparties, regulators, or capital providers will end your job/firm/life.’
+The degree to which these cultural norms are held in finance like some sort of inverse omerta (the mafia code of silence) is hilarious, but needed!
+Because when you mess with the data, you lose your sense of truth.  When you lose your sense of truth, you lose your sense of liability.
+Which in finance is a capital offense.  Just look to FTX for an example of what happens when you underestimate your downside.
+Which, again, is why the culture of working in finance is so contra to the culture of working in tech.  It goes way deeper than west-coast vs east-coast, the feuds would make Biggy Smalls blush.
+
+Because in California, almost all data is to some degree fungible.  Users give your their information, but you can always ask again.
+Machines report usage, users, and revenue but investors really only care about the “big picture” aka did the line go up and to the right.
+Regulators?  Well, funnily enough previous to the recent push to ‘kill AI’ in legislation like SB 1047, tech folks haven’t really had that much exposure to direct regulation.  (Part of why I think they all radically, radically underestimate how damaging said legislation would be to the culture of innovation that keeps America leading the world.  But that’s another ramble for another time.)
+Anyway, so you have this culture clash where ironically, a lot of the people who you would most associate with recklessness, the frat boy or jock crowd, kind of formally or informally get channeled into a part of the economy where that recklessness is least tolerated.  Overfed and over-testosteroned trader stereotypes aside, the magic of the culture of finance (at least to me) was the way it shaped some of the seemingly hardest to shape individuals into productive members of society.  As their youthful insouciance came up against the steel and iron cultural foundations necessary to working in finance.
+“We work till it’s done.’
+“We don’t make mistakes.”
+“We show our work.”
+“We hold each other accountable.”
+Part of that cultural indoctrination strategy is to surround the folks making these big financial decisions with teams and teams of adjutants, many of whom live or are employed to managed, coral or control these wild animals.  To constrain their risk taking or focus to the very very narrow piece of the world for whom they are experts e.g. “I trade the Eurodollar swaps market.’ or ‘I trade the cash yen.’
+If you think my examples are too markets specific, almost all of these things apply as much or more so to seemingly generalist roles like private equity or Venture Capital.  Which in turn represent the major leagues of their respective specialty.
+Spend time at a NYC dinner and you are likely to hear phrases like ‘middle market shop that focused on industrials’ or ‘growth stage consumer fintech’, each one a description of a tiny slice of the investing world. Which you will also experience viscerally if you try to pitch one of these folks (or their family offices) something like “Gold in China.” :)
+
+Is 100% return in 5yrs unlevered a “good track record"?
+Anyway, why does this matter?  Because, now 2k words deep I will reveal the hidden truth:
+This specialization is actually the solution to the existential problem with using AI in finance: the hallucination problem
+The Hallucination Problem(tm) being the problem whereby when you ask a chatbot an answer to which it doesn’t have the answer, it may ‘imagine’ or ‘recall’ an answer from memory that isn’t really there.  It will ‘hallucinate’ an answer.
+Anyone who’s asked an AI to make a big list of links knows this problem well, sometimes rather than just say “I don’t know” the machine puts down what it ‘thinks it knows’ in an effort to be helpful. Here’s an example, spot the hallucinations.
+
+This is what Claude replied when you ask for “AI for Finance” YC startups.
+Which is precisely the behavior that gets (sometimes literally) beaten out of you as a first year analyst or whatever working in finance.  
+The last thing you do is put in what you ‘think’ because frankly, most college kids don’t have very informed or educated thoughts about difficult financial questions, three months into their first job.  Imagine 22yr old, first-year summer investment banking Campbell, working at Rothschilds in the city of London, trying to make recommendations to 60yr old homebuilder CEOs on how they should position their business a couple days after learning how to tie a necktie.  Someone needed to tell that kid that what he thought didn’t really matter, but the font on page 24 was off (again).
+This also extends to how work is done in finance, the literal mechanics.
+Which as we’ve discussed, is primarily via spreadsheets.  The bane of every software engineer ever.
+Engineers look at a spreadsheet and see an aggregation of features, to be disassembled and then recombined in a series of ‘spreadsheet killer’ applications.  I would list them here but I want to be kind to their well meaning founders and investors.
+It’s funny to me to see so many tech people malign spreadsheets when looking back, that Jobs guy rich selling Apple IIs because people it had a killer app called “VisiCalc” (the precursor to Lotus which was the precursor to Excel).
+
+Look familiar?
+But seriously, have you every actually seen one of these “replace Excel” or “replace Bloomberg” products used in a major firm?  Of course not.  Because they are trying to replace the wrong thing.  Bloomberg and Excel aren’t broken (but the pipe between them is).
+This cultural logic for not letting financial workers make decisions outside of their domain gets extended down to their literal applications, workstations and network connectivity.  Combine this impulse to control with the very real obligation (coming from the government to be clear) to surveil your own workers, and you have what one might call a ‘hostile innovation environment.’ 
+This is what the engineer sees: the captive knowledge worker looking to escape excel.
+Which is fundamentally wrong, because it misunderstands the role of the spreadsheet in the financial services workers life.
+See, the fundamental idea behind a spreadsheet - a table - has been around longer than we’ve had language.  Many of the first examples of writing were in fact lists of objects, along with their quantities and/or prices.
+
+This is what Excel looked like in Ancient Mesopotamia
+The Medici’s et al, in all their glory, essentially used the then revolutionary technology of ‘double entry bookkeeping’ (aka spreadsheets) to ensure that the numbers under their banking empire reconciled.  To establish ground truth in a world with no internet, no telephones, no telegraphs, just a bunch of guys running around with sacks of silver, trying to keep track. 
+
+ If you are ever lucky enough to see the founding documents of JP Morgan’s banking empire, it’s the same story.
+
+Let me tell you a story about 1907…
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+So this is where we combine all these disparate themes.
+California has a hard time building software for NYC…
+
+Because California doesn’t understand what NYC does.
+
+But NYC is actually pretty good at something California is not (establishing ground truth for economic and financial concepts).
+
+NYC et al also have a regulatory catalyst (MiFID II) that is forcing many of the biggest firms on earth to monetize data assets previously inaccessible.
+
+Meaning the obsession with getting AI into NYC is the wrong direction, we should first be focused on how to get financial truth (aka data) out of NYC and delivered to California!  Which then opens up the opportunity for California to bake that data into their amazing products, serving that knowledge to everyone…including folks in finance who just want to get more data into their spreadsheets.  Which, after all, is how AI can make money in Finance!
+
+Which is kind of interesting and counter-intuitive in a way that is probably something both true and something missed by the vast majority of folks in the space.  Because you have to be in both worlds to really understand it.
+Next time we revisit this topic we’ll talk a bit about how much this whole thing will be worth to everyone.  As a short preview however, our vision of the future is far less “disruptive” to existing business models than you would hope if you are a big fan of Clay Christensen’s “Innovator's Dilemma” framework. We’ll go into the current data stack in finance and walk through how the different roles will be impacted (engineer, analyst, and executive) by AI.  We’ll outline why what’s coming will actually accelerate revenue for the existing, established, dominant players.  In particular because of the critical roles that existing tools and vendors play in helping finance establish ground truth.  
+In the meantime, here’s some back of the envelope math for you TAM aficionados.
+Bloomberg makes around $10bn a year from a business made up of 200k subscriptions.
+There are a billion folks in spreadsheets, scrambling around in the dark, looking for truth.  
+How many of them would be willing to pay $20, $100 or $200 a year to have a subset of all the data that Bloomberg is providing?
+How many would re-upload knowledge, cleaned and merged from multiple sources, if they were paid $100 every time someone subscribed to their answer to that question?
+What does all that add up to?  
+We think the number starts with a T.  
+Till next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

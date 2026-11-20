@@ -1,0 +1,101 @@
+TITLE: There Are Bonds in the Semiconductors
+SUBTITLE: Bonds in the Stocks: Chapter 4
+DATE: 2026-05-20
+
+Bob Prince, CIO of the old shop, had the knack for coining phrases which were simultaneously extremely simple, and extremely profound. One of his best:
+“There are bonds in the stocks.”
+
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+That line matters again. Because if there are a lot of bonds in the stocks, I have news for you sportsfan, the chips are chock-a-bloc of them.
+The AI bulls may be right about the numerator. Watts are scarce. Wafers are scarce. The capex cycle is real. The purchase orders have delivery dates. If you are asking “will the earnings show up?” the answer might be yes.
+But if 75% of the value of the global semiconductor complex comes from cash flows more than ten years into the future, then this is not just an earnings story. It is a duration story, and not sure you saw, but the bonds…are not doing well right now.
+
+So the story I’m worried about it not “AI is fake.” The scary version is: AI is real, the cash flows arrive, and the stocks still get repriced because rates own the math.
+
+Bob’s role, if I do say so, was to boil down all the autist complexity coming out of the sausage machine and say “so what you are really saying is this.”
+I learned this after my first pure all-nighter, working on my first oil report. I had slaved over this and that data, torturing my file just to get all the pieces together to explain [redacted] and after all that, I was expected to write a “simple topper” or “synthesis” to explain what the heck was going on.
+Was a bit difficult given I could barely stand, my eyes were as dry as sandpaper, and my mind felt somewhere between “fried and goo” but I still remember getting called into his office to present some of my work, first thing when he came in (and he came in early). My hands shaking, my voice coarse, I hand over the report, and he starts to read, frowning.
+I forget the exact details of what came next, but at some point he starts writing on the piece of paper and telling me how to tell a story. How to synthesize. I take notes.
+I go back, and take another turn. The world is at an angle, my wrist is on fire with carpal, and I painstakingly torture the first paragraph again, then go back into his office.
+“Better, but you are still failing to synthesize. Just tell me what’s happening. Right now, explain it to me.”
+At this point, the world goes black, my eyes roll back in my head, like that time at Oxford when I stayed up all night studying for some math test, and then we had to take the college picture. 100 people, dressed in robes, standing for a picture, for an hour. My knees were locked, I was dehydrated, which apparently does something to your blood flow. Oh, since I was on the taller end, I was also on the back row of a 20 ft set of stairs. This was my second or third week, and we couldn’t let the rich kids see us falter, so rather than take a beat and show weakness, I just stood there, gripping the banister, and slowly, inexorably, blacking out (which since I was in the last row was luckily behind me, unlucky though as if I had lost my grip I would have fallen backwards and maybe idk fell on my head and died).
+Anyway, I’m being a bit melodramatic here, but trust me, I was tired. So tired I wasn’t really able to fill my head with complexity. Which, accidentally, made me useful.
+The market is up because [redacted] is [redacted], that’s being countered by [redacted] doing [redacted], and then [redacted] is coming in at the margins.
+“There, that’s it, say that.”
+He was right. Sometimes you are better at synthesis when you give up trying to be perfect, and just say. the. thing.
+So today we’re going to go line by line, through the duration problem hiding inside semiconductors, and make the case that yes, you should be worried about what’s happening in the bond market, even if you are super confident about the AI revolution (as we are).
+
+The Picture
+Two investors I admire, same week, both citing Mauboussin, opposite conclusions.
+
+Baker is making a statement about the numerator. Will the cash flows show up? Verdad is making a statement about the denominator. At what rate do you discount them?
+They’re both right. They’re just answering different questions.
+So today we’re going to answer the question of “how long to get my money back” for semis, in the context of the things we normally think of as having duration.
+If you’re familiar with the concept of “duration” from bonds, which is one of those overloaded finance terms that kind of means multiple super-technical things at once and also borrows a term from real life (thanks guys), you can abstract it into some notion of “how long does it take to get my money back.”
+And while we think about this naturally for bonds, where I make $5 a year for 30 years and then get $105 at the end, we don’t think about it for stocks. But we should. Because a lot of stocks don’t just have this kind of payoff, they have an even worse version of it: the zero-coupon bond.
+
+This is what you find on the internet when you google ‘zero coupon cash flows chart’ and rather than make one in excel in 5min I thought this would be a fun nod to the lack of quality learning materials on the internet on these topics.
+A stock with little to no earnings, or earnings but they never pay it out as a dividend (common), or refuse to use those earnings to buy back stock (growing more common every day now that the hyperscalers are all about investing in compute), 
+
+starts to look like a zero-coupon bond. Actually worse than a zero-coupon bond in one important respect: the “principal repayment” is not contractual. It depends on growth, margins, competition, capex discipline, geopolitics, and the market still being willing to pay for the terminal story ten years from now. At least a zero-coupon Treasury promises you par at maturity. A semiconductor stock at 35x promises you nothing except the opportunity to find out.
+
+Yeah. Semis sit right there, shoulder to shoulder with the 30-year Treasury. Same height. Different color. And a lot less…fixed.
+If we take Verdad’s 75% anchor and extend the same logic across every sector, calibrated by EV/Sales, cash flow timing, and premium to historical averages, you get something like an equity duration map for the whole market. (These are estimates, not precise calculations. The point is the relative ordering, not the decimal.)
+High growth and long term investments at the top, with durations longer than the average 10yr bond.
+
+Your bread and butter equity market sectors, which look kinda like a 10yr bond.
+
+Then a lot of what end up being called your ‘defensives’ in times of crisis, or inflation.  Which generate a lot of cash flow today, which brings down their duration.  Note energy and materials are also in here, which gives them super powers of diversification in times of inflationary parts of the growth cycle (like today).
+
+We put the ETF tickers in there so you can do the math on your own portfolio. Most of you are going to discover you’re running 15, 16, maybe 18 years of equity duration while thinking you own “diversified stocks.” You don’t. You own a long-duration bond book with extra steps.
+Going back to the bubble chart above, note semis are trading at eleven times sales versus a historical average of three and a half. The bubble is the size of several other sectors combined. Every point of that gap between 3.5x and 11x is growth premium. That growth premium is duration. That duration is rate sensitivity, and rates are going UP.
+Where do I stand? Well, my TLT put spreads went in the money and this time I decided to leave it on so I’m short a bunch of bonds.  I’m sure the market bounces a bit tomorrow, but I’m ok with the short duration, especially the way gold and silver are trading.
+What’s the thesis, well like we said in the bubble’s piece, the wedge we can see is that rates crack the equity market, and that long-duration sectors take the worst of it. Not trying to be clever and short SMH directly, not yet at least, and we’re still bullish the trend. Plus we’re still looking for ways to play the infrastructure wave that aren’t yet bid to the moon. Plus stuff that benefits from the capex boom without carrying 20 years of duration (aka commodities). More on that below.
+
+The Loop (or, Why the Scarcity Argument Eats Itself)
+Look, watts and wafers are genuinely scarce. TSMC has real pricing power. Data center capex is purchase orders with delivery dates not dreams. If you’re just asking “will the earnings show up?” the odds are decent.
+But the scarcity argument eats itself. And if you see the channels, you see the link that breaks the chain.
+Higher valuation means higher duration.
+35 PE has longer duration than 15.  
+There is no version of “but the fundamentals are strong” that changes this. Duration is a property of the price you paid, not the quality of what you bought. Best semiconductor company on earth, still gets destroyed by a 200 rate move at 35x, because 75% of what you paid for hasn’t happened yet.
+At these multiples, you are effectively short rate volatility.
+A 50bp rally in rates might give you some multiple expansion, 35x to maybe 38x. Call it 10% upside. A 50bp selloff can force a much larger derating, 35x to 28x, if investors stop underwriting the same growth premium. That’s 20% downside. The asymmetry isn’t because the company got worse overnight. It’s because the valuation had no room for discount-rate volatility. You don’t need rates to go up. You need them to be calm.  
+Which isn’t a problem necessarily on it’s own, until you start to think through what’s been happening to risk premiums on these assets as they get bid up.    Right as the short volatility exposure peaks, the compensation of that risk is the smallest.
+I’ll let Claude walk through the linkages on this one.
+
+The bottleneck is inflationary.
+This is where the loop turns self-defeating. Baker says watts and wafers are scarce. Fine. Scarcity is a supply constraint. Supply constraints are inflationary. More data center capex means more energy demand, more construction, more pressure on the stuff that feeds CPI. The very thing that supports the numerator (earnings growth from pricing power) attacks the denominator (discount rate rises because scarcity drives inflation).
+Baker’s thesis works if the Fed can hold long rates down while the physical economy absorbs a multi-trillion dollar capex wave. That’s a big if. And remember, conflict is also inflationary. 
+Yes the output of AI is deflationary, but honestly, we haven’t built enough capacity to bend that curve yet, and if the ‘data centers burn water’ meme doesn’t’ get under control, we probably won’t before the end of the cycle shows up.
+The capex boom competes for the same capital.
+TSMC issues bonds to build a fab in Arizona. Those bonds compete with TSMC equity for the same pool of savings. The stock is literally competing for capital with the investment required to unlock the next chip. The company’s own capex program pulls up the long rate that discounts its own future earnings.
+Not to mention the fact that the internal capital allocation engines of the major US tech companies have just shifted from stock buy backs (returning capital to investors) to leveraging (asking for capital).  This demand for capital leads to a higher compensation, aka higher discount rates.
+Every bottleneck is a mini supply shock.
+Wafer delays. Grid queues. Export controls.  The chaos here acts like a car pile up, each a mini supply shock.  None of these show up in the 10-year yield. They show up in the risk premium on top of it. The part nobody watches until it's too late.
+The clock is ticking.
+This is the one that feels kind of new. Between earnings seasons, there's a race on. For stocks to go up, the market's expectations for earnings growth (or the rate at which they're discounted) have to outrun the drag from higher rates pulling down NPVs. Tug of war against the clock.
+
+Growth expectations update on hard data. Earnings, guidance, macro prints. Four times a year. Between prints, the only real-time degree of freedom is the risk premium.
+So when bonds sell off 50 basis points between earnings seasons, the market faces a simple question: does the risk premium compress (investors accept less compensation for equity risk while rates are rising), or does price fall?
+For a 20-year duration asset, 50bps of unabsorbed rate shock is roughly 10% of price adjustment. That’s a lot of ground to make up on the next print. The numbers don’t just need to be good. They need to be good enough to overcome three months of accumulated duration hit. In line? Not good enough. The hit stands.
+Rates move every day. Earnings move four times a year. Duration tells you who’s winning in between.
+Low-duration sectors become the competition.
+Energy at 5 years of duration. Materials at 5. These don't just survive rate rises, they start attracting the capital. An energy company throwing off 8 to 10% free cash flow yields at 12x starts to look pretty good next to a semiconductor stock at 35x. That capital comes from somewhere. It comes from the longest-duration sectors first.
+Dividends compound it. Semis pay out maybe 15% of earnings. The rest is retained to fund growth you won't see for a decade. Utilities pay 60%. Energy, 50%+. When the risk-free rate is 5%, a dollar of dividends today starts beating a dollar of retained earnings that might become three dollars in 2036. 
+
+That "might" just got a lot more expensive.
+
+The Machine Backs Up
+This is why rate cycles kill equity booms even when the engine is real. 2000. The internet changed everything. The cash flows showed up. But they showed up at companies and multiples that weren’t enough to justify prior expectations, patience, and the higher cost of capital. The engine was real. The duration killed you anyway.
+What could make me wrong? Deflationary growth, where AI delivers productivity fast enough to push rates down while earnings accelerate. Or peace. Real de-escalation. My book is exposed to peace right now, which is part of why I’m still holding gold, silver, and UK short rates even though they are getting absolutely murdered. And it’s why I like the US energy exporters and critical minerals, because those work in both worlds. Inflationary regime? They benefit from the bottleneck without carrying the duration. Peace deal and stocks rip? They go with them.
+The portfolio isn’t designed to beat SMH. It’s designed to weather the scenarios that kill the consensus book. If semis rip 30% from here, I’ll underperform. I can live with that. What I can’t live with is 20 years of unhedged duration into a world where rates are moving 50 basis points between earnings prints.
+Bob would have said it simpler.  Heck he might even be saying it now, I don’t get the Observations anymore, all I get is the Rambles in my head, and the charts taht tell me, know your duration.  Respect the simplicity.
+Till next time.
+
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure.
+Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

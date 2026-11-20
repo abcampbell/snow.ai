@@ -1,0 +1,44 @@
+TITLE: Flash Crash
+SUBTITLE: 
+DATE: 2026-02-05
+
+Chinese silver prices sold off 17% around 10:30pm EST tonight.
+Rather than a long ramble, posting some of my tweets which lay out what I saw and how we reacted.
+The short explanation: this looks less like a "short vol" move—like we saw in the US on Friday, where sustained and unrelenting weakness ground prices lower—and more like a "tap on the shoulder" move by a large holder in China forced to liquidate their entire position.
+
+Started with notifications blowing me up: "what's happening to silver." Sometimes it pays to be the first call when someone sees something weird. Funny form of alpha.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Check Bloomberg.  Woah.  Silver down bigly,
+
+Interesting, gold is basically flat.
+They are 70%+ correlated.
+
+Time to cut the gold.  Would expect silver to rally a bit and gold to sell off.  This looks like deleveraging in a particular market vs something hitting both of them.
+
+Upon closer inspection, this doesn't look like an off-hours attack by the US "bankers." If it was, you'd expect the US line to lead us lower, as opposed to Shanghai futures (yellow line below).
+
+Further, at the bottom, the "Chinese price premium" compressed almost 7%. You can think of markets like a series of interconnected rubber bands. They trade in line, but you look for the extreme moves to understand where the selling pressure was coming from.
+
+Shanghai futures in white, US futures in yellow, normalized to 100 as of yesterday.
+I have nothing more than Bloomberg and Twitter right now, but as far as instant reactions go, this looks very much like someone in China being told to liquidate their entire position in the heart of their trading day when they would have the most liquidity.  Not someone in the US trying to crush the market while everyone is asleep.
+Prices on both silver and gold have been strangely stable since. Feels like a flash crash. 
+No real news. 
+More headlines about margin, but with 17% moves in an hour, can you blame them.
+
+Not sure US traders are going to like this headline with their breakfast toast.  Their reaction tomorrow is important. I’m still a long term bull, but sometimes you need to listen to market. 
+
+Meanwhile we have US STATES building strategic reserves, and news that the Federal government is doing price floors.  The short term vol is bearish, the long term backdrop is getting more bullish everyday.  
+Interesting times.
+
+Currently have a bit of silver long through my call options, but most of them are now deep out of the money.  Sold a put spread at the lows Friday and stupidly forgot to monetize the pnl by buying it back earlier this week.  The perils of managing options as a night job. There’s -80bps.  Don’t sell vol here Campbell.
+Am now tactically (aka short term) short gold. Will lift the gold short and go long again when order returns to this market or if we puke and things look really distressed.  
+Between bitcoin, US stocks, metals, and private credit a lot of people looking for the exit at the moment.  Which, given there’s no obvious catalyst (Fed tightening, banks/credit blowing up) or narratives (outside of the “Air Pocket” we talked about yesterday) is concerning.   Could be a buyers market, could be the end of the run.
+In the meantime, we're getting pretty close to the strike of my SPX puts and so we have picked up a lot of short stock exposure (-80% delta for 1.8% premium).   Meaning the pain trade for me tomorrow is silver sells off, while gold and stocks rally. At this point, I wouldn't be surprised.
+Good luck out there.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

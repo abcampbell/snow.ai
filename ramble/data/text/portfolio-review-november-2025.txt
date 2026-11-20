@@ -1,0 +1,106 @@
+TITLE: Portfolio Review - November 2025
+SUBTITLE: Live By The Butterfly, Die By The Butterfly
+DATE: 2025-11-30
+
+The portfolio is up 108% year to date.
+Running 30-35 vol, meaning we’re at the part of the ride when you’ve positioned yourself in an asset for years and it finally starts moving in a straight line.  A time to reflect, diversify a bit, and think about how we want to be set up in the new year.
+A lot of folks want monthly reports but if you know my day job, you know that’s not in the cards for now. Maybe sometime in spring, when I can actually talk about the stocks in the portfolio and not just the high level. Below you can see the last one we did back in September.
+
+Big update since then: we took a 13% drawdown after the blow-off top in silver last month but with the move in the last couple of days are now up ~20% vs our last update, bringing our total year to date to ~108%.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Painful Education of Managing Options Part-Time
+We reduced our exposure on the way up but had one of those excruciating days where our ‘upside butterflies’ fell through their strike price right on option expiry.
+This is what happens when you manage a vol book between Zoom calls. The retail longs got steamrolled by dealer delta hedging on expiry. I was the retail long. Tuition paid.
+Likely because a lot of retail folks, like me, were holding them outright, whereas the vol players who had supplied that convexity were delta hedging—exacerbating the big moves by selling at the lows and buying at the highs.
+The kind of thing you generally are recommended NOT to do when trading day to day, and the kind of thing you inevitably do when trying to manage a complex book with an hour or so of attention spread out over the course of the week. Not to say I don’t own the losses, more just a good learning experience: many of the more complex option structures I talk about here are not the kind of thing you should play around with unless you are (a) experienced, and (b) have a high risk tolerance.
+Portfolio Characteristics
+Before we dive in, might be helpful to look at some of the portfolio characteristics. In particular, the volatility of the portfolio, which is running around 30-35 vol (spicy!), with (as you would expect) a strong correlation to gold and silver, and a marginally negative correlation to bonds—though that may change soon as the economy continues to weaken.
+
+Keep in mind: this isn’t our ‘best bet of alphas’ portfolio. This is our thematic, directional portfolio designed to capture the regime change we’ve been writing about for years:
+China’s banking system is technically insolvent (trillions in property losses) → they print → monetary debasement → long precious metals
+
+AI is energy-hungry (data centers eating 12% of US electricity by 2028) → solar demand explodes → long silver for industrial consumption
+
+Credit markets are priced for perfection (300bps HY spreads) while the Fed cuts into weakness → short credit
+
+Globalization is dying (tariffs, reshoring, H1B fees) → structural inflation → long real assets
+
+The thesis isn’t coming. It’s here. Silver up 54% YTD, gold up 27%, HY spreads starting to widen, China accelerating monetary expansion.
+This portfolio is built to capture exactly this moment.
+Portfolio Exposures and Performance
+
+Return = Unrealized Return of Live positions, not net net in the bucket/asset for expediency reasons.
+As hopefully is clear-ish in the table above, our portfolio is mostly structured around two core offsetting themes:
+Upside: Precious metals (78% silver, 46% gold), AI infrastructure (23% tech/hardware), and bitcoin (small position)
+Downside protection: Large short position via puts and underlying in credit and stocks (-40% HY, -8% SPX puts)
+At much lower concentration/confidence are a series of ‘alpha’ bets: relative US and Chinese banks (don’t short the Chinese people, short the paper), Chinese-exposure US retailers, long positions in Energy, Gaming, Strategic Miners and EM Stocks (Brazil and Korea).
+As the bulk of the portfolio alpha is silver exposure, below you’ll see a deep dive on our position construction.
+Silver Positioning Deep Dive
+If you have interest in how I’m getting this silver exposure, see the chart below of how the portfolio performs at different levels of the underlying.
+
+Largely due to a set of option structures which buy close optionality and sell the ‘deep upside’. Which you can see when you look at the way the ‘delta’ graph looks at the moment, and over time.
+
+Meaning when we started this move (last week) the net impact on our portfolio looked like this: very positively exposed to the next 10% upside, then actually lose a bit of money if the price goes super vertical (at least in this option structure). We are now past the peak in our short-term butterflies which has flattened out our exposure.
+
+Though, reminder, a lot of that flattening comes out of our portfolio in a couple of weeks when these options expire.
+
+Which frankly is kind of where you want to be with an asset that looks like this:
+
+The silver thesis is playing out faster than expected:
+Solar panels consumed 25% of global silver production in 2024
+
+New high-efficiency panels use 20mg/watt vs 10mg for older tech
+
+Meta wants 4GW for AI infrastructure = 1.2 million ounces of silver
+
+Chinese gold/silver imports running 100+ tons monthly
+
+Supply constrained (72% comes as byproduct of other mining)
+
+We wrote about this back in February. The market is just now figuring it out.
+
+A Note on China Silver Flows
+One thing that gave us pause over the last month: the recent surge in Chinese silver exports. Looking at the official import/export, China has flipped from accumulating silver to actively exporting it. Net imports have collapsed to -440 tonnes.
+
+from @KingKong9888, yet another HK Based account who has blocked me…
+This outflow may have contributed to price weakness during the recent selloff. More supply hitting global markets, more metal available to meet demand.
+However, digging deeper reveals a more nuanced picture—and this is where understanding actual trade flows matters more than headlines.
+
+Much of this export flows to Japan, where it’s processed into high-end silver powder and nano silver products. China has achieved self-sufficiency in high-temperature silver paste, but still relies on imports for low-temperature paste and the specialized powders used in solar panel manufacturing. Japan doesn’t produce silver ingots domestically, so they import Chinese silver as raw material, process it into the high-end powder products, which then flow back into the supply chain for things like... solar panels.
+In other words: China isn’t dumping silver to exit the trade. They’re exporting raw ingots because their domestic refining capacity for specialized products can’t keep up with demand.
+The silver still ends up in panels. It just takes a detour through Osaka first.
+This is exactly the kind of thing that separates signal from noise. The headline “China silver exports surge” looks bearish. The actual trade flow mechanics show accelerating industrial demand. This is why you can’t just read Bloomberg headlines and call it research.  We’re also not positive that this is the actual mechanism, so it bears watching, presumably that silver powder should show up somewhere in the trade balance…
+Hedges: Credit and Stocks
+Against this positive silver exposure, we are running relatively large shorts in BOTH credit and stocks now.
+The credit short (-40% HY) is the highest conviction position in the portfolio after silver. Credit spreads at 300bps while the Fed cuts rates into a weakening economy is delusional. Investment grade at 90bps should be 180bps. This is our bet that the “soft landing” narrative breaks.
+The stock downside protection (-8% SPX puts) is probably too far out now (bought before the rally) and not providing sufficient protection. We may need to roll the protection on a day when the market is up. TBD.
+
+Portfolio Risk Profile
+One (kind of too simple) way to look at the overall risk in the book is to ‘shock’ it in either direction.
+
+If you move everything in the portfolio up 10%, the book gains 10%. Though as we approach expiry for some of our options, that curve gets more steep—meaning even a 15% increase in each asset would yield a 20% increase in portfolio value.
+Our protection also is clear here: portfolio protection really kicks in at -5% from here, and provides so much convexity that we actually end up UP if everything goes down 10% and flat were all assets in our portfolio to be down 15%. Below that, we start taking losses again.
+This is exactly the portfolio you want at the end of a cycle: roughly delta one upside, with protection for a short-term correction. Basically long with crash protection, selling off the melt-up top to finance it.
+The three-legged framework from our Stoic Macro series in practice:
+Hedge the tail (precious metals for monetary debasement)
+
+Capture the base case (long AI infrastructure, diversified assets)
+
+Build your own (alpha bets on structural dislocations)
+
+What’s Next
+Silver “up bigly”. Gold up big. HY spreads starting to widen. Chinese M2 expansion accelerating while property losses mount. AI data centers eating power. The regime change isn’t coming—it’s here.
+I’m continuing to sell down silver exposure into strength and diversifying into other metals, minerals, miners and themes as the year comes to a close. The core thesis hasn’t changed. China’s still trapped between insolvency and printing. AI’s still energy-hungry. Credit’s still priced for perfection while the economy weakens.
+But when something works this well this fast, you take chips off the table and redeploy. Not because you’re wrong about the destination. Because the market’s telling you you’re early and right. The question is how long before everyone else figures it out.
+The math from our silver pieces is playing out: we’re not just running out of silver, we’re watching it become yield-bearing money again through solar panels. The 108% isn’t luck, it’s patience and positioning.
+
+More on redeployment and 2026 positioning in the new year.
+Happy hunting.
+Disclaimers
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEM
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

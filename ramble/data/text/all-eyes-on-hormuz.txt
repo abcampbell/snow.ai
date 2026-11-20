@@ -1,0 +1,50 @@
+TITLE: All Eyes on Hormuz
+SUBTITLE: Conflict Is Inflationary part...4?
+DATE: 2026-03-01
+
+It's mid day Sunday the 1st of March, and yesterday, Iran went hot. Regular readers of the Ramble will know we've covered these topics before in our 'Conflict is Inflationary' series. We'll leave links to those pieces below, but the short version is that conflict puts upwards pressure on both supply and demand in ways that generally increases prices.
+
+The closer to the nexus of conflict, the more dramatic the impact. It is for this reason that a hot war in Iran was often seen as one of the most consequential scenarios for energy markets, owing not only to Iran's role as a major oil producer, but the strategically critical chokepoint of the Strait of Hormuz for the transportation of energy from Iraq, Kuwait and the Gulf states located deeper in the Persian Gulf.
+
+What we're seeing is real life playing out the game theory dynamics laid out a couple of years ago, as the world evolves from positive sum (trading) to zero sum (competing) to negative sum (conflict). In a negative sum world, you not only pay to gain, you pay to punish.
+
+At the moment, markets are still closed, so we're in the proverbial 'fog of war.' So rather than speculate on things outside of my area of expertise, just wanted to send a couple of quick reflections on what we'll see in markets in the coming days, and some observations on the changing nature of following markets in times of chaos.
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+The Oil Outlook
+In terms of markets, the outlook for oil will be a function of a) whether Hormuz is closed, and if so, for how long, b) whether oil infrastructure (Iranian and otherwise) is damaged, and c) how much the rest of OPEC+ will increase production to ease the inevitable tightness in the markets.
+OPEC has already signaled a willingness to expand production.
+
+Stepping back into the role of short term balancer of the market. Below you can see how OPEC production has historically 'leaned against' dramatic changes in the price by increasing (decreasing) production in response to prices rising (falling). If the conflict drags on and leads to supply chain problems with both production and transportation, the world needs a lot of crude not located in the Persian Gulf right now to ease pressure in this critical market.
+
+Energy is the lifeblood of the economy and the marginal cost for the machine. For big moves, as goes the price of oil goes inflation.
+
+The Democratization of the Dashboard
+The first observation has been the proliferation of situation monitors, or homebrew dashboards, built by vibecoders and AI. We’ve seen an explosion of these on Twitter/X in just the last couple of days, and it’s fully consistent with our ‘death of software’ and ‘death of slides’ thesis that Ramble readers will be familiar with. The democratization of the dashboard is here.
+
+24-Hour Markets as Price Discovery
+The second, and perhaps more useful to folks invested in some of these relevant commodities, is the roll out of 24-hour markets in some of these relevant commodities. Now, the liquidity in these markets is still way too sparse for institutional investors, but what’s interesting is the way they act as early indications for price in the ‘real markets’ that are still hours or days away from being open. In this way, we expect retail traders who provide liquidity ‘punting’ over the weekends to attract the hedgers, speculators and quants who will (over time) bring enough liquidity into these markets to eventually attract the ‘real money’ players (institutional investors, large funds, endowments, banks etc) that actually set market prices with big ticket orders. The future is here, and this represents a real use case for alternative financial pipes. We expect this competition is a big part of the reason that traditional exchanges show (slow) moves to start 24-hour trading.
+Specifically, the first thing we did upon hearing the news was to check Hyperliquid for the indicative prices for gold, which showed a surge to $5,500/oz before selling off to $5,300 and then rallying back a bit.
+
+The size of these moves alone should eventually draft flows from folks 'long gamma' looking to hedge their underlying gamma. The only question is when the liquidity will be sufficient to handle their flows.
+
+They also provide a rooting to reality when the alternatice is breathless tweets
+
+Silver has also traded up in line, adding to our aphorism that silver has the unique ability to be an industrial metal with respect to growth (from its exposure to solar growth) and a precious metal (trading with gold) in times of crisis. You just need to be able to stomach some wonky price volatility in the meantime (though it looks like the weak hands may have been flushed out of this market lately).
+
+These markets aren't perfect, to be clear. As they have no tie to the underlying physical market, they need to rely on the concept of 'auto-deleveraging' of both sides of a trade when things get too volatile (as a lot of people short crypto during the flash crash a couple of months ago learned the hard way). In addition, they also have circuit breakers, meaning there is a limit to the price discovery they provide when markets are closed, as is evidenced by the effective cap on their oil price.
+
+Lastly, we'd be remiss if we didn't poke fun at the tweet below. Feels like the most European bureaucratic thing ever to post 'we're monitoring the situation and will hold a meeting in three days.' Let's all hope WW3 doesn't break out during August.
+
+What’s Different This Time
+What stands out about this moment isn’t just the geopolitics. It’s the speed and granularity of the market’s response. Vibecoders are spinning up situation dashboards in hours, not weeks. Crypto-native perpetuals are providing indicative pricing while traditional exchanges sit dark over the weekend. The fog of war is lifting faster than institutions can respond to it, and that gap between retail price discovery and institutional execution is itself a trade.
+We’ll be watching Monday’s open closely, particularly the spread between where Hyperliquid settled and where Brent and COMEX gold actually print. If those 24-hour markets got it roughly right, that’s a data point that accelerates the institutional adoption thesis. If they overshot wildly, that tells you something about the current composition of those order books.
+Either way, the three variables that matter for oil haven’t changed: Hormuz, infrastructure damage, and the OPEC+ response. Everything else is noise. We’ll follow up with a deeper analysis as the situation develops.
+Till next time.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

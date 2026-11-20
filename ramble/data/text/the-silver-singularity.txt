@@ -1,0 +1,64 @@
+TITLE: The Silver Singularity
+SUBTITLE: 
+DATE: 2024-09-16
+
+The Fed is expected to ease monetary policy this week for the first time since 2019.
+The degree of easing priced into short-term interest rates exceeds anything we've seen in the past 30 years.
+
+With that in mind, thought I would quickly remind you of our core thesis on Silver.
+Like 'Gold in China,' silver should benefit from both the trend towards de-dollarization and the likely financial instability emerging from China.
+
+Unlike gold or crypto, about a third of the marginal demand for silver actually comes from energy needs, specifically for solar panels. This is because current solar photovoltaic panel manufacturing processes consume a significant amount of silver.
+
+Most people are vastly underestimating the energy demand resulting from the rise in AI. OpenAI released their latest model, 'o1,' this week. TThis model trades compute power for compute time, taking much longer to process multiple, parallel 'chains of thought.’  The results on math and coding benchmarks now surpass the average human, but require significantly more energy to achieve this level of computation.
+
+Silver in China
+If you've been following this blog for a while, you know our take on 'Gold in China.’ The core idea is that Chinese policymakers face an unenviable Sophie's choice as a result of their bursting real estate bubble:
+
+Support domestic asset prices with easy money, thereby bailing out domestic debtors. This would require printing money in quantities that would inevitably depreciate the currency (CNY) relative to foreign currencies.
+
+Support the currency with a combination of tight money, capital controls, and targeted debt write-downs. This tightening would put pressure on weak financial institutions, private developers, and households unable to service debt in the face of falling asset prices. Leading to diversification out of domestic bank deposits (aka “money in China”) and into hard assets like gold and silver.
+
+This theory has largely played out thus far, as silver prices in China have traded well above those in the US for more than a year, reaching as high as 12% over western silver prices.
+
+Silver Solar Panels
+If you total all the silver ever mined and mark it to market, you get a value of approximately half that of all mined cryptocurrency
+
+Interestingly, while you need energy to produce crypto, nowadays, to generate energy at the margin, you need silver. Why, well around 5% of current global electricity demand is filled by solar.   Basically doubling in the past five years.
+
+This is evident in the actual global demand for silver, where demand for solar panels has consumed all the global production gains since 2014.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Thirsty Robots
+Those familiar with the millennial classic Transformers may recall that the fundamental conflict between the Autobots and the Decepticons boiled down to a struggle over... Energon. 
+Energon being the physical manifestation of pure energy - the basic fuel powering both sides.
+
+his stranger-than-fiction narrative became more compelling this week when OpenAI released their latest model, 'o1.' 
+O1 stands out for two reasons. First, it represents a significant improvement in math and coding, surpassing average human performance on many benchmarks.
+
+What's interesting is not just the steady improvement in analytical benchmarks, but also how these results were achieved.  n essence, OpenAI demonstrated that the scaling hypothesis holds (more compute and data lead to higher performance), but we've reached a point where the most effective way to apply that compute is through more processing time.
+Note that in the chart below, the x-axis is on a logarithmic scale. This means that achieving linear improvements in test results required exponentially more time.
+
+What does this mean practically?
+This means these models are extremely compute-hungry. So much so that the 'doubling of electricity production necessary,' as mentioned in Situational Awareness, begins to look more reasonable.
+
+In a follow-up post, we'll detail various paths the US might take to generate that electricity, considering costs and environmental impact. For now, we'll conclude with a simplified version of this thought experiment.
+What would it take to 2x US electricity production?
+Below, you can see the estimated cost to double US electricity production. The short answer is approximately $2.2 trillion, with about a third of that expansion coming from natural gas, nuclear, and renewables.
+
+Note that this would require an investment in electricity production on par with current developments in China or the rapid post-war electrification in the US.
+
+Now, let's make the thought experiment more specific and consider how much silver would be consumed if the US tried to double electricity generation solely through solar panels. This green electricity generation plan would cost approximately $4.25 trillion, with 40% allocated to the cost of the panels:
+
+About 60% of the panel cost would be attributed to the silicon cells.  Of which around 10% is silver.
+
+Based on the current silver intensity of solar (100mg per solar cell), generating 4,000 TWh of electricity solely through solar would require approximately 44,000 tons of silver, or about 1.2 times the entire amount of silver mined in 2023.
+
+This is why we predict a 'silver singularity.' 
+AGI is going to eat a LOT of silver.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

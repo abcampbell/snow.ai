@@ -1,0 +1,108 @@
+TITLE: Crowded, Confused, Cranky
+SUBTITLE: Confessions of a Piker Prop Trader
+DATE: 2026-02-13
+
+The market feels crowded. The market feels confused. The market feels cranky.
+Not covid-scared, VIX-at-50, oil-going-negative scared. But the kind of day where a bunch of random stuff starts breaking at the same time and no one really knows why.
+Today was one of those days. Bitcoin sold off with commercial real estate. Silver puked alongside stocks. When everything moves together like that, it usually means one of two things: either the fundamentals have genuinely converged into one trade, or the investors pricing those assets have all gotten positioned the same way.
+I don’t know which one it is yet. I just know it’s time to pay attention.
+
+Crowded
+Remember late 2022? Inflation peaking, two-year rates up 450 basis points in a single year, S&P in a drawdown approaching 30%. The soft data looked recessionary. A lot of us (myself included) were worried.
+
+Then ChatGPT dropped in November 2022 - and if you look at that drawdown chart, the market bottomed within weeks. Over the next three years, people looked at what was happening, tried the tool, and kind of went “I don’t really know what’s going on, but I want to own tech.”
+
+They were right. The Mag 7 powered a 100% rally.
+
+The problem is that along the way, we all slowly found our way into the same trades. Korean memory stocks. American chips and fiber. Energy and commodities to power the acceleration. It made sense - the AI buildout needs real-world stuff, and globalization dying means you can’t count on old supply chains.
+But now it kind of all became one trade.  With everyone having shifted from the major software giants to the ‘atoms’ (as Citrini says) powering the revolution.  
+Meanwhile, the S&P isn’t that much less crowded than when we wrote our piece on the topic back in the summer of 2024.
+
+Top 10% are now sitting around 60%+
+
+As we’ve covered before, markets that are excessively concentrated AND excessively crowded - meaning not just the index is concentrated, but the investor base is correlated - that’s a recipe for volatile unwinds when narratives shift or funding conditions change.
+There’s usually two ways correlations spike to 1. Either the fundamentals genuinely converge, or a bunch of people got positioned in the same direction. Pain in your book means pain in my book, and suddenly bitcoin - happily in the world of bits - starts trading like commercial real estate - about as “atoms” as it gets.
+
+Confused
+Here’s what’s actually bothering me: if you asked me where we are in the cycle right now, I wouldn’t have a confident answer.
+Soft data in the US - consumer confidence, PMI, ISM, business conditions - barely recovered from 2023 lows.
+
+Meanwhile Twitter is full of contradictory signals. Trucking indices at multi-year highs:
+
+While non-healthcare jobs are actually contracting:
+
+Hiring momentum has clearly peaked:
+
+But it hasn’t really showed up in broad unemployment yet:
+
+And here’s the weird one. Timely measures of inflation are falling off a cliff:
+
+Which is odd because a) inflation usually lags the real economy, and b) weren’t Trump tariffs supposed to usher in stagflation?
+If Truflation is right, the Fed has room to ease. Bonds may have gotten the message - in spite of the Warsh = Volcker 2.0 meme that sparked the metals selloff a few weeks ago. (I lifted my bond short today.)
+
+So maybe it’s just me. Maybe I’m failing to synthesize. But the direction of the economy seems confused - half-way between signs of resurgence (escalating capex, disinflation creating room for easing) and what looks like end-of-cycle behavior (broad correlated selloffs, weak surveys, deteriorating hiring conditions).
+
+One Thing That IS Clear
+Even in this mess, one trade is working exactly as expected: AI is eating white-collar services.
+
+Last Friday I published “Long APIs, Short Slides” - the thesis being that the IT services firms that built empires on billable hours and PowerPoint decks are about to get eviscerated. Cap Gemini, Infosys, Cognizant, Wipro - these are companies whose entire business model is selling smart people by the hour to do work that Claude and GPT-4 can now do in seconds.
+Four trading days later:
+Cap Gemini: down ~13%
+
+Infosys: down ~15%
+
+Cognizant: down ~15%
+
+Wipro: down ~10%
+
+Paired against our bombed-out "API" basket (the infrastructure plays that got crushed in the DeepSeek panic) on a vol-adjusted basis, the long/short has generated ~10% alpha in a week.
+
+This isn’t a victory lap - there’s plenty of pain elsewhere in the book. But it’s confirmation that even when the macro picture is murky, the micro story on AI displacement is playing out faster than people expected. The “automation economy” thesis isn’t 2027. It’s now.
+The services firms are just the beginning. Anyone whose job is moving information from one format to another, synthesizing documents, or producing analysis that can be templated - the clock is ticking. And the market is starting to price it.
+
+Cranky
+The vibes are also just bad right now.
+Domestically: ICE vs Antifa. Epstein files dropping. SBF pardon attempt proving that yes, we really do have a two-tiered justice system (more on that in an upcoming ramble). AI coming for white-collar jobs without anyone having transparency on what that means or what comes after.
+Globally: Europe stuck in an endless war (in spite of Russia’s “return to dollars” feint today - obvious quid pro quo signaling for a peace deal). Middle East in perpetual tit-for-tat escalation. China arming up while Japan looks ready to remilitarize post-election.
+Pretty much the only one selling optimism is Musk, pitching moon bases.  Which recall, was point 1 in the Space portfolio of our new new deal….
+
+Anyway, it just feels cranky out there.
+
+What I'm Doing About It
+Last week I started writing a piece called “How to Hedge Without Selling Stocks” but didn’t finish it. The goal was to walk through how I hunt for cheap convexity. Given today, let me give you that walkthrough now.
+First: I’m cutting leverage. When precious metals trade this correlated to stocks, it’s telling you everything is one trade. Though kind of interesting that the silver puke happened after the move in stocks.
+
+Time to derisk. I cut back ~10% of the book today.
+(Side note: we had a fat-finger incident yesterday - tried to close a profitable silver short put spread on IBKR mobile while running between meetings, accidentally doubled the position instead. Didn’t see it until today’s move.  1.5% on the book we’ll never get back. Classic trader aphorism, fat fingers somehow never make money.)
+Equity vol: holding my puts. It may feel late to buy protection with VIX at 20, but looking at implied vs realized, they’re actually fair. I’m keeping mine. 
+
+The reason: despite it feeling like everything is moving together, both implied and realized correlation are still pretty low. There's been enough stuff rallying (Exxon, etc.) to hold the broader market up. Though today's candle is scary in that context.
+
+Credit: still my favorite source of protection. Investment grade spreads at 50 and high yield at 300 look rich in a market where stocks look weak. Eventually credit investors will demand higher risk premiums to finance all those 100-year bonds funding the singularity.
+
+For us retail punters, that means shorting high yield through ETFs like HYG:
+
+Or buying puts, which still look cheap:
+
+Rates: shifted from steepener to flat, may go outright long. The yield curve looks funky. A couple cuts priced into the next couple years, then a lot of tightening (or risk premium) in the 3-20yr range. If we see a rally in rates due to economic weakness, a lot of that backend could quickly come out, leading to a big bond rally without much happening in the front end.
+
+I did a study for a client back in 2018 showing "curve caps" provide massive convexity when implied correlation between short and long rates hits a sweet spot. But the curve shape right now makes me favor just buying bonds outright rather than the steepener. Haven't pulled the trigger yet, but I lifted the short this week.
+Bond vol: picked up today but still reasonably low. Likely from folks buying calls on bonds (or "receiving" as the big boys say).
+
+Currency vol: got the message a couple weeks ago when the Swiss franc broke its trend. Looks fairly priced now. Makes sense - not sure where I'd hide if things got truly ugly, outside of Swissie.
+
+EM FX: you'd expect weakness given it's been a popular trade, but with likely easing in the US and high rates abroad, a lot of EM currencies have actually been strengthening the past couple days.
+
+Oil vol: spiking, but feels like people are tired of burning premium on the perpetual will-they-won't-they-close-Hormuz noise.
+
+Gold and silver vol: been selling off as things looked to quiet down. That was before today's 4% and 10% intraday moves. At some point these options will be a great sale - I leave that to folks with enough time to delta hedge the short gamma position. I'm still in too many Zoom meetings to do this responsibly.
+
+Copper: remains a favorite long, but I got stopped out today down a couple percent. Going to let stocks figure out what's going on before getting back in. Probably a buyer of calls if vol falls back to 25. Still owe you all a ramble on copper vs iron.
+
+Bottom Line
+Part of moving to a paid model is so I can justify increasing both the pace and timeliness of this blog. The portfolio won’t always be up, but we’ll be in it with you.
+Right now: derisk, hold your puts, look to credit for cheap protection, and maybe start thinking about buying bonds outright. The market is crowded, confused, and cranky - and when everything trades together, the right move is to get smaller until you understand why.  Braver souls than I will try to pick the bottom here, but I’m saving my bullets until I have conviction.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

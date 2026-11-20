@@ -1,0 +1,39 @@
+TITLE: The day the oil machine went down - part 2
+SUBTITLE: Investor Update - April 26th, 2020
+DATE: 2021-11-09
+
+Which brings us back to our old friend USO (the oil ETF).
+We used to punt USO back at Lehman in 08/09.  The last time the curve went this contango (a word designed to be forgotten).  Where you had to pay good money for the ability to hold faith in that future.  Theta decay for the options, this one for inflation, manifesting itself in delta 1 futures curves.  European dividends, another classic example.
+Back then the USO ETF was so systematic, they published their roll schedule to the market.  Every month, on the 12th to the 15th (if memory serves), they would sell front month and buy next month, literally on the clock.
+And this worked out fine, for years, while oil was in backwardation. 
+Then in 2008, with the credit squeeze playing out, marginal demand and marginal capital available to support the curve dried out. People started selling. The deleveraging process, in full display. 
+
+Meanwhile, every month, like clockwork, USO rolled a couple billion USD in oil futures.  
+
+Selling this month’s WTI future, and buying the next one out. 
+In a way predictable enough, that players in the underlying futures markets were able to scrape ~10%+ a month from the NAV.  By front running the announced rolled date.
+
+In this meeting of markets, futures vs retail.  Futures won. Making that 75% loss for retail a permanent loss of capital.
+
+A lesson learned.  Passive beta being a little too confident in the herd .Vulnerable on the margins to predatory alpha.  Ganging up on the weak, breaking their cleverly designed machines.  
+“I drink your milkshake.”
+“There’s a new machine we are rolling out.”
+Pick your metaphor.  Forcing updates to the rules. 
+Forcing USO to change the dates on which they could roll their oil futures exposure.  Adding a bit of human chaos, to confuse those hunting alphas from picking apart their machine.
+
+Now flash forward to 2020, and where are we now? When oil can go negative?
+With negative prices possible, and limited liquidity in the banks to intermediate these market moves with prop capital, it begs an interesting question.
+What if that ~$4bn NAV in the USO ETF goes negative? 
+Asking mom and pop investors for another $7bn of to post margin would be awkward, to say the least.
+
+So now those systematic and 'passive’ ETFs have to wing it. The human, behind the machine, out in public, actively managing that portfolio. “Pay no attention to that man behind the curtain”  
+
+Finally, and slow to the savannah.  The exchange (CME, among others) out with position limits.    Right on time, and right on target.
+
+CME has around $1.5b of cash on hand themselves, so it’s not like they could stump the $7bn of losses, were the futures curve to force USO to entirely liquidate at the lows.  An unlikely prospect of course, but a week ago so was negative prices.
+Faster than AIG, we’d be talking about another Fed bail out.  This time for an exchange.  Taking a pile of negative futures as collateral.  The Fed, officially long oil, in the physical market.  Looking for a pot to put it in.
+Which honestly, might not be a bad idea. 
+Maybe rather than taking that last liquidity, and doubling down on quasi-sovereign corporate credit, we could buy some oil and try to do something useful with it. Just a thought.
+
+Because somehow, the notion of Fed as Central HedgeFund, doesn’t seem so odd these days.  In an era where American political institutions ability to print money, to infinity, is our last strategic advantage.  I’d invest in that fund.  And by, living in a world of dollars, I guess I already am.
+Till next time, happy hunting.

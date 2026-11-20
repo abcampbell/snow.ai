@@ -1,0 +1,80 @@
+TITLE: Stop Trying to Kill Bloomberg
+SUBTITLE: Why Silicon Valley is ignoring a trillion-dollar opportunity in financial data
+DATE: 2024-10-29
+
+Tried to use AI to code again this weekend.
+It reminded me of why I love Excel.
+First, me and the team (GPT and Claude) burned a couple of hours (and maybe a hundred thousand tokens) monkeying around with my local Python version and environmental variables, to no avail.
+Then I tried one of those "build your prototype" AIs. The sales pitch was amazing - here's the prompt, build the prototype, and away we go! The experience was more frustrating and ironically familiar.
+It started by burning an hour establishing that yes, the AI Assistant was stuck in an infinite loop, perpetually proclaiming it had just fixed the very thing that was broken and demanding I come back and do some user testing.
+Yet another example of: "The machine is down". The snake eating its own tail. A robot that can't recognize it's inside a loop of its own creation.
+
+This was familiar because this part had a strange resonance with past developers I'd crossed paths with.
+
+Frustrating because at a certain point I had to bring Claude and GPT back into the fight to ascertain that no, I wasn't crazy - this robot was just dumb and incapable of self-reflection.
+
+At some point, Claude and I got into a good groove going rogue from the auto-coder which will remain nameless. We just started editing the files manually, copy-pasting across browsers like back when I was sitting next to Max or Greg or Vijay or Neville or Feng. We were banging sh*t out. It was CRAZY.
+Silly Assistant, now we were making progress! So what if it took a lot of screenshots and a healthy dose of tokens?
+That was, until Claude got stuck in a loop too.
+It felt like one of those gold mining shows, where the one excavator gets stuck trying to pull the dozer out of the mud. Cascading failure.
+
+So I seized control and let it play out a bit more. At some point the coder assistant seized control over the files again, changing innumerable things, breaking some of Claude's fixes while introducing their own. As we were going back and forth trying to fix the problems, it started to feel more like management than coding. Then was around the time ran out of tokens. That's where I stopped. Triggered.
+
+The funny thing from this story, aside from me burning 5 hours and $200, is that it's actually totally representative of the California vs New York dynamic in tech and finance.
+Consider how these two worlds approach building things:
+California: Move fast and break things. Launch the MVP. Scale first, details later. It's the world of "ship it and see what breaks," where failure is celebrated as learning, and where the cost of being wrong is usually just some angry tweets.
+New York: Can't break things. Ever. When you're moving other people's money, "failing fast" isn't a virtue - it's a lawsuit. Every number needs an audit trail. Every process needs three layers of verification. What looks like paranoia to Silicon Valley is actually the bare minimum for dealing with other people's money.
+
+Which brings us to today’s main point: 
+Stop trying to kill Bloomberg.
+A lot of tech folks are obsessed with trying to kill Bloomberg. Whenever they hear we work with financial data the first thing they say is "heh, so you're trying to kill Bloomberg, eh?" with a sly smile.
+
+Some folks who tried to kill Bloomberg and where they landed
+Here's the part that Silicon Valley keeps missing: The market for financial data is only $50-100 billion annually, but that's just the tip of the iceberg. Financial institutions are spending well over a trillion dollars on the human infrastructure around that data - the armies of analysts, data engineers, and operations teams who clean, validate, manage, and make sense of it all.
+Let's put that in perspective:
+The big banks spend $10+ billion annually on technology
+
+The average bank has 10-15% of its workforce dedicated to data operations
+
+A typical large asset manager spends more on data operations personnel than on the data itself
+
+The "shadow cost" of data management often exceeds 20% of operating expenses in major financial institutions
+
+This is where Rose comes in. Instead of trying to compete with data vendors, we're building the infrastructure to make their data more accessible and valuable. We're creating a single place where data consumers can find and license individual slices or series in microtransactions, then clean, transform, and enrich that data to the point where others will license that output as an input to something they want to build.
+Think of it as compounding knowledge work that's currently siloed in individual teams, departments, and firms (and inevitably lost when those teams churn/die). We're enabling existing data vendors like Bloomberg, CME, and others to sell individual slices of their data in microtransactions consumable by spreadsheet and notebook jockeys. The goal isn't to compete with data vendors - it's to help them reach more customers in new ways. The goal isn't to compete with data vendors, it's to get them rich.
+This came up recently when Perplexity, the more research-oriented of the major chatbots, made a distinct pivot into financial data.
+
+To be clear, I like Perplexity, and by all accounts the CEO Aravind is a smart and creative guy. I'd love to chat with him about this problem. However, with all due respect, we see Perplexity falling into the same trap as many potential Bloomberg competitors (but in a way where it's not their core business and so they will likely not catch up).
+Most tech folks fundamentally misunderstand Bloomberg's role in the financial system. They see it as a chat app, or something that makes charts and delivers news. A loose aggregation of features, each able to be disintermediated and carved off, or rolled into something else more impressive.
+Folks with a little more familiarity with the product from working on a trading desk understand all the nooks and crannies specially made for random parts of the financial system - widgets made to compare volatility surfaces to credit spreads. Those with experience in the 'back office' know Bloomberg differently: as a central version of truth, something counterparties use to settle trades, often using Bloomberg to reference other indices or asset prices for compulsory use in internal risk and reporting workflows.
+Those who've spent a decade in finance finally come around to see Bloomberg for what it is: essential financial infrastructure. More akin to a utility company providing electricity than a high-flying tech company, but one with the world's single biggest repository of interesting micro and macro data - and yet, deeply incomplete.
+While Bloomberg often forms the base layer of market pricing or research data, I've never met anyone other than a punter who doesn't chase down information from at least two or three other major sources. Even if it's not in their PowerPoint, their spreadsheet, or their database, you can bet your bottom dollar that a good investor is furiously searching for every scrap of information (or alpha) they possibly can. Why? Well, imagine if your entire livelihood was attached to what feels like a random number generator, but there's a chance that the next chart will give you a slight edge. At a certain point, you become addicted to information.
+What this means if you work in finance is your knowledge about the world ends up split across different teams, departments, repositories, and databases. Maybe you have market prices in one database, alternative data on foot traffic in another. Then you have all the internal data you generate from your financial transactions. Each has its own rules about internal and external distribution and auditing, leading to byzantine and hyper-fragmented requirements across teams within the same org, let alone across organizations.
+Rather than compete with traditional data vendors, AI companies should embrace external knowledge repositories like Bloomberg and FactSet. They should swallow their hubris and acknowledge that the work done by data engineers, quants, and financial analysts finding, cleaning, transforming, and merging this information is not something that can be wholly built from cloth, even by a superintelligence. There are too many human processes and contexts still needed.
+That isn't to say it's impossible to imagine a world where robots clean the data instead of humans, but similar to other processes of automation, the way to do this is to actually understand the existing framework - not only for the outputs it provides but how the production process is designed to meet users' needs.
+The way Rose is oriented isn't an attempt to build a monolithic all-knowing superintelligence about finance, at least not yet. The core idea is that somewhere out there, someone else has likely already asked a version of your question, and if that question was too hard for Google or a robot, then a human had to put in work generating or cleaning that answer. However, if you actually unlock the chains by which people buy and sell data, you open up a radically different way of dealing with information.
+Call it a market for alpha. Call it a data bazaar. Just don't call it a marketplace - too many people have already sullied that name.
+Objections
+But I can already hear the objections:
+"But won't AI eventually just figure all this out? If we're spending $200bn on matrix math, surely we can train models to clean financial data?"
+Let's break this down:
+First, yes, AI will get better at cleaning and standardizing data. But that's missing the point. The challenge isn't just technical - it's organizational, legal, and human. When a pension fund needs to track down the exact dividend payment that triggered a specific derivative contract from 2019, they're not just looking for data - they're looking for auditable, legally-defensible information with a clear chain of custody.
+"Okay, but what about building a better Bloomberg terminal with AI? Look at how much cheaper we could make it!"
+This is the Perplexity argument, and it fundamentally misunderstands both the problem and the opportunity. Yes, you could build a cheaper terminal. But Bloomberg's $25k/year price tag isn't about the terminal - it's about the guarantee. It's about knowing that when you need to settle a billion-dollar trade, both parties are looking at exactly the same numbers.
+"But we could just scrape all the financial data and build our own database!"
+Two problems with this:
+The really valuable data isn't scrapeable - it's locked in proprietary databases, Excel files, and human relationships
+
+Even if you could scrape it, you'd be building a shadow of the existing infrastructure instead of leveraging it
+
+Think of it this way: If you were building AI for healthcare, would you try to replace hospitals, or would you try to make hospitals more efficient? The smart play isn't to compete with essential infrastructure - it's to make it work better.
+Our own benchmarking proves this point. When we tested the major AI models on 100 financial queries, evaluating their ability to provide correct data, live data, proper investment logic, and accurate visualizations, the results were telling. Rose achieved 63% accuracy on data correctness and 86% on live data freshness, with 51% accuracy on investment logic and 74% on chart visualization. Compare this to other leading models which struggled to break 60% on most metrics, with some falling below 30% on data accuracy.
+
+The future isn't about competing with Bloomberg - it's about incorporating the knowledge they've painstakingly generated, enriching it with other information, and building something that gets us closer to actually augmenting the work that data engineers and financial analysts do.
+The incumbents' dilemma in the world of financial data isn't disruption - it's growth. In the age of AI, the value that data providers offer in finding, cleaning, organizing and distributing quality information goes up, not down. It becomes table stakes. A utility.
+As a non-physical asset, data (like all IP) is subject more to Jevons' Paradox than coal. 
+
+Just as increasing the efficiency of coal use in 1865 led to an explosion in consumption, making financial data more accessible and efficient won't reduce its use - it will cause it to explode. When we reduce the friction and cost of working with financial data, demand won't just increase linearly - it will reshape the entire market. It won't just be financial institutions buying data anymore - it will be AI models, autonomous trading agents, digital assistants, and algorithms of all kinds consuming financial data in real-time. Every bot with a wallet becomes a potential customer.
+And that's a future worth building.
+
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.

@@ -1,0 +1,60 @@
+TITLE: Is this China's "Whatever It Takes"?
+SUBTITLE: Probably not, but also not yet time to go short...
+DATE: 2024-09-30
+
+Last week, we sent out a note on the ongoing ‘ugly deleveraging’ in China.  We argued that policymakers were facing an unenviable choice between:
+Continue to support the dual policy goals of ‘extend and pretend’ along with ‘maintaining appearances,’ at the expense of risking the entrenchment of deflationary, depressive expectations.
+
+Engage in enough easing and debt/bank restructurings to put a floor on the economy, but in doing so risk breaking the quasi-peg.
+
+What a difference a week makes.  
+Policymakers must be reading the ramble, because within 24 hours of hitting send, the market was hit with a veritable bazooka of easing announcements.   
+Perhaps most importantly, these announcements came with three important signals: direct payments to the poorest, bank recapitalizations, and what looks to be the end of the macroprudential tightening faced by the property sector.
+Some have called this China’s “Whatever it takes” moment.  A call back to Draghi’s announcement in July 2012 that essentially signaled the end of the Euro crisis.  Our analysis is much closer to ‘a mile wide and a couple inches thick.’  
+Markets have ripped as a result, with the stock market leading.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Iron and Coking Coal, the two primary inputs to steel have rallied dramatically, with many industrial commodities ‘limit up‘ this morning in Asia as we write.
+
+Lenin once said: “There are decades where nothing happens; and there are weeks where decades happen.”  Leading us to ask, was this one of those weeks?
+To answer this question, we’ll actually need to first lay out what exactly these policy measures are, and then walk through the linkages in order to understand whether the bottom is in on the economy.  If the problem with China’s economy is deleveraging, we’ll need to see these measures fundamentally address what’s rotten in Denmark. By looking at each policy individually and then as a whole we come to the following conclusions: the measures are a mile wide and a couple inches thick.
+If you ask any AI to summarize these measures, you will probably get something like the following: 
+
+Note the use of broad and vague language here.  “Financial support for developers”, “measures to boost investor confidence", “comprehensive financial and regulatory measures.”  Hmmm.
+This coverage is consistent with the media coverage of this easing being ‘the biggest since the financial crisis’.  But what are these actual measures and what will they do?
+The first and most easy to understand are the interest rate cuts.  On their own, and in the context of recent history, this looks like more of the same.  20bp cuts to short term repo rates, 30bps on the medium term lending facility, 20bps on the prime rate, and 50bps on mortgages.
+
+Rate cuts followed by a 50bps cut in the reserve ratio required on banks in China.  Freeing up ~$150bn of liquidity.
+
+The monetary policy shifts to lower rates and lower RRR look good on paper, but given the amount of deflation already in the system, are actually what’s necessary just to keep real yields where they were.
+
+These measures will support credit creation and debt service costs on the margin, but in the context of history look like more of the same ‘extend and pretend’ policy of lower rates that has been common since 2021.  Bond markets appear somewhat convinced however, though like many of the breathless charts you may see on Twitter/X, don’t forget to put these move in the longer term context by zooming out!  Bond yields remain at depressed level in China.  If you think the bottom is in on the Chinese economy, this would be a nice place to put on a bullish position.
+
+The direct measures of lowering of the down payment from 25% to 15% will definitely support demand for housing, but the kind of demand that slows the fall not pushes prices up, given the overhang of uncompleted properties and the entrenchment of deflationary expectations.  In order to stop the deleveraging in real estate without dramatic restructurings, we will need to see a floor in prices.  Unless followed with either a bailout of the borrowers, or a restructuring of the lenders, we think the 100bn square feet of uncompleted properties being fire sold to generate liquidity for developers will continue to put downward pressure on prices.   $42.5bn to SEO developers also falls into this category.  Not enough to cover the liabilities from Evergrande, let alone the 20 other developers currently under stress.  The Hong Kong market here being a relatively transparent indicator of the state of the market (though one more directly tied to US monetary policy via the explicit peg).
+
+An additional 500bn RMB (~$70bn) of support to companies to buy back stock will support the market, but also looks to be consistent with the rest of these measures: pushing more leverage into the system without dealing with the fundamental indebtedness problems.  Clearly at some point quantity has a quality all on its own, but compared to what looks to be trillions of losses, not enough.
+Which brings us to the most important and positive announcement of them all, 1 trillion yuan of capital injections into state banks.  Note the trillion in this case applies to RMB and not USD, and looks to by and large just fill the lower bound of the existing hole in the big four state owned banks.
+
+Note these “Total Loss Absorbing Capacity” (TLAC) calcs do not include the broader banking system, like the rural and local banks, where the losses are disproportionately felt.  Meaning we can see these capital injections as a first, necessary step to bolster state bank balance sheets before they are asked to put in ‘national service’ by onboarding, resolving failed local lenders.   Exactly the steps we argued are needed, and so definitely a step in the right direction.  Note since the collapse of the property sector, the market has begun to differentiate balance sheet quality amongst these banks.  Also note for a financial system with ~$60trillion in assets, there exists precious little listed market cap to support losses. 
+
+Note that the banking system in China has ~$60tr of existing assets, and less than $5tr of ‘book equity.’  Meaning loss rates of 10% (in line with historical cycles, and consistent with a ~20% loss on the roughly half of their assets which are exposed to the general economy) would entirely wipe out not only their listed market capitalization, but the entire book equity for the banking system.  $150bn is not enough!
+
+Lastly and perhaps most importantly, the government announced they would be handing out cash directly to the poorest households. Potentially a dramatic shift towards what Bernanke and co called “helicopter money” or direct payments to households.  While there are no details on the size or scope of these payments, we can hope it represents a significant change in the underlying austerity-like bias against direct support for household spending.
+
+Which is kind of where we are left post-bazooka.  Markets reacting more to the shift in tone, and the signals towards a bank recap helicopter money, without the numbers being enough really re-accelerate the housing market or kick off a surge in consumer-led consumption.  A lot of charts in China now look like the property stocks, vicious rallies in the face of historic drawdowns. 
+
+Meaning while we wouldn’t want to step in front of this particularly fierce short covering rally, we will be looking for the rally to peter out as folks break out their pencils.  Given the size of the ball of money in China, it is certainly possible that these moves will be enough to shift expectations and capital sufficient to put a floor on their ugly deleveraging, but until we see bailouts, bank recaps, or a real commitment to helicopter money, I continue to think this set of moves is a mile wide and a couple inches thick. Not enough to short into this rally, but enough to step back, get out of the way, and think about adding shorts in a couple weeks or months, when the inexorable march of failed developers, banks, trusts, and non-bank financial intermediaries begins to rear its ugly head again.  
+Watch real estate, watch the banks, and watch credit.  As always.  
+Till next time.
+Chinese Banks Need Capital Injection (Reuters)
+7 takeaways from China’s most significant stimulus package since the pandemic (SCMP)
+China fires policy bazooka to boost economy, led by mortgage-rate cut, property measures (SCMP)
+China’s Bold Stimulus Measures Won’t Save Its Flagging Economy (Time)
+China Hands Out Poverty Payments (Newsweek(
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This is not my full time job and I do not promise the data included is accurate or up to date. There are innumerable small logical and mathematical decision inherent in making these charts, and mistakes do happen. Please consult me on anything contained herein before making an investment decision on the basis of this work. We are happy to provide the source and business/transformation logic where appropriate.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

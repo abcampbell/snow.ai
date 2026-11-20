@@ -1,0 +1,132 @@
+TITLE: Where Did All The Stenographers Go?
+SUBTITLE:  “Where Did All The Farmers Go?” Part 3
+DATE: 2026-02-25
+
+What if automating all these jobs was a good thing?
+
+Long term readers of the ramble will know we've touched on labor automation a lot over the past couple of years. If you saw my debate with Roko, or Liron, or read the pieces on Farmers, Lamplighters, or even just the screeds on machines breaking or irrational doomers, you kind of already know where I stand: what's coming will be faster than what normies expect, highly uncertain and disruptive, but fundamentally a good thing. There's no moral value in having people waste away in cubicles on email jobs just to pay back their college loans, cover their healthcare, or afford their expensive NYC apartments.
+
+AI fixes this
+What's a bit different this time is the audience for this content just kind of exploded, along with Citrini's much covered piece on the "Intelligence Crisis." His scenario is scary — not because it's likely but because, in our bones, we kind of think it's inevitable. A lot of people work white collar jobs, make above median incomes, and prop up a lot of spending. Pretty much everyone realizes a sufficiently intelligent machine could replicate 80-90% of what they do all day.
+To help size the anxiety, we modeled three scenarios for this piece across different rates of automation and UBI generosity. Even in the mild case, unemployment rises to 6% and the GDP drag runs half a trillion. In the severe case: 16% unemployment, $2.8 trillion drag, effective tax rates approaching 50%.
+
+Details and a link to the dynamic dashboard where you can play with the assumptions are available for paid subscribers below.
+If we put all those white collar people on the dole (what we used to call it before the rebranding to UBI) and paid for it entirely out of income taxes, we'd need dramatic increases in taxes or money printing to make the numbers work.
+
+In The Death of the New Deal we laid out some options we’d prefer on the revenue side, in particular taxing stagnant capital and conspicuous consumption rather than messing up the economic machine. And as mentioned in the policy platform, we’d prefer to put people to work on various infrastructure megaprojects rather than just mail them checks.  Inheriting from the WPA: if you find yourself with a lot of labor slack, you pay people to work on things the private sector doesn’t want to do.
+
+I even pitched what we're calling WorkCamp WorkCorps: show up, we put you to work that day. Could be planting trees, labeling data, picking up trash. But that's another ramble.
+
+Today we're staying in the private sector and revisiting creative destruction. When you look at the past, you see a lot of jobs that were kinda dangerous (pinboys, breaker boys), kinda grim (subsistence farming), or frankly a bit silly (lamplighters). So we're doing a quick survey: jobs that rose and fell, jobs peaking right now, and jobs on the rise even in the age of automation.
+Doomers may like to paint a picture of perfectly superintelligent machines driving super capable robots, but remember:
+All these machines still need energy and physical materials
+
+There is no such thing as a perfect machine (Gödel/Turing, again and again)
+
+Even perfect machines would hit investment, implementation, and integration lags in an evolving world full of frictions
+
+Even if we automate the plurality of white collar jobs, imagine looking back from two hundred years out: what was so great about all those email jobs anyway? What feels better, your interaction with a supermarket, or your interaction with your doctor, or lawyer, or accountant? How much time do you waste engaging with their broken machines, waiting for them to get back to your email, being told "I'm sorry you didn't fill out the form right, we're going to need to resubmit and wait another 5 business days."
+So from the guy with a reputation for dooming on the timeline: what if the acceleration was difficult, and kinda scary, and definitely a transition, but what if automating all these white collar jobs was awesome, and a necessary step to fulfilling our destiny as pretty much the only visible intelligent organic beings in the galaxy.
+
+The Graveyard
+Let's start with the dead. We pulled BLS, Census, USDA, and NBER data on 23 occupations that rose and fell over the past 125 years. Actual employment numbers, not projections. Some of these you'd expect. Some are useful reminders of all the human potential that was previously wasted on organizing information or operating dumb machines.  As someone who actually worked in a photo lab in high school I can attest the world is not worse off because I’m no longer getting berated by disgruntled soccer moms about how it will take us 90 minutes instead of ‘one hour’ to convert their film into pictures.
+
+Harvard economist James Bessen tracked 270 occupations since the 1950 Census. Out of 270, exactly one went to actual zero: elevator operators. Peaked at 90K in 1945, gone. Every other occupation in America shrank, transformed, or got absorbed into something new. The only other full extinction in our dataset is video rental, which peaked at 170K in 2004 and was dead within a decade. Two out of 270.
+
+The one that matters most for what comes next is telephone operators. At peak in 1950 they were only 2% of female employment, but 10-15% of entry-level opportunities for an entire generation of young women. It was the first rung on the ladder. When automated switching killed the job, they didn’t just find new jobs. They found new kinds of jobs. Typing, secretarial work, office administration, roles that barely existed a generation earlier. NBER Working Paper #28061 tracked this and gave it a name: “the emergence of new work.” The economy created jobs that weren’t there before. Which, of course, PCs eventually automated too.
+And that’s the pattern. Stenographers: -98%. Telephone operators: -96%. Coal miners: -94%. Photo processing (my people): -93%. Film projectionists: -90%. Technology arrives, employment peaks, then falls. The displaced climb one rung up the abstraction ladder. Then, a generation later, that rung gets automated too.
+
+Sort by peak year and you see the wave structure: agricultural jobs peak pre-1920, industrial jobs 1940s-1979, clerical 1970s-1990s, internet-era 1999-2008. Farm to factory to office to screen.  The same pattern we saw in our piece on farmers and lamplighters, a lot of the jobs that no longer exist involved humans creating, organizing, and manipulating information.  Which also happens to describe a lot of the ‘service economy’ jobs that are about to go away. Each time, we find a more efficient way to operate. 
+
+ Each time, the quantity and complexity of information scales proportional to our ability to wrap our arms around it.  
+
+The next cluster is peaking now.
+
+What’s Peaking
+This pattern persists if you look at the jobs peaking now.  Nine white-collar occupations at or near all-time highs, sitting directly in AI’s targeting reticle. Combined: roughly 9.5 million jobs.  
+
+Customer Service (2.8M) — BLS already projects -5%, so even the slow model sees it. Klarna replaced 700 agents with AI, cut resolution time 80%. India’s $50B BPO industry is where the real bodies are buried. Allegory: telephone operators.
+Software Developers (1.7M) — This is the one everyone’s freaking out about right now.
+
+GitHub Copilot writes 46% of code at adopting firms. The BLS +15% projection assumes the entry pipeline stays intact. It won’t. Junior dev roles are the entry point that dies first, same as junior analysts, junior associates, junior everything.
+That said, I’m not sure this one is a straight short. Software might be the best candidate for Jevons paradox in the whole list. If AI makes code 10x cheaper to produce, does the world want 10x less code or 100x more? Every company that couldn’t afford a dev team can now ship product. Every internal tool that never got built because IT was backlogged for six months gets built in an afternoon. The demand for what software does is basically infinite. What changes is who writes it and how much they get paid. $570K L5s probably fine. The army of juniors grinding out CRUD apps, less so.
+
+Market Research Analysts (942K) — Grew from almost nothing to nearly 1M in two decades. The job is surveying, synthesizing, and presenting findings in slides. All three steps are now an LLM prompt. Allegory: stenographers.
+Management Consultants (894K) — The ultimate paper economy job. Synthesize frameworks, build PowerPoints, present recommendations. AI generates the decks, analyzes the data, writes the memos. McKinsey and Bain are already cutting junior headcount. Allegory: secretaries.
+
+The connection to Long APIs, Short Slides: These peaking jobs are the human equivalent of “software humans click on.” Dashboards, CRMs, project management tools — if an AI agent does the work, you don’t need a seat license for the human. The peaking class is the labor expression of the same thesis.   “The market is selling software as a monolith. Within that monolith there are tollbooth operators and road workers. AI replaces road workers. It pays tolls.”
+
+What’s Rallying
+Now for the other side. Nine occupations where AI creates demand instead of destroying it. BLS projects 1.8M new jobs by 2034 across these categories, and that number likely understates if AI adoption accelerates.
+
+The common thread: these are the things AI consumes but cannot produce. Energy, physical materials, friction. Plus the problems AI creates on its way in: more attack surface, more data, more infrastructure to maintain.
+Electricity. Every AI inference burns watts. Data center demand projected to triple to 80GW by 2030. Electricians: +9%, 81K openings per year. Solar installers: +42%. Wind turbine techs: +60%, literally the fastest-growing job in America. Small base, big signal: the physical infrastructure layer is expanding while the information layer automates.
+Physical space. Construction laborers: +7%, 149K openings per year. HVAC: +8%, because data centers need precise climate control. Home Builders Institute estimates 2.17M additional construction hires needed just in 2024-2026.
+Healthcare. Nurse practitioners: +40%. Home health aides: +12%, adding 740K jobs (the most of any single occupation). Robots can’t bathe, comfort, or companion aging humans. The demographic wave is locked in for 30 years.
+Security. InfoSec: +29%. AI creates attack surface faster than it patches it. Every AI agent, API endpoint, and workflow automation is a new vulnerability. Cybersecurity is the one white-collar profession where AI makes the problem worse, not better.
+Meta-AI. Data scientists: +34%. Counter-intuitive: AI doesn’t replace data scientists, it generates more data that needs scientists. Every deployment creates monitoring, evaluation, and governance work. The role shifts from model-building to AI oversight.
+These are the human equivalent of “software bots call.” APIs, databases, event streams, monitoring, authentication, infrastructure. The stuff AI agents consume orders of magnitude more than humans ever did.
+
+The Resurgence
+This is the speculative part. The thesis: when the top of the abstraction ladder automates, the displaced go back to physical work. But this time the physical work is different.
+
+The automation paradox. Industrial machinery mechanics: +13%, fastest-growing mechanical occupation. Every robot needs a human to fix it. More automation = more mechanics. This is the ATM-teller relationship except it doesn’t end, because the machines keep breaking. There is no such thing as a perfect machine.
+Nuclear. AI data centers signing PPAs directly with nuclear plants. Three Mile Island restarting. NuScale SMRs in development. DOE projects 200GW of new nuclear capacity. The nuclear workforce must roughly double.
+Critical minerals. Lithium, cobalt, rare earths, copper, uranium. US has $6.2T in identified reserves. CHIPS Act, IRA, and defense needs are rebuilding domestic extraction. We wrote about China’s chokehold on gallium last year; this is the supply-side response. The 21st century version of the oil boom.
+Shipbuilding. Navy has a 30-year build plan. Current capacity can’t meet demand. Submarine production alone needs 30K additional workers by 2030.
+The common thread: can’t offshore, can’t automate (yet), existing workforce aging out, and they carry a wage premium. The skilled trades gap is 650K unfilled openings per year.
+
+The Pattern
+Every automation wave pushes workers up one rung on the abstraction ladder:
+Agricultural → Industrial (1900-1950): Farm → Factory
+
+Industrial → Information (1950-1980): Assembly line → Office
+
+Information → Digital (1980-2010): Secretaries → IT workers
+
+Digital → AI (2020-????): Analysts → ???
+
+AI breaks the pattern because it automates the abstract layer itself. When the cost of intelligence collapses, the value of physical capacity rises. Energy, materials, infrastructure, healthcare: the things intelligence needs but cannot be.
+The marginal cost of an analyst approaches zero. The marginal cost of a welder does not.
+The future of work in a world where the marginal cost of intelligence suddenly becomes tied not to the supply of humans, but energy.”
+Sizing the Gap
+We teased the scenario numbers in the intro. Now let’s walk through the math.  If you want to play around with the numbers, just follow this link.
+We modeled three scenarios for white-collar automation over a 5-year horizon. The parameters:
+Mild: 25% of white-collar jobs exposed, 5% annual automation rate, $40K UBI
+
+Base: 40% exposed, 10% annual rate, $60K UBI
+
+Severe: 55% exposed, 15% annual rate, $80K UBI
+
+All things being equal (no other job growth, no reskilling etc), we would see unemployment rise to between 6% and 16%. In this context we can benchmark the ‘Citrini’ scenario to our base case.  Again, all other things are not equal, as you would expect to see falling wages, labor slack, and the growth of other industries, but just to get a sense of the first order dynamics here…
+
+Ballpark income losses on the order of $500bn to $1.5tr.
+
+Putting a 1.5 multiplier on these income losses reveals a drag on GDP of a similar order of magnitude. Leading to a 0.5% to 1% drag on growth, ex government intervention or other compensating factors. Again this is not saying this is what would occur, our goal here is just to size the magnitude of the gap that the government or the rest of the private sector would need to fill.
+
+Filling this gap with UBI or other forms of fiscal stimulus would lead to a dramatic increase in the role of the central government in the economy.
+
+Traditionally when incomes collapse, the government fills most of the gap with deficit spending (financed by a combination of money printing and extra borrowing). As an exercise, we can see what it would take for income taxes alone to fill this gap. Note as folks get laid off, not only do they go on UBI, but the tax base shrinks. Meaning not only those still employed need to pay for the UBI, but the burden is hitting fewer and fewer people. If the impact of automation was on the aggressive scale and UBI was generous, income taxes on the remaining employed would have to go up dramatically.
+
+In reality not all of the income/spending that went to jobs just goes away. Clearly some of that spending is rerouted to robots, specifically the people who design, build, sell and maintain them. A lot of the ‘efficiency’ gains would also turn into profits for the AI companies and the companies substituting human labor with machine labor. As discussed last time, much of the owners of this capital have much lower ‘marginal propensity to consume,’ which is how this shift puts not only a deflationary impact on the economy but a recessionary one.
+This is perhaps the clearest sign post of where we are going. The pace of automation will likely need to be paid for with rapidly higher taxes on corporate activities. All things being equal, I would prefer a clean profit tax, but we would likely see pitchforks and people charging for compute, energy consumption, and directed taxes on the AI companies themselves (this is also where the push to tax the capital gains for the investors and workers in the AI companies will come from). Personally, I’d prefer not to hinder ourselves in such an obvious race, but we can basically assume this will happen if anything like even the base case scenario occurs.
+Play with the assumptions yourself HERE
+
+So What: The Investment Frame
+The jobs data points toward investable conclusions that readers of the Ramble will recognize:
+Long the physical layer. Electricians, construction, energy, minerals, defense industrials. The mega project pipeline ($2T+ from IIJA, IRA, CHIPS) is the fiscal catalyst. The skilled trades shortage is the pricing power.
+Short the paper layer. IT outsourcing (the body shop model), seat-based SaaS facing agent compression, professional services firms that sell junior labor hours. This is “Long APIs, Short Slides“ applied to the labor market.
+The capital recycling problem. When automation turns wages into profits, income shifts from people with a marginal propensity to consume of 0.99 to capital owners at 0.01. That’s deflationary. Mega projects are one recycling mechanism. Stagnant capital taxes are another. You need the recycling or you get the leverage spiral that eventually breaks.
+We’ve been positioned for this. The physical layer is where we live.
+
+My Take
+I’m radically more optimistic than these scenarios suggest. The goal was to show the macro dynamics, to size the gap.
+I place no moral weight in the service economy. In fact I think it’s at the heart of a lot of the intergenerational problems we’re seeing now. The extremely high cost of living — housing, education, healthcare — that’s putting the brakes on household and family formation. The proliferation of paperwork and email jobs is not something to be proud of. It’s something in need of automation.
+I want to see what gets unleashed once we clear these decks.  Just like I wouldn’t try to take someone working as a claims adjuster and make them a subsistence farmer, or a lamplighter, I think we can make it to the better world.
+But I put these scenarios together to highlight just how extreme the pressure to increase taxes will be, and how the pace of automation will likely lead to severe shifts toward socialism. This is part of what I mean by the horseshoe. The notion that with radical change comes radical interventions in the economy, and when the New New Deal arrives, it may be both radically more intrusive and radically more liberating than anyone really takes into account.
+What if it was difficult, and kinda scary, and definitely a transition, but what if it was also awesome, and a necessary step to fulfilling our destiny as pretty much the only visible intelligent organic beings in the galaxy.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+
+Sources: BLS OES May 2024, BLS Employment Projections 2024-2034, BLS Monthly Labor Review 2025, NBER Working Paper #28061, Home Builders Institute Fall 2025, Burning Glass Institute, USDA, Census Bureau, NAR, MSHA, DOE. AI vulnerability scores and 2030 projections in the “peaking” section are Campbell Ramble Research estimates, not BLS forecasts.

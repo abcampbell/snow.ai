@@ -1,0 +1,267 @@
+TITLE: Grounds for Divorce
+SUBTITLE: Why Recoupling Is Impossible
+DATE: 2025-10-20
+
+A good friend and former colleague reached out to me today with a single question:
+“Ok Campbell, I understand from Chapter 1 that the US and China are decoupling, and from Chapter 2 that the banking crisis makes China weaker and more volatile—but why is recoupling impossible? Why can’t we just go back to how things were?”
+It’s the right question. We’ll answer it three ways: with a metaphor, a story, and a scorecard.
+The metaphor is a divorce; the story is the last time two powers split like this; the scorecard shows what happens when you divide the assets of a world economy.
+This chapter is going to be our longest chapter by far, so readers without an interest in the blow by blow are welcome to skip and come back next time, when we go into what happens if this divorce goes hot.
+Act I: The Divorce - The Dragon vs The Eagle
+
+Divorces happen when the fundamental agreement becomes untenable. The most painful part isn’t the breakup—it’s the logistics.
+In healthy relationships, logistics (planning trips, buying furniture, taxes, childcare) are worth it because positive-sum experiences refill the tank. You get to “repair.”
+In divorce, all positive-sum activity disappears. What remains: zero-sum negotiations creating negative-sum dynamics. Even in amicable divorces, dividing assets requires emotional distancing from “us” to “me.” This violates lower-level norms, creates animosity, and sometimes a desire to punish unintentional transgressions.
+If that’s complicated for two people, imagine a couple billion dividing the chips.
+For the US and China—two superpowers who both believe the marriage was a sham—it gets dangerous (Chapter 4).
+
+The American-Chinese shotgun wedding occurred in 1993, after the Soviet collapse. America, drunk on the end of history, assumed welcoming China into global commerce would lead to liberalization. Open our markets, financial system, and technology—democracy would inevitably follow. Oh, the hubris.
+China, scarred by Tiananmen (’89) and the USSR’s collapse (’91), never intended to democratize. A regime built on rejecting liberalism to reclaim the mandate of heaven after a century of humiliation doesn’t suddenly embrace it. “We’ll work for your paper, but only to regain our place among great nations.”
+
+This fundamental dissonance wasn’t a big deal when we were trading oil for cheap toys, but as the two countries became more enmeshed, it led to an accumulation of escalating ‘micro-aggressions’ which didn’t just piss off the other side, but revealed a fundamentally broken relationship.  This led to a series of tit-for-tat ‘defections’ from the unwritten deal.  
+
+Now that we’ve established why the decoupling is occurring, it’s time to go back to the last time we saw two nations this powerful, this enmeshed, realizing ‘oh shit this isn’t going to work.'
+It’s time to talk about the Lion and the Kaiser
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Act II: The Historical Echo - The Lion vs The Kaiser
+
+1815: Allied Victory
+Britain and Prussia defeated Napoleon at Waterloo. The partnership made sense—Britain ruled the seas, Prussia dominated land. They redesigned Europe at Vienna. The alliance seemed eternal.
+Over decades, it deepened as Prussia unified Germany (1871). British capital financed German railroads and factories. German engineering powered British industry. The Royal family was literally German (Saxe-Coburg-Gotha, renamed Windsor).
+
+The Cracks Begin
+1871-1890: Bismarck unifies Germany—ethnically homogeneous, nationalist, industrial. Population: 41M → 65M (1910). Industrial output outpacing Britain’s. Rhine-Elbe-Danube creating an industrial heartland.
+Sound familiar?
+
+1890: Peak Integration
+Germany was Britain’s second-largest trading partner. London banks funded German expansion. Patent sharing, joint ventures, integrated supply chains. German taught in British schools, engineers employed across British industry. Wagner in London, Shakespeare in Berlin.
+
+1890s: Germany builds a High Seas Fleet. Kaiser Wilhelm: “Our future lies on the water.” Britain responds with Dreadnought program. Germany wants global reach, not just continental power.
+1897: Britain’s Merchandise Marks Act requires “Made in Germany” labels to shame imports. Backfires—becomes quality mark.
+
+The Decoupling Accelerates
+1900-1904: Boer War. Germany sides with Boers, Kaiser sends congratulations. Britain realizes: no allies, Germany hostile. Search begins.
+1904: Entente Cordiale—Britain settles disputes with France (former enemy). Counterweight to Germany.
+1907: Anglo-Russian Entente. Triple Entente (Britain-France-Russia) surrounds Central Powers. German encirclement fears become self-fulfilling.
+1905-1911: Morocco Crises. Germany challenges French influence, Britain backs France militarily. Former partners in military standoffs.
+1911: Agadir Crisis—German gunboat, British fleet mobilized. War nearly breaks out. Trade continues, alliance dead.
+1912-1914: Trade declining, financial ties unwinding, alliances locked in, strategic industries reshored.
+By 1914: ~25% decoupled. Past the point where economic interests prevent war.
+
+The Dangerous Middle
+Peak integration (1900) to war (1914): fourteen years. During that time, trade continued (even growing), financial ties unwound gradually, strategic decoupling accelerated, alliances locked in. Both sides convinced the other was the aggressor.
+Even after war broke out, British firms sold ball bearings to Germany through neutrals—components ending up in shells fired at British soldiers. Full separation took two more years.
+You can’t flip a switch on forty years of integration. Even when you’re shooting at each other.
+Where We Are Now
+UK-Germany: fourteen years peak to war. US-China: seven years in (from 2018 tariffs). Currently ~24% decoupled—right where UK-Germany were at the same point.
+The pattern:
+Rising power feels contained → encirclement
+
+Dominant power feels threatened → alliance building
+
+Both have legitimate grievances → mutual defection
+
+Economic ties erode → strategic competition
+
+Alliances harden → collision course
+
+We’re past the point of no return. Not yet at war. In the dangerous middle. Trade continues, financial ties unwind, both convinced the other is the aggressor. The divorce isn’t final, but the point of no return is behind us.
+Now the scorecard. Who needs what. Who can cut off whom. How much it hurts. And why both sides are racing different clocks toward the same collision.
+
+Act III: The Scorecard (Now vs Then)
+Part I: The Nuclear Option Nobody Wants to Use
+Here’s what’s holding the divorce from going hot: financial plumbing.
+$3.3 trillion in Chinese assets sit in US jurisdiction—Treasuries, equities, real estate, PE stakes. All hostage to US law under IEEPA. We froze $300B of Russian assets in 2022. We could do it to China tomorrow.
+This is the nuclear option. Financial, not military. Like nukes, it works best as deterrent. The day we freeze $3.3T, the post-WWII consensus dies. If we can do it to the second-largest economy, we can do it to anyone.
+Every country parking reserves in Treasuries recalculates: “Can they freeze us too?” Dollar hegemony unravels not because China builds an alternative, but because we weaponized it so thoroughly nobody trusts it.
+The dollar system is both the glue holding this together and the weapon that could tear it apart.
+The $3.3T breakdown: ~$1T in equities (China Investment Corporation, SAFE, SOEs), $1T+ in Treasuries (official $775B understates reality—routed through Belgium and Caymans), $40-70B in PE/VC, $50-80B in commercial real estate and farmland, $100-200B in correspondent banking accounts Chinese banks need to clear dollar transactions.
+
+All of it sits under US legal jurisdiction. We proved this works freezing Russia’s $300B—single executive order under IEEPA. The International Emergency Economic Powers Act gives the president unilateral authority to freeze any foreign entity’s assets during national emergency. No trial. No appeal. Gone.
+
+China knows this. It’s why they haven’t moved on Taiwan. It’s why they’re building CIPS and mBridge even though these systems handle only 5% of their trade versus SWIFT’s 80%. They’re trying to build an exit, but the door’s still locked.
+
+The game theory is brutal. If we freeze the $3.3T, China could dump whatever assets they can access—but who’s buying a trillion in Chinese-owned US equities at fair value when geopolitical risk just went nuclear? Massive losses on exit. Meanwhile, SWIFT cutoff means Chinese companies can’t clear dollar transactions. RMB depreciates as capital flight accelerates. Reserves drain defending the currency while imports become impossible to pay for.
+The pain isn’t symmetric. Us: $85B market disruption, some volatility, pension fund losses. Manageable. Them: $300B frozen instantly, dollar clearing severed, and within 90 days the banking crisis from Chapter 2 becomes visible. Credit crunch, domestic unrest, growth collapse.
+The timeline: Week one, executive order freezes assets and SWIFT cuts access. Capital flight accelerates into panic. Month three, companies can’t clear dollars, RMB in free fall, reserves draining. Month twelve, banking system’s real losses exposed, credit markets freeze, façade collapses.
+This is what keeps the peace. But it’s also what makes the post-WWII consensus fragile. The day we freeze China’s $3.3T, every country recalculates: “If they can do it to the second-largest economy, they can do it to us.” Dollar hegemony doesn’t end because China builds an alternative. It ends because we weaponized it so thoroughly nobody trusts it.
+We’re trapped too. The hostage situation works both ways. We can’t use this weapon without breaking the system that makes it valuable. They can’t escape without losing everything they’ve committed.
+For now, mutual vulnerability keeps things from going kinetic. But “for now” has an expiration date.
+The scorecard isn’t just about leverage. It’s about what prevents escalation—and what happens when those constraints erode.
+
+Part II: The Scorecard - 16 Dimensions of Leverage
+
+Summary:
+Worse for China: 10 dimensions
+
+Worse for US: 6 dimensions
+
+Total exposure: $4.4 trillion ($1.1T US / $3.3T China)
+
+That’s a 3:1 ratio. The divorce hurts them three times more.
+We’re a quarter decoupled, like UK-Germany before WWI. In the dangerous middle.
+The four constraints preventing escalation. Where we’re vulnerable. Why we’re racing the clock.
+First, how we got here. Our vulnerabilities weren’t designed—they evolved through a million rational decisions.
+
+Part III: China’s Four Cages
+Beyond the dollar hostage situation, three other constraints box them in. They need all four. Can’t replace any in 5 years.
+
+Food Security (35% decoupled)
+They don’t buy our soybeans—switched to Brazil/Argentina post-trade war. Some think they escaped dependency. Wrong. They escaped US sourcing, not structural food insecurity.
+China imports 100M+ tonnes soybeans annually, plus massive corn, wheat, pork, dairy. Supplier changed. Need didn’t.
+Why they can’t feed themselves: 20% of world’s population, 7% arable land. Water table collapsing (North China Plain). Soil degraded, urban sprawl eating farmland.
+
+Global grain/soybean exporters: 
+United States, Brazil, Argentina, Australia, Canada, EU (marginal).
+That’s it. That’s the list.
+
+Taiwan scenario: Day 1, US announces export controls. Day 2, Australia and Canada join (Five Eyes). Day 3, Brazil/Argentina: “We’ll pay 30% over China’s bid. In dollars. Clear?”
+China’s options: Outbid us (with frozen reserves?). Invade Russia for grain (good luck). Ration food (140M hungry, regime instability). Tap reserves (18 months max, then what?).
+
+Pain differential: We lose $8B farm exports (0.05% GDP), annoying for Iowa. They lose access to 100M+ tonnes feeding 1.4B people. Existential.
+Another nuclear option. We don’t want to use it—means we’re already at war. But the vulnerability is real. They know it. One more constraint.
+
+Energy: The Malacca Problem (30% decoupled)
+
+China imports 70% of its crude oil, 45% of natural gas, nearly 100% of LNG.
+
+US based in the IndoPacific
+Routes: 80% of oil through Malacca Strait. Most of the rest through South China Sea (also contestable). Backup: Russia pipelines (15-20% of total needs).
+We’re net energy exporters. They’re structurally dependent on seaborne imports through chokepoints we control.
+Malacca Strait: Bordered by Singapore (ally), Malaysia (partner), Indonesia (partner). Patrolled by US 7th Fleet. Narrowest point: 1.5 miles. Can’t route supertankers around it.
+Russia pipelines: Power of Siberia (38 bcm/year gas, ~15% of needs). ESPO oil (~30M tonnes/year, ~15% of oil). Total: 15-20% of imports.
+
+Crisis timeline: Day 1, US Navy interdicts at Malacca. Day 2, Japan, Australia, Philippines close waters. Day 3, Western insurers cancel coverage. Day 4, strategic petroleum reserve draining (90-day supply).
+Options: Fight through Malacca (vs US Navy? Suicide). Russia alone (15-20%, rest shuts down). Ration (factories close, blackouts, collapse).
+Pain differential: We see oil price spikes (benefit as exporter), some supply chain disruption. They lose 70% oil, 45% gas. Economy shuts down in 90 days.
+This is why they build artificial islands—trying to push the interdiction point from coast. Won’t work. We still control Malacca. Geography doesn’t change.
+
+Technology: The 7nm Wall (45% decoupled)
+Export controls worked. Sort of.
+China’s stuck at 7nm (multi-patterning hacks: 3x cost, 50% yield). We’re at 3nm → 2nm. Gap widening, though they’re determined to close it.
+
+But it’s not just cutting-edge chips. Your car: 3,000 chips. Maybe 5 are leading-edge. Other 2,995 are 28nm-180nm mature nodes. China can make those.
+
+We blocked the 15%. The 85% flows freely.
+But even on mature nodes, they need our equipment. ASML, Applied Materials, Lam Research, KLA—every advanced fab runs on our tools. Constant service, software updates, spare parts.
+The ASML chokepoint: EUV lithography for sub-7nm. Each machine costs $150-200M, takes 18 months to build, requires 5,000+ suppliers across 800+ companies, needs constant service.
+China’s been trying to replicate EUV for 15 years. Maybe 10-15 years away. Maybe.
+
+Software: 500M PCs in China running x86. Need Windows updates, security patches, drivers, BIOS.
+Xinchuang (”indigenous innovation”): Windows → Kylin OS (40% govt only). Office → WPS (30% adoption). Intel → Loongson (10%). Private sector: still 90%+ Western.
+Pain differential: We lose $150B semiconductor equipment + $20B software. They lose $450B tech they can’t replace for 10-15 years + $200B software infrastructure.
+You can’t fork Windows and run a country. Ask Russia.
+These four constraints—dollars, chips, energy, food—hold this together. For now. But they’re eroding faster than we’re fixing our own vulnerabilities. It’s a race against time.
+
+Part IV: Where We’re Exposed
+These four constraints—dollars, chips, energy, food—hold them back. They need all four. Can’t replace any in 5 years. But we’re vulnerable too. Our vulnerabilities worsen while theirs might improve. First, how we got here.
+How We Lost the Ability to Make Stuff
+Nobody said “let’s outsource to our rival.” It happened through a million individually rational decisions. Quarterly earnings. Shareholder value. Cost optimization. Comparative advantage.
+
+After USSR fell: end of history. China would liberalize. Globalization permanent. No strategic focal point needed.
+Every decision was individually rational: CFO outsourcing saves 40%, stock up. Miner closes rare earth processing (unprofitable), rational exit. University closes manufacturing program (students want CS), rational allocation. Defense contractor sources cheaper, rational cost control.
+Nobody was the villain. The system had incentives. All pointed offshore.
+They optimized for control. We optimized for efficiency.
+Now we’ve gone from factories full of humans in Detroit.
+
+To factories full of robots in Shenzhen.
+
+In the process, hollowing out the very industrial base that ‘made America great’ to begin with.
+
+Critical Minerals: The Most Urgent Example
+The Monopoly Nobody Built by Accident
+China doesn’t just mine—they process. Processing is the chokepoint.  
+
+This is the result of years of strategic industrial policy while we slept.
+Couple examples:
+
+Graphite: 95% Chinese processing. 25% of EV battery by weight. Global production: 1.5M tonnes. China: 1.425M tonnes (95%). US: 0 tonnes.
+IRA says EVs need non-Chinese batteries for 2025 tax credits. Those batteries don’t exist. We can’t make the graphite.
+Our solution: Syrah Louisiana, 10K tonnes/year by 2027. Our need 2030: 250K tonnes/year. We’re building 4% of what we need.
+
+To replace Chinese processing: 25 facilities, $5-7B, 5-7 years each.
+Why it’s hard: Processing graphite produces 10-12 tonnes contaminated water, 1.5 tonnes hazardous waste per tonne output.
+
+95% happens in China because they accepted pollution. Inner Mongolia looks like Mordor. 
+While Nevada still looks like this.
+
+The choice: Pollution here with EPA oversight. Pollution there with no oversight. No EVs, phones, laptops, power tools.
+We chose #2, called it environmentalism.
+If they cut us off: Day 1, prices 10x. Month 3, EV production stops. Month 6, consumer electronics constrained. Years 2-3, acute pain while scrambling.
+Not end of America. But 2-3 years severe disruption.
+
+Rare Earths: 85% Chinese processing
+Every advanced weapons system runs on rare earth magnets. An F-35 needs 920 pounds. A Virginia-class submarine: 9,200 pounds. Wind turbines, precision missiles, guidance systems—all need permanent magnets made from neodymium, dysprosium, and praseodymium. No substitutes. You can’t compensate with a weaker magnet at larger size—the physics doesn’t work that way.
+
+We have exactly one rare earth mine: Mountain Pass, California. It digs ore, then ships it to China for processing. That’s our “domestic” supply chain.
+Good news: MP Materials is building a Texas processing facility. By 2030, it should handle 5,000 tonnes annually—maybe 15% of military requirements. Lynas and Energy Fuels are building smaller facilities adding another 5,000 tonnes. If everything goes perfectly, we’ll have 10,000 tonnes domestic capacity by decade’s end.
+Bad news: we need 30-40,000 tonnes annually. Even in the best case, we’re 25-30% independent by 2030. Better than zero. Still 70% dependent on China for the magnets that make our weapons work.
+
+Lithium, Cobalt:
+Lithium follows the same pattern. Thacker Pass, Nevada will produce 40,000 tonnes annually by 2028—8% of the 500,000 tonnes we’ll need. Cobalt is worse: we produce 700 tonnes, consume 15,000, with 70% from the Democratic Republic of Congo, where Chinese companies control processing.
+Optimists point to alternatives: sodium-ion batteries, solid-state, lithium iron phosphate (LFP). But sodium-ion has 40% lower energy density—fine for grid storage, useless for vehicles. Solid-state costs $1,000/kWh versus $100 for conventional lithium-ion, a gap that won’t close for years. LFP? Ninety percent Chinese-controlled.
+We’re building our way out the hard way. Emergency stockpiling through 2027 buys time to get 5% new capacity online. First real wave hits 2027-2030, bringing us to 15-25% domestic. By 2035, maybe 30-50% domestic. By 2040, if allies cooperate, 50-60% domestic plus 30-40% from trusted partners.
+Timeline: 10-15 years to relative security. Not independence—security.
+The difference matters. Independence means zero consequences if cut off. Security means 2-3 years acute pain while alternatives scale and we burn through stockpiles. We’re not building independence. We’re building the capacity to survive the transition.
+
+Where Else They’re Catching Up / Winning
+
+Robotics/Manufacturing Data: China produced 13M vehicles in 2023, US 10M. Every vehicle = training dataset. Boston Dynamics demos, China deploys 10K robots in production. 6x workers + 6x factories = 36x training data.
+
+Hypersonics: China has DF-17 operational (2019), DF-27, DF-41 deployed. US: testing, failures, 2027-2030 timeline. Matters: they hit our carriers, we can’t hit theirs.
+Space: Chang’e 5 samples (2020), Zhurong Mars (2021), Tiangong station (2022). Artemis slipping, Mars 2040s aspirational. High ground: military, resources, technology, talent.
+Nuclear: China has 57 GW, 23 GW under construction. US: 95 GW, 2.2 GW under construction. They build, we manage decline. Testing thorium, pebble bed, fast breeders we stopped in 1970s.
+
+Part V: The Race Against Time
+Both sides race different clocks toward the same collision. This isn’t about who’s winning—it’s whether China moves before their leverage expires and before we fix our vulnerabilities.
+
+The Collision: 2027-2030
+If they move on Taiwan, it’s before we fix rare earths (2028-2032), before demographics go catastrophic (2030+), before we rebuild manufacturing (2030-2035), while Xi needs legacy (71-76), while banking barely contained.
+We’re winning the long race. They see the math.
+From Beijing: lose the dollar now in a crisis you control, or watch it slip away as decoupling continues? Take Taiwan while demographics work, or never? Strike while we’re vulnerable on minerals and manufacturing, or wait until those advantages disappear? The window isn’t just US vulnerabilities—it’s Chinese desperation.
+Question: Do they make a desperate move in the 5-year window where we’re vulnerable, before our advantages become permanent and their leverage expires?
+
+Closing: The Collision Point
+Why hasn’t the divorce gone hot?
+The scorecard. The 3:1 asymmetry. Four constraints they can’t afford losing:
+Financial - $3.3T hostage
+
+Food - 100M tonnes we can interdict
+
+Energy - 70% through Malacca
+
+Chips - stuck at 7nm, need our tools
+
+Lose any: collapse in 90 days to 18 months.
+Our vulnerabilities:
+Minerals - 85-95% dependent
+
+Pharma - 80-90% APIs
+
+Manufacturing - hollowed out
+
+Lose these: 2-3 years severe disruption while rebuilding.
+Not symmetric. Their pain is existential. Ours is acute but survivable.
+But it’s changing.
+Their constraints loosening: CIPS growing 20% annually, Russia covers 15% energy, SMIC produced 7nm chips, food diversified to Brazil/Argentina.
+Our constraints not fixing fast enough: Rare earths 2028-2032, manufacturing 2030-2035, pharmaceuticals 2030-2035.
+The window: 2025-2030. They’re desperate. We’re vulnerable.
+
+Chapter 2 showed they’re bleeding $1.1 trillion annually with no solution. This chapter showed the divorce hurts them 3x more, but we have real vulnerabilities. The four constraints preventing escalation are eroding while ours stay acute.
+We’re racing to fix before they achieve breakthroughs or get desperate. They’re racing before we fix and before their crises—banking, demographics, succession—force their hand.
+The timelines collide in 2027-2030.
+Neither side wins full decoupling. Pain’s too high. Both preparing anyway—staying vulnerable feels worse.
+There’s one asset both absolutely need. One island that’s the cork in the bottle, determining whether China stays boxed in as a Heartland power or breaks out as Rimland.
+Taiwan. One hundred miles off the Chinese coast. First Island Chain lynchpin. Where the world’s most advanced semiconductors are made. Where divorce goes from economic to kinetic.
+Chapter 4 shows what happens when wounded empires decide geography is destiny. A 2,500-year pattern: Heartland versus Rimland. Rome and Parthia. Napoleon and Russia. Hitler and the USSR.
+That pattern says: don’t fight inside the Heartland. Ever.
+Till next time
+
+Disclaimers
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORA
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

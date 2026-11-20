@@ -1,0 +1,21 @@
+TITLE: Breakout
+SUBTITLE: January 2nd, 2020
+DATE: 2021-11-09
+
+Don’t look now, but gold started one of it’s sneaky holiday runs over the last couple of weeks…
+
+On the Lehman prop desk, we used to talk wistfully about lock box trades
+The idea that sometimes you actually have more confidence about the price a couple of months from now than you have about the price next week. That wouldn’t it be great if you could just take a high conviction idea, commit to it, weight it appropriately, and stick it in the lock box. Only being able to open up the box at the expiry of the option.
+Now, you might ask yourself, why not just ‘commit’ to a trade and then put it in a virtual lock box?
+And the answer here being the obvious usual mark to market pressures that any money manager faces. Your MD or CIO doesn’t want to hear about your wonderful ideas squirreled away when the rest of the market is making money. People want money today not money tomorrow.
+Anyway, up to this point we’ve treated our Gold position as a bit of a lockbox trade. Partially by design, and partially because as an emerging (read: rather small) fund, we don’t really have access to the kind of daily liquidity that a lot of other ‘fast money’ managers get. When it costs you 15% to get into a trade, and 15% to get out, you can’t be day trading your best ideas, and when you are capital constrained you can’t even really trade around the ‘delta’ of these kind of options.
+So by hook or by crook, we’ve mostly just called out shot and then kept the position. This has made us look a little too good in August when Gold was roofing, and then a little too bad in Q4 when the fluff got cleansed amongst a (mostly) strong dollar.
+Given the dollar is looking weak (be it Bernie or deficits, or just the fact that the gap between US and Japanese/European monetary policy has narrowed), gold prices in dollars should appreciate, and looks like we are starting to see that.
+Meanwhile, over in China. The bullish case for gold is:
+
+1) The shift back to easing by the PBOC (RRR cuts announced today, and talk of supporting money and credit growth in line with GDP growth)
+
+2) The yearly reset of the $50k cap on purchases of FX, and we could start to see some movement in Gold in China again. .
+And that pesky trade deal that’s still not signed. Let’s see if it’s done Jan 15, or if, like seemingly every Brexit-EU deadline, it’s punted while the big wigs work out the “details” (read: actual differences).
+Didn’t we see China say they weren’t going to change the rules for ‘any one country” the other day?
+Maybe that’s the point, like all good ‘define the relationship’ conversations, it’s about if China sees/appreciates that the US’s role in the world isn’t ‘one of many’ but rather ‘the one that matters’.

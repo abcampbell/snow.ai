@@ -1,0 +1,88 @@
+TITLE: The Machine is Down
+SUBTITLE: Or how I learned to make smarter machines (by breaking them)
+DATE: 2023-03-03
+
+Let’s begin todays ramble with a thought experiment: 
+Zombies are real.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+It’s day 4 of the Zombie Apocalypse
+& this one is chasing you.
+
+You are carrying someone that you love, could be a friend, a pet, or a romantic partner. 
+They are wounded. 
+Together, you are running... 
+as fast as you possibly can.
+
+Rested, you would be able to outrun this zombie. 
+Without the one you are protecting, you could probably fight it off. 
+Ahead and to the left, is a semi-abandoned Walmart. 
+Your goal.
+
+It has enough food for weeks, and sufficient weapons to fight off this zombie. 
+First you have to get in though. 
+In front of you is a pair of automatic doors. 
+Here comes the thought experiment. 
+As you take a hard left and run full tilt towards the entrance…
+
+DO YOU SLOW DOWN?
+
+How you answer this question says a lot about your relationship with machines. 
+In this piece we're going to place this thought experiment in the context of risk, uncertainty, AI and yes, epistemology (ugh) to generate practical life principles for dealing with a world full of machines.
+
+The following principles came from over 20yrs of pain building machines to trade markets: 
+1. #SlowDown because 
+2. #TheMachineIsDown so 
+3. #DontTrustMachines. that being said 
+4. #KeepingBuilding machines, even though they will break. 
+5. Pain. Stoicism. Namaste.
+
+WHY YOU SHOULD SLOW DOWN 
+Most people, when asked in their heart of hearts, would slow down. 
+There’s a twinge in the back of their neck at the thought of running full steam - with someone you love - into an automatic door. 
+Why?
+
+Maybe you yourself have walked towards one of those doors in the past and it didn’t work quite like you expected. 
+Maybe the power was off? (Did you ask in your head if the lights were on?) 
+Maybe it’s nighttime. 
+Maybe the power is on in general, but not to your specific door.
+
+Now zoom out. 
+Think about all the machines that don’t require electricity that can fail: 
+A screwdriver with no teeth.
+A hammer with a cracked handle.
+An axe with no edge.
+
+Zoom out further... 
+Don’t just think about physical machines, think about all the software you interact with on a regular basis that constantly break in small ways: 
+Forgot password 
+404 Error # N/A 
+2FA 
+loading loading loading
+
+Think of the bureaucratic 'machines' you encounter everyday. 
+Someone with a headset, talking down at you, explaining in patient (but quietly hostile) tones how the *process* for dealing with *your* particular problem requires a different department...
+
+Zoom out all the way... Think of the massive, decentralized machines that comprise our financial, economic, educational, health and governance structures. Each of them, so complex that no one individual has enough information, context or power to fully control.
+
+Now zoom way, way down. 
+Down below physical. 
+All the way down to machines made up of information.  
+Gaining intelligence at exponential speed.
+
+Turns out, this is not a new problem. Rather, it's a problem these egg heads have been wrestling with for generations.
+
+To name a handful: 
+Godel's incompleteness 
+Turing’s Halting 
+Heisenberg’s Uncertainty
+Russell's Paradox https://plato.stanford.edu/entries/russell-paradox/
+My first introduction to this idea was at Oxford. 
+Imagine a plucky American from the Boston projects sneaks in to study macro and game theory, levered up to ears for an education he could ill afford.
+
+Wrapping my head around the Lucas' critique and Arrow's impossibility theorem, both examples of the limitations of knowledge (contained to economics).
+All these mathematicians making the same point: The more we think we understand something, the more we try to control it. The more confident in that control, the less fault-tolerant those models (or machines) become. 
+This is helpful to remember in moments when your mic doesn't work, the wifi is down, or the elevator gets stuck. Machines are going to fail including the complex thinking machines currently under construction. What can you do?
+
+Keep building. Don't worry when #theMachineIsDown, and Don’t Trust Machines.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

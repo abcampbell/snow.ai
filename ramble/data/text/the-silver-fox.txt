@@ -1,0 +1,78 @@
+TITLE: The Silver Fox
+SUBTITLE: 
+DATE: 2025-10-10
+
+Someone in the office called me the silver fox today.
+Pretty sure it was about me crowing over silver passing $50/oz.
+Anyway, I know this post is supposed to be part three in my trilogy about personal evolution as an investor, but we’re interrupting our regularly scheduled programming for breaking news about the state of the silver market.
+Plus, I haven’t fully baked how to write about cracking continuous learning in AI in a manner that a) doesn’t give away ALL my alpha for free (I’m not feeling that charitable at the moment—everyone keeps forgetting to tip their shaman trader) and b) doesn’t (as a result) stray into a level of abstraction that would turn this into slop.
+So instead of philosophical musings, let’s talk about one of the most memorable days in metals markets in some time.
+Setting the Stage
+To set the scene: yesterday Chamath (unknowingly) retweeted my “Gold in China” thesis—without attribution, naturally. I’m so thoroughly shadowbanned by weaponized blocks from CCP accounts that he probably doesn’t even know I exist.
+
+The chart speaks for itself. China’s gold inventory on the Shanghai Exchange just went parabolic, currently sitting around 3 million ounces or $10 billion worth.
+
+The pattern is unmistakable. While official PBOC purchases tell one story, the reality is China’s been accumulating 40 tons monthly since 2022 on average. They control the narrative on their balance sheet, reporting when convenient, but mostly hiding how much they’ve really accumulated.
+
+Meanwhile, Tether’s pivot to gold backing is its own fascinating story. The stablecoin that started with Chinese property developer commercial paper as reserves is now diversifying into physical gold. A decade ago, the idea of a “dollar-backed” token evolving into partial gold backing would have seemed absurd. Yet here we are, watching private currency experiments unfold in real-time.
+
+Andy is back from retirement (good) and is now on the gold bear train (bad). I understand it though—as a trade, if you aren’t in for the duration, there are lots of reasons to think a tactical reversal is possible.
+
+Probably the best case I’ve heard comes from my other former colleague and short rates guru Jason Rotenberg, who makes the case that expectations for easing have gotten a bit extended and any real upside surprise should lead to higher rates, higher dollar, and lower asset prices. This is the real dagger at the heart of the precious trade for those of us still long here.
+https://jasonrotenberg.substack.com/p/cyclical-upswing-less-easing-assets
+
+Silver Goes Parabolic
+Meanwhile, the silver market is in chaos, knocking out the all-time high and opening up (on the east coast) up almost 5% at $51, only to be smashed down 5% within a couple of hours.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+While it makes sense that there are sellers at $50 (we’ve been reducing as we approached the number), this market behavior was pretty odd. And as we’ll see, indicative of a market where all-time highs are driving speculation and putting pressure on market structure (with an interesting trade at the end of this piece).
+
+Indicators of chaos
+Borrow for the silver ETF SLV appears to be stretched, with tweets suggesting no borrow to short is available, and it currently costs 12%/yr to entice folks just to lend you their shares.
+
+Reports after the close that China continues to see strong buying of physical, trading at $59/oz on JD.com.
+
+Though, confusingly, the readings from the futures markets imply the Chinese silver price premium has contracted over the last month, not expanded.
+
+Keep in mind that $50/oz may matter a bit more to westerners familiar with the Hunt story and the squeeze in 2011 than folks in China, where the chart looks pretty bullish. If you could synthesize the ‘Campbell precious metals’ view into one idea, it’s that western investors are too concerned with how things look when priced in dollars, and not nearly concerned enough with how things look in China—which, I may remind you, now has 2x the money in bank accounts!
+
+What we are seeing though in western markets is a pretty classic signal of a ‘tight market’ where short-term prices (spot and futures) trade at a premium to longer term. This is in contrast to what us commodity geeks call ‘normal contango’ where the folks who buy the futures pay the folks holding physical a premium to hold it (and pay the ‘cost of carry’) in the meantime. This means folks are bidding up physical as opposed to futures, which is pretty rare in precious metals land.
+
+While lease rates go vertical.
+
+Breathless tweets aside, you can see this in the silver swaps market, which looks a bit broken. This is not normal.
+
+Interestingly, futures markets like Comex and Shanghai do not show this level of ‘backwardation,’ so we’re kinda confused tbh.
+
+Speaking of microstructure, folks are naturally starting to (wildly) speculate about dealer inventory this, and paper silver that.
+
+We do find some evidence of this in the ETF market, where it looks like the SLV ETF was trading a bit ‘rich’ relative to the future price, out of the norm for what is usually a pretty stable (if slowly declining due to management fees on the ETF) relationship.
+
+While this is relatively interesting, over longer periods, this relationship is extremely strong and so we would expect it to revert in the near future.
+
+Where it starts to get prettttty interesting is when you look at the ‘volatility’ surfaces for these different ways of expressing a view on the underlying metal.
+First of all, heading back to gold for a moment, it actually looks relatively cheap. Both in terms of implied vs realized volatility.
+
+And in terms of ‘upside’—which we can proxy with spring 10/15 delta calls (aka only 10% likely to be ‘in the money’), currently trading at ~21 vol. We bought some.
+
+Silver, on the other hand, is starting to break highs in terms of both implied and realized volatility. Evidence that if you are new to this market, now is not the time to set your long, and also evidence that you definitely do not want to get caught short this market.
+
+Remember the fundamentals here: outside of some emerging dollar strength, they’re as strong as ever. Zerohedge might scoff at the data center energy demand, but all I see is solar panels, full of silver.
+
+And remember, the demand for data centers in terms of planning still well outstrips the supply—and yes, China also gets a vote!
+
+So anyway, back to our friend silver, and the upside definitely looks well bid. Expensive even at 43 vol.
+
+Just don’t look at the short-term upside in the ETF, where they are currently priced at 67 vol! Looks like retail found their way to express the view with leverage.  We’re holding some of this short term upside, though may roll out tomorrow.
+
+My kingdom for an ISDA. Where I would sell SLV short-term upside (in size) and hedge with upside calls in the future. What usually trades at a couple of points discount is currently 10 or so vol points high. This is the kind of thing that would make my month back at Lehman, but alas, the day job (and my access to leverage) currently prohibit it. So I give it to you, dear reader, some tasty ‘discretionary macro’ alpha. As a treat. Bon appétit.
+
+Till next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORA
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

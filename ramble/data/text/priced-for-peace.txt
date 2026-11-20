@@ -1,0 +1,84 @@
+TITLE: Priced for Peace
+SUBTITLE: Or: What Happens When Every Vol Surface Lies at Once
+DATE: 2026-05-08
+
+The Drunk at the Poker Table
+We’ve talked a lot about Trump’s game theory of “mixed strategy,” the idea that playing as the drunk guy at the poker table opens up trade space. His repeated “sign the deal or else” rhetoric. Classic stuff.
+What’s changed in the last week or so, outside of yet another Axios put, is he may have finally met someone drunker at the poker table than he is. The only counter to crazy is more crazy.
+I have no inside baseball, but I’m trying to map onto the pattern where the admin appears to be negotiating with someone on the other side, and actually making material progress on the core war goals: a non-nuclear Iran and freedom of navigation.
+Iran’s first move was to close Hormuz and escalate to the dollar. The admin then wisely countered with blockade and threats to Iranian oil production and revenue. Which looks to have successfully brought China to the table, if the tea leaves of the recent visit are to be read.
+But here’s the problem. When you negotiate with Iran, you are usually negotiating with the “good cop” in parliament, not the “bad cop” in the mountains, in the tunnels, or in the fast boats. This gives the regime a source of ambiguity and uncertainty that effectively counters Trump’s chaos. Because Trump does ultimately want a deal. For the economy, for his allies, for the midterms, for the world.
+The hardliners in the IRGC don’t want a deal. They want chaos. They want invasion, and to tie the US into a decade-long boots-on-the-ground quagmire where their home turf becomes the dying ground of yet another rimland empire.
+This is, by and large, what China wanted too. Until the US wisely put their oil at risk.
+Which brings us to today, where I wouldn’t be surprised if, Axios notwithstanding, no one really knows what’s going to happen. Love tap or no.
+The Complacency Surface
+So let’s step back from geopolitical speculation and look at what markets are actually pricing.
+The short version: everything is priced for perfection, simultaneously, across every asset class.
+Oil is capped. In spite of will-they-won’t-they escalate, crude has sold off a lot the past week and has by and large stayed under the March lows. Crude under $100 is best case scenario in lieu of an actual peace deal. Who knows how much is from the US SPR, but with inventories in free fall and some floor the strait closure will likely force, oil prices move up if we remain closed by June. With the SPR running out of spare juice by around September, you can’t imagine oil staying below $110 when the spigot runs out.
+
+Stocks are at the highs. Vol is at the lows.
+
+I am toe in the water on some Monday put spreads again. My theta bill this year is going to be ugly, but at 11 vol I couldn’t help myself before tonight’s close. 4:1 on the market falling 1% by Monday, I’ll put 15bps into that.  Most of the vol crush has been driven by record low realized correlation which can easily revert.  Now that we are almost past earnings season everything can trade on vibes again.
+
+Credit spreads are back at the lows. Our HYG puts are almost expired.
+
+Gold (and silver) calls remain our biggest peace position. Gold has traded a lot like short oil lately, which makes sense if you think of gold as the “peace dividend” asset, the thing that rallies when the conflict premium comes out of energy.
+
+Helped a bit by a lower dollar.
+
+Currency vol…at the lows.
+
+Bond vol…at the lows.
+
+That’s the snapshot. Oil capped, stocks at highs, vol crushed, credit tight, gold bid. The market is pricing peace. The question is whether the market is right.
+
+The Mid-Cycle Acceleration
+Here’s what’s interesting. The market isn’t just pricing peace. It’s pricing a mid-cycle acceleration that the data is actually confirming.
+Manufacturing PMI came in at 54.5 versus 54.0 expected, above already healthy expectations.
+
+Labor market data came in healthy. Jobs above, initial claims below expectations. ADP employment change hit 109k versus 62k prior. Construction spending above expectations. Inflation expectations above. Consumer credit is expanding. Factory orders and cap goods came in strong. Inflationary greenshoots confirmed in ISM prices paid.
+
+This is not a late-cycle economy. This looks like the early innings of a re-acceleration, which is great for earnings and terrible for anyone hoping the Fed cuts rates.
+Which creates a tension that the market has not resolved. If the economy is actually accelerating, that’s bullish stocks but bearish bonds. And if bond yields go up, the discount rate on every equity goes up, which compresses multiples. The mid-cycle acceleration is simultaneously the best argument for being long equities and the ticking clock on the equity bull market.
+Global bond yields are back to pre-GFC levels and still rising. Not just the US. Everyone.
+
+Japan just woke up from a 30-year nap. Korea is at levels not seen since 2008. The UK and Germany are marching higher in lockstep. This is a global tightening regime, and there’s nowhere to hide in duration.
+If the acceleration data keeps printing like this and inflation expectations start to unmoor, remember: there are bonds in the stocks.
+The yield curve tells you where the trade lives.
+
+Curves globally have normalized from the deep 2022-2023 inversion but are now basically flat. The US curve in particular has no space left. Markets have already priced 100bps of cuts by end-2026, and then nothing. The flatness between December 2026 and December 2027 is unprecedented. The bond market is saying: the Fed will ease, regret it, and get stuck.
+I’m rotating into a belly steepener this week, betting that rates in 2026 will be lower than 2027. The logic: once the easing round concludes (around 18 months out), you would normally expect steepness between the 15-month and 27-month tenors. But because the market has already had to discount so much easing from where we are today, there’s no room in the curve before it has to start flattening out again on term premium. That gap is the trade.
+Ags Update
+Our ags trade has started to work a bit, driven largely by wheat and mini rallies in corn and sugar. We exited our June sugar after a combination of peace news and after doing some more research on the local ethanol market in Brazil, where the gasoline price caps are putting a lid on the amount of sugar diverted into the market (and where we expect a lower ethanol share along with seasonal trends). Our bullishness is more about a system vulnerable to breaking and less something that has a catalyst over the next two weeks. We still have our September calls with 14% delta and a first strike at 16.5c but down from the aggressively bullish stance of last week.
+
+If ags were slow on the upside in April, they appear to be catching a bid. Partially because the fertilizer problem and linkages to oil are getting priced in, partially because of bad weather leading to higher wheat prices. We remain constructive and the complex remains our biggest position.
+Long APIs, Short Slides: The Update
+Back in February we published “Long APIs, Short Slides” and by and large this trade is working out.
+
+The thesis in one sentence: the shorts get paid per human deployed, the longs get paid per API call, and AI replaces humans while multiplying API calls. Three months in, the earnings data is confirming the bifurcation.
+
+AI infra companies beat earnings estimates by an average of 210% and their stocks are up 15.4% since publication. Software beat by 22% and is up 3.4%. Services beat by 7% and are down 3.5%.
+
+The most interesting thing in the data isn’t just that AI infra beat harder. It’s that the market rewarded those beats with disproportionate price appreciation. The AI infra EPS Z-slope is 1.79 versus 0.01 for software. Beat earnings and be on-theme, your stock goes whoosh. Beat earnings and be off-theme, nobody cares.
+Meanwhile the short side is doing exactly what we said it would. Services companies beat on earnings by a modest 7% but their stocks went down 3.5%. Revenue came in slightly below expectations. The market is telling you something: even when these companies report decent numbers, nobody wants to own them. The AI displacement narrative has become a valuation ceiling. Decent quarter? Great, you’re still a body shop selling human hours into a market that just discovered it can buy machine hours instead. The slow bleed we described in February is playing out one earnings report at a time.
+So how does the pair trade look in aggregate?
+
+Keep in mind our API basket is about 2x more volatile than our Slides basket.
+
+But even in vol-adjusted terms the outperformance has been real.
+
+A volatility-adjusted long-short basket of these names is now up 21.7% since publishing. Largely as a result of greater than expected earnings.
+
+A couple of housekeeping notes on the basket. Confluent (CFLT) got acquired by IBM, so that name comes out. We’re watching Accenture as the canary for whether the body shops can actually pivot. They’ve announced $3 billion in AI bookings, which sounds impressive until you realize “selling AI consulting” is a completely different business than “selling bodies at $30/hour.” If ACN’s AI bookings translate to margin expansion, the short thesis weakens. If they don’t (and so far, they haven’t), it confirms the structural problem: you can’t repurpose a 350,000-person labor arbitrage machine into an AI consultancy. The Indian IT firms are stuck.
+The Bottom Line
+The market is pricing peace. The economy is pricing acceleration. Vol is pricing perfection across every surface simultaneously.
+If any one of those assumptions breaks, you want to own optionality. If the economy keeps accelerating, inflation unanchors and bonds in the stocks become a problem. If peace breaks down, oil spikes and the SPR runs dry by September. If the AI theme stumbles, the concentration in Mag7 becomes a correlation bomb.
+And if none of them break? The APIs basket keeps compounding. The ags position catches the fertilizer-oil linkage. The belly steepener earns carry. The gold and silver calls sit there as the peace dividend.
+Either way, the portfolio works. Which is the whole point, just mind the carry and try not to chase the mania.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. 
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties. 
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. 
+Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation. 
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

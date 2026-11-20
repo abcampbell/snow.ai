@@ -1,0 +1,231 @@
+TITLE: Epilogue: How I Got Here
+SUBTITLE: Being Early Is Expensive. Being Wrong Is Fatal.
+DATE: 2025-11-03
+
+Contrary to what you might read in my replies online, I didn’t start off as a China hawk. When I left the big fund, China wasn’t even on my radar. My goal was simple: protect people from underappreciated macro risks by combining what I learned about systematic investing at Bridgewater with the derivatives work I did at Lehman.
+My first project was actually tech—specifically, finding a way to hedge the illiquid startup equity beta embedded in VC portfolios. I developed a structure to effectively “short startups” by stripping out liquidation preferences, providing protection to employees who got subordinated when late-stage investors piled in at crazy valuations. The idea was to short WeWork before employees got their faces ripped off when Neumann sold what was effectively debt to Softbank.
+Then I made a terminal mistake: talked to a Fortune reporter who had an axe to grind. She made it sound like I was shorting my employer’s portfolio. Relationship torched. Lesson learned.
+But that experience taught me something crucial: the comfortable narrative is always the consensus. The story that keeps relationships intact, that lets everyone sleep at night, that follows the crowd. Being early on underappreciated risk means being alone, being mocked, and being “wrong” for years before you’re right. Which brings me to why I’m writing this now.
+I started looking to protect people. When I moved back to macro, I asked myself: what are the biggest underappreciated risks to the global economy?
+Two interconnected risks emerged.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+First: the emerging credit bubble in China.
+Second: the push into illiquid, long-duration assets like private equity and venture capital—what was then called the “Yale Endowment Model.”
+These were connected through US Treasuries. At the time, developed world rates were at all-time lows due to a) post-crisis hangover and b) emerging market central banks accumulating reserves. This pulled down risk-free rates, which ironically pulled UP the duration of long-dated assets.
+
+I saw a machine that might break:
+Chinese shadow banking bubble pops → deleveraging begins → asset prices fall → capital flight increases → PBoC sells treasuries to offset balance of payments pressure → US rates rise → reprices all those 10-30yr duration assets.
+In late 2020, this was academic. Duration was at all-time highs, but China’s credit bubble was humming along fine.
+
+Then everything changed.
+They Refused To Take The Pain
+Every time Chinese policymakers faced a choice between taking the pain and kicking the can, they punted.
+They wanted the decision tree to look like this:
+
+But that’s not how credit bubbles work. Left unchecked, the positive feedback cycles between debt, asset prices, and liquidity create vicious pro-cyclical dynamics. Asset prices appreciate the most when they’re least justifiable. The worst losses come at the end.
+The actual policymaker decision tree looks like this:
+
+Note this chart is from our talk in 2017 (!)
+Take Evergrande. Defaulted in December 2021. Still unresolved as I write this in late 2025. Why? Because if they admit most lenders won’t get paid back, domestic banks have to take losses.
+
+While only $50bn of their debt is officially ‘on bank balance sheets’, the vast majority of the rest finds it way into the financial system via trust products, loans to counterparties, or mortgages for homes that will never get built.
+
+ And Evergrande is just the most visible example of an entire category:
+
+Now, not all of this debt sits on bank balance sheets. But that’s the point. When banks stuff off-balance sheet entities with loans from borrowers that are themselves off-balance sheet (LGFVs, WMPs), it’s not just hard to track—it’s harder to fix. When borrowers and lenders are intermediated by five levels of channeling, who takes the loss?
+
+The evidence is right in front of us:
+Trillions in defaulted developer debt (there’s a long tail of $4-5b in total debt after these 17)
+
+Millions of underwater mortgages
+
+Home prices falling at fastest pace in 11 months (September 2025: -5.8% YoY)
+
+Persistent deflation
+
+Capital flight accelerating—and just this month (November 2025) Beijing scrapped the VAT offset on retail gold sales, tightening access to the ultimate capital flight vehicle
+
+If you take one central claim from this book, it’s this: The scale of this problem is much larger than most people think.
+Could be $2 trillion (ugly but containable). Could be $10 trillion (system-breaking). My estimate after ten years: $2-5 trillion in the ugly scenario, $5-10 trillion in the severe scenario.
+Seven years ago I recommended what Ray Dalio calls a “beautiful deleveraging”—take the pain early, recap the banks, stimulate household spending. Keep losses under $1 trillion.
+They didn’t. Because here’s what I finally understood: They CAN’T take the pain. Because narrative warfare is the strategy.
+
+Admitting the losses means admitting the model failed. Admitting the model failed means questioning Party legitimacy. Questioning Party legitimacy is existential.
+So they extend. And pretend. And the hole gets deeper. And capital flees. And they tighten gold sales. And the pressure builds.
+This refusal to take the pain—this commitment to extend-and-pretend at any cost—changes everything about the next five years.
+Because it means they’re weak. Vulnerable. Desperate.
+And that’s when the probability math gets dangerous.
+
+The Comfortable Narrative vs The Dangerous Truth
+Walk into any investment bank, any asset manager, any policy shop and ask about US-China. You’ll get the same story:
+“It’s competitive. Both sides are rational. Too integrated to decouple fast. War would be catastrophic, so it won’t happen. Maybe 15-20% tail risk, but we’ll muddle through.”
+This narrative is in the Fed’s models, priced into index funds, why your 401(k) is 70% long equities assuming gradual peaceful separation.
+Force them to put numbers on it:
+On China: 70% they’re fine (CCP has a plan, extend-and-pretend works), 25% ugly but manageable, 5% real crisis.
+On America: 50% declining (can’t build, divided, NIMBY hell), 30% muddle through, 20% actually reform.
+These feel reasonable. China’s probably stable (narrative warfare worked). America’s probably declining (our self-flagellation worked).
+Watch what happens when you multiply these:
+
+China wins peacefully: 70% × 50% = 35%
+War scenarios: Ugly×Decline + Severe×Decline + Severe×Muddle = 16.5% total
+Wars are “coin flips” so 50/50 split = 8.3% each
+
+US wins peacefully: Everything else = 48.5%
+The Normie Scorecard:
+China wins: 43.3%
+
+US wins: 56.7%
+
+War probability: 16.5%
+
+Competitive. Slight US edge. Low danger. Sleep well.
+This is catastrophically wrong.
+
+What The Math Actually Shows
+After ten years watching them refuse every opportunity to take the pain, after tracking Evergrande’s non-resolution for four years, here’s my distribution:
+China States:
+Mild (10%): Losses only $2T, muddle through another decade. Epistemic humility.
+
+Ugly (45%): My base case. $5-7T in losses. Bleeding $1.1T/year to hide it. Forces hard choices 2027-2030.
+
+Severe (45%): $8-10T+ in losses. System-breaking. Bank runs. Currency crisis. Political crisis.
+
+America States:
+Decline (33%): Regulatory capture wins. Still rare earth dependent 2030. Can’t build.
+
+Muddle (33%): Slow progress. Rare earths independent by 2029. Some infrastructure.
+
+Reform (33%): Emergency mobilization. Pearl Harbor effect. Independent by 2027.
+
+Equal weights because I genuinely don’t know which America shows up—the one that built the Interstate Highway System in 10 years, or the one that can’t clear a broken bridge in 2.
+The War Cells:
+Three combinations trigger conflict:
+China Ugly + US Decline (45% × 33% = 14.9%)
+
+China Severe + US Decline (45% × 33% = 14.9%)
+
+China Severe + US Muddle (45% × 33% = 14.9%)
+
+Total war probability: 44.7% (round to 45%)
+Why these three? When China faces Ugly/Severe crisis AND we’re Declining, their desperation meets our weakness. When China is Severe and we’re Muddling, they calculate the window is closing and roll the dice. But when China is Mild OR we’ve Reformed, deterrence holds.
+Per CSIS wargaming, when war breaks out we win ~70% of the time (but at high cost). So:
+US wins violent: 45% × 70% = 31.5%
+
+China wins violent: 45% × 30% = 13.5%
+
+The Peaceful Outcomes:
+China wins peaceful: Only if they’re Mild AND we Decline = 10% × 33% = 3.3%
+US wins peaceful: All other cells (no war, we prevail) = 51.7%
+The Reality Scorecard:
+China wins (any path): 16.8%
+
+US wins (any path): 83.2%
+
+War probability: 45%
+
+See what happened?
+Long-term: We’re heavily favored 83% vs 57%. That’s GOOD news over 20 years.
+Short-term: War probability TRIPLED from 16.5% to 45%. That’s CATASTROPHIC news for the next 5 years.
+This is the paradox nobody’s pricing: Being right about their weakness makes short-term MORE dangerous, not less.
+Weak powers are dangerous powers.
+
+Why 2027-2030 Is The Window
+Four countdowns converge:
+1. Demographics
+Working-age population peaked mid-2010s. Military-age cohorts plateau now and decline faster through late-2020s. Mobilization capacity peaks. Use it or lose it.
+2. Rare Earths
+China controls >85% of rare earth processing and most magnet production. US independence is plausible 2026-2028 if MP Materials’ magnet ramp and Lynas Texas facility proceed, but execution risk remains. Before 2027, they can squeeze us. After 2030, we don’t care.
+3. Xi’s Succession
+He turns 75 in 2028. If he wants a legacy—Taiwan reunification—the window is closing. Succession questions intensify.
+4. Taiwan Elections
+2028 presidential election could produce decisively pro-independence government (>55%). Pretext arrives. Domestic pressure on Beijing spikes.
+These don’t just overlap. They interact. If demographics crater AND rare earths expire AND Xi faces succession AND Taiwan elects pro-independence... all in 2027-2029... 
+This is where Chapter 4’s geography becomes crucial: Heartland powers that get boxed in by the Rimland don’t fade quietly. And Chapter 5’s chaos strategy only works if we fix Chapter 6’s vulnerabilities in time. The countdowns aren’t independent—they’re the intersection of everything we’ve built up to. 
+That’s maximum pressure. That’s when desperate powers roll the dice.
+Not because they think they’ll win. Because doing nothing guarantees slow loss, and doing something offers a chance—however slim—of changing trajectory.
+Athens sailing for Syracuse. Napoleon marching on Moscow. Germany mobilizing in 1914. Japan hitting Pearl Harbor.
+They all knew. They attacked anyway.
+
+The Four Futures
+Outcome 1: China Wins Clean (3.3%)
+They extend-and-pretend works 20+ years. We can’t build—rare earths still dependent 2030+. Dollar erodes to mid-40s of reserves, we’re pushed from first island chain. Feels like: British Empire 1900-1950. How to avoid: Build.
+Outcome 2: China Wins Violent (13.5%)
+They’re desperate, we’re not ready. War 2027-2028. The Rimland fractures—Japan hesitates, Philippines folds, South Korea / Europe stays neutral. Taiwan falls in 72 hours and/or US gets sucked into the Heartland where interior lines lead to a catastrophic defeat. China becomes the first Heartland power in history to break through containment and dominate its periphery. The first island chain collapses. Every naval choke point we built deterrence around—gone. Feels like: Suez 1956. Everyone realizes empire’s over. Scenario metric: Dollar could drop from ~58% to 35-40% of reserves as reserve currency status follows naval dominance into history. This is the nightmare we must hedge.
+Outcome 3: US Wins Violent (31.5%)
+Containment works. They’re desperate, war breaks out, we win, but it takes either time, treasure and a lot of blood. The Rimland holds—Japan commits fully, Australia deploys, Philippines provides bases. Per CSIS wargaming: US/Japan/Taiwan defeat invasion at very high cost, but the first island chain proves unbreakable. Naval superiority prevails. China’s breakout attempt fails like every Heartland power before them—boxed in by geography and coalition. Post-war: rare earth independence accelerated via emergency mobilization, defense production surges, China permanently contained behind the first island chain. Feels like: Gulf War 1991—overwhelming force, decisive outcome, revitalization of the unipolar world order. Scenario metric: Dollar strengthens to 65-70% of reserves as the world relearns that sea power beats land power.
+Outcome 4: US Wins Clean (51.7%)
+They bleed, we build. No major war. Rare earth independence 2027-2029. Over 15-20 years: their growth drops to 1-2%, capital flight continues, demographics crater. Feels like: Cold War 1.0. Long grind, we outlast them. This is my base case—but you need hedges for the 48% where it’s not this.
+
+The Synthesis
+Six chapters, one conclusion: China can’t win economically. But that makes them militarily dangerous.
+Chapter 1 proved the asymmetry is structural. They need us in ten dimensions; we need them in three. That asymmetry is why the comfortable narrative assumes we’re fine. But asymmetry also means they have more to lose, which makes desperation more likely, not less.
+Chapter 2 showed the banking crisis—potentially $5-10 trillion in losses they can’t acknowledge. Today’s gold sales restrictions confirm capital flight is accelerating.
+Chapter 3 walked through the pattern: declining powers that can’t admit decline start wars. Athens. Germany. Japan. They all knew they were likely to lose. They attacked anyway because the alternative was certain slow decline. That’s the probability math the comfortable narrative ignores.
+Chapter 4 mapped the geography. Heartland vs Rimland. They’re trapped by the same forces that trapped every previous Heartland power.
+Chapter 5 explained why chaos strategy works when you’re stronger.
+Chapter 6 showed our vulnerabilities. Rare earths. Can’t build. We have 3-7 years to fix this.
+This chapter gave you the probability math:
+Comfortable narrative: 43% China, 57% US, 16.5% war
+
+Reality: 17% China, 83% US, 45% war
+
+We’re heavily favored long-term. But short-term danger tripled.
+I wish this weren’t the case. I could still be wrong.
+How? Two ways:
+They take the pain: Recap banks, stimulate households, clean up the mess
+
+They de-escalate: Negotiate 50-year Taiwan peace, come to table on South China Sea
+
+If these sound ridiculous, you already know where this ends.
+
+What Ten Years Taught Me
+You don’t get credit for being right early. You get mocked for being wrong for years. Then when you’re finally right, everyone acts like it was obvious.
+Being early feels exactly like being wrong. Same drawdowns. Same people questioning you. Same spouse asking “are you sure?”
+The only difference is the ending. And you never know which one you are until years later.
+I could still be wrong. Maybe China extends-and-pretends another 20 years. Maybe AI changes everything in ways I can’t see. Maybe the four countdowns don’t converge.
+But here’s what I’m confident about after ten years:
+They won’t take the pain voluntarily. Every decision point for a decade proved this. Today’s gold restrictions confirm it again.
+The hole keeps getting deeper. What could have been $1T in 2018 could be $5-10T in 2025. The policymaker decision tree isn’t hope—it’s exponentially increasing pain.
+Desperate powers are dangerous. The history is unambiguous. When declining powers face slow loss versus risky gamble, they gamble. Not because they’re irrational—because from their perspective, doing nothing is also choosing to lose.
+This is what the probability math captures. Not prediction. A framework for understanding why short-term risk is higher than people think, even though long-term odds favor us heavily.
+
+The Choice
+I’m not asking you to agree with my exact numbers. Maybe war probability is 30% instead of 45%. Maybe China Mild should be 20% instead of 10%.
+What I’m asking you to accept is that the comfortable narrative is wrong.
+The market is priced for 16.5% war risk and 43% China wins. That’s not because the market did this math. It’s because the market believes the comfortable story.
+You now know the uncomfortable story:
+Potentially $5-10T in banking losses they won’t acknowledge
+
+$1.1T annual bleed they can’t sustain
+
+Capital flight so severe they’re restricting gold sales
+
+Four countdowns converging 2027-2030
+
+Historical pattern screaming that weak powers lash out
+
+Accepting this means positioning differently than everyone around you. Conversations with family about 2027-2030 that feel dramatic. Checking Taiwan election polls. Tracking rare earth timelines. Being the person who talks about war probability while everyone else talks about index fund returns.
+Most people won’t make this choice. Not because they’re dumb. Because it’s uncomfortable. The comfortable narrative lets you sleep and follow the crowd.
+But you didn’t read 200 pages to follow the crowd.
+
+Full Circle
+I started wanting to protect people. That’s what drew me to macro hedging. Protect early-stage employees. Protect endowments from duration risk. Protect investors from risks nobody was pricing.
+Then I discovered China’s banking crisis. Tracked it for a decade. Watched them refuse every opportunity to fix it. And I realized this wasn’t just another underappreciated financial risk like duration or startup equity beta. This was the big one—the risk that changes the probability distribution for everything else. 
+And here’s why everything in this book connects: 
+The same asymmetry that makes us stronger long-term (Chapter 1) creates their desperation short-term. The same banking crisis they won’t fix (Chapter 2) creates the declining power dynamic (Chapter 3) that Heartland geography (Chapter 4) amplifies. Our chaos strategy (Chapter 5) only works if we fix our vulnerabilities (Chapter 6) before their four countdowns converge. So here we are. 
+You now know what I know.
+China can’t win. But that makes them dangerous, not safe.
+The next three years determine the next twenty years.
+The question isn’t whether China loses. It’s how much they take down with them when they do.
+And the question for you is simple: Which probability distribution are you using? The comfortable 16.5% that lets you sleep? Or the dangerous 45% that keeps you positioned?
+I know which one I’m using.
+Position accordingly.
+
+Disclaimers
+Opinions contained in this letter are solely my own and do not represent the views or perspective of any of Rose Technology’s clients, investors, or counterparties. Obviously.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORA
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

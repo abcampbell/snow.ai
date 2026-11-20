@@ -1,0 +1,56 @@
+TITLE: The smallest violin in the world
+SUBTITLE: Won't somebody please think of the spreadsheet jockeys?
+DATE: 2023-02-08
+
+Seven years ago, I left the world’s biggest hedge fund to build a tool for data that could be used by the world’s biggest hedge fund. 
+The "smartest database in the world." 
+At the beginning, she was just a random thought: 
+What if your database was as smart as the OS from Her?
+
+What if it always knew where the data was & could always update it... 
+What if you could ask it to find, visualize and share data with plain natural language? 
+In short: 
+What if you didn’t have to code to work with data?
+
+The idea of @rosedotai first started as a joke; a joke about pain. 
+The kind of pain you get when you don’t know if your book made (or lost) $1m because some "quant" on the other side of the building hasn’t updated the spreadsheet yet. 
+If the dirty secret of tech is existentialism...
+
+...the dirty secret of finance is spreadsheets. 
+You remember spreadsheets right?
+
+That killer app propelling maverick Apple founders Jobs and Woz to new heights?
+
+The idea for spreadsheets is simple. 
+Think of a ledger...
+
+The first electronic spreadsheet - on 1984 hardware - looked a little more green.
+
+There’s even recent evidence that yes, in fact, the oldest known written languages were created in order to make cave wall spreadsheets. 
+Turns out it helped them track when & where prey would be over the course of the year.
+ Seasonal adjustment, 40k BC style...
+
+Now, back to today. 
+Maybe someone recently convinced you to swap your spreadsheets for *code* wrapped nice and tight in Jupyter. 
+Code, by any other name, which does not compute.
+
+So, we go on the hunt for data scientists now that we have all that "big data" that needs science-ing.
+
+Maybe we make a decision, as a firm, to “move things to the cloud.”
+
+Don't forget though: once the scientists reduce all that big data down to something manageable, it goes right back into good old spreadsheets.
+
+Meanwhile, there’s a growing awareness that cleaning, analyzing, and storing data, may be more profitable than trading it.
+
+Recall the stakes are high…
+wsj.com/articles/citad… ","username":"abcampbell","name":"Alexander Campbell","profile_image_url":"","date":"Thu Jan 05 19:28:22 +0000 2023","photos":[{"img_url":"https://pbs.substack.com/media/Flu2t4WWYAABvRf.jpg","link_url":"https://t.co/AtZrbsNOLb","alt_text":null}],"quoted_tweet":{},"reply_count":0,"retweet_count":11,"like_count":63,"impression_count":0,"expanded_url":{},"video_url":null,"video_preview_media_key":null,"belowTheFold":true}" data-component-name="Twitter2ToDOM">
+Everyday, I see the best minds of my generation burn out cleaning up data to make charts. 
+So you ask your classmates from that fancy business school: 
+"What’s your biggest pain?" 
+Answer: Finding good data for our spreadsheets.
+
+How that led to Rose is a story for another day. 
+Until then, we will leave you with this video from @worrydream about a question asked by Alan Kay (of Xerox PARC + Macintosh fame). 
+"What if code was an inhumane interface for working with data?"
+
+And a taste of what we’re building.

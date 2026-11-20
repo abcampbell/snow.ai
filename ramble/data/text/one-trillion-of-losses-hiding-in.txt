@@ -1,0 +1,54 @@
+TITLE: One Trillion of Losses... Hiding in Plain Sight
+SUBTITLE: 
+DATE: 2022-04-26
+
+If you are following markets at the moment,  you might be focused on the pace of the Fed’s tightening, the impact of conflict in Europe on global energy prices and inflation, and the supply chain bullwhip epicentered on Shanghai’s lockdown.
+You would be also missing the bigger picture.  
+That these volatile conditions are happening at the same time as the world’s biggest asset bubble - Chinese real estate - begins to pop..
+The story here is simple.
+Too much money, financing too much investment, via too much debt...
+
+"Fully Priced In”
+~~
+This credit bubble did not occur in a vacuum. By and large it flowed through a combination of public and private real estate property development corporations (“PropCos” for short), many of which are listed publicly in Hong Kong.
+So where are we now? The real estate sector has grown to $5Tr of assets (34% of GDP) and $4Tr of debt. The flood of liquidity and investment into the sector led to a building surge the world has never seen, most of which is still ongoing today. This easy liquidity also led to massive builds in inventories, and lax fiscal and operational efficiency. Margaret Thatcher, had she been alive today, would describe this as “easy money making people lazy”. 
+
+Well, how bad is it actually? Every year, China starts 2.5x as much construction as it completes, meaning the average inventory of a building in development in China is now expected to be 10 years. That means only 10% of projects in construction complete in any one given year.
+
+The Titanic of the Chinese Property Sector
+The “Titanic” of examples in this exact case is a company called Evergrande. Like the Titanic, Evergrande’s backers thought the giant property ship was “too big to fail”. As with the Titanic, Evergrande sank.  
+So what happened?
+Too much money, leading to too much debt, leading to a reliance on short-term non-bank lending channels to make any expansion.
+The waterfall of pain for Evergrande now begins to flow, and after ranking the 200 major property companies in China in October, many defaulted or are in the process of restructuring.  
+#worstPropCos listed in Hong Kong. \n\nMany of the names on this list are already facing credit events (in red), other names that look under pressure (yellow).  \n\nIf we had to guess, the waterfall of pain from here goes:\n\nSunac, R&amp;F, Greenland ","username":"rosedotai","name":"rose","profile_image_url":"","date":"Fri Oct 08 06:42:35 +0000 2021","photos":[{"img_url":"https://pbs.substack.com/media/FBKFVw2UUAUiepM.png","link_url":"https://t.co/oNDeBUw2Fi","alt_text":null}],"quoted_tweet":{},"reply_count":0,"retweet_count":0,"like_count":2,"impression_count":0,"expanded_url":{},"video_url":null,"video_preview_media_key":null,"belowTheFold":true}" data-component-name="Twitter2ToDOM">
+
+Let's take a look at the biggest real estate bubbles in the past 100 years. Just eyeballing the chart, we see that price drawdowns are long and big, taking decades to work its way out, with usual drawdowns at 20-40% from peak prices.
+
+After the Titanic
+After the failure of Evergrande, investors began pricing through losses on the entire sector, and the most levered companies in particular.
+Let's estimate losses worth $500bn to $1Tr of losses on an asset class with $4Tr in debt. These losses will disproportionately hit the $200bn of USD denominated debt taken out by Chinese real estate companies. The problem with debt is someone must pay the debt, be it the company, or be it the banks, and the 2008 Financial Crisis in the US was a good reminder. The Chinese domestic banking system cannot be immune to the aftereffects of a real estate sector collapse. And the weakest banks which lend to PropCods are now significantly underperforming.
+
+At the moment, bonds on many of these companies are trading at 25-75c on the dollar.   The problem with dollar debt is that China can’t print the dollar freely. It can only print RMB which it would have to exchange for dollars. And PropCos borrowed a LOT of dollars.
+
+This summer, we made the call that Evergrande was dead, based on a back of the envelope comparison of the market implied losses from the bond market to the market cap of the entire Evergrande family market capitalization. That’s the group (3333.hk) plus the services company (6666.hk) plus the electric vehicle startup (708.hk) (another funny thing to note is that a property company has an electric vehicle arm, wonder why). When the losses cross the market cap valuation of companies, it’s time to think about restructuring.
+
+This logic, applied to the entire Chinese property sector would suggest the problem has now spread to the entire sector, as losses implied by the bond market are by some measures already bigger than the market cap of the entire sector (~$600bn at this point).  Note these are very rough estimates based off our the restructuring process in China, which is opaque, fluid and currently evolving.
+
+Thus far, policymakers walked a fine line between letting the most levered companies start failing, while beginning to ease monetarily.  Tightening the capital account, ensuring that the domestic liquidity created with that easing ‘stays home’, while cutting the forex deposit reserve requirement of banks and lowering rates marginally. 
+But, like all metrics, it pays to be skeptical about what’s really there.  Looking into the PBoC’s own Balance of Payments there’s an annual $100-$200bn of reported “Errors & Omissions.”
+
+Taking out 10 years of accumulated 'errors’ in the balance of payments (a proxy for more than reported capital flight) takes a full $1.5tr off their reserves.  This is likely an extra conservative estimate, as it’s unlikely *all* of the errors in the BoP were representative of capital flight, but it does give a lower bound.
+
+And for those counting, China is already way below the 10% Money Supply growth that the IMF recommends for emerging market economies with a ‘fixed currency peg’.
+
+What do I do?
+There is a credit bubble in China. The bubble looks to be in the process of being popped, through a combination of regulatory tightening and credit contagion. This is occurring during a period of intensified lockdowns (as Xi’s ‘dynamic covid zero’ lockdown moves from Shanghai to Beijing), and tightening from the Fed. A natural question to ask is: what do I do?
+As rates in the US go up (and bond prices go down), we expect conditions for capital in China to tighten, as those with explicit and implicit dollar liabilities find dollars harder and harder to come by. As individual investors looking to hedge a big macro risk, or as professional investors looking to position for further easing and weakness in China, we turn to the classic portfolio for times of financial or foreign conflict.  
+Gold.
+But rather than buying gold denominated in dollars (and thus ‘go short’ dollars), we recommend buying gold denominated in RMB. Meaning borrow $2000 worth of RMB  and invest in in gold, such that you either neutralize the dollar short in gold (via “Gold in China”) or actually go dollar long, by doubling up the FX leg and borrowing $4000 worth of foreign currency for every ounce of gold (“Double Dollar Gold”).
+These portfolios have provided reasonable protection against chaos since before there was a dollar, and will continue to do so long after the US loses it’s reserve currency status. 
+
+Rose Dashboard Link
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION.

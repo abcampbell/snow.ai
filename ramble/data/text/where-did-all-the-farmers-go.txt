@@ -1,0 +1,69 @@
+TITLE: Where Did All the Farmers Go?
+SUBTITLE: Part 1 - Gaps In the Machine
+DATE: 2024-04-29
+
+Ever read the Grapes of Wrath?
+I ended up starting it the other day on a long layover.  First time.  It’s the story of a family pushed off their farm by a combination of big city banks and modern farming machines.  It contains a lot of parallels to the fear and anxiety we see today regarding the rise of intelligent machines: first the machines came for the farmers, then they came for the software developers, etc.
+Today we’re going to take this question “where did all the farmers go?” and use it as a frame to address concerns from AI doomers, safeteists, and skeptics.  
+We’ll start with a framework for thinking about automation, by thinking through what a job actually is and what it means to automate one.
+Then we’re going to look at some historical examples of jobs that were automated, and see if we can draw any preliminary conclusions from where and how automation has changed the way humans work over the last two thousand years.  
+Next time, in Part 2, we’ll actually dig into the role of agriculture in the economy, and look at what happens to output, prices, and jobs as human labor is automated.  Then, we will extend this analysis to look at the relationship between investment and automation, financial capital and physical capital.
+Finally, in Part 3, we’ll try to bring this analysis up to date, and look at the transition from investing in physical capital to investing in digital and intellectual capital.  We’ll look specifically where the major players are investing for AI, and draw some preliminary conclusions about the likely impact of AI in the world of finance.
+Let’s begin with a simple chart, one that shows agriculture’s share of output and employment in the US over the past 200 years.  You can see a strong decline from around 50% of output and a 1/3rds of employment to less than 1% for either today.
+
+Looking at similar data for the UK, we can see two marked shifts in the decline of agriculture as a proportion of the economy.  The first from 1600-1700 along with the development of ‘secondary industries,’ the second the wave of automation and substitution out of farming starting around 1800.
+
+This decline has been mirrored by a collapse in the share of incomes spent on food.
+
+Real prices for agricultural products have mostly fallen.
+
+While caloric intake per capita, the actual problem being solved, has increased substantially.  
+
+Which tells you most of what you need to know, before we go deeper.   More production per capita, lower prices, and a lower share of output and employment the space.  We will see this pattern repeatedly in our analysis when we get to other sectors of the economy.
+This is the first antidote to the mind virus of despair regarding automation in particular, and economic development in general.   Yes, we have radically fewer farmers, and radically more machines involved in agriculture, and yes there was a painful transition for many individual farmers, but the general impact of investing in capital in agriculture has been radically higher output, at radically lower prices.
+We’ve covered this ground before.  There’s a meme going around that what’s going on with AI should make you scared.   At its core the idea says that machines have gotten much smarter and capable.  So good, so fast, that there may be no limit to their intelligence.  Combine that with the *chance* that they will get ‘mis-aligned’ and…BOOM.  Game over humanity.  These days, this meme is positively faddish, fighting for your attention, vying for credence in the halls of power.
+We call these folks ‘doomers,’ for lack of a better word.  They think this stuff is existential, and given the stakes, argue that we should take radical action to halt and even reverse the development of superintelligence.  Just don’t ask them to actually enumerate how they would do this without bringing us back to the stone age.
+
+This core anxiety - of superintelligence run amok with no constraints - then serves as intellectual scaffolding for a host of other, less existential and much more reasonable worries about AI:  Automation of labor leading to inequality and social unrest.  AI romantic partners contributing to crashing birth rates.  Biases in algorithms that prioritize the distribution of money and credit in society.  Social credit systems.  Flame throwing robot dogs.
+
+Note that (ironically) a lot of these things are already happening.  Just in ways where the change feels linear (aka slow).  As opposed to the exponential (aka rapid) increase in bad outcomes by those that want to slow down, regulate or ‘Pause AI.  Some call this latter group “safetiests” or “deccelerationists.”  Folks that have totally fair worries about the rate of change humans and society are about to experience with the rise of intelligent machines.  Enough worry to take some sort of anticipatory corrective slowing action, potentially even ‘pausing AI.’
+Personally, I think that where you fall on this spectrum, from doomer to decel, basically depends on whether you view machines as (potentially) omniscient.  If you place faith in the idea that machines are converging to perfection, then it stands to reason that perfect beings might see us as expendable someday.
+Whereas the only thing I know for sure from two decades of using machines to trade markets is that they break all the time.   Machines, like any abstraction, don’t break in their design, they break in their application. Application to a real world with more complexity and interactivity than initially envisioned by their creators.  My personal experience has taught me not only how often these machines break, but that they are guaranteed to break.  This experience makes me skeptical of the notion of perfect machines and essentially immune to fears of AI doom.   For a longer version of this argument, see my piece from March.
+
+This combination of pessimism about the perfection of machines, paired with optimism about the long run impacts of this process, classifies me into what they call an ‘accelerationist.’   Aka a person who thinks that these cycles of scientific breakthrough → investment in application → automation of labor is one of, if not the, central pillar around which the modern liberal, market-based world is built.  
+Put another way,  you could think of accelerationism as a belief that the core reason ‘capitalism works’ better than other systems is it’s ability to harness this process of automation in a way that, over long periods of time, dramatically raises living standards for…humans. 
+Further, the dissonance between these abstractions and the real world are all the places where we need humans.   What I like to call the ‘gaps in the machine.’  Gaps between the parts of the production process that are fully automated, and the real world conditions required to make them run and keep them running.  
+First we needed farmers to plant the seeds, then it was farmers to drive the plow, then farmers to refuel the tractor, now it’s farmers to fix the combine and license the John Deere operating system running it.  There may be less farmers and a lot more machines, but the role of the farmer has evolved more and more to interface with these machines.
+
+In fact, if you think about it long enough, you realize that these ‘gaps in the machine’ actually already have a name…’jobs!’
+And so, my short answer to the question of “Where did all the farmers go?” is actually the same as my answer to the question of…where did all the lamplighters go, or papyrus gatherers, or stage-coach drivers, or telephone switchboard operators, or bank tellers go.  The problems underneath these jobs didn’t disappear, we just found more productive ways to solve them, usually with the development of a new tool/machine, along with…a new kind of job.  The tables below walk through the kinds of jobs being automated over the past 2000 years.
+
+Again note how specific jobs may disappear but the underlying problems those jobs are solving for (food, clothing, housing, transportation, communication etc) never die.
+
+For each of these you can imagine the transition process whereby the amount of labor required for production decreases with each evolution.  Each new tool leading to an increase in production, along with a decrease in labor input.  
+
+Couple things become clear here just from these examples:
+None of the underlying needs were eliminated via automation.  In each case a job was eliminated, but a part of the economy was not.
+
+You can kind of throw all these jobs into one of two buckets.  Tools that helped automate jobs in the physical world, and tools that helped obviate jobs in the non-physical world, the world of information (broadly speaking, not just tech).  
+Examples: Papyrus gatherers, Scribes, Vellum producers, Pony Express riders, Bank tellers, heck even Travel agents and Retail cashiers by and large involve moving around information.  Remember this, it will become important later when we start looking at where the automation is going systemically, and how that all got financed.
+
+Thinking in terms of sectors vs jobs helps highlights the limits of automation.  Farmers still exist, there’s just a lot less of them.  Lamplighters don’t exist anymore, but folks who make light bulbs and ensure the power is on still do.  Think of the US Federal Government and all that it does.  Now assume you write down literally every job.  If we snapped our fingers and we had the technology to automate every single one of those jobs (save the top one), do you think Biden would fire 75% of his staff?  Why not?
+
+There’s a meme going around that the age of AI will bring a post-scarcity age upon us.  To this I would say think about these examples of automation.  Even in places where the physical parts of the enterprise were entirely automated, did that drive costs down to zero?  Why not?  
+First you need to buy the machine, and finance its purchase.
+
+Then you need to install the machine, and get it running.
+
+Then you need to connect the machine to the other parts of your business, whether or not their humans (or machines) are ready to talk to your machine in the way it needs to be spoken to.
+
+Then think about the raw materials that go into your machine.  Can society make those for free?  Probably not, since the cost of the inputs, machines, and humans that go into providing those raw materials is also non-zero.
+
+Ok now imagine your machine has no physical pieces. Pure cloud, enterprise SaaS with no SG&A!  It’s still going to cost electricity to run the machine, along with the marginal (albeit low) cost of compute and cooling the machine that does all your working for you.
+
+Meaning there are no worlds where everything is free.   At it’s most basic, energy will never be free, and so all the things that require energy will inevitably contain cost.  As so much of automation is replacing human labor with energy, you can see how big an objection this is to this notion.   The idea of infinite production at zero cost is actually just the inverse of Yud’s dillema (imagine a perfect machine, isn’t it perfectly dangerous?!?) but as it’s applied to costs (imagine free stuff, wouldn’t that allow us to make other free stuff?!?)  
+
+These preliminary conclusions should give you some peace.  Jobs have been getting automated since the first hand-axe was crafted.  Yet, somehow we always find new stuff for people to do.  Somewhere along the ‘gaps in the machine.’ Next time we’ll talk about how this transition process happens, what it does to demand and supply, and why you should be excited, not scared, about the coming of the ‘singularity.’
+Till next time…
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.

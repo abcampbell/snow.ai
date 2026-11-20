@@ -1,0 +1,107 @@
+TITLE: Time for a Bottom in Chinese Stocks?
+SUBTITLE: Hint: Wait for the Bailout in...3...2...1...
+DATE: 2024-01-22
+
+A lot of smart people are trying to pick the bottom in Chinese stocks these days.
+I get the sentiment.  
+
+When two things that usually move together diverge, we tend to want to sell the thing that’s up and buy the thing that’s down.
+Based on a naive sense of relative value, it makes a lot of sense.  
+
+Price to Book of ~2 used to be common.
+If you are reading this, you probably know I'm already short the financials.  
+Meaning I’ve sold shares in the stocks of many of what I see as the most negatively exposed financial institutions to the popping of the Chinese property bubble.   
+Partially as a hedge to a broader portfolio, and partially as an ‘alpha view,’ aka something I expect to outperform the market. 
+Thus far it has.
+
+What you may not know is that for a time I was also professionally “long China” as well.  
+Not just in the indirect, bank-shot way that anyone who was professionally long energy, agriculture or physical commodities from 2005-2020 was long China*. But in the actual sense that people paid me to manage their money, and with some of it , we went out and bought Chinese stocks. 
+
+If you invest in these industries, you are investing to sell to China.
+*Which - as an aside - we can actually backtest.  By looking at whether our indicators for economic growth in China do a good job trading the underlying commodity long/short.  At least for copper, in spite of some serious drawdowns in the strategy return, the data bears this linkage out.
+
+Coming out of Bridgewater Associates, my instinct was to make everything... complicated.  We couldn't just short the banks and property companies, we needed to “hedge out the beta.”  Which meant that against our short, we went out and bought some Chinese stocks.  We wanted to make a bearish bet on the China’s past (it’s broken credit pipes), not it’s future (the stocks).  
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Specifically, we wanted to make a long play on the Chinese consumer to offset our bearish view on Chinese banks.  As hundreds of millions of families earned their way out of poverty, there aught be some investable growth in the kind of middle class consumption we saw in the west: Energy, Financials, Technology, Cell phones, Cars? Right?   
+Not so much.  
+
+While Petro China and China Mobile finally started to perform last year, it was years after being delisted from US exchanges and put on various ‘no invest’ lists.  Much too late to help our investors.
+
+To find our financial longs, we bought ICBC and the other banks that came out on top of our rankings.
+
+Rankings which looked at the bank’s fundamental balance sheets and the mark-to-market of their books according to public market proxies.  We published our results, and tried (where possible) to short the worst ones, and buy the best.  Good in principle.
+
+So, what went into the rest of that “Long Chinese Equity Beta” basket?
+Well, we also needed tech. Specifically the kind of ubiquitous, monopolistic consumer facing tech which had made trillion dollar companies in the West.
+First up, obviously there's Tencent, which we happily invested in, all the way up. 
+Baidu a bit too, along with Xiaomi.  
+Funny story, I actually toured the Xiaomi home offices back in 2018 on “Singles Day.”  They had a big digital sign up with how much sales they had that day prominently displayed as we came in.   
+They said it was a live tracker.  Pretty impressive numbers.  
+We toured the facilities, including their "Apple store"-esque retail outlet, which true to it's name, was set in a minimalist wood and metal decor in a sea of white.  
+
+They showed me their latest phone.  Might as well have been an iPhone, though people were using it to make payments and connect in ways through WeChat the west hadn't really picked up on yet.  The underlying theory behind "Twitter is a bank" was really just me repackaging what anyone who used WeChat since then already knew.  
+
+On the way out we past by their entrance again and on the way someone remarked to the group: "oh interesting, the live count hasn't changed...ha"  
+We had been there 2 hours.
+The numbers hadn’t changed.
+Anyway, I didn't end up buying the phone, but I did buy a Bluetooth speaker and the stock.
+Since then?  Well you know the story.  “Tall Poppy Syndrome” applies to industries too apparently, not just individuals.
+
+Why did I buy Xiaomi stock even after the sign? 
+Well, my experience shorting Ali Baba back in 2015 had taught me that financial statements are dealt with a bit differently in China.
+At the time the SEC had just launched an investigation of their financial statements, finding issues related to booking their shipping costs as an investment (in this case in a subsidiary delivery service which they owned through a somewhat complex web of boxes and arrows).
+
+I forget the exact numbers, so pls don't sue me for this, but something like huge chunk of their profit just disappeared when instead of expensing for shipping costs as an expense, you booked it as an investment, in a subsidiary.  
+
+Anyway, turns out, nobody cared.  And in the end, Jack was probably right!
+Though, when was the last time you heard about their $30bn logistics subsidiary?
+
+In retrospect another example of me being too closed minded.
+So imagine my surprise when, a couple of years later, Jack does it again, turning Ali Pay into Ant financial!
+Which is when I learned the other side of investing in Chinese stocks.  That the lax Chinese regulatory and accounting environment had a second order consequences in terms of the creativity of Chinese entrepreneurs.  
+Sometimes you can fake it until you make it.  Remember Luckin?
+Well, turns out there’s a real coffee shop underneath the fraud.  
+
+If the upside to that entrepreneurial environment is creativity, the downside is well, fraud.  If you make it so much easier to run a business fraudulently, surprise surprise you get a lot more fraud.  Often the kind which is hard to pay back. Often the kind that's hard to fix without taking out the head honcho.
+But in exchange for this 'we look the other way and you keep doing what you are doing unprofitably for as long as you want" ethos the bargain is that, yes, if you use this system to acquire sufficient wealth and power that you threaten the state, well you are the Tall Poppy.
+Jack then finds this out the hard way when the biggest IPO of all time is scuttled. 
+
+Regulators proceed to start regulating the business.  Probably for the best as they had quietly created the largest money market in the world, essentially without capitalization!  In the process helping to channel household deposits into the very toxic assets (WMPs) which we saw as the weakest link in the financial system. 
+
+Along with regulation and caps on their growth, came a 75% haircut to early investors.
+
+Funny enough Ali Baba is a poster child for the final risk of investinging in China, conflict.  This time as victim to the escalation in conflict between the US and China.
+Claiming the US export ban as a material cause, their cloud spin out was canceled.
+So where does this story leave us?
+Should we invest in Chinese stocks or not Campbell?
+Well, the story breaksdown in three parts.
+There’s a lot of unknowns investing in China as a Westerner.  The accounting is different and occasionally fraudulent, the regulatory environment is opaque and constantly shifting, inside and out of the country in ways that make investing fraught.  There is a tremendous upside in the Chinese people and their development and application of technology to build a better world.  Don’t short the Chinese worker, or the Chinese entrepreneur, but also, try not to trust the books too much.
+
+While the underlying process of Chinese economic growth remains in tact, the engine that financed it might be in deep trouble. Urbanization, industrialization and exporting to international markets is by and large still the play, but goods trade peaked mid last year.
+
+Further, the financial engine underneath machine appears close to collapse.  Stats agencies may be loathe to report falling home prices, we can see from housing starts that the residential property market is still deeply broken.
+
+More timely and independent measures corroborate the weakness in home prices.
+
+Weak prices and waves of defaults has dragged down property developer stocks, and, to a lesser extent, the banks that have been financing them.  
+
+After Lehman, I vowed never (again) to get caught long in front of some unsustainable credit event.  After learning to look at history, the patterns became clear.  In order to have a bottom in a credit event, you need a real bailout.  Usually to get a bailout you need bank failures. 
+
+Meaning our criteria for going long Chinese stocks from a credit bubble perspective was actually surprisingly easy: 
+Xi bails out Evergrande
+
+Xi rolls out Trouble Asset Relief Program (for distressed assets) and a Capital Purchase Plan (for ALL banks, so as to recapitalize all of them without generating signaling problems).
+
+Lastly, in the meantime, it’s certainty possible that we will see a relief rally in Chinese equities! 
+
+Given a lot of the recent weakness in Chinese stocks actually comes from outflows by foreign investors, we could see a pop in prices as these selling flows slow down.  In the biz we call these ‘capitulation flows,’ and they are often profitable to trade against.
+
+Though note, relatively valuation hasn’t been a great trading signal in the recent past.
+
+Buyer beware.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION 
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

@@ -1,0 +1,58 @@
+TITLE: Can You Feel the Acceleration?
+SUBTITLE: Disconnected Thoughts on Week 1 of the New Era
+DATE: 2025-01-22
+
+Occasionally, we'll use this space to cover multiple smaller topics that are particularly timely or don't warrant an entire post. The idea is to lower the barrier to posting and get more ideas out while they're relevant. In today's ramble, we're covering all the potential topics from this week's poll.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Acceleration is Real
+This week DeepSeek released an open source LLM that beat many of the leading closed source models.  
+
+Confirming our call from the beginning of 2024 that both open source and China would catch up with OpenAI.
+
+Destroying doomers that were convinced that China was ready to pause AI after reading one too many LessWrong screeds.  
+
+Meanwhile Sama and the folks over at OpenAI announced $500bn partnership with Oracle and Softbank to build ‘the biggest computer ever.’  The acceleration is real.
+
+TrumpCoin
+The incoming president just launched a meme coin. Setting aside the financial analysis for now, let's focus on what this means for the broader world.
+Robert Shiller once proposed we should be able to hedge local real estate value by selling futures against local property prices. This concept of managing individual risk extends naturally to personal equity - imagine an up-and-coming athlete or musician selling 10% of their future earnings, essentially a modern take on the Bowie Bonds from the 90s but with a venture capital twist.
+While it's easy to snark at TrumpCoin - and yes, it creates concerning avenues for foreign money to influence politicians - the broader concept of democratizing the "right to issue paper" is compelling.
+We already do this partially through mortgages, where debt markets price your borrowing capacity based on income and assets. But why stop there? Why aren't individuals able to sell equity in themselves?
+Some have tried through Income Sharing Agreements (ISAs) in coding bootcamps - students trade future earnings for skills. It's reasonable in theory but has faced implementation challenges.
+When you look at how crypto is challenging traditional systems, much of it makes sense and questions structures established a century ago. Financial literacy and information access are exponentially better than in the 1960s when most SEC regulations were created.
+Anyone who's filed for an IPO or launched a private vehicle bears the scars. I certainly do - I once received a Wells Notice running a $700k hedge fund that had only marketed to accredited investors, simply because outsourced compliance checked the wrong box about retail investors.
+Look at what Microstrategy is doing in public markets - essentially running an open-ended crypto volatility arbitrage fund on listed exchanges. Compare that to the crypto world, where people understand risk and conduct their own due diligence. Terms like "rug-pull" represent a new financial vocabulary, translating investor guidelines into memes digestible by teenagers investing their first dollars on Coinbase or Robinhood.
+The GameStop revolution showed we can treat people like adults instead of infantilizing non-rich investors. That's what TrumpCoin represents, regardless of its eventual value or Trump's potential billions. Maybe it's time to question why we need Sequoia and Andreessen if you can sell pieces of your idea directly to people who understand the risks. Why should the state prevent consensual transactions between informed parties?
+RedNote vs TikTok
+“TikTok is dead. Long live TikTok.”
+Perhaps there's a workable deal here - one that protects the legitimate economic interests of the app's developers while addressing the asymmetrical media control both countries seem to want. Let's be honest: no one seriously argues Twitter should be allowed in China, except propagandists hiding behind convenient definitions of 'legality.'
+Meanwhile, it's encouraging to see Americans flocking to RedNote, practicing their Mandarin, and learning about life on the other side. While some observations are overblown (funny how no one mentions Chinese housing costs are triple America's relative to income), the cultural exchange itself is valuable. We need regular Americans talking to regular Chinese, reaching across ideological, national, and linguistic divides to build bridges.
+
+I believed in this so strongly it became my Oxford thesis topic. Cognitive dissonance keeps us - and our ideas - apart, but engaging with different viewpoints builds understanding. When we avoid interaction, or are segregated from it, we drift toward ideological extremes that breed conflict. Understanding our common humanity through direct contact slowly, inexorably binds us together. This, by the way, is the central theme of my favorite book, "Non-Zero."
+
+A Complete Unknown
+
+I caught this film last weekend. Despite my skepticism, Chalamet nailed it. He captured Bob Dylan's "60s twink" vibe (as my partner puts it) and breathed new life into the songs by recontextualizing them.
+I find myself drawing wisdom from films like this. While there aren't obvious parallels between the world's greatest songwriter and a guy rejected from YC four (or is it five?) times, at some level of abstraction, we're both entrepreneurs. Every artist is an entrepreneur and every entrepreneur an artist.
+These biopics often explore the personality type needed for extraordinary success. Usually, there's an essential flaw that's inseparable from their genius - both elevating and destroying them. Whether it's Ray Charles, Johnny Cash, or James Brown, the arc remains similar: tough childhood, burning ambition, and an uncanny ability to create exactly what the world craved in that moment.
+Their downfall - whether through alcohol, relationships, or drugs (often all three, in that order) - typically stems from the same traits driving their success. The more wholesome films include a redemption arc: aging artists confronting demons, repairing relationships, making amends, finding peace.
+This usually coincides with their art losing its edge.
+Even Dylan wasn't immune, temporarily losing his creative spark in the 70s/80s (?), as he mentioned in an interview back in 2004.
+
+Which raises the question: must it be this way? 
+While "A Complete Unknown" doesn't dwell on his downfall, it explores his seemingly extractive relationships between women and his art.  First providing songs Joan Baez he can write but not yet perform, while he draws emotional, residential, and financial support from others in return.  
+Long Eggs
+Bird flu is back with confirmed cases.
+
+Expect significant price increases in eggs and beef. Add the 25% tariffs on Canada and Mexico, and we're looking at noticeable consumer price inflation. Consider making major purchases (vehicles, appliances, other consumer durables) before prices climb further.
+
+Whether we get a TikTok deal or Taiwan resolution (one can hope), the prospect of 100% tariffs on Chinese goods should make us all think: what makes sense to buy preemptively? This sentiment alone could drive inflation higher in early 2024, even before tariffs hit. A resolution in Ukraine or Gaza might offset this through lower energy and shipping costs, but that's a complex bet to make.
+The deportation situation's economic impact remains unclear. Population contraction should reduce demand, but these workers also provide essential services in agriculture, transportation, and delivery. The clearest effect may be cooling real estate markets in cities flooded with new arrivals. Anyone who tried booking a NYC hotel during the immigration surge and Airbnb ban knows exactly what I mean.
+
+Till next time.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. As noted the views in this portfolio are not intended to maximize return and any use in a portfolio ought be considered in the broader context of your portfolio and investment needs and obligations. Please consult with a registered investment advisor if you would like financial advice, that’s their job.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

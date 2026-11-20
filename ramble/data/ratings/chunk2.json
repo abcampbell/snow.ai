@@ -1,0 +1,1071 @@
+[
+ {
+  "slug": "acceleration-is-about-time",
+  "title": "Acceleration is about Time",
+  "date": "2023-09-11",
+  "summary": "Argues progress compounds convexly so linear, backward-looking estimates always undershoot; likens humans estimating the singularity to an options trader hedging delta, and ends with a swipe at boomer-led institutions.",
+  "themes": [
+   "ai-singularity",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 2,
+   "timelessness": 5
+  },
+  "overall": 4,
+  "best_line": "if you only use the past as a measure, you will always undershoot.",
+  "improve": [
+   "Lead with the delta-hedging / convexity insight; the opening tour of room-temperature superconductors, cancer cures and vampires is a long wind-up that dilutes it.",
+   "The closing claim that institutions need younger leaders is asserted with no evidence or link to the compounding argument."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "there-are-bonds-in-the-stocks",
+  "title": "There are Bonds in the Stocks",
+  "date": "2023-10-04",
+  "summary": "Revisits the 2020 'too many bonds, not enough gold' call: long-duration equities, homes and bank books all embed rate exposure, and the stock-bond hedge breaks when inflation rather than growth drives markets.",
+  "themes": [
+   "rates-curve",
+   "macro-regime",
+   "portfolio-construction"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "many stocks actually had more exposure to interest rates than bonds.",
+  "improve": [
+   "Quantify the claim: show estimated equity duration for the index vs growth vs value instead of asserting it.",
+   "The Canada/Europe/Japan section is a list of worries with no data or timing; either support or cut it."
+  ],
+  "falsifiable_calls": [
+   "Peripheral European sovereigns will diverge in creditworthiness as debt service rises.",
+   "Stock-bond correlation will stay positive in an inflationary regime, hurting 60/40.",
+   "Smaller banks with unhedged duration face continued stress (credit spreads widening)."
+  ],
+  "return_to": true,
+  "return_reason": "'Bonds in the stocks/homes/banks' is a recurring pillar of his framework and is testable against the later rate path."
+ },
+ {
+  "slug": "why-cant-china-bail-out-its-banks",
+  "title": "Why Can't China Bail Out It's Banks?",
+  "date": "2023-10-15",
+  "summary": "Uses the odd Shengjing Bank / Evergrande saga (bailed out by the firm it later sued) as evidence that China may lack the capacity, not the will, to resolve tens or hundreds of failed banks.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Ever heard of someone suing the firm that bailed them out?",
+  "improve": [
+   "The 'can't, not won't' conclusion is a leap from one anecdotal chain; add evidence on institutional capacity (resolution cases per year, AMC balance sheets).",
+   "Opaque-buyer insinuations are suggestive but unsourced; link filings or ownership records."
+  ],
+  "falsifiable_calls": [
+   "Further runs on small Chinese banks with Evergrande exposure.",
+   "Long left tail of small-bank failures that Beijing cannot process."
+  ],
+  "return_to": true,
+  "return_reason": "A good thread to update: how many small banks were actually merged or resolved afterward."
+ },
+ {
+  "slug": "historys-greatest-monsters",
+  "title": "History's Greatest Monsters",
+  "date": "2023-10-17",
+  "summary": "Satirical argument that if AI doomers believe their own extinction math (quadrillions of future lives), they are building history's greatest atrocity and should logically go full Luddite; notes prediction-market incoherence on AI risk.",
+  "themes": [
+   "ai-doom",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 2,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "How can someone believe the probably of AI doom - p(doom) - is more than 1% and still work in AI?",
+  "improve": [
+   "The population-expectation math (10^39 lives) is a gimmick; the real argument is the cognitive-dissonance point, which gets one thin section. Cut the stunt, expand the dissonance case with named examples.",
+   "Ad hominem framing weakens the rebuttal; engage the best steelman before pivoting to motives."
+  ],
+  "falsifiable_calls": [
+   "Prediction markets on AI doom are internally incoherent (2030 risk priced above 2031).",
+   "Markets implied FOOM ~3 years out."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "china-is-selling-treasuries",
+  "title": "China is Selling Treasuries",
+  "date": "2023-10-19",
+  "summary": "Claims China's reserve diversification away from Treasuries (post Russia sanctions) is under way, tying it to RMB defense, property-debt stress and a bond-inflation-conflict regime where gold beats bonds.",
+  "themes": [
+   "china",
+   "gold",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "too many bonds, not enough gold.",
+  "improve": [
+   "Headline claim rests on official-holdings data he concedes is distorted by valuation and Belgium/Luxembourg custody; show custody-adjusted flows.",
+   "Chains of conditionals (Powell to 7%, mortgage rates over 10%) are presented as consequences rather than scenarios with probabilities."
+  ],
+  "falsifiable_calls": [
+   "If conflict widens to Iran, oil and inflation force Powell toward 7% and mortgage rates above 10%.",
+   "China/Russia reserve rotation from US bonds into gold will continue."
+  ],
+  "return_to": true,
+  "return_reason": "Reserve rotation into gold is directly checkable against later TIC data and central-bank gold purchases."
+ },
+ {
+  "slug": "two-visions-of-the-singularity",
+  "title": "Two Visions of the Singularity",
+  "date": "2023-11-03",
+  "summary": "Maps a centralization-vs-decentralization tension in both crypto and AI (scale economies, interfaces, regulation) in the wake of Biden's AI executive order, arguing centralization tends to be self-limiting over time.",
+  "themes": [
+   "ai-singularity",
+   "crypto",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 4,
+   "evidence": 3,
+   "actionability": 2,
+   "timelessness": 4
+  },
+  "overall": 4,
+  "best_line": "Life…uh, finds a way",
+  "improve": [
+   "Reads like a transcribed conference talk: tighten into one argument and drop the throat-clearing about the executive order, which he admits he only read 20% of.",
+   "The Habsburg ending is a metaphor, not evidence; one concrete example of an AI or crypto market de-centralizing would help."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "conflict-is-inflationary",
+  "title": "Conflict is Inflationary",
+  "date": "2023-12-25",
+  "summary": "Core thesis post: major inflations track great-power conflict via simultaneous demand (money printing) and supply (chokepoint) shocks; concludes buy gold, sell bonds, and argues the US Navy is overstretched.",
+  "themes": [
+   "conflict-inflation",
+   "gold",
+   "oil-hormuz"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "Conflict tends to be bullish for the price of gold, energy and other basic commodities.",
+  "improve": [
+   "The 300-year inflation dataset is the heart of the claim but appears only as fragments; show the systematic result (e.g. inflation vs conflict episodes) in one chart.",
+   "The second half is a running news montage (Houthis, Guyana, cables); organize it into a scoreboard of chokepoints with price impacts."
+  ],
+  "falsifiable_calls": [
+   "Buy gold, sell government bonds as markets price multiple rate cuts.",
+   "Iran/Houthi escalation could extend to Hormuz with large energy and shipping inflation.",
+   "US will need many more ships and steel capacity."
+  ],
+  "return_to": true,
+  "return_reason": "Foundational principle he reuses constantly; worth a formal scorecard of how gold, bonds and oil actually performed."
+ },
+ {
+  "slug": "24-views-for-2024",
+  "title": "24 Views for 2024",
+  "date": "2024-01-05",
+  "summary": "Annual list of 24 predictions with the positions he holds and how each will be tracked, spanning China, gold, conflict, rates, banks, AI and crypto.",
+  "themes": [
+   "macro-regime",
+   "portfolio-construction",
+   "gold",
+   "china"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 7,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "the track is the track, but tell me how you generated it?",
+  "improve": [
+   "Promises objective measures per view but most views (TikTok ban, Trump return aside) lack explicit thresholds or dates; add resolution criteria for each.",
+   "Several items are links to prior posts; give each a one-line mechanism and confidence level so the list can be scored."
+  ],
+  "falsifiable_calls": [
+   "Evergrande-type pain spreads to Chinese trusts and banks.",
+   "Gold in China outperforms.",
+   "US bans TikTok; Trump returns; BTFP gets renewed."
+  ],
+  "return_to": true,
+  "return_reason": "A ready-made scorecard of 24 calls to grade a year later; a hit-rate review would be the highest-value follow-up."
+ },
+ {
+  "slug": "time-for-a-bottom-in-chinese-stocks",
+  "title": "Time for a Bottom in Chinese Stocks?",
+  "date": "2024-01-22",
+  "summary": "Argues against bottom-picking Chinese stocks until policymakers deliver a real bailout (Evergrande rescue, TARP-style asset purchases, bank recap), drawing on his own past losses and anecdotes about Chinese accounting.",
+  "themes": [
+   "china",
+   "positioning-flows"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "In order to have a bottom in a credit event, you need a real bailout.",
+  "improve": [
+   "The long Xiaomi/Alibaba anecdotes bury the actual criteria; state the three bottoming conditions first.",
+   "Relative-valuation and flow claims (foreign outflows, capitulation) have no supporting numbers in the text."
+  ],
+  "falsifiable_calls": [
+   "No durable bottom until Xi bails out Evergrande and rolls out TARP/CPP-style programs.",
+   "A relief rally on slowing foreign outflows is possible but a trade, not a bottom."
+  ],
+  "return_to": true,
+  "return_reason": "Explicit bottoming criteria that can be checked against later Chinese policy moves and equity performance."
+ },
+ {
+  "slug": "evergrande-is-dead",
+  "title": "Evergrande is Dead",
+  "date": "2024-01-29",
+  "summary": "Marks the Hong Kong liquidation order as the end of 'extend and pretend', arguing it sets precedent forcing lenders to recognize losses across ~50 distressed developers and a banking system with an implausible 1.6% NPL ratio.",
+  "themes": [
+   "china",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Extend and pretend only works when you don't let people fail.",
+  "improve": [
+   "The self-graded track record (21 names, 4 delisted, 4 alive) is vague and survivorship-prone; publish the table with dates and returns.",
+   "'Game over' overstates; give a timeline or trigger for when banks must recognize the losses."
+  ],
+  "falsifiable_calls": [
+   "Liquidation precedent forces lenders to write down Evergrande debt and scrutinize other property debt.",
+   "About 90% of the pain remains across 50 developers; most will require bank losses.",
+   "Chinese USD property bond rally will reverse."
+  ],
+  "return_to": true,
+  "return_reason": "Strong, specific call (banks must book losses); check whether recognition actually occurred or extend-and-pretend continued."
+ },
+ {
+  "slug": "nevskys-choice",
+  "title": "Nevsky's Choice",
+  "date": "2024-02-19",
+  "summary": "Uses Alexander Nevsky's choice between West and East as a lens on Putin's Tucker Carlson interview, then offers a five-point West strategy (negotiate on Ukraine, re-arm Europe, build steel, watch Kinmen, do not pause AI).",
+  "themes": [
+   "conflict-inflation",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "If you don't understand the process that creates a Putin, or a Xi for that matter, you will fail to predict their behavior",
+  "improve": [
+   "Retells Putin's narrative at length without marking fact vs claim; add a short fact-check so readers can separate understanding from endorsement.",
+   "Policy prescriptions are admitted amateur; tie each to a market implication or drop them."
+  ],
+  "falsifiable_calls": [
+   "Sweden's NATO accession in Feb 2024 (he is short at ~60%).",
+   "Kinmen is the next escalation point in Taiwan.",
+   "Ukraine will not regain 1991 borders without a large Western commitment."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "gold-in-china",
+  "title": "Gold in China",
+  "date": "2024-03-10",
+  "summary": "Restates and updates the 2017 'Gold in China' thesis: the Chinese credit bubble's release valve is gold priced in CNY; supported by shadow-banking mechanics, ETF flows, central-bank buying and cheap gold vol.",
+  "themes": [
+   "gold",
+   "china",
+   "commodities-supply"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 8,
+   "clarity": 6,
+   "evidence": 7,
+   "actionability": 8,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "marginal demand for gold has shifted from the West to the East.",
+  "improve": [
+   "Show the trade's actual P&L (borrow CNY, long gold, including FX leg) and drawdowns; seven years of 'ugh' deserves a scorecard.",
+   "The 'less than 200 people' ratio is hard to follow; replace with one clear chart of deposits/WMPs needed to absorb mine supply."
+  ],
+  "falsifiable_calls": [
+   "Gold priced in China keeps outperforming.",
+   "Gold's decoupling from US real yields persists due to non-dollar and central-bank demand.",
+   "Gold/silver call options are cheap relative to fundamental vol."
+  ],
+  "return_to": true,
+  "return_reason": "A multi-year flagship trade; an honest P&L and thesis update against later gold moves is warranted."
+ },
+ {
+  "slug": "dont-trust-machines",
+  "title": "Don't Trust Machines",
+  "date": "2024-03-17",
+  "summary": "Argues all sufficiently complex machines eventually fail (Godel, Turing, Wolfram) and that such 'gaps in the machine' are jobs, offering a toy 'Campbell's Completeness Conjecture' that failure odds approach 1.",
+  "themes": [
+   "ai-doom",
+   "data-tools"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Any and all sufficiently complex machines will eventually, and inevitably, break.",
+  "improve": [
+   "The formal appendix is just (1-p)^n with independent failures; the leap to 'doom is unlikely' does not follow since catastrophe need not require a perfect machine. Address correlated failures and why imperfect-but-powerful AI still could be dangerous.",
+   "Mixing theorems, TSA anecdotes and the Boeing/United shorts makes the thesis diffuse; separate the trade from the philosophy."
+  ],
+  "falsifiable_calls": [
+   "Short United and add to Boeing shorts as 'machine is down' cases."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "silver-in-india",
+  "title": "Silver in India",
+  "date": "2024-04-12",
+  "summary": "A rhyming poem extending 'Gold in China' to silver in India: borrow CNY and buy real assets in countries with weak paper money, with a solar-silver demand aside.",
+  "themes": [
+   "commodities-supply",
+   "gold",
+   "china"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 4,
+   "clarity": 3,
+   "evidence": 3,
+   "actionability": 2,
+   "timelessness": 3
+  },
+  "overall": 3,
+  "best_line": "Buy something real",
+  "improve": [
+   "The verse form hides a potentially useful trade (INR/silver); state the thesis and numbers in plain prose.",
+   "Key evidence is only linked (dashboards), not shown; embed the Indian import and local returns charts."
+  ],
+  "falsifiable_calls": [
+   "Silver in India (funded in weak currencies) will outperform."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "where-is-the-market-for-us-housing",
+  "title": "Where is the market for US housing going?",
+  "date": "2024-04-13",
+  "summary": "Asks how rate-sensitive US home prices are, revisits his 2016 'stop buying SF real estate' call (right locally, wrong nationally), and previews a housing demand/supply indicator.",
+  "themes": [
+   "rates-curve",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 4
+  },
+  "overall": 4,
+  "best_line": "Yet another asset I should have lifted the bid on.",
+  "improve": [
+   "The promised backtested indicator is described but not shown or concluded; publish the signal and its current reading.",
+   "End with a call; the post trails off into 'let us know where you think we are in the cycle'."
+  ],
+  "falsifiable_calls": [
+   "Higher rates will eventually flow through to weaker demand and lower US home prices."
+  ],
+  "return_to": true,
+  "return_reason": "He promised a follow-up with the methodology and a deeper housing dive."
+ },
+ {
+  "slug": "freedom-of-navigation",
+  "title": "Freedom of Navigation",
+  "date": "2024-04-15",
+  "summary": "Traces freedom of navigation from Mare Liberum to the US Navy, uses Iran's strike on Israel to sketch an axis strategy of commodity control and chokepoints, and reads the oil curve for Hormuz risk.",
+  "themes": [
+   "oil-hormuz",
+   "conflict-inflation",
+   "commodities-supply"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Turns out there's no gold in your bitcoin when you need it!",
+  "improve": [
+   "Structure sprawls from history to news to curve-reading; split the oil-curve analysis (backwardation, skew, term structure) into its own tactical note.",
+   "Give a probability or trigger for Hormuz disruption and the price response, instead of 'if escalation then up'."
+  ],
+  "falsifiable_calls": [
+   "If escalation continues, the belly of the oil curve rises toward spot.",
+   "If de-escalation, front-month oil is a sell.",
+   "A Hormuz closure would repeat 2022-style energy inflation."
+  ],
+  "return_to": true,
+  "return_reason": "Oil-Hormuz framework recurs; a post-mortem on how oil actually priced the escalation is worthwhile."
+ },
+ {
+  "slug": "where-did-all-the-farmers-go",
+  "title": "Where Did All the Farmers Go?",
+  "date": "2024-04-29",
+  "summary": "Argues automation has always shifted labor, not eliminated needs: farmers fell from a third of US jobs to under 1% with lower prices, so 'gaps in the machine' become new jobs and AI doom and post-scarcity are both overstated.",
+  "themes": [
+   "ai-singularity",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 7
+  },
+  "overall": 6,
+  "best_line": "Meaning there are no worlds where everything is free.",
+  "improve": [
+   "Does not confront the strongest objection: transition speed (years not generations) and AI substituting cognition itself; add a section on that.",
+   "The post-scarcity rebuttal (machines, installation, energy cost) is the freshest part; lead with it."
+  ],
+  "falsifiable_calls": [
+   "Automation will keep creating new jobs in the 'gaps in the machine'."
+  ],
+  "return_to": true,
+  "return_reason": "Part two exists; a later check on actual labor-market effects of AI would test the thesis."
+ },
+ {
+  "slug": "how-to-short-a-startup",
+  "title": "How to Short a Startup",
+  "date": "2024-05-23",
+  "summary": "Explains the 'Snow Put': a VC's liquidation preference is an embedded put that can be stripped from the super-common upside and sold to crossover funds, giving a way to hedge startup equity.",
+  "themes": [
+   "portfolio-construction",
+   "data-tools",
+   "personal-essay"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 8,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "the secret is that we don't need to invent any new options to help startup investors hedge their equity",
+  "improve": [
+   "Needs one worked numeric example (strike, premium, payoff across rounds) instead of 'details on request'.",
+   "The long Rose/co-founder backstory delays the core idea; start with the payoff diagram."
+  ],
+  "falsifiable_calls": [],
+  "return_to": true,
+  "return_reason": "An original structuring idea worth a detailed follow-up with pricing and a real-world test."
+ },
+ {
+  "slug": "time-to-hedge",
+  "title": "Time to Hedge?",
+  "date": "2024-06-20",
+  "summary": "Argues index concentration (Nvidia, Microsoft, Apple) is depressing implied correlation via dispersion trades, making index options cheap; he buys 1-year puts and lists many macro risks.",
+  "themes": [
+   "positioning-flows",
+   "portfolio-construction",
+   "macro-regime"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 7,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "equity optionality is too cheap, it's NVidia's fault",
+  "improve": [
+   "The central mechanism (concentration lowers implied correlation) rests on one chart; add the dispersion-trade positioning data.",
+   "The long macro-risk laundry list (CRE, QT, deficits, jobs revisions) dilutes a sharp tactical idea; add strikes, cost and sizing for the puts."
+  ],
+  "falsifiable_calls": [
+   "Implied correlation is too cheap; buy puts 5-10% OTM, 1 year out.",
+   "The Fed hikes before it cuts, despite market pricing of 150bps.",
+   "Credit spreads are too tight to ignore."
+  ],
+  "return_to": true,
+  "return_reason": "Prescient on vol (followed by the August 2024 blowup); the 'Fed hikes first' call is checkable and was a miss."
+ },
+ {
+  "slug": "how-will-ai-make-money-in-finance",
+  "title": "How Will AI Make Money (in Finance)?",
+  "date": "2024-07-31",
+  "summary": "Part 1: explains MiFID II research unbundling and US soft-dollar tension to argue banks are being forced to monetize data, setting up a case that AI in finance will pay for data.",
+  "themes": [
+   "data-tools",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Total disaster implementation wise.",
+  "improve": [
+   "Compress the MiFID II explainer drastically; the AI-money payoff is deferred to later posts, so this part has no standalone takeaway.",
+   "Support the 'trillion-dollar market' tease with numbers now, not 'tomorrow'."
+  ],
+  "falsifiable_calls": [
+   "MiFID II effects will become large in 3-5 years.",
+   "AI plus unbundled data opens a trillion-dollar market."
+  ],
+  "return_to": true,
+  "return_reason": "Series premise (data licensing/marketplaces) is a core Rose thesis that can be re-tested."
+ },
+ {
+  "slug": "california-vs-new-york",
+  "title": "California vs New York",
+  "date": "2024-08-01",
+  "summary": "Argues AI-for-finance startups fail by trying to replace spreadsheets and workflows; the opportunity is getting trusted financial data out of NYC to feed AI, which MiFID II makes monetizable.",
+  "themes": [
+   "data-tools",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Bloomberg and Excel aren't broken (but the pipe between them is).",
+  "improve": [
+   "The TAM sketch (a billion spreadsheet users at $20-200/yr) is the key leap and is unsupported; segment it and cite willingness-to-pay evidence.",
+   "Self-interest (Rose sells exactly this) is only implicit here; state the conflict and cut the 2.8k-word cultural digression."
+  ],
+  "falsifiable_calls": [
+   "Finance-focused SaaS AI startups will keep failing.",
+   "A data marketplace for financial truth is a trillion-dollar opportunity."
+  ],
+  "return_to": true,
+  "return_reason": "Core business thesis; worth checking against actual AI-finance outcomes."
+ },
+ {
+  "slug": "sahm-sunday-drama",
+  "title": "Sahm Sunday Drama",
+  "date": "2024-08-04",
+  "summary": "Reads the early-August 2024 selloff: Sahm rule trigger, yen carry unwind, Nvidia delay, with credit notably calm; suggests rotating equity-vol hedges into short credit.",
+  "themes": [
+   "positioning-flows",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "you need a pipe to break.",
+  "improve": [
+   "The advice is two-sided (buy back risk if optimistic, short credit if pessimistic); commit to one view with sizing.",
+   "Many threads (Sahm, Japan, Buffett, Middle East) in one note; prioritize the credit-vs-VIX divergence."
+  ],
+  "falsifiable_calls": [
+   "Credit is the next pipe to burst if a hard landing occurs.",
+   "Bull steepening will confirm easing; short credit is a better hedge than long equity vol."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-equity-volatility-machine-is",
+  "title": "The (equity) volatility machine is down",
+  "date": "2024-08-06",
+  "summary": "Post-mortem on the August 5, 2024 vol spike: short-vol and concentration unwinds, not just yen carry, drove VIX near 65; recommends selling skew and shorting VIX while shorting credit.",
+  "themes": [
+   "positioning-flows",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 6,
+  "best_line": "when equity vol is blowing out, look around you. Check credit, check other markets, check bonds and the banks",
+  "improve": [
+   "The claim it was not carry-trade driven is asserted lightly; show positioning or flow evidence.",
+   "'99 times out of a hundred' on short credit is unsubstantiated; show historical conditional returns after vol spikes."
+  ],
+  "falsifiable_calls": [
+   "Sell skew and short VIX after vol spikes, paired with a double-short credit.",
+   "Realized correlation could still go higher."
+  ],
+  "return_to": true,
+  "return_reason": "The short-credit-after-vol-spike pairing is testable, and spreads stayed tight afterward."
+ },
+ {
+  "slug": "this-is-what-short-vol-feels-like",
+  "title": "This is what short vol feels like",
+  "date": "2024-08-08",
+  "summary": "Live commentary on whipsawing Nikkei and US stocks as signs of short-vol hedging flows, with credit and rates vol as cross-checks and a reflection on optionality for peace of mind.",
+  "themes": [
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "When your gamma pays off, you know your beta is protected, and you can get back to alpha.",
+  "improve": [
+   "Heavily overlaps the prior post; fold into one note with a single takeaway.",
+   "Only one forward call (skew pricier tomorrow); add levels or triggers for when the chop ends."
+  ],
+  "falsifiable_calls": [
+   "Skew will be more expensive the next morning.",
+   "Expect continued chop until the market sees how contained the de-risking is."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "reflections-on-inflation",
+  "title": "Reflections on Inflation",
+  "date": "2024-08-19",
+  "summary": "Primer on inflation drivers (demand, supply, conflict) with the furniture-boom example and 1970s context, concluding inflation has peaked and the Fed can ease without recession.",
+  "themes": [
+   "macro-regime",
+   "conflict-inflation",
+   "rates-curve"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Rather than another direct conflict with 10m dead in a land war and loser gets hyperinflated to 0, we just got some sustained inflation",
+  "improve": [
+   "The first third is inflation 101; open with the conclusion and the shelter/food/energy decomposition.",
+   "Reconcile this 'free hand to ease' conclusion with his June claim that the Fed would hike first and his conflict-is-inflationary stance, and name what would reverse it (tariffs)."
+  ],
+  "falsifiable_calls": [
+   "Inflation reaches ~2% within a year without a recession.",
+   "The Fed is clear to ease absent significant conflict escalation.",
+   "5y5y inflation expectations remain anchored."
+  ],
+  "return_to": true,
+  "return_reason": "Inflation call and his tariff/import-tax warning can be re-tested."
+ },
+ {
+  "slug": "the-unicorn-economy-the-great-liquidity",
+  "title": "The Unicorn Economy: The Great Liquidity Drought",
+  "date": "2024-08-27",
+  "summary": "Revisits his 2016 thesis: unicorn valuations ran on ZIRP; rate hikes plus weak IPO/M&A exits created a Series A crunch and tech layoffs, which Powell's easing should relieve.",
+  "themes": [
+   "macro-regime",
+   "rates-curve",
+   "data-tools"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "The Unicorn Economy runs on ZIRP.",
+  "improve": [
+   "The Series A crunch evidence is mostly Carta/Revelio snapshots; add more direct funnel data (A-to-B conversion, time-to-raise).",
+   "Mega AI rounds are a major counterexample to 'drought' and deserve more than a paragraph."
+  ],
+  "falsifiable_calls": [
+   "Series A crunch and early-stage startup pain continue until easing arrives.",
+   "Tech employment weakness precedes broader labor softness."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "irrational-doomers",
+  "title": "Irrational Doomers",
+  "date": "2024-08-28",
+  "summary": "Talk write-up arguing AI doom requires seven chained premises (compute, intelligence, power, instrumental, misalignment, moral circle, time), so high p(doom) reflects overconfidence; cites Arrow, energy limits and 12-18 month training cycles.",
+  "themes": [
+   "ai-doom",
+   "ai-capex"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 4,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "if your expectation for any of those seven premises falls below 50%, you cannot have a p(doom) higher than 50%!",
+  "improve": [
+   "The multiplicative chain assumes independent necessary premises; doomers often argue alternative paths, so address disjunctive routes to catastrophe.",
+   "'We have a lot of time' (18-month loops) is asserted from an LLM check; cite lab timelines or compute buildout data, and state his own p(doom)."
+  ],
+  "falsifiable_calls": [
+   "Existential AI risk is low; training/energy buildout cycles of ~12-18 months give time to update.",
+   "Bio-risk is the likelier near-term catastrophic vector."
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-silver-singularity",
+  "title": "The Silver Singularity",
+  "date": "2024-09-16",
+  "summary": "Short thesis note: silver benefits from China-led instability and de-dollarization plus solar demand, and AI's energy hunger (OpenAI o1) implies a silver-demand surge.",
+  "themes": [
+   "commodities-supply",
+   "gold",
+   "ai-capex"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "AGI is going to eat a LOT of silver.",
+  "improve": [
+   "Check the arithmetic: 44,000 tons for 4,000 TWh is called 1.2x 2023 mine output, but later posts imply ~25,000 tons per year of production.",
+   "The AI-to-silver link is a long causal chain; show the sensitivity (efficiency gains, thrifting, copper substitution)."
+  ],
+  "falsifiable_calls": [
+   "Silver's premium in China persists.",
+   "A doubling of US electricity via solar would need more than a year of global silver output."
+  ],
+  "return_to": true,
+  "return_reason": "Companion to the Oct 2024 silver post; thesis is easily scored against later silver prices."
+ },
+ {
+  "slug": "a-depression-with-chinese-characteristics",
+  "title": "A Depression with Chinese Characteristics",
+  "date": "2024-09-23",
+  "summary": "Applies Dalio's debt-crisis deleveraging framework to argue China is entering an 'ugly deleveraging' depression because policymakers defend the peg and extend-and-pretend; recommends long Gold in China.",
+  "themes": [
+   "china",
+   "macro-regime",
+   "gold"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 8,
+  "best_line": "The more you deny the emperor has no clothes, the less clothes he has on.",
+  "improve": [
+   "State falsifiers: what data would show China is not in a depression (nominal GDP vs debt, PPI, credit growth)?",
+   "Engage the Japan/Korea analog and household-debt strength more seriously; the 'errors and omissions equals capital flight' inference needs caveats."
+  ],
+  "falsifiable_calls": [
+   "China is in a balance sheet/real-estate depression with no clear exit.",
+   "The CNY will eventually be let go and depreciate.",
+   "Long Gold in China hedges both stimulus and bank-stress paths."
+  ],
+  "return_to": true,
+  "return_reason": "Flagship China call that preceded the late-September stimulus; revisit against subsequent growth, deflation and CNY data."
+ },
+ {
+  "slug": "is-this-chinas-whatever-it-takes",
+  "title": "Is this China's \"Whatever It Takes\"?",
+  "date": "2024-09-30",
+  "summary": "Parses China's September 2024 stimulus: rate/RRR cuts, down payments, bank capital, buybacks and cash to the poor are 'a mile wide and a couple inches thick'; advises neither shorting the rally nor chasing it.",
+  "themes": [
+   "china",
+   "rates-curve",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 7,
+   "timelessness": 4
+  },
+  "overall": 7,
+  "best_line": "a mile wide and a couple inches thick",
+  "improve": [
+   "Give an explicit trigger list and dates for when to add shorts rather than 'weeks or months'.",
+   "Rate cut arithmetic and the 10%-loss wipe-out math deserve one summary table of measure, size and impact."
+  ],
+  "falsifiable_calls": [
+   "Do not short into the rally but add shorts in weeks to months as defaults resurface.",
+   "A 10% loss rate would wipe out Chinese bank book equity (~$5tr vs $60tr assets).",
+   "Property demand support slows price declines but will not reverse them."
+  ],
+  "return_to": true,
+  "return_reason": "Timely call whose outcome (rally durability, bank recap size) is checkable."
+ },
+ {
+  "slug": "the-tit-for-tat-loop",
+  "title": "The Tit-for-Tat Loop",
+  "date": "2024-10-06",
+  "summary": "Frames Israel-Iran escalation as zero-sum tit-for-tat sliding into a negative-sum all-pay auction, with market implications: don't short oil, long gold/silver/defense, short bonds and Boeing.",
+  "themes": [
+   "oil-hormuz",
+   "conflict-inflation",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 6,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Each reprisal sets off two more, like the first steps of nuclear fission as the system goes hypercritical.",
+  "improve": [
+   "The game-theory primer takes about half the post before the market implications; invert the order.",
+   "Implications pull in different directions (gold up on conflict, gold down on Chinese stimulus and dollar); rank them by conviction and size."
+  ],
+  "falsifiable_calls": [
+   "Don't short oil; if going long, avoid the front month.",
+   "Short US bonds, long gold, silver and defense (ITA), short Boeing.",
+   "Conflict cycle is accelerating, not slowing."
+  ],
+  "return_to": true,
+  "return_reason": "Escalation-to-oil call is checkable against subsequent Hormuz/oil behavior."
+ },
+ {
+  "slug": "we-are-going-to-run-out-of-silver",
+  "title": "We are going to run out of silver",
+  "date": "2024-10-09",
+  "summary": "Sizes the silver needed for large-scale solar, argues silver is cheap versus gold (80:1) as solar demand turns it into a positive-carry asset, and targets $50 then possibly $250 silver.",
+  "themes": [
+   "commodities-supply",
+   "gold",
+   "ai-capex"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 7,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "silver is 8x as plentiful above ground, 20x as plentiful below, but currently trades at a ~80:1 ratio to gold.",
+  "improve": [
+   "Key quantities are sourced from LLM outputs (Claude, GPT-4o screenshots); replace with industry sources (Silver Institute, IEA) and show sensitivity to thrifting.",
+   "Add entry/risk discipline: he concedes this is not the best tactical time but gives no levels or hedges."
+  ],
+  "falsifiable_calls": [
+   "Gold/silver ratio compresses from ~80 toward 20-30x, implying ~$50 silver.",
+   "A return of central-bank buying could push the ratio to 10:1 (~$250) over years.",
+   "Solar demand deepens the supply deficit."
+  ],
+  "return_to": true,
+  "return_reason": "Clear price targets and a testable mechanism; worth scoring against actual silver prices."
+ },
+ {
+  "slug": "why-im-still-short-boeing",
+  "title": "Why I'm still short Boeing",
+  "date": "2024-10-13",
+  "summary": "Walks through the top-down and bottom-up data on Boeing (quality problems, military unreliability trends, segment economics) to justify staying short as a quasi-hedge to defense exposure, with a vibes-based caveat.",
+  "themes": [
+   "portfolio-construction",
+   "personal-essay"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "stay short until the assassination jokes stop being funny.",
+  "improve": [
+   "No valuation, catalyst or risk (government backstop, 'national champion') in the case; add numbers or call it a hedge only.",
+   "The GPT-scored problem chart is a weak signal; use real quality or delivery data."
+  ],
+  "falsifiable_calls": [
+   "Boeing will worsen before management or structure changes.",
+   "A leadership overhaul or break-up is needed to unlock value."
+  ],
+  "return_to": true,
+  "return_reason": "Position and thesis can be marked against later Boeing performance and any restructuring."
+ },
+ {
+  "slug": "where-did-all-the-lamplighters-go",
+  "title": "Where Did All the Lamplighters Go?",
+  "date": "2024-10-17",
+  "summary": "Part 2 of the automation series: machines freed labor from agriculture, and private capex has shifted from engines to computers to intellectual property (one in three investment dollars), anticipating an idea economy limited by energy.",
+  "themes": [
+   "macro-regime",
+   "ai-singularity",
+   "data-tools"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "We used to call it the service economy, but we should have called it the paper economy.",
+  "improve": [
+   "The conclusion defers the real payoff (future of work, energy/chips/pipes demand) to a later post; give at least a preview claim with numbers.",
+   "The Hammurabi complaint tangent is charming but off the capex argument."
+  ],
+  "falsifiable_calls": [
+   "The next phase sees energy, chips and pipes as the main physical bottlenecks and demand drivers of the idea economy."
+  ],
+  "return_to": true,
+  "return_reason": "The IP-capex trend chart and promised future-of-work follow-up are worth updating."
+ },
+ {
+  "slug": "three-green-lines",
+  "title": "Three Green Lines",
+  "date": "2024-10-19",
+  "summary": "Sets three criteria for a Chinese deleveraging bottom: who takes the loss, bank recapitalization, and helicopter money, judging current stimulus short on each and warning of a bubble-like market.",
+  "themes": [
+   "china",
+   "macro-regime",
+   "gold"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "Who takes the loss and how much?",
+  "improve": [
+   "Attach numeric thresholds (size of recap in % of bank assets, helicopter-money in % GDP) so the criteria can be scored.",
+   "Much repeats last week's note; focus on what changed (LGFV bailouts under 2% of debt, record outflows)."
+  ],
+  "falsifiable_calls": [
+   "No sustainable bottom until losses, bank recaps and direct household support are specified and large enough.",
+   "Chinese stock rally looks like a bubble popping, not a new bull market.",
+   "Public and private buyers rotate from US bonds into gold and silver."
+  ],
+  "return_to": true,
+  "return_reason": "Clear, checkable criteria that can be assessed against later Chinese policy."
+ }
+]

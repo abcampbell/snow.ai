@@ -1,0 +1,100 @@
+TITLE: Down Days
+SUBTITLE: When to buy the dip and when to puke.
+DATE: 2026-05-15
+
+There are two kinds of down days. Down days that feel bad and down days that feel good.
+Today was the latter.
+Today’s piece will explain why, and why we added risk today rather than took chips off the table, even though we’re trying to trend down over the next couple of months from 20 vol to 15 to make the portfolio more institutional. More on that glide at the end.
+Thus far, since the onset of the war, the book has chopped around, but our fundamental case on the world has by and large played out.
+Peace was not right around the corner.
+
+The impact of the conflict would lead to higher energy prices.
+
+The energy prices would begin to put upward pressure on inflation.
+
+The second order impact of the closing of Hormuz would put upward pressure on agricultural prices.
+
+The fundamental case for the AI acceleration is still intact, though potentially at risk if bond prices sell off too much.
+
+That being said, the book has chopped around a bit, resulting from mistakes in timing, execution and implementation.
+Being too early to the short credit trade.
+
+Not appreciating how powerful the equity rally would be given the tailwinds of ceasefire, unwind of extreme positioning, stealth easing through the eSLR, and the degree to which opening up of Korean equity markets would lead multiples to expand at the very moment when good earnings from AI darlings hit the tape.
+
+Allowing the book to get unbalanced short equity after puking our AI infra names, and waiting for a sell off that never came to re-enter the trade.
+
+Portfolio construction. Not appreciating the degree to which our long gold and silver positions were essentially long duration, and then not selling enough bonds last week when we got the itch to go short. A 5% short in bonds is like a 2% short in stocks when you consider the vol impact, and we have 30% in the metals so we’re pretty unbalanced.
+
+Probably being a bit too early to close our oil delta because of the virus.
+
+Resolve Dissonance with Yourself. Seek Dissonance with the Market.
+Maybe I’m messed up in the head, but if you remember our piece from last October on my investment philosophy, you can kind of sum it up as such: resolve dissonance with yourself, seek dissonance with the market.
+
+Which explains the opener of today’s piece.
+The down days where you feel the worst are usually the ones where you feel at war with yourself. This is usually a signal that your world view is internally inconsistent. You go into the day conflicted about a position, worried about the fundamental case for it, and then a combination of bad market action and bad news hits and boom, that dissonance explodes. You’re left either deluding yourself that there’s still some hope out there (what Kahneman and Tversky would call going risk-loving in the face of losses) or you do what’s right and align your book with your views, and puke the position.
+Looking back on the last couple of months, the place I feel this the most is the gap between my fundamental belief in the AI revolution and my positioning. No surprise it was also my biggest mistake. Only followed by having too much risk in gold and silver in a world of rising rates.
+On the other hand, there are days when the market action moves against you, but the fundamental case for the trade improves. Where there’s no dissonance with yourself, but there is dissonance with the market.
+This usually occurs when you know enough about the market to kind of understand why the market did what it did, and your forward view is that that pressure, or flow, or in this case selling, is not sustainable.
+Which brings us to today. Oil up, bonds down, stocks down (a tiny bit), commodities getting murdered, and our book wiped out the positive P&L of the last two weeks.
+Meanwhile I was buying. Buying more wheat. Buying more US energy exporters. Buying more sulfur-squeeze-immune copper producers. Selling more bonds and private credit. And yes, going short stocks again (sorry I can’t help it).
+Why? Let’s go name by name.
+Wheat: Maximum Market Dissonance
+Wheat is the cleanest example of today’s thesis. The underlying fundamentals look stronger rather than weaker. US drought conditions continue to deteriorate, the planting season in Russia apparently isn’t going so hot either, and the May WASDE blindsided the market with US production cut to 42 MMT from 54 MMT last season, global ending stocks at 275 MMT versus 281 consensus
+
+So why did wheat puke? The one bearish note I was a bit slow to react on was the speculative bullish positioning.
+
+Interesting that it doesn’t trade wheat or sugar well, which is partially why I missed this.  Specs are not determinative.
+That, alongside this hubris tweet, meant I was due to be punished by the trading gods a bit.
+
+That being said, the fundamentals look stronger rather than weaker, and given this move can be seen as likely confirmation of a washout by those specs, I added a third to this position today in both calls and futures. No dissonance with myself. Maximum dissonance with the market.
+Now, we’re getting to the point here with these names where I am deep enough I should probably start building some weather systems as the pros do, but that’s a project for another day.
+Corn: Longest Fuse on the Cascade
+Corn was down on the broader commodity washout, not on any ethanol setback. In fact, the House passed year-round E15 yesterday by a vote of 218-203, which is structurally bullish for corn demand. The farm bill had passed two weeks ago without E15 provisions, but Johnson brokered a standalone vote and it cleared. The market ignored this entirely, which tells you how powerful the derisking flow was today. Corn remains the longest-term-acting leg of our cascade trade. We’re in Dec contracts now and long volatility in the name, but the chart doesn’t look great admittedly.
+
+This is the one position where I’ll admit to a trace of internal dissonance. The fundamental case is intact, the nitrogen-to-planting-calendar chain is still live, the E15 expansion actually strengthens the demand side, but the catalyst timeline has stretched. Long vol gives us the right to be patient, but patience in a position that isn’t working requires more conviction than patience in one that is.
+Sugar: Timeline Delayed, Not Thesis
+Sugar got news this week that India is banning exports, which normally would be pretty bullish, but continues to work through the Petrobras pricing freeze. Their Q1 earnings hit the tape on Monday and confirmed what we feared: they held domestic gasoline prices stable through the entire war-driven price surge, only adjusted diesel once since February, and the Brazilian government backstopped it with fuel tax cuts and diesel subsidies. This is the mechanism that delays our thesis. Cheap gasoline at the pump means mills have less incentive to divert cane to ethanol, which means more sugar production, which keeps a lid on #11. Our timelines on this going vertical just got pushed back.
+
+Over the weekend we need to start looking at our exposure here as many of our calls that were “up and out” are slowly becoming “near and out” and so I need to think about when and how it makes sense to roll these. The thesis is unchanged, the Brazil mill allocation data still supports it, but the catalyst got pushed back. That’s the kind of dissonance you resolve with structure, not direction. Roll, don’t panic.
+Silver: Where We Had Dissonance and Didn’t Act
+Speaking of regret trades, the one position we do not feel great about today was the now short-term calls on silver. Really need to start setting up systems to roll these things when we are still a 2σ move within the call strike, as this was our biggest loser today. Meanwhile our Jan call structures are pretty up and out now and so we added to the position.
+
+When the fund is running I’m going to pay someone to just remind me to hedge some of these winners when they go into the money and I’m in endless meetings and talking to the robot. Nothing causes complacency like a rally through your strikes.
+This is the honest counterexample to the framework. Silver and gold are where we had internal dissonance (the duration mismatch with the rest of the book, which we flagged above) and didn’t act fast enough to resolve it. The lesson: the dissonance framework only works if you actually act on the signal.
+
+This is what IBKR gives you for Greeks on commodity futures options. Still flying blind. This is why I still punt GLD and SLV instead of futures
+Energy Exporters and the Short Equity Re-Entry
+Two moves I mentioned at the top but owe you an explanation on.
+The energy exporters are a pure cascade play. If you believe Hormuz stays constrained and oil stays elevated, US midstream and LNG names are the transmission mechanism into equity-land, and they carry yield while you wait. These aren’t speculation, they’re the equity expression of the same trade.
+The short equity re-entry is harder to justify given I just listed “getting unbalanced short equity” as one of my biggest mistakes. But the setup is different now. We’re not short because we puked our longs and forgot to rebalance. We’re short because the rally ran on positioning unwinds and stealth easing, and both of those flows are fading. If we’re right that rates are going higher from here (and the bond sale today is an expression of that view), the equity multiple is too high. This time the short equity is consistent with the rest of the book, not an accident of poor construction.
+Bonds: Reconciling Construction, Not Direction
+Last move of the day was to sell more bonds. This is one of those reconciling dissonance trades, but not of direction, of portfolio construction. We’re too long duration and too short dollars in the book, and given where the world looks like it’s heading, I’d rather sell bonds 50bps too late than have them murder the rest of my book when we get the move that looks like it’s coming.
+So Where Does That Leave Us?
+Well, when you get down days, despite what the VC bros say, it’s time to reflect. Reflect on why it happened (as we have just done), reflect on how you can improve (I’m just going to have to build my entire risk system myself on the weekends aren’t I), and then reflect on what could go wrong going forward.
+Here’s what the book is exposed to now.
+
+The scenarios that kill us are:
+A deflationary rip where somehow gold and silver and UK short rates do not participate in.
+
+A unilateral decline in food prices where all the folks who just got washed out decide to not only flatten their book but go short.
+
+Which isn’t to say either of those couldn’t happen, but that I’m giving myself a little more risk to take the other side of that bet.  So far that’s worked out ok, we’ve retracted about a fifth of the daily loss while writing this piece (which let’s not stare too intently on but gives us some confidence the bottom isn’t totally falling out of ags and gold while bonds continue to decline)
+In terms of risk control, we’re still running at about 18 vol which is going to be our new cap for a while as we settle into oscillating between 10 and 20 on our way from 30 vol down to 15. That means we have capacity to increase exposure another 20% if things go against us before risk controls start kicking in and I start stopping myself out of stuff. The target is 15 vol by the time we’re having real conversations with institutional allocators, which means the book needs to be there by late summer.
+Our biggest risk is some sort of total capitulation by Iran, and it feels like with Trump back from China and settling the major flashpoints there for at least a couple of months, it gives him tradespace to continue to isolate them.  And oh, look while writing this new news hit the tape, with Iran claiming China DOES support Iranian sovereignty over the strait.  Both sides are living in their own world, which means that prospect of a sudden peace gets further and further baked in everyday.  Bullish ags.
+
+Probably suggests I puked my oil delta too soon due to Hantavirus, but I need to see proof they have it under control, and with the long incubation periods, it means holding my oil delta under what the calls would suggest for at least another week. We may lose out on an additional 5% rally (which at 15% delta would be 75bps of outperformance) but given the convexity in the call structures, we’d pick up a lot of delta if things go truly vertical so I’m okay making that bet given the potential downside if I was wrong. That being said, the structures are only 75bps of premium at this point, so maybe that was foolish. We’ve got to get a better vol and risk system for commods, rates and fx, then the fun starts.
+
+What I’m Watching This Week
+Monday/Tuesday: Sugar call rolls. Need to map every strike and expiry against current spot and decide what’s worth paying theta on vs. letting expire. The “near and out” problem is pressing.
+Wednesday: USDA weekly crop progress. Wheat conditions data will either confirm the drought thesis or give the market an excuse to sell more. Either way, it sets the tone for the rest of the week in ags.
+Ongoing: Hantavirus case data. Until we see the incubation window close without exponential spread, oil delta stays capped. If the data clears, I’ll re-engage.
+Weekend project: Start building the automated roll/hedge reminder system, continue to make marginal improvements to risk. Every dollar I’ve lost to complacency on in-the-money calls is a dollar that should have funded this build months ago.  I’ve been told BBG has a good system in PORT, but after burning a couple of hours trying to get it to map to IBKR, I just stopped trusting the machine.  If you have suggestions folks, I’m all ears.
+The Point
+Every trade I added to today has a wider gap between fundamentals and price than it did yesterday morning. The dissonance with the market grew. The dissonance with myself shrank. That’s the whole definition of a good down day.
+The bad down days are the ones where you lose money and lose conviction at the same time. Today we lost money and gained conviction. So we added risk. And now we go build the systems to make sure we don’t give it back through sloppiness.
+Till next time.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure.
+Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

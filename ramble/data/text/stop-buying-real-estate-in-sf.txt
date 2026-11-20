@@ -1,0 +1,61 @@
+TITLE: Stop Buying Real Estate (in SF)
+SUBTITLE: January 13th, 2016
+DATE: 2021-11-09
+
+I don’t know if real estate in Silicon Valley is currently in a bubble. Economic bubbles are tricky phenomena, and even defining ‘a bubble’ befuddles some of the best investors in the world.
+What I do know, is that from an investment perspective, if you work or invest in startups, it doesn’t make sense to buy a house in San Francisco right now.
+Why?
+San Francisco real estate (and Silicon Valley real estate in general) is very expensive.
+
+We cannot expect interest rates and monetary policy to continue supporting asset prices over the next couple of years. This is bearish for housing.
+
+From a portfolio perspective, local real estate adds to your exposure to an economic system you should be diversifying away from, not doubling down on.
+
+SF real estate is expensive
+It can be pretty hard to place a value on a home. Choosing where and how to live is a complicated decision that forces us to prioritize across a broad array of financial, personal, and values considerations. Facing this very question myself, I did some investigation into the drivers of home prices over the last 35 years.
+What I found was pretty interesting…
+US Home Prices and Income Since 1980
+The financial decision to purchase a home can be broken up into the bet on the land, and the bet on the building (or space).  In modern metropolitan areas like NYC and SF, the value of the land can be 75-90% of the actual value of any particular home. Whether you want to or not, when you are buying a home, you are buying into the local market for land. 
+Further, if you accept that prices are tied, even loosely, to household income, then these land prices can be viewed as pricing in the higher future incomes that people expect to capture by moving to the area.  The price for a seat at the table, as it were.
+Seeing how these markets play out across time can be pretty instructive. The chart below shows the evolution of home prices vs the national average (light grey).  You can also use the drop down to explore different cities.
+Turns out that even once you take the impact of higher incomes into account, real estate in San Francisco (and California generally) looks pretty expensive.  Even though households in Silicon Valley make almost 2x the national average, they are buying houses that are 9x their income.  That is, even if you put 50% of your income into buying your home, it would take you almost 20 years to pay for the median home in SF making the median income.  
+Here's that headline chart again, this time in context:
+
+X-axis: Median Household Income,Y-axis: Home Prices / Household IncomeSize and Color of Dots: Share of household incomes going to mortgage payments
+What does this mean?
+Part of it is probably that people are willing to pay a premium to live in places with nice weather. The fact that Hawaii and California are in the top right speak to that hypothesis. Inequality also plays a role here, as you get a lot of demand from people who make multiples of the median buying second and third homes.
+But something else is going on here.  
+People expect to pay for their home over time out of their income.  So these higher prices also represent more optimistic expectations of household income growth in these areas. If I expect my income to triple in the next ten years, then all of a sudden paying 9x my current income for a home doesn't look so bad, compared to a national average of 3x. 
+Monetary policy will be a drag on real estate prices going forward
+FALLING INTEREST RATES -> RISING ASSET PRICES
+RISING INTEREST RATES -> FALLING ASSET PRICES
+THE FED HAS TOLD US IT PLANS TO RAISE INTEREST RATES
+Interest rates represent the exchange rate between money today and money tomorrow. Assets that derive a lot of their value from cash flows out into the future (like real estate) are thus very sensitive to this exchange rate.
+Staring at the monthly wiggles distracts us from the fact that real estate has benefited from a 35 year secular tailwind from declining interest rates.
+
+A simple model of this relationship demonstrates that 50-100% of the increase in real estate prices can be attributable to the secular decline in the interest rates showed above.
+
+This has been partially by design, as the Fed uses the economic reaction to interest rates to ‘manage’ the economy. When they want the system to cool down, they raise rates. When they want to stimulate the system, they lower rates.
+In the wake of the financial crisis, the Fed also turned to quantitative easing to manage the economy after interest rates hit zero, meaning they went out and bought financial assets (including packaged mortgages) with printed money to stimulate the economy. The impact of this easing hit was different for different markets, but combined with the tech boom worked to send home prices in the area sky high. Note that the tech boom has also been supported by monetary policy…all those unicorns funding growth with cheap capital.
+
+This chart is also available in an interactive version below, allowing you to explore the data for different cities.
+Both of these sources of monetary stimulation have been phased out, and the Fed is now transitioning to tightening.
+
+There are other drivers of SF real estate of course - marginal increases supply, rent control, and the influx of foreign buyers (particularly money coming from China that is not that price sensitive) - but it’s helpful to remember that tighter monetary policy is bearish for home prices (and asset prices in general) by design.
+Better to diversify than double down
+This is probably the most important point, but also the most subtle.
+When you work in tech and live in the Bay Area, your life is already so positively exposed to the local economic and financial system that buying a home is just doubling down on a (life) portfolio that's already in need of diversification.
+It's like all the people who owned a home in Texas in the late 70s and worked in the oil industry.  When "Oil Glut" hit in 1981, all of a sudden everyone realized that the economic impact of the oil economy on local land prices was so great, their home was trading like the back yard was full of barrels of oil.  And, in a weird way, it was.
+
+We see this play out time and time again when things we thought were ‘uncorrelated’ turn out to be driven by the same fundamental economic process.
+
+You could look at emerging market currencies in the late 90s, tech companies in the early 00s, financial assets in 08, even the entire energy complex today. All of a sudden, everyone realizes how connected things are, and there’s a rush for the exit.
+The systematic piece can be difficult to see when you are staring hard at the interesting, idiosyncratic pieces. Whether you are looking at a home in the Mission or Pac Heights, or even Palo Alto, these assets are all deeply connected to the same fundamental economic system.
+Working (and investing) in tech is already risky enough. If the wealth you have accumulated through these activities is still largely in “paper” (i.e., you haven’t cashed out), then using your remaining liquidity as down payment on a big, correlated asset like a SF house puts your whole life portfolio into one trade, which unless it’s your job to make bets on big macroeconomic systems, you probably shouldn’t be doing.
+FOR DATA NERDS
+I have included below some further analysis on the data Snow gathered for this article. 
+Legal notes: All analysis published here is property of Snow Ventures and cannot be reprinted without permission.  
+Real Estate Heat Index based off largest 100 metropolitan areas
+
+Video showing the home price affordability dynamics over time (broken out by city, income and adding mortgage share of incomes to the mix).
+Disclaimer: Snow is an investment firm that specializes in providing diversification exposure to investors and employees in pre-IPO companies. While this is a honest representation of what I believe, I am not a neutral party.

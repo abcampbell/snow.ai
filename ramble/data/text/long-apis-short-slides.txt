@@ -1,0 +1,125 @@
+TITLE: Long APIs, Short Slides
+SUBTITLE: A pair trade for the AI transition
+DATE: 2026-02-08
+
+The market is selling “software” as a monolith. Within that monolith there are tollbooth operators and road workers. AI replaces road workers. It pays tolls.
+
+The Air Pocket
+I am by no means what you would call a “technical” trader. At the same time, I think if you are investing in an asset without looking at the price history, you should have your ISDA taken away.
+A lot of people draw lines on charts as a way to try to predict the future. This is dumb. Over long periods of time, the price of assets is driven by buyers and sellers. Why did the price go down? More sellers than buyers. Why did it gap up? More buyers than sellers.
+The reason you look at the historical price of an asset is to develop a useful mental model for the psychology of those buyers and sellers. We are, after all, animals.
+The best markets to trade are the ones with lots of different kinds of buyers and sellers. Commodity markets have “natural” participants — people who make the stuff and people who eat it — and then financial players like me and you attempting some form of informed speculation. The alpha is in understanding how these different groups behave over long periods of time.
+Stocks are kind of weird in this framework. The only natural sellers of stocks are the companies themselves (issuance), and the only natural buyers — besides speculators — are companies trying to acquire each other and the issuers themselves when they do reverse issuance, aka buybacks.
+
+When I speak about an air pocket, part of what I refer to isn't just the idea that financial buyers will get tired of seeing capex well in advance of revenues. It's that the most direct mechanism for financing this investment behavior is fewer buybacks and more debt issuance.
+
+So that’s what we are seeing in the market today. Folks are ingesting the idea of fewer buybacks, more debt issuance, and the creative destruction of AI businesses where the victims (expensive software companies) are more easily identifiable than the beneficiaries (newcos) — or at least the beneficiaries you can invest in.
+This is what it looks like for a market to internalize the fact that the singularity is here, it’s real, but it is anything but uniformly distributed.
+
+Over the next weeks and months, we expect this trend to continue as investors do the pencil-to-paper work of figuring out how much capex these guys can really deploy, how much that will cost in terms of fewer buybacks and more debt issuance, and who the medium-term winners and losers will be through this process.
+Our take is that, when combined with the likely reduction in weight from European investors still stinging from Trump tweaking their noses, we’ll see broader lower stock multiples across the board, with outperformance by the players that actually are positioned for the next decade and not caught flat-footed.
+Which brings me to what’s happening in software.
+
+The Setup
+Software stocks just got obliterated. IGV — the iShares Expanded Tech-Software ETF, the closest thing to a one-click bet on the software sector — is down 30% from its September highs. $118 to $82.
+
+The narrative writes itself. DeepSeek ships a frontier model for $6 million. Anthropic launches Cowork, a suite of AI agents that do legal review, sales ops, and compliance workflows autonomously. Cursor and GitHub Copilot are writing production code. The conclusion the market is drawing: AI writes software now, therefore software companies die.
+That conclusion is wrong. Or more precisely, it’s aimed at the wrong target.
+The Category Error
+There are two types of software companies in the world, and the market is treating them as one.
+Type 1: Software humans click on. Dashboards. CRMs. Project management tools. Anything with a user interface that a person stares at for eight hours a day. Salesforce, HubSpot, ServiceNow, Monday.com. These products exist because a human needs a visual interface to do a task.
+Type 2: Software bots call. APIs. Databases. Event streams. Monitoring. Authentication. Infrastructure layer. No human UI required. Consumed per call, per query, per event. Cloudflare, MongoDB, Datadog, Twilio, Snowflake.
+The first category is threatened. If an AI agent does the work, you don’t need a seat license for the human who used to do it. One less customer service rep means one less Zendesk seat. One less project manager means one less Monday.com seat. Seat-based SaaS compresses as headcount compresses. The market is right to sell these.
+The second category gets more usage when AI proliferates. Every AI agent that replaces a human still needs to authenticate (Okta), query a database (MongoDB, Snowflake), send a notification (Twilio), log its actions (Datadog), stream events (Confluent), search documents (Elastic), and get protected from cyberattacks (CrowdStrike).
+Here’s the key difference: one human doing a task generates one session, a few clicks, maybe a dozen API calls per hour. One AI agent doing the same task generates hundreds of API calls per minute. It’s hitting the database constantly. It’s logging every action. It’s streaming events in real time. It’s authenticating on every request.
+The infrastructure layer doesn’t care whether it’s serving a human or a bot. It charges per unit of consumption either way. And bots consume orders of magnitude more than humans.
+2025 returns tell the story. The market already knows this, even if it hasn’t articulated it cleanly:
+
+The bifurcation is already happening. Human-UI SaaS is getting destroyed. Bot-infrastructure SaaS is ripping. IGV owns both — which is why it's a bad proxy for either side of the trade.
+Not Software. Services.
+The thing that’s really dead isn’t software at all. It’s the services economy built on top of software.
+What does Infosys actually do? It sells competent Indian engineering hours to Western corporations at competitive rates. What does Capgemini do? It sells bodies — 350,000 of them — to run, maintain, customize, and implement enterprise software. What does Cognizant do? Same thing, different logo.
+The entire IT outsourcing model is labor arbitrage. Hire in Bangalore at $15/hour, bill in New York at $80/hour, pocket the spread. This model has generated hundreds of billions of dollars in revenue and created some of the largest companies in India.
+AI is the thing that makes labor arbitrage worthless. Not by making the labor cheaper — you can’t get much cheaper than $15/hour — but by eliminating the need for the labor entirely.  Yes, a lot of this work will get augmented by AI, making it more productive, but given the increase in supply, this should also compress margins in a field where the quantity is fundamentally denominated in human hours.  You can make an outsourced engineer more productive, but if your model is charging per hour you have a problem.
+When Anthropic launched Cowork on February 3rd, the market gave you a real-time demonstration. Nifty IT — the index of Indian IT services companies — dropped 6% in a single session. Infosys ADRs fell 8.4%, the worst day since October 2023. Wipro dropped 4.5%. Cognizant sold off ~10%.
+
+The hiring numbers tell the structural story even more clearly. India's Big 4 IT firms — TCS, Infosys, Wipro, HCL — normally hire 10,000+ people per quarter. It's the engine of the Indian middle class. Here's what the most recent quarter looked like:
+
+TCS cut eleven thousand people in a single quarter. HCL is flat. The hiring machine has stopped. Revenue is growing at low single digits for an industry that did 15-20% annually for two decades.
+And this is before AI agents are widely deployed in enterprise. We’re in the “enterprise confusion” phase — the CGI CEO said on their earnings call that clients “don’t know what to do with these AI tools.” We haven’t even reached the “mass cancellation” phase yet.
+The Body Shops Can’t Pivot
+The obvious counterargument: won’t Infosys and Capgemini just pivot to selling AI implementation services?
+Accenture is trying. They’ve announced $3 billion in AI bookings. Good for them. But the margin structure doesn’t work for the Indian outsourcers. Selling 10,000 junior developers at $30/hour is a volume business. You need the bodies. Selling AI strategy consulting is a completely different capability — and there are maybe a few thousand people on earth qualified to do it, not 350,000.
+The Indian IT firms are built around labor arbitrage. Their campuses, their training programs, their entire corporate infrastructure exists to process tens of thousands of fresh engineering graduates into billable resources. That’s not a capability you repurpose into an AI consultancy. It’s the capability that AI makes redundant.
+The saving grace for the short thesis is that these are multi-year contracts with significant switching costs. Revenue doesn’t fall off a cliff — it decays slowly as contracts come up for renewal and clients either don’t renew or renew at lower headcount. This is a 12-to-24-month trade, not a 3-month trade. Expect eight quarters of consensus estimates getting trimmed by 2-3% each time, not one quarter where someone misses by 30%.
+
+The Trade
+If the thesis is right — that AI kills services, not software infrastructure — then the trade is long the infrastructure layer and short the body shops. Here’s how I’m thinking about both legs.
+Long Leg: The Bot Stack
+If you were vibe coding an enterprise application today — spinning up a project with AI writing 90% of the code — these are the infrastructure companies whose products you'd install, in roughly the order you'd install them. Think of it as a hypothetical equal-weight "Bot Stack ETF."
+
+The common thread: every single company charges per API call, per GB, per event, per query, or per seat. AI doesn’t reduce their consumption — it increases it. More AI agents means more database queries (MDB, SNOW), more API calls (TWLO, NET), more events (CFLT), more monitoring (DDOG), more auth requests (OKTA), more search queries (ESTC), more security surface (CRWD), more code commits (GTLB).
+These are the tollbooths. AI pays tolls.
+Important caveat: These trade at 15-20x trailing revenue. That’s expensive on backward-looking numbers. The bet is that the forward consumption curve is steep enough to justify the multiple. If AI adoption stalls or enterprises pull back on spending, these compress too. This is not a “can’t lose” trade.
+Also important: Don’t buy IGV as a proxy. IGV’s top holdings include Salesforce, Adobe, Oracle, and Intuit — exactly the human-UI SaaS that is being disrupted. Buying IGV means going long the names you should be avoiding. The trade is the infrastructure layer specifically.
+Short Leg: The Body Shops
+Four names, all primarily commercial IT outsourcers:
+Capgemini (EPA: CAP / OTC: CGEMY) — Highest conviction
+Capgemini just sold its U.S. federal government unit on February 1st — which means it’s now a pure commercial IT services company. 350,000+ employees, over half in India, running the classic labor arbitrage model. Revenue of €22 billion, declining 1.9% in 2024 with consensus at +0.9% for 2025 and +6.2% for 2026. That 2026 hockey stick is the number that gets cut.
+What makes Cap the top conviction short: it’s the only name in the basket with net debt. €6.1 billion in total debt against €2.4 billion in cash. Net debt of roughly €3.7 billion, or ~1.1x EBITDA. That’s not distressed, but it means they can’t buy back stock indefinitely to fight the short. Morgan Stanley downgraded to Underweight in January. Morningstar says it trades at 132% premium to fair value. Earnings February 13th — a potential catalyst.
+
+Options angle: implied vol at 49 versus realized vol at 57. Vol is elevated going into earnings.  Realized vol is spiking, so you are buying vol below how much the stock is actually moving going into earnings.  Options usually price in a lot of vol around earnings (which means vol sells off after the earnings day), so the play here is either buy vol around earnings, or wait till they report and then bet it will continue to move after the implied vol sells off.
+
+Cognizant (NASDAQ: CTSH) — Best options expression for U.S. investors
+Teaneck, NJ-headquartered, $37 billion market cap, just reported Q4 on February 4th. Beat by a penny. Revenue growth of 4.9% last quarter, guiding FY2026 to $22.1-22.7 billion. Stock at $77, basically flat since 2018 — eight years of nothing.
+
+Balance sheet is strong: $1.4 billion net cash, planning $1.6 billion in capital returns in 2026 including $1 billion in buybacks. This is a slow-bleed short, not a blow-up short.
+Options angle: implied vol at 30 versus trailing realized vol at 26. 
+
+Post-earnings vol crush means you’re getting in at the cheapest point. This is the most liquid and cheapest way for a U.S.-based investor to express the IT services short thesis.
+
+Though not a ton of liquidity in the options so not an institutional sized-bet.
+
+Infosys (NYSE: INFY) — Largest pure-play Indian outsourcer
+$69 billion market cap, $19.9 billion in revenue, 85% of which comes from existing client renewals. Guided just 1-3% constant currency growth for FY26. The stock fell 8.4% on the Anthropic Cowork launch alone.
+Balance sheet is a fortress: $2 billion net cash, $3.9 billion in annual free cash flow. They can absorb revenue declines for a decade without balance sheet stress. But the consensus expects revenue to reaccelerate to +7.9% by FY2027. That estimate assumes AI disruption is a temporary headwind, not a structural shift. If you believe the structural thesis, that’s the number you’re fading.
+
+Wipro (NYSE: WIT) — Weakest of the Big 4, but hardest to trade
+Perpetual turnaround story. Has been cycling through CEOs for fourteen years. Guided -1% to +1% constant currency growth last quarter. $4.2 billion in net cash — the biggest fortress in the basket.
+The problem is it’s a $2.51 stock. Options have terrible bid-ask spreads at that price. If you want Wipro exposure, short the stock outright. For most readers, skip this one and concentrate in the other three.
+Volatility Snapshot
+
+Cap and INFY have both seen implied and realized increases as the market starts to price this in, but their near term implied vol is less than realized, which is sometimes a good indicator that the options market isn’t pricing in sustained weakness.  CTSH is essentially at fair value post-earnings. All three are buyable from a vol perspective. WIT is cheap on vol but untradeable on spreads.
+Putting It Together
+The pair trade:
+Long: Equal-weight basket of NET, MDB, OKTA, TWLO, DDOG, ESTC, CFLT, CRWD, SNOW, GTLB
+Short: CAP (highest conviction, levered), CTSH (cheapest vol, most liquid), INFY (largest pure-play, crowded but structurally right)
+The thesis in one sentence: The shorts get paid per human deployed. The longs get paid per API call. AI replaces humans and multiplies API calls.
+By putting these names in a basket, you can see a couple of things of note which are relevant for portfolio construction.
+The first is that our “API portfolio” has outperformed our “Slides” portfolio since 2020…
+
+Though note, a good deal of that outperformance came from the fact our API basket was almost twice as volatile as our Slides basket. 
+
+Which is reflective of a) the more mature business model involved in professional services basket, but also b) the higher multiples of our API basket.  Higher multiple stocks tend to be higher volatility as much more of their value is derived from future expectations of growth.  Adjusting the volatility of both of these baskets to ~16 shows that APIs have indeed outperformed Slides, but by much less than a non-risk adjusted basis would imply.
+
+This is also reflected by looking at the drawdown history of the two (unadjusted) baskets.  When high multiple, volatile stocks sell off, they tend to go down hard. 
+
+Meaning in practical terms, if you want to make this bet pure, you need around twice as much exposure (aka delta) on the short side as on the long side.  A quant might even beta weight the two baskets, but let’s not go too crazy for this sunday afternoon punt.
+
+The Honest Risks
+Alpha: I am a better commodity trader than single stock picker.  I think I have some alpha here vs the market but this isn’t my highest conviction trade.  I am sizing it appropriately and scaling it in to monitor.  The API portfolio could and probably will continue to get puked in the next couple of weeks along with the broad derating of software companies, so this is one of those ‘wait the market is pricing in X, I think Y, time to go toe in the water on this trend and see if the market will get more irrational and I can scale it up.’
+Timing. Enterprise IT contracts are multi-year with big switching costs. Revenue at the body shops doesn’t fall off a cliff. It decays one renewal at a time. Infosys has $19 billion in revenue and 85% of it renews annually. That base erodes at 3-5% per year in a bear case, not 30% in a single quarter. This is a slow trade. Size accordingly.
+Balance sheets. Three of the four shorts are net cash fortresses. INFY and WIT can buy back stock against you for years. They generate billions in free cash flow. The only one with real balance sheet vulnerability is Capgemini. Don’t expect forced selling, restructuring, or liquidity events on the Indian names. Expect slow multiple compression.
+Crowded puts. After the Anthropic launch, everyone rushed into INFY puts. Put/call ratios spiked to 1.8x and OTM implied vol hit 65% on some March strikes versus 26% trailing realized. The ATM picture has since settled, but be aware: this trade is getting popular. If you’re using options, Cap and CTSH offer better vol entry points than INFY right now.
+The long side is expensive. These infrastructure stocks still trade at 15-20x revenue. You’re paying up for consumption businesses where the forward growth curve is steep. If AI adoption disappoints or if a macro slowdown compresses enterprise IT budgets across the board, the long side gets hit too. The pair trade partially hedges this, but it’s not risk-free.
+The body shops pivot. If Infosys or Cap successfully transitions from selling bodies to selling AI-powered automation platforms, the short thesis weakens. Accenture is the one to watch here — they’re furthest along in the pivot. But the structural challenge remains: you can’t easily repurpose a 350,000-person labor arbitrage machine into an AI consultancy.
+The Bottom Line
+The market is having a category error. It’s selling “technology” as a monolith. But within technology there are tollbooth operators and there are road workers. AI replaces road workers. It pays tolls.
+The road workers are the IT services companies that sell human hours — Capgemini, Cognizant, Infosys, Wipro. Their product is people, and people are exactly what AI automates.
+The tollbooth operators are the infrastructure companies that charge per API call, per query, per event — regardless of whether the caller is human or machine. Their product is plumbing, and every AI agent needs plumbing.
+Buy the dip in APIs. Just make sure claude code likes your documentation.
+
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

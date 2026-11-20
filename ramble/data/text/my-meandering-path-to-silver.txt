@@ -1,0 +1,124 @@
+TITLE: My Meandering Path to Silver
+SUBTITLE: A retrospective in eight parts
+DATE: 2025-12-18
+
+Well, here we are.
+
+If you’ve been reading the Ramble for the last couple of years, you know I was ‘pounding the table’ on this trade for some time. So rather than just send another “I told you so” email, I figured now would be an interesting time to run the tape back—how we came to be the biggest Silver Fox out there. Not to toot our own horn, but to lay out the thinking and investment process behind it. To understand what happened that led to this outcome. Very Bridgewater, in a way.
+Ironically, this trade actually started with my obsession with gold.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+After leaving the old shop in 2015, I went hunting for a trade that would give me convex upside exposure to what we saw as an unsustainable credit bubble in China. What we came up with was a trade we called “Gold in China”—basically a way to capture deep upside in the price of gold denominated in RMB. The idea was that policymakers faced a relatively straightforward choice: let the banks go (deleveraging pressure, deposit flight, shift in household assets away from deposits and into alternative forms of money like gold), or print and recap (and in the process, suffer intense currency depreciation). Either way, gold-in-RMB looked like the relief valve. For those looking to pick up that story, here’s the last real piece in that thread. This story continues to play out.
+
+And if you want to see a younger, more naive version of me ranting on the deep details, hopefully that video lives forever on the internet.
+
+Anyway, what’s interesting about my shift to silver is that it actually took a long time to fully bake. Which makes sense when you consider the gold view was the result of maybe a thousand hours of work digging into China’s financial plumbing and thinking through the linkages—publicly and in private conversations with investors. When you have a core belief like that, it tends to be sticky. (It should be. But you also still have to keep updating.)
+What’s almost fun about the silver trade is how meandering the path was that took me here. In what follows, I’ll walk through the eight (!) pieces I’ve written on the topic over the last couple of years, explaining how each informed my view—and helped me build the confidence to hold a position that has ranged from 50% to “yes, basically the whole portfolio.”
+
+April 2023: The History 
+All The Silver In The World
+This is the start of the rabbit hole. All this talk about Gold in China got me looking into history, and if you spend enough time with Qing-era financial data, with treasuries denominated in silver taels, you can’t help but notice the Opium Wars were basically fought over silver.  The seed was planted.
+
+Also note how internal rebellions were actually a bigger deal than internal conflict in this context.  A story for another day…
+“If gold is 15x rarer than silver in the earth’s crust, why when you count all the bullion that’s ever been mined, is there only 8x as much silver?... If gold is only 8x rarer than silver above ground, why is gold 80x as expensive?”
+
+This disconnect—8x rarer but 80x cheaper—made sense in the broader historical context and demonetization of silver. But adding up all the silver ever mined started me thinking.
+
+April 2024: The Framework Extension
+Silver in India
+This was the “oh, the same structure applies” moment. Gold in China was really just a template: where’s the printing, where’s the pain, what’s the relief valve? In India (and a lot of EM), silver is already part of that answer—culturally, financially, generationally.
+
+“Take that core idea—’Buy something real’—and pay for it with currency borrowed. The kind unlikely to be paid back dearly. Apply the idea to their neighbors. They don’t need the story told more clearly.”
+
+Also: this was where the energy thread started creeping in. AI looked hungry. Solar looked inevitable. And it turns out solar eats silver. “Watch this space.”
+
+September 2024: The Energy Thesis
+The Silver Singularity
+This was the moment the “AI → energy → solar → silver” chain stopped being a vibe and started being math. 
+
+Initially, I assumed we were using less silver in modern panels, but it turns out we capture so little of the sun’s energy that newer, more efficient panels are actually more complex—with higher efficiency but more silver consumption per watt.
+“This is why we predict a ‘silver singularity.’ AGI is going to eat a LOT of silver.”
+
+If you’re bullish compute, you’re bullish electrons. If you’re bullish electrons, you’re bullish buildout. And if you’re bullish buildout, you eventually run face-first into materials.
+
+October 2024: The Supply-Demand Collision
+We Are Going to Run Out of Silver
+No, for REAL guys. The more I dug into this, the more interesting it looked. Demand from solar panels had already blown the supply-demand situation out of balance—we were in deficit for the fourth consecutive year, and the forward demand picture for AI energy was going bananas.
+
+“To replace all 600 exajoules of global energy production with solar panels would consume all of the silver ever produced. Oh, and the below ground reserves only get you an additional 20% buffer.”
+
+And this is very different from investment demand, where buyers today become sellers tomorrow. Industrial demand gets bolted into stuff. It doesn’t come back.
+
+December 2024: The Monetary Bridge
+Still Long Silver
+This was the bridge. Silver isn’t just an industrial input, and it isn’t just a legacy monetary metal. It’s the weird hybrid: strategic, monetary, and industrial all at once. 
+
+As folks like Russia and non-aligned EMs forcibly diversify from the dollar, they’ll start reacquiring silver as a strategic reserve. And right on schedule, Russia announced they were buying.
+“Fundamental demand becomes monetary demand. Whereas before your cost of carry for silver was negative, now you have a positive yield—it can be turned into energy.”
+
+Once the industrial bid is real, it starts to change how people think about holding it. Not dead metal, but something closer to a strategic reserve you can actually deploy in useful stuff.
+
+February 2025: The Supply Constraint
+The Silver Squeeze
+
+Here’s the key correction that made everything snap into focus: supply isn’t elastic. It’s the opposite. Most silver doesn’t come from “silver mines.” It shows up as a tag-along to other mining.
+
+“Silver production is remarkably inelastic, with 72% coming as a byproduct of other metals. This means even as prices rise, supply struggles to respond.”
+
+Inelastic demand + inelastic supply = a pretty clean explanation for why silver has those crazy spikes that gold doesn’t. Barring radical acceleration of copper substitution (which looks 5-10 years away and won’t eliminate silver content entirely), the market balance was deeply hosed.
+
+August 2025: The Carry Argument
+Silver: The Only Money That Generates Electricity
+This is the carry argument. Gold sits there. Silver can get turned into power.
+
+“A bar of silver in a solar panel is a bar of silver with a yield... Compare that to gold: Gold storage costs -1% per year. Gold yield: 0%. Silver in panels: +12-18% per year. That’s a 13-19% spread. In finance, spreads like that create ‘generational wealth.’”
+
+Think about how much demand for “money” you’d have if it earned a yield. Silver earns a carry when you put it into panels. Silver is ALREADY MONEY. BUY SILVER.
+
+October 2025: The Market Does the Thing
+The Silver Fox
+
+And then the market did the thing markets do when a narrative meets a structural constraint: it got spicy. Silver passed $50/oz, knocking out all-time highs. Microstructure mattered. Paper met physical. Positioning mattered.
+“The market appears to be slowly waking up to this reality, with long-dated call options showing unusual premiums, physical premiums rising, and ETF borrow rates spiking.”
+
+Yes, it was up a bunch, and no, I wasn’t 100% long anymore (more like 50%). But don’t confuse “trim risk” with “the thesis broke.”
+
+The Thread That Connects It All
+Looking back at this evolution, what strikes me is how the thesis built on itself:
+April 2023: Historical curiosity—why is silver so cheap relative to rarity?
+
+April 2024: Framework extension—Gold in China logic applies to Silver in India
+
+September 2024: Energy thesis emerges—AI needs power, power needs solar, solar needs silver
+
+October 2024: Supply math crystallizes—we might actually run out
+
+December 2024: Monetary demand returns—central banks join the bid
+
+February 2025: Supply constraints confirmed—72% byproduct, no marginal response
+
+August 2025: Full synthesis—silver is yield-bearing money
+
+October 2025: Market structure confirms—backwardation, borrow stress, all-time highs
+
+Each piece didn’t just add to the thesis—it compounded my conviction. The gold view gave me the framework for understanding monetary demand in EMs. The energy angle added an inelastic demand driver that previous silver bulls never had. The supply analysis showed why this time really was different.
+Was it possible to pull all this together back in 2024?  Sure, and to some extent rather than see it I kind of felt it.  In the way sometimes as a trader you get the feeling in the back of your neck when your heart and your subconscious brain both kind of grok something at a level your rational brain is only partially coming to terms with.  
+But really, it also shows how iterative and evolutionary investing is.  The world is a complex place, with lots of opportunities and distractions vying for your time.  At some point I joked about starting a silver mine or recycling business, which was both a joke and a good idea, probably spurred me into blocking the time to understanding the supply side at a deeper level.  Which in turn built conviction on how inelastic mine production was.  Which then gave me confidence in the broken demand/supply picture, and then led me to dig into the market microstructure.  Each leg, kind of ratcheting up the confidence by confirming earlier priors, and pulling me in deeper. 
+What Happens Now?
+The core thesis remains intact. Solar demand is structurally inelastic and growing. Supply cannot respond. The monetary angle is just getting started as sovereigns begin acquiring strategic reserves. 
+Silver now trades at ~65:1 to gold despite being only 8x rarer above ground. Our medium term target is 45x or the lows of the 00s, and our long term target is 30x, or where it traded relative to gold in the 80s. 
+
+But there will be drawdowns plenty along the way.
+
+A little hard to see in the long term chart, but we got a 10%+ drawdown in silver just in the last couple of months.  
+So buyer beware.  Probably not a good time to yolo the entire 401k in, more of a long call (spreads) kinda game at this point.
+For transparency, we’ve lightened a bit at $50, and reallocated a bit back to gold as silver hit $60. But the fundamental picture suggests this is a multi-year story, not a trade. The gap between silver and gold should continue to close toward 20-30:1 as the market prices in that solar demand is just getting started and now that the price appreciation will inevitably attract not only private buyers, but sovereign wealth funds and central banks.
+
+If there’s a lesson here, it’s that each piece of evidence raised questions the next piece answered. The best trades compound in conviction before they compound in returns.
+Till next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. There will be typos. This is not my full-time job, and I do not promise the data included is accurate or up to date. Please consult me on anything contained herein before making an investment decision on the basis of this work.
+These views are my own and do not represent any of Rose’s clients, partners, or investors.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

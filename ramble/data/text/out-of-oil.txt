@@ -1,0 +1,80 @@
+TITLE: Out of Oil 
+SUBTITLE: and back to monitoring the situation
+DATE: 2026-05-14
+
+Last week, I was on a livestream on MTS, and the host asked me a question about oil in the context of hantavirus.
+“Oil went negative during covid, is there a chance it could go negative with hantavirus?”
+I laughed it off, and gave some answer about how this time, folks would rush to restock even if we did lockdown, which would put a floor on prices. Whereas back in ‘20 WTI was already oversupplied, US inventories were at capacity and then Saudi sent a bunch of crude to the US which forced it negative.  I actually wrote up a whole diagnosis back in ‘20, followed by a poem.  
+
+In my defense this was peak lockdown, you may have trauma wiped your hard drive since, but we were all a bit stir crazy.
+I didn’t think too much of it in the moment, because my cursory research into the virus implied though it was extremely deadly — a fatality rate of about a third— and long incubating, the infection rate didn’t seem high enough to warrant the kind of response COVID deserved.  (When I went to actually research it properly, the machines had other ideas. But more on that at the end.)
+And this coming from a guy who was staying up all night on forums (which all mysteriously got shut down, ho-hum) in the early days of Feb and March and who was basically a covid prepper by the time it went outbreak.
+Well, tonight I sold my oil.  R0 of 2.7 so far. On a ship. Sure.  Not airborne, sure.  But it’s going to get worse before it gets better.
+
+Not the calls themselves, but I did ‘hedge the delta’ meaning I sold ~15% of book in futures against my calls to make my portfolio neutral to a down move in the price.  I want the vol, I don’t want the direction. Not until we show we can slow the spread of this thing, which public health officials seem loath to enforce.  (To be clear, I'm a lot more in favor of individual quarantines for something this deadly than I was at the end of COVID lockdowns — for reasons that will become clear.)
+
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+I won’t belabor you with a lot of background here.  Guy goes birding, guy gets random illness from rats (?), guy comes back on cruise ship, thing takes a LONG time to express itself, now we have boomers running around out of quarantine and infecting who knows how many people.
+The reason I am writing this, is because the very same tools I didn’t trust enough during COVID  - the simple estimates of a) how infectious is this thing, and b) how deadly, imply this is something that has the potential to get out of hand.
+The critical distinction is that 
+a) COVID was airborne and so much more contagious overall (my guess from comparing early infection rates in cruises is about 7x more contagious) 
+
+but b) hantavirus is much much more deadly (my guess is 50x more deadly than covid).
+
+Pardon the sloppy formatting, this is one of those charts where ‘up and to the right’ is very, very bad.  Note most of the transmission at this point is from that ship, the ship environment ran ~5x hotter than the eventual population R0 for COVID. If hantavirus follows the same ratio, ship R0 of 2.7 implies a population R0 around 0.5 — below replacement meaning it self-extinguishes without intervention..  To be clear this is both your base case AND your bull case.  We probably have it under control.
+
+Maybe I’m a little colored by an iPhone game I played around ten years ago, back in the days when simulating an outbreak was novel and dare I say fun, but the lesson from playing Plague Inc, was clear.  There was a dominant strategy.  Maximum infectiousness, long incubation period, then amp up the deadliness later once you have infected all the hard to reach places (Greenland and Madagascar being the well known hardest spots to reach) in order to ‘win’ the game.
+
+I kinda feel bad even writing about this now.  I lost an uncle (the last Campbell) to COVID and so I get that this isn’t a joke.  Not a game.  
+Though if you want to play around with scenarios, and have an hour to burn, this tool gives you some pretty interesting ways to model out different scenarios.
+
+To be clear, I’m also not an epidemiologist, as my fiance reminded me when I told her I was writing this just now.
+But I AM A SPECULATOR, with a fiduciary duty (to myself) and an imagined duty to you my dear readers as to my views.  Plus, if you are invested in transportation sensitive markets (oil, cruises, airlines etc etc), you own this exposure whether you want to admit it or not.
+
+So there it is. That's the JV epidemiology. Now the trade.
+Yes, I still think if the war persists, a lot of people are “going to run out of oil".  That’s why I’m still holding the calls.  
+But, I think the stories around this thing are going to get worse before they get better.  The worst news so far seems less about the virus itself and more about the pretty inept public health response.  Maybe they are just traumatized by the lockdown blowback, but seems kinda weird that the last update from the WHO on a disease in 23 countries with a fatality rate scratching 40 was 6 days ago… 
+
+To be clear, it’s probably containable, given the fact it appears to spread via droplets during the time symptoms express themselves (though I’m hearing you may be infectious as much as 2 days before onset, but again, not an expert and unverified), and not airborne before symptoms come out (which would be kind of a civilization threatening thing for something this deadly), but there’s also a lot we don’t know right now, so I’m going to take some oil chips off the table, and let the market figure its way out.    In the meantime, here’s the pre-print, so you can do your own research.
+
+With all that said, I am not selling the ags.  I already regret selling the June sugar.  And diseases and potential lockdowns may be bearish for fuel, they are not bearish for agriculture, which requires folks to go out into the world and grow, harvest, process and deliver it to you.  So we’re keeping the food.
+That’s pretty much it. 
+Stay safe out there.
+CODA: Don’t Trust Machines (Again)
+The only other thing to note here is how hard it was to get the robots to help me track down data with this one.  My first conversation with Claude hit the safety barrier immediately.
+The first Opus session immediately halted, and they sent me to Sonnet.  
+
+As I am wont to do I also ran the query in GPT and Grok.
+
+Grok free also halted, though once I logged in it played nice.
+
+Looping back to Sonnet, first it pretended to help, but kept halting at the ‘research’ part of the query.
+
+Then after a handful of prompts, I finally got a chart out of it, with a r0 (reinfection rate) number which looked much lower than GPT
+
+Eventually I got tired of the halts.
+
+So I started a new chat.  This time, kind of doing the thing where you talk the model into seeing the truth before asking for help, because you the know the safety filters are about to kick in.
+
+This of course, drove the model into a paranoid loop where it continued to suspect me of ‘social engineering’
+
+Even though it understood at the start that it was probably overcalibrated
+
+It continued to accuse me of a dastardly plan of…asking it to make charts.
+
+Eventually I gained back some trust (with tricks I won’t reveal here, for fear of being detained by the alignment police), and got it to do some self reflection, before making the charts.
+
+That is before asking one too many follow up questions, which pushed Claude over the edge.  Apparently considering the actual odds here that matter is just too emotionally exhausting.
+
+Jokes aside, this is actually a pretty bad failure mode for Claude here. The same information vacuum that makes this trade work also made it nearly impossible to research.
+The notion that you can trust machines to do work that doesn’t matter, but cant rely on them when it does, is a pretty profound statement against the whole notion of overdependence on one product or model.  Don’t trust machines, as they say.
+Or, put another way
+
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure.
+Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

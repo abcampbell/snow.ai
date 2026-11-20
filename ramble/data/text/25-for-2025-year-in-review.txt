@@ -1,0 +1,88 @@
+TITLE: 25 for 2025: Year in Review
+SUBTITLE: 
+DATE: 2025-12-09
+
+A year ago I laid out 25 views across three themes: The Acceleration, Great Power Conflict, and China’s Ugly Deleveraging. Now it’s time to mark my homework before we post next year’s calls.
+
+The methodology here is straightforward. I asked multiple AI models to independently score each prediction against observable outcomes. Where they disagreed, I went to the data. Where data was ambiguous, I erred toward being hard on myself. The goal isn’t to claim victory laps—it’s to understand where my frameworks worked and where they didn’t.
+The Scorecard
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+I. The Acceleration is Real
+1. The S-Curve is Real ✓
+Validated. Frontier models hit meaningful diminishing returns on pretraining exactly as predicted. The industry moved en masse to MoE architectures, distillation, and test-time compute. “Intelligence = energy + silicon” went from my weird framework to conventional wisdom. Data centers now consuming 4-5% of US electricity and climbing.
+
+The fundamental truth here was even hard for doomers to avoid..
+
+As predictions like those outlined in “AI 2027” are now clearly off track.
+
+Though don’t worry, even though they called it “AI 2027”…they didn’t really mean it.
+
+See you gotta read the footnotes fam.  Rationalists love telling you that you didn’t do your homework!
+
+2. Long Silver (for Solar) ✓
+Validated. Silver up ~95% YTD in USD terms, crushing gold’s ~60% gain. Gold/silver ratio compressed from 100+ to ~71—exactly the direction I called, though not as far as the 20:1 eventual target. Solar consuming 30%+ of mine supply. US designated silver a Critical Mineral. Section 232 investigations underway. 75 million ounces flowed into US vaults since October on tariff fears. SLV now holds 500M oz—60% of annual global mine production.
+
+3. Long US Natural Gas Exports ✓
+Validated. LNG exports hit records in November—10.7M tons shipped, up 40% YoY. US capacity at 15.4 Bcf/d, on track to double by 2029. EIA forecasts 14.2 Bcf/d in 2025 (+19% YoY). The “AI needs peaker power, gas provides it” thesis playing out exactly.
+4. Long Batteries ✓
+Too Early. Grid-scale storage additions going vertical but I never identified a clean trade. Rolling to 2026.
+5. Long Lasers ⏳
+Too Early. Thesis intact—Iron Beam deployed, HELIOS advancing, directed energy everywhere in defense budgets. But no clean equity expression. Rolling to 2026.
+6. Bird Flu ⏳
+Mixed. Called it early but didn’t make a directional prediction on pandemic vs fizzle. H5N1 spread to cattle and sporadic humans. 70+ US cases. First death. But no COVID-scale event.
+7. Unicorns Dying in Space ✓
+Validated. Funding drought hit capex-heavy space names hard. Blue Origin layoffs, Virgin Galactic struggles, pre-profit SPACs getting crushed. SpaceX remains the clear outlier—exactly the “long SpaceX, short the basket” setup I described.
+8. The Horseshoe is Real ✓
+Validated. AfD tripled votes in NRW elections. RN polling near governing power in France. Reform UK gaining ground. Political realignment accelerating exactly as described. The N-dimensional political manifold keeps adding dimensions.
+Also it got shout outs by Cliff Asness and Marginal Revolution, so looks like a solid hit.
+
+9. Entitlement Reform ✗
+Wrong. Thought Trump/Musk would touch the third rail. They didn’t. The One Big Beautiful Bill tweaked around the edges but no serious move on retirement age, means testing, or Medicare restructuring. If anything, recent bills worsened long-term solvency.
+10. Peak Secularism ⏳
+Too Early. Vibe shift is in flight, but Gallup shows US religiosity still falling—only 49% now say religion is important, down 17 points in a decade. Church attendance drifting down. Megachurches growing in pockets but no macro turn visible in the data.  One to watch along with the Horseshoe/moral framework evolving debate.
+11. Health Positivity / GLP-1 Wave ✓
+Validated. GLP-1 usage exploded. 11M+ patients on GLP-1s by mid-2025. Obesity rate fell from 40% to 37%. RFK at HHS (exactly as predicted). The class angle playing out—weight becoming an economic choice.
+II. Great Power Conflict Escalates
+12. Death of Globalism ✓
+Validated. Average US tariff rate went from 2.5% to ~18%—highest since 1934. Liberation Day tariffs. Section 232 on everything. Multilateralism in full retreat.
+13. Trump is Serious About Greenland ✓
+Validated. This went from joke to live diplomatic issue. Trump visits, annexation talk, covert influence scandals, Danish crises, Congressional bills. “Make Greenland Great Again” became a thing.
+14. Tariffs Go Up ✓
+Validated. 25% on Canada/Mexico, 30% baseline on China (after the April spike to 145%), 50% on steel/aluminum, 25% on autos. Trump used tariffs exactly as “mixed strategy” weapon of statecraft.
+15. Immigration Tightens ✓
+Validated. Remain in Mexico reinstated. Parole slashed. Mass deportations. Border militarized. EU migration pact advanced with tougher procedures. Hard swing away from liberal migration norms.
+16. Water Wars ✓
+Validated. 2025 saw record water-related conflict incidents. India suspended Indus Treaty with Pakistan. Afghanistan-Pakistan tensions over Kunar/Helmand dams. India-China Brahmaputra mega-dam fears. Water weaponized as both lever and target.
+
+17. Syria Will Not Hold Elections ✗
+Wrong. Got the direction right (Assad fell), but Syria held its first post-Assad parliamentary election October 5, 2025. Indirect, flawed, but it happened. I should have framed this better—the chaos I predicted is real, but elections occurred.
+18. Turkey & NATO Tensions ⏳
+Mixed. Turkey-NATO tensions remain structural but no discrete 2025 break attributable to Syria’s fragmentation. Rolling as ongoing risk.
+19. Long India ✓
+Validated. India remains fastest-growing major economy. Q2 GDP at 8.2%—six-quarter high. IMF forecasts 6.4% for both 2025 and 2026. S&P upgraded to BBB. Fourth-largest economy globally, on track for third by 2028.
+20. European Malaise Continues ✓
+Validated. Euro area growth sluggish vs US and EM. Germany still stagnant. Far-right politics complicating policy. European equities broadly lagging US tech-led indices. No renaissance.
+21. Resource & Rare Earth Nationalism ✓
+Validated. China extended export controls from gallium/germanium to silver. Threatened to stop exporting critical minerals as part of trade negotiations.  US added silver to critical minerals list. Section 232 on copper. Australia and EU moving in same direction.
+III. China’s Ugly Deleveraging
+22. Gold in China ✓
+Validated. Gold ballistic in both USD and CNY terms. China has eased into quasi-ZIRP territory. Yuan under pressure. PBoC continuing down path of currency debasement exactly as predicted.
+23. Evergrande Won’t Pay Back WMPs ✓
+Validated. Evergrande delisted from HK exchange August 2025. No reports of comprehensive WMP repayment. $40bn+ still outstanding. Can officially kicked.
+24. Crypto: Cool or Money, Not Both ✓
+Validated. 2025 made crypto even more of a financial asset—spot BTC ETFs, reserve-style holdings, centralized exchanges harvesting the economics. Real-world payments / “web3 for everything” still far behind hype. Financialization > everyday money, exactly as I called.
+25. Stonks Go Down ✗
+Wrong. S&P up ~18% YTD. Valuation, positioning, concentration concerns all correct—and completely overwhelmed by flows. Being early is expensive. Being wrong is fatal.
+Pattern Recognition: Where I Was Right vs Wrong
+Strongest categories: Structural macro (AI → energy → metals), geopolitical fragmentation (tariffs, Greenland, death of globalism), China deleveraging mechanics.
+Weakest categories: US domestic politics/fiscal sequencing (entitlement reform didn’t happen), cultural turning points (peak secularism hard to time), market timing (stonks go down was early).
+The lesson: frameworks that identify structural forces work better than calls that depend on political will or timing. When the physics is right (energy intensity of AI, China’s banking math, resource constraints), the outcomes follow. When it requires humans to make hard political choices... well, they usually don’t.  Interestingly I made the same mistake in 2024!  So a real watch out for..
+
+Till next time.
+Disclaimer
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.  This not a solicitation to any investment.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+THERE CAN BE NO ASSURANCE THAT ROSE INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

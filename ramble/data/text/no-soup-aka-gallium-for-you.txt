@@ -1,0 +1,107 @@
+TITLE: No Soup (aka Gallium) For You!
+SUBTITLE: Conflict is Inflationary: Part 4
+DATE: 2024-12-06
+
+One of my favorite ideas from game theory is the concept of a 'mixed strategy equilibrium.' It's the notion that in some situations, the optimal strategy is to introduce just enough chaos or ambiguity into your behavior that your adversaries can't entirely predict what you're going to do.
+Poker players know this intuitively - sometimes you have to raise with garbage cards just to keep everyone else off-balance enough that they'll eventually bet against you when you've got the nuts (the best possible hand).
+"Oh Joe is crazy, you never know what he's going to do."
+The basic idea is simple: if an opponent fully understands exactly why, how, and what you're optimizing for, they can use that knowledge against you in ways that are hard to counter.
+Most people, valuing stable and predictable governance, tend to avoid this behavior in their leaders. But it becomes extremely valuable during times of conflict. Look no further than how Putin or Kim Jong Il's periodic threats to blow up the world create strategic ambiguity. When there's even a small chance they might actually push the button, people tend to give them more latitude.
+Democracies inject this chaos more indirectly, through their complex and often confusing electoral processes. Consider the strange feature of American democracy where we have a regular two-month period between electing a President and their inauguration - effectively giving us two presidents. The outgoing leader and the incoming team create an interesting dynamic for our adversaries, as we saw when Biden escalated militarily on Ukraine while Trump escalated economically on China (while signaling interest in de-escalating with Russia).
+Trump himself was arguably one of the most effective players of this 'mixed strategy' approach among modern American politicians. He would make bold, seemingly outlandish proclamations, generate enormous backlash, and then somehow deliver enough results that, in retrospect, much of it proved accurate. This kind of 'lateral' thinking drives 'linear' (or "logical") thinkers completely bonkers - partly because humans generally prefer stable governance, and partly because of how surprisingly effective it can be.
+He shares this trait with figures like Elon and Ray - the ability to create strategic ambiguity that keeps opponents off balance.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+China’s Latest Move in the Great Game
+This context helps explain China's recent announcement that it would halt exports of gallium, germanium, and antimony to the US. It's the latest move in an ongoing strategic game between Xi and Trump dating back to 2016.
+The underlying logic is straightforward: "If you're going to prevent us from importing the advanced chips needed to compete with you in AI, we'll make it harder for you to import the materials you need to make those chips!"
+This finally delivers on the long-implied threat stemming from China's dominance in rare earth mineral production and processing. But before we dive into the market implications, let's understand why these specific materials matter.
+Strategic Applications
+Each mineral plays a crucial role in high-tech manufacturing:
+1. Gallium
+   - Primary use: Semiconductors
+   - Military applications: Radar systems, electronic warfare
+   - Commercial: 5G infrastructure, LED displays
+   - Cost impact: 20-100% increase in military applications
+2. Germanium
+   - Primary use: Fiber optics
+   - Military applications: Night vision, satellite optics
+   - Commercial: Solar cells, infrared optics
+   - Cost impact: 15-30% increase in critical applications
+3. Antimony
+   - Primary use: Flame retardants
+   - Military applications: Ammunition, batteries
+   - Commercial: Lead-acid batteries, alloys
+   - Cost impact: 10-15% increase in end products
+China Dominates the Global Market
+
+While the total market for these three minerals is relatively modest at just under $3bn annually, don't let the size fool you. The impact could be multiples larger as Western manufacturers scramble to secure alternative supplies or redesign their supply chains.
+China's market dominance is staggering:
+Gallium: 98% of global production
+
+Germanium: 60% of global production
+
+Antimony: 48% of global production
+
+US imports are relatively small in volume, but their strategic importance far outweighs their size. These materials are critical for semiconductors, high-tech manufacturing, and military applications like night vision, advanced radar, signal jamming, and cutting-edge dual-use technologies.
+Early Warning Signs
+The market wasn't caught entirely flat-footed. China began telegraphing its moves this summer by implementing new registration requirements for domestic producers - typically the first step toward export controls. This regulatory shift created an immediate price divergence between Chinese domestic and global markets, with European prices nearly doubling while Chinese prices remained stable.
+The three months' warning helped consumers prepare somewhat, but that's not much time to completely overhaul critical production materials.
+The Montana Wild Card
+
+An interesting counter-development emerged this March with US Critical Materials announcing a significant gallium discovery at Sheep Creek, Montana. The deposit reportedly contains some of the highest grades of rare earth minerals in the USA, including 13 critical minerals. While promising, developing new mining operations takes years, suggesting this won't provide immediate relief.
+However, it raises fascinating questions about how much production of these minerals has been artificially constrained by environmental and regulatory barriers. Given their use in high-tech and military applications, I expect significant pressure to relax these constraints, particularly under any future administration focused on deregulation and "America First" policies.
+
+Short-Term Adaptation
+In the short term, we expect a combination of re-importation through neutral economies, recycling, and alternative material development. The playbook is already visible in:
+Armenia: Tripling of imports from the west and exports to Russia
+
+Kazakhstan: 5-fold increase in EU auto imports
+
+Even Sweden: Using the Kazakh corridor for Western goods
+
+Ironically, and as expected, China is at the center of this process, with a massive surge of imports to former USSR bloc Russian neighbors amidst a collapse in trade with Ukraine.
+
+Price and Industry Impact
+Consistent with the announcement of the restrictions in exports starting in June, we saw prices for two of these products essentially double with a material gap opening up between domestic and foreign prices for antimony and germanium in particular.
+
+As there are no listed futures for these metals in the West, it's impossible to tell at this point how bad the price spikes here will be, but we would expect the gap between domestic and foreign prices for these rare earths to spike in the short term while recycling, alternatives, and re-import channels come online.
+
+Industry Impact
+
+In the chart above you can see what the likely substitutes are for these minerals, broken down by product and what our best guess of the price shock to those production processes from using those alternatives. This is pretty loose, but the magnitudes make sense given these rocks are a relatively small part of the overall cost stack, so that even 2-10x higher input costs will only flow through to 10-30% increases in final output prices. Interestingly out of all the applications, the one that seems the most affected is electronic warfare.
+In addition to military applications, solar panel manufacturers will be in a bit of a bind, as both gallium and antimony are critical parts of many current production processes. This is why the looming threat of China's market concentration in these products is so relevant - it's not the size of their market but the bleeding edge of tech and energy production where these are consumed.
+Fiber optic is also going to be in for a bad way, outside of the much more well understood impact on semiconductors. For a good rundown, check out former Rose team member Steven Glinert's recent deep dive on the topic.
+
+Investment Considerations
+The market disruption creates both risks and opportunities:
+1. Direct Exposure
+The most obvious positive play is Western rare earth miners. Given these markets' size, we're not talking about majors like Rio or Glencore, but rather smaller specialized players like Perpetua (PPT), United States Antimony (UAMY), Umicore (UMI) and AXT (AXTI). As prices spike and supply chains reconfigure, these companies could see significant upside.
+Chinese producers will likely take some hit from reduced exports, but given the price increases and probable "alternative channels" similar to those used for Russian tech imports, the impact should be manageable.
+
+The negative side effects Western tech and military manufacturers who rely on these inputs. While it's still unclear how binding these constraints will be for major semiconductor players, the uncertainty alone warrants caution. With that in mind, we have medium confidence in long positions on Western miners, and low conviction (though possibly more with additional work) in a short on the producers that use this stuff as inputs.
+
+Given our existing heavy exposure to high-tech names, we'll likely reduce our position by about 20% pending further analysis.
+2. Secondary Effects
+Defense contractors with mineral-intensive products face a similar challenge. This is particularly painful given our overweight position based on expectations of continued conflict escalation and the need to re-arm Europe and Asia against the "new axis."
+In coming weeks, we'll explore potential long positions in alternative mineral developers and recycling companies that could help fill the supply gap. More details to follow on specific opportunities. In the meantime we've built a portfolio of the Western producers of these minerals, and compared it to a portfolio of consumers, as a way of monitoring the situation while dipping our toe in the water.
+
+Looking Ahead
+This move represents another significant step in the broader deglobalization trend. Expect:
+Accelerated reshoring of critical mineral processing
+
+Increased government support for domestic production
+
+Rising costs across high-tech manufacturing
+
+Further tit-for-tat trade restrictions
+
+The strategic importance of these minerals far outweighs their modest market size. As the technology cold war intensifies, control over these critical inputs becomes another key battlefield in the broader economic conflict.
+Remember our constant refrain: "conflict is inflationary," particularly when the mechanism is supply constraint. The real question isn't whether prices will rise, but rather which companies and countries can best adapt to increasingly fragmented global supply chains.
+Just as in poker, the winners won't necessarily be those with the best hand, but those who can best navigate the strategic ambiguity while maintaining multiple paths to victory. Keep your eye on this space - the next moves in this game of industrial chess could reshape global manufacturing for decades to come.
+Till next time.
+Appendix: Chart Pack
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

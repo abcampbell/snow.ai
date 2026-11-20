@@ -1,0 +1,56 @@
+TITLE: Stoic Macro: Living Between Order and Chaos
+SUBTITLE: When to Cut vs. When to Double Down
+DATE: 2025-08-16
+
+Yesterday we explored the mathematics of progress—how pain plus reflection creates learning velocity, and why you need acute pain relative to your historic capacity to grow.
+But mathematics alone doesn't capture the full picture. Today we turn to the world that best embodies these principles in practice: global macro investing.
+The Macro Laboratory
+Global macro represents the perfect combination of timeless universal truths—patterns, relationships, and models which exhibit consistent predictive power across time and space—and yet is essentially inherently unpredictable in its nature.
+This paradox exists for two fundamental reasons:
+1. **The chaotic, existential complexity of the machine**: Seven billion humans making decisions, institutions with their own dynamics, feedback loops upon feedback loops.
+2. **Explicit evolution through reflexivity**: Old patterns get simulated and embedded into asset prices over time. The very act of discovering a pattern changes the pattern.
+In short, it's the perfect laboratory of entropy. Much like Soros warned: the more you think you understand something, the more you build structures of meaning and reality in such a way as to guarantee you become overconfident and make mistakes going forward.
+
+This is also why it was very difficult to communicate to investors how you can be both fundamental (led by human judgment) and systematic (data-driven and quantitative) in investing—two things which appear to be inherently in tension, and yet cycle on and off all the time in response to conditions in the world.
+Living Between Order and Chaos
+So here we are as speculators, living between order and chaos. If you accept that learning is a function of dissonance—particularly the production of that dissonance between your mental model and the world—then to be a good investor your goal is to:
+a) Build mental models (and sometimes real ones) of the world
+b) Observe the dissonance between what those models say and what happens
+c) Stare at the pain from the gap therein, reflect on it, and use that to "loop"
+The world will always evolve, including by the actions of yourself (remember LTCM?) and your competitors, in such a way as to monotonically increase that dissonance over time.
+This is also how you escape the quant trap of relying on data so much that you assume the future will look like the past, even and especially when the human designing that math knows the world is now different or when the world is screaming "wrong."
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Existential Question
+Which gets to the heart of the existential question of investing: 
+When do you cut your losses versus when do you double down?
+This isn't just about position sizing or risk management.
+It's about how you navigate fundamental uncertainty while still having the conviction to act. How do you stay humble enough to learn from dissonance while confident enough to build something meaningful?
+Every trader faces this moment: Your position is underwater. Your model says you're right. The market says you're wrong. Do you:
+- Cut and preserve capital (accept the pain, reflect, move on)?
+- Double down (your model is right, the market is temporarily insane)?
+- Freeze (the worst option—neither learning nor conviction)?
+The quants will tell you to follow your backtest. The discretionary traders will tell you to trust your gut. Both are right. Both are wrong. The geniuses of LTCM learned this lesson…the hard way.
+
+The Ego Paradox
+Here's the duality we must navigate: The ego is the enemy because it leads to overconfidence.
+But ego is also the driver—without it, you'd never have the conviction to take positions in the first place. If nothing has inherent meaning (the market certainly doesn't care about your P&L), then we “create our own reality” as a dear friend and fellow shaman trader used to say.
+We build our own structures of meaning. And creating those structures requires a certain amount of... audacity. Even if you go to your darkest place and assume there is no meaning, that gives you the liberation of deciding what the meaning is.
+But if you approach it with a Stoic philosophy—knowing there will be pain and knowing there will be no cosmic validation—it allows you to actually create structures rather than just exist within others'.
+And creating those structures is part of meaning. Not just because they are helpful for trading or helpful for life. Because that's what separates us from entropy.
+The people we revere most are those who create structures that endure: whether they be empires like Alexander's and Caesar's, philosophical frameworks like Confucius', or scientific principles like Einstein's.
+The Third Way
+The answer to "cut or double down" lies not in choosing between them, but in understanding how to position yourself to benefit from either outcome.
+You need a framework that works whether your models are right or wrong, whether the world breaks or continues as expected. You need to build what Taleb might call antifragile positioning—a way of structuring your portfolio (and your life) so that you benefit from volatility and uncertainty rather than just surviving them.
+This isn't about hedging everything into mediocrity. It's about building a framework that:
+- Accepts that most of your positions (models, beliefs, projects) will be wrong
+- Positions you to benefit massively when you're right
+- Ensures that being wrong doesn't destroy your ability to play again
+- Most importantly: generates learning from every outcome
+Tomorrow, we'll make this concrete with a three-legged framework that operationalizes these principles.
+We'll show how to hedge breakdown, capture upside, and build your own meaning—all while maintaining the flexibility to adapt as the world evolves. For now, remember: You're not trying to predict the future.
+You're trying to position yourself to benefit regardless of which future arrives. The market doesn't care about your models. But if you build the right framework, you won't need it to.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. As noted the views in this portfolio are not intended to maximize return and any use in a portfolio ought be considered in the broader context of your portfolio and investment needs and obligations. Please consult with a registered investment advisor if you would like financial advice, that’s their job.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

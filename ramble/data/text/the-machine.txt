@@ -1,0 +1,35 @@
+TITLE: The Machine
+SUBTITLE: September 6th, 2018
+DATE: 2021-11-09
+
+At Black Snow, we believe it pays not only to study history, but to form mental models of the systems that guide history.  That the creation and refinement of these models not only help us understand the world, but help us trade markets.
+This post is about the high-level system we see guiding the allocation of resources in and across three distinct domains of human affairs.   It is the system that defines how capital, in its broadest sense, evolves and defines our day to day life.
+We call it #theMachine.
+
+The Machine has three parts. 
+Each part representing a form of capital that guides human affairs in a particular domain.  Each with existing internal feedback loops.  Each with defined (but constantly evolving) ways of interacting with the other domains.
+
+CULTURE
+Cultural capital can can be thought of as the ability to mobilize financial and technological resources purely through personal or institutional clout. 
+As culture is the domain of purely human affairs, cultural capital represents standing and power amongst humans.
+The ability of a politician's tweet to move markets, or of a celebrity endorsement to change opinions is a manifestation of the cultural capital those individuals posses.  Though this clout is recorded not in any balance sheet or hard drive, it exists nonetheless.
+We take a broad definition of culture here, one that contains both the explicit (politics) and implicit (class) hierarchical structure that we as social apes spend our days in.
+
+TECHNOLOGY
+Simply put, technological capital is the ability to do more, with less.
+It can be thought of as the ability of an individual, organization or society, to design, implement and maintain systems.
+Some of those systems, create, store and transport physical goods and services, be they a barrel of oil or a iPhone.
+Some of those systems deal with non-physical objects, be they streaming movies or search results.
+In some sense less, tech capital isn't as immediately apparent than the other two forms of capital, as its primary impact is to the reduce the financial and cultural cost of doing business.   
+
+FINANCE
+Financial capital is the domain of money, wealth, and obligation.  Of assets and liabilities.  Equity and Debt.  Inflows and Outflows.  
+Finance can be thought of as the great book of accounts in the sky.  That which records who owe's whom what, and the prevailing market prices by which those debits and credits were exchanged.
+While this system has evolved significantly since Hummurabi's slab was used to make the first recorded insurance contracts, it's relationship with the other two forms of capital remains relatively constant.  
+Financial capital is the ability to make change in that great distributed ledger, and in doing so, mobilize change in the domains of culture (humans) and technology (systems).
+
+The goal of this post was to lay out the three forms of capital as we see them.  
+In subsequent posts, we will go a level deeper, and walk through how the three forms of capital function, interact, and evolve.  
+In this work, we'll attempt to provide the logic (backed up with data) behind the three charts in this post. 
+For example, how can the US (and by association the UK and it's former colonies) be the source of so much of the world's technological and cultural capital, whilst simultaneously owing everyone else so much money? 
+Once you start to see the world in these terms, it becomes hard to stop.

@@ -1,0 +1,177 @@
+TITLE: The Death of the New Deal
+SUBTITLE: Don't Tax the Builders
+DATE: 2026-02-23
+
+I. The New Deal is Dead
+The New Deal is dead. Time for a New New Deal.
+This was my contention back in the fall of 2024. A synthesis that came from watching three threads converge: the Rise of the Machines, the Death of Globalism, and the Horseshoe.
+
+The core idea being that what we call ‘the American’ dream is actually a series of Rousseau like social contracts, that existed based on a set of cultural, technological and economic contexts. As the facts on the ground change, so did the deal. Sometimes politically (FDR), sometimes violently (Civil War), but always in such a way that renegotiates the relationship between the haves and the have nots, between capital and labor, between who we consider ‘us’ and who we consider ‘them.’ 
+Looking around, there is ample evidence that the old world order is breaking down, though what comes next still seems distant, ambiguous, and the path seems full of peril. 
+Today I want to look at the economic lens on this transition. The machines are gaining in volume and pace. The new generation sees a world more slanted against them than ever. The lack of fiscal space almost guarantees politicians feed divisive narratives rather than deal with root causes. ‘Rich people’s fault.’ ‘Immigrants’ fault.’ Pushing policies that reduce economic opportunity rather than create it. At the very moment we need them most, our elites seem determined to pull the ladder up behind them.
+Specifically: taxing (and disincentivizing) productive behavior like earning and investing. Increasing dependence on the state rather than independence from it. Worst offender: the push to tax unrealized gains.
+If taxes must go up (and they will, especially once machines automate the jobs and start rerouting wage income to profits), then tax consumption and inheritances, not the things that create things.
+Zero sum vs non-zero sum. Tax the selfish stuff. Leave the productive stuff alone.
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+II. The Zoomer Trap
+Start with the outcomes.
+Over 90% of Americans born in 1940 earned more than their parents. Born in 1984? Barely 50%. The American dream is dead for half the country and the trend is still going down.
+
+Not hard to see why. The cost of the three things you need to build a life, housing, healthcare, education, has outrun wages for decades. Well-meaning policies drove most of it. Low rates and restricted housing supply pushed up asset prices for people who already owned them. Education subsidies inflated tuition past the point where the marginal degree covered the debt to pay for it. And whatever the heck is wrong with American healthcare, where we spend more per capita than anyone and still can't figure out why an MRI costs $3,000.
+Home formation for 26-41 year olds has fallen from 90% to 73.5% since 1962. Where are they? Living with their parents. Or splitting a three bedroom in Murray Hill with two strangers from Craigslist.
+
+44% of Gen Z men report never having had a girlfriend or boyfriend during their teen years. For Boomers that was 20%. Not a dating preference. Economic despair showing up as social withdrawal.
+
+Marriage rates collapsing, delayed by a decade or more compared to the 1940s cohort.
+
+Fertility falling off a cliff. Each successive cohort having fewer children at every age.
+
+Around 2015, the top 1% passed the entire middle class (earners between the 20th and 80th percentile) in total wealth share. One percent of the population holds more than sixty percent.
+
+Parent income rank at age 30 is now a near-linear predictor of child income rank at age 30. The Great Gatsby Curve isn’t a theory anymore. It’s a scatter plot. Of the United States.
+
+America sits between Italy and Switzerland on the curve. Higher inequality, lower mobility. “Anyone can make it” becoming polite fiction.
+
+Feels like the only zoomers who make it out of the trap are working in startups or doing livestreaming. The traditional pathways are broken at every step.
+And yet. Boomers are doing fine. In 1989, 55+ held 56% of net worth. Today 74%. Equities: 59% to 79%. Under-40s: 12% to 7%.
+
+When you think about the intergenerational conflict these numbers imply, the story starts to make more sense. 
+
+III. How We Got Here
+We did this to ourselves. A series of policy choices that each made sense in isolation but combined into a massive intergenerational wealth transfer.
+ZIRP juiced every asset on the planet. We ran ZIRP for the better part of fifteen years. Doubled the S&P. Tripled home prices in most metros. Pumped the value of existing bond portfolios through the roof. The people who owned things before QE started made out like bandits. Not through work or risk-taking. Through the simple math of duration and discount rates.
+Fed bought mortgages to protect boomer home values. After the GFC, the explicit policy was: don't let homes fall too much. Bail out the middle class by backstopping their biggest asset. Which worked! For homeowners. For the 28 year old trying to buy their first place? Congratulations, your starter home now costs $550k instead of $280k, and your mortgage rate is 6.5%.
+Education subsidies pushed up tuition without improving outcomes. What was once a good signal is now polluted. It only really helps if you a) get into the elite, based on the somewhat rigged game of Ivy League selection, or b) do something technical, aka hard. Most kids end up getting suckered into going to schools that are OK but not really sufficient for economic mobility, then enter the labor force with no debt capacity, which eliminates their ability to borrow to buy a home.
+
+Look at that chart. Elite colleges genuinely do level the playing field. Kids from the bottom quintile who get into a top school end up roughly the same place as kids from the top quintile. But 'other 4-year colleges' and '2-year colleges' barely move the needle. We're selling a $200k product that works for 5% of the buyers.
+Healthcare: Great system of innovation, but the dream of universal coverage is kinda dead. Most people end up rationing their care not through price but through paperwork and administrative hassle. Poor men die a decade earlier than rich men.
+
+Nobody is building anything. Housing permits, housing starts, housing completions, all below where they need to be. NIMBYism is the one bipartisan consensus. Everyone wants affordable housing, just not next to them.  Everyone agrees we need electricity to power electric vehicles and AI, and yet, we’ve been lapped by China in a little over ten years.
+
+Net effect: a system that protects existing wealth holders, funded by the productive capacity of younger workers, propped up by asset inflation that benefits people who already had assets. The boomers had a good run and set up the system for a good retirement. The zoomers see there's nothing in the piggy bank for theirs, and can't even see a world stable enough to start a family.
+
+IV. The Fiscal Trap
+Before we get to what to do about this, the fiscal situation is, to use the technical term, hosed.
+
+The US is running wartime deficits in peacetime. The last time deficits were this high relative to GDP outside of a world war or financial crisis was... never.
+The two pillars of the New Deal, Social Security and Medicare, are both staring down insolvency.
+
+Social Security hit cash flow deficit in 2017. Medicare Hospital Insurance a decade before that. Government’s own math.
+The New Deal was designed for 5 workers per retiree. Today it’s under 3, heading toward 2. Can’t sustain intergenerational transfers when the generations aren’t the right size.
+That’s before the machines. The entire US tax base is linked to human labor compensation. If AI drops labor’s share of GDP from 64% to below 50%, receipts crater at exactly the moment transfer obligations spike. Claude Code?  Sounds like strapping an AI accelerant to the demographic time bomb.
+Everyone knows this. Nobody wants to deal with it. Left wants to tax its way out, right wants to cut. Neither works at this scale.
+Taxes are going up. The question is which ones, and that choice reveals whose side you’re on.
+
+V. The European Warning
+Quick detour to Europe, because they’re about 10 years down the line on the implications of the path we are on.
+
+French pensioners now have higher average incomes than the working-age population. People NOT working make MORE than people who ARE. Macron tried to raise the retirement age by two years. Paris burned for months.
+
+In France and the UK, incomes for 65+ have grown dramatically faster than for working-age adults since 1970. The welfare state eating its children.
+Europe’s solution: import workers. Whatever your view on immigration culturally, the fiscal profile doesn’t close the gap.
+
+The Danish data shows different fiscal contribution profiles by immigrant origin over the lifecycle. If you’re importing people to support your welfare state and they aren’t net contributors until deep into their working years (if ever), you’ve added a cultural dimension to a fiscal crisis.
+Every European country is going through some version of this. Fiscal premise didn’t work, cultural costs turned out to be real, and rather than rationalize the system they raised taxes on labor and capital until economic behavior stopped making sense.
+Bad outcome is France. Pensioners making more than the median worker. Rather than reform, import people who don’t have time to assimilate, then act surprised when the politics go sideways.
+Can’t import your way out of a broken social contract. Have to reform the contract.
+
+VI. Zero Sum vs Non-Zero Sum
+How does this all net out in the end?  
+The speed of job displacement will be proportional to the shift to socialism. Taxes are going up. The question is which ones, and I'm past the line where it's appropriate for a macro blogger to have tax policy opinions, but here we go:
+Two kinds of economic behavior:
+Positive sum. Earning. Making. Building. Investing. Founder builds a company, doctor performs surgery, engineer designs a bridge. Pie gets bigger.
+Zero sum. Inheriting. Consuming status goods. Inherit $50 million, no new value created. Buy a $500k watch, the status value comes from other people not affording it. Pie stays the same or shrinks.
+A sane tax system taxes the zero sum stuff and leaves the positive sum stuff alone.
+Instead we’re seriously discussing taxing unrealized capital gains. Taxing wealth creation before it’s been realized.
+Unrealized gains taxes are the worst. Founders selling shares before businesses are worth anything, paying taxes on paper gains that might evaporate next quarter. How do you value a private company annually for tax purposes? You can’t. The IRS can barely handle what they’ve got. You could imagine rebates for unrealized losses, monetized and traded(!), but that requires financial infrastructure that doesn’t exist and a political consensus that is decades away. Maybe possible later with CBDCs and full transaction transparency (’no more secrets, Marty’), but not 2030-2050.
+
+California-style wealth taxes are poorly designed. Founders taxed at their level of control, not economic ownership, meaning tax bills potentially larger than actual equity value. Exodus already underway. Ask Austin and Miami.
+
+Progressive income tax hikes miss the target. Majority of the ‘rich’ got there through asset appreciation, not income. Jacking up income taxes crushes the $350k surgeon, the $250k dual-income tech couple, the small business owner grinding it out. Meanwhile kids with rich boomer parents get free apartments in NYC (directly, through familial loans, or the greatest loophole of all: stepped-up basis at death), locking us further into existing tracks.
+
+What people miss: effective tax rates are actually more progressive than the discourse suggests. Top 0.1% pays 35.7% including all federal taxes. Bottom quintile pays 3.1%. The system isn’t as broken as populists on either side claim.
+What IS broken is the base. We tax the hell out of income (people working) and barely tax wealth transfer (people inheriting). We tax realized gains (being right) and now want to tax unrealized gains (not yet knowing if you’re right). Consumption taxes remain lower in the US than virtually any other developed economy.
+
+US total tax burden at 47%, below the OECD average of 56%. But the composition is bizarre. Heavy on income and payroll, light on consumption. Compare to Denmark at 66% or Germany at 55%, which lean much more heavily on consumption and VAT.
+
+Under some proposals floated a few years back, the US would have had the highest combined personal income tax rate in the OECD at 57.4%. Higher than Sweden, France, Japan. Countries with significantly lower growth rates.
+Who actually tried taxing wealth and unrealized gains aggressively? France. Capital fled to Belgium and Switzerland. Repealed. Sweden too. Same story. Norway still has one, watching its millionaires relocate to Lugano. The empirical track record of taxing wealth creation is about as strong as the track record of Chinese property developers.
+Pulling Up The Ladder
+“Don’t worry, it won’t affect you, you aren’t worth more than $100m.”
+Sound familiar? Sounds a lot like:
+“Don’t worry, it won’t affect you, you aren’t rich enough to spend $100m on training.”
+Both use the distance to the threshold as reason to change the rules. Both assume the threshold won’t move.
+Pulling up the ladder.
+We ran rates to zero for fifteen years, inflated every asset your parents owned, watched the generational wealth gap explode, and NOW we want to tax unrealized gains on the next generation trying to build something. First a joke, then a ‘proposal’, now serious policy.
+
+VII. The Robot Accelerant
+Layer AI on top of all this.
+
+Office and administrative support: 46% exposed. Legal: 44%. Architecture and engineering: 37%. Business and financial operations: 35%. Not factory workers. White-collar professionals who took out $200k in student loans expecting stable careers.
+
+Labor share has already fallen from 65% to 57% over seven decades. That decline alone reshaped the entire economy. Now imagine AI cutting it in half over a few years.
+Simple math: imagine an economy is 80% wages, 20% profits. Workers spend everything. Capitalists spend 10% of profits (what an economist would call the difference in their ‘marginal propensity to consume’). Total spending: $82 per $100 of GDP. AI drops the wage bill to 50%. Capitalist savings rate unchanged. Spending collapses from $82 to $55. Depression, not recession.
+This is why household leverage increases as economies industrialize. When the profit rate rises, you need someone to borrow to sustain spending. Usually households, credit-carding their way through because wage growth can’t keep up.
+Ironically, as I was writing this over the weekend, my friend Citrini published a piece on this very idea. He called it “Ghost GDP”: output that registers in national accounts but never enters the circular flow because machines don’t consume. A GPU cluster in North Dakota generating the cognitive output of 10,000 Manhattan knowledge workers shows up in GDP. Doesn’t buy groceries, pay mortgages, or take vacations. Capital has a lower propensity to consume. Split economy: machine side shows massive output growth, radical deflation, soaring productivity. Human side shows demand destruction, wage compression, asset price impairment. Aggregate numbers look fine while the lived economy deteriorates.
+Citrini Research
+THE 2028 GLOBAL INTELLIGENCE CRISIS
+
+Preface…
+Read more
+9 months ago · 314 likes · 18 comments · Citrini and Alap Shah
+
+The scary part is the financial accelerant. Long term readers know we’ve been short private credit for a while, and this lays out the transmission mechanism. Private credit underwritten against recurring white-collar revenue (SaaS ARR, consulting contracts) discovers those assumptions are secularly broken. Worse: the $13 trillion mortgage market discovers prime borrower creditworthiness was underwritten against income trajectories that no longer hold. 2008 again, except this time it’s not subprime fraud. It’s AI deflation hitting the wages of the borrowers themselves.
+Makes the inheritance tax argument urgent, not just preferable. You NEED that capital recycled and deployed, not sitting in dynasty trusts earning 4% in Treasuries while the economy starves for demand.
+Worried about generational wealth inequality now? Wait until AI takes 30% of tasks in the highest-paying entry-level jobs. The pathway from education to middle-class stability is already under strain for millennials. For Gen Z and Alpha it may not exist.
+Do you really want to tax the few people who figure out how to build something new?
+
+VIII. The Optimistic Case
+The fracturing of the old system WILL create opportunities though.
+I used to work in a photo lab in high school. One hour photo was $10-15 a roll and required real labor. Now it’s free. Supply went to infinity, and that opened up economic modalities nobody predicted. ‘Influencer’ didn’t exist as a career when film photography was the norm. AI will create jobs we can’t see yet.
+But we CAN see where things get cheaper. Ironically, these are the very things fucking over the zoomers:
+Housing. Robots building homes. Modular construction. 3D printing. Labor cost is a massive chunk of why housing is expensive, and it’s about to compress.
+Healthcare. Robot paperwork (goodbye $200k billing administrators). Robot diagnostics. The innovation system is great, it’s the administrative bloat that kills people. Sometimes literally, via delayed care while you fight your insurance company.
+Education. Death of the service economy means less pressure for everyone to go to college and spend $200k. These daycare-email jobs aren’t that good for the world. Show competence via electronic testing. Not like we didn’t ask a generation to learn via Zoom anyway.
+Transportation. Robot taxis. Cheaper energy. Cost of moving people and goods drops dramatically.
+Most people think of an economy as consumption. Production is the backbone, and AI will be enormously good for production.
+I’m not a full doomer on this. The deflation itself is a transfer from producers to consumers. If a Claude agent does $180K of project management for $200/month, the $45K Uber driver can suddenly afford services that previously required six-figure income. Whether that deflation is fast enough to offset the income destruction is the swing variable. I’m not sure it is during the transition.
+Death of globalism means making stuff in the US again. Not coal mining. Manufacturing with robots, not manufacturing like 1955.
+And eventually the boomers bequeath all their assets. Once-in-a-century opportunity to get the inheritance stuff right.
+
+IX. What Would Actually Work
+Here’s what I’d propose. Yes, this is way past the line where it’s appropriate for a macro blogger to have tax policy opinions, but the macro IS the policy at this point.
+Tax inheritance and consumption, not creation.
+Raise inheritance taxes significantly. Current exemption is around $13m per person ($26m per couple), fine, leave it. But raise the marginal rate above that to 100%. We want people like Musk and Bezos allocating capital in their lifetime. I don’t care if they become trillionaires, we should want that. What we don’t want is their kids inheriting trillions. The history of family wealth shows that not enough of that uber-right-tail capital allocation skill transmits through genes. Better they compete in the market than inherit a country’s worth of wealth.
+And close the step-up in basis loophole. Single most regressive feature of the tax code. Inherit appreciated assets, inherit the tax liability. Step-up is how dynastic wealth perpetuates itself while the kid at her startup pays full freight on every dollar of gain.
+Luxury consumption tax. Yachts. Private jets. Watches above some threshold. Cars above $200k. If it derives status from rarity, tax it. Veblen goods derive value from exclusivity, so the consumers don’t care (your Patek is still more expensive than the next guy’s Rolex) and we tax the selfish stuff rather than the productive stuff.
+Leave income taxes alone or cut them. If I had my druthers we’d eliminate income taxes entirely and move to consumption and inheritance. The majority of the ‘rich’ got there through asset appreciation, not income. Income taxes hit strivers, not dynasts, and they add friction to social mobility.
+Do not tax unrealized gains. Penalizes illiquidity, crushes founders, forced selling in down markets, unworkable for non-public assets. If you’re going to pretend this is serious policy, apply it to housing too and see how popular it is.
+Raise property taxes. People pay property taxes on assets they derive utility from in use. They’re less likely to monopolize real assets when they come with a cost. Frees up stale capital.
+Reform entitlements. Third rail, I know. Math doesn’t work otherwise. Raise retirement ages gradually. Means-test benefits. Restructure Medicare around catastrophic coverage. Maybe even freeze the inflation adjustments for a while until it balances out (watch how fast the boomers become inflation hawks overnight). Politically nuclear, financially inevitable. Better deliberate reform than Congress panic-legislating at 2am when the trust funds hit zero.
+Shift the tax base from labor to capital and compute. If AI collapses labor’s share of GDP, a tax system built on taxing labor income is dead. Tax capital directly. Not punitive, just following the money.
+The wild idea. Don’t send inheritance tax revenue to the general fund. Auto-sell the assets and mail everyone a check. Create quasi-corporate bodies that manage these assets and distribute microshares given to kids at birth. Sounds better than “babies buy the S&P” but honestly, that’ll happen too. Convert dynastic wealth stock into broadly distributed capital flow. Not socialism. Capital recycling.
+
+X. The Horseshoe of Tax Policy
+There’s actually a coalition for this, weirdly.
+The populist right hates dynasty wealth because it looks like aristocracy. The populist left hates it because it’s inequality incarnate. Both agree that inheriting $500 million and sitting on it is worse than building $500 million from scratch.
+The horseshoe bends. The 25-year-old MAGA guy working construction in Ohio and the 25-year-old DSA member bartending in Brooklyn have more in common economically than either does with a 70-year-old in their own party.
+Articulate this coalition and you’d have the basis for genuine reform. Creation over transfer, income over consumption, young over old.
+But holy moly don’t think people are ready. See: France.
+This culminates in crisis. Maybe war, maybe attempts at revolution, definitely more extreme parties taking market share from the middle as folks move out the horseshoe’s second dimension. Whoever provides a compelling vision the next generation can live with, wins. Sacred cows have to die first, and that usually requires exactly the kind of crisis we see brewing.
+The US is one of the best positioned nations for what’s coming. Two coasts, inland river system, abundant energy, and a culture that absorbs shocks. We’ll have to lead the west through it.
+
+XI. What This Means for Markets
+Timing unclear, path unclear. We jump between quasi-equilibria until the new political dimensions emerge.
+Until then, I’m long gold.
+Unrealized gains taxes gain real traction? Massively bearish long-duration equity. Founders and long-term holders face forced selling before the tax kicks in, permanently lower multiples for growth stocks.
+Inheritance/consumption route? Neutral to positive for equities, modestly bullish luxury stocks short-term (accelerated spending before death), bearish fixed income as recycled capital seeks productive deployment.
+Either way, higher taxes somewhere, more volatility everywhere, and here’s hoping we avoid the zero-sum logic that feels oh so appealing right now.
+Till next time
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. There will be typos. This is not my full time job and I do not promise the data included is accurate or up to date.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+THERE CAN BE NO ASSURANCE THAT ROSE INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

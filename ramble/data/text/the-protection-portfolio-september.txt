@@ -1,0 +1,262 @@
+TITLE: The Protection Portfolio: September 2025
+SUBTITLE: Or: Why I'm 125% Net Long and Sleeping Fine
+DATE: 2025-09-22
+
+KEY HOLDINGS:
+Long 78% Silver 
+
+Long 46% Gold 
+
+Long 5% Miners/Royalties
+
+Long 23% Tech/AI (18% hardware, 7% software after shorts)
+
+Short -40% High Yield Credit
+
+Short -8% delta via SPX Puts
+
+Net: 124% Long
+
+The Thesis
+We're at an inflection point. The old economy is dying, AI is eating white-collar work, China's banks are technically insolvent, and the Fed is trapped between sticky inflation and weakening growth. This isn't a normal cycle top. It's a regime change.
+Here's what I see: The machines are getting smart but they're energy hogs. China needs to print its way out of a property collapse. The West is abandoning 50 years of globalization. And everyone's acting like stocks at 22x earnings with credit spreads at historic lows is perfectly normal.
+The protection portfolio is built for exactly this moment.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Part I: The Monetary Debasement Trade
+China is Hosed, Gold Knows It
+I've been beating this drum since 2015: Chinese banks are sitting on trillions in property losses they can't recognize without imploding. The solution? Print. China has created more M2 in the past two years than the US has since COVID.
+
+The mechanics are simple:
+Banks can't mark property loans to market (instant insolvency)
+
+Fixed asset investment has collapsed (no growth engine)
+
+Charts from our friends at @totemacro
+
+Solution: Monetary expansion + currency depreciation
+
+Chinese gold imports are running at 100+ tons monthly. Not yearly. Monthly. 
+
+Both private citizens and the PBoC are converting RMB to gold as fast as they can. Shanghai gold inventories surging. 
+
+The smart money in China has already voted.
+
+Western investors? Still sitting at <4% portfolio allocation to gold. ETF holdings have barely budged despite a 40% rally. 
+
+This divergence won't last.
+Silver: The Monetary Metal with a Solar Kicker
+Silver is gold on steroids with an industrial demand surge coming. Solar panels consumed 25% of global silver production in 2024. The new high-efficiency panels use 20mg/watt versus 10mg for older tech.  Copper substitution is still 3yrs away.  Meta wants 4GW for AI? That's 1.2 million ounces of silver.
+The setup:
+Monetary demand (like gold) ✓
+
+Industrial consumption (unlike gold) ✓
+
+Supply constrained (no major mines coming online) ✓
+
+ETF makers struggling to find physical (borrow costs spiking) ✓
+
+I've rotated 2/3 of my gold into silver. Not because gold is bad. Because silver is better.
+Part II: The Volatility Trade
+Building Better Butterflies
+In spite of the rally, at-the-money silver vol at 24% looks calm. 
+
+But check the skew - 40% implied vol at 65% upside strikes. The market is terrified of an upside explosion.
+
+The Trade:
+
+Silver Butterfly
+Buy 1x $45 call 
+
+Sell 2x $55 calls
+
+Buy 1x $65 call
+
+Cost: $1.15
+
+Max Payout: $10 (at $55 spot)
+
+Risk/Reward: 8.7x
+
+Note this is priced on the ETF not the underlying future
+
+This isn't a YOLO. It's a structured bet that silver rallies 30-50% in a controlled manner. If it goes parabolic past $65, I have time to hedge on the way up. If it stays flat, I lose premium.
+Part III: The Real Economy
+Jobs Are Breaking
+
+All job growth since July came from healthcare, leisure, and hospitality. White-collar employment is contracting. Professional services shed 17k jobs last month. The AI displacement isn't coming - it's here.
+
+Youth unemployment hit levels not seen outside recessions. Gen Z faces 35% underemployment. 
+
+The pathways to middle-class life that existed for millennials are gone.
+
+Real Estate is Already in Recession
+Commercial mortgage delinquencies exceed 2008 levels. Office CMBS running 11% delinquent versus 10% at the GFC peak. Work-from-home didn't end - white-collar workers just stopped admitting they skip Fridays.
+
+Residential isn't better:
+
+Mortgage rates stuck at 6.5%
+
+Inventory surging (highest since 2008)
+
+New home supply flooding the market
+
+Lumber prices collapsing
+
+The Fed knows housing drives consumer sentiment. That's why they pivoted to easing despite sticky inflation.
+Part IV: The AI Reality Check
+It's Real, But the Economics are Broken
+LLMs work. They're transformative. They're also building out hundreds of billions of additional data centers while inference stacks lie underutilized (more on this in a coming ramble).  The path to profitability requires 100x+ increase in usage while users can only grow by something like 10x.  
+Neither is happening tomorrow.
+
+Current AI usage breakdown:
+Technical/coding: 7.5%
+
+Writing/editing: 15%
+
+General Q&A: 35%
+
+Creative: 20%
+
+The high-value use cases (coding, data analysis) consume 100x more tokens than "find me a restaurant." That's why OpenAI is desperately pushing Codex - they need to lock in the profitable workflows before competitors catch up.
+The Infrastructure Trade
+Forget the applications. Own the picks and shovels:
+Memory prices up 300% (first time in 20 years)
+
+Data center demand exploding
+
+Power consumption going parabolic
+
+Every AI query needs silicon, electricity (nat gas and solar), and cooling. That's not changing regardless of which LLM wins.
+Part V: The Stock Market Paradox
+We're Not in 2001 Anymore
+Here's what makes this moment so treacherous: the bulls have a point. Unlike the dot-com bubble where Cisco traded at 200x earnings that didn't exist, today's tech giants are printing money. NVDA's earnings are real. Apple's cash flows are massive. The Mag7 aren't vaporware - they're the most profitable companies in human history.
+
+The Numbers:
+S&P 500 P/E: 22x (not crazy)
+
+Tech sector P/E: 28x (high but not 2000's 70x)
+
+Mag7 earnings growth: 35% YoY (actual money)
+
+Buybacks: $1 trillion annually (real bid under the market)
+
+So why am I defensive? Because everything right about this market is also what makes it dangerous.
+The Concentration Problem
+The S&P 500 is now a tech fund in drag. The Mag7 represent 35% of the index. When Apple sneezes, your "diversified" index fund catches pneumonia.
+
+But here's the kicker: implied correlation is pricing these stocks like they're independent businesses. The market thinks NVDA can crash while MSFT rallies. That's delusional. They're all selling to the same AI bubble, dependent on the same chip supply chains, facing the same regulatory threats.
+
+Implied correlation at the lows, again..
+Historical correlation during drawdowns: 0.85 Current implied correlation: 0.45
+That gap is free money for anyone long volatility.
+The Passive Bubble Machine
+The real accelerant isn't earnings - it's flows. Every paycheck, millions of 401(k)s blindly buy the index. The index overweights the biggest stocks. Those stocks go up. Their weight increases. Next paycheck buys even more.
+It's a perpetual motion machine until it isn't.
+The Flow Monster:
+Passive owns 55% of equity funds (was 15% in 2000)
+
+Daily flows: $2-5 billion regardless of price
+
+Rebalancing: Forces buying of winners, selling of losers
+
+No price discovery: Just mechanical allocation
+
+This is why breadth is collapsing. 493 stocks in the S&P are treading water while 7 giants soar. When the flows reverse, there's no natural buyer for a 30x P/E stock. The same passive machine that drove prices up will drive them down.
+Credit Markets Confirm the Delusion
+If stocks were right about the economy, credit spreads wouldn't be this tight.
+
+Current Spreads:
+Investment Grade: 90bps (should be 180bps)
+
+High Yield: 300bps (should be 500bps)
+
+CCC Junk: 650bps (should be 1000bps+)
+
+Credit is priced for the best economy ever at the same time the Fed is cutting rates to save a weakening economy. Someone's wrong. Given credit investors are usually the smart money, when they're this euphoric, it's time to worry. My largest short.
+The IPO Desert
+Want to know what insiders really think? Look at what they're not doing: IPOs.
+
+2021: 400 IPOs raising $155 billion 2024: 88 IPOs raising $28 billion 2025 YTD: On pace for even less
+The smartest money - venture capitalists and company insiders - refuse to sell into this market. They'd rather stay private at 2021 valuations than go public at 2025 prices. That tells you everything.
+Meanwhile, insider selling at public companies hit records. The CEO of NVDA sold $700 million in stock this year. Zuckerberg dumps $100 million monthly like clockwork. They're not selling because they need yacht money.
+The AI Valuation Paradox
+The market believes two contradictory things:
+AI will revolutionize everything (bull case for tech)
+
+No jobs will be displaced (bull case for consumer stocks)
+
+Both can't be true. Either AI transforms the economy and millions lose their jobs, crushing consumer spending. Or AI is overhyped and tech valuations are insane.
+Currently, markets price perfection in both. Walmart trades at 32x earnings (recession-proof consumption forever!). Microsoft trades at 35x (AI changes everything!). The cognitive dissonance is breathtaking.
+My Positioning in This Mess
+I'm not shorting the index in size - that's widow-maker territory with these flows. But I'm not chasing either.  
+The Equity Strategy:
+Long specific AI infrastructure (they win regardless)
+
+Short credit spreads (cheaper than equity puts)
+
+Long downside vol (correlation will reprice)
+
+Flat to short consumer discretionary
+
+Zero exposure to Europe (complete disaster)
+
+The setup reminds me of 2007. Not 2000 with obvious bubble valuations, but 2007 where everything looked "fine" on the surface while correlations built underneath. When Mag7 correlations reprice from 0.45 to 0.85, the "diversified" index drops 30% while everyone wonders what happened.
+That's why the protection portfolio is positioned like it is. Not betting on a crash, but acknowledging that when passive owns everything, concentration is extreme, and credit is priced for perfection, you don't need a catastrophe for volatility to explode.
+The stock market isn't wrong about earnings. It's wrong about risk.
+Part VI: The Macro Bind
+The Fed's Impossible Choice
+The Fed faces a trilemma:
+Economy weakening (cut rates)
+
+Inflation sticky at 3% (raise rates)
+
+Stocks at all-time highs (do nothing)
+
+The wonky yield curve tells the story. 
+
+Markets price 100bps of cuts by end-2026, then... nothing. The flatness between Dec 2026 and Dec 2027 is unprecedented. The bond market is saying: "The Fed will ease, regret it, and get stuck." Usually easing cycles take about 18 months, so once the round concludes, you would expect to see some steepness between the 15-month and 27-month out. But because the market has already had to discount so much easing from where we are today, there's no space left in the curve before it has to start flattening out before going back up again (because of that whole 'term premium' shenanigans). Meaning there's still a good bit of value betting that rates in 2026 will be lower than 2027.  Which is a long way of saying I'm rotating into a belly steepener this week.
+
+The Death of Globalization
+This week's H1B proposal ($100k annual fee) isn't policy. It's a declaration. Fifty years of free trade, open borders, and integrated supply chains - done.
+The implications:
+Structurally higher inflation (tariffs + reshoring)
+
+Lower productivity (less efficient allocation)
+
+Higher volatility (no global buffers)
+
+Europe gets crushed in this world. No energy, no tech leadership, no military independence. The EU is a museum economy competing against AI-powered manufacturing.
+The Positioning
+This portfolio isn't built to maximize Sharpe ratios. It's built to survive regime change.
+The Core Bets:
+Monetary debasement accelerates → Long gold/silver
+
+Credit spreads blow out → Short HY bonds
+
+Correlations reprice → Long volatility
+
+AI infrastructure booms → Long semi/hardware
+
+Dollar stays strong → Hedged metal positions
+
+What Kills This Portfolio:
+Soft landing perfection (unlikely)
+
+China fixes its banks without printing (impossible)
+
+AI becomes cheap overnight (physics says no)
+
+Credit spreads stay tight during recession (never happened)
+
+The Bottom Line
+We're positioned for a world where old correlations break. Where gold and tech both rally while bonds and credit crater. Where AI productivity meets monetary debasement. Where the Fed prints but can't fix the problem.
+It's not a popular view. Popular views don't make money.
+The protection portfolio is built for exactly this moment - the space between the old world dying and the new one being born. In that space, you want to own real assets, short fake valuations, and have optionality on chaos.
+That's why I'm 125% net long and sleeping fine.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

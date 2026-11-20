@@ -1,0 +1,68 @@
+TITLE: Overconfident, Overconcentrated, and Overcrowded
+SUBTITLE: May 12th, 2016
+DATE: 2021-11-09
+
+While US equities appear reasonably priced as a whole, pockets of the equity market appear deeply vulnerable to a scramble for liquidity. In exploring “who owns what?” we found a densely interconnected network of funds that hold dangerously concentrated portfolios in a handful of overcrowded stocks.
+Given the speed at which these funds can be forced to sell positions, we believe this network should be viewed not as a set of individual funds, but one large fund, with one large portfolio deeply in need of diversification.
+
+OVERCONFIDENT
+Investing requires confidence. Confidence in your understanding of the world and confidence in your decision making.
+At it’s core, every investment is a bet, and the size of the investment generally corresponds to the confidence you have in that bet.
+When you invest to ‘beat the market’, you aren’t just betting that you are right, you are betting that you are right and that other people are wrong.
+As it’s actually impossible to know what everyone else knows, trying to beat the market is inherently overconfident.
+This is why people in investing get so attached to performance and ‘track records.’ While it’s hard for me to know if I can beat the market, it’s even an even harder thing for you to know. The best tool at our disposal is just to look at the scoreboard, to see if the person’s bets have worked in the past.
+
+This is reasonable. Especially when it’s all we’ve got.
+What it can’t account for, however, is the evolution of the market. Investment strategies that worked yesterday might not work today.
+For example, “Home prices never go down”…until they did
+
+The mechanism by which investments become unprofitable is usually the same. Yesterday’s investment success is reflected in higher prices today. Rising prices attract new investors, and when these investors buy in, it pushes up prices even further, leading everyone to double down and abandon diversification right at the moment when it is needed most.
+When prices inevitably fall, this pro-cyclical feedback loop works in reverse. The lack of diversification means that falling prices cause losses that are bigger than people expected possible. Escalating losses cause investors to flee from formerly fashionable investments, and this selling pushes prices even lower.
+This is the nature of the capital cycle.
+The Capital Cycle
+An economy can be thought of as a relationship between two kinds of markets: a market for stuff, and a market for capital...
+A couple of months ago, we showed how the capital cycle had played out in the world of startups. New investors had flooded early-stage tech companies with capital, and in the process, pushed up their notional valuations to the point where it had become a systemic issue for what we call the Unicorn Economy.
+The Unicorn Economy
+Imagine for a moment all the people you know involved with startups.
+Since we wrote this piece, things have played out as expected. Capital inflows into this economy have slowed, leading to a peak in prices. Tech companies have cut spending and begun to shift their focus from growth to profitability, in both private and public markets.
+We believe we are in the early innings of the downward leg of this capital cycle, and there is a lot more pain to come.
+As spending by startups falls so will revenues of companies that sell to startups.
+As startup valuations fall, not only will funding contract, but investors will begging to pull their capital from public market funds that either invest in tech or have substantial private portfolios.
+At Snow, we think this structural dynamic means that investors should hedge the downward part of this capital cycle with a public market portfolio. We have constructed this portfolio.
+We looked for assets that are cyclical, expensive, crowded, and cheap to short. Given the consensus in private markets that prices are headed lower, we began looking into public markets. We had an intuition that many investors had public market portfolios that were atypically vulnerable to a liquidity squeeze. We looked into the data, and found this to be true.
+In the portfolios of many hedge funds, we found a dense network with similar investment taste for concentrated in crowded public market equities. This crowding has not only pushed up prices, but also connected these seeming disparate firms in a system where a liquidity squeeze on a subset kick off a scramble for liquidity on the wider network.
+
+OVERCONCENTRATED
+We see a market that is overconcentrated.
+As Snow, we believe diversification is the antidote to overconfidence. Spreading your bets around is a way of acknowledging you could be wrong.
+The chart below shows one measure of diversification (the portfolio weight of the largest 10 positions) across three different typical equity portfolios. We grouped 50 long-short hedge funds into the sub-category OC, as the firms with the equity portfolios that were both extremely concentrated and extremely correlated.
+
+The table below demonstrates (partially) the methodology behind this OC grouping. We ranked firms by the weight of their top positions and by the degree to which their top positions were also popular among other hedge funds. We redacted the specific identities of all but Pershing Square (for reasons that are clear below).
+
+OVERCROWDED
+We see a market that is overcrowded.
+Given how much these firms look like each other, we think it appropriate to think that they might act like each other.
+If you treat these firms as one firm, you start to see that even though this group isn’t that big relative to the investing world, for the favored stocks, it represents a disproportionate share of their investor base.
+For the 50 most crowded equities, hedge funds in our OC grouping represent 14% of their investor base. For stocks in the top 10, it is much higher.
+
+To be clear, we have no view (and have no positions) in Valeant. Rather, it is just the most recent example of the volatile combination of a crowded stock held by overconcentrated hedge funds. In this case Pershing Square (which was ranked #2 in our list of funds above) and other OC funds held more than 20% of the outstanding shares in the company…until they did not.
+
+OVERCONFIDENCE (AGAIN)
+Looking at the fundamentals of the companies that these hedge funds have piled into, we can see that they are healthy enterprises. By aggregating across the various portfolios, we can see that these funds favor firms that are faster growing and more profitable than the average company.
+
+They are also aggressively investing cash to fuel this growth.
+
+And the crowding into the equity for these companies has left them expensive and dependent on sentiment among fast-moving hedge funds.
+
+SCRAMBLE FOR LIQUIDITY
+We see this dense network of funds and stocks deeply vulnerable to a scramble for liquidity.
+Many of these funds also have substantial private market holdings, and were active participants in unicorn funding rounds.
+As these funds being to mark their losses in their private books (and we have already seen some hesitance among funds to do this), they become more vulnerable to capital calls on their public market portfolios — as limited partners themselves seek liquidity amidst a downturn in the capital cycle.
+Whereas private market investment vehicles lock up capital for years, public market funds (generally) enable investors to redeem their investment quarterly, meaning that as these redemption requests come in, these funds will have to decide between selling out from their most concentrated positions (and risk having a dramatic effect on the prices of their biggest holdings, ala Valeant) or selling the rest of their portfolio while keeping these big positions intact (and further reducing their diversification).
+The overlap between these most concentrated players in these most crowded stocks mean that the pipes are in place for a draw on liquidity in one fund to flow through entire network.
+
+~~~~
+DISCLOSURE
+Snow provides financial diversification to clients through the construction of hedge portfolios. Some of our portfolios hold ‘short’ positions in equities, in which case those portfolios, and our firm, stand to benefit financially from declining stock prices.
+DISCLAIMER
+This article is for informational purposes only and does not constitute an offer to sell, a solicitation to buy, or a recommendation for any security, nor does it constitute an offer to provide investment advisory or other services by Snow Ventures. In preparing the information contained in this article, we have not taken into account the investment needs, objectives and financial circumstances of any particular investor. This information has no regard to the specific investment objectives, financial situation and particular needs of any specific recipient of this information and investments discussed may not be suitable for all investors. Any views expressed on this website by us were prepared based upon the information available to us at the time such views were written. Changed or additional information could cause such views to change.

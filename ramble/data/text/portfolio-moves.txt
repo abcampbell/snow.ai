@@ -1,0 +1,73 @@
+TITLE: Portfolio Moves
+SUBTITLE: Adjusting the book in the wake of the election
+DATE: 2024-11-12
+
+Today we're going to look at the protection portfolio and provide an update on positioning going into year-end. As a reminder to anyone new to this list, this portfolio isn't meant to a) maximize expected return, or b) maximize Sharpe ratio.
+If you want those, there's a tech equity investor or someone from a pod shop happy to chat.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+No, the goal of the protection portfolio is to provide gamma - that is, to hedge the unknown.  
+This portfolio was born from personal need. When I left a lucrative career as a financial speculator to focus on making life easier for people working with data, I needed to think differently about risk. I needed to think about where to invest such that not only my portfolio, but my life was hedged.  And not for one quarter, but for at least a decade.
+Hence the protect portfolio.
+See, many people think of startups as 2-5 year commitments. They see the success stories, the founder who sold to Facebook after 18 months, and it creates unrealistic expectations. The reality is usually opposite: the longer you work on your thing, the better the outcome. You need time to shape and iterate until you find that window - a market small enough to capture but explosive enough to validate your original vision.
+Look at Zuckerberg, Bezos, Musk - this generation's versions of Jobs, Bushnell, and Gates. They're legends not just because they quickly created monetizable tech, but because they saw something fundamentally true about the universe that let them build businesses far beyond their original products or markets.
+Even filtering down to more 'reasonable' outcomes - the friend who sold to Salesforce, the acqui-hire by Google, my classmates who've built unicorns - many are in it not for 2-5 years but 5-10, and then need to be ready for another 10 just to see it through.
+So imagine sitting there in year one, thinking this might take a decade to validate, interest rates and inflation are ~zero... what's a portfolio to do?
+The Construction:
+1. Start with some long volatility - not enough to break the bank
+2. Add gold, priced in the currency with all the printing (hi China)
+3. Layer in dollar exposure to balance being short dollars from the gold position
+
+This was the book until 2020.  When we repositioned the book to take into account the end of ultra low inflation and ultra low rates
+That’s we added
+4. Sell bonds (priced for perfection) to finance it
+5. Add defense contractors (if inflation breaks bonds, it's likely from conflict/deglobalization)
+6. Add bank long/short exposure - enough to wake us up if short bonds start breaking regional banks hiding mark-to-market losses on their fixed income book.
+At the beginning of this year, we published our 24 ideas for 2024, which we’ll update towards the end of the year.
+
+Which led to the following positions:
+- Long American brands and Gaming companies
+- Long AI
+Post-Election Changes:
+In September, we looked at intraday market data and the predicion market odds for Trump to come to the following conclusions about his potential election:
+Tech and growth stocks up, dollar up.  Bonds Down.
+Which we have seen in the immediate wake of the election.  Marking a rare opportunity to see a rally in both the dollar and risk assets.  
+
+Along with that dollar strength, our long positions in gold and silver (vs dollars) got whacked.
+Fortunately, the market had been so strong that we were actually ‘through our strikes’ on the upside butterflies we held.  Which mean that they were now downside butterflies (don’t trade these at home kids, professionals only!).  
+Meaning we ended up closing out of 2/3rds of our gold position at the exact peak in the butterfly spread.   You can see an example of this from one of the charts of our previous option strategy with a peak at $210.
+
+Which was considered ‘upside’ back at the beginning of 2024, and now peaks well below the current spot price of gold!
+
+This kind of timing is impossible to model, which makes butterflies so dangerous.
+In addition to trading out from this position, at the end of last week we lifted:
+- 2/3 of our bond short.
+- Half our high yield bond short.
+Why? Our inflation view has shifted.
+While markets are pricing higher inflation under a potential Republican administration, I'm betting they'll push through short-term shock austerity, taking the midterm hit, positioning for positive impact by year three. 
+When you look at any action to close the deficit, the math starts to look pretty deflationary:
+- Entitlement/discretionary spending down
+- Deficit reduction
+- Less conflict
+= Lower bond yields, not higher
+However, tariffs are inflationary (and a form of conflict), which probably explains dollar strength and the expectations for inflation. 
+Combining these two potentially dissonant views reveals the inherent bet that the administration would be making with a combination of Tarrifs + Deficit Austerity + Deregulation.
+In that light, the bet becomes clear: shock the US economy with radical deficit reduction and deregulation, while tariffs stimulate domestic production to fill the import gap.
+Kind of the like the “Shock Therapy” advocated by the IMF and World Bank back in the day, but with a mercantilist bent. 
+The dollar strength versus euro makes sense in this context. The US enters this fight as a net exporter of energy and food. Meanwhile, Europe's manufacturing heart still runs on coal, and without Russian gas or domestic nuclear, it's poorly positioned to face competition from:
+- Japan
+- Korea
+- China
+- A resurgent American manufacturing sector
+Europe isn't positioned well for the next five years, not in terms of energy supply, relative regulatory friction, and the given the speed at which the economic basis for the 21st century looks to be in technologies they serious lag in.  We’ll revisit this more later in a deeper post, but for the time being we remain very far from investing in European stocks or bonds.
+Finally, did you see Bitcoin make a run at $90k tonight?  Wow
+
+Personally, I’m still processing the moves we’re seeing here.  Unclear how much is the confirmation of deregulation and that unlocking real use cases, or if it has more to do with what sounded like a joke in the election of ‘building up a strategic bitcoin reserve.’  Obviously any shift of reserves further away from US bonds and towards bitcoin would be massively massively bullish for this space.  Equivalent to what we always say about gold “Sell Bonds, Buy Gold” but even more bullish as a totally new source of demand.  That being said, I’m not a bitcoin expert, and so continue to hold the balance of my exposure here in a handful of coins and exposure to Coinbase stock.  “Crypto can be cool or crypto can be money, it cannot be both!”
+In our next update, we'll dive deeper into the portfolio. For those weary of the politics-posting, rest assured we'll continue focusing on market views as they evolve with these changing conditions.
+Until next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.  As noted the views in this portfolio are not intended to maximize return and any use in a portfolio aught be considered in the broader context of your portfolio and investment needs and obligations.  Please consult with a registered investment advisor if you would like financial advice, that’s their job.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

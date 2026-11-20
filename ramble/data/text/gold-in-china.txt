@@ -1,0 +1,105 @@
+TITLE: Gold in China
+SUBTITLE: Coming to you live...since 2017. Ugh.
+DATE: 2024-03-10
+
+Not sure if you saw the price of gold in China recently, it’s off to a bit of a tear…
+
+In the context of the ~100% rally in crypto, I’d forgive you for missing it.
+
+We didn’t.  
+As you may recall, we’ve argued since ~2017 that the Chinese credit bubble was unsustainable, and that a primary release valve would be the price of precious metals (like gold and silver) priced in domestic currency.  
+Aka “Gold in China.” 
+I’ll leave the reference links/interviews in the appendix, but they all argue essentially the same thing:
+The amount of Chinese currency printed as a result of the Chinese credit bubble has already vastly outstripped the amount / value of gold that exists.  
+
+The asset prices that backed this money (via bank balance sheets) were inflated due to the credit bubble.  Which, when popped, would put financial stress on the levered players holding those inflated assets on balance sheet (in particular property companies and weak regional banks).  
+
+This would also lead to a flood of money out of CNY and into gold.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Where did that money come from?  
+Most of it was created as credit within the Chinese financial system.  Think about the case where a bank issues you a mortgage, and then creates/”prints” the deposit behind it. You then swap that deposit for the home with the existing owner.  Who has then swapped their home for a deposit at your bank, which is really just claim on a lender who has a claim on a bunch of decentralized mortgages that they made in a pool.  This is what you might call ‘traditional bank lending.’
+It’s also why a lot of people confuse the amount of money ‘printed’ by the central bank, vs the actual expansion of the money supply, usually coming from the commercial banking system.  Below you can see that since 2010, only a bit less than 10% of the expansion in money supply was from expansion in the PBoC’s domestic asset portfolio (which would be similar to the Fed’s QE).
+
+In the wake of ‘09, we saw an expansion not only in traditional bank lending in China but an explosion in ‘shadow bank’ lending.  AKA the use of non-standard bank balance sheet items on both the asset and liability side to fund the investment boom in real estate.  
+For those interested in details, the BIS printed out a helpful diagram on the topic.  The orange/red lines are places where risk is “packaged”, or “warehoused” or “channeled” in and around existing bank balance sheet concepts like deposits and loans.  Much in the same way as in the US financial crisis, where multiple turns of leverage and extensive use of off-balance sheet vehicles transmuted mortgages into MBS, CDO squared & “ABS BBB tranches” to take advantage of regulatory or market arbitrage.  In China the flavor of the day was to convert traditional real estate, corporate and local government debt into products with names like WMPs, Trusts and LGFVs.  Same idea, different pipe. 
+
+Keep in mind the growth in this shadow banking was not forced upon domestic Chinese households by nefarious actors, there was no dastardly plan here.  It was just a natural outgrowth of financial innovation and what was seen by investors as an attractive savings vehicle for folks looking for interest rates in the 5-7%+ range while banks offered 1-2%.  There wasn’t any centralized plan make these investment products increasingly opaque and complex, rather it was a simple reaction by the market to a period where investors were more interested in maximizing returns than controlling risk.
+So our argument here was pretty simple.  Eventually those shadow banking pipes get stuffed up.  Either via a fall in underlying asset prices, or a rise in borrowing cost (likely both), which would lead to a huge fall in demand for these products and credit problems for those that depended on them for financing.  If you think of those shadow banking channels like inflatable pipes, the collapse of those pipes would have two impacts:
+There would be direct impacts on the banks and projects most closely associated with shadow banking and excess investment.  Project would go under. Some banks would have to backstop their products and recognize losses on lending.  Others in the industry would be asked to do ‘national service’ in buying what others were forced selling.  Eventually a bailout and a recapitalization.
+
+Some of the liquidity created by this bubble would find it’s way out of the Chinese financial system and into demand for precious metals like gold.
+
+Both of these have played out as expected.  
+Shadow banking dried up around the time the “three red lines” policy cracked down on the most profligate real estate developers.  Leading to a collapse in their ability to refinance and widescale defaults in the sector.
+
+This has led to material underperformance amongst the more vulnerable balance sheets in the Chinese financial system, along with slow moves by regulators to start rolling up weak local banks and cleaning up the Asset Management Companies which will likely serve as ‘bad bank’ repositories for the more toxic assets (if history is any guide).  What we called “bank failures and bailouts.'“
+
+Also as expected, the first of these impacts (falling stocks and bonds) proved difficult to make money betting on!
+Turns out there’s a reason they don’t do repo in China: 
+
+Makes it much easier to pump the prices before banning short selling (or suspending the shares), freezing out shorts at fictitious prices.  For a longer explanation, again see the appendix, but the most recent example being a small position in CHIX, an ETF designed to track the price of Chinese banks.  Jammed it up 8% before being forced liquidated.  This is why we call the short banks book an ‘art project’ sometimes.
+
+Anyway, this is not a new dilemma, which is why the bulk of our recommendation was to go long gold in China via borrowing Chinese FX and then using the proceeds to buy gold! 
+A structure which, ironically, a lot of western investors would miss for the very reason they missed the size of the bubble in China:  Dissonance about the sheer magnitude of non-western markets and what that would say about their (much diminished) place in the world.  
+If there was twice as much money in China as in the US, why does what a dollar-based investor think about the price of gold seem to matter more?
+
+To back this up we laid out this crazy diagram at a conference back in April 2017.  The extremely confusing chart which tries to show the relationship between the amount of money (on the x-axis) that would have to be deviated towards purchasing gold to eat up all of 2016(!) gold supply.  Answer was ~1% of Chinese bank deposits or ~6% of the WMPs (Wealth Management Products - the product we said were key to the shadow banking pipes).
+
+Inverting this ratio gives you a sense for ‘how many folks need to nope out on their deposit and decide to get gold to eat up all of last year’s marginal supply.’
+The answer it turned out, was a bit less than 200. A ratio that has stayed relatively constant since we wrote about it.  Meaning the expansion of the Chinese money supply in dollar terms has roughly been met with expansion in the price of gold (as mining supply hasn’t changed since 2017).   AKA the trade is working.
+
+Where there is a will, there’s a way:
+
+Turns out, it’s not just Chinese households that are looking for gold.  There are actually a lot of folks out there looking for alternatives to dollars.  Particularly as stores of value not subject to seizure or sanctions.   
+
+This, by and large, explains why the historical relationship between US ‘real yields’ and the price of gold has broken down.  Usually when real yields spike (which in the chart below would be going down) we would see a fall in the price of gold in dollars.  What we see below is the opposite.  As real yields have gone up, gold prices have accelerated higher!
+
+How can this be?!
+For a western, dollar-based investor this is very frustrating and confusing.  
+Looked at from a non dollar investor, this makes total sense.  
+Yes, you are seeing dollar investors sell their gold to take advantage of high short term interest rates.   This is observable by the fall in shares outstanding for gold ETFs like GLD.  
+On the other hand, if you look at the fund flows into Chinese gold ETFs, you see the opposite!  
+Investors are piling into gold.  Why?  Well, lots of those investors cannot avail themselves of 5% rates in USD, because of capital controls.  In the lieu of dollars, they will take nominal appreciation in gold!  Paid out either in a depreciating CNY or a rise in dollar gold prices.
+
+The second reason that the price of gold has risen in spite of rising US real yields is demand by foreign central banks.  Which again, makes sense.  If you saw the US sanction Russia’s treasury holdings (and threaten to use the income from those investments to help Ukraine buy arms to fight Russia), you might be wary of adding to your pile of US government debt.
+Lo and behold, when we look at official and unofficial buying by central banks, there’s record demand by institutions for alternatives to dollars.  China, Russia, Turkey, India and Poland amongst the largest players here.
+
+Multiple trends showing the same thing: that marginal demand for gold has shifted from the West to the East.  Or, put a little more dramatically, maybe the west is losing the control over the gold price?  What does that even mean?
+
+Firstly, it means you will start to see more and greater premiums in the price of shiny metals onshore.
+
+Which also shows up in anecdotal evidence, though admittedly with a lot of noise.
+
+Which brings us back to the dollar.
+See the nice thing about looking at Gold in China is you get to abstract away a bit from being obsessed with what the Fed is going to do next month, and then examine it with fresh eyes.
+Below we can see market expectations for the path of interest rates in the US, today and a year ago.  What we see is that over the past year, the market has moved expectations of easing closer and closer, while long term rates have drifted higher.
+
+Expectations that have led to a floor in US bonds.
+
+ Along with stability in the price of dollars, relative to other currencies.
+
+The question here being, what happens to the price of dollars if we don’t get the expected easing from Powell?  Wait happens if he tightens from what’s discounted by just leaving rates as is? Or, imagine a world where US short term rates stay at 5% or go up, dragging ‘terminal’ rates higher and pulling even more capital from the rest of the world into dollar assets?
+Well, you would likely see even more selling by dollar based gold investors, as people sold their gold to take advantage of higher USD rates.    
+For investors in Gold in China or other FXs, the outcome would be less clear, as we would have to take into account the likely strength of the dollar amidst Fed tightening.  Recall it was the first round of tightening by Powell which was so deadly to the  property developers like Evergrande which had borrowed too many dollars...  
+This up and down yo-yo of the dollar as expectations of US monetary policy shift may introduce unwanted volatility into the price of gold in dollars.
+As an aside, this is also why we prefer investing in gold and silver via option structures rather than just the ETFs or (heaven forbid) the underlying miners.  
+Why?  Because you have a period of where implied volatility is low but the fundamental outlook for volatility is high.
+As recently as ten days ago, the implied volatility for gold options was as cheap as it has been for 5yrs.
+
+Which led to some dramatic returns for folks who took our advice and bought calls:
+
+Anyway, given the recent moves, you probably aren’t going to see 20x upside in 20 days again in gold for a bit, but as something to consider the next time someone says you need to go long crypto to lever your returns!
+Appendix
+Original appearance on RealVision in 2019 where we walked through the trade live.    I can measure the length of time I’ve been in this trade by the rate at which the lines in my forehead deepen.
+
+Follow up work where we laid out the connections again between Gold in China and the popping of the Chinese real estate bubble.  Called myself an “Old China Bear” as if that was a thing, or that I was well known for anything (ha).
+
+Drill down into the banks leg of the trade from earlier this year, aka and why it doesn’t pay to short in China.  Something that has been even more true for anyone following the recent short sale ban + programmatic buying via the ‘national team.’
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

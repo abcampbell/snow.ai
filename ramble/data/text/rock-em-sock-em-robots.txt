@@ -1,0 +1,254 @@
+TITLE: Rock 'Em Sock 'Em Robots
+SUBTITLE: The Exhaustion Game
+DATE: 2025-12-15
+
+I almost killed this one. I’m not an expert on robots, and the first draft felt self-indulgent.  
+”Who cares that Campbell thinks the robot videos are fake?”
+But something happened recently that changed my mind. A couple of conversations where I brought up obvious problems with viral footage, physics that don’t work, shadows that don’t match, and watched smart people’s eyes glaze over. Not disagreement. Just... discomfort. A vague sense that noticing was somehow impolite.
+That reaction is what made me hit send.
+Because this isn’t really about robots. It’s about something breaking in how we process truth. Not controversial truth. Not political truth. Just... basic, checkable, physics-and-math truth.
+I’ve felt it elsewhere: the EA response to SBF, the StopAI turn to violence (after gaslighting me for almost a year that they were “working on formalizing a protocol”), the memory-holing of lab leak or the controversy around the vaccines (the jury is still out imho), the attacks on language and institutions. We’re all predisposed to find problems with how the other side relates to truth. But this feels different. Quieter. A slow normalization of “don’t look too hard.”
+The robots are just a tell. A clean, apolitical example where the math is checkable and the pattern is obvious. If we can’t hold the line here—on physics—what hope do we have for the harder stuff?
+
+The Emperor Has No Robots
+The first version of this piece was called “The Emperor Has No Robots,” with me as the proverbial child calling BS on fake CGI robot videos from China.
+
+If you’ve been on tech Twitter in the past year, you’ve seen the flood. Humanoids doing backflips. Robot dogs doing parkour. Armies of machines marching in perfect synchronization. Combat robots throwing flying kicks. Each one more spectacular than the last, each one racking up millions of views.
+
+Follow up videos show this robot running like a Tesla bot, no 360 degree jumping kicks…
+And something about them feels... off.
+The lighting is too perfect. The robots are weirdly glossy, like they’re lit for a render farm, not a factory floor. Shadows don’t quite match the motion or are internally inconsistent.
+
+Physics seems optional.  The cameras never shake at the moment of impact.
+
+Interesting hovering foot & shadow
+Then comes the tell: the follow-up videos never show the same thing. Someone visits the factory and films a robot walking on a treadmill. A “behind the scenes” clip shows the machine waving its arms. A demo reel features it picking up boxes. All real, all fine, but conspicuously missing the triple flip, the flying kick, the physics-defying stunt that went viral.
+The spectacular version exists exactly once. The boring version gets replicated.
+Problem is, “The Emperor Has No Robots” is misleading as a title. The emperor DOES have robots. A lot of them. Probably more than we do.
+Just not those robots.
+Don’t say this in polite company:
+“This video looks kinda fake…”
+“Are you saying China CAN’T make better robots than the US?!”
+No, I’m saying these specific videos are bullshit.
+“Have you BEEN to the robot factory?”
+Do you have video of those robots doing this specific move?
+“You miss the point! I don’t want to talk about this anymore.”
+Too nuanced for “The Emperor Has No Robots.” And “The Robot Has No Clothes” felt too clever by half.
+So here we are with “Rock ‘Em Sock ‘Em Robots.” Because that’s what these videos are. Combat theater. Propaganda that looks like product demos. Footage designed to land in your feed, shape your priors about who’s winning the tech race, and move on before you check the physics.
+This piece acknowledges that (a) the robots are real (b) they can’t do what those videos suggest, and (c) they still warrant monitoring and investing in, particularly the components underneath.
+And you, knowing me, know this is about more than robots.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+The Scissor Question
+When parsing through bullshit (especially Chinese nationalist propaganda) don’t get distracted. As soon as you call out the noise, the gaslighting comes in multiples.
+Pick ONE thing. The most egregious. Push on it. See if folks will be neutral arbiters or practice motivated reasoning. 
+A “scissor question” of fact. Something which makes the other side take a stand.
+If you don’t recognize this playbook from how I’ve dealt with China’s banking system over the past decade, you might be new here: WMPs, Investment Receivables, GFCF, FAI, P2P, LGFV, NPLs, Provincial GDP. Acronyms designed to be forgotten, each a tell of a system where “don’t look behind the curtain” is endemic.
+My scissor question for robot videos: the triple flip.
+In mid-2024, Unitree released a video of its $1,600 Go2 robot dog doing a triple front flip. Not single. Not double. Triple. Millions of views.
+
+I did the math. Both interpretations: aerial flip AND sequential handsprings. Both impossible. (Appendix has the physics in exhaustive detail. You’re welcome to check my work.)
+Case 1: Aerial Triple Flip (what the video call it even though it looks like a handstand)
+Three full rotations in ~0.9 seconds of airtime requires spinning at 21 rad/s, that’s 200 RPM, the moment it leaves the ground. To spin a 15kg robot that fast requires ~16 kg·m²/s of angular momentum. The Go2’s commodity motors, pushing off for ~0.12 seconds, can generate ~3.2 kg·m²/s.
+That’s 20% of what’s needed. Not close. Not “maybe with better software.” Impossible.
+Case 2: Sequential Handsprings (the charitable interpretation/what it looks like)
+Maybe it’s not one continuous aerial rotation but six half-flips with ground contact between each? This would be easier, each contact provides fresh impulse. But even here, each half-flip needs ~8 kg·m²/s. The robot still only generates 3.2. That’s 40%, better, but still impossible.
+And it gets worse: the front legs have ~60-70% the power of the rear legs (they’re designed for steering, not explosive pushing). The ground reaction forces required (over 1,100N, or 75 kg-force per contact point) exceed structural limits for a 15kg commodity robot. There’s no mid-air correction possible between contacts.
+Either interpretation fails. The robot generates one-fifth to two-fifths of what physics requires.
+The game is forcing skeptics to prove impossibility multiple ways until they look obsessive. “What about elastic energy storage?” “Hidden flywheel?” “Did you account for leg tucking?” By derivation six, they’ve moved on and you’re the crazy person.
+Exhaustion by design. A strategy familiar to anyone who’s tried to find losses on Chinese bank balance sheets.
+
+The Smoking Gun
+Forget the physics. This video appeared exactly once. In 18+ months:
+No replication
+
+No multi-angle footage
+
+No academic paper
+
+No conference demo
+
+No mention in Unitree’s own marketing
+
+No robot anywhere has done even a DOUBLE flip
+
+Boston Dynamics Atlas (tens of millions in R&D, 500 Nm hydraulic actuators) does ONE flip. The $1,600 Unitree with 35 Nm commodity motors does THREE?
+If real, it would be in every video. Their calling card. Licensed technology. “Flip Mode” upgrade.
+Instead? One video. Never mentioned again.
+That’s not a capability. That’s a special effect.
+
+The Playbook
+Watch what happens when you question these videos:
+Step 1: Confident denial. “100% real footage shot on-site.”
+Step 2: Release “proof.” Drone footage, raw audio, behind-the-scenes.  Coincidentally none of which shows the act in question.
+
+Step 3: Reframe critics as biased. “Doubt stems from lack of understanding of China’s manufacturing.”
+
+Step 4: Escalate to prejudice. “Willful blindness from China doomsayers’ arrogance and prejudice.”
+
+Step 5: Invite critics to “come see for themselves.”
+
+Same script for GDP figures, banking stats, Evergrande, COVID data. Deny → “Proof” → Bias accusation → “Come see” → Move on.
+Meanwhile, China’s own NDRC just warned about a robotics bubble:150+ companies making “highly similar” products, comparing it to bike-sharing’s collapse.
+
+The Point of Faking
+These videos share a theme: The robots are coming. China is ahead. They’re going to kick your ass.
+Interesting messaging for “private companies.”
+Meanwhile, Western robotics pushes “home help,” “does laundry,” “serves drinks and fails in creative ways.”
+One side builds products. The other builds... what?
+What fake videos accomplish:
+Shift probability distributions in Western minds
+
+Attract investment to a 150+ company bubble
+
+Create exhaustion until rigorous analysis feels pointless
+
+Test Western epistemology if smart people believe obvious fakes, what else will they believe?
+
+Same playbook for economic statistics, AI capabilities, military tech. Shape perception, not capability.
+So next time someone asks why I’m hawkish on China, I’ll ask: Why so many Rock ‘Em Sock ‘Em Robot videos? And what’s the point of faking?
+
+The Punchline
+The emperor has robots. Just not those robots.
+Real robots do boring things repeatedly. Run at 3.3 m/s. Pick up boxes. Fall over. Get better incrementally. Real breakthroughs come with papers, replications, and engineers who won’t shut up about the details.
+Fake robots do physics-defying triple flips, march in CGI armies, and come pre-loaded with disclaimers insisting they’re real. They appear once, go viral, and are never mentioned again, because replication would require capability, not render farms.
+Trust the physics. Trust the replication. Trust the pattern.
+I started this piece wondering if I was being self-indulgent. Maybe. But something is breaking in how we collectively process truth, and it’s not just social media or legacy media collapse. It’s the slow normalization of “don’t look too hard, you’ll seem obsessive.”
+Consider the last time you got upset not by politics or a competitor, but by truth, and whether the reaction of people around you was supportive or... “ew.”
+That “ew” is the tell. That’s what I’m writing about.
+The robots are just the example.
+
+Appendix: The Physics of the Triple Flip
+
+1. Robot Specifications (Unitree Go2)
+What we’re working with: the Go2’s published specs. Note the torque comparison: Atlas has 10× more power per joint.
+Mass:
+
+Body dimensions:
+
+Hip joint torque (peak):
+
+Knee joint torque (peak):
+
+Effective leg length:
+
+Price: $1,600
+For comparison, Boston Dynamics Atlas uses hydraulic actuators rated at approximately:
+
+per joint, more than 10× the torque available to the Go2.
+
+2. Moment of Inertia
+How hard is this robot to spin? We model it as a rectangular body plus four legs rotating end-over-end.
+2.1 Body (rectangular solid)
+
+2.2 Legs (four rods, parallel-axis theorem)
+Each leg is approximated as a uniform rod of mass:
+
+and length:
+
+with center of mass offset:
+
+from the rotation axis.
+
+2.3 Total moment of inertia
+
+Even aggressive tucking cannot plausibly reduce:
+
+Conclusion: Even with aggressive tucking, the robot’s moment of inertia can’t drop below ~0.5 kg·m². We’ll use 0.76 kg·m².
+
+3. Case 1: Aerial Triple Flip
+Can the robot complete three full rotations while airborne? We calculate what’s required versus what the motors can deliver.
+3.1 Vertical kinematics
+How high does it need to jump to stay airborne long enough?
+Observed airtime:
+
+Maximum height:
+
+Launch velocity:
+
+3.2 Angular velocity requirement
+How fast must it spin to complete three rotations in 0.9 seconds?
+Three full rotations in T=0.9s
+
+This corresponds to:
+
+3.3 Angular momentum required
+
+3.4 Angular momentum available
+The robot’s legs push against the ground, but most of that impulse goes into the vertical jump, only ~25% contributes to rotation.
+Angular impulse relation:
+
+Available torque (two rear legs):
+
+Effective torque after geometry/efficiency:
+
+Push duration:
+
+Raw angular impulse:
+
+Only a fraction contributes to rotation:
+
+3.5 Case 1 verdict
+Conclusion: The robot generates 20% of the angular momentum required. An aerial triple flip is physically impossible.
+
+4. Case 2: Sequential Handsprings
+Maybe it’s not one aerial flip but six half-rotations with ground contact between each? Still doesn’t work.
+4.1 Angular requirement per half-flip
+Each half-rotation in thalf≈0.3 st
+
+Angular momentum per half-flip:
+
+Available per push remains:
+
+4.2 Ratio
+
+4.3 Impact forces
+Each landing would require arresting and redirecting momentum in ~0.1 seconds, forces that exceed the robot’s structural limits.
+Impact velocity from h=0.5 
+
+Required impulse over Δt=0.1 s
+
+Equivalent to (per contact point, order-of-magnitude):
+
+Conclusion: Even the charitable interpretation only gets 40% of required momentum, plus impossible impact forces. Also: the video doesn’t show handsprings anyway.
+
+5. Energy Budget (Independent Check)
+Forget angular momentum, does the robot even have enough energy to pull this off? We check the joules.
+5.1 Translational energy
+
+5.2 Rotational energy
+
+5.3 Total required energy
+
+5.4 Energy available from motors
+
+5.5 Energy ratio
+
+Conclusion: The motors can supply 18% of the energy required. Three independent tests, same answer: impossible.
+
+6. Final Summary 
+Three tests. Three failures. The robot generates one-fifth of the angular momentum for an aerial flip, two-fifths for handsprings, and one-fifth of the total energy required. The video is CGI.
+
+LINKS
+SCMP: “It is fake: why US industry leader refused to believe China’s robot march video” 
+Global Times: UBTECH response to CGI allegations 
+Interesting Engineering: EngineAI T800 controversy
+Initial BTS response
+
+CEO kicked by robot follow-up
+
+Bloomberg: China warns of humanoid robot bubble 
+Boston Dynamics / Toyota Research Institute: Large Behavior Models announcement
+Official announcement (Aug 20, 2025)
+
+Boston Dynamics blog with technical details
+
+TRI page
+
+Mike Kalil: Brett Adcock vs. Everyone analysis 
+Disclaimer
+DO YOUR OWN MATH and let me know if you come up with different numbers.   I am not an expert.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. This not a solicitation to any investment.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+THERE CAN BE NO ASSURANCE THAT ROSE INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

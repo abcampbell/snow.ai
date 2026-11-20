@@ -1,0 +1,93 @@
+TITLE: Reflections on Inflation
+SUBTITLE: 
+DATE: 2024-08-19
+
+Today we’re going to ramble a little bit about inflation.  It’s been in the news a bit recently, first when it was on the way up with covid and Ukraine, then when it was on the way down after Powell hiked, and more recently because both US Presidential candidates have plans that are basically, in my view, inflationary.
+So today we’re going to review the drivers of inflation, then check in on where inflation is and what what that means for policy and markets.  The short answer is the worst looks to be behind us, and barring a significant escalation in global conflict, central banks appear to have a free hand to engage in monetary easing.
+Where does inflation come from?
+If you want to understand inflation, the formula is actually pretty simple:
+Too much demand, not enough supply.
+
+If you want to understand inflationary demand, at the macro level it’s usually increased spending power.  Where spending power is defined as increased incomes or borrowing, amplified by an increased willingness to spend.  It’s the amount of spending power, and the urgency (in terms of velocity) of that spending, which rapidly pushes demand above supply.
+More stuff, at higher prices.
+
+If you want to understand how supply becomes inflationary, think of a machine breaking.  Think of all the tiny, fragile machines needed take the million tiny pieces of rock, cobalt, silicon, and light or whatever to create the widget in your hands as you read this ramble.  Kind of the “tree of possible lives” chart but in reverse.
+
+Such that when there’s pain or a breakage or increased costs in any one part of that supply chain, the other parts have start to slow down.  It’s not a matter of how much they might want to produce more, they cannot.  At least not without more time.
+Less stuff, higher prices.
+
+Anyway, so more dollars, chasing fewer things.  Some combination of those, and usually some weird combination of their rate of changes, and that’s (kind of) how you get inflation.  Which recall, is actually just a way to track the derivative / growth in the price of stuff….
+
+Last time we talked about inflation, we started by looking at the most extreme inflationary episodes across countries.  What we found was that conflict was particularly inflationary, insofar as it tends to stress demand and supply at the same time.
+
+Which kind of puts the inflation of the 70s into perspective.  Rather than fight it out in the fields of Sawalski and Fulda, Krushchev and Kennedy basically agreed to channel their great power conflict into competition.  Space, LBJ’s “Great Society”, Brezhnev’s buildings, along with foreign adventures (Korea, Vietnam & Afghanistan) were all ways for the two powers to compete by spending, rather than blowing each other up.
+By the time we get to Nixon’s decision in 1971 to go ‘off the gold standard,’ the table has been set for 10x increase in the price of gold in 10 years.  
+
+The gold bubble then gets popped by Mr. Volcker.  Who, in my opinion, doesn’t get enough credit for also dealing the crushing blow to the Soviets.
+
+But that was after almost a decade of ~10% or so inflation caused by the decision by the West to print their way through two oil shocks.
+
+The term “print” I don’t use here to denigrate or disparage, but more like observe how magical and adult and mature that actually was of everyone.  
+
+Rather than another direct conflict with 10m dead in a land war and loser gets hyperinflated to 0, we just got some sustained inflation for both sides and really high interest rates for about 20yrs.  
+
+Not that bad, in the context of history.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+In a weird way our recent experience with covid fits into this “conflict is inflationary” framework, as the societal immune system response was to literally print money (increasing demand) and lock everyone at home (decreasing supply).
+The government, in this case the Fed, Treasury and lot of similar folks at similar institutions all over the world, basically made a (wise) delegated and (marginally) democratic decision to swap pain tomorrow (in the form of inflation) for pleasure to day (yay stimmies!) because that was a responsible thing to do at the time.   Stimulating animal spirits in a lockdown is tough stuff!
+
+Which, along with rates that felt like they would be low forever (remember ZIPR gets credit for WeWork, Uber, AirBnb…) actually helped push people into a new more efficient ‘equilibrium’ in terms of how everyone worked.   A lot of people just stay home. Those people, seeing that their home was now their workplace (for who knows how long) decided to invest a lot in their homes, including furniture.  Which makes it an interesting lens with which to understand the inflationary episode we just went through.
+In the below charts, you can see how that surge in demand hit a market where domestic supply was both in secular demand and in the middle of a supply shock.  Meaning there’s only one valve to fill the gap…imports.  (Remember this later when folks are talking about the inflationary impact of import taxes.)
+
+This surge in furniture spending wasn’t even that far outside historical ranges in terms of household budgets, going from around 10 to 12% of disposable income, but along with the increase in disposable incomes from the stimulus checks, was enough to send prices surging.
+
+Over the last 18m, each of these inflationary forces in the furniture market has abated.  Income support was removed, a lot of people returned to office, the supply shock abated.  Bringing down imports and the furniture price inflation back to normal levels. 
+Meanwhile Zoom made everyone realize that not only do you don’t have to take every meeting in person, but that not commuting everyday made people a bit happier.  Who doesn’t want to spend more time with their family?  After all, who else are we working for?
+Anyway, so obviously this whole stimulus thing was always going to be inflationary, we just didn’t know how much or for how long.  Remember, it wasn’t just demand that was crashing during covid, in a lot of sectors supply crashed harder (think about all the times you heard ‘supply chain’).
+So now imagine you are Powell, leading the world’s most important central bank in the teeth of the first shock.  At some point you look around the table at the other Governors and go “How much inflation is this really going to cause?” and everyone king of shrugs and goes: “You know boss, we really can’t say.”  
+Which is that part of the reason that Powell’s job is so hard!  The reality is policymakers don’t totally know how hot the economy is running at any one moment.  Not because they aren’t smart (they are very smart, smarter than the average investor), but because of the inherent impossibility of that job.  It’s the financial equivalent of the Heisenberg Uncertainty Principle.  There’s a limit to the degree you can understand an objects position and it’s velocity at the same time.  Just like it’s impossible to really know where growth and inflation ‘are’ at any one moment in time. 
+With all that epistemology out of the way, and now that we’re all properly confused going into the charts, let’s now turn to something practical.  
+Where is in inflation now and where is it going?
+This is a good time to remind you that there is no perfect way to measure inflation.  When people refer to inflation though, they are generally referring to some combination version of headline or core inflation across the CPI and PCE reports.  There’s also a Real GDP deflator, PPI and then PPP but let’s not make things complicated!
+The nice thing for our purposes today is that a lot of these reports are saying the same thing.  Both headline and core inflation have peaked, and while still above the 2% target, appear falling at a rate which will get us there within the year, even without a major economic recession.  
+
+Looking beneath the hood, and with a little help from the great work by Prometheus Research, we can see where most of that recent inflation is coming from: shelter, food and transportation.  Goods and energy prices look to actually be deflating.
+
+Prometheus Research” Inflation Views” Aug 15, 2024
+The majority of shelter inflation coming from what’s called “Owners Equivalent Rent”, a kind of lagged version of home prices, which are down from their peak and current subject to restrictive monetary policy.
+
+Prometheus Research “Inflation Views” Aug 15 2024
+
+We’ll do an update on US residential real estate this month, but suffice to say demand for mortgages has been substantially constrained by current pricing, while fundamental demand for housing has received strong support from high immigration and population growth.
+Note shelter costs have been responsible for around a ~fourth of the persistent inflation facing American consumers since 1950, while food and energy look to be relatively important drivers of short term inflation given their volatility.  This volatility being part of the justification for excluding them from measures of ‘core’ inflation.
+
+Going a level deeper into the specific on food inflation kind of obscures the fact…
+
+That the majority of food inflation is actually just lagged energy inflation.
+
+Where is inflation going?
+Well, let’s check in on the change in headline inflation over the past year and a half, which has been pretty universal.
+
+The fact that headline is now lower than core inflation in many of these countries is also, on the margin, disinflationary.
+
+Next time we cover inflation, we’ll dig into the way that inflation shocks tend to persist through the system, the dreaded wage cost-push inflation spiral.  We’ll also cover the interaction between inflation and government deficits, open markets, and industrial policy.
+Until then, and in the interests of time and your attention, I will leave you with this, one of the better market based indicators of inflation we have, the expectations of 5yrs of inflation, 5yrs from now.  Or what’s called the 5y5y inflation expectations.  Note these surged post the initial deflationary wave of covid, but never really got ‘unanchored’ above the prior highs, even during the inflation panic of 2021.
+
+Meaning the market is pretty clearly saying that the broader inflation fears have abated.  Meaning without a major escalation of conflict that we should be passed the last of the wave (though watch the Ukranian push into Kursk to destabilize rail and potentially energy supplies in eastern europe and put a floor on natural gas/electricity prices there).  
+Meaning in short, the Fed is clear to ease.  Even without confirmation of a recession.
+Meaning for those of us with startup equity, levered real estate or any other illiquid, long duration asset the name of the game is clear.  Hold on, easing is coming, though maybe not as much, or as fast, as everyone would like.
+Till next time.
+Links 
+pls DM for access to data
+Reflections on Inflation Charts
+Headline vs Core
+Anglo Inflation since 1900
+Furniture Inflation
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

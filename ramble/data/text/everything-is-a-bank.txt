@@ -1,0 +1,159 @@
+TITLE: Everything is a Bank
+SUBTITLE: 
+DATE: 2026-03-05
+
+You may have heard the phrase “everything is a bank.” I’m not sure of the etymology, because when I first started spouting the principle it felt like some kind of unique creation. Most likely it’s one of those truisms that was hanging in the air.
+In my defense, it was back in 2023 when I first wrote the ramble “Twitter is a Bank” with a pretty clear synthesis.
+
+The core requirement for being a financial institution is understanding your customer’s identity. If money is about trust, banking is about identity.
+Who better to track, understand, and manage your monetary identity than the technology companies which already manage your online persona, already do KYC, and are already considered trusted counterparties for your financial records?
+Just like PayPal bootstrapped by giving people money, the X creator rewards program was the first step to building those digital rails. Via Stripe, they started gifting prominent accounts five figures a month. With that in mind, it wasn’t a stretch to think about the ways all major tech companies end up providing the financial services essential to banking. Starting with payments and clearing, moving to holding balances and extending credit, and finally becoming a system of record for the “state” that is your accumulated assets and liabilities.
+The origin of this theory goes back to maybe 2017. I was still pretty fresh out of the markets, working through the arduous process of setting up my own fund. My research on financial panics took me to the Knickerbocker Trust crisis of 1907, where a trust — back then essentially a corporation or holding company — had gone under and created a scramble for liquidity that started a bank run, rapidly taking out many leveraged institutions. There were echoes of the Overend, Gurney & Co. crisis of 1866, where discounted bills and short-term credit instruments — what we’d now call shadow banking — nearly brought down the Bank of England itself.
+At the time of the Knickerbocker panic, the US had no central bank (thanks Andrew Jackson, thanks Thomas Jefferson) and so there was no public lender of last resort to step in and quell the markets by providing liquidity to mop up distressed assets and recapitalize failing institutions.
+Enter JP Morgan’s library.
+This is right around the peak of Morgan’s ascension. He had come of age as financial institutions morphed from quasi-investment partnerships into corporate empires, and the trust vehicle was the instrument of the era. Morgan had used it to restructure and consolidate the railroads (notably the Northern Pacific and Erie lines), to underwrite the formation of US Steel and General Electric, and to bail out the US Treasury itself in the gold crisis of 1895. Straddling financial advisor, credit provider, and book runner for many of the major deals at the turn of the century, Morgan was as close to a one-man central bank as America had ever produced.
+So as everyone looked to JP for leadership, he looked at the market. Seeing a classic collective action problem, he did something kind of hilarious. He invited the heads of the major banks to his home library and locked them in. All night. Until they came to an agreement, written on a small piece of paper, for who was in and for how much.
+A deal that put a bottom on the markets. Not so far as “whatever it takes.” But what was necessary.
+A couple of years later, sufficiently scarred, Congress passed the Federal Reserve Act of 1913. The US was well on its way to leaving the gold standard, with two world wars and a depression serving as instrumental accelerants along the way.
+So what does any of this have to do with X?
+When I heard this story, I started digging for documentation and came upon the fact that the Morgan Library (as it is now called) actually had records. A lot of records. Records they’d let you examine and photograph if you had the right intention. So I filled out my forms, dutifully answered their emails about the purpose of my visit, and a couple of months later had an appointment to come take a look — under supervision, of course — at a set of documents.
+I was giddy with anticipation.
+When asked which records I’d like to examine (since they’d have to retrieve them ahead of time), my answer was immediate. Everything around the Knickerbocker Trust crisis, and the earliest documents in the firm. The founding documents.
+What did I find?
+Someday I’ll track down the phone with the actual photos (I think the battery died a couple years later, so it’s a bit of a deep recovery project at this point) to share them with you, dear reader. But there were two things of note.
+The deal that put a floor under the Knickerbocker Trust crisis was, essentially, a napkin. Not a literal napkin, but a smallish piece of paper with the commitments from the major financial houses for their contribution. $10 million from JP. $10 million from so and so. $1 million from so and so. A simple list of names and numbers that added up to enough to stop the bleeding.
+Perhaps more interesting were the founding documents of the firm that now trades on the NYSE under the ticker JPM. It was a simple ledger, along with some papers explaining that Mr. Morgan was rolling the remaining assets from a prior partnership where he’d been a junior partner as his contribution into the new firm, along with four partners. Someone put in cash. Another fellow put in a deed to some estate his family acquired in England in the 17th century. This is what they mean when they say “real money” investors, if you know what I mean.
+My favorite part of the anecdote is that this simple ledger of debits and credits was essentially the first couple of rows of a spreadsheet that goes all the way to today. You can think about the origins of that trillion-dollar empire as going back to that handwritten book. A single continuous portfolio with trillions upon trillions of transactions, payments, and asset transfers, which continues to this day.
+Which, dear reader, brings us to our point. If that 150-year-old book is the world’s biggest bank, what does X or Google or Apple look like in 100 years? How far along that path are they now (surprisingly far) and how can we expect this to evolve?
+That’s the point of today’s ramble. Not just “I told you so,” though that is of course also kind of fun.
+Banks vs Tech
+The top 25 global banks had a combined market cap of roughly $6.1 trillion at year-end 2025. JPMorgan, the direct descendant of that handwritten ledger, sits at about $915 billion.
+
+Nvidia alone is $4.5 trillion. Apple: $3.95 trillion. Alphabet: $3.83 trillion. Microsoft: $3.53 trillion. Two of these are worth more than the entire top 25 banking sector combined.
+Banking trades at about 1x book (meaning the market cap of the stocks trade at around the balance sheet book value of the equity aka Assets-Debt), trailing all other industries by ~70%. Despite record revenues of $5.5 trillion and net income of $1.2 trillion in 2024, capital markets are usually skeptical about banks’ value creation. Why?
+Well, partially. As leveraged entities, banks have a history of going poof in periodic financial crises. But partially because folks are implicitly pricing the fact that over long periods of time, their lunch is going to be eaten. By smaller financial institutions that grow up around the periphery in less regulated or oligopolistic markets (think Polymarket, think Coinbase). And increasingly by tech companies that aren't explicitly financial but become financial over time.
+Examples of the financializationof tech cos:
+Apple: Apple Card, Apple Savings, Apple Pay, Apple Cash
+
+Google: Google Pay, Google Wallet, payments across Android/YouTube/Play Store
+
+Amazon: Amazon Lending, Amazon Pay, credit card with Chase, BNPL
+
+X/Twitter: X Money (payments license), X debit card (Visa), creator payouts
+
+Meta: tried Libra/Diem (killed 2022), Meta Pay, WhatsApp payments in India/Brazil
+
+Shopify: Shopify Balance, Shopify Capital, Shopify Payments
+
+Uber: Uber Money, debit card, instant driver payouts
+
+These tech companies already have your identity. They then move into  transaction flow. Then they lever their data to underwrite risk/credit and voilà, they aren’t becoming banks. They already ARE  banks. 
+They just don't file call reports (the quarterly regulatory filings that make you officially a bank) with the FDIC.
+Morgan had the railroad barons and the trust companies. Today’s equivalent is the platform with a billion users who’ve already handed over their government ID and built a decade of transaction history. The ledger just got bigger.
+
+The Identity Gate
+To operate in the world of dollars you need identity. KYC, "know your customer," is the price of admission to every regulated financial market on earth. Property rights, contract enforcement, legal standing, all of it assumes there's a person on the other end of the wire. Dollar-denominated finance runs on verified human identities, all the way from the Fed wire down to your mortgage lender.
+The regulatory stack enforcing this:
+Bank Secrecy Act / AML: KYC for every US financial institution
+
+Dodd-Frank: systemic risk oversight
+
+PSD2/PSD3 (EU): open banking, payment services regulation
+
+Basel III/IV: bank capital requirements globally
+
+State money transmitter licenses: what X, PayPal, and every fintech hold to move dollars.  The first step on the payment processor to bank rails pipeline
+
+Meanwhile the digital identity infrastructure is getting more robust, not less:
+EU eIDAS 2.0: digital identity wallets across the EU
+
+India Aadhaar: 1.4 billion biometric IDs, backbone of UPI
+
+Mastercard: replacing card numbers with tokenized biometric identity by 2030
+
+Worldcoin/World ID: biometric iris-scanning UUID at global scale
+
+This is where my other rant from 2023 comes in,  “How to Regulate AI.” 
+
+While doomers were panicking about parameter counts. My argument was simple: until machines become legal persons, liability flows back to the humans who set them in motion. The real regulatory infrastructure is personhood, not compute caps.
+The proliferation of AI ‘agents’ makes it more salient. As agents proliferate, “is this a human?” becomes the most valuable question in finance. The more capable the machines get, the higher the walls around human-verified financial infrastructure need to be.  The more you need to really know it’s a human on the other end of the line.  Something X has been grappling with a lot lately.
+
+The World of Dollars vs The World of Crypto
+Two financial worlds.
+The World of Dollars is where humans live. KYC-governed, nation-state regulated, court-enforced. Where the big assets sit:
+Global real estate: $393 trillion (Savills 2025), ~4x global GDP
+
+Global bond markets: ~$130 trillion
+
+Global equities: ~$100-115 trillion
+
+All the gold ever mined: ~$20 trillion
+
+The descendant of that 17th-century English estate deed that Morgan’s founding partner threw into the pot. Still almost entirely off-chain. Almost entirely human.
+The World of Crypto is where machines can play. Total market cap ~$2.4 trillion. About 0.6% the value of global real estate in what’s called “Real World Asset” linked crypto. But the market cap understates the infrastructure. Crypto rails offer machine-speed settlement, micropayments, programmable transactions, and operation without identity verification at the base layer. An AI agent can hold a wallet, sign a transaction, and settle in seconds. No KYC required.
+This isn’t theoretical. The agent financial infrastructure is being built now:
+Coinbase Agentic Wallets (Feb 2026): first wallet infrastructure for AI agents. Autonomous spending, earning, trading. Deployed via CLI in under 2 minutes.
+
+x402 protocol (Coinbase + Cloudflare): machine-to-machine payments standard. 50M+ transactions. Named after the HTTP 402 “Payment Required” status code that was planned but never implemented. Now it is.
+
+MoonPay Agents (Feb 2026): non-custodial AI wallets, automated trading and fiat on-ramps
+
+Stripe: x402 support for USDC-based agent payments
+
+Coinbase Payments MCP: letting LLMs like Claude and Gemini access blockchain wallets directly
+
+What agents are doing with the money: monitoring DeFi yield rates and rebalancing at 3am. Paying for compute per-request via stablecoins. Negotiating agent-to-agent data purchases in 200-millisecond cycles. Theoriq Alpha Vault runs $25 million in TVL managed entirely by autonomous systems.
+AI is bullish for crypto because autonomous agents need a financial system that doesn’t require them to be human. The dollar system demands identity. Crypto doesn’t. Billions of agents executing billions of microtransactions need permissionless rails. There is no alternative.  For now.  
+Stablecoins are the bridge. 
+USDC is already the settlement layer for Coinbase agent wallets and Visa’s network, which supports over 130 stablecoin-linked card programs in 40+ countries. The GENIUS Act, signed July 2025, let US banks issue their own stablecoins. Forecasts have the market at $500 billion this year, $2-4 trillion by 2030.
+So the machine-native financial layer is real and growing fast. But the vast majority of valuable assets remain off-chain. $393 trillion in real estate. Trillions more in private equity, infrastructure, sovereign debt. All under legal frameworks requiring human counterparties, governed by courts that only recognize legal persons. An AI agent can trade an ERC-20 token in milliseconds. It cannot buy a house. It cannot enforce a contract in Delaware Chancery Court.
+Not yet..
+The tokenization crowd is working on this. BlackRock has a tokenized Treasury fund on Ethereum. The ECB is piloting DLT-based settlement with central bank money, Pontes track launching Q3 2026. But total value tokenized is a rounding error against $393 trillion in title-and-deed infrastructure.
+That’s the equilibrium. Bots play in the crypto sandbox. Humans hold the real assets. Every point where the two worlds touch requires KYC. The identity gate is the bridge, and it’s getting more fortified, not less.
+This holds until one of two things happens: enough real-world assets move on-chain that the distinction blurs, or machines gain the legal standing to own and enforce property rights at scale. The second is a political decision, not a technical one.  Both are brakes in the financial singularity.
+
+The Brake in the Machine
+This is where the doomers get it wrong.
+The standard AI risk narrative conflates intelligence with power. Sufficiently smart system exceeds human capability, automatically accrues resources, reshapes the world. Foom.
+
+That’s not how power works. You need identity to open an account, standing to file a lawsuit, title to own property. Intelligence alone doesn’t grant any of these.
+Morgan understood this. He wasn’t the smartest man in that library. He was the most connected. The napkin worked because the names on it had legal standing, assets, reputations that could be destroyed if they reneged. Power was in the network of enforceable obligations, not in any one man’s intelligence.
+Same principle for machines. KYC, identity verification, property rights: these aren’t bugs. They’re natural chokepoints, and exactly the right places for regulatory gatekeeping. Even Coinbase’s Agentic Wallets ship with spending caps and compliance screening. MoonPay requires human identity verification before any agent can transact. The builders already know the identity gate is the control layer.
+You don’t need to solve alignment to keep machines contained. You need to keep the identity gates closed. Routing around property rights means routing around the legal systems of every sovereign nation simultaneously. That’s not an intelligence problem. It’s a power problem.
+
+Where This Goes
+So where does this leave us? A layered financial system. Human-verified identity for major assets. Crypto rails for machine-to-machine finance. The two layers meet at regulated on-ramps, and the companies that own those on-ramps will capture outsized value.
+The regulatory question everyone keeps asking is “how do we control AI?” Wrong question. The right question is “who gets to pass through the identity gate?”
+Morgan’s napkin was just a list of names attached to commitments. That was the technology of trust in 1907. Today it’s biometric scans and blockchain wallets. The medium changes. The principle doesn’t.
+Banking is identity. Tech companies own identity. All tech companies are banks. The only question left is whether you’re long the gate or long the sandbox.
+I know which side I’m on.
+The Implication
+The thesis is simple. Banking is identity. Tech companies own identity. All tech companies are banks. If you believe the financial system is bifurcating into a human-verified dollar layer and a machine-native crypto layer, you want to own the companies that sit at the gate between the two worlds and collect a toll on every crossing.
+The lazy way to do this would be long tech XLK short financials XLF but over the timeframes we’re talking about you end up with too much other stuff.  for a bit more concentrated version, you want the tech companies that are in the process of transforming into banks right now, or who gate keep an essential part of that transition (for humans or agents).
+Three core longs. One honorable mention. One short.
+
+Indicative numbers, Ramble is running without an analyst for now and the AI is not a reliable partner on financial research yet.
+Coinbase (COIN) is the highest conviction position.  60% of the long side.  Held since “crypto can be cool or crypto can be money, it cannot be both.”
+
+It owns the on-ramp. Agentic Wallets, x402, Payments MCP, Base network, USDC settlement, and as of last week, US equities trading. $209 today, still 50% off the July high. Revenue up ~120% YoY and diversifying fast away from pure trading fees. At 33x forward earnings this is not expensive for a company building the toll booth between dollar-world and crypto-world. COIN ripped 15% today on the crypto bounce, which tells you how much torque is in this name when sentiment turns.
+
+Circle (CRCL) is the purest stablecoin infrastructure play in public markets.  20% of the long side.  Frankly I missed the bottom here after writing it off post IPO for a while and missed the boat.  With the big rally you don’t want to go heavy here but added some today.
+Revenue model is elegant: hold Treasuries backing USDC, collect the spread. $2.7B in 2025 revenue, up 64%. USDC supply grew 72% to $75.3B. Hit an all-time low of $49.90 on Feb 5 and doubled to $105 in under a month. Still 65% off the IPO sugar high of $299. Rate-sensitive (1% cut = ~$441M revenue hit) but USDC circulation is growing fast enough to offset. The agent economy is a free option on top: every x402 transaction, every Coinbase Agentic Wallet, every machine-to-machine payment defaults to USDC settlement. If stablecoins go to $2-4T by 2030, Circle’s revenue scales linearly.
+
+Okta (OKTA) is the slowest burn but the cheapest entry. $73 at 21x forward earnings, 75% off the 2021 high. 20% of the long side. Beat Q4 tonight but guided weak on Q1, so the stock closed down 1% then bounced to +1.7% overnight. The important thing wasn’t the numbers. It was the CEO telling CNBC he views agentic AI as a significant opportunity and is confident Okta can win that market. That’s the identity gate thesis coming out of the CEO’s mouth on live television. If every AI agent touching enterprise systems needs identity verification and permissioning, Okta sits at that chokepoint. Risk is Microsoft Entra eats the lunch before the tailwind arrives. This is a buy-and-forget position, not a trade.
+
+Also featured in our “Long APIs, Short Slides” trade.
+
+Robinhood (HOOD) — honorable mention. 
+
+The right thesis, wrong price. At $82 and a ~$74B market cap, HOOD is actually bigger than Coinbase by market cap despite smaller revenue. P/E at 38x with no discount to COIN. Launched its own blockchain, rolled out an Advisor Network, and filed a $1B pre-IPO fund for private tech names. The “financial super app” strategy is the exact playbook described in this piece — tech company becoming a bank. But at 50% off peak it’s not cheap enough given the premium to COIN. Starter position, wait for it to puke, add on weakness. If it gets to 25-30x earnings on a crypto drawdown or liquidation sell off, back up the truck.  I may add to this if I look closer into this card tomorrow.
+
+Short: KRE / Regional Bank Basket. The other side of the trade. Mid-cap regionals with no tech platform, no crypto strategy, no identity moat beyond a branch network. Their KYC is a cost center. For the companies above, identity is a profit center and a moat. Same function, opposite economics. KRE for broad exposure, or pick your spots among names like ZION, CMA, KEY, CFG. Already cheap at 0.8-1.2x book but cheap for a reason. The market is pricing secular decline, and the market is right.
+
+Right now this is a small test trade, if you are doing it for real, you probably want to try to match the vol and maybe even beta of both sides.  It’s already late enough but my guess would be you are looking at 2-3x more delta on the KRE side than the long side.  Will follow up if the tech side sells off more and we need to size up.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counter parties.
+The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

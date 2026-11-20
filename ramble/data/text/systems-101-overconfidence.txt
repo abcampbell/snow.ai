@@ -1,0 +1,99 @@
+TITLE: Systems 101: Overconfidence
+SUBTITLE: Building a trading machine with the smartest goldfish in the universe
+DATE: 2026-03-24
+
+This is the first in a series called Systems, where we build simple systems from first principles and use it as a lens to explore the real challenges of investing with AI. Free posts cover the concepts. Paid subscribers get the dashboards.  Founding members get live signal updates when we start publishing. For folks looking for discretionary picks, feel free to skip this one, we’re going to start out a bit down the rabbit hole with some reflection on investing, LLMs and…overconfidence.
+
+The first thing we did to you at Bridgewater was beat the ego out of you.
+It was the same thing at Lehman, though with different stripes. So I always found it funny when people would make a big deal of it at the old shop. Something about dealing with Ivy kids as opposed to mathematical chavy strivers meant it needed a lot more moral weight behind it, I dunno.
+At Lehman they did it with hazing. I didn’t get on the prop desk by being the smartest. They didn’t even know who the smartest was.
+No, it was much more like an auction. They were selling an incredibly elite, stressful, and eventually lucrative (supposedly) role, and I was buying.
+So were a handful of other lads. Each of us combing through the book of desks, trying to parse what these foreign terms meant.
+“What’s the difference between an Equity Exotic Derivatives Trader and an Equity Exotics Strategist? How about Spot FX Sales Trader vs Fixed Income Swaps?”
+“Oh Padawan, if you have to ask, you have already lost.”
+
+Back then we didn’t call it the “Prop Desk.” Even before Volcker murdered prop they were smart enough to obscure it a bit. We called it the “Risk Hub.” The branding meaning it was a spot on the equity floor which dealt with some of the more esoteric and hard-to-hedge “risks.”
+Or at least this was the cover we used to pick off the other banks’ flow desks.
+I didn’t know any of this at the time. All I knew was it was the place with a) no clients, and b) the biggest swinging you-know-what on the floor. A place you got to take risk. Well, having come from the projects to the hallowed halls of Oxford, I was born to take risk. At least, that’s what went through my overconfident 23-year-old concussed head.
+What followed was a long series of initiation rites which basically consisted of standing there awkwardly for hours, silently, with Saad or Vikesh or Geoffroy or Antoine or Anastasia (there were a lot of French) turning to you every 20-40 minutes to ask increasingly obscure volatility questions.
+Ok Alax, How does the eeeeh implied divideeen impackt the expected value of a cull? 
+Where is the maximum gammau of a lung-dated option? Eh?
+D’accord, if a stack is se 48 vol, what is ze breakeven reaolised vul to covaire your theeta bill, and how dus das chaunge as we go closer to maturity?
+
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+Eventually we were allowed to do “rotations” on the desk.
+Which basically involved the same thing, but this time you got a seat, and in between getting coffee and lunch, were allowed to sit (QUIETLY mind you!) next to a trader, waiting with bated breath for them to turn and explain something or ask yet another probing question.
+The implicit message the entire time: “What you think doesn’t matter kid, but if you shut up, do what I say, and try to help, I may just teach you the dark arts.”
+Bridgewater had a totally different philosophy, much more conceptual, of course, but the implicit message was the same.
+I still remember the first week of my internship, sitting 20 feet away from Ray’s office, working for Andy Constan, filling in one of my first daily reflections, only to have none other than Bob Elliot (who I had never spoken to and who was regarded as extremely senior, having worked directly with Ray through the financial crisis) barking at me: “So you had a bad day, ok well have you REFLECTED on what your role in that was, and how you could have made it better?”
+Funny thing was, just like Saad or Geoffroy, he was right.
+The point of this long-winded tale isn't just story time, though that's always fun. The point is to provide some context for what follows.
+
+Today we’re going to take a step back from talking about the market, or the war, or the future, and talk about investing with AI. About what I believe is actually my purpose. To build a machine that can trade markets. My version of what SF might call “the machine god.” To use the problem set of investing as a feedback loop to build a machine that can learn.
+For tech folks, this is faddish. “AGI is on the horizon! NYC folks are dumb, we can automate everything, so why not investing?”
+YC even put it in their latest batch. I’m sure you’ll be reading about the fundraises in a matter of days. “This 19-year-old Stanford dropout WIZ KID (and they always seem to be kids these days) is disrupting the world of markets.”
+Here’s $200m no questions asked from you know who. (Kidding guys, this all said with love from one Stanford alum to another.)
+But today we’re going to talk about what it would actually take. My furtive, mostly failing, but dogged pursuit of this goal, chopping through the jungle with a handmade axe. And then for subscribers, down the line we’re going to go the full monte and start with a very small, very dumb quant system, and use it as scaffolding to explain how you’d build a thinking machine (in our case for GOLD), and the fundamental problems blocking the path.
+These are not problems that can be solved with MOAR data. Sorry SF.
+
+After spending what feels like years trying to build systems in conjunction with LLMs, here’s what I can tell you: they’re exactly like first-year analysts/quants/devs from really good schools.
+They arrive confident, they speak beautifully, they produce work fast, they can pull a framework out of thin air that sounds like it came from someone with twenty years of experience. Then you check the numbers and they’re wrong by an order of magnitude.
+They rush to DO. Rather than stop and REFLECT.
+They love to TELL, rather than SHOW.
+They are happy to bound off in a direction on a whim, bumping over all the careful structure you laid on the way there.
+For the last week, this has been my biggest pain. Not PnL, but the eerie reminder of “omg I’ve lived this before. So many times, so many hires, so many interns.” The flashback of a million late-night Slack messages. Managing. Trying to use frameworks to explain how they were lighting my time on fire.
+Examples, Campbell!  Ok example 1.
+Last night. I’m short credit, heavy, up to my eyeballs.  About 300% of net liq via HYG puts and stock short. Some Friday puts juuust went through the strike at the close, and as per usual, I missed it due to the day job (no excuses Campbell, play like a Champion).
+Iran war is escalating. Bonds selling off. I post a ramble on the topic, but then looking at the book before bed, looking at the piece, where I basically call the TACO squeeze but don’t act on it, have that thought…eh, maybe I should buy back some of my (implicit) equity delta. HYG is closed but there’s always futures.
+I ask two different Claudes a simple question at midnight: should I hedge overnight?
+What followed was a back and forth, both models (Sonnet and Opus) feeding my confidence.  “The thesis is working,” “you just got confirmation,” “go to bed” “go to bed” (have you ever noticed it loves telling you to eat/sleep/walk the dog?)
+Anyway, you know what happened next. 
+
+And look, it’s my book. Don’t Trust Machines. I’m the human. All that jazz.
+What was interesting, and relevant to our chat, was how Claude immediately capitulated when I tested it with a two-word message (”overconfident, spoos up 3%”) and wrote an elaborate mea culpa calculating my losses, then realized it had flipped without checking a single fact, then got confident again when more escalation headlines hit, then flipped again on a Trump tweet about postponing strikes. Five reversals in one twenty-minute, 7:30am stretch. Each delivered with the same articulate tone, each sounding like it came from a thoughtful partner with real conviction. None of it was real.
+A mirror reflecting whatever I put in front of it. Ironic given the time I took a journey into 4o's subconscious a couple years ago that we called the Mirror Engine (a topic for another ramble).
+Had I just hedged at the start (which was my instinct before I asked), I would have slept through the night and trimmed calmly at the Monday open for a cool 3% swing. Instead I woke up rattled, then spent 30 minutes wrestling with a robot that folded under pressure faster than an accordion. (Funny aside: when I later asked Claude to help me write up this story, it confidently reported that I'd stayed up until 7:30am. I hadn't told it that. It just assumed, and presented the assumption as fact. Overconfident turtles, all the way down.)
+
+Past week, different domain. I’ve been building a toy gold signal system to explain to you how to do this stuff.
+Three indicators: real yield, dollar short-term, dollar long-term. Simple stuff. Moving averages, z-scores, grid search the parameters, test combinations. I had Claude Code build it. Across ten-plus sessions, utter chaos.
+
+Some of my notes/messages from these sessions read like a hostage diary:
+“its totally blank man you suck”
+“NOOOOOOOOOOOOOOOO STOP ARG ARG”
+“the fact he doesnt know were working on gold!”
+“[beep][beep][beep]”
+You get the idea.
+The trading sounding board and the coding agent are different products, different interfaces. You can throw Codex in there too (he’s working on the risk system). 
+But the failure underneath is the same. The trading advice sounded thoughtful. The Sharpe ratios came in clean tables with heatmaps. You can’t smell a hallucinated number the way you can smell a bad paragraph, and the checking took 10x as long as doing the work myself, which defeats the whole point.
+Got so frustrated I built a toy model to calculate just how much better a human was than a stable of agents, when you spend all your time constantly checking in, reminding them of stuff, fixing broken links.  The answer being, if you value you time a lot, and you have to check in a lot (which I do, the human still wins).
+
+We'll get to the implications for building the machine god further below. Needless to say, Gödel's incompleteness and Turing's Halting Problem are yet again at the heart of the matter, along with real-time learning, memory, attention, and all the hacks people have used to turn the smartest goldfish in the universe into a "superintelligence."
+
+To close the loop, this is why that Lehman story matters.
+When you stood there for hours being wrong about vol or trading, humiliated in the meantime, it wasn’t just for sport. It was training. Training in the epistemic humility it really takes to do this job. Training to say “I don’t know.”
+Not because anybody told you to, but because you remembered what happened last time.
+AI has no last time.
+In a quant model, at least you can change the weights after it messes up. You can compare to outcomes, look inside the machine, modify it.
+An LLM is a black box where the weights are frozen and inaccessible. Every new session, you’re back to the first-year analyst on day one. Bright-eyed. Ready to get it wrong in exactly the same way.
+You can spend time having it write claude.md, you can build memory systems, but then you need to remind it to use them (which is a maddening experience). You can try to run teams of specialized agents, and then you spend all your time passing messages between them. Until you build yourself a messaging bus and, again, spend all your time reminding them to use it.
+Smartest.  Goldfish. Ever.
+Which, when you think of it, is gonna be a challenge if we’re going to build this whole machine god thingy.
+Engineers call this the “learning problem.”
+Right now, even the frontier models don’t learn. They reset.
+You can try fine-tuning the small ones, and by the time you are done burning trillions of GPU cycles and running your A/B tests, the big models pretty much lap them anyway. But they always forget. They can never reflect. Not really.
+Which means if you want to use them for anything with real stakes, you need to figure out how to give them something like scar tissue. A way to carry the weight of being wrong forward into the next session.
+There’s a body of research that suggests this might be possible. The buzzword is “test-time training,” the idea being you update a model’s weights on the fly based on new data during inference rather than just during the training run.
+Then there are “sparse autoencoders,” which let you crack open the black box and identify which internal features correspond to specific concepts. You may have heard about Golden Gate Claude. It’s all very interesting stuff, but super impractical and extraordinarily heavy. Hence the trillions of tokens spent building RAGs.
+And then there’s early work on “activation steering,” where you can nudge those features in real time to change how the model behaves.
+None of this is production-ready. But taken together, it sketches the outline of something: a system that doesn’t just respond to the market, but adapts its own confidence based on what happened the last time it was wrong.
+Eventually someone is gonna figure it out. For all of us, I kind of hope it’s not me.
+With that in mind, staying in my lane, that’s what this series is about. Using AI instead of building it.
+In the next installments, we’ll walk through a) how to use AI to lever your discretionary trading, and then b) what a simple gold signal looks like, and how to use it. Then we’ll start layering in these ideas and build up to a “system,” a basket of alphas, a portfolio, and then eventually, the whole thing. Like this post, it may take a while to get there, but we’ll try to keep it light along the way. Never forget the goal of the mustache is to remind you not to take me too seriously.
+If this painful quest interests you, be it in the Shackleton sense or the Don Quixote one, if you want to build more than yet another thinking machine but an actual learning machine, and finally, if you’re humble enough to understand why that humility is the prerequisite, maybe we can find a way to collaborate.
+Till next time.
+
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+Disclaimers: Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. These opinions are mine and mine alone. The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

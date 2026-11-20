@@ -1,0 +1,100 @@
+TITLE: Whatever Happened to Alpha Redux
+SUBTITLE: Part 4: The Allocation Problem
+DATE: 2026-04-21
+
+I don’t think most people have an alpha problem.
+I think they don’t know what beta they own.
+You see it both ways. Institutions paying for “alpha” that’s just a factor with fees on top. Individuals concentrating into a few names and calling it conviction when it’s really just leverage.
+Different paths, same outcome: a portfolio that looks diversified until it isn’t.
+That’s the actual problem.
+Eagle-eyed readers have reached out to complain that I have a tendency to start series and never finish them. Which, if you're still waiting for Systems 103 or the Campbell builds the AI-investing-machine-god piece from October, is a justified concern. But today we're going deep into the archives to continue a series from 2017 called "Whatever Happened to Alpha?" Partially because we ran a reader poll and portfolio construction won. Partially because I'm thinking about starting my own fund. And partially because after the last couple of weeks — having just missed out on a 10% rally, eye roll — I wanted to spend some time on my beta portfolio.
+
+We tend to slant the alpha book away from having too much levered beta. Call it a hangover from trying to sell institutions a portfolio that would diversify them from their growth-stage tech exposure, or from building my own alpha book to hedge against too much startup equity. Either way, the bias shows up the same way: real diversifying alpha is the most valuable thing in the investable world, and most of what gets sold as alpha isn't that. But for most people, the bulk of the portfolio should be beta anyway. Which is what this piece is actually about.
+We’ve talked about beta vs alpha before, but as a refresher: beta is the risk premium you get from holding the market portfolio. Alpha is the return you get by deviating from that portfolio. This piece gets technical, so for those without a lot of time:
+A lot of what people call alpha is levered beta. Institutions invest in funds that dress up levered beta as alpha. Individuals, facing leverage constraints, concentrate into high-beta stocks that carry implicit leverage in their business model or balance sheet.
+The former is expensive. The latter is dangerous. Retail concentration introduces idiosyncratic risk that increases your road to ruin.
+Both would be better served building a basket of diversified betas. What makes up that basket depends on liquidity, risk tolerance, instrument access, and existing exposure. Tech founders should note how much tech is already in their "passive" retirement portfolio. Same principle as oil-state sovereign wealth funds not holding oil.
+The funny thing about spending two years building an alpha book is realizing it was defensively shaped by the beta you didn’t know you had.
+For retail readers looking for a practical framework: if you're asking this question, you are probably overallocated to alpha. Reorganize to 80-90% beta and 10-20% alpha, at least until you've demonstrated a 0.5 Sharpe (meaning if you're running 16% vol, your excess return over the risk-free rate averages 8%). Below that, put almost everything into beta and focus on earning more to invest.
+Three questions to answer about your beta: what volatility can you stomach, what drawdown is unacceptable, and what access do you have to leverage. If your answers are something like 10-12% vol, 25% max drawdown, and not much leverage, you're probably looking at something like Bridgewater's All Weather (ALLW, 85bps) or Advanced Research Risk Parity (RPAR, 50bps). Full disclosure, I used to work at Bridgewater and many of my friends still do. Neither is cheap, but they provide 1.5-2x gross leverage in a set-it-and-forget-it wrapper — which is the part you can't easily replicate yourself at retail scale.
+Now for the fun stuff.
+You Think You’re Diversified
+If you own 40 stocks, you are not diversified. You are long one trade, in 40 slightly different wrappers.
+
+As you add stocks, the idiosyncratic piece dies. What survives is the systematic part. With normal equity parameters (σ ≈ 20%, ρ ≈ 0.3), the marginal benefit of adding a stock drops below noise by about 12-14 names. By 30 it’s a flatline.
+
+The illusion holds when markets are calm. Tech up, energy up, consumer up, each by a different amount, and it looks like you have a bunch of different bets. Then something breaks. Correlations spike. You remember what you were always holding.
+What you own, after the math is done, is one thing. Equity beta.
+Return vs. Risk
+
+This chart tells you most of what you need to know. Retail portfolios cluster in the bottom left: high volatility, moderate returns, low Sharpe. Institutional portfolios sit further up and to the right: better diversification, better risk-adjusted returns.
+Both want to move up and to the right. They get there through different doors.
+The Institutional Tradeoff
+
+Institutions have leverage. They don’t need to pay someone to provide it. So the question isn’t “how do I get more exposure?” It’s “how do I get a better Sharpe?”
+Hedge fund alpha is real. When we compare the hedge fund index against our “All Beta” portfolio (which just equal weights 100+ macro betas from equity, bond, currency and commodity markets), we find two things, the average fund is around ~50% correlated to their relevant beta (sometimes more) and funds in aggregate have roughly 5% gross alpha (though note the diversification benefit from grouping them into a single portfolio.
+
+But at 2/20, the manager takes about half. Net alpha to the investor is maybe 2.5%. And if that manager is running with a correlation (ρ) = 0.7 to your existing equity book, the marginal contribution to your portfolio’s Sharpe is close to zero. You’re paying for levered beta in a nicer wrapper.
+Which brings up an interesting point, for an institution, the manager worth paying for is the one with genuine low correlation. A 0.5 Sharpe at ρ = 0.1 adds more to your portfolio than a 1.0 Sharpe at ρ = 0.8. The marginal contribution scales with correlation as much as with standalone performance.
+Which means institutions should actually be more willing to back less proven managers with differentiated books than to write another $250M check to a platform hedge fund running the same equity tilt they already own.
+The Retail Tradeoff
+
+Retail doesn’t have leverage. So the entire game changes.
+Most retail investors reaching for returns aren’t chasing alpha. They’re trying to synthesize leverage. And they’re doing it through the worst possible door: concentrated high-beta tech, 3x daily-reset ETFs, meme stocks. Instruments that are 90%+ correlated to equity beta, path-dependent, fee-heavy, and designed to decay in exactly the environments they’re supposed to work in.
+The right move is counterintuitive. Step one: diversify. Going from 40 correlated stocks to a diversified beta book and your vol drops from 18% to 8%. Your return barely changes. Your Sharpe roughly doubles.
+This is the key.  This is why folks call diversification ‘the only free lunch in investing.'“
+Step two: lever. You end up back at 16% vol, but now you’re on the 0.65 Sharpe line instead of the 0.3. Same risk. Fifty percent more expected return.
+Now, this also explains WHY retail does what they do.  Usually, they lack good sources of leverage.  Be it from restrictive / protective brokers, or retirement accounts where it is verboten.  Pushing people into more esoteric, difficult to manage instruments like futures, and options. 
+This is why 3x levered ETFs exist, this why folks blow themselves up on meme stocks.  Because the leverage constraints forces upon retail push them into more and more dangerous, confusing or expensive ways to play with leverage.
+The All Beta Portfolio
+Here’s where this gets concrete. Back in 2017, we built a macro beta portfolio. Twelve asset classes, full correlation matrix, equal-risk-contribution weights. We’ve kept it updated since.
+
+A “beta for dummies” (like me) ETF version tracks the futures version closely. Which means for most people, you can build something very close to this with a handful of cheap ETFs.
+Going from a bad beta portfolio to a decent one is where most of the value lives. Going from decent to perfect is small, uncertain, and requires judgment you should probably deploy elsewhere.
+The Regime Problem
+
+One caveat. The All Beta portfolio, like all risk-parity type strategies, has benefited enormously from the 40-year decline in interest rates. Bonds diversify equities in a disinflationary regime. We’ve argued since 2020 that this regime is shifting. Conflict is inflationary. In that world, bonds and equities correlate positively (2022 was the preview), and the traditional bond allocation has to shrink. Gold and commodities become the diversifiers.
+It also means if you tried using the relationship between the blue line (bonds vs trend) and the red line (all beta returns) above to trade beta returns, you would have had a really good time up until we saw a resurgence in inflation in 2021. 
+
+Your beta portfolio is a function of the regime you’re in. Which is the first moment where what you call “beta” starts quietly becoming something else.  Which calls back to one of the first conversations I had with the big man, way back in 2012.  “If everyone listens to you about your optimal beta portfolio, doesn’t that to a reallocation in assets that pushes up your portfolio?  Does that give your beta portfolio alpha exposure?”
+Anyway, five years layer, that chart above was the start of the work that led us to start increasing our gold allocation to dangerous levels, and to advocating in 2017 to both individuals and institutions to try “stocks and gold” vs “stocks and bonds.”
+That being said, Gold is the position I’m most conflicted about right now. Strategic view says this regime wants more gold, not less. Tactical read right now says the opposite: flows are crowded, gold is trading more like a bond than a diversifier, the negative correlation to oil keeps surprising me. I’m running gold heavier than the ETF book below would suggest, but I’m watching it closely. More on this in a later piece when we revisit our gold view.
+How Much Beta Is in the Alpha?
+
+Note these charts are almost 10yrs old from the prior work.  Many of these indices are no longer public but we will revisit soon.
+Scale this up and most of the “alternative” universe collapses. PE is levered equity with a smoothing lag. Most hedge fund strategies are levered factor tilts available in an ETF for 15bps. Private credit is levered corporate bond beta with an illiquidity premium.
+Standard error on a Sharpe ratio is roughly 1/√T. A one-year track with an observed Sharpe of 1.0 has a 95% confidence interval from zero to 2.0. So, you really need quite a bit of time to really understand if someone is good at this whole money management thing.
+Where This Leaves You
+If you’re running a meaningful chunk of your book in active picks, there’s an implicit claim in that decision. You’re claiming the residual after you regress against your beta book is real and persistent.
+If you haven’t measured it, you don’t know what it is.
+I spend most of my time here writing about the alpha book. The part of the portfolio that’s actually working right now is the beta book. The alpha book was shaped, for two years, by whatever the beta book was doing and the exposures I had in my life. 
+Most portfolios don’t fail because they were wrong. They fail because they were one bet pretending to be many.
+
+Next time: the zany math and the professional-grade implementation. Residual Sharpe decomposition, Bayesian shrinkage on short track records, the leverage multiplier that makes Sharpe the only variable that matters, and a head-to-head backtest of four beta constructions — pure equal-risk-contribution, synthetic All Weather, leverage-constrained retail (RSSB-style), and futures-overlay institutional — with realized Sharpes, 2022 drawdowns, and the real cost difference between the retail and institutional paths. Bring a calculator. Subscribers get it first.
+
+Building the Book
+For those who want an actionable implementation in the meantime. With the huge caveat that I don’t know, man. I’m spending a lot of time in my alpha book trying to hedge or short stocks and I’m this close to putting on a big steepener (selling inflation-sensitive long-term bonds to buy growth-sensitive short-term bonds). So you probably want to wait until we see another 10% drawdown here before yoloing in. Yes, you can be mad at me for not telling you this a couple of weeks ago, and that would be fair, but this is how we do that. It’s exactly that gap that reminded me to write this piece.
+The ETF Weights
+One frame before the table. This isn’t a pure All Beta book. A proper All Beta is equal-risk-contribution across twelve macro sleeves using the full correlation matrix, and it’s the thing I’ll build out properly next time. What’s below is a practical half-step — closer to a simplified All Weather than a pure factor-neutral construction — and it’s the version that’s implementable in any brokerage account without a covariance matrix and a spreadsheet. The proper version comes with the backtest, in Part 5.
+
+Blended expense ratio: roughly 12bps. No leverage. Runs about 7-8% vol unlevered.
+A few things to notice. TLT at 20% is the biggest single weight because it provides the most diversification per unit of risk in the historical sample. That’s the weight that should make you nervous in the current regime. If you believe (as I do) that we’re in a conflict-inflation shift, you’d want to trim TLT and add to GLD and DBC. Which is already an alpha call on top of the beta book. See how fast the line blurs.
+How to Lever It
+If you have futures access. Don't sell anything. Hold the ETF portfolio as collateral. Overlay 3-4 micro E-mini contracts (/MES, roughly $26K notional each) for the growth sleeve, 1-2 /ZN contracts for duration, and 1 /MGC micro gold contract (roughly $34K notional) for the gold sleeve. The ETF portfolio stays intact. Effective gross goes to about 200% on $100K equity. Vol goes from 8% to 15-16%. No daily reset, no drag. You roll quarterly. Implicit financing cost is close to the risk-free rate, which you're already earning on undeployed cash. Available at IBKR with futures approval. One note: this three-contract overlay levers equity, duration, and gold but leaves TIPS, commodities, REITs, and EM un-levered — so scale up those ETF allocations proportionally before adding the futures, so the un-overlay sleeves don't get diluted. (If you want to go further, /MCL micro crude and /MHG micro copper exist for the commodity sleeve, but they're less liquid and you need a bigger book so you don’t get unbalanced.)
+If you don’t have futures access. Return-stacked ETFs. NTSX gives you roughly 1.5x through 90% stocks + 60% intermediate treasuries at 20bps. RSSB pushes to 2x through 100% stocks + 100% bonds at 40bps. Build around RSSB as your core equity/bond exposure and add the commodity/gold/EM sleeves around it.
+If you have $125K+ at a decent broker. Portfolio margin lets you gross up to about 2x on a diversified book at a financing cost of a few percent. Cleaner than daily-reset ETFs. The carry still eats returns in a way futures don’t.
+Never. 2x and 3x daily-reset ETFs. TQQQ, SPXL, SSO. The daily rebalancing forces the fund to buy highs and sell lows every trading day, compounding a drag that eats 3-8% annually depending on realized vol. You’re paying for leverage in decay instead of in financing cost. Decay is always more expensive.
+As you can tell there’s a lot of ways to skin this cat, and again, sometimes the easiest thing to do it just plop your beta in an ETF like ALLW or RPAR and pay the vig.  Anyone who has messed around with futures knows you are always likely to miss a roll when you most need it.
+Rebalancing
+Monthly or quarterly. Don’t overthink this. The point of risk parity is that the weights are set by volatility contribution, which moves slowly. If something blows out (say TLT drops 20% in a quarter), that’s when you rebalance into it, not out of it. Rebalancing is the mechanism by which you harvest the diversification premium, buying what just got cheap relative to risk.
+What I’d Change for the Current Regime
+More gold, more commodities, less duration. I’d take TLT from 20% to 15%, move 2.5% to GLD and 2.5% to DBC. Which gets you gold at 17.5%, commodities at 12.5%, and long treasuries at 15%. That’s a meaningful regime bet, and it’s already an alpha call layered on top of the beta. Which is, again, how fast the line blurs.
+I’m not telling you to do this. I’m telling you what I’m doing. And the reason I’m writing it down is so that when I’m wrong, I can point to this and trace where the mistake was.
+The proper version — a pure equal-risk-contribution build without the regime tilt, backtested against All Weather, AQR’s risk parity with the leverage paths compared head-to-head — is for the next time we hit this space.  Bring your calculator and a couple of data frames.
+Disclaimers
+This one is reaaaally not investment advice, it’s intended to point you in the right direction to understand how to get access to good betas.  Your risk tolerance, liquidity needs, and leverage situation will vary and inevitably make this bad advice relative to your actual situation.  That’s why investment advisors get paid.  This is a newsletter.  Don’t trust machines, don’t trust a backtest.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counter parties.
+The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

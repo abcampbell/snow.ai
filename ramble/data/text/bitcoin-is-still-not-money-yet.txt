@@ -1,0 +1,76 @@
+TITLE: Bitcoin Is (Still) Not Money (Yet)
+SUBTITLE: Part 4 on our biography of bitcoin's evolution as a payment technology.
+DATE: 2022-04-15
+
+Five years ago I wrote a couple of short pieces which laid out my thinking on the challenges that bitcoin had on it's way to becoming "money".  
+The overarching conclusion was simple:
+
+This conclusion was based on the inherent tension between the decentralized, almost semi-autonomous nature of bitcoin (the ‘cool’ part), and the scale issues the technology was already facing on it’s way to becoming ‘money.’  
+Aka there were no banks playing in crypto, and maybe there never would be.
+That made it cool.  
+On the other hand, the tech didn’t scale (as we discuss below).  At least not at a level that satisfied the speed, convenience and reliability requirements of modern customers.
+Putting bitcoin in a bind.  Become more like money, but in a way that would inevitably erase the cultural principles around decentralized, antonymous, and ‘trustless’ intermediaries.   
+Basically, for crypto to become money you need some startups to grow UP into crypto banks, and you needed traditional finance (tradfi) banks to grow DOWN and connect the pipes.
+Thus far we look to be about a third of the way through that process, and crypto has evolved consistent with this framework.  
+As the underlying blockchain technology evolves closer and closer into actual real world use, we’ve seen an explosion in financial intermediaries looking to make it easier for consumers and institutions to participate.
+Some of those intermediaries provide a reasonable service and a good cost, and will become the JP Morgan of crypto if they don’t mess it up.
+Many, lured by the influx of investment capital and the promise of gold in them thar hills, built to maximize the value of their ‘coin’ or ‘token’ or ‘nft’ in the short term, vs the actual consumer surplus of the people using their products.
+Aka ‘pump and dump’ aka ‘rug pull’ aka ‘scammers’
+In the end, money is money because it’s reliable, safe, and boring.
+Boring things aren’t cool.  They just work, and you never think of them.
+That means the way you interact with that money, should be itself reliable, and safe, and boring.
+6 seconds is too long to clear a transaction, and everyone knows it.  A 6 second transaction that *maybe* doesn’t clear isn’t boring, it’s terrifying, and everyone in line in the Starbucks in SoHo would murder me if I tried to get away with it.
+
+~End Scene
+For those with interest, we’ve laid out the entire framework in gory detail below.  And before you think this some sort of story about how smart I am, here’s a picture of what $100 in crypto would have done since our last post.
+
+1.  Why was bitcoin cool? 
+Bitcoin was cool because it represented a functional, independent, decentralized challenge to the status quo.  It looked like a proof of concept capable of taking traditional finance ("tradfi" in the lingo") and by and large replacing it, albeit on relatively unknown and untested infrastructure.  
+It was radical.  It was different.  It was ‘trustless’ and anonymous.  
+None of the old money had it, and it worked.
+2. Why was bitcoin not money? 
+Scale. Bitcoin failed to be money due to inherent scale problems with the network.   In particular, gaps in speed, capacity, transaction costs, and reliabilty. 
+I. Speed 
+In 2018, the max networks speed, when measured by transactions per second, was still off by 3-4 orders of magnitude relative to what it would need to be
+
+Put another way, it was 2 orders of magnitude slower than ACH, the much belied US interbank clearing system it notionally competes with. 
+
+II. Scale 
+ACH is itself a clearing technology which relies on a tremendous amount of financial intermediation.  Meaning you could look forward to a world where there were *fewer* people clearing transactions, but the notional value being transacted into one ‘block’ would rise, enabling the same amount of money to flow, but in fewer transactions with higher “prices” leading to greater overall value moving over the network.
+Put another way, who’s gonna have a computer big enough to run the hundreds of different blockchains in 2050 and does that just look like a couple “tri-party repo” banks we have now.
+
+III. Transaction Costs 
+This is before you get into transactions costs.  Even sister projects like Ethereum and it's copy cats suffer from inherently unstable and expensive transaction costs.  
+“What is the price of gas today” etc.
+
+IV. Reliability
+Like all young tech, crypto is unreliable.  
+Times of particular high demand (like when the market was moving a lot and many deals were to be had), the cost to clear in many crypto models goes up.  This is by design and a way to ration limited computing power, and turn that demand into reward for the computational engines doing the ‘work.’
+It also means that exactly in the moments where the network is congested, your transactions are likely to be deprioritized relative to other, more pressing and remunerative transactions.  
+Imagine a world where the Goldman Sachs ISDA documents under modern derivatives clearing were sometimes T+2., other times T+7 because "oh the market is crowded and a lot of people want to transact today".
+To a tech person this sounds like a scalable problem.  To a market maker, concerned with liquidity, a market which gets worse the more people use it...sounds like death.
+V. Inaccessibility
+This unreliability is sometimes buried in technical concepts early users are forced to learn (like 'crowded mempool"), adding a material layer of technical inaccessibility to the ecosystem.  
+“If you aren’t running a mining rig off a rasberry pi ur a noob’ etc.
+
+This inaccessibility extended in many cases to the access to the market itself.   Early intermediaries, some of them now unicorns, were notorious in their early days for having 'server issues' during big market moves.  
+
+3. The rise of boring crypto
+Well, problem #2 and problem #3 are reconcilable, but only in one direction.  
+Bitcoin needs to get boring.
+To get boring, bitcoin, and crypto in general, needs to continue to lose it's decentralized, 'trustless' nature, and move into something much more akin to what 'tradfi' always looked like.  
+Put another way (by someone else)
+"Crypto is doing tradfi on steroids"
+So the reconciliation path here is clear.  
+Centralization through the rise of new financial intermediaries which handle payment, storage and eventually take direct exposure to other intermediaries/products - check.
+Capitalization via investment from major venture capital firms and financial institutions - check.
+Capitulation on once treasured concepts like trustless-networks & anonymity and hello KYC - check.
+Really at this point, the last remaining hurdles between crypto and money are much more related to the infancy of the financial players and products intermediating that experience.
+In the next 5 years look to be the critical test for crypto.  Can these projects deliver value outside of paper gains for asset holders?  Can technologists and product developers bridge the gap between the underlying tech, and the user experience? 
+Finally, as this more centralized, more consumer-friendly payment system emerges, how much does the assumption of traditional banking risks (payment, settlement, clearing, market) by non traditional banks play a role of bridging that gap.
+
+Disclaimers
+This presentation is neither an offer to sell nor a solicitation of any offer to buy securities in any fund Rose Technology manages. An offering will be made only by the confidential offering memorandum, subscription agreement and other relevant documentation of any such fund (the “Fund Documents”), which should be read in their entirety. No offer to purchase securities in a Rose fund will be accepted prior to receipt by the offeree of the Fund Documents and the completion of all appropriate documentation. None of the interests or shares will be registered under the United States Securities Act of 1933, as amended. Funds managed by Rose will not be registered under the United States Investment Company Act of 1940, as amended. Neither the U.S. Securities and Exchange Commission nor any State Securities Administrator has passed on, or endorsed, the merits of any such securities.  Registration of an Investment Adviser does not imply any certain level of skill or training. This commentary has been provided to you in a private and confidential manner. It is not an advertisement and is not intended for public use or distribution. It is not to be reproduced or transmitted, in whole or in part, without the prior consent of Rose Technology.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Rose research is based off information and data from public, private and internal sources. External sources include the Federal Reserve, National Bureau of Economic Research, Organization for Economic Co-operation and Development, International Monetary Fund, International Energy Agency, US Department of Commerce, US Department of Agriculture, US Geological Survey, FDIC, Bank of International Settlements, United Nations, Bank of England, PBoC, as well as information companies such as Bloomberg Finance L.P., Global Financial Data, Macrobond, Haver Analytics, Moody’s, Standard and Poor’s, Thomson Reuters / Refinitiv, Preqin Analytics, Crunchbase, MStack, Yahoo Finance and Rose Technology. We do not assume responsibility for the quality of this information.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION.

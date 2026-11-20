@@ -1,0 +1,48 @@
+TITLE: This is what short vol feels like
+SUBTITLE: Sell Low, Buy High
+DATE: 2024-08-08
+
+Market started falling again tonight, right into the close.  
+This is what short vol feels like.
+Every down move little more extended than reasonable.  
+The rallies quick and vicious.
+
+US Stocks as of writing
+Recall a little over 21hrs ago the BoJ walked back it’s promise of cuts in the face of ‘unstable markets.’  Leading to this whipsaw…
+
+Meaning investors in the Nikkei have now gone down 20%, up 14%, down 4%, up 9% down 6%, in a handful of trading sessions.
+This is a classic symptom of a market that is ‘short vol.’
+When the market is short vol, all of a sudden little moves become a bit more wobbly.  Because the folks that sold volatility have to sell into every decline, and buy into every rally.  Like clockwork, like a machine.
+Stuff that would move the market 50bps all of sudden spurs more selling/buying than you might think and every move is amplified.
+Another tell here is the speed at which the short term futures on equity volatility collapsed earlier this week.  Vroom.
+
+It’s normal to see ‘rockets and floaters’ for vol, where the prices go up fast and take a long time to go down.  Here’s two 18 month windows around 2008 and 2020.  That decline happened in two days.  Mostly because there’s no economic crisis, so it looks like the volatility machine breaking vs a sign of legitimate economic malaise.
+
+Now it’s clear that some of that spike in equity vol was from an unwind of levered players portfolios (‘books’).   Starting with the ‘carry trade.’  We’ll talk about that another time.  
+The carry trade in question usually run by some ubiquitous yet anonymous ‘pod shop’ that is *now blowing up*.  
+Which led us to this mental image of Fed Chair Jerome Powell and Bank of Japan Chair Ueda suiting up for a long day of pod hunting out in the artic.  Armed with the threat of higher rates! Ha.
+
+With an hour of prompting we could make a whole movie script here.
+Anyway, so what do I have to add or offer here?  Well first, we continue to ‘monitor the situation’ in credit and other markets where you can observe expectations for volatility.  So far, a bit wider, but we’re doing ok.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+As mentioned in our last note, credit usually trades wider (aka tighter aka the yields go up and corporate bond prices go down) when equities become a lot more volatile.  We’ll write a long piece on this (the Merton Model) at some point when it gets really out of whack, but you can think of the volatility of a stock as being connected to the underlying volatility of it’s assets and how levered it is.  
+As equity prices go down, you have less and less asset coverage over your debt.  Meaning companies become more levered, meaning even the same amount of underlying economic or asset volatility leads to radically more observed realized volatility in both stocks and bonds.
+This is, by some measures, the very mechanism by which aggregate excess leverage inevitably leads to financial tightness and economic contraction.  Anyway, we’re starting to see some movement in spreads, but not nearly on the same order of magnitude.  Which makes sense, if you think the market action is purely a function of isolated pockets of over-levered players unwinding and not some radical change in the underlying leverage or asset volatility in the system.  
+The problem for markets is that even though these moves might be technical, and even if they wash out, the increase in both implied and realized volatility will at some point mechanically force some investors to de-lever.  Particularly quant or systematic strategies which engage in complex estimates of volatility and correlation. 
+Particularly folks that might be counting on their bonds to bail out their stocks. 
+Anyway, this is where it helps to look at other measure of implied or expected volatility to triangulate our thinking.  Get our head out of the weeds etc.  I like to look at the volatility of the dollar, and the debt that finances it.  You can see bond volatility has been elevated since the Fed tightening and FX and gold vol are up but all still lagging equity vol materially.  
+
+MOVE Index
+So where does that leave us?
+Well, if you need a hedge, you should look to credit, or if you must look at stocks, consider ‘vega’ or longer term options.  Though note ‘skew’ or the price of puts relative to calls (downside protection relative to upside optionality) is not cheap and likely to be much more expensive tomorrow AM.
+
+In the meantime, this is a good time to reflect on the value of optionality and diversification.   The best traders I ever met weren’t necessarily the best predictors of any one given market, they were the folks that could build a portfolio where heads they win tails you (the market) lose.  Where they became indifferent to the short term rise and fall in stocks, because no matter which direction it went, they understood how much money they would gain/lose and what their forward risk would be.  
+Which is a long way of saying, the value of optionality isn’t the economic return of the hedge, but the piece of mind in moments of chaos.  If you really cover your downside, or at least have a good mitigation strategy, then you won’t get distracted when some of your contingency plans have to kick in.  You will be able to focus on your core portfolio / business, while other people are scrambling for optionality.  
+“When your gamma pays off, you know your beta is protected, and you can get back to alpha.”
+Anyway, my 2c, given its looking like we can expect some ‘chop’ coming up as the market really digests how much of this volatility is individual players de-risking and how much is cascading losses across portfolios, firms, and markets.  So far, it looks contained, but now we watch credit.
+Till next time.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. 
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

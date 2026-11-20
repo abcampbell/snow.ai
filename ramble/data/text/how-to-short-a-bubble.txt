@@ -1,0 +1,130 @@
+TITLE: How to Short a Bubble
+SUBTITLE: Wedge. Victim. Confirmation.
+DATE: 2026-05-12
+
+The other day I was talking to a friend at a hedge fund seeder, and he asked a question I’ve gotten a lot lately “how do you write so much?”
+My answer was simple, “when I was at Lehman, there was a blog where I could say whatever I wanted, then I went to BW and learned how to answer big hard investment questions, but the actual writing was extremely over-edited. It used to take me weeks to write a couple of pages. Then when I left, it took me a while, but I found my voice. AI helps a lot with editing, since I am such a rambly writer”
+Thing is I think a lot of people see that AI editing and see it as AI writing, whereas I just think back to my time at the old shop, where the job of the author of the piece was a) frame the piece/question, b) set forth the framework for the analysis, c) vet and probe the work as it came in, d) tie it to a synthesis, e) convert that synthesis into a topper and then make sure ‘the body’ of the work is by and large consistent with that synthesis and framework.
+Meaning, sometimes when folks read something that reads AI generated, it’s not slop, it’s just a cleaned up version of something that I felt was too scattered, or long winded, or fractured to spend a couple of hours on, so I wrote some notes, threw it to the bot and said “clean it up and cut it down 40%.”
+At the same time, you gotta give the people what they want, and I’ve gotten some negative feedback here on that approach recently, so I’m going to try to experiment a bit with going back to the unhinged rants here. We may overcorrect, but at least I’m being responsive to feedback.
+Anyway, the reason this blarg is relevant, is that today’s post is going to be about something that’s a) big, b) hard, and c) important. The kind of post I would normally spend 10-20hrs digging like mad to get to the bottom, come to some kind of bold conclusion, and then slave away for another 10 making pretty charts.
+Well, we don’t have time for that, and again ‘give the people what they want’, so you are getting this.
+Because honestly folks, I don’t know if we are in a bubble, I am not sure it’s knowable. I know pretty much the same thing that you do:
+The AI revolution is real
+
+Even though I threw my professional investing career away to go long, and have spent the last three years writing about it, I don’t feel like I am LONG enough.
+
+I look around, just like you, and see a lot of people getting filthy, obscenely rich for stringing tokens together (or yolo-ing into the infrastructure plays that generate those tokens) and get that slow shiver up my spine of envy.
+
+This then leads to a feedback loop, where I can’t tell if my views are colored by that envy or the envy is telling me somethign I already know “GO LONGER”
+
+I do think to some extent ‘where we are going, we won’t need roads” and we need MOAR compute, so you kinda do want to buy the things.
+
+I don’t think software does that well, but the market is killing those names, so not much to be done there.
+
+Like you, I was also interested in the low valuations of Korean stocks, and intrigued by the opening up of their markets, which clearly has had something to do with the run up.
+
+I was surprised by the stealthy easing eSLR where banks and funds were asked to hold less regulatory capital to hold treasuries, a classic easing in wolf’s clothing.
+
+I can see a world where rates rise enough to remove the punchbowl, but not yet.
+
+I could see a world where war removes the punchbowl, and the vol there shook me out of the rally so who knows.
+
+I can see a world where Canadian banks trading at 3x price to book and cheap vol are a wonderful opportunity to short, but the lack of market access and long enough options prevent me from writing a nice article on it to give you some value here.
+
+There’s also a bunch of stuff, frankly, I can’t talk about here, that doesn’t really change my underlying view of the trend, but does limit a good deal who and what I can talk about here.
+
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.
+
+Which if you are familiar with Andreesen’s framework of ‘STOP INTROSPECTION’ probably means all this prevarication will prevent me from ever escaping the permanent non billionaire class.
+But. BUT. There is one thing I know how to do.
+One piece of alpha I can give to you dear, loyal reader.
+Not even the case of IF we are in a bubble.
+But how, IF YOU WANT, you can short a bubble.
+Which dear reader, is the subject of today’s ramble. No AI, probably not that many charts, NO NEW ANALYTICS, just a guy punting from his couch, in between meetings, with the occasional bloomberg screen. You’re welcome.
+
+What is a bubble?
+You already know what this is. I’m not going to do the performative thing of re-explaining it. If it walks like a bubble and talks like a bubble, and goes parabolic and requires greater and greater increases in expectations and leverage to sustain price rises, it’s a bubble.
+Why are bubbles so hard to short?
+Well, the thing is, the easiest things to go short are things that kind of chop down and then collapse as the fundamentals leak out to the consensus. Where you get short squeezes, but these offer good opportunities to sell more, because this thing is going to zero.
+Bubbles are kind of the opposite problem. When something goes up unsustainably, as they say, your exposure grows exponentially along with the price rise.
+Ask Porsche VOW.
+
+Ask GameStop.
+
+Ask that random shoe company that became an AI company and ran everyone over the other week.
+
+A long who sells is out of the market.
+A short who sells is a buy that’s coming back tomorrow to clear his tab.
+If you can make that tab go up 5x, he’ll be doubly motivated to close the check, sometimes at any price.
+The other reason bubbles can be hard to short, is the very thing that makes them awesome from a bubble perspective ‘upside volatility!!! yay’ makes their options expensive.
+If it’s going up 10% a day, that’s 160 vol a year. 160 vol options are the kind of thing where you pay half the cost of the share just to go long today, where there’s so much value from realized vol hedging that they become useless from a directional view.
+So then, leaving us with this.
+The only ways to short bubbles are:
+a) Find the wedge — the thing that pierces the bubble from outside
+b) Short the victim — bet on something non-convex correlated to the bubble
+c) Wait for confirmation — on the trend and the chart
+The rest of this article will be examples of each.
+
+A) The Wedge
+The first way to short a bubble is to not short the bubble.
+You find the thing that pierces it. Then you go into it to protect your book from the manifestations of the bubble popping.
+We started doing that today, right before the CPI print confirmed what we already knew. Inflation is going up. 
+
+Rates are probably going up. And turns out, there are bonds in the stonks, as Bob Prince used to always say.
+
+This is the wedge. You don’t short the bubble. You go long the trend that kills it. If AI is the bubble, rates are the wedge. 
+
+Everything with a fat multiple is a long-duration asset in disguise. When the discount rate rises, the NPV of all that future goodness compresses, and the stocks that went up on vibes about 2030 cash flows come back to earth.
+
+The principle is this: inside every bubble, there’s something that needs the bubble to survive. When the bubble even hesitates, the weakest link dies. You’re not betting against the mania. You’re betting that the weakest link can’t survive a pause.
+The beauty of the wedge is that your timing can be sloppy. The bubble doesn’t have to pop. It just has to stop accelerating for a quarter, and the levered garbage starts to buckle.
+Where are the wedges today? I’ll tell you where I’m looking. Canadian banks at 3x book, stuffed with negative amortizing* mortgage exposure to a housing market that makes 2007 America look restrained. (*aka the borrower doesn’t pay enough to cover interest payments at market rates and the diff gets capitalized into the principal like a PIK loan)
+
+I can't get the options I want on these, but I'm watching. Credit markets broadly,  we wrote about this in Watch Credit,  private credit feels like a roach motel and representative of looser standards in general. The money checks in and doesn't check out. When the bubble pauses, the marks don't move because nobody has to mark them. Until they do.
+
+B) The Victim
+The second way to short a bubble is to find the thing that dies when the bubble pops, the thing that is next to the bubble.
+Evergrande was a good example.  You didn’t need to short Chinese banks, which is a great way to lose money for a decade. You needed to find the one property developer that was so levered, so dependent on pre-sales from apartments that hadn’t been built yet, that even a modest slowdown in Chinese housing would blow it up. The bubble could keep inflating. Evergrande couldn’t.
+What you are looking for is convexity to the downside. You can’t get that by shorting the thing going up in a convex fashion, that’s double short convexity.
+The neighbor, well maybe he has options that aren’t trading at 70 vol.
+Think airlines before COVID. They weren’t in a bubble, but they were convex to the downside due to the asymmetric risk. Put skew was a bit elevated but not crazy. You could still buy the wings. So we did. In hindsight this seems obvious but essentially the bubble at the time was normalcy.
+Then think financials in 07/08. You didn’t need to short housing directly (or more directly, it was extremely difficult and technical to do so, but more power to you if you actually found the CDS on the mortgages). You could just short Bank of America.
+The principle: bubbles create correlations that only manifest in the crash. The vol surface doesn’t price those correlations until it’s too late. Your job is to find the thing with cheap vol that’s going to get dragged down by the thing with expensive vol.
+Right now, what is that victim? Honestly, I’m not sure.
+
+C) The Confirmation
+The third way is the one that requires the most discipline, which is why most people screw it up.
+You wait.
+I know, waiting is the worst. Sometimes you see a thing go up in a straight line and you can’t help yourself, but again, you don’t want to get run over by the steam engine.
+So you wait for confirmation. What does it look like?
+Usually some combination of a) weaker fundamentals, b) exhausted vibes/buyers, and c) a trend line break.
+Not a dip, but a break. The kind where the thing going up falls through the pretty line and people start posting it on twitter. The kind of break we saw in silver back in January (though don’t look now, it’s back, which we’ll update folks on in a coming ramble). Which means even though I was writing this at 2am last night and didn’t post it (making me look like a johnny come lately), I also get to point to this chart.
+
+Which looks very different, 
+
+depending on your timelines.
+
+The essential truth right now is that the only thing deteriorating with respect to AI is the fact that so much of the cash flows are about the future. And the thing is you need to discount all that future goodness with rates today. And if inflation goes up, and policymakers have to tighten (which you could imagine they would if oil goes to $150-200 a barrel) then the NPV of a lot of that stuff goes down.  Which we wrote about back in 2021 when the bubble was bonds.
+
+The other thing to look for is correlation. When what was working doesn’t work anymore and all of a sudden it seems sensitive to something it could usually steamroll. We may be seeing that today.
+What did I do today?
+Well, even before the market puked I was hedging a bit, but not enough. Short another 5% of SPX and 10% of HYG, then a bit more in short term put spreads. Then I stepped away for a minute and came back and eww.
+
+What did I do? I didn’t short semis, the core fundamental demand is still there, the trend is still in place. But I did short more bonds, this time put spreads on treasuries themselves. If the trendline holds and we bounce, I paid a little premium for peace of mind on the wedge. No big deal. If it doesn’t hold, I have dry powder and I have protection, and then — THEN — I press the specific shorts. Oh I also sold 5% of those Canadian banks.
+Hedge, wedge, confirm, press.
+The part where I (don’t) tell you what to do
+Look. I don’t know if we’re in a bubble. This could be the 4th inning of this run (it’s probably not, the price action is already too strong), it could be the 9th (I doubt it, we would need some sort of destruction of underlying demand for tokens and I don’t really see that happening). What I do know, is the feeling of inevitability that AI gives me feels a bit like the same feeling I got when I was in high school in 1999 and put together my first portfolio of internet stocks. And yes, eventually they recovered, there was Amazon in there etc, and the IRR is mid teens if you brought this all the way out to today.
+
+But I also remember the drawdown.
+
+So to bring things home, if you got this far in this particularly rambly ramble, you may be nervous.
+If you’re nervous, and if you got this far in this ramble you probably are, the answer is not to short the thing going vertical. The answer is to find the wedge, buy puts on the victim, and wait for confirmation before you press.
+In the meantime, don’t fight the tape. Don’t short the thing going parabolic.
+Good luck.  Till net time.
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counterparties.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure.
+Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Campbell Ramble is a reader-supported publication. To receive new posts and support my work, consider becoming a free or paid subscriber.

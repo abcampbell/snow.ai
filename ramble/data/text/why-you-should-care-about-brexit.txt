@@ -1,0 +1,81 @@
+TITLE: Why you should care about Brexit
+SUBTITLE: June 28th, 2016
+DATE: 2021-11-09
+
+Uncertainty is painful.
+Painful because as human’s we like to know things.
+For example, this went quasi-viral on Friday:
+
+For those reeling to absorb the implications of Brexit, it felt good to chuckle about the ignorance of others who voted to leave without being informed.
+It feels good to know things.
+It’s also a distraction.
+Let’s look a the full list of questions from google.
+
+What if, rather than punchlines, these are legitimate questions?
+What if, the reason we don’t have a good answer to “What does it mean to leave the EU?” is that really, no one has a good answer for “What is the EU?”
+
+What is the EU?
+Here’s a simple answer — a bunch of European countries decided to come together to form one big country, and we call that country the European Union.
+However, trying to actually answer “Which countries are in the EU?” and you immediately see the reality is a bit more…complex.
+It depends a lot on which EU you are talking about.
+
+The color scheme in this infographic was definitely a product of decision making by committee.
+See, on the one hand, the EU is a free trade area:
+
+Yay free trade!
+However, not all the countries in “EU: the free trade area” are cool with “EU: everyone can go wherever they want”.
+Thus there’s smaller group of countries with with no border checks.
+
+Leave your passport at home!
+In addition, there’s a third EU that’s also a currency union.
+
+For example, Ireland is part of the Eurozone, but not party to Shengen.
+Finally, the an EU that’s a complex set of political, economic and legal institutions.
+
+European Council vs Council of the European Union reminds me a bit of this.
+Even looking at it at this high level, you get a sense of how deep, and how existential, the uncertainty unleashed by Brexit could be for the EU.
+
+What Will Happen Now?
+For the UK, the answer to this question is…more questions.
+Is the referendum legally binding? When will the UK invoke Article 50? Who will be the new leader of the Conservative Party (and hence Prime Minister)? Who will be the new Leader of the Opposition? Will there be a second referendum? Will there be a general election? Will Scotland and Norther Ireland try to block Brexit? Will Scotland leave the UK? Will we see a divided Ireland, or a push towards a unified Ireland.
+For the EU, Brexit renews the existential question of which countries are in?
+While talk of Frexit, Nexit, and Italeave is probably a bit overblown at this point, it’s certainly true that the difference in economic outcomes across countries from the grand European Experiment is pretty stark.
+
+With Greece is suffering through a Great Depression-like set of economic conditions in the name of staying in the EU (largely as a result of Germany imposed austerity), Brexit immediately begs questions regarding what, if any, are the great benefits from ‘staying in’?
+
+Source: NYT — “Is Greece Worse Off Than the U.S. During the Great Depression?”
+
+So What?
+For people outside of Europe, this can feel pretty far removed. Sure Brexit means some chaos in Europe, but what does this have to do with my life (or my portfolio)?
+
+Link
+Well, the primary way that people ‘price’ assets in financial markets is to ‘model it’, which means to come up a some structure for thinking about the range of possible future outcomes for that asset.
+Once you have modeled the return from holding an asset, it becomes a knowable thing. This is what we mean when we say that capital markets generate liquidity by turning uncertainty into risk. You can think of risk here as a known distribution of outcomes (known unknowns) vs uncertainty (unknown unknowns).
+
+Now imagine coming into work on Friday and realizing that not only did your job managing risk just get a bit more complicated, but you may be moving to Frankfurt.
+
+Source: Citigroup: Brexit & Investment Banks, June 26th 2016
+Kind of a hard thing to put in a financial model on a day’s notice.
+May make you a little more interested in liquidity.
+May make you a little less confident about your future investment or consumption decisions.
+Which is how this,
+
+and this,
+
+lead to this,
+
+this,
+
+and this.
+
+None of this is to say we (or anyone) *know* the outcome here.
+In the coming days, there will be plenty of people calling a short term bottom in markets: “Stocks are cheap!”
+Maybe they are. Maybe central banks shift from tightening to easing and flood the market with liquidity, pushing up asset prices.
+Maybe they aren’t. Maybe Brexit kicks off a scramble for liquidity among those with too much structure/unprepared for this much uncertainty.
+Regardless, we’d love to see a day where our list of questions on the Brexit fallout gets smaller rather than ever longer.
+~~~~
+
+DISCLOSURE
+Snow provides financial diversification to clients through the construction of hedge portfolios. Some of our portfolios hold ‘short’ positions in equities, in which case those portfolios, and our firm, stand to benefit financially from declining stock prices.
+DISCLAIMER
+This article is for informational purposes only and does not constitute an offer to sell, a solicitation to buy, or a recommendation for any security, nor does it constitute an offer to provide investment advisory or other services by Snow Ventures. In preparing the information contained in this article, we have not taken into account the investment needs, objectives and financial circumstances of any particular investor. This information has no regard to the specific investment objectives, financial situation and particular needs of any specific recipient of this information and investments discussed may not be suitable for all investors. Any views expressed on this website by us were prepared based upon the information available to us at the time such views were written. Changed or additional information could cause such views to change.

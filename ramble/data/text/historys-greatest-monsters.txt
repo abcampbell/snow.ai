@@ -1,0 +1,132 @@
+TITLE: History's Greatest Monsters
+SUBTITLE: What if Greta Thunberg got a gig at Exxon?
+DATE: 2023-10-17
+
+What if I told you that tomorrow you would wake up and push a button that would kill every single human in the world?
+All your friends, all your family, even your enemies.  
+Gone, in a flash.
+You probably wouldn’t believe me.
+“Campbell,” you’d say, “why would I do that?  I LOVE my family and friends, and killing all the people on earth seems pretty bad.”  
+To which I would reply. “Ok, rather than instant extinction, you are going to push a button that, if it’s pushed 1000 times, will lead to everyone dying.”
+You’d reply: “That’s not much better, I’d still be materially contributing to the end of the world!  Why would I do such a thing?!?”
+“okokokok, good point, but what if someone gave you a nice house in Atherton and you got free lunch everyday,"
+“….”
+
+See, the thing about this conversation, is that it’s an actual distillation of the conversation currently going on about existential doom from AI.
+
+When you look closely at the people yelling the loudest about imminent threat from superintelligent, world-ending AI, the vast majority are actually not only technical, but have made material contributions to the field.  
+Not only that, but a huge proportion are currently in the business of AI, be it as CEOs, scientists, engineers, or talking heads.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+When was the last time you saw so many people working fervently working towards humanities demise - while simultaneously righteously preaching of the dangers of their work? 
+This piece takes a closer look at these folks in the context of this framing - Doomers working towards Doom - and makes a simple argument:
+If we take them at their word, and their beliefs come to pass, they will in fact be history’s greatest monsters.
+How many people have ever existed?
+Before we go ad hominem though, we’re going to anchor this conversation in some reflections on the scale of this problem.
+We’ll start by trying to answer the simple question: How many people have ever existed?
+In 2022 the Population Reference Bureau" estimated that approximately 107bn people have been born since 200,000BC.  Meaning that the 8bn people on earth represent around 7% of all the humans who have ever lived.
+
+But when you think about it, the casualties from ending humanity are actually worse than 8bn humans.
+If we are talking extinction (and oh boy, do Doomers like to throw that possibility in your face), 8bn is actually a radical underestimate of the actual casualties.
+See, if you are an effective altruist (or rationalist, or really even just a consequentialist), you need to think about all the people who will not get born if humanity were to be wiped out tomorrow.
+You need to “open the aperture” and roll the clock forward, and ask “how many humans could be born?”
+How Many Humans Could be Born?
+Turns out, this is a non trivial question to answer.  But if we make some simple assumptions, we get some interesting answers.  Start by assuming that global population tops out at 10bn in year 2100 and then stays constant through the year 3k, 10k, 100k, 1m, and 10m AD.
+When do you the numbers, it’s clear that’s a lot of humans.
+
+By this math, in the year 3000, the majority of humans will have yet to be born by the year 2023.  
+As we go further and further out, or allow for really any sustained population growth, the synthesis becomes more clear.
+By the year 10,000 we should expect more than a TRILLION total humans. 
+By the year 1,000,000 that number goes to 184 TRILLION.
+
+Put another way, by just the year 10,000AD all the humans that have currently ever lived will be just 10% of the total humans ever born.
+
+But even that is a pretty narrow lens, when you think about it. Earth has only been around for about 5bn years, and we’ve only been around for the last 200k years.  
+What happens if say, we wind the clock forward to the death of the sun, in another 5bn years?
+
+925 quadrillion humans is a lot of humans.  Kinda hard number for me to wrap my head around.  Let’s call it an even quintillion.
+But note, that’s just one planet!  
+Let’s open the aperture a bit again.  There’s certainly a lot of stars in the Milky Way…
+How Many Habitable Worlds Are There?
+We can use the lower bound estimate of 100bn stars in the Milky way, the number of planets per star, and the odd’s that any given planet is both earth like in composition and in the ‘habitable’ range of it’s solar system (3%) to guestimate there are ~5bn world’s available for colonization in own own galaxy.   
+
+Meaning, when you allow for the lower bound estimate of stars, there’s probably about a habitable world for every person on earth.
+And people say there’s not enough space for everyone…
+How Long To Colonize The Stars?
+How long would it take to colonize one world?  Well starting with closest ones - and assuming pretty good spaceships - not that long at all.
+
+Call it 1000 years, starting in year the 3000, and allow for a little exponential discounting, and we could colonize habitable world in the Milky Way by 50,000 AD, a quarter of the time that humans have been around!  
+Talk about a fast take off.
+
+Meaning you could get around 1 quintillion total humans per world, at 5bn worlds pretty fast.  And that’s assuming an average star life of 5bn years.  The majority of the stars in the Milky Way are Red Dwarves with lifespans of 100+ billions of years.  Meaning we’re likely underestimating the numbers, again.
+
+Zooming out even further, and considering all the galaxies in the universe gets you the realization that there are billion * billion potentially habitable worlds in the universe.
+
+Meaning, were you to cut humanities path short, you would be implicitly killing ~1x10^39 humans.  I’m not even sure what the name for that is.
+
+Putting all that together, you can see the stakes are ridiculously high. We’re not just talking about the 8bn humans on earth you know and love, we’re talking about the fate of something like 99.99999999999999999999% of the humans that ever could live.
+Monsters of the Past
+In this context, all of a sudden, 10million people here and 10m people there starts to make sense.  Drop in the ocean really.  Kindergarten stuff.
+
+The Case for Doom
+In this context, if you actually believe that we are hurtling to the abyss, Eliezer Yudkoswky’s plan to unilaterally bomb GPU farms for non-cooperative nations makes a bit more sense.  Wiping out all of current (and future) humans would make every major prior human conflict seem like a case of the sniffles.
+
+In fact, if you really stare into the arguments put forth by AI Doomers, you are left with some pretty stark choices.  Before we get into those, let’s review the case:
+There is “no bottleneck to the exponential increases in machine intelligence.
+
+Alignment (of machine values and human values) is impossible, probabilistically speaking, due to the Orthogonality Thesis.  
+
+The combination of orthogonality and exponential increase in the capacity of machines basically guarantees that at some point, we will lose control of the machines, they will become ‘misaligned’, decide to only make paperclips (or something similarly against humanities interests), and thus need to eat us for our atoms/energy/negative entropy.
+
+I, for one, find these arguments lacking. Partially because it seems obvious to me that anyone versed in formal math or logic will have encountered very real and very binding limitations on both the capacity and power of math/machines.   
+Turing’s Halting Problem, Godel’s Incompleteness Theorem, etc etc. For a review…
+
+The basic argument is pretty simple, if you can avoid getting distracted by the idea of ‘perfect machines,’ which admittedly can be difficult for self-described ‘rationalists,’ then the alignment problem gets a lot easier.  
+Since then, I’ve taken it upon myself to engage with some of these Doomers on X/Twitter, to gauge how flexible these frameworks are to interrogation.
+If you’d like to see a typical example of one of those conversation, be my guest.  I’m being a little uncharitable, but not that.
+
+So what?
+Well, the funny thing is, when you actually take Yudkowsky et al’s arguments seriously, take them to their logical conclusion, it becomes painfully obvious that they do not go far enough.
+Why?
+Well if AI takeover is a function of runaway increase in the capacity of machines, then it’s not just bleeding edge massive LLMs running on GPUs that are the problem.  If you think it makes sense to bomb GPU plants, then why not CPU plants?  If chatbots are the problem, so are the smartphones and video games that fuel the demand for chips and their subsidize their production.  
+If you actually internalize these arguments - if you are a REAL doomer - then there are quadrillions of lives at stake and pausing AI is not enough.  
+You need to burn it down.  
+You need to go “full Ted K.”  
+Battlestar Galactica vibes.
+You need to lead the Butlerian Jihad…starting now.
+
+Cognitive Dissonance
+Given that trillions and trillions of lives are at stake, you have to ask yourself.  How can someone believe the probably of AI doom  - p(doom) in the lingo - is more than 1% and still work in AI?
+How can well meaning humans rationalize working in tech and also thinking that tech is going to destroy us?
+Well, sir, to that I can only say:
+Cognitive Dissonance is a Motherf***er.
+Maybe it has something to do with the fact it’s fashionable these days to be concerned about existential AI. 
+
+Maybe it has something to do with the fact that a lot of the people who are lecturing us on AI….
+
+are also working on AI!
+
+In fact, when you look at some of the loudest voices in the space, it turns out that the vast majority currently or have previously made material contributions to the tech that they claim will one day kill us.
+I’ve tried to raise this (jokingly) online.  Much to the chagrin of the Doomers.  Which makes sense!  If you are pushing to ‘pause’ AI, then highlighting how almost all the leaders in the movement explicitly gain to benefit from the existential technology complex is pretty dissonance provoking.
+But seriously, if you are actually a Doomer, it’s not enough to advocate for a pause.  Not if you have the strength of your convictions. You can’t actually believe that p(doom) is 50% and then build LLMs in your space time. It’s especially not cool to actively join companies which are in the business of building intelligent robots.
+
+Again, If you really think AI is going to kill us all, how can you possibly work for a robotics company?
+
+Cognitive Dissonance.
+So where does that leave us?
+Well, betting markets say FOOM (aka uncontrolled lift off) is around 3 years away. 
+
+After which “markets” are pricing in a bit less than 2yrs till the machine goes supernova!
+
+Keep in mind, these ‘prediction markets’ are also the same markets that had a hard time keeping rational expectations back in June.  In June, 2030 existential AI risk was trading higher than the same risk all the way out to 2040.  Aka, we’re more likely to die from AI by 2030 than 2031.  Which, is impossible, because the risk of dying from AI in 2030 is included in the risk of dying from AI in 2031, etc.  
+This risk is like a credit event.  If you defaulted by 2030, you necessarily defaulted by 2031.
+Anyway, what can you do?  Aside from put on some cheeky bets.
+
+Summing up, I’m not actually saying any of these people are histories greatest monsters.  Remember, my p(doom) is much much lower than theirs. 
+Some might question my motives, “after all Campbell, aren’t you working in AI?  Don’t you have a vested interest in keeping the space free of regulation?  Wouldn’t regulatory capture hurt your business?”
+To which I would say: of course.  Of course I am subject to dissonance, just like anyone else.  And of course my public beliefs should be evaluated in that context, just as I suggest we do for the Doomers.
+But at least I’m not inconsistent.  At least my behavior is consistent with my espoused beliefs.  At least I’m….rational.
+Me personally though, I’m a bit more worried about Taiwan.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

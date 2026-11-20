@@ -1,0 +1,56 @@
+TITLE: Ranking the Banks
+SUBTITLE: Arrest me (pls dont).
+DATE: 2023-05-19
+
+Today, we did the unthinkable. 
+We ranked the banks.  Don’t tell Jamie!
+
+If you don’t get another Ramble in the next week, it’s because I woke up in a black site for adding up publicly available balance sheet information.  
+This is America.
+Notionally the Fed is supposed to do this, but they generally only do the big ones and good luck scraping the data from the pdf.
+
+This time, it’s the small banks everyone’s worried about, and with good reason.
+
+So, we figure it’s time to rank the banks.
+Previously, we ranked the Chinese Banks and Property Companies, as a guide to looking within the sector, to understand how the pain spreads.  
+Also to protect ourselves and those we care about.  We were kidding above, but there’s real human cost to financial shenanigans, and we shouldn’t always shoot the messenger.
+
+For our US Bank rankings, this first cut will be very simple.  We want:
+Low equity volatility (and drawdown)
+
+Low exposure to held to maturity and available for sale assets
+
+High capitalization ratios (ability to take risk / losses)
+
+So, we pulled the data, and added it up, then ranked everyone.
+No surprise, JPM the biggest bank at the top of the list.
+
+The lowest in our rankings are currently having a bad time.
+There’s an ongoing financial crisis in the stressed banks on the order as in 2008.
+
+Though, let’s not forget though that there’s tons of survivorship bias in the lines.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Post-covid, our stressed banks were responsible for about a third of the asset expansion by the US banking system.  Almost half of the increase in Risk Weighted Assets (RWA).
+
+You can see (if you squint or save the image) details on our most stressed banks below.  
+PNC (PNC) and US Bancorp (USB) look to be the two biggest stressed banks with more than $400bn of assets.  We will add these to our follow list along with PacWest (PACW) and Western Alliance (WAL), to see if the pain starts to get systemic.
+
+Full disclosure, we put on some test trades consistent with these rankings today.  Skin in the game etc.  Not a lot!  
+These are weakly held views, and we will refine and update them as our views and market conditions evolve.
+WE DO NOT RECOMMEND YOU FOLLOW THESE POSITIONS.  THIS IS FOR LEARNING / DEMONSTRATION PURPOSES ONLY.
+With that said, here’s the long portfolio:
+
+Here’s the short portfolio:
+
+And then also via a couple of options trades:
+
+Against that, we bought back some of our US equity short.  
+
+Happy Friday, and good luck out there.
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION.  
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

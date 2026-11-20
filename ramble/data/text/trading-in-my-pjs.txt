@@ -1,0 +1,34 @@
+TITLE: Trading in my PJs
+SUBTITLE: Investor Update - March 21st, 2020
+DATE: 2021-11-09
+
+Friends,
+
+Back on the Lehman Prop desk, we used to talk about the guy who graduated prop trading.  He put in his 5-7 years of high-vol life, took his 5-7% of the ups, and retired.  Now his job is to manage his own book, PA.
+There on the couch trading stocks by the buck, sitting in his PJS.  Trading the old names he knew inside and out,  timing the ebbs and flows of global liquidity.
+
+Maybe he's got a funny blog, rambling on the internet.  Giving secrets of the dark arts away,  Better to teach the next generation, than let that craft die out.
+Thing was, you didn't necessarily want to end up as that guy.  Funny thing about the world, sometimes you don't get much choice.
+In the era of lockdown, mandatory Work From Home (WFH), and social distancing, these days we're all just guys (and gals) sitting on the couch.  
+Trading in our PJs.
+
+It's been a good year for the portfolio thus far.  In the first couple of months, our long gold and long volatility book began to outperform broad US Stocks. 
+In February, as conditions in Wuhan deteriorated, we added further upside exposure to volatility (through VIX call spreads) and bearish positions on airlines and iron miners (via puts).  
+Earlier this month, we reduced our exposure to gold at an opportune time - before the worst of the mid-month dollar squeeze dynamics.  For those outside of the US (and who remain implicitly short dollars) we continue to think gold a natural portfolio hedge and will look to accumulate at these lower levels.
+Looking forward, US markets are beginning to price in real material stress.  As humans (and any trading strategies based on economic stats) digest the notion that millions of Americans just became instantly unemployed.  
+
+Meanwhile the team at the old shop Bridgewater, have come out with their own take on the macro implications. 
+
+'Time to break out the pencils' and size the losses, as Ray used to say.
+Showing that while the losses look large and material, the current market pricing does not imply domestic banks will have to raise capital.  
+
+Meaning the threat to the financial system from the flow through of the virus looks mainly to be one of stressed liquidity, and we are not yet pricing in threats to bank solvency. 
+Whether than remains the case throughout the world, and as the lockdown endures, we shall see.
+Thus with a consensus now to print money, liquidity will be provided.
+Positioning for this, and to take advantage of what looked like a market short of volatility (going into the March SPX option expiry), last week we sold volatility (April VIX) at 68.  
+Depression-era levels.
+
+This position is not going to make our entire year, but based due to good structuring through options, it also won't break it.  
+Which is generally good practice, whenever you are short convexity.
+
+Nothing in this email is intended to constitute (1) investment or trading advice or recommendations or any advertisement or (2) a solicitation of an investment in any jurisdiction in which such a solicitation would be unlawful.

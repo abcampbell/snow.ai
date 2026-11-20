@@ -1,0 +1,55 @@
+TITLE: Evergrande is Dead
+SUBTITLE: Is this the end of 'Extend and Pretend'?
+DATE: 2024-01-29
+
+Three and a half years ago, we told you that Evergrande was dead.  
+Tonight, a Hong Kong bankruptcy judge finally killed it.  
+
+Our core argument at the time was extremely simple: that the implied losses from it’s debt were in excess of it’s equity market capitalization, and hence owed more money than it’s stock was worth.  
+
+Here’s the chart from the original post, which is so old we had a different logo and wrote the article on medium…
+
+Original chart from August 2021, note it is not updated!
+Over the next couple of days, the market will need to digest what this means for the rest of the sector.  Policymakers had made significant easing noises over the past couple of weeks, first promising $280bn of public money to buy stocks, then news that Guangzhou has relaxed restrictions on real estate purchases, and just today, announcing it was rolling up the three big bad banks into CIC, the state sovereign wealth fund.  Many developers had even seen their stocks rally 10-30% just on those moves.  Not enough to save distressed names in a 70-90% drawdown from peak, but promising.
+The USD bonds underneath these names also had been in the midst of something of a rally.   An index of these bonds (Premia China USD Property Bond ETF (3001.HK)) was up 33% from the lows of last November, though still down 70% from it’s 2021 high.
+
+That will change now.
+
+Why?
+Well, the thing is, not only was Evergrande the biggest property developer to go under, it was also the FIRST.  
+Meaning it’s very continued existence spoke to the commitment by Chinese financial regulators to a policy of ‘Extend and Pretend.’  Which is a very technical term meaning, “close your eyes, cover your ears and go NaNaNaNa until the problem goes away or we grow our way out.”  
+Recall that three years after Evergrande first defaulted it was still operating.  This implicit political and financial cover to all the other names that followed Evergrande into the death spiral.  
+At the time, we tried to get ahead of the problem, and in classic Campbell fashion, put together a big pink-shaded table ranking all the major property developers from worst to best. 
+
+As you can see, of our most vulnerable 21 names, four have now been delisted, four are still alive and well, and the remainder are presumed dead (based on the market drawdown in their equities and debt).
+Not a bad track record.
+
+A year later, we even went and applied the same methodology to the whole sector, coming up with a bottoms up estimate for losses in the sector coming in a little more than $1Tr.  Note at this point it’s unclear if ANY of this debt has been written down by the Chinese banking system.  
+
+Note this chart is more than a year old!
+This bottoms up analysis indicated that many of the distressed names were facing the same uphill climb as Evergrande.
+
+So why does this liquidation order matter?
+It matters insofar as there is a very real and legal distinction between distressed, defaulted and liquidated.
+Not just for management and the folks who own the stock (which will be delisted and not just suspended), but critically for all the people who lent Evergrande money.
+Funds that bought their bonds.  Banks that lent them money.  Trusts that invested in their receivables and all of the mom and pop suppliers that took an account payable in exchange for helping to build their latest apartment block.
+Do not pass Go.  Do not collect $200.  Proceed directly to writedowns and the forced reporting of losses to regulators and investors.
+Extend and pretend only works when you don’t let people fail.
+Not only will many of the banks now be required to write down their Evergrande debt, but the entire sector of walking dead debt will come under scrutiny.
+Evergrande will be seen as precedent, not just in a propaganda way, but in a very real and tangible process whereby lenders now can no longer tell a just so story about their massive implied losses from investing in these companies.
+Previously, owing to this policy, many of these firms could distract from their USD debt trading at <10c on the dollar by saying “yeah but look at our CNY debt, it’s trading at 95c on the yuan, the dollar debt is only a small part of our borrowing and not a big deal compared to our good relationships with mainland lenders.
+No more.
+We now have an explicit roadmap between distress, default, and liquidation.  At the end of this article, we chart the drawdown in stocks and bonds for 50 of the biggest and most distressed property developers in China, representing a bit more than $3tr of listed balance sheet assets.  Recall Evergrande had a ~$300bn balance sheet, meaning that just in these 50 names, we have around 90% of the pain to go.  Each will need to be restructured or bailed out.  Most will require the banking system to book a loss. 
+Each will call into question the accounting quality for a $50tr+ financial system.  One that currently claims to have a Non-Performing Loss Ratio of just 1.6%!  
+
+Game over. 
+Now, you shouldn’t believe me, you should do your own work.  This ramble is not investment advice. I’m just a guy with a blog, and one who was very publicly short Evergrande.  Maybe I have an axe to grind, maybe you think I hate China (I don’t!).   If you want to take a look at our track record, I will including some of our prior work on the topic, in chronological order.
+
+Further, I would say, don’t listen to me, go look at the stocks and bonds for the individual Propcos we called out.  
+Here, I’ll help.  In order of our original 2022 ranking.  Blue is the drawdown in equity, and red is the drawdown in the USD bond price (where available):
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

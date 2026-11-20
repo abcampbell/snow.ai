@@ -1,0 +1,665 @@
+[
+ {
+  "slug": "the-case-for-greenland",
+  "title": "The Case for Greenland",
+  "date": "2026-01-21",
+  "summary": "Revived 2021 draft arguing Greenland's value rises with Chinese/Indian coal-driven warming: rare earths, Arctic sea lanes, airspace, and a post-globalism strategic rationale, ending on a 'fair market price' deal. Bolts a Greenland-acquisition case onto a China-emissions model.",
+  "themes": [
+   "china",
+   "commodities-supply",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Trump’s signature move is to speak with chaos, to force separating equilibria of revealed preferences.",
+  "improve": [
+   "The Evergrande/Greenland Holdings double entendre and the carbon model are a different post than the geopolitical case; split them or drop the 2021 framing.",
+   "Reserve and emissions claims (36mt REE, 1,000 GtC budget, 2030 China-passes-US cumulative) are asserted with a one-line source ('Claude and GPT arguing'); cite primary data."
+  ],
+  "falsifiable_calls": [
+   "Cumulative Chinese CO2 emissions surpass the US around 2030",
+   "Summer Arctic sea ice largely gone by 2040-2050",
+   "Greenland settles at a 'fair market price' deal rather than force"
+  ],
+  "return_to": true,
+  "return_reason": "Greenland negotiation and Arctic/rare-earth angle is live geopolitics worth a follow-up on what actually moved."
+ },
+ {
+  "slug": "silver-moon",
+  "title": "Silver Moon",
+  "date": "2026-01-25",
+  "summary": "Bullish update with silver ~$103: Chinese capital flight, Shanghai premium, COMEX inventory drain, solar/AI demand; lays out tells and the actual trade structure while admitting solar-margin and substitution risks. Published near the top.",
+  "themes": [
+   "gold",
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "Watch the flows, not the price.",
+  "improve": [
+   "Conclusion 'silver at $103 isn't the end, might not be the middle' is stated with more conviction than the risks section supports; the $134 solar breakeven only 30% away deserved to drive sizing language.",
+   "Written 'in a few hours'; headline stats (supply ~1bn oz, Shanghai $114 vs $103) lack sources and the post ends with 'to the moon' just before a crash."
+  ],
+  "falsifiable_calls": [
+   "COMEX silver inventories historically low by July and functionally exhausted by September",
+   "A central bank will announce a strategic silver reserve",
+   "Shanghai premium persisting signals structural demand"
+  ],
+  "return_to": true,
+  "return_reason": "Silver peaked days later; the flow-based framework and Shanghai premium thesis should be re-tested against what followed."
+ },
+ {
+  "slug": "dollar-doomers-missing-the-point",
+  "title": "Dollar Doomers Missing the Point",
+  "date": "2026-01-28",
+  "summary": "Argues gold/silver bulls need not be dollar bears: reserve currency means ubiquity not strength, the real 'sell America' mechanism is foreigners dumping US stocks and bonds, and the author is long dollars as a hedge on metals. Offers 'double dollar gold' construction.",
+  "themes": [
+   "macro-regime",
+   "gold",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 7,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "The noise is loud but the flows are quiet.",
+  "improve": [
+   "The 'double dollar gold' backtest (higher Sharpe, lower drawdowns) is asserted without showing numbers or period; show the chart.",
+   "The 'what would worry me' list (SWIFT share <40%, Japanese life insurers) is the best part and is buried near the end; lead with it."
+  ],
+  "falsifiable_calls": [
+   "Dollar decline is a correction not a crisis until DXY approaches 85",
+   "Doom shows up first as selling of SPY/TLT/mega-cap tech by foreigners, not DXY futures",
+   "Watch Japanese life insurers, SWIFT share, stablecoin flows as confirmation signals"
+  ],
+  "return_to": true,
+  "return_reason": "The falsifiable watch-list (flows, SWIFT share, insurers) can be checked against subsequent data."
+ },
+ {
+  "slug": "when-you-feel-pain-remember-to-reflect",
+  "title": "When You Feel Pain, Remember to Reflect",
+  "date": "2026-01-31",
+  "summary": "Post-mortem of the silver/gold washout: candid emotional reflection, then a mechanistic explanation (short gamma from options dealers, margin leverage, AGQ rebalancing) and the author's own execution mistakes.",
+  "themes": [
+   "gold",
+   "positioning-flows",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 8
+  },
+  "overall": 8,
+  "best_line": "It’s hard to be reflective when you are up 130% on the year.",
+  "improve": [
+   "The 'responsibility to readers' section is rambling and delays the explanation; tighten the first third.",
+   "The 6-sigma and 275-year charts carry the claim but several attributions (China selling gold, Warsh as cause) are speculative; separate what is known from narrative."
+  ],
+  "falsifiable_calls": [
+   "AGQ-driven selling is behind us and any bounce will force it to buy back",
+   "China does not sell all the way off Sunday night",
+   "Agents mostly come online in enterprise late Q2, leaving US stocks vulnerable"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "dear-comrade-xi",
+  "title": "Dear Comrade Xi",
+  "date": "2026-02-02",
+  "summary": "Frames what China would have to do to make the RMB a reserve currency (open the capital account both ways, let foreigners fix and short banks, move to title-transfer repo) and argues each step is politically impossible; hence long gold in China, short RMB.",
+  "themes": [
+   "china",
+   "macro-regime",
+   "rates-curve"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 8,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 8
+  },
+  "overall": 8,
+  "best_line": "Being a reserve currency requires humility.",
+  "improve": [
+   "Several claims ($2tn errors and omissions, $5-10tn hidden losses, Tether $200B) are cited from memory without sources or charts.",
+   "The close is a plug for 'my book' and a one-line trade; state the short-RMB expression, horizon, and what would invalidate it."
+  ],
+  "falsifiable_calls": [
+   "The RMB does not become a reserve currency because Beijing will not take the five steps",
+   "Long gold in China, short RMB"
+  ],
+  "return_to": true,
+  "return_reason": "Pledge repo vs title transfer and the 'minimum viable work' criterion are original and deserve a deeper standalone piece."
+ },
+ {
+  "slug": "the-air-pocket",
+  "title": "The Air Pocket",
+  "date": "2026-02-04",
+  "summary": "Explains why an AI bull is bearish on stocks near term: capex outruns revenue because agent-driven inference demand lags builds, buybacks give way to debt issuance; and software eating the service economy is now being eaten by agents. Appendix gives a token/FLOP breakeven framework.",
+  "themes": [
+   "ai-capex",
+   "macro-regime",
+   "data-tools"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 5,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Software didn’t really eat American manufacturing—China did that.",
+  "improve": [
+   "Internal inconsistency: body cites 7% inference utilization while the appendix says use 30% and calls the 70% number irreconcilable; reconcile or drop the 7%.",
+   "The moltbook/agents anecdote section is long and tangential to the capex-gap thesis; the appendix math (stale Q4 2024) should be the centerpiece with live inputs."
+  ],
+  "falsifiable_calls": [
+   "Utilization climbing toward 40-50% by end of 2026 (bull) vs stuck below 30% (bear); 'check back in 18 months'",
+   "Enterprise pricing holding above $0.002 per 1k tokens",
+   "Memory prices staying elevated is real demand, not hoarding"
+  ],
+  "return_to": true,
+  "return_reason": "The author set an explicit 18-month check-back with bullish/bearish indicators; worth scheduling that scorecard."
+ },
+ {
+  "slug": "flash-crash",
+  "title": "Flash Crash",
+  "date": "2026-02-05",
+  "summary": "Real-time tweet-collage on a 17% Shanghai silver drop with gold flat: reads it as a forced liquidation by a large Chinese holder rather than a US 'attack', and describes tactical repositioning.",
+  "themes": [
+   "gold",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 4,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 2
+  },
+  "overall": 4,
+  "best_line": "Sometimes it pays to be the first call when someone sees something weird. Funny form of alpha.",
+  "improve": [
+   "Tweet pasting leaves the argument fragmentary; one paragraph summarizing the evidence (SHFE vs COMEX normalized, premium compression) would help.",
+   "Reads as a diary; note that the attribution was later revised in The Silver Attack."
+  ],
+  "falsifiable_calls": [
+   "Silver rallies a bit and gold sells off after the flush",
+   "Short-term vol bearish, long-term backdrop bullish for metals"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-silver-attack",
+  "title": "The Silver Attack",
+  "date": "2026-02-06",
+  "summary": "Free sample of paid content: tracks a large Shanghai silver short (Bian Ximing, ~30,000 lots, >100% of warehouse stocks), now barred from adding or rolling, as a trapped seller; yet stays flat because risk-off liquidation is unreadable. Also announces the paywall.",
+  "themes": [
+   "gold",
+   "positioning-flows",
+   "commodities-supply"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 8,
+   "actionability": 7,
+   "timelessness": 4
+  },
+  "overall": 8,
+  "best_line": "He is short more silver than physically exists on the exchange.",
+  "improve": [
+   "Naming an individual trader as 'attacker' on position data that the author admits he cannot reconcile (30-40k lots of liquidation vs 1.3m volume) overreaches; label it hypothesis.",
+   "The paywall pitch and pricing is placed above the analysis; move to the end."
+  ],
+  "falsifiable_calls": [
+   "Bian must eventually buy back ~30,000 lots (April expiry hard deadline)",
+   "SHFE-COMEX premium (~14%) normalizes toward 0-5%",
+   "When risk-off clears, asymmetry is long silver"
+  ],
+  "return_to": true,
+  "return_reason": "Clean testable setup (April SHFE expiry, warehouse stocks, premium); check what actually happened to the short and the premium."
+ },
+ {
+  "slug": "long-apis-short-slides",
+  "title": "Long APIs, Short Slides",
+  "date": "2026-02-08",
+  "summary": "Pair trade thesis: AI agents multiply usage of consumption-priced infrastructure software (long NET, MDB, DDOG, OKTA...) while destroying labor-arbitrage IT services (short CAP, CTSH, INFY, WIT). Includes balance sheet, vol entry points, and honest risks.",
+  "themes": [
+   "ai-capex",
+   "portfolio-construction",
+   "data-tools"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 8,
+   "clarity": 8,
+   "evidence": 6,
+   "actionability": 9,
+   "timelessness": 6
+  },
+  "overall": 8,
+  "best_line": "The shorts get paid per human deployed. The longs get paid per API call.",
+  "improve": [
+   "The basket backtest shows APIs beat slides mostly via 2x higher vol; risk-adjusted edge is small, which undercuts the headline. State sizing (2x short delta) up front.",
+   "Long-leg valuation (15-20x revenue) is acknowledged but no entry discipline or exit is given; add stop/thesis-break criteria."
+  ],
+  "falsifiable_calls": [
+   "IT services consensus estimates trimmed ~2-3% per quarter over eight quarters (12-24 month trade)",
+   "Capgemini highest-conviction short; reporting Feb 13 a potential catalyst",
+   "API basket outperforms the body-shop basket as AI adoption rises"
+  ],
+  "return_to": true,
+  "return_reason": "Explicit 12-24 month trade with named tickers; track the long/short P&L and estimate revisions."
+ },
+ {
+  "slug": "crowded-confused-cranky",
+  "title": "Crowded, Confused, Cranky",
+  "date": "2026-02-13",
+  "summary": "Market note on a day when bitcoin, silver, CRE and stocks fell together: argues positioning is crowded in AI 'atoms' trades, macro data is contradictory, so cut leverage, hold puts, use credit/bond hedges. Claims early win on Long APIs/Short Slides.",
+  "themes": [
+   "positioning-flows",
+   "ai-capex",
+   "portfolio-construction"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "when everything trades together, the right move is to get smaller until you understand why.",
+  "improve": [
+   "Opening is a laundry list of charts and conflicting indicators; pick the one that decides the cycle question.",
+   "'Vol-adjusted 10% alpha in a week' on four trading days is noise; avoid victory-lap framing."
+  ],
+  "falsifiable_calls": [
+   "Bond rally could come out of the 3-20yr back end without much front-end move",
+   "IG spreads at 50 and HY at 300 look rich; credit is the cheapest protection",
+   "Services/IT outsourcers continue to underperform the 'API' basket"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "dont-f-with-the-money",
+  "title": "Don’t F With The Money",
+  "date": "2026-02-15",
+  "summary": "Long prosecutorial case against SBF's rehabilitation narrative: FTX was insolvent regardless of the 118% recovery, Alameda hole analysis, and a detailed indictment of his Stanford-professor parents, ending in a two-tier-justice argument.",
+  "themes": [
+   "other",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 2,
+   "timelessness": 4
+  },
+  "overall": 4,
+  "best_line": "When you mess with the money, you don’t get to claim credit when the market recovers after you’re removed.",
+  "improve": [
+   "Off-brand for a macro/markets blog and reads as advocacy; the balance-sheet insolvency section is the valuable piece and could stand alone in a third of the length.",
+   "Serious allegations against named private individuals (RICO, money laundering) are stated as fact from civil-suit allegations; distinguish allegations from findings."
+  ],
+  "falsifiable_calls": [
+   "Stanford should strip the parents' positions; DOJ should consider RICO",
+   "SBF pardon campaign will rely on the 'money good' narrative"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "blood-transfusion-or-blood-on-the",
+  "title": "Blood Transfusion or Blood on the Streets",
+  "date": "2026-02-21",
+  "summary": "Bottom-up estimate of Chinese bank losses ($4.4tn base, $7.7tn stress), a $1.1tn recapitalization gap, and an argument that Beijing is extending and pretending, relying on reflexivity; trades are long gold-in-China, short CNH, long KWEB / short FXI.",
+  "themes": [
+   "china",
+   "macro-regime",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 8,
+   "clarity": 6,
+   "evidence": 8,
+   "actionability": 7,
+   "timelessness": 7
+  },
+  "overall": 8,
+  "best_line": "The transfusions are real. The bag is too small and the patient is still bleeding.",
+  "improve": [
+   "The first ~1,000 words of philosophy about markets as truth-seeking machines delay the 'short version'; open with the number.",
+   "The LGFV 12% base-case loss is acknowledged as below the author's own NPV evidence and 'corrected' to $5-5.5tn only in passing; recompute the headline."
+  ],
+  "falsifiable_calls": [
+   "Base-case earn-through takes ~3.4 years (longer, 6-7+, with corrected LGFV losses); stress case 13.5 years",
+   "FXI/KWEB ratio falls from ~1.1-1.2 toward 0.75-0.85 in 12-18 months",
+   "Gradual RMB depreciation as Beijing eases and eventually prints to recapitalize"
+  ],
+  "return_to": true,
+  "return_reason": "Quantified, dated trade (FXI/KWEB 12-18 months) and a model that should be updated with new NPL and NIM data."
+ },
+ {
+  "slug": "the-death-of-the-new-deal",
+  "title": "The Death of the New Deal",
+  "date": "2026-02-23",
+  "summary": "Argues the postwar social contract is dead (generational wealth transfer, fiscal trap, AI cutting labor share) and proposes taxing inheritance and consumption rather than income and unrealized gains, with a market read-through.",
+  "themes": [
+   "macro-regime",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Tax the selfish stuff. Leave the productive stuff alone.",
+  "improve": [
+   "Evidence section is a barrage of statistics with little sourcing; the 80/20 wage-profit toy model ($82 to $55) is presented as depression math without caveats about capital spending and investment.",
+   "Market implications come in the last 150 words as hand-waving; connect each tax scenario to specific positions."
+  ],
+  "falsifiable_calls": [
+   "Unrealized-gains tax gaining traction would be massively bearish long-duration equity",
+   "Inheritance/consumption route is neutral-to-positive for equities and bearish fixed income",
+   "Long gold until the political dimension resolves"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "where-did-all-the-stenographers-go",
+  "title": "Where Did All The Stenographers Go?",
+  "date": "2026-02-25",
+  "summary": "Historical survey of occupations that died, peak now, or rise with AI, plus a simple three-scenario model of white-collar automation (6-16% unemployment, $0.5-1.5tn income loss) and an optimistic take: long the physical layer, short the paper layer.",
+  "themes": [
+   "ai-capex",
+   "macro-regime",
+   "data-tools"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 6,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "The marginal cost of an analyst approaches zero. The marginal cost of a welder does not.",
+  "improve": [
+   "The scenario model's GDP multiplier (1.5x) and UBI-via-income-tax framing are crude and the dashboard is paywalled; show the assumptions and one chart in the free text.",
+   "The 'peaking' list of 9 occupations with AI vulnerability scores is flagged as the author's own estimates; explain the method."
+  ],
+  "falsifiable_calls": [
+   "White-collar automation could push unemployment to 6-16% over five years in the modelled scenarios",
+   "Long the physical layer (electricians, construction, energy, minerals), short the paper layer"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "all-eyes-on-hormuz",
+  "title": "All Eyes on Hormuz",
+  "date": "2026-03-01",
+  "summary": "Quick weekend note after Iran 'went hot': oil depends on Hormuz status, infrastructure damage and OPEC+ response; highlights vibe-coded dashboards and 24-hour perp markets (Hyperliquid) as early price discovery.",
+  "themes": [
+   "oil-hormuz",
+   "crypto",
+   "data-tools"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "The democratization of the dashboard is here.",
+  "improve": [
+   "The oil section is generic; the 24-hour-market observation is the novel part and deserved more data (Hyperliquid vs Monday open).",
+   "Promises a Monday scorecard of Hyperliquid vs Brent/COMEX gold but no follow-up appears in this chunk."
+  ],
+  "falsifiable_calls": [
+   "Hyperliquid weekend prices will roughly match Monday's real-market prints (adoption thesis)",
+   "Oil determined by Hormuz, infrastructure damage and OPEC+ response"
+  ],
+  "return_to": true,
+  "return_reason": "Author set up a clean test (Hyperliquid weekend price vs Monday open) that should be scored."
+ },
+ {
+  "slug": "the-regret-trade",
+  "title": "The Regret Trade",
+  "date": "2026-03-03",
+  "summary": "Day-after reaction: oil and dollar up, gold, silver, Korean chips and stocks down; interprets this as a scramble-for-liquidity 'regret' trade, recommends long mid-curve oil, and admits an options mishap while traveling.",
+  "themes": [
+   "oil-hormuz",
+   "gold",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 5,
+  "best_line": "“The Dollar is Dead” folks seem awfully quiet today.",
+  "improve": [
+   "Opening list of six moves is strong; the rest meanders into Iran moral/political commentary that the markets view does not need.",
+   "Several positioning remarks (TIPS test trade, trimmed copper, Korean stocks) lack sizes or levels."
+  ],
+  "falsifiable_calls": [
+   "Long oil in backwardation around the most convex part of the curve or mid-curve",
+   "Private credit won't rally even if risk does",
+   "Gold and bonds falling in a conflict will reverse (TIPS rolled in size if hit more)"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "everything-is-a-bank",
+  "title": "Everything is a Bank",
+  "date": "2026-03-05",
+  "summary": "Banking is identity; tech companies own identity and are becoming banks; AI agents need crypto rails while humans hold real assets behind KYC gates. Trade: long COIN, CRCL, OKTA (HOOD watch), short KRE.",
+  "themes": [
+   "crypto",
+   "ai-capex",
+   "portfolio-construction"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Banking is identity. Tech companies own identity. All tech companies are banks.",
+  "improve": [
+   "The Morgan Library anecdote takes ~800 words before the thesis; compress it.",
+   "Author admits 'indicative numbers, running without an analyst, AI is not a reliable partner on financial research' yet gives multiples and percent weights; verify figures or flag which are unchecked."
+  ],
+  "falsifiable_calls": [
+   "COIN is the highest-conviction long (60% of long side); KRE regional banks a secular short",
+   "Stablecoin market $2-4tn by 2030",
+   "Identity gate (KYC) remains the control layer for machine finance"
+  ],
+  "return_to": true,
+  "return_reason": "Concrete pair (COIN/CRCL/OKTA vs KRE) with a stated thesis that can be scored."
+ },
+ {
+  "slug": "the-strip-vs-the-strait",
+  "title": "The Strip vs. The Strait",
+  "date": "2026-03-08",
+  "summary": "Argues equities misprice the Hormuz shock because energy stocks price off the forward strip, which is too low as physical infrastructure is destroyed; chains oil to CPI, a trapped Fed, credit spreads and lagged private-credit marks; lists a full hedge book.",
+  "themes": [
+   "oil-hormuz",
+   "fed-liquidity",
+   "rates-curve"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 8,
+   "clarity": 8,
+   "evidence": 8,
+   "actionability": 8,
+   "timelessness": 4
+  },
+  "overall": 8,
+  "best_line": "liquid markets reprice first, illiquid markets reprice last, and by the time the illiquid marks catch up it’s already a crisis.",
+  "improve": [
+   "Chart-heavy middle with many captions but few takeaways stated in-line; lead each chart with the one-sentence implication.",
+   "'We expect this to continue' calls over a one-week horizon with HYG puts as highest conviction invites a timing problem; state what would make the author wrong."
+  ],
+  "falsifiable_calls": [
+   "The oil strip reprices higher (Brent >$100; options see reversion but author disagrees)",
+   "The July Fed cut priced by the market disappears if CPI prints hot in May",
+   "CDX HY and HYG reprice before private credit marks (BCRED, BKLN)"
+  ],
+  "return_to": true,
+  "return_reason": "Detailed, dated, option-structured calls (HYG puts, March/April; oil calls 2-5 months) can be graded in weeks."
+ },
+ {
+  "slug": "watch-credit",
+  "title": "Watch Credit",
+  "date": "2026-03-12",
+  "summary": "Argues the next downcycle comes from corporate and private credit: Yale-model 'volatility laundering', Merton-model short convexity, redemption gates and bank markdowns, and an 2001-style analog. Paid section discloses a ~40% NAV credit short book.",
+  "themes": [
+   "fed-liquidity",
+   "portfolio-construction",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 7,
+   "evidence": 6,
+   "actionability": 7,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "When management holds an all-hands to tell people everything is fine, things are usually not fine.",
+  "improve": [
+   "The opening pajama/VIX anecdote and 'decoder ring' preamble delays the thesis by ~600 words.",
+   "The author admits he is not a credit analyst and prefers CDS but expresses via HYG puts and BDC shorts; explain the mismatch and a stop level for a book that is 40% of NAV."
+  ],
+  "falsifiable_calls": [
+   "The next down cycle will come from corporate/private credit rather than households (2001, not 2008)",
+   "Private credit gating spreads to more vehicles; BDCs below 0.8x NAV",
+   "Fed stays pinned by conflict-driven inflation while credit weakens"
+  ],
+  "return_to": true,
+  "return_reason": "Large, falsifiable credit short book; re-check redemptions, BDC discounts, and HYG levels."
+ },
+ {
+  "slug": "dont-take-the-bait",
+  "title": "Don’t Take the Bait",
+  "date": "2026-03-18",
+  "summary": "Sprawling war note: Iran's yuan-for-passage condition, a Rimland-vs-Heartland rebuttal of Dalio's end-of-empire framing (seize Iranian tankers, arm the population), why macro eats every portfolio, and why AI got more powerful rather than smarter. Conclusion: reduce risk.",
+  "themes": [
+   "oil-hormuz",
+   "macro-regime",
+   "ai-capex"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 4,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "The models haven’t gotten 100x smarter in the past quarter but they have gotten 100x more powerful",
+  "improve": [
+   "Four unrelated essays in one post (war strategy, pod-shop risk controls, doomer critique, AI inference) — 5,000 words; the actual portfolio advice ('take down risk') comes last.",
+   "Military recommendations (airdrop guns, 10-for-1 tanker seizures) are outside demonstrated expertise and unevidenced; either support or cut."
+  ],
+  "falsifiable_calls": [
+   "Oil's back of curve is too cheap and the front is unreliable",
+   "Bonds move from pricing easing to slight tightening because of inflation expectations",
+   "Precious metals: long-term bullish, short-term pressured (promised update)"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "what-the-heck-happened-to-gold",
+  "title": "What the Heck Happened to Gold",
+  "date": "2026-03-20",
+  "summary": "Explains a ~10% gold drop in 24 hours (dollar strength, rates, liquidity scramble, broken Dubai-to-Asia pipe, technicals) against a bullish long-term case (bond drawdown, confiscation risk, central bank buying); author cut 80% of the book and plans a systematic series.",
+  "themes": [
+   "gold",
+   "fed-liquidity",
+   "portfolio-construction"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "The bear case is right today. The bull case will be right over the next 2-5 years.",
+  "improve": [
+   "The five bear drivers lack magnitudes; rank them, since 'scramble for liquidity' and 'Gulf selling' are admitted as unconfirmed.",
+   "The most interesting content (drawdown management, bloat in a 200-name book) is promised for later; give a concrete rule now."
+  ],
+  "falsifiable_calls": [
+   "Gold's long-term bull case plays out over 2-5 years despite near-term liquidity pressure",
+   "Rebuild positions starting with miners once dust settles"
+  ],
+  "return_to": true,
+  "return_reason": "Promised systematic gold-signal series and miners rebuild; revisit whether the 2008 analog held."
+ }
+]

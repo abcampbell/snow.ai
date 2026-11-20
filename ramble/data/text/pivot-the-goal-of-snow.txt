@@ -1,0 +1,47 @@
+TITLE: Pivot - The Goal of Snow
+SUBTITLE: Published - December 3rd, 2015
+DATE: 2021-11-09
+
+About a year ago I left a pretty great job, at a pretty great place, with the goal of “doing my own thing.”
+At the time, I wasn’t quite clear exactly what that ‘thing’ was going to be. Over the prior decade I had traveled in and out of prestigious financial and academic institutions as an investor, mathematician and (hacky) technologist.
+At each stop, I studied the way the world worked, and at each stop, I embedded my learning into a variety of ‘systems’. Some of those systems were literal algorithms that used information machines to turn data into conclusions, some of those systems were pure conceptual frameworks that I found helpful abstraction when dealing with the world’s complexity. All attempted to identify the pieces of ‘the machine’ at hand and outline the rules for how those pieces interacted and evolved over time.
+Along that path, I experienced a lot of pain when dealing with information machines (‘computers’). There was pain in finding new and useful information. Pain involved in extracting data from that raw information. Pain in cleaning that data. Pain in exploring and asking simple questions of data. Pain in integrating the learning from that process into other, previous understanding that lived ‘in the machine’. Pain in creating artifacts (charts, documents, reports etc) to communicate the understanding gained from looking at data. And finally, pain in broadcasting that understanding to the right people above the wall of information that bombards each of us every day.
+So a close friend and I founded a company called Rose to pick off as many of those problems as we could, mix in some of the recent advances coming out of machine learning and data visualization, and, well, try to fundamentally change the way humans find, build and communicate understanding using information machines.
+Pain + Abstraction + Smart People = Product
+….right?
+Well, turns out it’s a little harder than that.
+Harder for all the reasons outlined in the blogs, the articles, the forums, and the books. It’s also harder for lots of reasons people aren’t that vocal about.
+Both as a founder, and an investor, I became extremely interested in the way capital markets for startups worked. There seemed to be a hundred points of existential risk to the business that just came from the just financing side:
+Mess up the founder split → Bake ego issues right into the core team
+
+Spend too much time fundraising → Kill the product development
+
+Spend too little time on fundraising → Fail to ‘close’ your round
+
+Over-allocate to early hires → Dramatically increase the odds of dilution down the line
+
+Under-allocate to early hires → Risk getting them poached
+
+Take too little money → Lose control of the company earlier when you have to come back to ‘the market’ too soon
+
+Take too much money (on a low valuation) → Lose control of the company immediately
+
+Take too much money (on a high valuation) → Set yourself up for down round later
+
+Take money from the wrong investors → Create a negative signal to ‘the market’
+
+Take money from the right investors → Risk having them send a negative signal later if you don’t keep them happy enough to take their ‘pro-rata’ later
+
+Anyway, you get the idea.
+It’s a long list of stuff to watch out for, I felt totally snowed by the noise, and (heck!) I was a ‘finance guy’! I even had the benefit of watching (and to a small extent, helping), my fearless wife walk the path in front of me. Her having left her totally respectable job in consulting to try to bring transparency the opaque world of charity.
+Through all of this, I learned a handful of things:
+Founders really do deserve the lion's share of the credit/blame for an early company's success/failure.
+
+Creating something from nothing is really hard. Most people don’t care, some people care but see you as a competitor or threat, and even the people who believe in you and are considering investing or joining, generally want to see just a little more progress before jumping in with two feet. Those two feet being the very thing you need to do the thing that will show that progress!
+
+Like most important but complicated things, very, very few people actually understand what is happening on the financial side of things. Entrepreneurs and managers are running as fast as humanly possible trying to keep the perpetual motion machine working. Current (and potential) employees are making huge financial decisions with little to no understanding life portfolio they are managing, and investors are up to their ears just wading through the noise of the market. Which, to be clear, looks like pretty much every financial market….ever.
+
+In this way, Snow (Ventures) grew directly from my leanings from Rose (Technology). Over time, I became obsessed with the need among participants in that system to hedge.
+Eventually, it clicked.
+The thing the market needed was the very thing we were unique suited to provide...that hedge.
+So that’s the goal of Snow. A hedge fund, that, you know…lets you hedge.

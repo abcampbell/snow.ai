@@ -1,0 +1,1000 @@
+[
+ {
+  "slug": "conflict-is-inflationary-part-2",
+  "title": "Conflict is Inflationary: Part 2",
+  "date": "2024-10-23",
+  "summary": "Argues the case for selling bonds to buy gold still holds after a 70% outperformance, because rising great-power conflict (Heartland vs Rimland, not a simple Thucydides trap) is inflationary and erodes demand for Treasuries.",
+  "themes": [
+   "gold",
+   "macro-regime",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "Sometimes your synthesis can be too simple. So simple they disregard it. Right up until it becomes consensus.",
+  "improve": [
+   "The promised 200-case conflict dataset is deferred to 'next time', so the central claim (Rimland usually wins) rests on assertion; show at least one chart.",
+   "Long digressions (business school anecdote, Parthenon as central bank) bury the bond/gold trade logic; lead with the trade and its risks."
+  ],
+  "falsifiable_calls": [
+   "Conflict keeps rising and proves inflationary",
+   "Sell bonds / buy gold remains the right trade; expect another drawdown in gold"
+  ],
+  "return_to": true,
+  "return_reason": "The promised follow-up with 200+ conflict data points and 'who wins' analysis is the testable core of the thesis."
+ },
+ {
+  "slug": "new-new-deal",
+  "title": "New New Deal",
+  "date": "2024-10-27",
+  "summary": "Frames American history as successive 'deals' that each patched contradictions, and argues the post-1930s deal is breaking down (inequality, infrastructure, manufacturing, geopolitics) and needs a rewrite.",
+  "themes": [
+   "macro-regime",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 2,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "We're simultaneously the most innovative economy in the world and can't build apartments in San Francisco.",
+  "improve": [
+   "It diagnoses but never proposes the new deal (deferred), so the post ends without payload; fold in the proposals.",
+   "Almost no data; the 'vicious cycle' list is asserted rather than shown, and the gold-vs-bonds link at the end is bolted on."
+  ],
+  "falsifiable_calls": [
+   "A new social contract will be forced on the US, likely only after crisis"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "stop-trying-to-kill-bloomberg",
+  "title": "Stop Trying to Kill Bloomberg",
+  "date": "2024-10-29",
+  "summary": "Argues AI startups should build on top of incumbent financial data (Bloomberg, FactSet) rather than replace it, because the value is in provenance, auditability and the human cost of data operations; pitches Rose as the micro-transaction data layer.",
+  "themes": [
+   "data-tools",
+   "ai-capex"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Bloomberg's $25k/year price tag isn't about the terminal - it's about the guarantee.",
+  "improve": [
+   "The $1T 'human infrastructure' spend and 10-15% workforce figures are unsourced; cite them.",
+   "The Rose benchmark (63% data accuracy etc.) is the only hard evidence and is given without methodology or competitor numbers; a sales pitch hides in the second half."
+  ],
+  "falsifiable_calls": [
+   "Data vendors' value rises in the AI age (Jevons); AI firms that try to replace Bloomberg will fail"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit whether AI-native finance products have integrated incumbent data or tried to replace it, and Rose's own benchmark."
+ },
+ {
+  "slug": "the-100-inheritance-tax",
+  "title": "The 100% Inheritance Tax",
+  "date": "2024-10-31",
+  "summary": "Proposes 100% inheritance tax (with forced giving before death) paired with 0% income tax, arguing AI-driven wealth concentration (via Kalecki's profit logic) will calcify dynasties and kill competition.",
+  "themes": [
+   "macro-regime",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 3,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "You can still make your kids richer than Croesus. Just not richer than Crassus.",
+  "improve": [
+   "Mechanics are hand-waved: valuation of illiquid assets, trusts, gifts before death and capital flight get one paragraph; address the avoidance problem head-on.",
+   "Kalecki argument is interesting but unsupported by any data on savings concentration or profit share."
+  ],
+  "falsifiable_calls": [
+   "AI/automation will concentrate income enough that wealth redistribution becomes politically inevitable"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-new-new-deal-the-pu-pu-platter",
+  "title": "The New New Deal: The Pu Pu Platter",
+  "date": "2024-11-09",
+  "summary": "A teaser announcing a list of 58 policy ideas for a New New Deal; the actual list is not in the text.",
+  "themes": [
+   "macro-regime"
+  ],
+  "format": "other",
+  "scores": {
+   "insight": 2,
+   "clarity": 3,
+   "evidence": 1,
+   "actionability": 1,
+   "timelessness": 2
+  },
+  "overall": 2,
+  "best_line": "Think of it as a new axis on the political compass: not left/right, not auth/lib, but future/past.",
+  "improve": [
+   "The post contains no policies in the text; either publish the list inline or fold into a real post.",
+   "Frame 2-3 of the strongest ideas with reasoning rather than promising 58."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "portfolio-moves",
+  "title": "Portfolio Moves",
+  "date": "2024-11-12",
+  "summary": "Post-election update to a long-vol/gold/short-bond protection book: closes much of the gold butterflies and 2/3 of the bond short because deficit austerity is judged deflationary, and flags European weakness and bitcoin's surge.",
+  "themes": [
+   "portfolio-construction",
+   "rates-curve",
+   "gold"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 6,
+   "timelessness": 3
+  },
+  "overall": 6,
+  "best_line": "Combining these two potentially dissonant views reveals the inherent bet that the administration would be making.",
+  "improve": [
+   "Position changes are stated without sizes, levels or P&L; readers cannot assess the decision.",
+   "The deflation thesis (austerity beats tariffs) is a contestable call that deserves a risk case; also cut the venture-timeline preamble."
+  ],
+  "falsifiable_calls": [
+   "Deficit reduction and deregulation outweigh tariffs, so bond yields fall rather than rise",
+   "Europe underperforms over the next five years"
+  ],
+  "return_to": true,
+  "return_reason": "Lifting the bond short right before yields rose was later admitted as early; a good case study in the thesis flip."
+ },
+ {
+  "slug": "the-death-of-globalism",
+  "title": "The Death of Globalism",
+  "date": "2024-11-19",
+  "summary": "Conflict-is-inflationary Part 3: post-election data (dollar up, yields up, gold down, oil flat) show the inflation channel is murkier, since tariffs, entitlement cuts and deportation have cross-cutting effects; globalization is giving way to blocs.",
+  "themes": [
+   "macro-regime",
+   "rates-curve",
+   "gold"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "Usually, bonds and oil move in the same direction (remember: 'inflation is about oil'), but today, that relationship has broken down.",
+  "improve": [
+   "Charts are in an appendix with no captions in the text; tie each chart to the claim it supports.",
+   "Editorializing on Europe and immigration is asserted rather than evidenced and distracts from the bond/oil divergence, the best insight."
+  ],
+  "falsifiable_calls": [
+   "Higher structural inflation, more volatile markets, rising security premiums",
+   "Tariff revenue of ~half the deficit under a 20%/60% regime"
+  ],
+  "return_to": true,
+  "return_reason": "Test the bond/oil divergence and tariff arithmetic against what actually happened to yields and tariff revenue."
+ },
+ {
+  "slug": "perfect-alignment-is-perfectly-impossible",
+  "title": "Perfect Alignment is Perfectly Impossible",
+  "date": "2024-11-23",
+  "summary": "Uses Arrow's theorem and Gemini's image-generation fiasco to argue perfect AI alignment is impossible and that competing, federated models under market and democratic institutions are safer than centralized control.",
+  "themes": [
+   "ai-capex",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 3,
+   "actionability": 2,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "The goal isn't to build AI that never fails, but AI that can fail gracefully and learn from those failures.",
+  "improve": [
+   "The 'implicit diversity score 3-9' Gemini finding is unsupported by shown outputs; share the prompts and results.",
+   "The leap from Arrow's theorem to 'markets are the answer' is asserted; engage with the strongest counter (competitive races reduce safety)."
+  ],
+  "falsifiable_calls": [
+   "Federated competing AI systems are safer than a single centralized aligned system"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "24-views-for-2024-year-in-review",
+  "title": "24 Views for 2024: Year in Review",
+  "date": "2024-11-30",
+  "summary": "Self-scores the 24 for '24 predictions at ~80% (100% geopolitics, 6/7 markets, 7/8 tech, 0/3 regulatory) and draws lessons on mechanisms, timing and optionality.",
+  "themes": [
+   "macro-regime",
+   "gold",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Being right about the outcome isn't enough; you need to be right about the path.",
+  "improve": [
+   "The 80% headline is grade-your-own-homework: several calls are vague (e.g. 'AI adoption') so scoring is generous; publish the calls with pass/fail criteria in a table.",
+   "The scorecard and the lessons are interleaved with a lot of narrative; lead with the table."
+  ],
+  "falsifiable_calls": [
+   "Defense long / Boeing short continues to work",
+   "Regulatory predictions remain unreliable"
+  ],
+  "return_to": true,
+  "return_reason": "Honest-ish scorecards are rare; compare against the 25 for '25 results for calibration."
+ },
+ {
+  "slug": "convert-of-doom",
+  "title": "Convert of Doom",
+  "date": "2024-12-03",
+  "summary": "Breaks down MicroStrategy's zero-coupon converts using Merton-model vol analysis, premium-to-NAV and a Lehman war story, arguing the structure is a leveraged, reflexive premium trade whose breakeven needs bitcoin far higher.",
+  "themes": [
+   "crypto",
+   "positioning-flows"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 8,
+  "best_line": "If the premium normalizes to even 50% (still rich), bitcoin needs to hit $224,000 for these converts to break even on conversion.",
+  "improve": [
+   "The post never states a trade (short MSTR, long the converts or an arb); give an explicit position and sizing.",
+   "Some figures (0.002 BTC/share, $150/share NAV) are asserted from memory; a table reconciling holdings and share count would build trust."
+  ],
+  "falsifiable_calls": [
+   "MSTR premium to NAV will compress toward bitcoin value",
+   "Converts need bitcoin well above $224k at a 50% premium to convert in the money"
+  ],
+  "return_to": true,
+  "return_reason": "MSTR's premium and convert issuance is a clean, testable thread worth a retrospective."
+ },
+ {
+  "slug": "why-were-still-long-gold",
+  "title": "Why We're Still Long Gold",
+  "date": "2024-12-04",
+  "summary": "Defends staying long gold and silver (40/40 in the portfolio) after a 120% run, via the Gold in China framework, de-dollarization and weak ETF demand, while warning that a stronger dollar may cause drawdowns.",
+  "themes": [
+   "gold",
+   "china",
+   "portfolio-construction"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 6,
+  "best_line": "Most western investors usually pay for their gold by giving up dollars, and so miss the degree to which this substitution effect dampens the protective nature of gold in a crisis.",
+  "improve": [
+   "Two big breaking news items (China minerals ban, Korean martial law) are stapled on, diluting the thesis; split them out.",
+   "The headline '40% gold, 40% silver' portfolio weight needs context (vol-targeted weights, option overlays) to be interpretable."
+  ],
+  "falsifiable_calls": [
+   "Gold drawdown likely if the dollar rallies another 5%",
+   "Long-term gold bull case intact; now is a reasonable time to buy"
+  ],
+  "return_to": true,
+  "return_reason": "Check the 'gold and dollars, not gold in dollars' framing and the 40/40 allocation over the following year."
+ },
+ {
+  "slug": "no-soup-aka-gallium-for-you",
+  "title": "No Soup (aka Gallium) For You!",
+  "date": "2024-12-06",
+  "summary": "Explains China's export ban on gallium, germanium and antimony, who is exposed, how re-routing will mitigate it, and a tentative basket of Western miners as a watch/dip-toe trade.",
+  "themes": [
+   "commodities-supply",
+   "china",
+   "macro-regime"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "The strategic importance of these minerals far outweighs their modest market size.",
+  "improve": [
+   "The 'cost impact' percentages per metal appear unsourced; cite or label as estimates.",
+   "The 'mixed strategy' game theory opener is long relative to its payoff; the tickers list lacks valuation or liquidity warnings for micro-caps."
+  ],
+  "falsifiable_calls": [
+   "Western critical-mineral producers (PPT, UAMY, AXTI) benefit; ex-China price gap widens",
+   "Reshoring and tit-for-tat export controls continue"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit the producer vs consumer basket performance and whether the gap persisted."
+ },
+ {
+  "slug": "still-long-silver",
+  "title": "Still Long Silver",
+  "date": "2024-12-11",
+  "summary": "Makes the 2025 silver case from cheapness vs gold, under-allocation, solar demand (20% of supply) against inelastic mine supply, and monetization of silver as an energy-producing asset; discloses option structure.",
+  "themes": [
+   "gold",
+   "commodities-supply",
+   "ai-capex"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "how long can solar demand (and hence silver demand for solar) grow at 30% while mine supply grows at 2% before these collide?",
+  "improve": [
+   "Solar share and exajoule numbers are hand-waved ('someone should check my numbers'); build the supply-demand balance explicitly.",
+   "The water digression and embedded Substack card dilute the argument."
+  ],
+  "falsifiable_calls": [
+   "Silver outperforms gold (ratio compresses from 80x)",
+   "Solar silver demand collides with flat supply"
+  ],
+  "return_to": true,
+  "return_reason": "Core thesis later developed in Silver Squeeze; check the ratio call."
+ },
+ {
+  "slug": "the-s-curve-is-here",
+  "title": "The S Curve is Here",
+  "date": "2024-12-13",
+  "summary": "Argues LLM scaling is hitting diminishing returns (energy needed for lower loss is absurd), so crowded Mag7 exposure is overpriced and the real opportunities are in infrastructure pipes; ends with a tongue-in-cheek nuclear-sub data center.",
+  "themes": [
+   "ai-capex",
+   "commodities-supply",
+   "positioning-flows"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 6
+  },
+  "overall": 7,
+  "best_line": "Hmm, so you are telling me to get the model below a loss of 1, we would need the entire world's energy output for one year.",
+  "improve": [
+   "The loss-vs-energy extrapolation uses a scaling formula outside its fitted range and is presented as strong evidence; caveat it.",
+   "Lead with what to do (which pipes break, how to trade them); the sub joke is the memorable part but the trade list is thin."
+  ],
+  "falsifiable_calls": [
+   "Scaling returns decelerate, making compute/energy bottlenecks the investable theme",
+   "Crowding into Mag7 depresses implied vol and makes insurance cheap"
+  ],
+  "return_to": true,
+  "return_reason": "Central, repeated thesis (S-curve) of the whole blog; test it against subsequent model releases and capex."
+ },
+ {
+  "slug": "stocks-vs-bonds",
+  "title": "Stocks vs Bonds",
+  "date": "2024-12-16",
+  "summary": "Concludes you want both stocks and bonds: reduces the bond short as stocks stretch (seven names = 33% of market cap) and rebalancing flows build, while still preferring gold as a diversifier.",
+  "themes": [
+   "rates-curve",
+   "portfolio-construction",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 4,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 5,
+  "best_line": "Sometimes the boring answer is the right one. Balance your portfolio, be prepared for either scenario.",
+  "improve": [
+   "The historical stock/bond origin story is long and tangential; the actual indicators (5-factor bond signal, rebalancing flow) get one chart each without explanation.",
+   "The conclusion is non-committal; give explicit triggers for going long bonds."
+  ],
+  "falsifiable_calls": [
+   "Reduce bond short, possibly go long US/global bonds as equity valuations stretch"
+  ],
+  "return_to": true,
+  "return_reason": "The following post admits the cut in the bond short was early; track the sequel."
+ },
+ {
+  "slug": "fill-it-up-again",
+  "title": "\"Fill it up again!\"",
+  "date": "2024-12-17",
+  "summary": "Argues China's response to its property bust is more stimulus without recapitalizing banks, so the currency (CNY) is the valve and a sharp depreciation is likely, while a bank-recap path would send savings to gold.",
+  "themes": [
+   "china",
+   "gold",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 4,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "If they protect domestic asset prices, they have to let the currency go, and the CNY will depreciate.",
+  "improve": [
+   "Few numbers on bank losses ('trillions') and capital flight; chart them and back the claims.",
+   "The two-branch framework is excellent but the language is chatty; summarise it up top as a decision tree with what each signal looks like."
+  ],
+  "falsifiable_calls": [
+   "CNY will depreciate faster and more dramatically than expected",
+   "Chinese policy moves toward ZIRP and monetary easing without bank recap"
+  ],
+  "return_to": true,
+  "return_reason": "Test the CNY/gold-in-China valve call against actual yuan path and PBoC policy."
+ },
+ {
+  "slug": "the-s-curve-strikes-back",
+  "title": "The S Curve Strikes Back",
+  "date": "2024-12-23",
+  "summary": "Responds to OpenAI's o3: capability jumped but $3k per question and $1.6M benchmark cost prove the economics of scaling still bind; predicts $3k/question will not match human labor cost until 2029/30.",
+  "themes": [
+   "ai-capex",
+   "data-tools"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "Yes, it's awesome that we now have machines that can one-shot previously impossible questions. But the question of ubiquity remains firmly tied to economics.",
+  "improve": [
+   "The 2029/30 cost-parity forecast is stated with no model shown; publish the inputs.",
+   "The jump from 'Halting problem' to o3 failures is loose; keep the economic argument and drop the analogy."
+  ],
+  "falsifiable_calls": [
+   "$3k/question o3-class inference won't be competitive with human labor until 2029/2030",
+   "Future progress constrained by energy, compute and data costs"
+  ],
+  "return_to": true,
+  "return_reason": "Falsifiable cost-per-query trajectory; compare to actual inference-cost declines."
+ },
+ {
+  "slug": "25-views-for-2025",
+  "title": "25 Views for 2025",
+  "date": "2025-01-09",
+  "summary": "Annual calls organised under three forces (AI acceleration and energy, great-power conflict, China's ugly deleveraging), including long silver, US gas exports, batteries, lasers, Gold in China, tariffs up, Evergrande WMPs unpaid, and 'stocks go down'.",
+  "themes": [
+   "macro-regime",
+   "ai-capex",
+   "gold",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 6,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "Gold in China to outperform as they finally let the quasi-currency peg go to protect the financial system.",
+  "improve": [
+   "Too many calls (25) with uneven rigor; several lack a measurable criterion (horseshoe, peak secularism) so they can't be scored later; add a resolution test to each.",
+   "Some calls are labeled 'long X' without an instrument or horizon; rank by conviction and size."
+  ],
+  "falsifiable_calls": [
+   "Silver outperforms gold in 2025",
+   "CNY depreciates and Gold in China outperforms",
+   "US natural gas exports grow strongly",
+   "Tariffs go up and immigration tightens",
+   "Evergrande will not repay $6bn WMPs",
+   "Syria will not hold elections in 2025"
+  ],
+  "return_to": true,
+  "return_reason": "A scoreable list; re-grade it and compare to the 2024 scorecard method."
+ },
+ {
+  "slug": "bonds-vs-stocks",
+  "title": "Bonds vs Stocks",
+  "date": "2025-01-15",
+  "summary": "Admits cutting the bond short was early, then explains the discount-rate link between stocks and bonds and argues yields have a ceiling because housing cannot tolerate much higher rates, so cut risk.",
+  "themes": [
+   "rates-curve",
+   "portfolio-construction",
+   "positioning-flows"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 4,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "One of the often underappreciated pains of being early is sometimes you cut your winners too early.",
+  "improve": [
+   "The long finance tutorial on discounting buries the actual call; move the housing-ceiling argument to the top and chart mortgage rates vs yield.",
+   "The 'yields cap near housing breaks' claim is plausible but lacks a threshold level."
+  ],
+  "falsifiable_calls": [
+   "Bond yields will find a natural ceiling because high mortgage rates break housing",
+   "Fed may have to hike in 2025"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit the housing-ceiling-on-yields claim and the cut-the-short regret."
+ },
+ {
+  "slug": "can-you-feel-the-acceleration",
+  "title": "Can You Feel the Acceleration?",
+  "date": "2025-01-22",
+  "summary": "A grab-bag of week-one notes: DeepSeek confirms open source/China catch-up, TrumpCoin as democratized issuance of paper, RedNote/TikTok, a film review, and bird-flu-driven egg prices.",
+  "themes": [
+   "ai-capex",
+   "crypto",
+   "personal-essay"
+  ],
+  "format": "link-roundup",
+  "scores": {
+   "insight": 4,
+   "clarity": 4,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 2
+  },
+  "overall": 4,
+  "best_line": "Why aren't individuals able to sell equity in themselves?",
+  "improve": [
+   "Unrelated topics with no thread; pick one (the individual-equity/TrumpCoin idea) and develop it.",
+   "Several claims (consider buying durables before tariffs, egg and beef prices) are unsupported by data."
+  ],
+  "falsifiable_calls": [
+   "Egg and beef prices rise significantly",
+   "Preemptive buying ahead of tariffs will lift early-year inflation"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "the-race-is-on",
+  "title": "The Race is On",
+  "date": "2025-01-27",
+  "summary": "Deep dive on DeepSeek R1: gloats that China did not pause AI (game theory says racing dominates), estimates the 20-30x training efficiency stack, notes verbosity and inference costs, and argues compute demand becomes distributed.",
+  "themes": [
+   "ai-capex",
+   "china"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 5,
+   "actionability": 4,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "Never short China's ability to see an idea and build a better version for 8x cheaper.",
+  "improve": [
+   "Nearly half the piece is a victory lap over doomers; cut to the technical section earlier, which is the novel contribution.",
+   "The 20-30x efficiency decomposition (memory, talent, data, GPUs) is guesswork shown as arithmetic; label it speculative."
+  ],
+  "falsifiable_calls": [
+   "Compute demand becomes more distributed with thousands of smaller training runs",
+   "AI moats shrink and the oligopoly weakens"
+  ],
+  "return_to": true,
+  "return_reason": "Revisit the efficiency decomposition and the claim that moats shrink, given later frontier developments."
+ },
+ {
+  "slug": "the-compute-constraint",
+  "title": "The Compute Burden",
+  "date": "2025-01-30",
+  "summary": "Argues that even with open-source models, running intelligence is bound by memory, energy and cooling: a 10T-parameter model costs ~$25M/year in cloud compute, with consumer-device equivalents 14-20+ years away, producing cloud/enterprise/consumer deployment futures.",
+  "themes": [
+   "ai-capex",
+   "data-tools",
+   "commodities-supply"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 7,
+   "clarity": 6,
+   "evidence": 6,
+   "actionability": 5,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "The code is free, but the compute is expensive.",
+  "improve": [
+   "Hardware projections (14 years to $1M, 20 to $10k) rest on a single extrapolation chart; show assumptions and sensitivity, as it was wrong-footed quickly by efficiency gains elsewhere in the same piece.",
+   "Local-AI privacy argument is tacked on after the economics; unify."
+  ],
+  "falsifiable_calls": [
+   "10T-parameter model reaches ~$1M/year cost in about 14 years and ~$10k consumer hardware in about 20",
+   "Superintelligence on a phone not before ~2040"
+  ],
+  "return_to": true,
+  "return_reason": "Specific multi-year hardware projections to re-test against actual pricing and distillation progress."
+ },
+ {
+  "slug": "portfolio-update-january-2025",
+  "title": "Portfolio Update: January 2025",
+  "date": "2025-01-31",
+  "summary": "Launches an open-book portfolio series: a personal hedge book with gold delta exceeding net liquidation value, a rough Monday, buying NVDA after DeepSeek and rotating some gold to silver.",
+  "themes": [
+   "portfolio-construction",
+   "gold",
+   "positioning-flows"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 4,
+   "clarity": 4,
+   "evidence": 3,
+   "actionability": 5,
+   "timelessness": 2
+  },
+  "overall": 5,
+  "best_line": "Put another way if gold goes down 66%, I'm zero'd out.",
+  "improve": [
+   "Say which positions, sizes and levels in text; the key content is in screenshots.",
+   "Leverage above 100% delta in gold by accident is a striking risk admission, but there is no plan stated to cut it."
+  ],
+  "falsifiable_calls": [
+   "Will roll some gold into silver",
+   "NVDA is a buy after DeepSeek sell-off"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "least-favored-nations",
+  "title": "Least Favored Nations",
+  "date": "2025-02-02",
+  "summary": "Reads the Trump tariffs on Canada and Mexico as the beginning of the end for WTO most-favored-nation norms, argues they won't close the current account on their own, hurts Mexico most, and reiterates Gold in China.",
+  "themes": [
+   "macro-regime",
+   "china",
+   "gold"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 6,
+   "clarity": 5,
+   "evidence": 5,
+   "actionability": 5,
+   "timelessness": 4
+  },
+  "overall": 6,
+  "best_line": "Only putting a 10% tariff on China is thus what one might call an 'emotional bid.'",
+  "improve": [
+   "Opening promises 'three points' but the second and third are not clearly marked; structure it.",
+   "The inflation/real yield implication is left as 'we'll find out tomorrow'; commit to a view."
+  ],
+  "falsifiable_calls": [
+   "Tariffs alone won't close the US current account",
+   "Gold in China remains the preferred expression of CNY depreciation",
+   "Higher breakevens and lower real yields near term"
+  ],
+  "return_to": true,
+  "return_reason": "Check the 'emotional bid' reading of China tariffs and the current account arithmetic."
+ },
+ {
+  "slug": "the-silver-squeeze",
+  "title": "The Silver Squeeze",
+  "date": "2025-02-11",
+  "summary": "Quantifies a decade of structural silver deficit: inelastic byproduct supply (72%), solar using one in four ounces, slow substitution, and investor demand acting like a Veblen good, with scenarios of 100-200Moz annual deficits.",
+  "themes": [
+   "commodities-supply",
+   "gold",
+   "ai-capex"
+  ],
+  "format": "data-dashboard",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 7,
+   "timelessness": 6
+  },
+  "overall": 8,
+  "best_line": "Even in our conservative base case, holding everything but solar constant/on trend, we're looking at possible deficits of 200 to 100mz oz a year for a decade.",
+  "improve": [
+   "Charts are links with no captions in the text; state each chart's takeaway and show the scenario table in the body, not as images.",
+   "Underweights the substitution risk (copper, thrifting) and price elasticity of solar efficiency; give a probability-weighted view."
+  ],
+  "falsifiable_calls": [
+   "Silver market in structural deficit 100-200Moz/yr for a decade",
+   "Silver prices rise significantly relative to production cost and gold"
+  ],
+  "return_to": true,
+  "return_reason": "The best-evidenced thesis in the batch; update the supply-demand model against actual deficits and thrifting."
+ },
+ {
+  "slug": "gold-goes-west",
+  "title": "Gold Goes West",
+  "date": "2025-02-17",
+  "summary": "Explains a physical gold squeeze driven by Western demand ahead of tariffs: lease rates up to 4%, London-to-New York flows, BoE queues and BIS swap collapse; offers watch indicators and call-buying idea.",
+  "themes": [
+   "gold",
+   "positioning-flows",
+   "macro-regime"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 8,
+   "clarity": 7,
+   "evidence": 7,
+   "actionability": 7,
+   "timelessness": 5
+  },
+  "overall": 8,
+  "best_line": "For the first time in a long time, and it's threatening to break the pipes.",
+  "improve": [
+   "The Fort Knox speculation is the weakest, least-evidenced section and risks undermining a strong piece; flag it clearly as conjecture.",
+   "Resolution paths are laid out well, but give probabilities and a trigger level for each indicator."
+  ],
+  "falsifiable_calls": [
+   "Physical gold squeeze resolves via price rather than a paper-market break (base case)",
+   "Gold vol is cheap; buy calls and over-hedge delta"
+  ],
+  "return_to": true,
+  "return_reason": "Concrete stress indicators (lease rates, BIS swaps, location spreads) to follow up on."
+ },
+ {
+  "slug": "the-return-of-the-s-curve",
+  "title": "The Return of the S Curve",
+  "date": "2025-08-10",
+  "summary": "Claims GPT-5 confirms deceleration in model improvement because scaling needs exponentially more compute, data and energy, so expect seethe, cope and opportunity (including silver).",
+  "themes": [
+   "ai-capex",
+   "commodities-supply"
+  ],
+  "format": "market-note",
+  "scores": {
+   "insight": 4,
+   "clarity": 5,
+   "evidence": 3,
+   "actionability": 4,
+   "timelessness": 4
+  },
+  "overall": 4,
+  "best_line": "Remind me, what happens to the price of something when the demand goes up exponentially and the supply stays constant?",
+  "improve": [
+   "One hypothetical chart and tweets as evidence; show actual benchmark deltas between GPT-4, o1/o3 and GPT-5 to back 'clearly slowing'.",
+   "Snarky name-calling of doomers and hype posters reads as victory lap; replace with a falsifiable prediction on capex or energy."
+  ],
+  "falsifiable_calls": [
+   "Model improvement per unit of compute continues to slow over the next 12 months"
+  ],
+  "return_to": true,
+  "return_reason": "A year-long testable claim that GPT-5-era deceleration is real and investable."
+ },
+ {
+  "slug": "the-routing-problem",
+  "title": "The Routing Problem",
+  "date": "2025-08-11",
+  "summary": "Argues that GPT-5's router faces a meta-problem (deciding if a question is hard can be harder than answering it) and that such limits, like the halting problem, will keep humans in jobs.",
+  "themes": [
+   "ai-capex",
+   "personal-essay"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 2,
+   "timelessness": 5
+  },
+  "overall": 5,
+  "best_line": "Sometimes prioritization is inherently more difficult than answering the specific query.",
+  "improve": [
+   "Evidence is one anecdote (the sigmoid drawing); add measured router errors or misroutes.",
+   "The jump to 'machine is down, don't trust machines' and jobs is rhetorical; show where routing cost savings are limited."
+  ],
+  "falsifiable_calls": [
+   "Full automation of semiconductor fabs is further off than timelines like AI 2027"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "stoic-macro-the-mathematics-of-progress",
+  "title": "Stoic Macro: The Mathematics of Progress",
+  "date": "2025-08-14",
+  "summary": "Treats Dalio's 'Pain + Reflection = Progress' as a calculus problem, deriving speed, acceleration and cross-gamma of learning and recommending raising rates, positive cross-terms and cutting decay.",
+  "themes": [
+   "personal-essay",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 5,
+   "evidence": 2,
+   "actionability": 3,
+   "timelessness": 6
+  },
+  "overall": 5,
+  "best_line": "If you aren't experiencing pain, acutely, in the moment, you aren't growing.",
+  "improve": [
+   "The math is decorative: with cumulative pain and reflection undefined, derivatives yield an unfalsifiable restatement; either calibrate with examples or drop it.",
+   "Equations don't render in the text; lead with the takeaways for non-quants."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "stoic-macro-living-between-order",
+  "title": "Stoic Macro: Living Between Order and Chaos",
+  "date": "2025-08-16",
+  "summary": "Argues macro investing is a laboratory of reflexivity where models create dissonance you must learn from, framing cut-vs-double-down and ego as both enemy and driver, resolved by antifragile positioning.",
+  "themes": [
+   "personal-essay",
+   "macro-regime",
+   "portfolio-construction"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 4,
+   "clarity": 5,
+   "evidence": 1,
+   "actionability": 3,
+   "timelessness": 5
+  },
+  "overall": 4,
+  "best_line": "The market doesn't care about your models. But if you build the right framework, you won't need it to.",
+  "improve": [
+   "No concrete trading example (past losing trade, LTCM details) to ground the cut-or-double-down dilemma.",
+   "The 'third way' is promised but the answer is deferred to tomorrow's post; compress the trilogy into one piece."
+  ],
+  "falsifiable_calls": [],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "stoic-macro-portfolio-consciousness",
+  "title": "Stoic Macro: Portfolio Consciousness",
+  "date": "2025-08-17",
+  "summary": "Proposes a three-legged life/portfolio framework: hedge the tail with gold and silver, capture the base case with diversified equity, and build your own ventures, with a barbell inside the building leg.",
+  "themes": [
+   "portfolio-construction",
+   "personal-essay",
+   "gold"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 5,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 5,
+   "timelessness": 6
+  },
+  "overall": 6,
+  "best_line": "You're not trying to avoid pain - you're structuring your portfolio so every kind of pain becomes tuition.",
+  "improve": [
+   "The published text contains leftover editing notes ('This ending is much stronger, but I'd cut the numbered list...') and a duplicate ending; clean up.",
+   "Give actual weights across the three legs and how to rebalance."
+  ],
+  "falsifiable_calls": [
+   "Hedge-base-build framework outperforms single-bet approaches in both finance and life"
+  ],
+  "return_to": false,
+  "return_reason": ""
+ },
+ {
+  "slug": "silver-the-only-money-that-generates",
+  "title": "Silver: The Only Money That Generates Electricity",
+  "date": "2025-08-18",
+  "summary": "Argues silver embedded in solar panels earns an implied 12-18% yield (electricity revenue), so industrial demand is price-inelastic and silver monetizes, predicting a 20-30:1 gold/silver ratio by 2030 ($100-150/oz).",
+  "themes": [
+   "gold",
+   "commodities-supply",
+   "ai-capex"
+  ],
+  "format": "trade-idea",
+  "scores": {
+   "insight": 6,
+   "clarity": 7,
+   "evidence": 5,
+   "actionability": 6,
+   "timelessness": 5
+  },
+  "overall": 7,
+  "best_line": "Silver embedded in energy infrastructure yields 10% returns while gold yields negative 1%.",
+  "improve": [
+   "The 'yield' compares the whole panel's return to silver's carry, which conflates the cost of $350 of equipment with $35 of silver; an investor cannot buy silver exposure at that yield, so the carry comparison is misleading.",
+   "Hyped tone ('tattoo this on your forearm') with several arithmetic claims; show the sensitivity and what happens if gold rises too."
+  ],
+  "falsifiable_calls": [
+   "By 2030, silver trades at 20:1 to 30:1 vs gold ($100-150/oz at current gold prices)",
+   "Market in 4th consecutive deficit year; Western price premium persists"
+  ],
+  "return_to": true,
+  "return_reason": "Dated, testable ratio/price call for 2030; track with the deficit data."
+ },
+ {
+  "slug": "against-entropy",
+  "title": "Against Entropy",
+  "date": "2025-09-10",
+  "summary": "A deeply personal philosophy, sparked by the All-In Summit and the author's mother's suicide, building a 'mathematical' case for meaning from Fermi, anthropic reasoning, natural selection of universes and Wright's non-zero-sum arc, concluding love is the anti-entropic force.",
+  "themes": [
+   "personal-essay",
+   "macro-regime"
+  ],
+  "format": "essay",
+  "scores": {
+   "insight": 6,
+   "clarity": 6,
+   "evidence": 2,
+   "actionability": 1,
+   "timelessness": 7
+  },
+  "overall": 7,
+  "best_line": "My mother's suicide asked a question that took thirty years to answer. Not 'why did she leave?' but 'why should anyone stay?'",
+  "improve": [
+   "The 'math' is metaphysics: universe-level natural selection is speculation presented as 'the math is on our side'; label it as belief and not proof.",
+   "Investor readers are told to skip to the gold pieces; either link the philosophy to the portfolio explicitly or separate it as its own publication."
+  ],
+  "falsifiable_calls": [
+   "AI doom is unlikely because Fermi implies AI is not the great filter"
+  ],
+  "return_to": true,
+  "return_reason": "The most personal and widely engaged post; the author's own synthesis could anchor a longer essay."
+ }
+]

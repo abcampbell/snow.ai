@@ -1,0 +1,175 @@
+TITLE: Two Visions of the Singularity
+SUBTITLE: The fight for a decentralized future
+DATE: 2023-11-03
+
+Biden’s Executive Order on AI came out this week.  
+We’re still processing.  
+For an overly long thread on this where I probably say dumb things, here’s X.
+My gut check from diving into the first 20% of it, is that…
+It’s going to be a lot of work.  
+Work for government types.  
+Work for researchers.  
+Work for data scientists and lawyers, and compliance oh my.  
+And strangely, what looks like a requirement for a third party audit of your hiring practice for algorithm bias.  
+
+Just don’t call it “Dots”
+All things that seems amazing in theory but quite time-intensive and, frankly, expensive in practice, but hey, I’m getting regulated in real time here.  This is a first for us both here and you know, cognitive dissonance and all.  
+Frankly even though it’s a ton of work, a lot of this analysis and reporting will require folks to use Rose, so hey, guess regulatory capture is sometimes a good thing for the home team too!
+What’s ironic is that we actually gave a talk on this theme earlier last month.  
+We were fortunate enough to be invited to speak on the topic at Chainlink’s conference.  If you want to see what I thought on the topic of before the Executive Order hit, be our guest.
+
+Rather than expect anyone to listen to me blather though, we’re going to take this space to go through some of the themes raised in the talk and connect them to the regulations that just came out.  
+We do a little synthesis.  Dissonance + synthesis equals abstraction.
+So the point of the talk was actually pretty simple.  You have these two big technologies, AI and crypto, that are still hitting their stride.
+
+And you have these two competing forces for how they will be developed.  
+The natural inclination to centralize and control, vs the inherent creativity and scale you get through open, decentralized systems.  And there’s some tension between both these systems and how they are playing out in the context of these two technologies.
+
+Two visions of the singularity and two technologies for acceleration.  (You can probably throw biotech in here too to be honest, but I know about money and not medicine so I’m going to stick to my lane.)
+Along the way, markets are trying to trade this stuff.  And so you end up with these waves around recognition of what’s coming (note the laggy charts, looks a fair bit worse since the talk, but hey, we told you to hedge)
+
+But when you look at markets for predicting the AI stuff, the timelines are getting VERY SHORT.
+4 years to human-machine parity, and then 8 MONTHS till lift off from there… 
+
+Which is fair, because these robots, they are getting awful clever. Depending on where you look.
+
+Leaving us with three big questions:
+Which equilibrium are we accelerating into?
+
+How centralized will money, power and tech be in that future?
+
+What can we do about that? (jokes, no one cares)
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Let’s start with crypto, and look through the push pull dynamic in context of the system.
+
+It all started with FedWire.   A centralized clearing house for a decentralized, local banking system.
+
+Your bank talks to it’s branch of the Fed, and they wire each other the difference.  Initially using telegrams to settle the “Interdistrict Settlement Fund”.
+
+The big idea of crypto is just scaling that up.  
+Use a centralized ledger, but one that’s public where everyone can see.
+Then rely on decentralized, cryptographically secure processing (read: robots) to clear transactions to that centralized ledger.  
+Where prices are usually transparent, while ultimately quantities are (often) not.  
+Which then leads to a solution of Individuals, firms and vendors spend tons of time and money cleaning data to find a ‘single source of truth’.
+We know, we did the legwork. 
+Never ask a man his income, or how many tokens are outstanding of his favorite crypto.
+
+token names intentionally removed because no one cares anymore anyway
+So then you have this dynamic playing out all the way down the system.
+The idea of ‘decentralized finance’ pushing against the very real need to centralize demand and supply into marketplaces or ‘centralized exchanges’.  
+aka Defi vs CEX
+This is where processing all those transactions comes in.  Because the blockchain itself is way too inefficient a mechanism to directly clear all those transactions.  Which is fine - we say, “sounds like the gold standard.”  
+It just means we need centralized exchanges run by financial intermediaries, the interfaces with the financial system that clear the books and move the underlying collateral around in accordance with a set of private contracts and commitments.
+Which sounds suspiciously like traditional finance or ‘tradfi.’
+So you have this dynamic, where the users of the technology have strong ideological foundations to want decentralized…well everything. 
+This impulse to decentralize comes up against the very real need of all these humans to have products or interfaces to interact with this money technology.
+See, users want these radically decentralized systems, but they also want security and they want to be able to forget their password and get their money back.   The first of which is KYC and the latter is, ironically also KYC.
+All of a sudden our radically decentralized anonymous financial system is looking a lot like…online banking. And we can’t have that.  
+“We need to decentralize the clearing of transactions and accounts and intermediaries!” 
+“We need the whole thing processing itself, on the blockchain and we’ll pay the users of the system the proceeds!”
+Then the government comes in and says, “ok what happens when one of you fails and you have a too big to fail situation?  What about when your payment rails are used to finance terrorism or other bad things?  We are going to need to protect everyone and centralize all this information.  You need….KYC!” 
+This dynamic then plays out a level deeper, we’re talking the battle between users who want this decentralization but they also want and need the convenience of a functional financial system that interacts with the outside world.  Which means inevitably, we’re talking about crypto banks talking to normal banks.  Which means you are entering the world of dollars and SWIFT and, yet again…KYC.  
+The long regulatory arm of the US and (to some extent) EU governments.
+Huh.  Doesn’t sound that decentralized anymore.
+Which brings us to AI.  
+
+AI starts by centrally processing reams and reams of data derived from decentralized processes. For example, 6m ago, the good folks over at Bloomberg built an LLM derives from over 30 difference caches (or “corpuses” in the lingo) of (largely) text based documents.
+
+Economies of Scale: Data
+The problem here arises through the sheer scale of this effort.  Much of this data is messy and still needs a lot of (very expensive) human capital to find, clean and structure. 
+
+Economies of Scale: Model Size
+Leading to inherent increasing returns to scale.  As AI companies refine, develop, and horde public training data into private, centralized repositories controlled in the hands of a few, resulting in a large consolidation around a few sets of proprietary data and a handful of dominant models.    Where bigger is (usually) better.
+
+Economies of Scale: Compute + Memory
+The training of these very large models also requires a lot of (very expensive) compute and memory.
+
+Economies of Scale: Chips
+This logic also extends to the underlying suppliers.  Efficiency gains compounding over time in the manufacture of the underlying hardware enabling this technology.  
+What are Nvidia & TSMC worth when every smartphone has a GPU inside?
+
+Decentralized Matrices vs Centralized Interfaces
+Just like crypto, AI users then add centralizing pressure to this technology.  The classic coordination problem of the development and adoption of new technologies.
+Be it the telephone, newspaper, TV, personal computers, ISPs, browsers, mobile phones, there is a historical pattern in the development of new platforms.  After an initial “Pre-Cambrian explosion” of creativity, the logic of increasing returns to scale and network effects lead to radical consolidation not only of capital but in USER INTERFACES.
+This means that even if the decentralized data leads to decentralized models, we should expect (and are seeing) a centralization in interfaces around a couple of key players (MSFT /OAI - GPT4, Facebook - Llama2, Google - PaLM2).
+
+Decentralized Capabilities vs Centralized Profit
+The promise of AI is to radically empower the development of decentralized intelligence.  Which is a good thing.  A world where the marginal cost of cognitive work goes down is one where our healthcare, education and transportation systems are radically more efficient and capable.  We are about to witness a wave of transformation for knowledge work.
+
+At the same time, the inherent returns to scale outlined above* will all but guarantee a strong economic pressure to centralize our interaction with this technology around a handful of interfaces/products/businesses.
+*To review:
+Increasing returns to intelligence with scale
+
+Large up front investment costs
+
+Substantial barriers to entry (made worse by regulation, thanks Biden)
+
+All start to sound suspiciously like what we use to call a “Natural Monopoly” back in grad school. 
+
+And what happens to the centralization of profit and incomes in a world where we automate away 25% of the jobs?
+
+Decentralized Danger vs Centralized Control
+Which is where “Safety” starts to come in.  Because these days, it’s quite vogue to proselytize on the danger of AI.  Even though we’re still kind of mixed up on which kinds of risks matter.
+See, AI definitely makes the world even more ‘flat’ (thanks Tom Friedman!), empowering individuals to unleash hell like never before.
+We see this the most clearly with biotech, where the fear of the unknown can be applied to a very real and present danger.  One might even call it a catastrophe.
+Where the conversation has gone off the rails is on what they call the ‘existential risk’ of AI.  The idea that’s it’s obvious that the machines will become infinitely intelligent, power seeking, and evil, resulting in our ultimate demise.  
+Which brings us to reflecting on Biden’s executive order, in the context of the argument for “Doom”.
+A reminder, the argument for existential doom is as follows:
+Increasing returns to scale for intelligence +
+
+Power Seeking (via Instrumental Convergence) + 
+
+Misalignment (via Orthogonality)
+
+=
+DOOM 
+aka: “the humans are dead”
+
+Me, I think this is all a bit academic.  After all, we know that perfect alignment is impossible (just watch the nightly news). 
+
+The “Demand” for Centralized Regulation
+See, if your standard is perfect alignment because you need to fight an impossibly perfect agent, then you will always fail.  You will always need more regulation.  More power under an all seeing, centralized…government.
+Which then opens the door to the following power grabs:
+AI Licenses
+
+Compute Caps
+
+Capabilities Regulation
+
+Domain restriction
+
+Legal accountability to the developers / operators of machines
+
+Infinite Red Tape - aka “Regulatory Capture”
+
+All of which are on the table now.  
+
+Many of which finding their way into Biden’s order.
+
+Reminder, we’ve already told you where this ends…a UUID for every man, woman, child and doggo.
+
+But wait, there is hope!
+If I can leave you with this, it’s an allegory to history.  
+To another great source of centralization unleashed on the world, a thousand years ago.  That of hereditary, monarchical imperialism.  
+Perhaps best personified by the Hapsburgs of the Holy Roman Empire, Spain, and for a time, Amsterdam (that jewel of commerce and liberalism that set the stage for the last 400 years of techno-commercial-capitalism).
+
+Charles II of Spain perhaps possessing one of the most centralized royal bloodlines in European history.  
+The chosen one to unify the continent under one centralized empire!
+And yet, as our old friend Ian Malcolm might say:
+Life…uh, finds a way
+
+Put another way, if capital compounds exponentially, centralizing everything that is subject to increasing returns to scale, why then, do companies only seem to last one or two generations in the Dow Jones.  Why didn’t the entire American 20th century economy turn into one big monopoly?
+
+That’s a a longer story for another ramble, one about the entropy accumulation inherent in overly-centralized systems.  
+Manifesting mostly clearly…in Charles II’s weak jaw, weak bloodline, and weak empire.
+
+Or, up a level, in the impermanence of international reserve currency regimes.  
+In the end, the things that make us great also destroy us. 
+In the end, all things must pass.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

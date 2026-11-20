@@ -1,0 +1,104 @@
+TITLE: Watch Credit
+SUBTITLE: 
+DATE: 2026-03-12
+
+Story time.
+It’s March 21st, 2020, the teeth of the covid bear market. I’m at home, trading in my PJs. Having just sold VIX at 68 and up on the year, I post a quick blog post outlining the trade (short call spreads to buy put spreads). It was a decent entry. If it screamed to 80, I was down maybe 2%. If it fell to 30, I was up 4%. Good risk/reward, good timing, good structure.
+
+So why bring it up now?
+Two reasons. The first is that I know it can sometimes be difficult, as a reader, to separate my core views from the more short-term ‘punts’. We buy a little oil here, sell a little there, you might not even see the tweet where I close the position.  Maybe I don’t!
+One of the realities of writing about markets in public is that people start demanding you have an opinion on every tick. I got this a lot in early January with silver after the piece went micro-viral, and you see it constantly across fintwit. People get angry when you change your mind, or they read more conviction into a position than you actually had.
+So part of this story is to give you a decoder ring: when I start getting repetitive and annoying about something, that’s when I have real conviction. If you’ve been reading me on Twitter lately, I hope you’re picking up the signal.
+
+Which brings me to the second reason for the pajama story: a couple of days after that VIX trade, I had an investor pitch day. A zoom, but who’s complaining. We went up against a couple of other funds to present our case to a handful of LPs.
+And this is where private credit enters the picture.
+I’m not sure if it was before or after we did our fifteen minutes, but I remember the exact moment I decided that private credit was going to end in tears. It was somewhere between “guaranteed return” and “never taken a loss” that I started getting that feeling in the back of my neck. Maybe their pitch was just more compelling than the guy ranting about Chinese WMPs. Maybe it was the promise of high returns with little to no risk. But I distinctly remember sitting there, holding my composure, thinking: the next down cycle will come from corporate credit.
+
+From 26 for 2026
+That instinct was really an extension of something I’d been watching for years: the rise and eventual overextension of what people called the “Yale endowment model.” David Swensen, rest in peace, had built something brilliant at Yale, and it spawned a generation of copycats. The problem was that by the time the imitators caught on, the strategy had evolved from “gain an edge through illiquidity premium” into “pile the entire portfolio into illiquid, long-duration assets because the reported returns look smooth.”
+
+Downside of the Yale Endowment Model
+Which made a lot of sense in 2015 when PE, VC, and private credit were still mid-cycle and rates were still healthy. It made almost no sense in late 2020 and 2021, when the return of ZIRP, combined with a flood of capital into these “private” (read: illiquid and not publicly traded) asset classes, had pushed demand to extremes at precisely the moment when durations were longest and rates were at the lower bound.
+
+If you actually did the forward-looking math, 2018-2021 was one of the worst windows to over-allocate to private equity. Much of what drove the absolute returns of PE and VC was simply the duration of those investments. Sometimes you’re providing liquidity for ten or even twenty years. Which seemed a bit bonkers compared to the guy pitching a portfolio you could cut in an afternoon. And when you deploy capital into PE for a decade, you’re not just locking up your money. You’re also trusting the fund on its marks. You’re also, in effect, buying a lot of bonds, because the risk-free rate is what drives the discount rate on that stream of future cash flows bundled into your PE portfolio. And there we were, a decade and a half past the financial crisis, with rates near zero.
+Cliff Asness, the founder of AQR, gave this phenomenon a name I like: volatility laundering. His argument is straightforward: because private assets aren’t traded on public exchanges, the reported volatility of these portfolios was artificially suppressed. The CLO that “didn’t lose money in the financial crisis” wasn’t actually less volatile than its public-market equivalent. It just never got marked. If you never ask what someone is willing to pay for something, you never have to mark it down.
+
+There are features to this approach. Old markets heads will remember the debate over Level 2 vs Level 3 assets back in 2008. Sometimes you don’t want to report day-to-day volatility because it can become reflexive: investors react to down marks by selling, which pushes marks lower, which triggers more selling. Smoothing the ride has real benefits for long-term capital.
+But there’s a logical problem underneath it all. If you jam enough debt into anything, even if you suppress the reported volatility, that activity reflexively raises the probability that eventually you won’t just have a bad mark. You’ll have a bad market.
+
+Why Credit Is the Thing to Watch
+I should be upfront: I’m not a deep credit analyst. I haven’t done the single-name work to tell you which pipe is going to blow first, or which specific portfolio will be the next Cliffwater. This is a directional macro view, not a bottoms-up teardown. I’m going broad because that’s where my conviction lies, and because the right way to express this trade at scale is through CDS, not HYG puts. Single-name credit default swaps, if you can get the ISDA, are much better instruments for this. (My kingdom for an ISDA.)
+But before I get to the evidence board, I want to lay out why credit is structurally so dangerous when it turns. Because this isn’t just about a few bad funds.
+The Merton Model and Why Credit Is Short Convexity
+Robert Merton figured this out decades ago. Under his framework, a corporate bondholder is economically equivalent to someone who owns the firm’s assets but has written a call option to the equity holders. When times are good, the firm’s assets comfortably exceed its debt, and the bondholder collects coupons without much drama. The equity holder captures all the upside. But when asset values decline toward the face value of the debt, the bondholder’s position changes character entirely. The payoff becomes violently nonlinear. Small additional declines in asset value start producing large losses for the bondholder, while equity gets wiped.
+This is what people mean when they say credit is “inherently short convexity.” For most of the cycle, credit looks boring. Tight spreads, carry, low vol. And then, suddenly, it isn’t boring at all.
+
+How Credit Relates to Stocks
+Under Merton, equity is a call option on the firm’s assets. Credit is the mirror image. Both instruments are looking at the same balance sheet from different seats. When asset values are high relative to debt, equity is deep in the money and credit spreads are tight. Everything looks fine. But when the debt-to-asset ratio starts biting, both unwind simultaneously. Equity collapses and credit spreads blow out. They aren’t independent risks, and anyone telling you they’ve “diversified” by allocating across both equity and credit in the same leveraged borrower has misunderstood what diversification means.
+The Transmission Mechanism 
+Here’s the pipe.  Banks (and endowments) lend to private credit funds. Those funds lend to corporates. Corporates service debt from cash flows. When the economy softens and cash flows decline, or when a catalyst forces actual marks on those loans, collateral values drop. Banks then tighten lending to the funds. Funds can’t roll or extend. Borrowers get squeezed. It’s reflexive from top to bottom.
+JPMorgan marking down loan portfolios of private credit groups is step one of exactly this chain. When a major bank starts cutting collateral values on the loans that private credit funds use to borrow against, it restricts the funds’ ability to lend new money and forces them to raise capital or liquidate positions. That’s the mechanism by which defaults mechanically makes money harder to borrow.
+
+The Evidence 
+The chickens are coming home to roost. Here’s what’s been hitting the tape.
+Redemption Gating is Spreading. Morgan Stanley limited redemptions on its private credit fund after investors requested to withdraw 10.9% of capital. Cliffwater’s $33B flagship saw 14% redemption requests, forcing the firm to cap repurchases at 7%. Blue Owl, Blackstone, BlackRock, JP Morgan, Cliffwater. The list keeps growing.
+
+Banks Are Pulling Back. JPMorgan is marking down loan portfolios of private credit groups, which directly restricts how much these funds can borrow. When a bank tells a fund “your collateral is worth less than you thought,” that’s the first domino.
+
+The Managers Are Getting Nervous. Ares held a town hall to reassure staff about market volatility. When management holds an all-hands to tell people everything is fine, things are usually not fine. Meanwhile, the Ares CEO is publicly pushing back against UBS’s call for 15% default rates on private debt.
+
+Europe Is Cracking Too. Goldman Sachs found that around 146 companies in Europe have effectively handed control to their direct-lending funds after they could no longer service their debts. About $38 billion in senior private loans to 150 European companies became troubled, with four going insolvent and the rest restructuring through debt-for-equity swaps. And European insurers and pension funds, which have been among the biggest allocators to private credit, are starting to flag concerns.
+
+Leveraged Loan Prices Are Rolling Over. The Bloomberg US Leveraged Loan Index has fallen about 6% from its highs, with the tech-heavy sub-index dropping even faster. BDCs are trading at ~0.8x NAV, the lowest level since 2020.
+
+Creative Accounting is Emerging. Carlyle reportedly can’t sell its portfolio companies, so it’s securitizing stakes in its own funds and using the proceeds to seed new vehicles. Rubric Capital is telling investors that some private credit firms are using accounting tools to mask leverage. When the financial engineering starts getting baroque, you’re late in the cycle.
+
+The Fraud is Showing Up. GoEasy ($GSY) dropped 58% in a day on a C$178M charge-off, dividend elimination, three CEO changes in 18 months, and admission that its LendCare division was booking payments before collecting them. This is what the tail of a credit cycle looks like.
+
+And the Middle East isn’t helping. S&P has warned that the conflict is beginning to strain credit channels across multiple sectors.
+
+The Analog: 2001, Not 2008
+I want to be clear about what kind of credit cycle I think we’re in. This is not 2008. The household balance sheet is in relatively decent shape. Mortgage credit standards have been much tighter post-Dodd-Frank. What we’re looking at is closer to the 2001 corporate credit cycle: a downturn led by overextended corporate borrowers, overbuilt capacity in a specific sector (then telecom, now potentially software/AI/data centers), and a credit market that extended too much at the wrong time.
+
+The good news, relatively speaking, is that corporate credit busts are more manageable than household ones. When households get crushed, it’s incredibly hard to stimulate your way out. People delever slowly and painfully. Automatic stabalizers (read unemployment insurance) prints money and delivers it to people who spend it.  With corporate credit, you have more rapid resolution processes (unless you are in China): bankruptcy courts, restructurings, and a faster clearing mechanism. 
+But here’s where the current situation gets truly uncomfortable: the Fed is boxed.
+Conflict is inflationary. Oil disruptions, the latest tanker on fire in Hormuz, put a floor under energy prices and keep inflation expectations elevated. Which means the Fed can’t ease aggressively even if credit conditions deteriorate and labor markets soften. If credit brings us lower while the Fed is pinned by conflict-driven inflation, they’ll be behind the curve in a way that rhymes with the worst policy errors of the last fifty years.
+And here’s the kicker that ties the whole thing together: the current growth engine of the US economy is AI infrastructure. Data centers. Massive capital expenditure programs from the hyperscalers and their downstream suppliers. The BIS estimates more than $200 billion in outstanding private credit loans to AI-related companies as of early 2026, representing somewhere between 10-20% of total AI-related debt. That number is projected to grow to $300-600 billion by 2030.
+
+The growth engine is financed by the exact credit market that’s cracking. If private credit tightens, it doesn’t just hit zombie LBOs from 2021. It hits the capex cycle that’s been holding the economy together.
+I am not saying credit is a perfect short right now. Timing these things is brutally hard, and I’ve been early before (the silver trade subscribers will recognize the pattern). What I am saying is that if you want to understand the scenario that leads to recession, if you want to understand the transmission mechanism for a real down-market, you need to be watching credit.
+Not vibes. Not AI doomer threads. Not unemployment claims.
+Watch credit.
+
+Paid Section: The Credit Book
+
+A quick disclaimer before we get into the trade book: this section is illustrative. These are the positions I’m running, I do not recommend you do this at home (or with other people’s money).  I’m trying to be a bit of a hero here.  This book is kind of painful to watch and I’ve already missed some monetization by virtue of time/attention/macro chaos.  Think of the smaller positions as warnings signs to force me to pay attention.
+The full credit short book represents roughly 40% of net liquidation value, dominated by the shorts (delta and options) in the high yield ETF, HYG. The trade is expressed across several sub-themes: broad high-yield credit, private credit managers and BDCs, leveraged loans, insurance (as a transmission channel for private credit stress to the real economy), municipal credit, and student loans.  My biggest longs remain AI infra, gold/silver/uranium/copper/oil (miners and commods), and a bunch of idiosyncratic longs.  At some point I’ll update the good/bad bank work and likely roll some of this into that, but it’s a lot of work.
+Anyway, with all that throat clearing out of the way, the short credit book.
+
+Trade Reviews
+HYG - Right at all our $79 strike, hence the massive delta on the options for around 2% of book in premium.  This is my portfolio hedge.  When gold and AI go down but credit doesn’t sell off, I’m in pain (which is partially why I degrossed the gold position last week before coming back in 1/4th as heavy when gold started trading too inverse to oil)
+
+ARCC (Ares Capital) — Mar 20/18 bear put spreads, currently at 25bps of net liq. Watching the redemption and town hall headlines closely. ARCC is one of the largest BDCs and if the gating trend continues at Ares’s private fund level, the listed vehicle will feel it.
+
+MAIN (Main Street Capital) — Short shares, currently 28bps. Main has outperformed other BDCs but the premium valuation makes it vulnerable if the sector re-rates.
+
+SLM (Sallie Mae) — April 22 puts, through the strike, now 34bps. The student loan trade is a bit of a satellite, but credit stress tends to show up in consumer lending before it shows up in corporate.
+
+Blue Owl Capital ($OWL) — Short shares at 15bps. OWL is down nearly 50% from its January highs. The private credit manager model is directly exposed to everything described above: fund redemptions, collateral markdowns, tighter bank lending.
+
+Blackstone ($BX) — Short shares at 1.22% of net liq. The largest position among the single-name credit shorts. Blackstone is the poster child for the alternatives industry build-out and carries maximum exposure to a regime change in private credit.
+
+Carvana ($CVNA) - Been short for a while, took a bit off during the squeeze, unfortunately.
+
+Investco Senior Loan ETF ($BKLN) - Have $20 puts, got distracted by macro chaos over the past couple of weeks and didn’t capture any monetization during the puke.  It takes a village…
+
+Insurance ETF ($KIE) - $50 strike puts 3-6m out.  Mixture of deep OOTM and vega here.
+
+And many others, but I gotta go to bed and get ready for the day job.  What would Bryan Johnson say!
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+These opinions are mine and mine alone and do not represent the views of any of Rose’s clients or counter parties.
+The Ramble does take positions in various assets we write about, and views are subject to change without notice.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+THERE CAN BE NO ASSURANCE THAT ROSE TECHNOLOGY INVESTMENT OBJECTIVES WILL BE ACHIEVED OR THE INVESTMENT STRATEGIES WILL BE SUCCESSFUL. PAST RESULTS ARE NOT NECESSARILY INDICATIVE OF FUTURE RESULTS. AN INVESTMENT IN A FUND MANAGED BY ROSE INVOLVES A HIGH DEGREE OF RISK, INCLUDING THE RISK THAT THE ENTIRE AMOUNT INVESTED IS LOST. INTERESTED PROSPECTS MUST REFER TO A FUND’S CONFIDENTIAL OFFERING MEMORANDUM FOR A DISCUSSION OF ‘CERTAIN RISK FACTORS’ AND OTHER IMPORTANT INFORMATION

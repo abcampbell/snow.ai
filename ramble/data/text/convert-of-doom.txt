@@ -1,0 +1,169 @@
+TITLE: Convert of Doom
+SUBTITLE: Microstrategy and the dark arts of 'volatility arbitrage'
+DATE: 2024-12-03
+
+When you grow up in the projects, you tend to remember the first day you lost a million dollars.
+I still remember it like it was yesterday. Technically I didn't lose the million - my boss Geoffroy did. A detail which didn't seem to matter to Rachid, the presumptive head of equities in Lehman London. When a guy goes on vacation, the guy who marks his book manages the book, so that day, I wasn't a 14-month-old junior prop trader, I was the guy managing a portfolio of $150m of exotic Tier 2 European financial convertible bonds.
+"What's the damage today?"
+"Well, erm, looks like we're down $1.7m"
+"On what?!?"
+"Those Fortis converts. Credit is gapping out again and we only hedged the delta. If I sell while he's out, Geoffroy will roast me alive."
+[grumbles, stares into my soul for weakness]..."ok overhedge the delta for now and I'll talk to him when he gets back."
+Within two weeks of returning from vacation, he was gone. Didn't matter that the group made $75m the previous year, half from convertible bonds. Losses were approaching $10m and management was on its third (of eight) rounds of firings.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Today we're watching something similar play out with way more zeros. Michael Saylor has turned MicroStrategy into a $30B levered bet on bitcoin using convertible bonds, creating one of the most complex trades I've ever seen in public markets.
+The World's Most Expensive Bitcoin Fund
+The simplest way to think of a convertible: a vanilla corporate bond packaged with equity options. Those of you in startups with SAFEs or preferred shares with liquidation preferences? You're trading converts without knowing it.
+
+MSTR's newest converts are a masterclass in financial engineering:
+For every $1000 bond:
+0% interest for 5 years (yes, zero)
+
+Convertible into 1.48 shares at $672 price per share
+
+Current MSTR price: $450 at issuance ($380 as of writing)
+
+Current bitcoin per share: 0.002 BTC
+
+Premium to NAV: 110%
+
+At 4% 5-year rates, $810 of your $1000 represents the zero-coupon bond component. The remaining $190 buys you 1.48 call options struck 50% above current prices on a stock already trading at more than 2x its asset value.
+
+Keep in mind MSTR trades around 100-150% 'rich' to the present value of their bitcoin holdings. 
+
+Taking their 386k bitcoin at market value, MSTR should trade at $150 per share - yet it reached $470 last week.
+
+Meaning to reach that $672 share price, we need bitcoin to go up a lot more than the premium goes down.  More than 200% to make up for a premium coming back down to 0.
+
+The Volatility Game
+This is where it gets interesting. Look at the volatility surface for MSTR:
+
+Key observations:
+MSTR 5yr ATM options: 100% implied vol
+
+Bitcoin 5yr options: 75% vol
+
+IBIT 5yr options: ~73% vol
+
+At first glance, MSTR options look expensive compared to bitcoin vol. 
+
+But looking at realized volatility tells a different story:
+
+Saylor's leverage has transformed what was once a normal stock (32 vol) into something realizing in the 100s. This is where the Merton model becomes critical.
+Merton Model Analytics
+
+The model says equity volatility should reflect asset volatility plus leverage effects. In simple terms:
+
+If you have:
+$100 of assets at 10% vol
+
+$50 debt, $50 equity
+
+All vol reflected in equity
+
+Then: $10 annual asset movement / $50 equity = 20% equity vol
+For MSTR:
+Implied equity vol: 105%
+
+Translates to asset vol of ~75.6%
+
+Matches bitcoin's own implied vol
+
+This has profound implications for convert pricing. The embedded options are being priced at high vols because:
+The premium to NAV creates extra volatility
+
+That vol gets priced into new converts
+
+Which funds more bitcoin purchases
+
+Creating a self-reinforcing cycle
+
+The Premium Trap
+
+For these converts to make money:
+Bitcoin moons while premium holds, or
+
+Premium expands further
+
+Let's put numbers on it:
+Current bitcoin: $95,000
+
+MSTR bitcoin/share: 0.002 BTC
+
+Raw bitcoin value/share: $156
+
+Current MSTR price: $450
+
+Convert strike: $672
+
+If the premium normalizes to even 50% (still rich), bitcoin needs to hit $224,000 for these converts to break even on conversion.
+
+Put another way
+
+The Correlation Game
+The real complexity comes from correlation between bitcoin price and premium:
+
+We get implied correlation of 0.55 between premium and bitcoin - historically high but crucial for pricing the converts.  If you are betting on upside, you are also long correlation between the premium and the upside vol in the price of bitcoin.  More of the same, basically.
+
+The Regulatory Arbitrage
+This structure exists because:
+Retail can't easily access bitcoin derivatives
+
+Convert buyers need ISDA agreements
+
+Futures contracts are too big ($300k) with high margins (50-100%)
+
+Result: Retail buys MSTR shares at 150% premium while sophisticated investors arbitrage vol differentials and MSTR books the diff between all these trades as profitable transactions.
+Here's the irony: We require hedge funds to register with the SEC, spend $50-500k annually on compliance, and limit themselves to accredited investors with millions in the bank. Yet retail investors can freely buy MSTR shares through Robinhood.
+
+And therein lies all the difference.  There’s nothing wrong with what MSTR is doing, but it’s a good example of the law of unintended consequences.
+Regulators block retail from 'risky' hedge funds while inadvertently pushing them into something potentially more dangerous.
+By restricting crypto access for years, regulators left retail investors few options. Bitcoin futures required $300k contracts with 50-100% margin. ETFs were obscure or nonexistent. So people bought MSTR instead - a far more complex and potentially risky vehicle.
+In trying to protect retail investors, the SEC has inadvertently funneled them into a potentially much riskier product
+Each new convert makes the structure more complex: bitcoin-per-share has fallen to 0.002 BTC through dilution. New issuance adds leverage while reducing bitcoin exposure, unless they buy more - but buying at higher prices raises their average cost basis. It's leverage on leverage.
+Saylor himself made this argument on TV last week, boasting about arbitraging the volatility differential between MSTR stock and bitcoin.
+Note these are two arguments which would NOT BE AVAILABLE to anyone managing a private investments vehicle. There’s a reason every investor letter is practically littered with the phrase ‘past performance does not indicate future results’: usually when mom and pop get ripped off it’s because, you guessed it, someone was promising that past returns are indicative of future results.  
+It's a basic lesson every trader learns: past performance doesn't predict future returns. 'Buy low, sell high' - not 'it went up yesterday, so it'll go up tomorrow.
+Saylor crosses an implied redline here - not just by profiting from self-dealing (which he openly brags about), but by promising investors they can expect this to continue.
+If MSTR is just a bitcoin holder, its shares should eventually converge to bitcoin's value. Whether through better retail bitcoin access, more liquid options markets, or lower volatility - these arbitrage opportunities will shrink. While profitable now, it's dangerous to promise this can continue forever.
+
+The Lehman Lesson
+Remember Fortis? Their converts looked great too. European bank, solid credit, nice vol premium in the options. Until credit spreads blew out and that lovely vol premium became dead weight.
+MSTR isn't a bank, but they have $5B in zero-interest convert debt. Sounds better, right?
+Not exactly. When Fortis blew up, all that vol we thought was free money turned into pure downside. The same thing that makes MSTR options look reasonably priced - the premium-driven extra volatility - is exactly what can kill you in a down market.
+Each new MSTR convert issuance further complicates the math: the effective Bitcoin-per-share ratio has fallen to 0.002 BTC, diluted by repeated capital raises.
+The math can work: bitcoin moons, premium holds, converts print. But I've seen this movie - these are still bonds. Someone has to pay back that $5B: either bitcoin buyers, & premium traders push up the share price, or MSTR itself by selling coins at a loss to repay bondholders.
+Sounds easy, bit harder than it looks.
+Just ask Geoffroy.
+Charts and data as of December 2024. Past performance does not predict future returns.
+Appendix:
+Pricing the convert in Bloomberg (OVCV)
+MSTR Convert Base Case:
+400bp credit spread
+
+75% vol
+
+$380 spot price → Prices to par
+
+Sensitivity Analysis:
+Credit Spread Effect
+Reducing spread to curve (250bp)
+
+Impact: +4% NAV
+
+Volatility Effect
+Increasing vol to 100%
+
+Impact: +3 points
+
+Day-of-Issue Pricing:
+400bp spread
+
+100% vol
+
+$433 stock price → $113 NAV
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.

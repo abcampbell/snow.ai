@@ -1,0 +1,128 @@
+TITLE: 24 Views for 2024: Year in Review
+SUBTITLE: Looking back on our 80%+ track
+DATE: 2024-11-30
+
+When I published '24 Views for 2024' last January, the world was awash in uncertainty - markets were jittery, geopolitical tensions were rising, and AI seemed poised to reshape everything. 
+Now, looking back from November, some of those predictions feel almost painfully obvious - while others make me question my own reasoning.
+
+The goal here wasn't merely to build a track record, but to develop a rigorous framework for understanding how markets, technology, and geopolitics intersect. From our 26 distinct predictions, we achieved roughly 80% accuracy - though that number deserves deeper scrutiny, both in terms of implementation and what it actually tells us about forecasting ability..
+Breaking down the numbers reveals a striking pattern: We nailed our geopolitical calls with 100% accuracy, hit 86% (6/7) on market predictions, and scored 88% (7/8) on our technology forecasts. Yet we struck out completely - 0 for 3 - on regulatory predictions. This stark contrast isn't just about numbers; it reveals fundamental differences in how these systems operate and how we analyze them.  As we learned at the old shop, the best learnings come from diagnosing our mistakes rather than wallowing in our victories.
+
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
+
+Looking back, our predictions fell into four main categories:
+Geopolitical (8/8 predictions):
+At the core of our geopolitical calls were two fundamental theses: China's rising global power and influence despite domestic financial instability, and the cascading effects of great power competition. We correctly anticipated everything from China's banking stress to broader conflict implications - though I should note that anyone claiming perfect accuracy in geopolitics probably has a bridge to sell you in Brooklyn (or maybe some prime real estate in the South China Sea...)
+
+Markets/Economy (6/7 predictions):
+Our highest-conviction call - the “Gold in China” thesis - played out almost exactly as expected, leading a strong series of market predictions. The underlying framework connecting geopolitical stress to hard asset demand proved particularly robust.
+
+Technology (7/8 predictions): 
+While we got the broad strokes right on AI adoption and crypto markets, I have to acknowledge some potential motivated reasoning here. Scoring AI predictions in 2024 feels a bit like grading your own homework - especially when you're deeply embedded in the space.
+
+Regulatory/Policy (0/3 predictions): 
+This requires brutal honesty: we completely whiffed on TikTok regulation, BTFP renewal, and MiFID II implementation. The humbling lesson? Predicting regulatory outcomes makes market forecasting look easy - a realization that would prove particularly relevant to my own life.
+
+Let's dig into how each of these predictions played out:
+A. Geopolitical Predictions
+The Evergrande saga unfolded like a slow-motion trainwreck, exactly as anticipated. What began as stress in real estate metastasized into broader credit system strain, eventually sparking deflation fears and calls for stimulus. It's a textbook case of how financial instability can cascade through a complex economy. 
+
+But here's what's fascinating: despite a flurry of policy announcements, Chinese authorities have yet to tackle the core issues. Yes, they've moved to nationalize LGFV debt (local government financing vehicles, for the uninitiated), effectively centralizing infrastructure debt. But measured against our three critical criteria for calling a bottom in China's debt crisis, we've seen remarkably little genuine progress.
+
+Interesting in spite of a raft of policy announcements there has been little movement to actually recognize and restructure the economy.  Outside of the shift to bring LGFV debt on balance sheet (and hence centralize and nationalize some of this local government infrastructure debt), there’s really been no material moves towards any of our three primary criteria for calling a bottom in the China debt bust.
+“Where do we draw the line?” - The LGFV solution was predictable - these vehicles always carried an implicit government guarantee. The real question is about private sector intervention. At what point will policymakers step in to rescue private developers and financial institutions when systemic liquidity risks become unbearable? So far, the answer appears to be: not yet.
+
+“How big are the losses?” - Only after establishing the scope can we price the damage. This demands brutal honesty about the scale of bad debt - something that requires genuine bank recapitalization and deleveraging. Instead, we're seeing financial sleight-of-hand: debt-for-equity swaps (which actually increase leverage) and an obsession with propping up "psychological" equity price levels.
+
+Helicopter Money - Who, what, where, when?  Here's where it gets fascinating: Chinese policymakers are caught in a trap of their own making. They face mounting pressure to stimulate household consumption, yet remain hamstrung by deep-seated fiscal conservatism at the central level - particularly regarding social safety nets. Meanwhile, local governments continue their infrastructure spending spree, funded by the very LGFV debt the central government is now absorbing. The irony would be amusing if the stakes weren't so high.
+
+Our prediction of escalating great power conflict drove several successful derivative calls. The thesis played out across multiple fronts - from direct military tensions to economic ripple effects.  Most recently in the form of tit-for-tat escalation between Russia in the US in the form of the deployment of ever longer range missiles.  ATACMS for the US, and hypersonic ballistic missiles from Russia.
+
+Take shipping costs as a clear example: Tanker stocks surged as geopolitical chokepoints became flashpoints, though they've recently pulled back as the market prices in peak disruption. The pattern here is telling - financial markets often overshoot in pricing short-term chaos while underestimating long-term structural changes.
+
+Perhaps most importantly, this environment accelerated China's push for technological self-sufficiency. Despite skepticism from many observers, we're seeing remarkable progress across dual-use technologies - semiconductors, space capabilities, and even large language models. The investment flows here are massive, and the results are starting to show.
+
+Meanwhile, outside of SpaceX, the Chinese space program already surpasses the US…
+
+ and odds that the next human on the moon will be Chinese have been steadily rising.
+
+This technology race has broader implications, exemplified by China's ambitious space program - including plans for lunar habitation that would have seemed like science fiction just years ago. The combination of rising geopolitical tensions, technological competition, and persistent inflation proved politically transformative. Our call on Trump's return played out, though with an interesting sidebar: even advanced AI models struggle to process this reality, revealing their limitations in handling evolving political dynamics.
+
+Our "more boats needed" thesis, while somewhat crudely named, captured a key strategic shift. The portfolio implementation - long defense ETF with a strategic Boeing short - delivered over 30% returns this year. But we'll need more precise framing for 2025.
+
+B. Market/Economic Calls
+These geopolitical themes translated directly into market outperformance. We correctly anticipated three key trends: inflation persistence, accelerating defense spending, and American equity outperformance versus European markets.
+The crown jewel of our market calls was the "Gold in China" thesis - a position we've maintained since 2015. What makes this call particularly satisfying is how precisely the mechanism played out: banking stress and geopolitical tensions drove exactly the two-pronged demand surge we anticipated. Private citizens rushed to gold through every available channel - jewelry, bars, ETFs, and financial products - while public sector entities both openly and quietly accumulated reserves.
+
+Our skepticism toward bonds proved equally prescient, though for subtle reasons. The market got its hoped-for policy pivot toward easing, but the timing coincided with renewed inflation concerns - a perfect storm for fixed income disappointment. It's a reminder that in markets, being right about the outcome isn't enough; you need to be right about the path.
+
+The outperformance of American brands followed our script as well, though here we could have been more precise. While the broad thesis worked, a more granular analysis of which brands would benefit most would have yielded better actionable trades.
+
+The European economic situation played out exactly as our framework suggested: caught between the vice of high energy costs and self-imposed regulatory constraints. The continent's flirtation with "degrowth" policies proved particularly costly - a case study in how good intentions can lead to painful economic outcomes.
+
+Our prediction about the evolution of investment management - the rise of thematic and passive strategies - was directionally correct but harder to quantify. We're witnessing a paradox: fewer traditional investment firms, but democratized access to sophisticated investment strategies. The "death of alpha" narrative misses the point - it's not disappearing, it's being redistributed.
+
+Food prices tell a similar story. While futures markets signaled inflation, consumer prices have remained surprisingly subdued. This disconnect between financial market signals and real-economy impacts has been a recurring theme throughout 2024.
+
+Lastly volatility did prove cheap, particularly in the immediate aftermath of our piece in June suggesting that excess concentration in names like NVidea was dragging down realized correlations and hence implied vol. This was perhaps our best market timing all year.
+
+C. Technology Predictions
+The AI workplace revolution's impact on workplaces revealed an important lesson about technological change: reality lies between the hype and the cynicism. While AI integration progressed steadily, we discovered that the "last mile" problem is real. Companies still struggle to digitize their knowledge bases - turns out those "super-intelligent" AI systems still can't make sense of the average corporate spreadsheet.
+
+ Additionally, our prediction that AI companies would end up paying for data seems to be in the early innings of playing out as well.
+
+Our prediction about AI companies paying for data is beginning to materialize - a trend that could reshape the economics of the entire industry. The "data is the new oil" cliché is evolving into "data is the new rare earth mineral" - essential, valuable, and surprisingly difficult to refine.
+Yet some of AI's most basic challenges remain stubbornly persistent. Take my own focus area: financial data integration. Even seemingly simple tasks like converting visual data into structured formats continue to resist automation. It's telling that webplotdigitizer, a tool that hasn't materially changed in a decade, remains the industry standard.
+
+This limitation becomes obvious when you examine the Google ads for data visualization tools. Every vendor promises beautiful charts and insights, but they all share the same blind spot: none can reliably convert raw visual data into structured formats. They're selling gorgeous dashboards while users are still manually copying numbers from PDFs - a perfect example of solving the easy problem while ignoring the hard one.
+
+Our most provocative AI prediction - that 2024 wouldn't bring technological doom - has held up with one month to go. If the paperclip maximizers are coming, they're cutting it rather close. More seriously, this prediction highlighted the gap between AI anxiety and AI reality.
+
+The regulatory landscape has evolved exactly as we anticipated. Governor Newsom's veto of capability-focused AI regulation in California proved particularly significant. It reinforced our view that policymakers are finally beginning to distinguish between regulating AI's capabilities and its actual impacts/harms. Meanwhile, prediction markets continue to suggest that biological risks, not AI, remain humanity's more pressing concern - a distinction that deserves its own analysis in our 2025 outlook.
+
+What seemed like our boldest AI prediction - that open source would catch up to GPT-4 - now appears almost conservative. The pace of open-source development has been staggering, revealing a key insight about modern technology: proprietary advantages erode faster than ever.
+
+This represents a fundamental shift in how technology markets evolve. When Microsoft built Windows or Google dominated search, they could count on multi-year leads over competitors. Today's AI leaders face a different reality: open-source alternatives emerge in months, not years.
+
+The feared AI monopoly hasn't materialized. Instead, we're seeing a fascinating market structure emerge: first movers carve out specific niches while open-sourcing peripheral capabilities, creating a competitive ecosystem that moves at breakneck speed. This dynamic has rendered moot the debate about AI development pauses - the open-source community and private sector are already racing ahead at full throttle.   China remains more likely to invade Taiwan than to “pause AI.”
+
+Our GLP-1 prediction offers an important lesson in forecasting methodology. While we got the mainstream adoption trend right, we should have specified precise metrics for success. The Novo Nordisk story - a massive surge followed by recent steep declines - shows why exact measurement criteria matter. A correct directional call isn't enough; we need quantifiable benchmarks for truly valuable predictions.```
+
+Our superconductor prediction warrants special attention. While technically a long shot, the market-implied odds of room-temperature superconductivity by 2030 have doubled this year. But the real story isn't in the probability shifts - it's in how the LK-99 moment catalyzed broader thinking about superconductor applications. 
+
+Again, the important part here is whether or not this particular technology will work, but the impact of a generation of technologists and engineers who, for a moment, actually considered what products they would build and how valuable something like a superconducting material would be.  Sometimes we ‘hyperstition’ the future into existence just through the publication of our dreams, and I remain optimistic here that there’s more down this rabbit hole than just a single carrot.
+D. Regulatory Misses
+Now for the humbling part: regulatory predictions were our complete blind spot. Zero for three.
+The anticipated TikTok ban never materialized. BTFP quietly expired without renewal. MiFID II implementation remains stuck in regulatory limbo. Each miss reveals something about the challenge of predicting institutional decision-making - a lesson that hits particularly close to home, given my own career bets in this space. 
+There's probably a lesson here about predicting regulatory outcomes, particularly one’s you bet your career on, but that’s a story for another ramble.
+Conclusions: Lessons from the Crystal Ball
+A year of predictions reveals less about the future than it does about the art of prediction itself. Three critical patterns emerge from our successes and failures:
+First: Mechanics Matter Most 
+Our strongest calls weren't just directionally correct - they rested on clear, traceable cause-and-effect relationships. Take the China-Gold thesis: we didn't just predict price movements; we mapped out how financial stress and geopolitical tension would drive both private and public sector behavior. When you can articulate exactly how A leads to B leads to C, you've got more than a prediction - you've got a framework. 
+Second: Timing Is the Hidden Killer 
+The calendar is every forecaster's nemesis. Our regulatory predictions failed not because the logic was wrong, but because we tried to squeeze complex institutional changes into arbitrary time boxes. This is a lesson straight from options trading: being right about direction but wrong about timing is still being wrong. The TikTok ban might come eventually, but 'eventually' doesn't pay the bills.```
+Third: Optionality Beats Precision
+Our best predictions weren't single-point bets but thesis-driven positions with multiple paths to success. The conflict-inflation thesis worked whether disruption came from the Red Sea, Panama Canal, or Ukrainian grain routes. This approach - building in multiple ways to win - provides resilience against the inherent uncertainty of complex systems. 
+This pattern reflects deeper personal lessons. My background in options trading and experience navigating various institutions taught me to spot unsustainable dynamics others might miss. But it also taught me the value of flexible implementation - and the frustration of being right about the destination but wrong about the journey.
+Turning Lessons into Process
+Looking ahead, we need to evolve our approach in several ways: 
+First, we must develop more sophisticated frameworks for analyzing institutional change. Simply avoiding regulatory predictions isn't the answer - but we need to focus on structural shifts rather than specific outcomes. The key is understanding process flows rather than trying to predict point-in-time decisions.
+Second, we must radically rethink position sizing. A prediction with 90% confidence over five years doesn't merit the same position as a 90% confidence one-year bet. Time horizon should be as crucial to sizing as conviction - a lesson that applies equally to career bets and market positions. 
+Third, we need to be ruthless about mechanism specification. "Stocks will go up" isn't analysis - it's wishful thinking. Every prediction needs a clear, contestable explanation of how and why events will unfold. 
+For 2025, this translates to four concrete changes:
+1. Prioritize structural analysis over event prediction 
+2. Define precise, measurable success criteria before making calls 
+3. Map out feedback loops and timeline dependencies 
+4. Replace binary predictions with probability distributions and explicit market implications 
+The ultimate goal isn't prophetic accuracy - it's better decision-making under uncertainty. For market participants, this means more resilient portfolios. For everyone else, it means more nuanced understanding of how complex systems evolve.
+Success in prediction requires three types of courage: the courage to admit uncertainty, the courage to size positions based on evidence rather than conviction, and the courage to maintain unpopular positions until time proves them right. 
+Looking ahead to 2025, we're planning to be more specific - not just about predictions, but about implementation. 
+This may require changes to how we share these insights. Asset or stock-specific recommendations might need to move behind a paywall, not to monetize attention, but to ensure proper context and alignment with readers. 
+After all, there's an old trading floor saying: "A person not selling you their book is just a person without a book." 
+This tension - between sharing insights and maintaining rigor - will be a key challenge for 2025. But that's a prediction for another day. 
+Till next time.
+
+Disclaimers
+Charts and graphs included in these materials are intended for educational purposes only and should not function as the sole basis for any investment decision. As noted the views in this portfolio are not intended to maximize return and any use in a portfolio ought be considered in the broader context of your portfolio and investment needs and obligations. Please consult with a registered investment advisor if you would like financial advice, that’s their job.
+This letter does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service by Rose, Campbell or any other third party regardless of whether such security, product or service is referenced in this brochure. Furthermore, nothing in this website is intended to provide tax, legal, or investment advice and nothing in this website should be construed as a recommendation to buy, sell, or hold any investment or security or to engage in any investment strategy or transaction. You are solely responsible for determining whether any investment, investment strategy, security or related transaction is appropriate for you based on your personal investment objectives, financial circumstances and risk tolerance. You should consult your business advisor, attorney, or tax and accounting advisor regarding your specific business, legal or tax situation.
+Thanks for reading Campbell Ramble! Subscribe for free to receive new posts and support my work.
